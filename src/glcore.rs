@@ -1,6 +1,8 @@
-#![allow(non_camel_case_types)]
 #![allow(dead_code)]
-use std::{mem::transmute, ffi::{c_void, CStr}, fmt::Debug, ptr::null};
+#![allow(non_snake_case)]
+#![allow(non_camel_case_types)]
+#![allow(non_upper_case_globals)]
+use std::{mem::transmute, ffi::{c_void, CStr}, fmt::Debug};
 type khronos_float_t = f32;
 type khronos_ssize_t = usize;
 type khronos_intptr_t = usize;
