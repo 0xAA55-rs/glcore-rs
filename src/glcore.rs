@@ -74,6 +74,150 @@ type PFNGLGETTEXLEVELPARAMETERIVPROC = extern "system" fn(GLenum, GLint, GLenum,
 type PFNGLISENABLEDPROC = extern "system" fn(GLenum) -> GLboolean;
 type PFNGLDEPTHRANGEPROC = extern "system" fn(GLdouble, GLdouble);
 type PFNGLVIEWPORTPROC = extern "system" fn(GLint, GLint, GLsizei, GLsizei);
+extern "system" fn dummy_pfnglcullfaceproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glCullFace() is NULL");
+}
+extern "system" fn dummy_pfnglfrontfaceproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glFrontFace() is NULL");
+}
+extern "system" fn dummy_pfnglhintproc (_: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glHint() is NULL");
+}
+extern "system" fn dummy_pfngllinewidthproc (_: GLfloat) {
+	panic!("OpenGL Function pointer of glLineWidth() is NULL");
+}
+extern "system" fn dummy_pfnglpointsizeproc (_: GLfloat) {
+	panic!("OpenGL Function pointer of glPointSize() is NULL");
+}
+extern "system" fn dummy_pfnglpolygonmodeproc (_: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glPolygonMode() is NULL");
+}
+extern "system" fn dummy_pfnglscissorproc (_: GLint, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glScissor() is NULL");
+}
+extern "system" fn dummy_pfngltexparameterfproc (_: GLenum, _: GLenum, _: GLfloat) {
+	panic!("OpenGL Function pointer of glTexParameterf() is NULL");
+}
+extern "system" fn dummy_pfngltexparameterfvproc (_: GLenum, _: GLenum, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glTexParameterfv() is NULL");
+}
+extern "system" fn dummy_pfngltexparameteriproc (_: GLenum, _: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glTexParameteri() is NULL");
+}
+extern "system" fn dummy_pfngltexparameterivproc (_: GLenum, _: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glTexParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglteximage1dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glTexImage1D() is NULL");
+}
+extern "system" fn dummy_pfnglteximage2dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glTexImage2D() is NULL");
+}
+extern "system" fn dummy_pfngldrawbufferproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glDrawBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglclearproc (_: GLbitfield) {
+	panic!("OpenGL Function pointer of glClear() is NULL");
+}
+extern "system" fn dummy_pfnglclearcolorproc (_: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glClearColor() is NULL");
+}
+extern "system" fn dummy_pfnglclearstencilproc (_: GLint) {
+	panic!("OpenGL Function pointer of glClearStencil() is NULL");
+}
+extern "system" fn dummy_pfnglcleardepthproc (_: GLdouble) {
+	panic!("OpenGL Function pointer of glClearDepth() is NULL");
+}
+extern "system" fn dummy_pfnglstencilmaskproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glStencilMask() is NULL");
+}
+extern "system" fn dummy_pfnglcolormaskproc (_: GLboolean, _: GLboolean, _: GLboolean, _: GLboolean) {
+	panic!("OpenGL Function pointer of glColorMask() is NULL");
+}
+extern "system" fn dummy_pfngldepthmaskproc (_: GLboolean) {
+	panic!("OpenGL Function pointer of glDepthMask() is NULL");
+}
+extern "system" fn dummy_pfngldisableproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glDisable() is NULL");
+}
+extern "system" fn dummy_pfnglenableproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glEnable() is NULL");
+}
+extern "system" fn dummy_pfnglfinishproc () {
+	panic!("OpenGL Function pointer of glFinish() is NULL");
+}
+extern "system" fn dummy_pfnglflushproc () {
+	panic!("OpenGL Function pointer of glFlush() is NULL");
+}
+extern "system" fn dummy_pfnglblendfuncproc (_: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glBlendFunc() is NULL");
+}
+extern "system" fn dummy_pfngllogicopproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glLogicOp() is NULL");
+}
+extern "system" fn dummy_pfnglstencilfuncproc (_: GLenum, _: GLint, _: GLuint) {
+	panic!("OpenGL Function pointer of glStencilFunc() is NULL");
+}
+extern "system" fn dummy_pfnglstencilopproc (_: GLenum, _: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glStencilOp() is NULL");
+}
+extern "system" fn dummy_pfngldepthfuncproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glDepthFunc() is NULL");
+}
+extern "system" fn dummy_pfnglpixelstorefproc (_: GLenum, _: GLfloat) {
+	panic!("OpenGL Function pointer of glPixelStoref() is NULL");
+}
+extern "system" fn dummy_pfnglpixelstoreiproc (_: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glPixelStorei() is NULL");
+}
+extern "system" fn dummy_pfnglreadbufferproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glReadBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglreadpixelsproc (_: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glReadPixels() is NULL");
+}
+extern "system" fn dummy_pfnglgetbooleanvproc (_: GLenum, _: *mut GLboolean) {
+	panic!("OpenGL Function pointer of glGetBooleanv() is NULL");
+}
+extern "system" fn dummy_pfnglgetdoublevproc (_: GLenum, _: *mut GLdouble) {
+	panic!("OpenGL Function pointer of glGetDoublev() is NULL");
+}
+extern "system" fn dummy_pfnglgeterrorproc () -> GLenum {
+	panic!("OpenGL Function pointer of glGetError() is NULL");
+}
+extern "system" fn dummy_pfnglgetfloatvproc (_: GLenum, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetFloatv() is NULL");
+}
+extern "system" fn dummy_pfnglgetintegervproc (_: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetIntegerv() is NULL");
+}
+extern "system" fn dummy_pfnglgetstringproc (_: GLenum) -> *const GLubyte {
+	panic!("OpenGL Function pointer of glGetString() is NULL");
+}
+extern "system" fn dummy_pfnglgetteximageproc (_: GLenum, _: GLint, _: GLenum, _: GLenum, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetTexImage() is NULL");
+}
+extern "system" fn dummy_pfnglgettexparameterfvproc (_: GLenum, _: GLenum, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetTexParameterfv() is NULL");
+}
+extern "system" fn dummy_pfnglgettexparameterivproc (_: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetTexParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglgettexlevelparameterfvproc (_: GLenum, _: GLint, _: GLenum, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetTexLevelParameterfv() is NULL");
+}
+extern "system" fn dummy_pfnglgettexlevelparameterivproc (_: GLenum, _: GLint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetTexLevelParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglisenabledproc (_: GLenum) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsEnabled() is NULL");
+}
+extern "system" fn dummy_pfngldepthrangeproc (_: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glDepthRange() is NULL");
+}
+extern "system" fn dummy_pfnglviewportproc (_: GLint, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glViewport() is NULL");
+}
 const DEPTH_BUFFER_BIT: GLbitfield = 0x00000100;
 const STENCIL_BUFFER_BIT: GLbitfield = 0x00000400;
 const COLOR_BUFFER_BIT: GLbitfield = 0x00004000;
@@ -672,54 +816,54 @@ impl Default for Version10 {
 			vendor: "unknown",
 			renderer: "unknown",
 			version: "unknown",
-			cullface: null(),
-			frontface: null(),
-			hint: null(),
-			linewidth: null(),
-			pointsize: null(),
-			polygonmode: null(),
-			scissor: null(),
-			texparameterf: null(),
-			texparameterfv: null(),
-			texparameteri: null(),
-			texparameteriv: null(),
-			teximage1d: null(),
-			teximage2d: null(),
-			drawbuffer: null(),
-			clear: null(),
-			clearcolor: null(),
-			clearstencil: null(),
-			cleardepth: null(),
-			stencilmask: null(),
-			colormask: null(),
-			depthmask: null(),
-			disable: null(),
-			enable: null(),
-			finish: null(),
-			flush: null(),
-			blendfunc: null(),
-			logicop: null(),
-			stencilfunc: null(),
-			stencilop: null(),
-			depthfunc: null(),
-			pixelstoref: null(),
-			pixelstorei: null(),
-			readbuffer: null(),
-			readpixels: null(),
-			getbooleanv: null(),
-			getdoublev: null(),
-			geterror: null(),
-			getfloatv: null(),
-			getintegerv: null(),
-			getstring: null(),
-			getteximage: null(),
-			gettexparameterfv: null(),
-			gettexparameteriv: null(),
-			gettexlevelparameterfv: null(),
-			gettexlevelparameteriv: null(),
-			isenabled: null(),
-			depthrange: null(),
-			viewport: null(),
+			cullface: dummy_pfnglcullfaceproc,
+			frontface: dummy_pfnglfrontfaceproc,
+			hint: dummy_pfnglhintproc,
+			linewidth: dummy_pfngllinewidthproc,
+			pointsize: dummy_pfnglpointsizeproc,
+			polygonmode: dummy_pfnglpolygonmodeproc,
+			scissor: dummy_pfnglscissorproc,
+			texparameterf: dummy_pfngltexparameterfproc,
+			texparameterfv: dummy_pfngltexparameterfvproc,
+			texparameteri: dummy_pfngltexparameteriproc,
+			texparameteriv: dummy_pfngltexparameterivproc,
+			teximage1d: dummy_pfnglteximage1dproc,
+			teximage2d: dummy_pfnglteximage2dproc,
+			drawbuffer: dummy_pfngldrawbufferproc,
+			clear: dummy_pfnglclearproc,
+			clearcolor: dummy_pfnglclearcolorproc,
+			clearstencil: dummy_pfnglclearstencilproc,
+			cleardepth: dummy_pfnglcleardepthproc,
+			stencilmask: dummy_pfnglstencilmaskproc,
+			colormask: dummy_pfnglcolormaskproc,
+			depthmask: dummy_pfngldepthmaskproc,
+			disable: dummy_pfngldisableproc,
+			enable: dummy_pfnglenableproc,
+			finish: dummy_pfnglfinishproc,
+			flush: dummy_pfnglflushproc,
+			blendfunc: dummy_pfnglblendfuncproc,
+			logicop: dummy_pfngllogicopproc,
+			stencilfunc: dummy_pfnglstencilfuncproc,
+			stencilop: dummy_pfnglstencilopproc,
+			depthfunc: dummy_pfngldepthfuncproc,
+			pixelstoref: dummy_pfnglpixelstorefproc,
+			pixelstorei: dummy_pfnglpixelstoreiproc,
+			readbuffer: dummy_pfnglreadbufferproc,
+			readpixels: dummy_pfnglreadpixelsproc,
+			getbooleanv: dummy_pfnglgetbooleanvproc,
+			getdoublev: dummy_pfnglgetdoublevproc,
+			geterror: dummy_pfnglgeterrorproc,
+			getfloatv: dummy_pfnglgetfloatvproc,
+			getintegerv: dummy_pfnglgetintegervproc,
+			getstring: dummy_pfnglgetstringproc,
+			getteximage: dummy_pfnglgetteximageproc,
+			gettexparameterfv: dummy_pfnglgettexparameterfvproc,
+			gettexparameteriv: dummy_pfnglgettexparameterivproc,
+			gettexlevelparameterfv: dummy_pfnglgettexlevelparameterfvproc,
+			gettexlevelparameteriv: dummy_pfnglgettexlevelparameterivproc,
+			isenabled: dummy_pfnglisenabledproc,
+			depthrange: dummy_pfngldepthrangeproc,
+			viewport: dummy_pfnglviewportproc,
 		}
 	}
 }
@@ -740,6 +884,48 @@ type PFNGLBINDTEXTUREPROC = extern "system" fn(GLenum, GLuint);
 type PFNGLDELETETEXTURESPROC = extern "system" fn(GLsizei, *const GLuint);
 type PFNGLGENTEXTURESPROC = extern "system" fn(GLsizei, *mut GLuint);
 type PFNGLISTEXTUREPROC = extern "system" fn(GLuint) -> GLboolean;
+extern "system" fn dummy_pfngldrawarraysproc (_: GLenum, _: GLint, _: GLsizei) {
+	panic!("OpenGL Function pointer of glDrawArrays() is NULL");
+}
+extern "system" fn dummy_pfngldrawelementsproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glDrawElements() is NULL");
+}
+extern "system" fn dummy_pfnglgetpointervproc (_: GLenum, _: *mut *mut c_void) {
+	panic!("OpenGL Function pointer of glGetPointerv() is NULL");
+}
+extern "system" fn dummy_pfnglpolygonoffsetproc (_: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glPolygonOffset() is NULL");
+}
+extern "system" fn dummy_pfnglcopyteximage1dproc (_: GLenum, _: GLint, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLint) {
+	panic!("OpenGL Function pointer of glCopyTexImage1D() is NULL");
+}
+extern "system" fn dummy_pfnglcopyteximage2dproc (_: GLenum, _: GLint, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLint) {
+	panic!("OpenGL Function pointer of glCopyTexImage2D() is NULL");
+}
+extern "system" fn dummy_pfnglcopytexsubimage1dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei) {
+	panic!("OpenGL Function pointer of glCopyTexSubImage1D() is NULL");
+}
+extern "system" fn dummy_pfnglcopytexsubimage2dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glCopyTexSubImage2D() is NULL");
+}
+extern "system" fn dummy_pfngltexsubimage1dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glTexSubImage1D() is NULL");
+}
+extern "system" fn dummy_pfngltexsubimage2dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glTexSubImage2D() is NULL");
+}
+extern "system" fn dummy_pfnglbindtextureproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glBindTexture() is NULL");
+}
+extern "system" fn dummy_pfngldeletetexturesproc (_: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glDeleteTextures() is NULL");
+}
+extern "system" fn dummy_pfnglgentexturesproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGenTextures() is NULL");
+}
+extern "system" fn dummy_pfnglistextureproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsTexture() is NULL");
+}
 const COLOR_LOGIC_OP: GLenum = 0x0BF2;
 const POLYGON_OFFSET_UNITS: GLenum = 0x2A00;
 const POLYGON_OFFSET_POINT: GLenum = 0x2A01;
@@ -902,20 +1088,20 @@ impl Default for Version11 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			drawarrays: null(),
-			drawelements: null(),
-			getpointerv: null(),
-			polygonoffset: null(),
-			copyteximage1d: null(),
-			copyteximage2d: null(),
-			copytexsubimage1d: null(),
-			copytexsubimage2d: null(),
-			texsubimage1d: null(),
-			texsubimage2d: null(),
-			bindtexture: null(),
-			deletetextures: null(),
-			gentextures: null(),
-			istexture: null(),
+			drawarrays: dummy_pfngldrawarraysproc,
+			drawelements: dummy_pfngldrawelementsproc,
+			getpointerv: dummy_pfnglgetpointervproc,
+			polygonoffset: dummy_pfnglpolygonoffsetproc,
+			copyteximage1d: dummy_pfnglcopyteximage1dproc,
+			copyteximage2d: dummy_pfnglcopyteximage2dproc,
+			copytexsubimage1d: dummy_pfnglcopytexsubimage1dproc,
+			copytexsubimage2d: dummy_pfnglcopytexsubimage2dproc,
+			texsubimage1d: dummy_pfngltexsubimage1dproc,
+			texsubimage2d: dummy_pfngltexsubimage2dproc,
+			bindtexture: dummy_pfnglbindtextureproc,
+			deletetextures: dummy_pfngldeletetexturesproc,
+			gentextures: dummy_pfnglgentexturesproc,
+			istexture: dummy_pfnglistextureproc,
 		}
 	}
 }
@@ -924,6 +1110,18 @@ type PFNGLDRAWRANGEELEMENTSPROC = extern "system" fn(GLenum, GLuint, GLuint, GLs
 type PFNGLTEXIMAGE3DPROC = extern "system" fn(GLenum, GLint, GLint, GLsizei, GLsizei, GLsizei, GLint, GLenum, GLenum, *const c_void);
 type PFNGLTEXSUBIMAGE3DPROC = extern "system" fn(GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, *const c_void);
 type PFNGLCOPYTEXSUBIMAGE3DPROC = extern "system" fn(GLenum, GLint, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei);
+extern "system" fn dummy_pfngldrawrangeelementsproc (_: GLenum, _: GLuint, _: GLuint, _: GLsizei, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glDrawRangeElements() is NULL");
+}
+extern "system" fn dummy_pfnglteximage3dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glTexImage3D() is NULL");
+}
+extern "system" fn dummy_pfngltexsubimage3dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glTexSubImage3D() is NULL");
+}
+extern "system" fn dummy_pfnglcopytexsubimage3dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glCopyTexSubImage3D() is NULL");
+}
 const UNSIGNED_BYTE_3_3_2: GLenum = 0x8032;
 const UNSIGNED_SHORT_4_4_4_4: GLenum = 0x8033;
 const UNSIGNED_SHORT_5_5_5_1: GLenum = 0x8034;
@@ -1026,10 +1224,10 @@ impl Default for Version12 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			drawrangeelements: null(),
-			teximage3d: null(),
-			texsubimage3d: null(),
-			copytexsubimage3d: null(),
+			drawrangeelements: dummy_pfngldrawrangeelementsproc,
+			teximage3d: dummy_pfnglteximage3dproc,
+			texsubimage3d: dummy_pfngltexsubimage3dproc,
+			copytexsubimage3d: dummy_pfnglcopytexsubimage3dproc,
 		}
 	}
 }
@@ -1080,6 +1278,144 @@ type PFNGLLOADTRANSPOSEMATRIXFPROC = extern "system" fn(*const GLfloat);
 type PFNGLLOADTRANSPOSEMATRIXDPROC = extern "system" fn(*const GLdouble);
 type PFNGLMULTTRANSPOSEMATRIXFPROC = extern "system" fn(*const GLfloat);
 type PFNGLMULTTRANSPOSEMATRIXDPROC = extern "system" fn(*const GLdouble);
+extern "system" fn dummy_pfnglactivetextureproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glActiveTexture() is NULL");
+}
+extern "system" fn dummy_pfnglsamplecoverageproc (_: GLfloat, _: GLboolean) {
+	panic!("OpenGL Function pointer of glSampleCoverage() is NULL");
+}
+extern "system" fn dummy_pfnglcompressedteximage3dproc (_: GLenum, _: GLint, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLint, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glCompressedTexImage3D() is NULL");
+}
+extern "system" fn dummy_pfnglcompressedteximage2dproc (_: GLenum, _: GLint, _: GLenum, _: GLsizei, _: GLsizei, _: GLint, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glCompressedTexImage2D() is NULL");
+}
+extern "system" fn dummy_pfnglcompressedteximage1dproc (_: GLenum, _: GLint, _: GLenum, _: GLsizei, _: GLint, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glCompressedTexImage1D() is NULL");
+}
+extern "system" fn dummy_pfnglcompressedtexsubimage3dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glCompressedTexSubImage3D() is NULL");
+}
+extern "system" fn dummy_pfnglcompressedtexsubimage2dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glCompressedTexSubImage2D() is NULL");
+}
+extern "system" fn dummy_pfnglcompressedtexsubimage1dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glCompressedTexSubImage1D() is NULL");
+}
+extern "system" fn dummy_pfnglgetcompressedteximageproc (_: GLenum, _: GLint, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetCompressedTexImage() is NULL");
+}
+extern "system" fn dummy_pfnglclientactivetextureproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glClientActiveTexture() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord1dproc (_: GLenum, _: GLdouble) {
+	panic!("OpenGL Function pointer of glMultiTexCoord1d() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord1dvproc (_: GLenum, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glMultiTexCoord1dv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord1fproc (_: GLenum, _: GLfloat) {
+	panic!("OpenGL Function pointer of glMultiTexCoord1f() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord1fvproc (_: GLenum, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glMultiTexCoord1fv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord1iproc (_: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glMultiTexCoord1i() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord1ivproc (_: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glMultiTexCoord1iv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord1sproc (_: GLenum, _: GLshort) {
+	panic!("OpenGL Function pointer of glMultiTexCoord1s() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord1svproc (_: GLenum, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glMultiTexCoord1sv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord2dproc (_: GLenum, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glMultiTexCoord2d() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord2dvproc (_: GLenum, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glMultiTexCoord2dv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord2fproc (_: GLenum, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glMultiTexCoord2f() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord2fvproc (_: GLenum, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glMultiTexCoord2fv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord2iproc (_: GLenum, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glMultiTexCoord2i() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord2ivproc (_: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glMultiTexCoord2iv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord2sproc (_: GLenum, _: GLshort, _: GLshort) {
+	panic!("OpenGL Function pointer of glMultiTexCoord2s() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord2svproc (_: GLenum, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glMultiTexCoord2sv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord3dproc (_: GLenum, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glMultiTexCoord3d() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord3dvproc (_: GLenum, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glMultiTexCoord3dv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord3fproc (_: GLenum, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glMultiTexCoord3f() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord3fvproc (_: GLenum, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glMultiTexCoord3fv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord3iproc (_: GLenum, _: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glMultiTexCoord3i() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord3ivproc (_: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glMultiTexCoord3iv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord3sproc (_: GLenum, _: GLshort, _: GLshort, _: GLshort) {
+	panic!("OpenGL Function pointer of glMultiTexCoord3s() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord3svproc (_: GLenum, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glMultiTexCoord3sv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord4dproc (_: GLenum, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glMultiTexCoord4d() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord4dvproc (_: GLenum, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glMultiTexCoord4dv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord4fproc (_: GLenum, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glMultiTexCoord4f() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord4fvproc (_: GLenum, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glMultiTexCoord4fv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord4iproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glMultiTexCoord4i() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord4ivproc (_: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glMultiTexCoord4iv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord4sproc (_: GLenum, _: GLshort, _: GLshort, _: GLshort, _: GLshort) {
+	panic!("OpenGL Function pointer of glMultiTexCoord4s() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoord4svproc (_: GLenum, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glMultiTexCoord4sv() is NULL");
+}
+extern "system" fn dummy_pfnglloadtransposematrixfproc (_: *const GLfloat) {
+	panic!("OpenGL Function pointer of glLoadTransposeMatrixf() is NULL");
+}
+extern "system" fn dummy_pfnglloadtransposematrixdproc (_: *const GLdouble) {
+	panic!("OpenGL Function pointer of glLoadTransposeMatrixd() is NULL");
+}
+extern "system" fn dummy_pfnglmulttransposematrixfproc (_: *const GLfloat) {
+	panic!("OpenGL Function pointer of glMultTransposeMatrixf() is NULL");
+}
+extern "system" fn dummy_pfnglmulttransposematrixdproc (_: *const GLdouble) {
+	panic!("OpenGL Function pointer of glMultTransposeMatrixd() is NULL");
+}
 const TEXTURE0: GLenum = 0x84C0;
 const TEXTURE1: GLenum = 0x84C1;
 const TEXTURE2: GLenum = 0x84C2;
@@ -1531,52 +1867,52 @@ impl Default for Version13 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			activetexture: null(),
-			samplecoverage: null(),
-			compressedteximage3d: null(),
-			compressedteximage2d: null(),
-			compressedteximage1d: null(),
-			compressedtexsubimage3d: null(),
-			compressedtexsubimage2d: null(),
-			compressedtexsubimage1d: null(),
-			getcompressedteximage: null(),
-			clientactivetexture: null(),
-			multitexcoord1d: null(),
-			multitexcoord1dv: null(),
-			multitexcoord1f: null(),
-			multitexcoord1fv: null(),
-			multitexcoord1i: null(),
-			multitexcoord1iv: null(),
-			multitexcoord1s: null(),
-			multitexcoord1sv: null(),
-			multitexcoord2d: null(),
-			multitexcoord2dv: null(),
-			multitexcoord2f: null(),
-			multitexcoord2fv: null(),
-			multitexcoord2i: null(),
-			multitexcoord2iv: null(),
-			multitexcoord2s: null(),
-			multitexcoord2sv: null(),
-			multitexcoord3d: null(),
-			multitexcoord3dv: null(),
-			multitexcoord3f: null(),
-			multitexcoord3fv: null(),
-			multitexcoord3i: null(),
-			multitexcoord3iv: null(),
-			multitexcoord3s: null(),
-			multitexcoord3sv: null(),
-			multitexcoord4d: null(),
-			multitexcoord4dv: null(),
-			multitexcoord4f: null(),
-			multitexcoord4fv: null(),
-			multitexcoord4i: null(),
-			multitexcoord4iv: null(),
-			multitexcoord4s: null(),
-			multitexcoord4sv: null(),
-			loadtransposematrixf: null(),
-			loadtransposematrixd: null(),
-			multtransposematrixf: null(),
-			multtransposematrixd: null(),
+			activetexture: dummy_pfnglactivetextureproc,
+			samplecoverage: dummy_pfnglsamplecoverageproc,
+			compressedteximage3d: dummy_pfnglcompressedteximage3dproc,
+			compressedteximage2d: dummy_pfnglcompressedteximage2dproc,
+			compressedteximage1d: dummy_pfnglcompressedteximage1dproc,
+			compressedtexsubimage3d: dummy_pfnglcompressedtexsubimage3dproc,
+			compressedtexsubimage2d: dummy_pfnglcompressedtexsubimage2dproc,
+			compressedtexsubimage1d: dummy_pfnglcompressedtexsubimage1dproc,
+			getcompressedteximage: dummy_pfnglgetcompressedteximageproc,
+			clientactivetexture: dummy_pfnglclientactivetextureproc,
+			multitexcoord1d: dummy_pfnglmultitexcoord1dproc,
+			multitexcoord1dv: dummy_pfnglmultitexcoord1dvproc,
+			multitexcoord1f: dummy_pfnglmultitexcoord1fproc,
+			multitexcoord1fv: dummy_pfnglmultitexcoord1fvproc,
+			multitexcoord1i: dummy_pfnglmultitexcoord1iproc,
+			multitexcoord1iv: dummy_pfnglmultitexcoord1ivproc,
+			multitexcoord1s: dummy_pfnglmultitexcoord1sproc,
+			multitexcoord1sv: dummy_pfnglmultitexcoord1svproc,
+			multitexcoord2d: dummy_pfnglmultitexcoord2dproc,
+			multitexcoord2dv: dummy_pfnglmultitexcoord2dvproc,
+			multitexcoord2f: dummy_pfnglmultitexcoord2fproc,
+			multitexcoord2fv: dummy_pfnglmultitexcoord2fvproc,
+			multitexcoord2i: dummy_pfnglmultitexcoord2iproc,
+			multitexcoord2iv: dummy_pfnglmultitexcoord2ivproc,
+			multitexcoord2s: dummy_pfnglmultitexcoord2sproc,
+			multitexcoord2sv: dummy_pfnglmultitexcoord2svproc,
+			multitexcoord3d: dummy_pfnglmultitexcoord3dproc,
+			multitexcoord3dv: dummy_pfnglmultitexcoord3dvproc,
+			multitexcoord3f: dummy_pfnglmultitexcoord3fproc,
+			multitexcoord3fv: dummy_pfnglmultitexcoord3fvproc,
+			multitexcoord3i: dummy_pfnglmultitexcoord3iproc,
+			multitexcoord3iv: dummy_pfnglmultitexcoord3ivproc,
+			multitexcoord3s: dummy_pfnglmultitexcoord3sproc,
+			multitexcoord3sv: dummy_pfnglmultitexcoord3svproc,
+			multitexcoord4d: dummy_pfnglmultitexcoord4dproc,
+			multitexcoord4dv: dummy_pfnglmultitexcoord4dvproc,
+			multitexcoord4f: dummy_pfnglmultitexcoord4fproc,
+			multitexcoord4fv: dummy_pfnglmultitexcoord4fvproc,
+			multitexcoord4i: dummy_pfnglmultitexcoord4iproc,
+			multitexcoord4iv: dummy_pfnglmultitexcoord4ivproc,
+			multitexcoord4s: dummy_pfnglmultitexcoord4sproc,
+			multitexcoord4sv: dummy_pfnglmultitexcoord4svproc,
+			loadtransposematrixf: dummy_pfnglloadtransposematrixfproc,
+			loadtransposematrixd: dummy_pfnglloadtransposematrixdproc,
+			multtransposematrixf: dummy_pfnglmulttransposematrixfproc,
+			multtransposematrixd: dummy_pfnglmulttransposematrixdproc,
 		}
 	}
 }
@@ -1628,6 +1964,147 @@ type PFNGLWINDOWPOS3SPROC = extern "system" fn(GLshort, GLshort, GLshort);
 type PFNGLWINDOWPOS3SVPROC = extern "system" fn(*const GLshort);
 type PFNGLBLENDCOLORPROC = extern "system" fn(GLfloat, GLfloat, GLfloat, GLfloat);
 type PFNGLBLENDEQUATIONPROC = extern "system" fn(GLenum);
+extern "system" fn dummy_pfnglblendfuncseparateproc (_: GLenum, _: GLenum, _: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glBlendFuncSeparate() is NULL");
+}
+extern "system" fn dummy_pfnglmultidrawarraysproc (_: GLenum, _: *const GLint, _: *const GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glMultiDrawArrays() is NULL");
+}
+extern "system" fn dummy_pfnglmultidrawelementsproc (_: GLenum, _: *const GLsizei, _: GLenum, _: *const *const c_void, _: GLsizei) {
+	panic!("OpenGL Function pointer of glMultiDrawElements() is NULL");
+}
+extern "system" fn dummy_pfnglpointparameterfproc (_: GLenum, _: GLfloat) {
+	panic!("OpenGL Function pointer of glPointParameterf() is NULL");
+}
+extern "system" fn dummy_pfnglpointparameterfvproc (_: GLenum, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glPointParameterfv() is NULL");
+}
+extern "system" fn dummy_pfnglpointparameteriproc (_: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glPointParameteri() is NULL");
+}
+extern "system" fn dummy_pfnglpointparameterivproc (_: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glPointParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglfogcoordfproc (_: GLfloat) {
+	panic!("OpenGL Function pointer of glFogCoordf() is NULL");
+}
+extern "system" fn dummy_pfnglfogcoordfvproc (_: *const GLfloat) {
+	panic!("OpenGL Function pointer of glFogCoordfv() is NULL");
+}
+extern "system" fn dummy_pfnglfogcoorddproc (_: GLdouble) {
+	panic!("OpenGL Function pointer of glFogCoordd() is NULL");
+}
+extern "system" fn dummy_pfnglfogcoorddvproc (_: *const GLdouble) {
+	panic!("OpenGL Function pointer of glFogCoorddv() is NULL");
+}
+extern "system" fn dummy_pfnglfogcoordpointerproc (_: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glFogCoordPointer() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3bproc (_: GLbyte, _: GLbyte, _: GLbyte) {
+	panic!("OpenGL Function pointer of glSecondaryColor3b() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3bvproc (_: *const GLbyte) {
+	panic!("OpenGL Function pointer of glSecondaryColor3bv() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3dproc (_: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glSecondaryColor3d() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3dvproc (_: *const GLdouble) {
+	panic!("OpenGL Function pointer of glSecondaryColor3dv() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3fproc (_: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glSecondaryColor3f() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3fvproc (_: *const GLfloat) {
+	panic!("OpenGL Function pointer of glSecondaryColor3fv() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3iproc (_: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glSecondaryColor3i() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3ivproc (_: *const GLint) {
+	panic!("OpenGL Function pointer of glSecondaryColor3iv() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3sproc (_: GLshort, _: GLshort, _: GLshort) {
+	panic!("OpenGL Function pointer of glSecondaryColor3s() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3svproc (_: *const GLshort) {
+	panic!("OpenGL Function pointer of glSecondaryColor3sv() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3ubproc (_: GLubyte, _: GLubyte, _: GLubyte) {
+	panic!("OpenGL Function pointer of glSecondaryColor3ub() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3ubvproc (_: *const GLubyte) {
+	panic!("OpenGL Function pointer of glSecondaryColor3ubv() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3uiproc (_: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glSecondaryColor3ui() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3uivproc (_: *const GLuint) {
+	panic!("OpenGL Function pointer of glSecondaryColor3uiv() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3usproc (_: GLushort, _: GLushort, _: GLushort) {
+	panic!("OpenGL Function pointer of glSecondaryColor3us() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolor3usvproc (_: *const GLushort) {
+	panic!("OpenGL Function pointer of glSecondaryColor3usv() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolorpointerproc (_: GLint, _: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glSecondaryColorPointer() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos2dproc (_: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glWindowPos2d() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos2dvproc (_: *const GLdouble) {
+	panic!("OpenGL Function pointer of glWindowPos2dv() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos2fproc (_: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glWindowPos2f() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos2fvproc (_: *const GLfloat) {
+	panic!("OpenGL Function pointer of glWindowPos2fv() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos2iproc (_: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glWindowPos2i() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos2ivproc (_: *const GLint) {
+	panic!("OpenGL Function pointer of glWindowPos2iv() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos2sproc (_: GLshort, _: GLshort) {
+	panic!("OpenGL Function pointer of glWindowPos2s() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos2svproc (_: *const GLshort) {
+	panic!("OpenGL Function pointer of glWindowPos2sv() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos3dproc (_: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glWindowPos3d() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos3dvproc (_: *const GLdouble) {
+	panic!("OpenGL Function pointer of glWindowPos3dv() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos3fproc (_: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glWindowPos3f() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos3fvproc (_: *const GLfloat) {
+	panic!("OpenGL Function pointer of glWindowPos3fv() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos3iproc (_: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glWindowPos3i() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos3ivproc (_: *const GLint) {
+	panic!("OpenGL Function pointer of glWindowPos3iv() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos3sproc (_: GLshort, _: GLshort, _: GLshort) {
+	panic!("OpenGL Function pointer of glWindowPos3s() is NULL");
+}
+extern "system" fn dummy_pfnglwindowpos3svproc (_: *const GLshort) {
+	panic!("OpenGL Function pointer of glWindowPos3sv() is NULL");
+}
+extern "system" fn dummy_pfnglblendcolorproc (_: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glBlendColor() is NULL");
+}
+extern "system" fn dummy_pfnglblendequationproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glBlendEquation() is NULL");
+}
 const BLEND_DST_RGB: GLenum = 0x80C8;
 const BLEND_SRC_RGB: GLenum = 0x80C9;
 const BLEND_DST_ALPHA: GLenum = 0x80CA;
@@ -2040,53 +2517,53 @@ impl Default for Version14 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			blendfuncseparate: null(),
-			multidrawarrays: null(),
-			multidrawelements: null(),
-			pointparameterf: null(),
-			pointparameterfv: null(),
-			pointparameteri: null(),
-			pointparameteriv: null(),
-			fogcoordf: null(),
-			fogcoordfv: null(),
-			fogcoordd: null(),
-			fogcoorddv: null(),
-			fogcoordpointer: null(),
-			secondarycolor3b: null(),
-			secondarycolor3bv: null(),
-			secondarycolor3d: null(),
-			secondarycolor3dv: null(),
-			secondarycolor3f: null(),
-			secondarycolor3fv: null(),
-			secondarycolor3i: null(),
-			secondarycolor3iv: null(),
-			secondarycolor3s: null(),
-			secondarycolor3sv: null(),
-			secondarycolor3ub: null(),
-			secondarycolor3ubv: null(),
-			secondarycolor3ui: null(),
-			secondarycolor3uiv: null(),
-			secondarycolor3us: null(),
-			secondarycolor3usv: null(),
-			secondarycolorpointer: null(),
-			windowpos2d: null(),
-			windowpos2dv: null(),
-			windowpos2f: null(),
-			windowpos2fv: null(),
-			windowpos2i: null(),
-			windowpos2iv: null(),
-			windowpos2s: null(),
-			windowpos2sv: null(),
-			windowpos3d: null(),
-			windowpos3dv: null(),
-			windowpos3f: null(),
-			windowpos3fv: null(),
-			windowpos3i: null(),
-			windowpos3iv: null(),
-			windowpos3s: null(),
-			windowpos3sv: null(),
-			blendcolor: null(),
-			blendequation: null(),
+			blendfuncseparate: dummy_pfnglblendfuncseparateproc,
+			multidrawarrays: dummy_pfnglmultidrawarraysproc,
+			multidrawelements: dummy_pfnglmultidrawelementsproc,
+			pointparameterf: dummy_pfnglpointparameterfproc,
+			pointparameterfv: dummy_pfnglpointparameterfvproc,
+			pointparameteri: dummy_pfnglpointparameteriproc,
+			pointparameteriv: dummy_pfnglpointparameterivproc,
+			fogcoordf: dummy_pfnglfogcoordfproc,
+			fogcoordfv: dummy_pfnglfogcoordfvproc,
+			fogcoordd: dummy_pfnglfogcoorddproc,
+			fogcoorddv: dummy_pfnglfogcoorddvproc,
+			fogcoordpointer: dummy_pfnglfogcoordpointerproc,
+			secondarycolor3b: dummy_pfnglsecondarycolor3bproc,
+			secondarycolor3bv: dummy_pfnglsecondarycolor3bvproc,
+			secondarycolor3d: dummy_pfnglsecondarycolor3dproc,
+			secondarycolor3dv: dummy_pfnglsecondarycolor3dvproc,
+			secondarycolor3f: dummy_pfnglsecondarycolor3fproc,
+			secondarycolor3fv: dummy_pfnglsecondarycolor3fvproc,
+			secondarycolor3i: dummy_pfnglsecondarycolor3iproc,
+			secondarycolor3iv: dummy_pfnglsecondarycolor3ivproc,
+			secondarycolor3s: dummy_pfnglsecondarycolor3sproc,
+			secondarycolor3sv: dummy_pfnglsecondarycolor3svproc,
+			secondarycolor3ub: dummy_pfnglsecondarycolor3ubproc,
+			secondarycolor3ubv: dummy_pfnglsecondarycolor3ubvproc,
+			secondarycolor3ui: dummy_pfnglsecondarycolor3uiproc,
+			secondarycolor3uiv: dummy_pfnglsecondarycolor3uivproc,
+			secondarycolor3us: dummy_pfnglsecondarycolor3usproc,
+			secondarycolor3usv: dummy_pfnglsecondarycolor3usvproc,
+			secondarycolorpointer: dummy_pfnglsecondarycolorpointerproc,
+			windowpos2d: dummy_pfnglwindowpos2dproc,
+			windowpos2dv: dummy_pfnglwindowpos2dvproc,
+			windowpos2f: dummy_pfnglwindowpos2fproc,
+			windowpos2fv: dummy_pfnglwindowpos2fvproc,
+			windowpos2i: dummy_pfnglwindowpos2iproc,
+			windowpos2iv: dummy_pfnglwindowpos2ivproc,
+			windowpos2s: dummy_pfnglwindowpos2sproc,
+			windowpos2sv: dummy_pfnglwindowpos2svproc,
+			windowpos3d: dummy_pfnglwindowpos3dproc,
+			windowpos3dv: dummy_pfnglwindowpos3dvproc,
+			windowpos3f: dummy_pfnglwindowpos3fproc,
+			windowpos3fv: dummy_pfnglwindowpos3fvproc,
+			windowpos3i: dummy_pfnglwindowpos3iproc,
+			windowpos3iv: dummy_pfnglwindowpos3ivproc,
+			windowpos3s: dummy_pfnglwindowpos3sproc,
+			windowpos3sv: dummy_pfnglwindowpos3svproc,
+			blendcolor: dummy_pfnglblendcolorproc,
+			blendequation: dummy_pfnglblendequationproc,
 		}
 	}
 }
@@ -2112,6 +2589,63 @@ type PFNGLMAPBUFFERPROC = extern "system" fn(GLenum, GLenum) -> *mut c_void;
 type PFNGLUNMAPBUFFERPROC = extern "system" fn(GLenum) -> GLboolean;
 type PFNGLGETBUFFERPARAMETERIVPROC = extern "system" fn(GLenum, GLenum, *mut GLint);
 type PFNGLGETBUFFERPOINTERVPROC = extern "system" fn(GLenum, GLenum, *mut *mut c_void);
+extern "system" fn dummy_pfnglgenqueriesproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGenQueries() is NULL");
+}
+extern "system" fn dummy_pfngldeletequeriesproc (_: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glDeleteQueries() is NULL");
+}
+extern "system" fn dummy_pfnglisqueryproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsQuery() is NULL");
+}
+extern "system" fn dummy_pfnglbeginqueryproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glBeginQuery() is NULL");
+}
+extern "system" fn dummy_pfnglendqueryproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glEndQuery() is NULL");
+}
+extern "system" fn dummy_pfnglgetqueryivproc (_: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetQueryiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetqueryobjectivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetQueryObjectiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetqueryobjectuivproc (_: GLuint, _: GLenum, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetQueryObjectuiv() is NULL");
+}
+extern "system" fn dummy_pfnglbindbufferproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glBindBuffer() is NULL");
+}
+extern "system" fn dummy_pfngldeletebuffersproc (_: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glDeleteBuffers() is NULL");
+}
+extern "system" fn dummy_pfnglgenbuffersproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGenBuffers() is NULL");
+}
+extern "system" fn dummy_pfnglisbufferproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglbufferdataproc (_: GLenum, _: GLsizeiptr, _: *const c_void, _: GLenum) {
+	panic!("OpenGL Function pointer of glBufferData() is NULL");
+}
+extern "system" fn dummy_pfnglbuffersubdataproc (_: GLenum, _: GLintptr, _: GLsizeiptr, _: *const c_void) {
+	panic!("OpenGL Function pointer of glBufferSubData() is NULL");
+}
+extern "system" fn dummy_pfnglgetbuffersubdataproc (_: GLenum, _: GLintptr, _: GLsizeiptr, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetBufferSubData() is NULL");
+}
+extern "system" fn dummy_pfnglmapbufferproc (_: GLenum, _: GLenum) -> *mut c_void {
+	panic!("OpenGL Function pointer of glMapBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglunmapbufferproc (_: GLenum) -> GLboolean {
+	panic!("OpenGL Function pointer of glUnmapBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglgetbufferparameterivproc (_: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetBufferParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglgetbufferpointervproc (_: GLenum, _: GLenum, _: *mut *mut c_void) {
+	panic!("OpenGL Function pointer of glGetBufferPointerv() is NULL");
+}
 const BUFFER_SIZE: GLenum = 0x8764;
 const BUFFER_USAGE: GLenum = 0x8765;
 const QUERY_COUNTER_BITS: GLenum = 0x8864;
@@ -2328,25 +2862,25 @@ impl Default for Version15 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			genqueries: null(),
-			deletequeries: null(),
-			isquery: null(),
-			beginquery: null(),
-			endquery: null(),
-			getqueryiv: null(),
-			getqueryobjectiv: null(),
-			getqueryobjectuiv: null(),
-			bindbuffer: null(),
-			deletebuffers: null(),
-			genbuffers: null(),
-			isbuffer: null(),
-			bufferdata: null(),
-			buffersubdata: null(),
-			getbuffersubdata: null(),
-			mapbuffer: null(),
-			unmapbuffer: null(),
-			getbufferparameteriv: null(),
-			getbufferpointerv: null(),
+			genqueries: dummy_pfnglgenqueriesproc,
+			deletequeries: dummy_pfngldeletequeriesproc,
+			isquery: dummy_pfnglisqueryproc,
+			beginquery: dummy_pfnglbeginqueryproc,
+			endquery: dummy_pfnglendqueryproc,
+			getqueryiv: dummy_pfnglgetqueryivproc,
+			getqueryobjectiv: dummy_pfnglgetqueryobjectivproc,
+			getqueryobjectuiv: dummy_pfnglgetqueryobjectuivproc,
+			bindbuffer: dummy_pfnglbindbufferproc,
+			deletebuffers: dummy_pfngldeletebuffersproc,
+			genbuffers: dummy_pfnglgenbuffersproc,
+			isbuffer: dummy_pfnglisbufferproc,
+			bufferdata: dummy_pfnglbufferdataproc,
+			buffersubdata: dummy_pfnglbuffersubdataproc,
+			getbuffersubdata: dummy_pfnglgetbuffersubdataproc,
+			mapbuffer: dummy_pfnglmapbufferproc,
+			unmapbuffer: dummy_pfnglunmapbufferproc,
+			getbufferparameteriv: dummy_pfnglgetbufferparameterivproc,
+			getbufferpointerv: dummy_pfnglgetbufferpointervproc,
 		}
 	}
 }
@@ -2445,6 +2979,285 @@ type PFNGLVERTEXATTRIB4UBVPROC = extern "system" fn(GLuint, *const GLubyte);
 type PFNGLVERTEXATTRIB4UIVPROC = extern "system" fn(GLuint, *const GLuint);
 type PFNGLVERTEXATTRIB4USVPROC = extern "system" fn(GLuint, *const GLushort);
 type PFNGLVERTEXATTRIBPOINTERPROC = extern "system" fn(GLuint, GLint, GLenum, GLboolean, GLsizei, *const c_void);
+extern "system" fn dummy_pfnglblendequationseparateproc (_: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glBlendEquationSeparate() is NULL");
+}
+extern "system" fn dummy_pfngldrawbuffersproc (_: GLsizei, _: *const GLenum) {
+	panic!("OpenGL Function pointer of glDrawBuffers() is NULL");
+}
+extern "system" fn dummy_pfnglstencilopseparateproc (_: GLenum, _: GLenum, _: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glStencilOpSeparate() is NULL");
+}
+extern "system" fn dummy_pfnglstencilfuncseparateproc (_: GLenum, _: GLenum, _: GLint, _: GLuint) {
+	panic!("OpenGL Function pointer of glStencilFuncSeparate() is NULL");
+}
+extern "system" fn dummy_pfnglstencilmaskseparateproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glStencilMaskSeparate() is NULL");
+}
+extern "system" fn dummy_pfnglattachshaderproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glAttachShader() is NULL");
+}
+extern "system" fn dummy_pfnglbindattriblocationproc (_: GLuint, _: GLuint, _: *const GLchar) {
+	panic!("OpenGL Function pointer of glBindAttribLocation() is NULL");
+}
+extern "system" fn dummy_pfnglcompileshaderproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glCompileShader() is NULL");
+}
+extern "system" fn dummy_pfnglcreateprogramproc () -> GLuint {
+	panic!("OpenGL Function pointer of glCreateProgram() is NULL");
+}
+extern "system" fn dummy_pfnglcreateshaderproc (_: GLenum) -> GLuint {
+	panic!("OpenGL Function pointer of glCreateShader() is NULL");
+}
+extern "system" fn dummy_pfngldeleteprogramproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glDeleteProgram() is NULL");
+}
+extern "system" fn dummy_pfngldeleteshaderproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glDeleteShader() is NULL");
+}
+extern "system" fn dummy_pfngldetachshaderproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glDetachShader() is NULL");
+}
+extern "system" fn dummy_pfngldisablevertexattribarrayproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glDisableVertexAttribArray() is NULL");
+}
+extern "system" fn dummy_pfnglenablevertexattribarrayproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glEnableVertexAttribArray() is NULL");
+}
+extern "system" fn dummy_pfnglgetactiveattribproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLint, _: *mut GLenum, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetActiveAttrib() is NULL");
+}
+extern "system" fn dummy_pfnglgetactiveuniformproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLint, _: *mut GLenum, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetActiveUniform() is NULL");
+}
+extern "system" fn dummy_pfnglgetattachedshadersproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetAttachedShaders() is NULL");
+}
+extern "system" fn dummy_pfnglgetattriblocationproc (_: GLuint, _: *const GLchar) -> GLint {
+	panic!("OpenGL Function pointer of glGetAttribLocation() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogramivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetProgramiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetprograminfologproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetProgramInfoLog() is NULL");
+}
+extern "system" fn dummy_pfnglgetshaderivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetShaderiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetshaderinfologproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetShaderInfoLog() is NULL");
+}
+extern "system" fn dummy_pfnglgetshadersourceproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetShaderSource() is NULL");
+}
+extern "system" fn dummy_pfnglgetuniformlocationproc (_: GLuint, _: *const GLchar) -> GLint {
+	panic!("OpenGL Function pointer of glGetUniformLocation() is NULL");
+}
+extern "system" fn dummy_pfnglgetuniformfvproc (_: GLuint, _: GLint, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetUniformfv() is NULL");
+}
+extern "system" fn dummy_pfnglgetuniformivproc (_: GLuint, _: GLint, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetUniformiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexattribdvproc (_: GLuint, _: GLenum, _: *mut GLdouble) {
+	panic!("OpenGL Function pointer of glGetVertexAttribdv() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexattribfvproc (_: GLuint, _: GLenum, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetVertexAttribfv() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexattribivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetVertexAttribiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexattribpointervproc (_: GLuint, _: GLenum, _: *mut *mut c_void) {
+	panic!("OpenGL Function pointer of glGetVertexAttribPointerv() is NULL");
+}
+extern "system" fn dummy_pfnglisprogramproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsProgram() is NULL");
+}
+extern "system" fn dummy_pfnglisshaderproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsShader() is NULL");
+}
+extern "system" fn dummy_pfngllinkprogramproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glLinkProgram() is NULL");
+}
+extern "system" fn dummy_pfnglshadersourceproc (_: GLuint, _: GLsizei, _: *const *const GLchar, _: *const GLint) {
+	panic!("OpenGL Function pointer of glShaderSource() is NULL");
+}
+extern "system" fn dummy_pfngluseprogramproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glUseProgram() is NULL");
+}
+extern "system" fn dummy_pfngluniform1fproc (_: GLint, _: GLfloat) {
+	panic!("OpenGL Function pointer of glUniform1f() is NULL");
+}
+extern "system" fn dummy_pfngluniform2fproc (_: GLint, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glUniform2f() is NULL");
+}
+extern "system" fn dummy_pfngluniform3fproc (_: GLint, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glUniform3f() is NULL");
+}
+extern "system" fn dummy_pfngluniform4fproc (_: GLint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glUniform4f() is NULL");
+}
+extern "system" fn dummy_pfngluniform1iproc (_: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glUniform1i() is NULL");
+}
+extern "system" fn dummy_pfngluniform2iproc (_: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glUniform2i() is NULL");
+}
+extern "system" fn dummy_pfngluniform3iproc (_: GLint, _: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glUniform3i() is NULL");
+}
+extern "system" fn dummy_pfngluniform4iproc (_: GLint, _: GLint, _: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glUniform4i() is NULL");
+}
+extern "system" fn dummy_pfngluniform1fvproc (_: GLint, _: GLsizei, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniform1fv() is NULL");
+}
+extern "system" fn dummy_pfngluniform2fvproc (_: GLint, _: GLsizei, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniform2fv() is NULL");
+}
+extern "system" fn dummy_pfngluniform3fvproc (_: GLint, _: GLsizei, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniform3fv() is NULL");
+}
+extern "system" fn dummy_pfngluniform4fvproc (_: GLint, _: GLsizei, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniform4fv() is NULL");
+}
+extern "system" fn dummy_pfngluniform1ivproc (_: GLint, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glUniform1iv() is NULL");
+}
+extern "system" fn dummy_pfngluniform2ivproc (_: GLint, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glUniform2iv() is NULL");
+}
+extern "system" fn dummy_pfngluniform3ivproc (_: GLint, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glUniform3iv() is NULL");
+}
+extern "system" fn dummy_pfngluniform4ivproc (_: GLint, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glUniform4iv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix2fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniformMatrix2fv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix3fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniformMatrix3fv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix4fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniformMatrix4fv() is NULL");
+}
+extern "system" fn dummy_pfnglvalidateprogramproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glValidateProgram() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib1dproc (_: GLuint, _: GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttrib1d() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib1dvproc (_: GLuint, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttrib1dv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib1fproc (_: GLuint, _: GLfloat) {
+	panic!("OpenGL Function pointer of glVertexAttrib1f() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib1fvproc (_: GLuint, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glVertexAttrib1fv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib1sproc (_: GLuint, _: GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttrib1s() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib1svproc (_: GLuint, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttrib1sv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib2dproc (_: GLuint, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttrib2d() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib2dvproc (_: GLuint, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttrib2dv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib2fproc (_: GLuint, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glVertexAttrib2f() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib2fvproc (_: GLuint, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glVertexAttrib2fv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib2sproc (_: GLuint, _: GLshort, _: GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttrib2s() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib2svproc (_: GLuint, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttrib2sv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib3dproc (_: GLuint, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttrib3d() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib3dvproc (_: GLuint, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttrib3dv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib3fproc (_: GLuint, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glVertexAttrib3f() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib3fvproc (_: GLuint, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glVertexAttrib3fv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib3sproc (_: GLuint, _: GLshort, _: GLshort, _: GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttrib3s() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib3svproc (_: GLuint, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttrib3sv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4nbvproc (_: GLuint, _: *const GLbyte) {
+	panic!("OpenGL Function pointer of glVertexAttrib4Nbv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4nivproc (_: GLuint, _: *const GLint) {
+	panic!("OpenGL Function pointer of glVertexAttrib4Niv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4nsvproc (_: GLuint, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttrib4Nsv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4nubproc (_: GLuint, _: GLubyte, _: GLubyte, _: GLubyte, _: GLubyte) {
+	panic!("OpenGL Function pointer of glVertexAttrib4Nub() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4nubvproc (_: GLuint, _: *const GLubyte) {
+	panic!("OpenGL Function pointer of glVertexAttrib4Nubv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4nuivproc (_: GLuint, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttrib4Nuiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4nusvproc (_: GLuint, _: *const GLushort) {
+	panic!("OpenGL Function pointer of glVertexAttrib4Nusv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4bvproc (_: GLuint, _: *const GLbyte) {
+	panic!("OpenGL Function pointer of glVertexAttrib4bv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4dproc (_: GLuint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttrib4d() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4dvproc (_: GLuint, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttrib4dv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4fproc (_: GLuint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glVertexAttrib4f() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4fvproc (_: GLuint, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glVertexAttrib4fv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4ivproc (_: GLuint, _: *const GLint) {
+	panic!("OpenGL Function pointer of glVertexAttrib4iv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4sproc (_: GLuint, _: GLshort, _: GLshort, _: GLshort, _: GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttrib4s() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4svproc (_: GLuint, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttrib4sv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4ubvproc (_: GLuint, _: *const GLubyte) {
+	panic!("OpenGL Function pointer of glVertexAttrib4ubv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4uivproc (_: GLuint, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttrib4uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattrib4usvproc (_: GLuint, _: *const GLushort) {
+	panic!("OpenGL Function pointer of glVertexAttrib4usv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribpointerproc (_: GLuint, _: GLint, _: GLenum, _: GLboolean, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glVertexAttribPointer() is NULL");
+}
 const BLEND_EQUATION_RGB: GLenum = 0x8009;
 const VERTEX_ATTRIB_ARRAY_ENABLED: GLenum = 0x8622;
 const VERTEX_ATTRIB_ARRAY_SIZE: GLenum = 0x8623;
@@ -3220,99 +4033,99 @@ impl Default for Version20 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			blendequationseparate: null(),
-			drawbuffers: null(),
-			stencilopseparate: null(),
-			stencilfuncseparate: null(),
-			stencilmaskseparate: null(),
-			attachshader: null(),
-			bindattriblocation: null(),
-			compileshader: null(),
-			createprogram: null(),
-			createshader: null(),
-			deleteprogram: null(),
-			deleteshader: null(),
-			detachshader: null(),
-			disablevertexattribarray: null(),
-			enablevertexattribarray: null(),
-			getactiveattrib: null(),
-			getactiveuniform: null(),
-			getattachedshaders: null(),
-			getattriblocation: null(),
-			getprogramiv: null(),
-			getprograminfolog: null(),
-			getshaderiv: null(),
-			getshaderinfolog: null(),
-			getshadersource: null(),
-			getuniformlocation: null(),
-			getuniformfv: null(),
-			getuniformiv: null(),
-			getvertexattribdv: null(),
-			getvertexattribfv: null(),
-			getvertexattribiv: null(),
-			getvertexattribpointerv: null(),
-			isprogram: null(),
-			isshader: null(),
-			linkprogram: null(),
-			shadersource: null(),
-			useprogram: null(),
-			uniform1f: null(),
-			uniform2f: null(),
-			uniform3f: null(),
-			uniform4f: null(),
-			uniform1i: null(),
-			uniform2i: null(),
-			uniform3i: null(),
-			uniform4i: null(),
-			uniform1fv: null(),
-			uniform2fv: null(),
-			uniform3fv: null(),
-			uniform4fv: null(),
-			uniform1iv: null(),
-			uniform2iv: null(),
-			uniform3iv: null(),
-			uniform4iv: null(),
-			uniformmatrix2fv: null(),
-			uniformmatrix3fv: null(),
-			uniformmatrix4fv: null(),
-			validateprogram: null(),
-			vertexattrib1d: null(),
-			vertexattrib1dv: null(),
-			vertexattrib1f: null(),
-			vertexattrib1fv: null(),
-			vertexattrib1s: null(),
-			vertexattrib1sv: null(),
-			vertexattrib2d: null(),
-			vertexattrib2dv: null(),
-			vertexattrib2f: null(),
-			vertexattrib2fv: null(),
-			vertexattrib2s: null(),
-			vertexattrib2sv: null(),
-			vertexattrib3d: null(),
-			vertexattrib3dv: null(),
-			vertexattrib3f: null(),
-			vertexattrib3fv: null(),
-			vertexattrib3s: null(),
-			vertexattrib3sv: null(),
-			vertexattrib4nbv: null(),
-			vertexattrib4niv: null(),
-			vertexattrib4nsv: null(),
-			vertexattrib4nub: null(),
-			vertexattrib4nubv: null(),
-			vertexattrib4nuiv: null(),
-			vertexattrib4nusv: null(),
-			vertexattrib4bv: null(),
-			vertexattrib4d: null(),
-			vertexattrib4dv: null(),
-			vertexattrib4f: null(),
-			vertexattrib4fv: null(),
-			vertexattrib4iv: null(),
-			vertexattrib4s: null(),
-			vertexattrib4sv: null(),
-			vertexattrib4ubv: null(),
-			vertexattrib4uiv: null(),
-			vertexattrib4usv: null(),
-			vertexattribpointer: null(),
+			blendequationseparate: dummy_pfnglblendequationseparateproc,
+			drawbuffers: dummy_pfngldrawbuffersproc,
+			stencilopseparate: dummy_pfnglstencilopseparateproc,
+			stencilfuncseparate: dummy_pfnglstencilfuncseparateproc,
+			stencilmaskseparate: dummy_pfnglstencilmaskseparateproc,
+			attachshader: dummy_pfnglattachshaderproc,
+			bindattriblocation: dummy_pfnglbindattriblocationproc,
+			compileshader: dummy_pfnglcompileshaderproc,
+			createprogram: dummy_pfnglcreateprogramproc,
+			createshader: dummy_pfnglcreateshaderproc,
+			deleteprogram: dummy_pfngldeleteprogramproc,
+			deleteshader: dummy_pfngldeleteshaderproc,
+			detachshader: dummy_pfngldetachshaderproc,
+			disablevertexattribarray: dummy_pfngldisablevertexattribarrayproc,
+			enablevertexattribarray: dummy_pfnglenablevertexattribarrayproc,
+			getactiveattrib: dummy_pfnglgetactiveattribproc,
+			getactiveuniform: dummy_pfnglgetactiveuniformproc,
+			getattachedshaders: dummy_pfnglgetattachedshadersproc,
+			getattriblocation: dummy_pfnglgetattriblocationproc,
+			getprogramiv: dummy_pfnglgetprogramivproc,
+			getprograminfolog: dummy_pfnglgetprograminfologproc,
+			getshaderiv: dummy_pfnglgetshaderivproc,
+			getshaderinfolog: dummy_pfnglgetshaderinfologproc,
+			getshadersource: dummy_pfnglgetshadersourceproc,
+			getuniformlocation: dummy_pfnglgetuniformlocationproc,
+			getuniformfv: dummy_pfnglgetuniformfvproc,
+			getuniformiv: dummy_pfnglgetuniformivproc,
+			getvertexattribdv: dummy_pfnglgetvertexattribdvproc,
+			getvertexattribfv: dummy_pfnglgetvertexattribfvproc,
+			getvertexattribiv: dummy_pfnglgetvertexattribivproc,
+			getvertexattribpointerv: dummy_pfnglgetvertexattribpointervproc,
+			isprogram: dummy_pfnglisprogramproc,
+			isshader: dummy_pfnglisshaderproc,
+			linkprogram: dummy_pfngllinkprogramproc,
+			shadersource: dummy_pfnglshadersourceproc,
+			useprogram: dummy_pfngluseprogramproc,
+			uniform1f: dummy_pfngluniform1fproc,
+			uniform2f: dummy_pfngluniform2fproc,
+			uniform3f: dummy_pfngluniform3fproc,
+			uniform4f: dummy_pfngluniform4fproc,
+			uniform1i: dummy_pfngluniform1iproc,
+			uniform2i: dummy_pfngluniform2iproc,
+			uniform3i: dummy_pfngluniform3iproc,
+			uniform4i: dummy_pfngluniform4iproc,
+			uniform1fv: dummy_pfngluniform1fvproc,
+			uniform2fv: dummy_pfngluniform2fvproc,
+			uniform3fv: dummy_pfngluniform3fvproc,
+			uniform4fv: dummy_pfngluniform4fvproc,
+			uniform1iv: dummy_pfngluniform1ivproc,
+			uniform2iv: dummy_pfngluniform2ivproc,
+			uniform3iv: dummy_pfngluniform3ivproc,
+			uniform4iv: dummy_pfngluniform4ivproc,
+			uniformmatrix2fv: dummy_pfngluniformmatrix2fvproc,
+			uniformmatrix3fv: dummy_pfngluniformmatrix3fvproc,
+			uniformmatrix4fv: dummy_pfngluniformmatrix4fvproc,
+			validateprogram: dummy_pfnglvalidateprogramproc,
+			vertexattrib1d: dummy_pfnglvertexattrib1dproc,
+			vertexattrib1dv: dummy_pfnglvertexattrib1dvproc,
+			vertexattrib1f: dummy_pfnglvertexattrib1fproc,
+			vertexattrib1fv: dummy_pfnglvertexattrib1fvproc,
+			vertexattrib1s: dummy_pfnglvertexattrib1sproc,
+			vertexattrib1sv: dummy_pfnglvertexattrib1svproc,
+			vertexattrib2d: dummy_pfnglvertexattrib2dproc,
+			vertexattrib2dv: dummy_pfnglvertexattrib2dvproc,
+			vertexattrib2f: dummy_pfnglvertexattrib2fproc,
+			vertexattrib2fv: dummy_pfnglvertexattrib2fvproc,
+			vertexattrib2s: dummy_pfnglvertexattrib2sproc,
+			vertexattrib2sv: dummy_pfnglvertexattrib2svproc,
+			vertexattrib3d: dummy_pfnglvertexattrib3dproc,
+			vertexattrib3dv: dummy_pfnglvertexattrib3dvproc,
+			vertexattrib3f: dummy_pfnglvertexattrib3fproc,
+			vertexattrib3fv: dummy_pfnglvertexattrib3fvproc,
+			vertexattrib3s: dummy_pfnglvertexattrib3sproc,
+			vertexattrib3sv: dummy_pfnglvertexattrib3svproc,
+			vertexattrib4nbv: dummy_pfnglvertexattrib4nbvproc,
+			vertexattrib4niv: dummy_pfnglvertexattrib4nivproc,
+			vertexattrib4nsv: dummy_pfnglvertexattrib4nsvproc,
+			vertexattrib4nub: dummy_pfnglvertexattrib4nubproc,
+			vertexattrib4nubv: dummy_pfnglvertexattrib4nubvproc,
+			vertexattrib4nuiv: dummy_pfnglvertexattrib4nuivproc,
+			vertexattrib4nusv: dummy_pfnglvertexattrib4nusvproc,
+			vertexattrib4bv: dummy_pfnglvertexattrib4bvproc,
+			vertexattrib4d: dummy_pfnglvertexattrib4dproc,
+			vertexattrib4dv: dummy_pfnglvertexattrib4dvproc,
+			vertexattrib4f: dummy_pfnglvertexattrib4fproc,
+			vertexattrib4fv: dummy_pfnglvertexattrib4fvproc,
+			vertexattrib4iv: dummy_pfnglvertexattrib4ivproc,
+			vertexattrib4s: dummy_pfnglvertexattrib4sproc,
+			vertexattrib4sv: dummy_pfnglvertexattrib4svproc,
+			vertexattrib4ubv: dummy_pfnglvertexattrib4ubvproc,
+			vertexattrib4uiv: dummy_pfnglvertexattrib4uivproc,
+			vertexattrib4usv: dummy_pfnglvertexattrib4usvproc,
+			vertexattribpointer: dummy_pfnglvertexattribpointerproc,
 			shading_language_version: "unknown",
 		}
 	}
@@ -3324,6 +4137,24 @@ type PFNGLUNIFORMMATRIX2X4FVPROC = extern "system" fn(GLint, GLsizei, GLboolean,
 type PFNGLUNIFORMMATRIX4X2FVPROC = extern "system" fn(GLint, GLsizei, GLboolean, *const GLfloat);
 type PFNGLUNIFORMMATRIX3X4FVPROC = extern "system" fn(GLint, GLsizei, GLboolean, *const GLfloat);
 type PFNGLUNIFORMMATRIX4X3FVPROC = extern "system" fn(GLint, GLsizei, GLboolean, *const GLfloat);
+extern "system" fn dummy_pfngluniformmatrix2x3fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniformMatrix2x3fv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix3x2fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniformMatrix3x2fv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix2x4fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniformMatrix2x4fv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix4x2fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniformMatrix4x2fv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix3x4fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniformMatrix3x4fv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix4x3fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glUniformMatrix4x3fv() is NULL");
+}
 const PIXEL_PACK_BUFFER: GLenum = 0x88EB;
 const PIXEL_UNPACK_BUFFER: GLenum = 0x88EC;
 const PIXEL_PACK_BUFFER_BINDING: GLenum = 0x88ED;
@@ -3422,12 +4253,12 @@ impl Default for Version21 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			uniformmatrix2x3fv: null(),
-			uniformmatrix3x2fv: null(),
-			uniformmatrix2x4fv: null(),
-			uniformmatrix4x2fv: null(),
-			uniformmatrix3x4fv: null(),
-			uniformmatrix4x3fv: null(),
+			uniformmatrix2x3fv: dummy_pfngluniformmatrix2x3fvproc,
+			uniformmatrix3x2fv: dummy_pfngluniformmatrix3x2fvproc,
+			uniformmatrix2x4fv: dummy_pfngluniformmatrix2x4fvproc,
+			uniformmatrix4x2fv: dummy_pfngluniformmatrix4x2fvproc,
+			uniformmatrix3x4fv: dummy_pfngluniformmatrix3x4fvproc,
+			uniformmatrix4x3fv: dummy_pfngluniformmatrix4x3fvproc,
 		}
 	}
 }
@@ -3517,6 +4348,258 @@ type PFNGLBINDVERTEXARRAYPROC = extern "system" fn(GLuint);
 type PFNGLDELETEVERTEXARRAYSPROC = extern "system" fn(GLsizei, *const GLuint);
 type PFNGLGENVERTEXARRAYSPROC = extern "system" fn(GLsizei, *mut GLuint);
 type PFNGLISVERTEXARRAYPROC = extern "system" fn(GLuint) -> GLboolean;
+extern "system" fn dummy_pfnglcolormaskiproc (_: GLuint, _: GLboolean, _: GLboolean, _: GLboolean, _: GLboolean) {
+	panic!("OpenGL Function pointer of glColorMaski() is NULL");
+}
+extern "system" fn dummy_pfnglgetbooleani_vproc (_: GLenum, _: GLuint, _: *mut GLboolean) {
+	panic!("OpenGL Function pointer of glGetBooleani_v() is NULL");
+}
+extern "system" fn dummy_pfnglgetintegeri_vproc (_: GLenum, _: GLuint, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetIntegeri_v() is NULL");
+}
+extern "system" fn dummy_pfnglenableiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glEnablei() is NULL");
+}
+extern "system" fn dummy_pfngldisableiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glDisablei() is NULL");
+}
+extern "system" fn dummy_pfnglisenablediproc (_: GLenum, _: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsEnabledi() is NULL");
+}
+extern "system" fn dummy_pfnglbegintransformfeedbackproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glBeginTransformFeedback() is NULL");
+}
+extern "system" fn dummy_pfnglendtransformfeedbackproc () {
+	panic!("OpenGL Function pointer of glEndTransformFeedback() is NULL");
+}
+extern "system" fn dummy_pfnglbindbufferrangeproc (_: GLenum, _: GLuint, _: GLuint, _: GLintptr, _: GLsizeiptr) {
+	panic!("OpenGL Function pointer of glBindBufferRange() is NULL");
+}
+extern "system" fn dummy_pfnglbindbufferbaseproc (_: GLenum, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glBindBufferBase() is NULL");
+}
+extern "system" fn dummy_pfngltransformfeedbackvaryingsproc (_: GLuint, _: GLsizei, _: *const *const GLchar, _: GLenum) {
+	panic!("OpenGL Function pointer of glTransformFeedbackVaryings() is NULL");
+}
+extern "system" fn dummy_pfnglgettransformfeedbackvaryingproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLsizei, _: *mut GLenum, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetTransformFeedbackVarying() is NULL");
+}
+extern "system" fn dummy_pfnglclampcolorproc (_: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glClampColor() is NULL");
+}
+extern "system" fn dummy_pfnglbeginconditionalrenderproc (_: GLuint, _: GLenum) {
+	panic!("OpenGL Function pointer of glBeginConditionalRender() is NULL");
+}
+extern "system" fn dummy_pfnglendconditionalrenderproc () {
+	panic!("OpenGL Function pointer of glEndConditionalRender() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribipointerproc (_: GLuint, _: GLint, _: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glVertexAttribIPointer() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexattribiivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetVertexAttribIiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexattribiuivproc (_: GLuint, _: GLenum, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetVertexAttribIuiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi1iproc (_: GLuint, _: GLint) {
+	panic!("OpenGL Function pointer of glVertexAttribI1i() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi2iproc (_: GLuint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glVertexAttribI2i() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi3iproc (_: GLuint, _: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glVertexAttribI3i() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi4iproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glVertexAttribI4i() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi1uiproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribI1ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi2uiproc (_: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribI2ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi3uiproc (_: GLuint, _: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribI3ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi4uiproc (_: GLuint, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribI4ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi1ivproc (_: GLuint, _: *const GLint) {
+	panic!("OpenGL Function pointer of glVertexAttribI1iv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi2ivproc (_: GLuint, _: *const GLint) {
+	panic!("OpenGL Function pointer of glVertexAttribI2iv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi3ivproc (_: GLuint, _: *const GLint) {
+	panic!("OpenGL Function pointer of glVertexAttribI3iv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi4ivproc (_: GLuint, _: *const GLint) {
+	panic!("OpenGL Function pointer of glVertexAttribI4iv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi1uivproc (_: GLuint, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribI1uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi2uivproc (_: GLuint, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribI2uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi3uivproc (_: GLuint, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribI3uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi4uivproc (_: GLuint, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribI4uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi4bvproc (_: GLuint, _: *const GLbyte) {
+	panic!("OpenGL Function pointer of glVertexAttribI4bv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi4svproc (_: GLuint, _: *const GLshort) {
+	panic!("OpenGL Function pointer of glVertexAttribI4sv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi4ubvproc (_: GLuint, _: *const GLubyte) {
+	panic!("OpenGL Function pointer of glVertexAttribI4ubv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribi4usvproc (_: GLuint, _: *const GLushort) {
+	panic!("OpenGL Function pointer of glVertexAttribI4usv() is NULL");
+}
+extern "system" fn dummy_pfnglgetuniformuivproc (_: GLuint, _: GLint, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetUniformuiv() is NULL");
+}
+extern "system" fn dummy_pfnglbindfragdatalocationproc (_: GLuint, _: GLuint, _: *const GLchar) {
+	panic!("OpenGL Function pointer of glBindFragDataLocation() is NULL");
+}
+extern "system" fn dummy_pfnglgetfragdatalocationproc (_: GLuint, _: *const GLchar) -> GLint {
+	panic!("OpenGL Function pointer of glGetFragDataLocation() is NULL");
+}
+extern "system" fn dummy_pfngluniform1uiproc (_: GLint, _: GLuint) {
+	panic!("OpenGL Function pointer of glUniform1ui() is NULL");
+}
+extern "system" fn dummy_pfngluniform2uiproc (_: GLint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glUniform2ui() is NULL");
+}
+extern "system" fn dummy_pfngluniform3uiproc (_: GLint, _: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glUniform3ui() is NULL");
+}
+extern "system" fn dummy_pfngluniform4uiproc (_: GLint, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glUniform4ui() is NULL");
+}
+extern "system" fn dummy_pfngluniform1uivproc (_: GLint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glUniform1uiv() is NULL");
+}
+extern "system" fn dummy_pfngluniform2uivproc (_: GLint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glUniform2uiv() is NULL");
+}
+extern "system" fn dummy_pfngluniform3uivproc (_: GLint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glUniform3uiv() is NULL");
+}
+extern "system" fn dummy_pfngluniform4uivproc (_: GLint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glUniform4uiv() is NULL");
+}
+extern "system" fn dummy_pfngltexparameteriivproc (_: GLenum, _: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glTexParameterIiv() is NULL");
+}
+extern "system" fn dummy_pfngltexparameteriuivproc (_: GLenum, _: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glTexParameterIuiv() is NULL");
+}
+extern "system" fn dummy_pfnglgettexparameteriivproc (_: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetTexParameterIiv() is NULL");
+}
+extern "system" fn dummy_pfnglgettexparameteriuivproc (_: GLenum, _: GLenum, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetTexParameterIuiv() is NULL");
+}
+extern "system" fn dummy_pfnglclearbufferivproc (_: GLenum, _: GLint, _: *const GLint) {
+	panic!("OpenGL Function pointer of glClearBufferiv() is NULL");
+}
+extern "system" fn dummy_pfnglclearbufferuivproc (_: GLenum, _: GLint, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glClearBufferuiv() is NULL");
+}
+extern "system" fn dummy_pfnglclearbufferfvproc (_: GLenum, _: GLint, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glClearBufferfv() is NULL");
+}
+extern "system" fn dummy_pfnglclearbufferfiproc (_: GLenum, _: GLint, _: GLfloat, _: GLint) {
+	panic!("OpenGL Function pointer of glClearBufferfi() is NULL");
+}
+extern "system" fn dummy_pfnglgetstringiproc (_: GLenum, _: GLuint) -> *const GLubyte {
+	panic!("OpenGL Function pointer of glGetStringi() is NULL");
+}
+extern "system" fn dummy_pfnglisrenderbufferproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsRenderbuffer() is NULL");
+}
+extern "system" fn dummy_pfnglbindrenderbufferproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glBindRenderbuffer() is NULL");
+}
+extern "system" fn dummy_pfngldeleterenderbuffersproc (_: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glDeleteRenderbuffers() is NULL");
+}
+extern "system" fn dummy_pfnglgenrenderbuffersproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGenRenderbuffers() is NULL");
+}
+extern "system" fn dummy_pfnglrenderbufferstorageproc (_: GLenum, _: GLenum, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glRenderbufferStorage() is NULL");
+}
+extern "system" fn dummy_pfnglgetrenderbufferparameterivproc (_: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetRenderbufferParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglisframebufferproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsFramebuffer() is NULL");
+}
+extern "system" fn dummy_pfnglbindframebufferproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glBindFramebuffer() is NULL");
+}
+extern "system" fn dummy_pfngldeleteframebuffersproc (_: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glDeleteFramebuffers() is NULL");
+}
+extern "system" fn dummy_pfnglgenframebuffersproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGenFramebuffers() is NULL");
+}
+extern "system" fn dummy_pfnglcheckframebufferstatusproc (_: GLenum) -> GLenum {
+	panic!("OpenGL Function pointer of glCheckFramebufferStatus() is NULL");
+}
+extern "system" fn dummy_pfnglframebuffertexture1dproc (_: GLenum, _: GLenum, _: GLenum, _: GLuint, _: GLint) {
+	panic!("OpenGL Function pointer of glFramebufferTexture1D() is NULL");
+}
+extern "system" fn dummy_pfnglframebuffertexture2dproc (_: GLenum, _: GLenum, _: GLenum, _: GLuint, _: GLint) {
+	panic!("OpenGL Function pointer of glFramebufferTexture2D() is NULL");
+}
+extern "system" fn dummy_pfnglframebuffertexture3dproc (_: GLenum, _: GLenum, _: GLenum, _: GLuint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glFramebufferTexture3D() is NULL");
+}
+extern "system" fn dummy_pfnglframebufferrenderbufferproc (_: GLenum, _: GLenum, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glFramebufferRenderbuffer() is NULL");
+}
+extern "system" fn dummy_pfnglgetframebufferattachmentparameterivproc (_: GLenum, _: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetFramebufferAttachmentParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglgeneratemipmapproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glGenerateMipmap() is NULL");
+}
+extern "system" fn dummy_pfnglblitframebufferproc (_: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLbitfield, _: GLenum) {
+	panic!("OpenGL Function pointer of glBlitFramebuffer() is NULL");
+}
+extern "system" fn dummy_pfnglrenderbufferstoragemultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glRenderbufferStorageMultisample() is NULL");
+}
+extern "system" fn dummy_pfnglframebuffertexturelayerproc (_: GLenum, _: GLenum, _: GLuint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glFramebufferTextureLayer() is NULL");
+}
+extern "system" fn dummy_pfnglmapbufferrangeproc (_: GLenum, _: GLintptr, _: GLsizeiptr, _: GLbitfield) -> *mut c_void {
+	panic!("OpenGL Function pointer of glMapBufferRange() is NULL");
+}
+extern "system" fn dummy_pfnglflushmappedbufferrangeproc (_: GLenum, _: GLintptr, _: GLsizeiptr) {
+	panic!("OpenGL Function pointer of glFlushMappedBufferRange() is NULL");
+}
+extern "system" fn dummy_pfnglbindvertexarrayproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glBindVertexArray() is NULL");
+}
+extern "system" fn dummy_pfngldeletevertexarraysproc (_: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glDeleteVertexArrays() is NULL");
+}
+extern "system" fn dummy_pfnglgenvertexarraysproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGenVertexArrays() is NULL");
+}
+extern "system" fn dummy_pfnglisvertexarrayproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsVertexArray() is NULL");
+}
 const COMPARE_REF_TO_TEXTURE: GLenum = 0x884E;
 const CLIP_DISTANCE0: GLenum = 0x3000;
 const CLIP_DISTANCE1: GLenum = 0x3001;
@@ -4375,90 +5458,90 @@ impl Default for Version30 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			colormaski: null(),
-			getbooleani_v: null(),
-			getintegeri_v: null(),
-			enablei: null(),
-			disablei: null(),
-			isenabledi: null(),
-			begintransformfeedback: null(),
-			endtransformfeedback: null(),
-			bindbufferrange: null(),
-			bindbufferbase: null(),
-			transformfeedbackvaryings: null(),
-			gettransformfeedbackvarying: null(),
-			clampcolor: null(),
-			beginconditionalrender: null(),
-			endconditionalrender: null(),
-			vertexattribipointer: null(),
-			getvertexattribiiv: null(),
-			getvertexattribiuiv: null(),
-			vertexattribi1i: null(),
-			vertexattribi2i: null(),
-			vertexattribi3i: null(),
-			vertexattribi4i: null(),
-			vertexattribi1ui: null(),
-			vertexattribi2ui: null(),
-			vertexattribi3ui: null(),
-			vertexattribi4ui: null(),
-			vertexattribi1iv: null(),
-			vertexattribi2iv: null(),
-			vertexattribi3iv: null(),
-			vertexattribi4iv: null(),
-			vertexattribi1uiv: null(),
-			vertexattribi2uiv: null(),
-			vertexattribi3uiv: null(),
-			vertexattribi4uiv: null(),
-			vertexattribi4bv: null(),
-			vertexattribi4sv: null(),
-			vertexattribi4ubv: null(),
-			vertexattribi4usv: null(),
-			getuniformuiv: null(),
-			bindfragdatalocation: null(),
-			getfragdatalocation: null(),
-			uniform1ui: null(),
-			uniform2ui: null(),
-			uniform3ui: null(),
-			uniform4ui: null(),
-			uniform1uiv: null(),
-			uniform2uiv: null(),
-			uniform3uiv: null(),
-			uniform4uiv: null(),
-			texparameteriiv: null(),
-			texparameteriuiv: null(),
-			gettexparameteriiv: null(),
-			gettexparameteriuiv: null(),
-			clearbufferiv: null(),
-			clearbufferuiv: null(),
-			clearbufferfv: null(),
-			clearbufferfi: null(),
-			getstringi: null(),
-			isrenderbuffer: null(),
-			bindrenderbuffer: null(),
-			deleterenderbuffers: null(),
-			genrenderbuffers: null(),
-			renderbufferstorage: null(),
-			getrenderbufferparameteriv: null(),
-			isframebuffer: null(),
-			bindframebuffer: null(),
-			deleteframebuffers: null(),
-			genframebuffers: null(),
-			checkframebufferstatus: null(),
-			framebuffertexture1d: null(),
-			framebuffertexture2d: null(),
-			framebuffertexture3d: null(),
-			framebufferrenderbuffer: null(),
-			getframebufferattachmentparameteriv: null(),
-			generatemipmap: null(),
-			blitframebuffer: null(),
-			renderbufferstoragemultisample: null(),
-			framebuffertexturelayer: null(),
-			mapbufferrange: null(),
-			flushmappedbufferrange: null(),
-			bindvertexarray: null(),
-			deletevertexarrays: null(),
-			genvertexarrays: null(),
-			isvertexarray: null(),
+			colormaski: dummy_pfnglcolormaskiproc,
+			getbooleani_v: dummy_pfnglgetbooleani_vproc,
+			getintegeri_v: dummy_pfnglgetintegeri_vproc,
+			enablei: dummy_pfnglenableiproc,
+			disablei: dummy_pfngldisableiproc,
+			isenabledi: dummy_pfnglisenablediproc,
+			begintransformfeedback: dummy_pfnglbegintransformfeedbackproc,
+			endtransformfeedback: dummy_pfnglendtransformfeedbackproc,
+			bindbufferrange: dummy_pfnglbindbufferrangeproc,
+			bindbufferbase: dummy_pfnglbindbufferbaseproc,
+			transformfeedbackvaryings: dummy_pfngltransformfeedbackvaryingsproc,
+			gettransformfeedbackvarying: dummy_pfnglgettransformfeedbackvaryingproc,
+			clampcolor: dummy_pfnglclampcolorproc,
+			beginconditionalrender: dummy_pfnglbeginconditionalrenderproc,
+			endconditionalrender: dummy_pfnglendconditionalrenderproc,
+			vertexattribipointer: dummy_pfnglvertexattribipointerproc,
+			getvertexattribiiv: dummy_pfnglgetvertexattribiivproc,
+			getvertexattribiuiv: dummy_pfnglgetvertexattribiuivproc,
+			vertexattribi1i: dummy_pfnglvertexattribi1iproc,
+			vertexattribi2i: dummy_pfnglvertexattribi2iproc,
+			vertexattribi3i: dummy_pfnglvertexattribi3iproc,
+			vertexattribi4i: dummy_pfnglvertexattribi4iproc,
+			vertexattribi1ui: dummy_pfnglvertexattribi1uiproc,
+			vertexattribi2ui: dummy_pfnglvertexattribi2uiproc,
+			vertexattribi3ui: dummy_pfnglvertexattribi3uiproc,
+			vertexattribi4ui: dummy_pfnglvertexattribi4uiproc,
+			vertexattribi1iv: dummy_pfnglvertexattribi1ivproc,
+			vertexattribi2iv: dummy_pfnglvertexattribi2ivproc,
+			vertexattribi3iv: dummy_pfnglvertexattribi3ivproc,
+			vertexattribi4iv: dummy_pfnglvertexattribi4ivproc,
+			vertexattribi1uiv: dummy_pfnglvertexattribi1uivproc,
+			vertexattribi2uiv: dummy_pfnglvertexattribi2uivproc,
+			vertexattribi3uiv: dummy_pfnglvertexattribi3uivproc,
+			vertexattribi4uiv: dummy_pfnglvertexattribi4uivproc,
+			vertexattribi4bv: dummy_pfnglvertexattribi4bvproc,
+			vertexattribi4sv: dummy_pfnglvertexattribi4svproc,
+			vertexattribi4ubv: dummy_pfnglvertexattribi4ubvproc,
+			vertexattribi4usv: dummy_pfnglvertexattribi4usvproc,
+			getuniformuiv: dummy_pfnglgetuniformuivproc,
+			bindfragdatalocation: dummy_pfnglbindfragdatalocationproc,
+			getfragdatalocation: dummy_pfnglgetfragdatalocationproc,
+			uniform1ui: dummy_pfngluniform1uiproc,
+			uniform2ui: dummy_pfngluniform2uiproc,
+			uniform3ui: dummy_pfngluniform3uiproc,
+			uniform4ui: dummy_pfngluniform4uiproc,
+			uniform1uiv: dummy_pfngluniform1uivproc,
+			uniform2uiv: dummy_pfngluniform2uivproc,
+			uniform3uiv: dummy_pfngluniform3uivproc,
+			uniform4uiv: dummy_pfngluniform4uivproc,
+			texparameteriiv: dummy_pfngltexparameteriivproc,
+			texparameteriuiv: dummy_pfngltexparameteriuivproc,
+			gettexparameteriiv: dummy_pfnglgettexparameteriivproc,
+			gettexparameteriuiv: dummy_pfnglgettexparameteriuivproc,
+			clearbufferiv: dummy_pfnglclearbufferivproc,
+			clearbufferuiv: dummy_pfnglclearbufferuivproc,
+			clearbufferfv: dummy_pfnglclearbufferfvproc,
+			clearbufferfi: dummy_pfnglclearbufferfiproc,
+			getstringi: dummy_pfnglgetstringiproc,
+			isrenderbuffer: dummy_pfnglisrenderbufferproc,
+			bindrenderbuffer: dummy_pfnglbindrenderbufferproc,
+			deleterenderbuffers: dummy_pfngldeleterenderbuffersproc,
+			genrenderbuffers: dummy_pfnglgenrenderbuffersproc,
+			renderbufferstorage: dummy_pfnglrenderbufferstorageproc,
+			getrenderbufferparameteriv: dummy_pfnglgetrenderbufferparameterivproc,
+			isframebuffer: dummy_pfnglisframebufferproc,
+			bindframebuffer: dummy_pfnglbindframebufferproc,
+			deleteframebuffers: dummy_pfngldeleteframebuffersproc,
+			genframebuffers: dummy_pfnglgenframebuffersproc,
+			checkframebufferstatus: dummy_pfnglcheckframebufferstatusproc,
+			framebuffertexture1d: dummy_pfnglframebuffertexture1dproc,
+			framebuffertexture2d: dummy_pfnglframebuffertexture2dproc,
+			framebuffertexture3d: dummy_pfnglframebuffertexture3dproc,
+			framebufferrenderbuffer: dummy_pfnglframebufferrenderbufferproc,
+			getframebufferattachmentparameteriv: dummy_pfnglgetframebufferattachmentparameterivproc,
+			generatemipmap: dummy_pfnglgeneratemipmapproc,
+			blitframebuffer: dummy_pfnglblitframebufferproc,
+			renderbufferstoragemultisample: dummy_pfnglrenderbufferstoragemultisampleproc,
+			framebuffertexturelayer: dummy_pfnglframebuffertexturelayerproc,
+			mapbufferrange: dummy_pfnglmapbufferrangeproc,
+			flushmappedbufferrange: dummy_pfnglflushmappedbufferrangeproc,
+			bindvertexarray: dummy_pfnglbindvertexarrayproc,
+			deletevertexarrays: dummy_pfngldeletevertexarraysproc,
+			genvertexarrays: dummy_pfnglgenvertexarraysproc,
+			isvertexarray: dummy_pfnglisvertexarrayproc,
 		}
 	}
 }
@@ -4475,6 +5558,42 @@ type PFNGLGETUNIFORMBLOCKINDEXPROC = extern "system" fn(GLuint, *const GLchar) -
 type PFNGLGETACTIVEUNIFORMBLOCKIVPROC = extern "system" fn(GLuint, GLuint, GLenum, *mut GLint);
 type PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC = extern "system" fn(GLuint, GLuint, GLsizei, *mut GLsizei, *mut GLchar);
 type PFNGLUNIFORMBLOCKBINDINGPROC = extern "system" fn(GLuint, GLuint, GLuint);
+extern "system" fn dummy_pfngldrawarraysinstancedproc (_: GLenum, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glDrawArraysInstanced() is NULL");
+}
+extern "system" fn dummy_pfngldrawelementsinstancedproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei) {
+	panic!("OpenGL Function pointer of glDrawElementsInstanced() is NULL");
+}
+extern "system" fn dummy_pfngltexbufferproc (_: GLenum, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glTexBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglprimitiverestartindexproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glPrimitiveRestartIndex() is NULL");
+}
+extern "system" fn dummy_pfnglcopybuffersubdataproc (_: GLenum, _: GLenum, _: GLintptr, _: GLintptr, _: GLsizeiptr) {
+	panic!("OpenGL Function pointer of glCopyBufferSubData() is NULL");
+}
+extern "system" fn dummy_pfnglgetuniformindicesproc (_: GLuint, _: GLsizei, _: *const *const GLchar, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetUniformIndices() is NULL");
+}
+extern "system" fn dummy_pfnglgetactiveuniformsivproc (_: GLuint, _: GLsizei, _: *const GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetActiveUniformsiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetactiveuniformnameproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetActiveUniformName() is NULL");
+}
+extern "system" fn dummy_pfnglgetuniformblockindexproc (_: GLuint, _: *const GLchar) -> GLuint {
+	panic!("OpenGL Function pointer of glGetUniformBlockIndex() is NULL");
+}
+extern "system" fn dummy_pfnglgetactiveuniformblockivproc (_: GLuint, _: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetActiveUniformBlockiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetactiveuniformblocknameproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetActiveUniformBlockName() is NULL");
+}
+extern "system" fn dummy_pfngluniformblockbindingproc (_: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glUniformBlockBinding() is NULL");
+}
 const SAMPLER_2D_RECT: GLenum = 0x8B63;
 const SAMPLER_2D_RECT_SHADOW: GLenum = 0x8B64;
 const SAMPLER_BUFFER: GLenum = 0x8DC2;
@@ -4653,18 +5772,18 @@ impl Default for Version31 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			drawarraysinstanced: null(),
-			drawelementsinstanced: null(),
-			texbuffer: null(),
-			primitiverestartindex: null(),
-			copybuffersubdata: null(),
-			getuniformindices: null(),
-			getactiveuniformsiv: null(),
-			getactiveuniformname: null(),
-			getuniformblockindex: null(),
-			getactiveuniformblockiv: null(),
-			getactiveuniformblockname: null(),
-			uniformblockbinding: null(),
+			drawarraysinstanced: dummy_pfngldrawarraysinstancedproc,
+			drawelementsinstanced: dummy_pfngldrawelementsinstancedproc,
+			texbuffer: dummy_pfngltexbufferproc,
+			primitiverestartindex: dummy_pfnglprimitiverestartindexproc,
+			copybuffersubdata: dummy_pfnglcopybuffersubdataproc,
+			getuniformindices: dummy_pfnglgetuniformindicesproc,
+			getactiveuniformsiv: dummy_pfnglgetactiveuniformsivproc,
+			getactiveuniformname: dummy_pfnglgetactiveuniformnameproc,
+			getuniformblockindex: dummy_pfnglgetuniformblockindexproc,
+			getactiveuniformblockiv: dummy_pfnglgetactiveuniformblockivproc,
+			getactiveuniformblockname: dummy_pfnglgetactiveuniformblocknameproc,
+			uniformblockbinding: dummy_pfngluniformblockbindingproc,
 		}
 	}
 }
@@ -4691,6 +5810,63 @@ type PFNGLTEXIMAGE2DMULTISAMPLEPROC = extern "system" fn(GLenum, GLsizei, GLenum
 type PFNGLTEXIMAGE3DMULTISAMPLEPROC = extern "system" fn(GLenum, GLsizei, GLenum, GLsizei, GLsizei, GLsizei, GLboolean);
 type PFNGLGETMULTISAMPLEFVPROC = extern "system" fn(GLenum, GLuint, *mut GLfloat);
 type PFNGLSAMPLEMASKIPROC = extern "system" fn(GLuint, GLbitfield);
+extern "system" fn dummy_pfngldrawelementsbasevertexproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLint) {
+	panic!("OpenGL Function pointer of glDrawElementsBaseVertex() is NULL");
+}
+extern "system" fn dummy_pfngldrawrangeelementsbasevertexproc (_: GLenum, _: GLuint, _: GLuint, _: GLsizei, _: GLenum, _: *const c_void, _: GLint) {
+	panic!("OpenGL Function pointer of glDrawRangeElementsBaseVertex() is NULL");
+}
+extern "system" fn dummy_pfngldrawelementsinstancedbasevertexproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei, _: GLint) {
+	panic!("OpenGL Function pointer of glDrawElementsInstancedBaseVertex() is NULL");
+}
+extern "system" fn dummy_pfnglmultidrawelementsbasevertexproc (_: GLenum, _: *const GLsizei, _: GLenum, _: *const *const c_void, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glMultiDrawElementsBaseVertex() is NULL");
+}
+extern "system" fn dummy_pfnglprovokingvertexproc (_: GLenum) {
+	panic!("OpenGL Function pointer of glProvokingVertex() is NULL");
+}
+extern "system" fn dummy_pfnglfencesyncproc (_: GLenum, _: GLbitfield) -> GLsync {
+	panic!("OpenGL Function pointer of glFenceSync() is NULL");
+}
+extern "system" fn dummy_pfnglissyncproc (_: GLsync) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsSync() is NULL");
+}
+extern "system" fn dummy_pfngldeletesyncproc (_: GLsync) {
+	panic!("OpenGL Function pointer of glDeleteSync() is NULL");
+}
+extern "system" fn dummy_pfnglclientwaitsyncproc (_: GLsync, _: GLbitfield, _: GLuint64) -> GLenum {
+	panic!("OpenGL Function pointer of glClientWaitSync() is NULL");
+}
+extern "system" fn dummy_pfnglwaitsyncproc (_: GLsync, _: GLbitfield, _: GLuint64) {
+	panic!("OpenGL Function pointer of glWaitSync() is NULL");
+}
+extern "system" fn dummy_pfnglgetinteger64vproc (_: GLenum, _: *mut GLint64) {
+	panic!("OpenGL Function pointer of glGetInteger64v() is NULL");
+}
+extern "system" fn dummy_pfnglgetsyncivproc (_: GLsync, _: GLenum, _: GLsizei, _: *mut GLsizei, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetSynciv() is NULL");
+}
+extern "system" fn dummy_pfnglgetinteger64i_vproc (_: GLenum, _: GLuint, _: *mut GLint64) {
+	panic!("OpenGL Function pointer of glGetInteger64i_v() is NULL");
+}
+extern "system" fn dummy_pfnglgetbufferparameteri64vproc (_: GLenum, _: GLenum, _: *mut GLint64) {
+	panic!("OpenGL Function pointer of glGetBufferParameteri64v() is NULL");
+}
+extern "system" fn dummy_pfnglframebuffertextureproc (_: GLenum, _: GLenum, _: GLuint, _: GLint) {
+	panic!("OpenGL Function pointer of glFramebufferTexture() is NULL");
+}
+extern "system" fn dummy_pfnglteximage2dmultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLboolean) {
+	panic!("OpenGL Function pointer of glTexImage2DMultisample() is NULL");
+}
+extern "system" fn dummy_pfnglteximage3dmultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLboolean) {
+	panic!("OpenGL Function pointer of glTexImage3DMultisample() is NULL");
+}
+extern "system" fn dummy_pfnglgetmultisamplefvproc (_: GLenum, _: GLuint, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetMultisamplefv() is NULL");
+}
+extern "system" fn dummy_pfnglsamplemaskiproc (_: GLuint, _: GLbitfield) {
+	panic!("OpenGL Function pointer of glSampleMaski() is NULL");
+}
 const CONTEXT_CORE_PROFILE_BIT: GLbitfield = 0x00000001;
 const CONTEXT_COMPATIBILITY_PROFILE_BIT: GLbitfield = 0x00000002;
 const LINES_ADJACENCY: GLenum = 0x000A;
@@ -4921,25 +6097,25 @@ impl Default for Version32 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			drawelementsbasevertex: null(),
-			drawrangeelementsbasevertex: null(),
-			drawelementsinstancedbasevertex: null(),
-			multidrawelementsbasevertex: null(),
-			provokingvertex: null(),
-			fencesync: null(),
-			issync: null(),
-			deletesync: null(),
-			clientwaitsync: null(),
-			waitsync: null(),
-			getinteger64v: null(),
-			getsynciv: null(),
-			getinteger64i_v: null(),
-			getbufferparameteri64v: null(),
-			framebuffertexture: null(),
-			teximage2dmultisample: null(),
-			teximage3dmultisample: null(),
-			getmultisamplefv: null(),
-			samplemaski: null(),
+			drawelementsbasevertex: dummy_pfngldrawelementsbasevertexproc,
+			drawrangeelementsbasevertex: dummy_pfngldrawrangeelementsbasevertexproc,
+			drawelementsinstancedbasevertex: dummy_pfngldrawelementsinstancedbasevertexproc,
+			multidrawelementsbasevertex: dummy_pfnglmultidrawelementsbasevertexproc,
+			provokingvertex: dummy_pfnglprovokingvertexproc,
+			fencesync: dummy_pfnglfencesyncproc,
+			issync: dummy_pfnglissyncproc,
+			deletesync: dummy_pfngldeletesyncproc,
+			clientwaitsync: dummy_pfnglclientwaitsyncproc,
+			waitsync: dummy_pfnglwaitsyncproc,
+			getinteger64v: dummy_pfnglgetinteger64vproc,
+			getsynciv: dummy_pfnglgetsyncivproc,
+			getinteger64i_v: dummy_pfnglgetinteger64i_vproc,
+			getbufferparameteri64v: dummy_pfnglgetbufferparameteri64vproc,
+			framebuffertexture: dummy_pfnglframebuffertextureproc,
+			teximage2dmultisample: dummy_pfnglteximage2dmultisampleproc,
+			teximage3dmultisample: dummy_pfnglteximage3dmultisampleproc,
+			getmultisamplefv: dummy_pfnglgetmultisamplefvproc,
+			samplemaski: dummy_pfnglsamplemaskiproc,
 		}
 	}
 }
@@ -5002,6 +6178,180 @@ type PFNGLCOLORP4UIPROC = extern "system" fn(GLenum, GLuint);
 type PFNGLCOLORP4UIVPROC = extern "system" fn(GLenum, *const GLuint);
 type PFNGLSECONDARYCOLORP3UIPROC = extern "system" fn(GLenum, GLuint);
 type PFNGLSECONDARYCOLORP3UIVPROC = extern "system" fn(GLenum, *const GLuint);
+extern "system" fn dummy_pfnglbindfragdatalocationindexedproc (_: GLuint, _: GLuint, _: GLuint, _: *const GLchar) {
+	panic!("OpenGL Function pointer of glBindFragDataLocationIndexed() is NULL");
+}
+extern "system" fn dummy_pfnglgetfragdataindexproc (_: GLuint, _: *const GLchar) -> GLint {
+	panic!("OpenGL Function pointer of glGetFragDataIndex() is NULL");
+}
+extern "system" fn dummy_pfnglgensamplersproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGenSamplers() is NULL");
+}
+extern "system" fn dummy_pfngldeletesamplersproc (_: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glDeleteSamplers() is NULL");
+}
+extern "system" fn dummy_pfnglissamplerproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsSampler() is NULL");
+}
+extern "system" fn dummy_pfnglbindsamplerproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glBindSampler() is NULL");
+}
+extern "system" fn dummy_pfnglsamplerparameteriproc (_: GLuint, _: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glSamplerParameteri() is NULL");
+}
+extern "system" fn dummy_pfnglsamplerparameterivproc (_: GLuint, _: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glSamplerParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglsamplerparameterfproc (_: GLuint, _: GLenum, _: GLfloat) {
+	panic!("OpenGL Function pointer of glSamplerParameterf() is NULL");
+}
+extern "system" fn dummy_pfnglsamplerparameterfvproc (_: GLuint, _: GLenum, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glSamplerParameterfv() is NULL");
+}
+extern "system" fn dummy_pfnglsamplerparameteriivproc (_: GLuint, _: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glSamplerParameterIiv() is NULL");
+}
+extern "system" fn dummy_pfnglsamplerparameteriuivproc (_: GLuint, _: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glSamplerParameterIuiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetsamplerparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetSamplerParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglgetsamplerparameteriivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetSamplerParameterIiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetsamplerparameterfvproc (_: GLuint, _: GLenum, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetSamplerParameterfv() is NULL");
+}
+extern "system" fn dummy_pfnglgetsamplerparameteriuivproc (_: GLuint, _: GLenum, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetSamplerParameterIuiv() is NULL");
+}
+extern "system" fn dummy_pfnglquerycounterproc (_: GLuint, _: GLenum) {
+	panic!("OpenGL Function pointer of glQueryCounter() is NULL");
+}
+extern "system" fn dummy_pfnglgetqueryobjecti64vproc (_: GLuint, _: GLenum, _: *mut GLint64) {
+	panic!("OpenGL Function pointer of glGetQueryObjecti64v() is NULL");
+}
+extern "system" fn dummy_pfnglgetqueryobjectui64vproc (_: GLuint, _: GLenum, _: *mut GLuint64) {
+	panic!("OpenGL Function pointer of glGetQueryObjectui64v() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribdivisorproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribDivisor() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribp1uiproc (_: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribP1ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribp1uivproc (_: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribP1uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribp2uiproc (_: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribP2ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribp2uivproc (_: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribP2uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribp3uiproc (_: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribP3ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribp3uivproc (_: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribP3uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribp4uiproc (_: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribP4ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribp4uivproc (_: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribP4uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexp2uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexP2ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexp2uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexP2uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexp3uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexP3ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexp3uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexP3uiv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexp4uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexP4ui() is NULL");
+}
+extern "system" fn dummy_pfnglvertexp4uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glVertexP4uiv() is NULL");
+}
+extern "system" fn dummy_pfngltexcoordp1uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glTexCoordP1ui() is NULL");
+}
+extern "system" fn dummy_pfngltexcoordp1uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glTexCoordP1uiv() is NULL");
+}
+extern "system" fn dummy_pfngltexcoordp2uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glTexCoordP2ui() is NULL");
+}
+extern "system" fn dummy_pfngltexcoordp2uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glTexCoordP2uiv() is NULL");
+}
+extern "system" fn dummy_pfngltexcoordp3uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glTexCoordP3ui() is NULL");
+}
+extern "system" fn dummy_pfngltexcoordp3uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glTexCoordP3uiv() is NULL");
+}
+extern "system" fn dummy_pfngltexcoordp4uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glTexCoordP4ui() is NULL");
+}
+extern "system" fn dummy_pfngltexcoordp4uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glTexCoordP4uiv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoordp1uiproc (_: GLenum, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glMultiTexCoordP1ui() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoordp1uivproc (_: GLenum, _: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glMultiTexCoordP1uiv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoordp2uiproc (_: GLenum, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glMultiTexCoordP2ui() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoordp2uivproc (_: GLenum, _: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glMultiTexCoordP2uiv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoordp3uiproc (_: GLenum, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glMultiTexCoordP3ui() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoordp3uivproc (_: GLenum, _: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glMultiTexCoordP3uiv() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoordp4uiproc (_: GLenum, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glMultiTexCoordP4ui() is NULL");
+}
+extern "system" fn dummy_pfnglmultitexcoordp4uivproc (_: GLenum, _: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glMultiTexCoordP4uiv() is NULL");
+}
+extern "system" fn dummy_pfnglnormalp3uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glNormalP3ui() is NULL");
+}
+extern "system" fn dummy_pfnglnormalp3uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glNormalP3uiv() is NULL");
+}
+extern "system" fn dummy_pfnglcolorp3uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glColorP3ui() is NULL");
+}
+extern "system" fn dummy_pfnglcolorp3uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glColorP3uiv() is NULL");
+}
+extern "system" fn dummy_pfnglcolorp4uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glColorP4ui() is NULL");
+}
+extern "system" fn dummy_pfnglcolorp4uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glColorP4uiv() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolorp3uiproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glSecondaryColorP3ui() is NULL");
+}
+extern "system" fn dummy_pfnglsecondarycolorp3uivproc (_: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glSecondaryColorP3uiv() is NULL");
+}
 const VERTEX_ATTRIB_ARRAY_DIVISOR: GLenum = 0x88FE;
 const SRC1_COLOR: GLenum = 0x88F9;
 const ONE_MINUS_SRC1_COLOR: GLenum = 0x88FA;
@@ -5457,64 +6807,64 @@ impl Default for Version33 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			bindfragdatalocationindexed: null(),
-			getfragdataindex: null(),
-			gensamplers: null(),
-			deletesamplers: null(),
-			issampler: null(),
-			bindsampler: null(),
-			samplerparameteri: null(),
-			samplerparameteriv: null(),
-			samplerparameterf: null(),
-			samplerparameterfv: null(),
-			samplerparameteriiv: null(),
-			samplerparameteriuiv: null(),
-			getsamplerparameteriv: null(),
-			getsamplerparameteriiv: null(),
-			getsamplerparameterfv: null(),
-			getsamplerparameteriuiv: null(),
-			querycounter: null(),
-			getqueryobjecti64v: null(),
-			getqueryobjectui64v: null(),
-			vertexattribdivisor: null(),
-			vertexattribp1ui: null(),
-			vertexattribp1uiv: null(),
-			vertexattribp2ui: null(),
-			vertexattribp2uiv: null(),
-			vertexattribp3ui: null(),
-			vertexattribp3uiv: null(),
-			vertexattribp4ui: null(),
-			vertexattribp4uiv: null(),
-			vertexp2ui: null(),
-			vertexp2uiv: null(),
-			vertexp3ui: null(),
-			vertexp3uiv: null(),
-			vertexp4ui: null(),
-			vertexp4uiv: null(),
-			texcoordp1ui: null(),
-			texcoordp1uiv: null(),
-			texcoordp2ui: null(),
-			texcoordp2uiv: null(),
-			texcoordp3ui: null(),
-			texcoordp3uiv: null(),
-			texcoordp4ui: null(),
-			texcoordp4uiv: null(),
-			multitexcoordp1ui: null(),
-			multitexcoordp1uiv: null(),
-			multitexcoordp2ui: null(),
-			multitexcoordp2uiv: null(),
-			multitexcoordp3ui: null(),
-			multitexcoordp3uiv: null(),
-			multitexcoordp4ui: null(),
-			multitexcoordp4uiv: null(),
-			normalp3ui: null(),
-			normalp3uiv: null(),
-			colorp3ui: null(),
-			colorp3uiv: null(),
-			colorp4ui: null(),
-			colorp4uiv: null(),
-			secondarycolorp3ui: null(),
-			secondarycolorp3uiv: null(),
+			bindfragdatalocationindexed: dummy_pfnglbindfragdatalocationindexedproc,
+			getfragdataindex: dummy_pfnglgetfragdataindexproc,
+			gensamplers: dummy_pfnglgensamplersproc,
+			deletesamplers: dummy_pfngldeletesamplersproc,
+			issampler: dummy_pfnglissamplerproc,
+			bindsampler: dummy_pfnglbindsamplerproc,
+			samplerparameteri: dummy_pfnglsamplerparameteriproc,
+			samplerparameteriv: dummy_pfnglsamplerparameterivproc,
+			samplerparameterf: dummy_pfnglsamplerparameterfproc,
+			samplerparameterfv: dummy_pfnglsamplerparameterfvproc,
+			samplerparameteriiv: dummy_pfnglsamplerparameteriivproc,
+			samplerparameteriuiv: dummy_pfnglsamplerparameteriuivproc,
+			getsamplerparameteriv: dummy_pfnglgetsamplerparameterivproc,
+			getsamplerparameteriiv: dummy_pfnglgetsamplerparameteriivproc,
+			getsamplerparameterfv: dummy_pfnglgetsamplerparameterfvproc,
+			getsamplerparameteriuiv: dummy_pfnglgetsamplerparameteriuivproc,
+			querycounter: dummy_pfnglquerycounterproc,
+			getqueryobjecti64v: dummy_pfnglgetqueryobjecti64vproc,
+			getqueryobjectui64v: dummy_pfnglgetqueryobjectui64vproc,
+			vertexattribdivisor: dummy_pfnglvertexattribdivisorproc,
+			vertexattribp1ui: dummy_pfnglvertexattribp1uiproc,
+			vertexattribp1uiv: dummy_pfnglvertexattribp1uivproc,
+			vertexattribp2ui: dummy_pfnglvertexattribp2uiproc,
+			vertexattribp2uiv: dummy_pfnglvertexattribp2uivproc,
+			vertexattribp3ui: dummy_pfnglvertexattribp3uiproc,
+			vertexattribp3uiv: dummy_pfnglvertexattribp3uivproc,
+			vertexattribp4ui: dummy_pfnglvertexattribp4uiproc,
+			vertexattribp4uiv: dummy_pfnglvertexattribp4uivproc,
+			vertexp2ui: dummy_pfnglvertexp2uiproc,
+			vertexp2uiv: dummy_pfnglvertexp2uivproc,
+			vertexp3ui: dummy_pfnglvertexp3uiproc,
+			vertexp3uiv: dummy_pfnglvertexp3uivproc,
+			vertexp4ui: dummy_pfnglvertexp4uiproc,
+			vertexp4uiv: dummy_pfnglvertexp4uivproc,
+			texcoordp1ui: dummy_pfngltexcoordp1uiproc,
+			texcoordp1uiv: dummy_pfngltexcoordp1uivproc,
+			texcoordp2ui: dummy_pfngltexcoordp2uiproc,
+			texcoordp2uiv: dummy_pfngltexcoordp2uivproc,
+			texcoordp3ui: dummy_pfngltexcoordp3uiproc,
+			texcoordp3uiv: dummy_pfngltexcoordp3uivproc,
+			texcoordp4ui: dummy_pfngltexcoordp4uiproc,
+			texcoordp4uiv: dummy_pfngltexcoordp4uivproc,
+			multitexcoordp1ui: dummy_pfnglmultitexcoordp1uiproc,
+			multitexcoordp1uiv: dummy_pfnglmultitexcoordp1uivproc,
+			multitexcoordp2ui: dummy_pfnglmultitexcoordp2uiproc,
+			multitexcoordp2uiv: dummy_pfnglmultitexcoordp2uivproc,
+			multitexcoordp3ui: dummy_pfnglmultitexcoordp3uiproc,
+			multitexcoordp3uiv: dummy_pfnglmultitexcoordp3uivproc,
+			multitexcoordp4ui: dummy_pfnglmultitexcoordp4uiproc,
+			multitexcoordp4uiv: dummy_pfnglmultitexcoordp4uivproc,
+			normalp3ui: dummy_pfnglnormalp3uiproc,
+			normalp3uiv: dummy_pfnglnormalp3uivproc,
+			colorp3ui: dummy_pfnglcolorp3uiproc,
+			colorp3uiv: dummy_pfnglcolorp3uivproc,
+			colorp4ui: dummy_pfnglcolorp4uiproc,
+			colorp4uiv: dummy_pfnglcolorp4uivproc,
+			secondarycolorp3ui: dummy_pfnglsecondarycolorp3uiproc,
+			secondarycolorp3uiv: dummy_pfnglsecondarycolorp3uivproc,
 		}
 	}
 }
@@ -5565,6 +6915,144 @@ type PFNGLDRAWTRANSFORMFEEDBACKSTREAMPROC = extern "system" fn(GLenum, GLuint, G
 type PFNGLBEGINQUERYINDEXEDPROC = extern "system" fn(GLenum, GLuint, GLuint);
 type PFNGLENDQUERYINDEXEDPROC = extern "system" fn(GLenum, GLuint);
 type PFNGLGETQUERYINDEXEDIVPROC = extern "system" fn(GLenum, GLuint, GLenum, *mut GLint);
+extern "system" fn dummy_pfnglminsampleshadingproc (_: GLfloat) {
+	panic!("OpenGL Function pointer of glMinSampleShading() is NULL");
+}
+extern "system" fn dummy_pfnglblendequationiproc (_: GLuint, _: GLenum) {
+	panic!("OpenGL Function pointer of glBlendEquationi() is NULL");
+}
+extern "system" fn dummy_pfnglblendequationseparateiproc (_: GLuint, _: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glBlendEquationSeparatei() is NULL");
+}
+extern "system" fn dummy_pfnglblendfunciproc (_: GLuint, _: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glBlendFunci() is NULL");
+}
+extern "system" fn dummy_pfnglblendfuncseparateiproc (_: GLuint, _: GLenum, _: GLenum, _: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glBlendFuncSeparatei() is NULL");
+}
+extern "system" fn dummy_pfngldrawarraysindirectproc (_: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glDrawArraysIndirect() is NULL");
+}
+extern "system" fn dummy_pfngldrawelementsindirectproc (_: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glDrawElementsIndirect() is NULL");
+}
+extern "system" fn dummy_pfngluniform1dproc (_: GLint, _: GLdouble) {
+	panic!("OpenGL Function pointer of glUniform1d() is NULL");
+}
+extern "system" fn dummy_pfngluniform2dproc (_: GLint, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glUniform2d() is NULL");
+}
+extern "system" fn dummy_pfngluniform3dproc (_: GLint, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glUniform3d() is NULL");
+}
+extern "system" fn dummy_pfngluniform4dproc (_: GLint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glUniform4d() is NULL");
+}
+extern "system" fn dummy_pfngluniform1dvproc (_: GLint, _: GLsizei, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniform1dv() is NULL");
+}
+extern "system" fn dummy_pfngluniform2dvproc (_: GLint, _: GLsizei, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniform2dv() is NULL");
+}
+extern "system" fn dummy_pfngluniform3dvproc (_: GLint, _: GLsizei, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniform3dv() is NULL");
+}
+extern "system" fn dummy_pfngluniform4dvproc (_: GLint, _: GLsizei, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniform4dv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix2dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniformMatrix2dv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix3dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniformMatrix3dv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix4dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniformMatrix4dv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix2x3dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniformMatrix2x3dv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix2x4dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniformMatrix2x4dv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix3x2dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniformMatrix3x2dv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix3x4dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniformMatrix3x4dv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix4x2dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniformMatrix4x2dv() is NULL");
+}
+extern "system" fn dummy_pfngluniformmatrix4x3dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glUniformMatrix4x3dv() is NULL");
+}
+extern "system" fn dummy_pfnglgetuniformdvproc (_: GLuint, _: GLint, _: *mut GLdouble) {
+	panic!("OpenGL Function pointer of glGetUniformdv() is NULL");
+}
+extern "system" fn dummy_pfnglgetsubroutineuniformlocationproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLint {
+	panic!("OpenGL Function pointer of glGetSubroutineUniformLocation() is NULL");
+}
+extern "system" fn dummy_pfnglgetsubroutineindexproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLuint {
+	panic!("OpenGL Function pointer of glGetSubroutineIndex() is NULL");
+}
+extern "system" fn dummy_pfnglgetactivesubroutineuniformivproc (_: GLuint, _: GLenum, _: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetActiveSubroutineUniformiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetactivesubroutineuniformnameproc (_: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetActiveSubroutineUniformName() is NULL");
+}
+extern "system" fn dummy_pfnglgetactivesubroutinenameproc (_: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetActiveSubroutineName() is NULL");
+}
+extern "system" fn dummy_pfngluniformsubroutinesuivproc (_: GLenum, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glUniformSubroutinesuiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetuniformsubroutineuivproc (_: GLenum, _: GLint, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetUniformSubroutineuiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogramstageivproc (_: GLuint, _: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetProgramStageiv() is NULL");
+}
+extern "system" fn dummy_pfnglpatchparameteriproc (_: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glPatchParameteri() is NULL");
+}
+extern "system" fn dummy_pfnglpatchparameterfvproc (_: GLenum, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glPatchParameterfv() is NULL");
+}
+extern "system" fn dummy_pfnglbindtransformfeedbackproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glBindTransformFeedback() is NULL");
+}
+extern "system" fn dummy_pfngldeletetransformfeedbacksproc (_: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glDeleteTransformFeedbacks() is NULL");
+}
+extern "system" fn dummy_pfnglgentransformfeedbacksproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGenTransformFeedbacks() is NULL");
+}
+extern "system" fn dummy_pfnglistransformfeedbackproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsTransformFeedback() is NULL");
+}
+extern "system" fn dummy_pfnglpausetransformfeedbackproc () {
+	panic!("OpenGL Function pointer of glPauseTransformFeedback() is NULL");
+}
+extern "system" fn dummy_pfnglresumetransformfeedbackproc () {
+	panic!("OpenGL Function pointer of glResumeTransformFeedback() is NULL");
+}
+extern "system" fn dummy_pfngldrawtransformfeedbackproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glDrawTransformFeedback() is NULL");
+}
+extern "system" fn dummy_pfngldrawtransformfeedbackstreamproc (_: GLenum, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glDrawTransformFeedbackStream() is NULL");
+}
+extern "system" fn dummy_pfnglbeginqueryindexedproc (_: GLenum, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glBeginQueryIndexed() is NULL");
+}
+extern "system" fn dummy_pfnglendqueryindexedproc (_: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glEndQueryIndexed() is NULL");
+}
+extern "system" fn dummy_pfnglgetqueryindexedivproc (_: GLenum, _: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetQueryIndexediv() is NULL");
+}
 const SAMPLE_SHADING: GLenum = 0x8C36;
 const MIN_SAMPLE_SHADING_VALUE: GLenum = 0x8C37;
 const MIN_PROGRAM_TEXTURE_GATHER_OFFSET: GLenum = 0x8E5E;
@@ -5997,52 +7485,52 @@ impl Default for Version40 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			minsampleshading: null(),
-			blendequationi: null(),
-			blendequationseparatei: null(),
-			blendfunci: null(),
-			blendfuncseparatei: null(),
-			drawarraysindirect: null(),
-			drawelementsindirect: null(),
-			uniform1d: null(),
-			uniform2d: null(),
-			uniform3d: null(),
-			uniform4d: null(),
-			uniform1dv: null(),
-			uniform2dv: null(),
-			uniform3dv: null(),
-			uniform4dv: null(),
-			uniformmatrix2dv: null(),
-			uniformmatrix3dv: null(),
-			uniformmatrix4dv: null(),
-			uniformmatrix2x3dv: null(),
-			uniformmatrix2x4dv: null(),
-			uniformmatrix3x2dv: null(),
-			uniformmatrix3x4dv: null(),
-			uniformmatrix4x2dv: null(),
-			uniformmatrix4x3dv: null(),
-			getuniformdv: null(),
-			getsubroutineuniformlocation: null(),
-			getsubroutineindex: null(),
-			getactivesubroutineuniformiv: null(),
-			getactivesubroutineuniformname: null(),
-			getactivesubroutinename: null(),
-			uniformsubroutinesuiv: null(),
-			getuniformsubroutineuiv: null(),
-			getprogramstageiv: null(),
-			patchparameteri: null(),
-			patchparameterfv: null(),
-			bindtransformfeedback: null(),
-			deletetransformfeedbacks: null(),
-			gentransformfeedbacks: null(),
-			istransformfeedback: null(),
-			pausetransformfeedback: null(),
-			resumetransformfeedback: null(),
-			drawtransformfeedback: null(),
-			drawtransformfeedbackstream: null(),
-			beginqueryindexed: null(),
-			endqueryindexed: null(),
-			getqueryindexediv: null(),
+			minsampleshading: dummy_pfnglminsampleshadingproc,
+			blendequationi: dummy_pfnglblendequationiproc,
+			blendequationseparatei: dummy_pfnglblendequationseparateiproc,
+			blendfunci: dummy_pfnglblendfunciproc,
+			blendfuncseparatei: dummy_pfnglblendfuncseparateiproc,
+			drawarraysindirect: dummy_pfngldrawarraysindirectproc,
+			drawelementsindirect: dummy_pfngldrawelementsindirectproc,
+			uniform1d: dummy_pfngluniform1dproc,
+			uniform2d: dummy_pfngluniform2dproc,
+			uniform3d: dummy_pfngluniform3dproc,
+			uniform4d: dummy_pfngluniform4dproc,
+			uniform1dv: dummy_pfngluniform1dvproc,
+			uniform2dv: dummy_pfngluniform2dvproc,
+			uniform3dv: dummy_pfngluniform3dvproc,
+			uniform4dv: dummy_pfngluniform4dvproc,
+			uniformmatrix2dv: dummy_pfngluniformmatrix2dvproc,
+			uniformmatrix3dv: dummy_pfngluniformmatrix3dvproc,
+			uniformmatrix4dv: dummy_pfngluniformmatrix4dvproc,
+			uniformmatrix2x3dv: dummy_pfngluniformmatrix2x3dvproc,
+			uniformmatrix2x4dv: dummy_pfngluniformmatrix2x4dvproc,
+			uniformmatrix3x2dv: dummy_pfngluniformmatrix3x2dvproc,
+			uniformmatrix3x4dv: dummy_pfngluniformmatrix3x4dvproc,
+			uniformmatrix4x2dv: dummy_pfngluniformmatrix4x2dvproc,
+			uniformmatrix4x3dv: dummy_pfngluniformmatrix4x3dvproc,
+			getuniformdv: dummy_pfnglgetuniformdvproc,
+			getsubroutineuniformlocation: dummy_pfnglgetsubroutineuniformlocationproc,
+			getsubroutineindex: dummy_pfnglgetsubroutineindexproc,
+			getactivesubroutineuniformiv: dummy_pfnglgetactivesubroutineuniformivproc,
+			getactivesubroutineuniformname: dummy_pfnglgetactivesubroutineuniformnameproc,
+			getactivesubroutinename: dummy_pfnglgetactivesubroutinenameproc,
+			uniformsubroutinesuiv: dummy_pfngluniformsubroutinesuivproc,
+			getuniformsubroutineuiv: dummy_pfnglgetuniformsubroutineuivproc,
+			getprogramstageiv: dummy_pfnglgetprogramstageivproc,
+			patchparameteri: dummy_pfnglpatchparameteriproc,
+			patchparameterfv: dummy_pfnglpatchparameterfvproc,
+			bindtransformfeedback: dummy_pfnglbindtransformfeedbackproc,
+			deletetransformfeedbacks: dummy_pfngldeletetransformfeedbacksproc,
+			gentransformfeedbacks: dummy_pfnglgentransformfeedbacksproc,
+			istransformfeedback: dummy_pfnglistransformfeedbackproc,
+			pausetransformfeedback: dummy_pfnglpausetransformfeedbackproc,
+			resumetransformfeedback: dummy_pfnglresumetransformfeedbackproc,
+			drawtransformfeedback: dummy_pfngldrawtransformfeedbackproc,
+			drawtransformfeedbackstream: dummy_pfngldrawtransformfeedbackstreamproc,
+			beginqueryindexed: dummy_pfnglbeginqueryindexedproc,
+			endqueryindexed: dummy_pfnglendqueryindexedproc,
+			getqueryindexediv: dummy_pfnglgetqueryindexedivproc,
 		}
 	}
 }
@@ -6135,6 +7623,270 @@ type PFNGLDEPTHRANGEARRAYVPROC = extern "system" fn(GLuint, GLsizei, *const GLdo
 type PFNGLDEPTHRANGEINDEXEDPROC = extern "system" fn(GLuint, GLdouble, GLdouble);
 type PFNGLGETFLOATI_VPROC = extern "system" fn(GLenum, GLuint, *mut GLfloat);
 type PFNGLGETDOUBLEI_VPROC = extern "system" fn(GLenum, GLuint, *mut GLdouble);
+extern "system" fn dummy_pfnglreleaseshadercompilerproc () {
+	panic!("OpenGL Function pointer of glReleaseShaderCompiler() is NULL");
+}
+extern "system" fn dummy_pfnglshaderbinaryproc (_: GLsizei, _: *const GLuint, _: GLenum, _: *const c_void, _: GLsizei) {
+	panic!("OpenGL Function pointer of glShaderBinary() is NULL");
+}
+extern "system" fn dummy_pfnglgetshaderprecisionformatproc (_: GLenum, _: GLenum, _: *mut GLint, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetShaderPrecisionFormat() is NULL");
+}
+extern "system" fn dummy_pfngldepthrangefproc (_: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glDepthRangef() is NULL");
+}
+extern "system" fn dummy_pfnglcleardepthfproc (_: GLfloat) {
+	panic!("OpenGL Function pointer of glClearDepthf() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogrambinaryproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLenum, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetProgramBinary() is NULL");
+}
+extern "system" fn dummy_pfnglprogrambinaryproc (_: GLuint, _: GLenum, _: *const c_void, _: GLsizei) {
+	panic!("OpenGL Function pointer of glProgramBinary() is NULL");
+}
+extern "system" fn dummy_pfnglprogramparameteriproc (_: GLuint, _: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glProgramParameteri() is NULL");
+}
+extern "system" fn dummy_pfngluseprogramstagesproc (_: GLuint, _: GLbitfield, _: GLuint) {
+	panic!("OpenGL Function pointer of glUseProgramStages() is NULL");
+}
+extern "system" fn dummy_pfnglactiveshaderprogramproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glActiveShaderProgram() is NULL");
+}
+extern "system" fn dummy_pfnglcreateshaderprogramvproc (_: GLenum, _: GLsizei, _: *const *const GLchar) -> GLuint {
+	panic!("OpenGL Function pointer of glCreateShaderProgramv() is NULL");
+}
+extern "system" fn dummy_pfnglbindprogrampipelineproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glBindProgramPipeline() is NULL");
+}
+extern "system" fn dummy_pfngldeleteprogrampipelinesproc (_: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glDeleteProgramPipelines() is NULL");
+}
+extern "system" fn dummy_pfnglgenprogrampipelinesproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGenProgramPipelines() is NULL");
+}
+extern "system" fn dummy_pfnglisprogrampipelineproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glIsProgramPipeline() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogrampipelineivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetProgramPipelineiv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform1iproc (_: GLuint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glProgramUniform1i() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform1ivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glProgramUniform1iv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform1fproc (_: GLuint, _: GLint, _: GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniform1f() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform1fvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniform1fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform1dproc (_: GLuint, _: GLint, _: GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniform1d() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform1dvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniform1dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform1uiproc (_: GLuint, _: GLint, _: GLuint) {
+	panic!("OpenGL Function pointer of glProgramUniform1ui() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform1uivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glProgramUniform1uiv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform2iproc (_: GLuint, _: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glProgramUniform2i() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform2ivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glProgramUniform2iv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform2fproc (_: GLuint, _: GLint, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniform2f() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform2fvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniform2fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform2dproc (_: GLuint, _: GLint, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniform2d() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform2dvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniform2dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform2uiproc (_: GLuint, _: GLint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glProgramUniform2ui() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform2uivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glProgramUniform2uiv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform3iproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glProgramUniform3i() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform3ivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glProgramUniform3iv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform3fproc (_: GLuint, _: GLint, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniform3f() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform3fvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniform3fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform3dproc (_: GLuint, _: GLint, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniform3d() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform3dvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniform3dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform3uiproc (_: GLuint, _: GLint, _: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glProgramUniform3ui() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform3uivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glProgramUniform3uiv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform4iproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glProgramUniform4i() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform4ivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glProgramUniform4iv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform4fproc (_: GLuint, _: GLint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniform4f() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform4fvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniform4fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform4dproc (_: GLuint, _: GLint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniform4d() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform4dvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniform4dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform4uiproc (_: GLuint, _: GLint, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glProgramUniform4ui() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniform4uivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glProgramUniform4uiv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix2fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix2fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix3fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix3fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix4fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix4fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix2dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix2dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix3dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix3dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix4dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix4dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix2x3fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix2x3fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix3x2fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix3x2fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix2x4fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix2x4fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix4x2fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix4x2fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix3x4fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix3x4fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix4x3fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix4x3fv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix2x3dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix2x3dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix3x2dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix3x2dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix2x4dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix2x4dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix4x2dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix4x2dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix3x4dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix3x4dv() is NULL");
+}
+extern "system" fn dummy_pfnglprogramuniformmatrix4x3dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glProgramUniformMatrix4x3dv() is NULL");
+}
+extern "system" fn dummy_pfnglvalidateprogrampipelineproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glValidateProgramPipeline() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogrampipelineinfologproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetProgramPipelineInfoLog() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribl1dproc (_: GLuint, _: GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttribL1d() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribl2dproc (_: GLuint, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttribL2d() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribl3dproc (_: GLuint, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttribL3d() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribl4dproc (_: GLuint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttribL4d() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribl1dvproc (_: GLuint, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttribL1dv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribl2dvproc (_: GLuint, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttribL2dv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribl3dvproc (_: GLuint, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttribL3dv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribl4dvproc (_: GLuint, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glVertexAttribL4dv() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattriblpointerproc (_: GLuint, _: GLint, _: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glVertexAttribLPointer() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexattribldvproc (_: GLuint, _: GLenum, _: *mut GLdouble) {
+	panic!("OpenGL Function pointer of glGetVertexAttribLdv() is NULL");
+}
+extern "system" fn dummy_pfnglviewportarrayvproc (_: GLuint, _: GLsizei, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glViewportArrayv() is NULL");
+}
+extern "system" fn dummy_pfnglviewportindexedfproc (_: GLuint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glViewportIndexedf() is NULL");
+}
+extern "system" fn dummy_pfnglviewportindexedfvproc (_: GLuint, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glViewportIndexedfv() is NULL");
+}
+extern "system" fn dummy_pfnglscissorarrayvproc (_: GLuint, _: GLsizei, _: *const GLint) {
+	panic!("OpenGL Function pointer of glScissorArrayv() is NULL");
+}
+extern "system" fn dummy_pfnglscissorindexedproc (_: GLuint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glScissorIndexed() is NULL");
+}
+extern "system" fn dummy_pfnglscissorindexedvproc (_: GLuint, _: *const GLint) {
+	panic!("OpenGL Function pointer of glScissorIndexedv() is NULL");
+}
+extern "system" fn dummy_pfngldepthrangearrayvproc (_: GLuint, _: GLsizei, _: *const GLdouble) {
+	panic!("OpenGL Function pointer of glDepthRangeArrayv() is NULL");
+}
+extern "system" fn dummy_pfngldepthrangeindexedproc (_: GLuint, _: GLdouble, _: GLdouble) {
+	panic!("OpenGL Function pointer of glDepthRangeIndexed() is NULL");
+}
+extern "system" fn dummy_pfnglgetfloati_vproc (_: GLenum, _: GLuint, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetFloati_v() is NULL");
+}
+extern "system" fn dummy_pfnglgetdoublei_vproc (_: GLenum, _: GLuint, _: *mut GLdouble) {
+	panic!("OpenGL Function pointer of glGetDoublei_v() is NULL");
+}
 const FIXED: GLenum = 0x140C;
 const IMPLEMENTATION_COLOR_READ_TYPE: GLenum = 0x8B9A;
 const IMPLEMENTATION_COLOR_READ_FORMAT: GLenum = 0x8B9B;
@@ -6819,94 +8571,94 @@ impl Default for Version41 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			releaseshadercompiler: null(),
-			shaderbinary: null(),
-			getshaderprecisionformat: null(),
-			depthrangef: null(),
-			cleardepthf: null(),
-			getprogrambinary: null(),
-			programbinary: null(),
-			programparameteri: null(),
-			useprogramstages: null(),
-			activeshaderprogram: null(),
-			createshaderprogramv: null(),
-			bindprogrampipeline: null(),
-			deleteprogrampipelines: null(),
-			genprogrampipelines: null(),
-			isprogrampipeline: null(),
-			getprogrampipelineiv: null(),
-			programuniform1i: null(),
-			programuniform1iv: null(),
-			programuniform1f: null(),
-			programuniform1fv: null(),
-			programuniform1d: null(),
-			programuniform1dv: null(),
-			programuniform1ui: null(),
-			programuniform1uiv: null(),
-			programuniform2i: null(),
-			programuniform2iv: null(),
-			programuniform2f: null(),
-			programuniform2fv: null(),
-			programuniform2d: null(),
-			programuniform2dv: null(),
-			programuniform2ui: null(),
-			programuniform2uiv: null(),
-			programuniform3i: null(),
-			programuniform3iv: null(),
-			programuniform3f: null(),
-			programuniform3fv: null(),
-			programuniform3d: null(),
-			programuniform3dv: null(),
-			programuniform3ui: null(),
-			programuniform3uiv: null(),
-			programuniform4i: null(),
-			programuniform4iv: null(),
-			programuniform4f: null(),
-			programuniform4fv: null(),
-			programuniform4d: null(),
-			programuniform4dv: null(),
-			programuniform4ui: null(),
-			programuniform4uiv: null(),
-			programuniformmatrix2fv: null(),
-			programuniformmatrix3fv: null(),
-			programuniformmatrix4fv: null(),
-			programuniformmatrix2dv: null(),
-			programuniformmatrix3dv: null(),
-			programuniformmatrix4dv: null(),
-			programuniformmatrix2x3fv: null(),
-			programuniformmatrix3x2fv: null(),
-			programuniformmatrix2x4fv: null(),
-			programuniformmatrix4x2fv: null(),
-			programuniformmatrix3x4fv: null(),
-			programuniformmatrix4x3fv: null(),
-			programuniformmatrix2x3dv: null(),
-			programuniformmatrix3x2dv: null(),
-			programuniformmatrix2x4dv: null(),
-			programuniformmatrix4x2dv: null(),
-			programuniformmatrix3x4dv: null(),
-			programuniformmatrix4x3dv: null(),
-			validateprogrampipeline: null(),
-			getprogrampipelineinfolog: null(),
-			vertexattribl1d: null(),
-			vertexattribl2d: null(),
-			vertexattribl3d: null(),
-			vertexattribl4d: null(),
-			vertexattribl1dv: null(),
-			vertexattribl2dv: null(),
-			vertexattribl3dv: null(),
-			vertexattribl4dv: null(),
-			vertexattriblpointer: null(),
-			getvertexattribldv: null(),
-			viewportarrayv: null(),
-			viewportindexedf: null(),
-			viewportindexedfv: null(),
-			scissorarrayv: null(),
-			scissorindexed: null(),
-			scissorindexedv: null(),
-			depthrangearrayv: null(),
-			depthrangeindexed: null(),
-			getfloati_v: null(),
-			getdoublei_v: null(),
+			releaseshadercompiler: dummy_pfnglreleaseshadercompilerproc,
+			shaderbinary: dummy_pfnglshaderbinaryproc,
+			getshaderprecisionformat: dummy_pfnglgetshaderprecisionformatproc,
+			depthrangef: dummy_pfngldepthrangefproc,
+			cleardepthf: dummy_pfnglcleardepthfproc,
+			getprogrambinary: dummy_pfnglgetprogrambinaryproc,
+			programbinary: dummy_pfnglprogrambinaryproc,
+			programparameteri: dummy_pfnglprogramparameteriproc,
+			useprogramstages: dummy_pfngluseprogramstagesproc,
+			activeshaderprogram: dummy_pfnglactiveshaderprogramproc,
+			createshaderprogramv: dummy_pfnglcreateshaderprogramvproc,
+			bindprogrampipeline: dummy_pfnglbindprogrampipelineproc,
+			deleteprogrampipelines: dummy_pfngldeleteprogrampipelinesproc,
+			genprogrampipelines: dummy_pfnglgenprogrampipelinesproc,
+			isprogrampipeline: dummy_pfnglisprogrampipelineproc,
+			getprogrampipelineiv: dummy_pfnglgetprogrampipelineivproc,
+			programuniform1i: dummy_pfnglprogramuniform1iproc,
+			programuniform1iv: dummy_pfnglprogramuniform1ivproc,
+			programuniform1f: dummy_pfnglprogramuniform1fproc,
+			programuniform1fv: dummy_pfnglprogramuniform1fvproc,
+			programuniform1d: dummy_pfnglprogramuniform1dproc,
+			programuniform1dv: dummy_pfnglprogramuniform1dvproc,
+			programuniform1ui: dummy_pfnglprogramuniform1uiproc,
+			programuniform1uiv: dummy_pfnglprogramuniform1uivproc,
+			programuniform2i: dummy_pfnglprogramuniform2iproc,
+			programuniform2iv: dummy_pfnglprogramuniform2ivproc,
+			programuniform2f: dummy_pfnglprogramuniform2fproc,
+			programuniform2fv: dummy_pfnglprogramuniform2fvproc,
+			programuniform2d: dummy_pfnglprogramuniform2dproc,
+			programuniform2dv: dummy_pfnglprogramuniform2dvproc,
+			programuniform2ui: dummy_pfnglprogramuniform2uiproc,
+			programuniform2uiv: dummy_pfnglprogramuniform2uivproc,
+			programuniform3i: dummy_pfnglprogramuniform3iproc,
+			programuniform3iv: dummy_pfnglprogramuniform3ivproc,
+			programuniform3f: dummy_pfnglprogramuniform3fproc,
+			programuniform3fv: dummy_pfnglprogramuniform3fvproc,
+			programuniform3d: dummy_pfnglprogramuniform3dproc,
+			programuniform3dv: dummy_pfnglprogramuniform3dvproc,
+			programuniform3ui: dummy_pfnglprogramuniform3uiproc,
+			programuniform3uiv: dummy_pfnglprogramuniform3uivproc,
+			programuniform4i: dummy_pfnglprogramuniform4iproc,
+			programuniform4iv: dummy_pfnglprogramuniform4ivproc,
+			programuniform4f: dummy_pfnglprogramuniform4fproc,
+			programuniform4fv: dummy_pfnglprogramuniform4fvproc,
+			programuniform4d: dummy_pfnglprogramuniform4dproc,
+			programuniform4dv: dummy_pfnglprogramuniform4dvproc,
+			programuniform4ui: dummy_pfnglprogramuniform4uiproc,
+			programuniform4uiv: dummy_pfnglprogramuniform4uivproc,
+			programuniformmatrix2fv: dummy_pfnglprogramuniformmatrix2fvproc,
+			programuniformmatrix3fv: dummy_pfnglprogramuniformmatrix3fvproc,
+			programuniformmatrix4fv: dummy_pfnglprogramuniformmatrix4fvproc,
+			programuniformmatrix2dv: dummy_pfnglprogramuniformmatrix2dvproc,
+			programuniformmatrix3dv: dummy_pfnglprogramuniformmatrix3dvproc,
+			programuniformmatrix4dv: dummy_pfnglprogramuniformmatrix4dvproc,
+			programuniformmatrix2x3fv: dummy_pfnglprogramuniformmatrix2x3fvproc,
+			programuniformmatrix3x2fv: dummy_pfnglprogramuniformmatrix3x2fvproc,
+			programuniformmatrix2x4fv: dummy_pfnglprogramuniformmatrix2x4fvproc,
+			programuniformmatrix4x2fv: dummy_pfnglprogramuniformmatrix4x2fvproc,
+			programuniformmatrix3x4fv: dummy_pfnglprogramuniformmatrix3x4fvproc,
+			programuniformmatrix4x3fv: dummy_pfnglprogramuniformmatrix4x3fvproc,
+			programuniformmatrix2x3dv: dummy_pfnglprogramuniformmatrix2x3dvproc,
+			programuniformmatrix3x2dv: dummy_pfnglprogramuniformmatrix3x2dvproc,
+			programuniformmatrix2x4dv: dummy_pfnglprogramuniformmatrix2x4dvproc,
+			programuniformmatrix4x2dv: dummy_pfnglprogramuniformmatrix4x2dvproc,
+			programuniformmatrix3x4dv: dummy_pfnglprogramuniformmatrix3x4dvproc,
+			programuniformmatrix4x3dv: dummy_pfnglprogramuniformmatrix4x3dvproc,
+			validateprogrampipeline: dummy_pfnglvalidateprogrampipelineproc,
+			getprogrampipelineinfolog: dummy_pfnglgetprogrampipelineinfologproc,
+			vertexattribl1d: dummy_pfnglvertexattribl1dproc,
+			vertexattribl2d: dummy_pfnglvertexattribl2dproc,
+			vertexattribl3d: dummy_pfnglvertexattribl3dproc,
+			vertexattribl4d: dummy_pfnglvertexattribl4dproc,
+			vertexattribl1dv: dummy_pfnglvertexattribl1dvproc,
+			vertexattribl2dv: dummy_pfnglvertexattribl2dvproc,
+			vertexattribl3dv: dummy_pfnglvertexattribl3dvproc,
+			vertexattribl4dv: dummy_pfnglvertexattribl4dvproc,
+			vertexattriblpointer: dummy_pfnglvertexattriblpointerproc,
+			getvertexattribldv: dummy_pfnglgetvertexattribldvproc,
+			viewportarrayv: dummy_pfnglviewportarrayvproc,
+			viewportindexedf: dummy_pfnglviewportindexedfproc,
+			viewportindexedfv: dummy_pfnglviewportindexedfvproc,
+			scissorarrayv: dummy_pfnglscissorarrayvproc,
+			scissorindexed: dummy_pfnglscissorindexedproc,
+			scissorindexedv: dummy_pfnglscissorindexedvproc,
+			depthrangearrayv: dummy_pfngldepthrangearrayvproc,
+			depthrangeindexed: dummy_pfngldepthrangeindexedproc,
+			getfloati_v: dummy_pfnglgetfloati_vproc,
+			getdoublei_v: dummy_pfnglgetdoublei_vproc,
 		}
 	}
 }
@@ -6923,6 +8675,42 @@ type PFNGLTEXSTORAGE2DPROC = extern "system" fn(GLenum, GLsizei, GLenum, GLsizei
 type PFNGLTEXSTORAGE3DPROC = extern "system" fn(GLenum, GLsizei, GLenum, GLsizei, GLsizei, GLsizei);
 type PFNGLDRAWTRANSFORMFEEDBACKINSTANCEDPROC = extern "system" fn(GLenum, GLuint, GLsizei);
 type PFNGLDRAWTRANSFORMFEEDBACKSTREAMINSTANCEDPROC = extern "system" fn(GLenum, GLuint, GLuint, GLsizei);
+extern "system" fn dummy_pfngldrawarraysinstancedbaseinstanceproc (_: GLenum, _: GLint, _: GLsizei, _: GLsizei, _: GLuint) {
+	panic!("OpenGL Function pointer of glDrawArraysInstancedBaseInstance() is NULL");
+}
+extern "system" fn dummy_pfngldrawelementsinstancedbaseinstanceproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei, _: GLuint) {
+	panic!("OpenGL Function pointer of glDrawElementsInstancedBaseInstance() is NULL");
+}
+extern "system" fn dummy_pfngldrawelementsinstancedbasevertexbaseinstanceproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei, _: GLint, _: GLuint) {
+	panic!("OpenGL Function pointer of glDrawElementsInstancedBaseVertexBaseInstance() is NULL");
+}
+extern "system" fn dummy_pfnglgetinternalformativproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetInternalformativ() is NULL");
+}
+extern "system" fn dummy_pfnglgetactiveatomiccounterbufferivproc (_: GLuint, _: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetActiveAtomicCounterBufferiv() is NULL");
+}
+extern "system" fn dummy_pfnglbindimagetextureproc (_: GLuint, _: GLuint, _: GLint, _: GLboolean, _: GLint, _: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glBindImageTexture() is NULL");
+}
+extern "system" fn dummy_pfnglmemorybarrierproc (_: GLbitfield) {
+	panic!("OpenGL Function pointer of glMemoryBarrier() is NULL");
+}
+extern "system" fn dummy_pfngltexstorage1dproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei) {
+	panic!("OpenGL Function pointer of glTexStorage1D() is NULL");
+}
+extern "system" fn dummy_pfngltexstorage2dproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glTexStorage2D() is NULL");
+}
+extern "system" fn dummy_pfngltexstorage3dproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glTexStorage3D() is NULL");
+}
+extern "system" fn dummy_pfngldrawtransformfeedbackinstancedproc (_: GLenum, _: GLuint, _: GLsizei) {
+	panic!("OpenGL Function pointer of glDrawTransformFeedbackInstanced() is NULL");
+}
+extern "system" fn dummy_pfngldrawtransformfeedbackstreaminstancedproc (_: GLenum, _: GLuint, _: GLuint, _: GLsizei) {
+	panic!("OpenGL Function pointer of glDrawTransformFeedbackStreamInstanced() is NULL");
+}
 const COPY_READ_BUFFER_BINDING: GLenum = 0x8F36;
 const COPY_WRITE_BUFFER_BINDING: GLenum = 0x8F37;
 const TRANSFORM_FEEDBACK_ACTIVE: GLenum = 0x8E24;
@@ -7152,18 +8940,18 @@ impl Default for Version42 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			drawarraysinstancedbaseinstance: null(),
-			drawelementsinstancedbaseinstance: null(),
-			drawelementsinstancedbasevertexbaseinstance: null(),
-			getinternalformativ: null(),
-			getactiveatomiccounterbufferiv: null(),
-			bindimagetexture: null(),
-			memorybarrier: null(),
-			texstorage1d: null(),
-			texstorage2d: null(),
-			texstorage3d: null(),
-			drawtransformfeedbackinstanced: null(),
-			drawtransformfeedbackstreaminstanced: null(),
+			drawarraysinstancedbaseinstance: dummy_pfngldrawarraysinstancedbaseinstanceproc,
+			drawelementsinstancedbaseinstance: dummy_pfngldrawelementsinstancedbaseinstanceproc,
+			drawelementsinstancedbasevertexbaseinstance: dummy_pfngldrawelementsinstancedbasevertexbaseinstanceproc,
+			getinternalformativ: dummy_pfnglgetinternalformativproc,
+			getactiveatomiccounterbufferiv: dummy_pfnglgetactiveatomiccounterbufferivproc,
+			bindimagetexture: dummy_pfnglbindimagetextureproc,
+			memorybarrier: dummy_pfnglmemorybarrierproc,
+			texstorage1d: dummy_pfngltexstorage1dproc,
+			texstorage2d: dummy_pfngltexstorage2dproc,
+			texstorage3d: dummy_pfngltexstorage3dproc,
+			drawtransformfeedbackinstanced: dummy_pfngldrawtransformfeedbackinstancedproc,
+			drawtransformfeedbackstreaminstanced: dummy_pfngldrawtransformfeedbackstreaminstancedproc,
 		}
 	}
 }
@@ -7211,6 +8999,135 @@ type PFNGLOBJECTLABELPROC = extern "system" fn(GLenum, GLuint, GLsizei, *const G
 type PFNGLGETOBJECTLABELPROC = extern "system" fn(GLenum, GLuint, GLsizei, *mut GLsizei, *mut GLchar);
 type PFNGLOBJECTPTRLABELPROC = extern "system" fn(*const c_void, GLsizei, *const GLchar);
 type PFNGLGETOBJECTPTRLABELPROC = extern "system" fn(*const c_void, GLsizei, *mut GLsizei, *mut GLchar);
+extern "system" fn dummy_pfnglclearbufferdataproc (_: GLenum, _: GLenum, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glClearBufferData() is NULL");
+}
+extern "system" fn dummy_pfnglclearbuffersubdataproc (_: GLenum, _: GLenum, _: GLintptr, _: GLsizeiptr, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glClearBufferSubData() is NULL");
+}
+extern "system" fn dummy_pfngldispatchcomputeproc (_: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glDispatchCompute() is NULL");
+}
+extern "system" fn dummy_pfngldispatchcomputeindirectproc (_: GLintptr) {
+	panic!("OpenGL Function pointer of glDispatchComputeIndirect() is NULL");
+}
+extern "system" fn dummy_pfnglcopyimagesubdataproc (_: GLuint, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLuint, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glCopyImageSubData() is NULL");
+}
+extern "system" fn dummy_pfnglframebufferparameteriproc (_: GLenum, _: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glFramebufferParameteri() is NULL");
+}
+extern "system" fn dummy_pfnglgetframebufferparameterivproc (_: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetFramebufferParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglgetinternalformati64vproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut GLint64) {
+	panic!("OpenGL Function pointer of glGetInternalformati64v() is NULL");
+}
+extern "system" fn dummy_pfnglinvalidatetexsubimageproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glInvalidateTexSubImage() is NULL");
+}
+extern "system" fn dummy_pfnglinvalidateteximageproc (_: GLuint, _: GLint) {
+	panic!("OpenGL Function pointer of glInvalidateTexImage() is NULL");
+}
+extern "system" fn dummy_pfnglinvalidatebuffersubdataproc (_: GLuint, _: GLintptr, _: GLsizeiptr) {
+	panic!("OpenGL Function pointer of glInvalidateBufferSubData() is NULL");
+}
+extern "system" fn dummy_pfnglinvalidatebufferdataproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glInvalidateBufferData() is NULL");
+}
+extern "system" fn dummy_pfnglinvalidateframebufferproc (_: GLenum, _: GLsizei, _: *const GLenum) {
+	panic!("OpenGL Function pointer of glInvalidateFramebuffer() is NULL");
+}
+extern "system" fn dummy_pfnglinvalidatesubframebufferproc (_: GLenum, _: GLsizei, _: *const GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glInvalidateSubFramebuffer() is NULL");
+}
+extern "system" fn dummy_pfnglmultidrawarraysindirectproc (_: GLenum, _: *const c_void, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glMultiDrawArraysIndirect() is NULL");
+}
+extern "system" fn dummy_pfnglmultidrawelementsindirectproc (_: GLenum, _: GLenum, _: *const c_void, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glMultiDrawElementsIndirect() is NULL");
+}
+extern "system" fn dummy_pfnglgetprograminterfaceivproc (_: GLuint, _: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetProgramInterfaceiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogramresourceindexproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLuint {
+	panic!("OpenGL Function pointer of glGetProgramResourceIndex() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogramresourcenameproc (_: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetProgramResourceName() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogramresourceivproc (_: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *const GLenum, _: GLsizei, _: *mut GLsizei, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetProgramResourceiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogramresourcelocationproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLint {
+	panic!("OpenGL Function pointer of glGetProgramResourceLocation() is NULL");
+}
+extern "system" fn dummy_pfnglgetprogramresourcelocationindexproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLint {
+	panic!("OpenGL Function pointer of glGetProgramResourceLocationIndex() is NULL");
+}
+extern "system" fn dummy_pfnglshaderstorageblockbindingproc (_: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glShaderStorageBlockBinding() is NULL");
+}
+extern "system" fn dummy_pfngltexbufferrangeproc (_: GLenum, _: GLenum, _: GLuint, _: GLintptr, _: GLsizeiptr) {
+	panic!("OpenGL Function pointer of glTexBufferRange() is NULL");
+}
+extern "system" fn dummy_pfngltexstorage2dmultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLboolean) {
+	panic!("OpenGL Function pointer of glTexStorage2DMultisample() is NULL");
+}
+extern "system" fn dummy_pfngltexstorage3dmultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLboolean) {
+	panic!("OpenGL Function pointer of glTexStorage3DMultisample() is NULL");
+}
+extern "system" fn dummy_pfngltextureviewproc (_: GLuint, _: GLenum, _: GLuint, _: GLenum, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glTextureView() is NULL");
+}
+extern "system" fn dummy_pfnglbindvertexbufferproc (_: GLuint, _: GLuint, _: GLintptr, _: GLsizei) {
+	panic!("OpenGL Function pointer of glBindVertexBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribformatproc (_: GLuint, _: GLint, _: GLenum, _: GLboolean, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribFormat() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribiformatproc (_: GLuint, _: GLint, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribIFormat() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattriblformatproc (_: GLuint, _: GLint, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribLFormat() is NULL");
+}
+extern "system" fn dummy_pfnglvertexattribbindingproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexAttribBinding() is NULL");
+}
+extern "system" fn dummy_pfnglvertexbindingdivisorproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexBindingDivisor() is NULL");
+}
+extern "system" fn dummy_pfngldebugmessagecontrolproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *const GLuint, _: GLboolean) {
+	panic!("OpenGL Function pointer of glDebugMessageControl() is NULL");
+}
+extern "system" fn dummy_pfngldebugmessageinsertproc (_: GLenum, _: GLenum, _: GLuint, _: GLenum, _: GLsizei, _: *const GLchar) {
+	panic!("OpenGL Function pointer of glDebugMessageInsert() is NULL");
+}
+extern "system" fn dummy_pfngldebugmessagecallbackproc (_: GLDEBUGPROC, _: *const c_void) {
+	panic!("OpenGL Function pointer of glDebugMessageCallback() is NULL");
+}
+extern "system" fn dummy_pfnglgetdebugmessagelogproc (_: GLuint, _: GLsizei, _: *mut GLenum, _: *mut GLenum, _: *mut GLuint, _: *mut GLenum, _: *mut GLsizei, _: *mut GLchar) -> GLuint {
+	panic!("OpenGL Function pointer of glGetDebugMessageLog() is NULL");
+}
+extern "system" fn dummy_pfnglpushdebuggroupproc (_: GLenum, _: GLuint, _: GLsizei, _: *const GLchar) {
+	panic!("OpenGL Function pointer of glPushDebugGroup() is NULL");
+}
+extern "system" fn dummy_pfnglpopdebuggroupproc () {
+	panic!("OpenGL Function pointer of glPopDebugGroup() is NULL");
+}
+extern "system" fn dummy_pfnglobjectlabelproc (_: GLenum, _: GLuint, _: GLsizei, _: *const GLchar) {
+	panic!("OpenGL Function pointer of glObjectLabel() is NULL");
+}
+extern "system" fn dummy_pfnglgetobjectlabelproc (_: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetObjectLabel() is NULL");
+}
+extern "system" fn dummy_pfnglobjectptrlabelproc (_: *const c_void, _: GLsizei, _: *const GLchar) {
+	panic!("OpenGL Function pointer of glObjectPtrLabel() is NULL");
+}
+extern "system" fn dummy_pfnglgetobjectptrlabelproc (_: *const c_void, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
+	panic!("OpenGL Function pointer of glGetObjectPtrLabel() is NULL");
+}
 const NUM_SHADING_LANGUAGE_VERSIONS: GLenum = 0x82E9;
 const VERTEX_ATTRIB_ARRAY_LONG: GLenum = 0x874E;
 const COMPRESSED_RGB8_ETC2: GLenum = 0x9274;
@@ -7804,49 +9721,49 @@ impl Default for Version43 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			clearbufferdata: null(),
-			clearbuffersubdata: null(),
-			dispatchcompute: null(),
-			dispatchcomputeindirect: null(),
-			copyimagesubdata: null(),
-			framebufferparameteri: null(),
-			getframebufferparameteriv: null(),
-			getinternalformati64v: null(),
-			invalidatetexsubimage: null(),
-			invalidateteximage: null(),
-			invalidatebuffersubdata: null(),
-			invalidatebufferdata: null(),
-			invalidateframebuffer: null(),
-			invalidatesubframebuffer: null(),
-			multidrawarraysindirect: null(),
-			multidrawelementsindirect: null(),
-			getprograminterfaceiv: null(),
-			getprogramresourceindex: null(),
-			getprogramresourcename: null(),
-			getprogramresourceiv: null(),
-			getprogramresourcelocation: null(),
-			getprogramresourcelocationindex: null(),
-			shaderstorageblockbinding: null(),
-			texbufferrange: null(),
-			texstorage2dmultisample: null(),
-			texstorage3dmultisample: null(),
-			textureview: null(),
-			bindvertexbuffer: null(),
-			vertexattribformat: null(),
-			vertexattribiformat: null(),
-			vertexattriblformat: null(),
-			vertexattribbinding: null(),
-			vertexbindingdivisor: null(),
-			debugmessagecontrol: null(),
-			debugmessageinsert: null(),
-			debugmessagecallback: null(),
-			getdebugmessagelog: null(),
-			pushdebuggroup: null(),
-			popdebuggroup: null(),
-			objectlabel: null(),
-			getobjectlabel: null(),
-			objectptrlabel: null(),
-			getobjectptrlabel: null(),
+			clearbufferdata: dummy_pfnglclearbufferdataproc,
+			clearbuffersubdata: dummy_pfnglclearbuffersubdataproc,
+			dispatchcompute: dummy_pfngldispatchcomputeproc,
+			dispatchcomputeindirect: dummy_pfngldispatchcomputeindirectproc,
+			copyimagesubdata: dummy_pfnglcopyimagesubdataproc,
+			framebufferparameteri: dummy_pfnglframebufferparameteriproc,
+			getframebufferparameteriv: dummy_pfnglgetframebufferparameterivproc,
+			getinternalformati64v: dummy_pfnglgetinternalformati64vproc,
+			invalidatetexsubimage: dummy_pfnglinvalidatetexsubimageproc,
+			invalidateteximage: dummy_pfnglinvalidateteximageproc,
+			invalidatebuffersubdata: dummy_pfnglinvalidatebuffersubdataproc,
+			invalidatebufferdata: dummy_pfnglinvalidatebufferdataproc,
+			invalidateframebuffer: dummy_pfnglinvalidateframebufferproc,
+			invalidatesubframebuffer: dummy_pfnglinvalidatesubframebufferproc,
+			multidrawarraysindirect: dummy_pfnglmultidrawarraysindirectproc,
+			multidrawelementsindirect: dummy_pfnglmultidrawelementsindirectproc,
+			getprograminterfaceiv: dummy_pfnglgetprograminterfaceivproc,
+			getprogramresourceindex: dummy_pfnglgetprogramresourceindexproc,
+			getprogramresourcename: dummy_pfnglgetprogramresourcenameproc,
+			getprogramresourceiv: dummy_pfnglgetprogramresourceivproc,
+			getprogramresourcelocation: dummy_pfnglgetprogramresourcelocationproc,
+			getprogramresourcelocationindex: dummy_pfnglgetprogramresourcelocationindexproc,
+			shaderstorageblockbinding: dummy_pfnglshaderstorageblockbindingproc,
+			texbufferrange: dummy_pfngltexbufferrangeproc,
+			texstorage2dmultisample: dummy_pfngltexstorage2dmultisampleproc,
+			texstorage3dmultisample: dummy_pfngltexstorage3dmultisampleproc,
+			textureview: dummy_pfngltextureviewproc,
+			bindvertexbuffer: dummy_pfnglbindvertexbufferproc,
+			vertexattribformat: dummy_pfnglvertexattribformatproc,
+			vertexattribiformat: dummy_pfnglvertexattribiformatproc,
+			vertexattriblformat: dummy_pfnglvertexattriblformatproc,
+			vertexattribbinding: dummy_pfnglvertexattribbindingproc,
+			vertexbindingdivisor: dummy_pfnglvertexbindingdivisorproc,
+			debugmessagecontrol: dummy_pfngldebugmessagecontrolproc,
+			debugmessageinsert: dummy_pfngldebugmessageinsertproc,
+			debugmessagecallback: dummy_pfngldebugmessagecallbackproc,
+			getdebugmessagelog: dummy_pfnglgetdebugmessagelogproc,
+			pushdebuggroup: dummy_pfnglpushdebuggroupproc,
+			popdebuggroup: dummy_pfnglpopdebuggroupproc,
+			objectlabel: dummy_pfnglobjectlabelproc,
+			getobjectlabel: dummy_pfnglgetobjectlabelproc,
+			objectptrlabel: dummy_pfnglobjectptrlabelproc,
+			getobjectptrlabel: dummy_pfnglgetobjectptrlabelproc,
 		}
 	}
 }
@@ -7860,6 +9777,33 @@ type PFNGLBINDTEXTURESPROC = extern "system" fn(GLuint, GLsizei, *const GLuint);
 type PFNGLBINDSAMPLERSPROC = extern "system" fn(GLuint, GLsizei, *const GLuint);
 type PFNGLBINDIMAGETEXTURESPROC = extern "system" fn(GLuint, GLsizei, *const GLuint);
 type PFNGLBINDVERTEXBUFFERSPROC = extern "system" fn(GLuint, GLsizei, *const GLuint, *const GLintptr, *const GLsizei);
+extern "system" fn dummy_pfnglbufferstorageproc (_: GLenum, _: GLsizeiptr, _: *const c_void, _: GLbitfield) {
+	panic!("OpenGL Function pointer of glBufferStorage() is NULL");
+}
+extern "system" fn dummy_pfnglclearteximageproc (_: GLuint, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glClearTexImage() is NULL");
+}
+extern "system" fn dummy_pfnglcleartexsubimageproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glClearTexSubImage() is NULL");
+}
+extern "system" fn dummy_pfnglbindbuffersbaseproc (_: GLenum, _: GLuint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glBindBuffersBase() is NULL");
+}
+extern "system" fn dummy_pfnglbindbuffersrangeproc (_: GLenum, _: GLuint, _: GLsizei, _: *const GLuint, _: *const GLintptr, _: *const GLsizeiptr) {
+	panic!("OpenGL Function pointer of glBindBuffersRange() is NULL");
+}
+extern "system" fn dummy_pfnglbindtexturesproc (_: GLuint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glBindTextures() is NULL");
+}
+extern "system" fn dummy_pfnglbindsamplersproc (_: GLuint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glBindSamplers() is NULL");
+}
+extern "system" fn dummy_pfnglbindimagetexturesproc (_: GLuint, _: GLsizei, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glBindImageTextures() is NULL");
+}
+extern "system" fn dummy_pfnglbindvertexbuffersproc (_: GLuint, _: GLsizei, _: *const GLuint, _: *const GLintptr, _: *const GLsizei) {
+	panic!("OpenGL Function pointer of glBindVertexBuffers() is NULL");
+}
 const MAX_VERTEX_ATTRIB_STRIDE: GLenum = 0x82E5;
 const PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED: GLenum = 0x8221;
 const TEXTURE_BUFFER_BINDING: GLenum = 0x8C2A;
@@ -7976,15 +9920,15 @@ impl Default for Version44 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			bufferstorage: null(),
-			clearteximage: null(),
-			cleartexsubimage: null(),
-			bindbuffersbase: null(),
-			bindbuffersrange: null(),
-			bindtextures: null(),
-			bindsamplers: null(),
-			bindimagetextures: null(),
-			bindvertexbuffers: null(),
+			bufferstorage: dummy_pfnglbufferstorageproc,
+			clearteximage: dummy_pfnglclearteximageproc,
+			cleartexsubimage: dummy_pfnglcleartexsubimageproc,
+			bindbuffersbase: dummy_pfnglbindbuffersbaseproc,
+			bindbuffersrange: dummy_pfnglbindbuffersrangeproc,
+			bindtextures: dummy_pfnglbindtexturesproc,
+			bindsamplers: dummy_pfnglbindsamplersproc,
+			bindimagetextures: dummy_pfnglbindimagetexturesproc,
+			bindvertexbuffers: dummy_pfnglbindvertexbuffersproc,
 		}
 	}
 }
@@ -8111,6 +10055,372 @@ type PFNGLGETNSEPARABLEFILTERPROC = extern "system" fn(GLenum, GLenum, GLenum, G
 type PFNGLGETNHISTOGRAMPROC = extern "system" fn(GLenum, GLboolean, GLenum, GLenum, GLsizei, *mut c_void);
 type PFNGLGETNMINMAXPROC = extern "system" fn(GLenum, GLboolean, GLenum, GLenum, GLsizei, *mut c_void);
 type PFNGLTEXTUREBARRIERPROC = extern "system" fn();
+extern "system" fn dummy_pfnglclipcontrolproc (_: GLenum, _: GLenum) {
+	panic!("OpenGL Function pointer of glClipControl() is NULL");
+}
+extern "system" fn dummy_pfnglcreatetransformfeedbacksproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glCreateTransformFeedbacks() is NULL");
+}
+extern "system" fn dummy_pfngltransformfeedbackbufferbaseproc (_: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glTransformFeedbackBufferBase() is NULL");
+}
+extern "system" fn dummy_pfngltransformfeedbackbufferrangeproc (_: GLuint, _: GLuint, _: GLuint, _: GLintptr, _: GLsizeiptr) {
+	panic!("OpenGL Function pointer of glTransformFeedbackBufferRange() is NULL");
+}
+extern "system" fn dummy_pfnglgettransformfeedbackivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetTransformFeedbackiv() is NULL");
+}
+extern "system" fn dummy_pfnglgettransformfeedbacki_vproc (_: GLuint, _: GLenum, _: GLuint, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetTransformFeedbacki_v() is NULL");
+}
+extern "system" fn dummy_pfnglgettransformfeedbacki64_vproc (_: GLuint, _: GLenum, _: GLuint, _: *mut GLint64) {
+	panic!("OpenGL Function pointer of glGetTransformFeedbacki64_v() is NULL");
+}
+extern "system" fn dummy_pfnglcreatebuffersproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glCreateBuffers() is NULL");
+}
+extern "system" fn dummy_pfnglnamedbufferstorageproc (_: GLuint, _: GLsizeiptr, _: *const c_void, _: GLbitfield) {
+	panic!("OpenGL Function pointer of glNamedBufferStorage() is NULL");
+}
+extern "system" fn dummy_pfnglnamedbufferdataproc (_: GLuint, _: GLsizeiptr, _: *const c_void, _: GLenum) {
+	panic!("OpenGL Function pointer of glNamedBufferData() is NULL");
+}
+extern "system" fn dummy_pfnglnamedbuffersubdataproc (_: GLuint, _: GLintptr, _: GLsizeiptr, _: *const c_void) {
+	panic!("OpenGL Function pointer of glNamedBufferSubData() is NULL");
+}
+extern "system" fn dummy_pfnglcopynamedbuffersubdataproc (_: GLuint, _: GLuint, _: GLintptr, _: GLintptr, _: GLsizeiptr) {
+	panic!("OpenGL Function pointer of glCopyNamedBufferSubData() is NULL");
+}
+extern "system" fn dummy_pfnglclearnamedbufferdataproc (_: GLuint, _: GLenum, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glClearNamedBufferData() is NULL");
+}
+extern "system" fn dummy_pfnglclearnamedbuffersubdataproc (_: GLuint, _: GLenum, _: GLintptr, _: GLsizeiptr, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glClearNamedBufferSubData() is NULL");
+}
+extern "system" fn dummy_pfnglmapnamedbufferproc (_: GLuint, _: GLenum) -> *mut c_void {
+	panic!("OpenGL Function pointer of glMapNamedBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglmapnamedbufferrangeproc (_: GLuint, _: GLintptr, _: GLsizeiptr, _: GLbitfield) -> *mut c_void {
+	panic!("OpenGL Function pointer of glMapNamedBufferRange() is NULL");
+}
+extern "system" fn dummy_pfnglunmapnamedbufferproc (_: GLuint) -> GLboolean {
+	panic!("OpenGL Function pointer of glUnmapNamedBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglflushmappednamedbufferrangeproc (_: GLuint, _: GLintptr, _: GLsizeiptr) {
+	panic!("OpenGL Function pointer of glFlushMappedNamedBufferRange() is NULL");
+}
+extern "system" fn dummy_pfnglgetnamedbufferparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetNamedBufferParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnamedbufferparameteri64vproc (_: GLuint, _: GLenum, _: *mut GLint64) {
+	panic!("OpenGL Function pointer of glGetNamedBufferParameteri64v() is NULL");
+}
+extern "system" fn dummy_pfnglgetnamedbufferpointervproc (_: GLuint, _: GLenum, _: *mut *mut c_void) {
+	panic!("OpenGL Function pointer of glGetNamedBufferPointerv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnamedbuffersubdataproc (_: GLuint, _: GLintptr, _: GLsizeiptr, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetNamedBufferSubData() is NULL");
+}
+extern "system" fn dummy_pfnglcreateframebuffersproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glCreateFramebuffers() is NULL");
+}
+extern "system" fn dummy_pfnglnamedframebufferrenderbufferproc (_: GLuint, _: GLenum, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glNamedFramebufferRenderbuffer() is NULL");
+}
+extern "system" fn dummy_pfnglnamedframebufferparameteriproc (_: GLuint, _: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glNamedFramebufferParameteri() is NULL");
+}
+extern "system" fn dummy_pfnglnamedframebuffertextureproc (_: GLuint, _: GLenum, _: GLuint, _: GLint) {
+	panic!("OpenGL Function pointer of glNamedFramebufferTexture() is NULL");
+}
+extern "system" fn dummy_pfnglnamedframebuffertexturelayerproc (_: GLuint, _: GLenum, _: GLuint, _: GLint, _: GLint) {
+	panic!("OpenGL Function pointer of glNamedFramebufferTextureLayer() is NULL");
+}
+extern "system" fn dummy_pfnglnamedframebufferdrawbufferproc (_: GLuint, _: GLenum) {
+	panic!("OpenGL Function pointer of glNamedFramebufferDrawBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglnamedframebufferdrawbuffersproc (_: GLuint, _: GLsizei, _: *const GLenum) {
+	panic!("OpenGL Function pointer of glNamedFramebufferDrawBuffers() is NULL");
+}
+extern "system" fn dummy_pfnglnamedframebufferreadbufferproc (_: GLuint, _: GLenum) {
+	panic!("OpenGL Function pointer of glNamedFramebufferReadBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglinvalidatenamedframebufferdataproc (_: GLuint, _: GLsizei, _: *const GLenum) {
+	panic!("OpenGL Function pointer of glInvalidateNamedFramebufferData() is NULL");
+}
+extern "system" fn dummy_pfnglinvalidatenamedframebuffersubdataproc (_: GLuint, _: GLsizei, _: *const GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glInvalidateNamedFramebufferSubData() is NULL");
+}
+extern "system" fn dummy_pfnglclearnamedframebufferivproc (_: GLuint, _: GLenum, _: GLint, _: *const GLint) {
+	panic!("OpenGL Function pointer of glClearNamedFramebufferiv() is NULL");
+}
+extern "system" fn dummy_pfnglclearnamedframebufferuivproc (_: GLuint, _: GLenum, _: GLint, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glClearNamedFramebufferuiv() is NULL");
+}
+extern "system" fn dummy_pfnglclearnamedframebufferfvproc (_: GLuint, _: GLenum, _: GLint, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glClearNamedFramebufferfv() is NULL");
+}
+extern "system" fn dummy_pfnglclearnamedframebufferfiproc (_: GLuint, _: GLenum, _: GLint, _: GLfloat, _: GLint) {
+	panic!("OpenGL Function pointer of glClearNamedFramebufferfi() is NULL");
+}
+extern "system" fn dummy_pfnglblitnamedframebufferproc (_: GLuint, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLbitfield, _: GLenum) {
+	panic!("OpenGL Function pointer of glBlitNamedFramebuffer() is NULL");
+}
+extern "system" fn dummy_pfnglchecknamedframebufferstatusproc (_: GLuint, _: GLenum) -> GLenum {
+	panic!("OpenGL Function pointer of glCheckNamedFramebufferStatus() is NULL");
+}
+extern "system" fn dummy_pfnglgetnamedframebufferparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetNamedFramebufferParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnamedframebufferattachmentparameterivproc (_: GLuint, _: GLenum, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetNamedFramebufferAttachmentParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglcreaterenderbuffersproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glCreateRenderbuffers() is NULL");
+}
+extern "system" fn dummy_pfnglnamedrenderbufferstorageproc (_: GLuint, _: GLenum, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glNamedRenderbufferStorage() is NULL");
+}
+extern "system" fn dummy_pfnglnamedrenderbufferstoragemultisampleproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glNamedRenderbufferStorageMultisample() is NULL");
+}
+extern "system" fn dummy_pfnglgetnamedrenderbufferparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetNamedRenderbufferParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglcreatetexturesproc (_: GLenum, _: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glCreateTextures() is NULL");
+}
+extern "system" fn dummy_pfngltexturebufferproc (_: GLuint, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glTextureBuffer() is NULL");
+}
+extern "system" fn dummy_pfngltexturebufferrangeproc (_: GLuint, _: GLenum, _: GLuint, _: GLintptr, _: GLsizeiptr) {
+	panic!("OpenGL Function pointer of glTextureBufferRange() is NULL");
+}
+extern "system" fn dummy_pfngltexturestorage1dproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei) {
+	panic!("OpenGL Function pointer of glTextureStorage1D() is NULL");
+}
+extern "system" fn dummy_pfngltexturestorage2dproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glTextureStorage2D() is NULL");
+}
+extern "system" fn dummy_pfngltexturestorage3dproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glTextureStorage3D() is NULL");
+}
+extern "system" fn dummy_pfngltexturestorage2dmultisampleproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLboolean) {
+	panic!("OpenGL Function pointer of glTextureStorage2DMultisample() is NULL");
+}
+extern "system" fn dummy_pfngltexturestorage3dmultisampleproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLboolean) {
+	panic!("OpenGL Function pointer of glTextureStorage3DMultisample() is NULL");
+}
+extern "system" fn dummy_pfngltexturesubimage1dproc (_: GLuint, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glTextureSubImage1D() is NULL");
+}
+extern "system" fn dummy_pfngltexturesubimage2dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glTextureSubImage2D() is NULL");
+}
+extern "system" fn dummy_pfngltexturesubimage3dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
+	panic!("OpenGL Function pointer of glTextureSubImage3D() is NULL");
+}
+extern "system" fn dummy_pfnglcompressedtexturesubimage1dproc (_: GLuint, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glCompressedTextureSubImage1D() is NULL");
+}
+extern "system" fn dummy_pfnglcompressedtexturesubimage2dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glCompressedTextureSubImage2D() is NULL");
+}
+extern "system" fn dummy_pfnglcompressedtexturesubimage3dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
+	panic!("OpenGL Function pointer of glCompressedTextureSubImage3D() is NULL");
+}
+extern "system" fn dummy_pfnglcopytexturesubimage1dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei) {
+	panic!("OpenGL Function pointer of glCopyTextureSubImage1D() is NULL");
+}
+extern "system" fn dummy_pfnglcopytexturesubimage2dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glCopyTextureSubImage2D() is NULL");
+}
+extern "system" fn dummy_pfnglcopytexturesubimage3dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glCopyTextureSubImage3D() is NULL");
+}
+extern "system" fn dummy_pfngltextureparameterfproc (_: GLuint, _: GLenum, _: GLfloat) {
+	panic!("OpenGL Function pointer of glTextureParameterf() is NULL");
+}
+extern "system" fn dummy_pfngltextureparameterfvproc (_: GLuint, _: GLenum, _: *const GLfloat) {
+	panic!("OpenGL Function pointer of glTextureParameterfv() is NULL");
+}
+extern "system" fn dummy_pfngltextureparameteriproc (_: GLuint, _: GLenum, _: GLint) {
+	panic!("OpenGL Function pointer of glTextureParameteri() is NULL");
+}
+extern "system" fn dummy_pfngltextureparameteriivproc (_: GLuint, _: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glTextureParameterIiv() is NULL");
+}
+extern "system" fn dummy_pfngltextureparameteriuivproc (_: GLuint, _: GLenum, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glTextureParameterIuiv() is NULL");
+}
+extern "system" fn dummy_pfngltextureparameterivproc (_: GLuint, _: GLenum, _: *const GLint) {
+	panic!("OpenGL Function pointer of glTextureParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglgeneratetexturemipmapproc (_: GLuint) {
+	panic!("OpenGL Function pointer of glGenerateTextureMipmap() is NULL");
+}
+extern "system" fn dummy_pfnglbindtextureunitproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glBindTextureUnit() is NULL");
+}
+extern "system" fn dummy_pfnglgettextureimageproc (_: GLuint, _: GLint, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetTextureImage() is NULL");
+}
+extern "system" fn dummy_pfnglgetcompressedtextureimageproc (_: GLuint, _: GLint, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetCompressedTextureImage() is NULL");
+}
+extern "system" fn dummy_pfnglgettexturelevelparameterfvproc (_: GLuint, _: GLint, _: GLenum, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetTextureLevelParameterfv() is NULL");
+}
+extern "system" fn dummy_pfnglgettexturelevelparameterivproc (_: GLuint, _: GLint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetTextureLevelParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglgettextureparameterfvproc (_: GLuint, _: GLenum, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetTextureParameterfv() is NULL");
+}
+extern "system" fn dummy_pfnglgettextureparameteriivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetTextureParameterIiv() is NULL");
+}
+extern "system" fn dummy_pfnglgettextureparameteriuivproc (_: GLuint, _: GLenum, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetTextureParameterIuiv() is NULL");
+}
+extern "system" fn dummy_pfnglgettextureparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetTextureParameteriv() is NULL");
+}
+extern "system" fn dummy_pfnglcreatevertexarraysproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glCreateVertexArrays() is NULL");
+}
+extern "system" fn dummy_pfngldisablevertexarrayattribproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glDisableVertexArrayAttrib() is NULL");
+}
+extern "system" fn dummy_pfnglenablevertexarrayattribproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glEnableVertexArrayAttrib() is NULL");
+}
+extern "system" fn dummy_pfnglvertexarrayelementbufferproc (_: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexArrayElementBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglvertexarrayvertexbufferproc (_: GLuint, _: GLuint, _: GLuint, _: GLintptr, _: GLsizei) {
+	panic!("OpenGL Function pointer of glVertexArrayVertexBuffer() is NULL");
+}
+extern "system" fn dummy_pfnglvertexarrayvertexbuffersproc (_: GLuint, _: GLuint, _: GLsizei, _: *const GLuint, _: *const GLintptr, _: *const GLsizei) {
+	panic!("OpenGL Function pointer of glVertexArrayVertexBuffers() is NULL");
+}
+extern "system" fn dummy_pfnglvertexarrayattribbindingproc (_: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexArrayAttribBinding() is NULL");
+}
+extern "system" fn dummy_pfnglvertexarrayattribformatproc (_: GLuint, _: GLuint, _: GLint, _: GLenum, _: GLboolean, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexArrayAttribFormat() is NULL");
+}
+extern "system" fn dummy_pfnglvertexarrayattribiformatproc (_: GLuint, _: GLuint, _: GLint, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexArrayAttribIFormat() is NULL");
+}
+extern "system" fn dummy_pfnglvertexarrayattriblformatproc (_: GLuint, _: GLuint, _: GLint, _: GLenum, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexArrayAttribLFormat() is NULL");
+}
+extern "system" fn dummy_pfnglvertexarraybindingdivisorproc (_: GLuint, _: GLuint, _: GLuint) {
+	panic!("OpenGL Function pointer of glVertexArrayBindingDivisor() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexarrayivproc (_: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetVertexArrayiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexarrayindexedivproc (_: GLuint, _: GLuint, _: GLenum, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetVertexArrayIndexediv() is NULL");
+}
+extern "system" fn dummy_pfnglgetvertexarrayindexed64ivproc (_: GLuint, _: GLuint, _: GLenum, _: *mut GLint64) {
+	panic!("OpenGL Function pointer of glGetVertexArrayIndexed64iv() is NULL");
+}
+extern "system" fn dummy_pfnglcreatesamplersproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glCreateSamplers() is NULL");
+}
+extern "system" fn dummy_pfnglcreateprogrampipelinesproc (_: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glCreateProgramPipelines() is NULL");
+}
+extern "system" fn dummy_pfnglcreatequeriesproc (_: GLenum, _: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glCreateQueries() is NULL");
+}
+extern "system" fn dummy_pfnglgetquerybufferobjecti64vproc (_: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
+	panic!("OpenGL Function pointer of glGetQueryBufferObjecti64v() is NULL");
+}
+extern "system" fn dummy_pfnglgetquerybufferobjectivproc (_: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
+	panic!("OpenGL Function pointer of glGetQueryBufferObjectiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetquerybufferobjectui64vproc (_: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
+	panic!("OpenGL Function pointer of glGetQueryBufferObjectui64v() is NULL");
+}
+extern "system" fn dummy_pfnglgetquerybufferobjectuivproc (_: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
+	panic!("OpenGL Function pointer of glGetQueryBufferObjectuiv() is NULL");
+}
+extern "system" fn dummy_pfnglmemorybarrierbyregionproc (_: GLbitfield) {
+	panic!("OpenGL Function pointer of glMemoryBarrierByRegion() is NULL");
+}
+extern "system" fn dummy_pfnglgettexturesubimageproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetTextureSubImage() is NULL");
+}
+extern "system" fn dummy_pfnglgetcompressedtexturesubimageproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetCompressedTextureSubImage() is NULL");
+}
+extern "system" fn dummy_pfnglgetgraphicsresetstatusproc () -> GLenum {
+	panic!("OpenGL Function pointer of glGetGraphicsResetStatus() is NULL");
+}
+extern "system" fn dummy_pfnglgetncompressedteximageproc (_: GLenum, _: GLint, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetnCompressedTexImage() is NULL");
+}
+extern "system" fn dummy_pfnglgetnteximageproc (_: GLenum, _: GLint, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetnTexImage() is NULL");
+}
+extern "system" fn dummy_pfnglgetnuniformdvproc (_: GLuint, _: GLint, _: GLsizei, _: *mut GLdouble) {
+	panic!("OpenGL Function pointer of glGetnUniformdv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnuniformfvproc (_: GLuint, _: GLint, _: GLsizei, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetnUniformfv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnuniformivproc (_: GLuint, _: GLint, _: GLsizei, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetnUniformiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnuniformuivproc (_: GLuint, _: GLint, _: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetnUniformuiv() is NULL");
+}
+extern "system" fn dummy_pfnglreadnpixelsproc (_: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glReadnPixels() is NULL");
+}
+extern "system" fn dummy_pfnglgetnmapdvproc (_: GLenum, _: GLenum, _: GLsizei, _: *mut GLdouble) {
+	panic!("OpenGL Function pointer of glGetnMapdv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnmapfvproc (_: GLenum, _: GLenum, _: GLsizei, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetnMapfv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnmapivproc (_: GLenum, _: GLenum, _: GLsizei, _: *mut GLint) {
+	panic!("OpenGL Function pointer of glGetnMapiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnpixelmapfvproc (_: GLenum, _: GLsizei, _: *mut GLfloat) {
+	panic!("OpenGL Function pointer of glGetnPixelMapfv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnpixelmapuivproc (_: GLenum, _: GLsizei, _: *mut GLuint) {
+	panic!("OpenGL Function pointer of glGetnPixelMapuiv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnpixelmapusvproc (_: GLenum, _: GLsizei, _: *mut GLushort) {
+	panic!("OpenGL Function pointer of glGetnPixelMapusv() is NULL");
+}
+extern "system" fn dummy_pfnglgetnpolygonstippleproc (_: GLsizei, _: *mut GLubyte) {
+	panic!("OpenGL Function pointer of glGetnPolygonStipple() is NULL");
+}
+extern "system" fn dummy_pfnglgetncolortableproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetnColorTable() is NULL");
+}
+extern "system" fn dummy_pfnglgetnconvolutionfilterproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetnConvolutionFilter() is NULL");
+}
+extern "system" fn dummy_pfnglgetnseparablefilterproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void, _: GLsizei, _: *mut c_void, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetnSeparableFilter() is NULL");
+}
+extern "system" fn dummy_pfnglgetnhistogramproc (_: GLenum, _: GLboolean, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetnHistogram() is NULL");
+}
+extern "system" fn dummy_pfnglgetnminmaxproc (_: GLenum, _: GLboolean, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
+	panic!("OpenGL Function pointer of glGetnMinmax() is NULL");
+}
+extern "system" fn dummy_pfngltexturebarrierproc () {
+	panic!("OpenGL Function pointer of glTextureBarrier() is NULL");
+}
 const CONTEXT_LOST: GLenum = 0x0507;
 const NEGATIVE_ONE_TO_ONE: GLenum = 0x935E;
 const ZERO_TO_ONE: GLenum = 0x935F;
@@ -9032,128 +11342,128 @@ impl Default for Version45 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			clipcontrol: null(),
-			createtransformfeedbacks: null(),
-			transformfeedbackbufferbase: null(),
-			transformfeedbackbufferrange: null(),
-			gettransformfeedbackiv: null(),
-			gettransformfeedbacki_v: null(),
-			gettransformfeedbacki64_v: null(),
-			createbuffers: null(),
-			namedbufferstorage: null(),
-			namedbufferdata: null(),
-			namedbuffersubdata: null(),
-			copynamedbuffersubdata: null(),
-			clearnamedbufferdata: null(),
-			clearnamedbuffersubdata: null(),
-			mapnamedbuffer: null(),
-			mapnamedbufferrange: null(),
-			unmapnamedbuffer: null(),
-			flushmappednamedbufferrange: null(),
-			getnamedbufferparameteriv: null(),
-			getnamedbufferparameteri64v: null(),
-			getnamedbufferpointerv: null(),
-			getnamedbuffersubdata: null(),
-			createframebuffers: null(),
-			namedframebufferrenderbuffer: null(),
-			namedframebufferparameteri: null(),
-			namedframebuffertexture: null(),
-			namedframebuffertexturelayer: null(),
-			namedframebufferdrawbuffer: null(),
-			namedframebufferdrawbuffers: null(),
-			namedframebufferreadbuffer: null(),
-			invalidatenamedframebufferdata: null(),
-			invalidatenamedframebuffersubdata: null(),
-			clearnamedframebufferiv: null(),
-			clearnamedframebufferuiv: null(),
-			clearnamedframebufferfv: null(),
-			clearnamedframebufferfi: null(),
-			blitnamedframebuffer: null(),
-			checknamedframebufferstatus: null(),
-			getnamedframebufferparameteriv: null(),
-			getnamedframebufferattachmentparameteriv: null(),
-			createrenderbuffers: null(),
-			namedrenderbufferstorage: null(),
-			namedrenderbufferstoragemultisample: null(),
-			getnamedrenderbufferparameteriv: null(),
-			createtextures: null(),
-			texturebuffer: null(),
-			texturebufferrange: null(),
-			texturestorage1d: null(),
-			texturestorage2d: null(),
-			texturestorage3d: null(),
-			texturestorage2dmultisample: null(),
-			texturestorage3dmultisample: null(),
-			texturesubimage1d: null(),
-			texturesubimage2d: null(),
-			texturesubimage3d: null(),
-			compressedtexturesubimage1d: null(),
-			compressedtexturesubimage2d: null(),
-			compressedtexturesubimage3d: null(),
-			copytexturesubimage1d: null(),
-			copytexturesubimage2d: null(),
-			copytexturesubimage3d: null(),
-			textureparameterf: null(),
-			textureparameterfv: null(),
-			textureparameteri: null(),
-			textureparameteriiv: null(),
-			textureparameteriuiv: null(),
-			textureparameteriv: null(),
-			generatetexturemipmap: null(),
-			bindtextureunit: null(),
-			gettextureimage: null(),
-			getcompressedtextureimage: null(),
-			gettexturelevelparameterfv: null(),
-			gettexturelevelparameteriv: null(),
-			gettextureparameterfv: null(),
-			gettextureparameteriiv: null(),
-			gettextureparameteriuiv: null(),
-			gettextureparameteriv: null(),
-			createvertexarrays: null(),
-			disablevertexarrayattrib: null(),
-			enablevertexarrayattrib: null(),
-			vertexarrayelementbuffer: null(),
-			vertexarrayvertexbuffer: null(),
-			vertexarrayvertexbuffers: null(),
-			vertexarrayattribbinding: null(),
-			vertexarrayattribformat: null(),
-			vertexarrayattribiformat: null(),
-			vertexarrayattriblformat: null(),
-			vertexarraybindingdivisor: null(),
-			getvertexarrayiv: null(),
-			getvertexarrayindexediv: null(),
-			getvertexarrayindexed64iv: null(),
-			createsamplers: null(),
-			createprogrampipelines: null(),
-			createqueries: null(),
-			getquerybufferobjecti64v: null(),
-			getquerybufferobjectiv: null(),
-			getquerybufferobjectui64v: null(),
-			getquerybufferobjectuiv: null(),
-			memorybarrierbyregion: null(),
-			gettexturesubimage: null(),
-			getcompressedtexturesubimage: null(),
-			getgraphicsresetstatus: null(),
-			getncompressedteximage: null(),
-			getnteximage: null(),
-			getnuniformdv: null(),
-			getnuniformfv: null(),
-			getnuniformiv: null(),
-			getnuniformuiv: null(),
-			readnpixels: null(),
-			getnmapdv: null(),
-			getnmapfv: null(),
-			getnmapiv: null(),
-			getnpixelmapfv: null(),
-			getnpixelmapuiv: null(),
-			getnpixelmapusv: null(),
-			getnpolygonstipple: null(),
-			getncolortable: null(),
-			getnconvolutionfilter: null(),
-			getnseparablefilter: null(),
-			getnhistogram: null(),
-			getnminmax: null(),
-			texturebarrier: null(),
+			clipcontrol: dummy_pfnglclipcontrolproc,
+			createtransformfeedbacks: dummy_pfnglcreatetransformfeedbacksproc,
+			transformfeedbackbufferbase: dummy_pfngltransformfeedbackbufferbaseproc,
+			transformfeedbackbufferrange: dummy_pfngltransformfeedbackbufferrangeproc,
+			gettransformfeedbackiv: dummy_pfnglgettransformfeedbackivproc,
+			gettransformfeedbacki_v: dummy_pfnglgettransformfeedbacki_vproc,
+			gettransformfeedbacki64_v: dummy_pfnglgettransformfeedbacki64_vproc,
+			createbuffers: dummy_pfnglcreatebuffersproc,
+			namedbufferstorage: dummy_pfnglnamedbufferstorageproc,
+			namedbufferdata: dummy_pfnglnamedbufferdataproc,
+			namedbuffersubdata: dummy_pfnglnamedbuffersubdataproc,
+			copynamedbuffersubdata: dummy_pfnglcopynamedbuffersubdataproc,
+			clearnamedbufferdata: dummy_pfnglclearnamedbufferdataproc,
+			clearnamedbuffersubdata: dummy_pfnglclearnamedbuffersubdataproc,
+			mapnamedbuffer: dummy_pfnglmapnamedbufferproc,
+			mapnamedbufferrange: dummy_pfnglmapnamedbufferrangeproc,
+			unmapnamedbuffer: dummy_pfnglunmapnamedbufferproc,
+			flushmappednamedbufferrange: dummy_pfnglflushmappednamedbufferrangeproc,
+			getnamedbufferparameteriv: dummy_pfnglgetnamedbufferparameterivproc,
+			getnamedbufferparameteri64v: dummy_pfnglgetnamedbufferparameteri64vproc,
+			getnamedbufferpointerv: dummy_pfnglgetnamedbufferpointervproc,
+			getnamedbuffersubdata: dummy_pfnglgetnamedbuffersubdataproc,
+			createframebuffers: dummy_pfnglcreateframebuffersproc,
+			namedframebufferrenderbuffer: dummy_pfnglnamedframebufferrenderbufferproc,
+			namedframebufferparameteri: dummy_pfnglnamedframebufferparameteriproc,
+			namedframebuffertexture: dummy_pfnglnamedframebuffertextureproc,
+			namedframebuffertexturelayer: dummy_pfnglnamedframebuffertexturelayerproc,
+			namedframebufferdrawbuffer: dummy_pfnglnamedframebufferdrawbufferproc,
+			namedframebufferdrawbuffers: dummy_pfnglnamedframebufferdrawbuffersproc,
+			namedframebufferreadbuffer: dummy_pfnglnamedframebufferreadbufferproc,
+			invalidatenamedframebufferdata: dummy_pfnglinvalidatenamedframebufferdataproc,
+			invalidatenamedframebuffersubdata: dummy_pfnglinvalidatenamedframebuffersubdataproc,
+			clearnamedframebufferiv: dummy_pfnglclearnamedframebufferivproc,
+			clearnamedframebufferuiv: dummy_pfnglclearnamedframebufferuivproc,
+			clearnamedframebufferfv: dummy_pfnglclearnamedframebufferfvproc,
+			clearnamedframebufferfi: dummy_pfnglclearnamedframebufferfiproc,
+			blitnamedframebuffer: dummy_pfnglblitnamedframebufferproc,
+			checknamedframebufferstatus: dummy_pfnglchecknamedframebufferstatusproc,
+			getnamedframebufferparameteriv: dummy_pfnglgetnamedframebufferparameterivproc,
+			getnamedframebufferattachmentparameteriv: dummy_pfnglgetnamedframebufferattachmentparameterivproc,
+			createrenderbuffers: dummy_pfnglcreaterenderbuffersproc,
+			namedrenderbufferstorage: dummy_pfnglnamedrenderbufferstorageproc,
+			namedrenderbufferstoragemultisample: dummy_pfnglnamedrenderbufferstoragemultisampleproc,
+			getnamedrenderbufferparameteriv: dummy_pfnglgetnamedrenderbufferparameterivproc,
+			createtextures: dummy_pfnglcreatetexturesproc,
+			texturebuffer: dummy_pfngltexturebufferproc,
+			texturebufferrange: dummy_pfngltexturebufferrangeproc,
+			texturestorage1d: dummy_pfngltexturestorage1dproc,
+			texturestorage2d: dummy_pfngltexturestorage2dproc,
+			texturestorage3d: dummy_pfngltexturestorage3dproc,
+			texturestorage2dmultisample: dummy_pfngltexturestorage2dmultisampleproc,
+			texturestorage3dmultisample: dummy_pfngltexturestorage3dmultisampleproc,
+			texturesubimage1d: dummy_pfngltexturesubimage1dproc,
+			texturesubimage2d: dummy_pfngltexturesubimage2dproc,
+			texturesubimage3d: dummy_pfngltexturesubimage3dproc,
+			compressedtexturesubimage1d: dummy_pfnglcompressedtexturesubimage1dproc,
+			compressedtexturesubimage2d: dummy_pfnglcompressedtexturesubimage2dproc,
+			compressedtexturesubimage3d: dummy_pfnglcompressedtexturesubimage3dproc,
+			copytexturesubimage1d: dummy_pfnglcopytexturesubimage1dproc,
+			copytexturesubimage2d: dummy_pfnglcopytexturesubimage2dproc,
+			copytexturesubimage3d: dummy_pfnglcopytexturesubimage3dproc,
+			textureparameterf: dummy_pfngltextureparameterfproc,
+			textureparameterfv: dummy_pfngltextureparameterfvproc,
+			textureparameteri: dummy_pfngltextureparameteriproc,
+			textureparameteriiv: dummy_pfngltextureparameteriivproc,
+			textureparameteriuiv: dummy_pfngltextureparameteriuivproc,
+			textureparameteriv: dummy_pfngltextureparameterivproc,
+			generatetexturemipmap: dummy_pfnglgeneratetexturemipmapproc,
+			bindtextureunit: dummy_pfnglbindtextureunitproc,
+			gettextureimage: dummy_pfnglgettextureimageproc,
+			getcompressedtextureimage: dummy_pfnglgetcompressedtextureimageproc,
+			gettexturelevelparameterfv: dummy_pfnglgettexturelevelparameterfvproc,
+			gettexturelevelparameteriv: dummy_pfnglgettexturelevelparameterivproc,
+			gettextureparameterfv: dummy_pfnglgettextureparameterfvproc,
+			gettextureparameteriiv: dummy_pfnglgettextureparameteriivproc,
+			gettextureparameteriuiv: dummy_pfnglgettextureparameteriuivproc,
+			gettextureparameteriv: dummy_pfnglgettextureparameterivproc,
+			createvertexarrays: dummy_pfnglcreatevertexarraysproc,
+			disablevertexarrayattrib: dummy_pfngldisablevertexarrayattribproc,
+			enablevertexarrayattrib: dummy_pfnglenablevertexarrayattribproc,
+			vertexarrayelementbuffer: dummy_pfnglvertexarrayelementbufferproc,
+			vertexarrayvertexbuffer: dummy_pfnglvertexarrayvertexbufferproc,
+			vertexarrayvertexbuffers: dummy_pfnglvertexarrayvertexbuffersproc,
+			vertexarrayattribbinding: dummy_pfnglvertexarrayattribbindingproc,
+			vertexarrayattribformat: dummy_pfnglvertexarrayattribformatproc,
+			vertexarrayattribiformat: dummy_pfnglvertexarrayattribiformatproc,
+			vertexarrayattriblformat: dummy_pfnglvertexarrayattriblformatproc,
+			vertexarraybindingdivisor: dummy_pfnglvertexarraybindingdivisorproc,
+			getvertexarrayiv: dummy_pfnglgetvertexarrayivproc,
+			getvertexarrayindexediv: dummy_pfnglgetvertexarrayindexedivproc,
+			getvertexarrayindexed64iv: dummy_pfnglgetvertexarrayindexed64ivproc,
+			createsamplers: dummy_pfnglcreatesamplersproc,
+			createprogrampipelines: dummy_pfnglcreateprogrampipelinesproc,
+			createqueries: dummy_pfnglcreatequeriesproc,
+			getquerybufferobjecti64v: dummy_pfnglgetquerybufferobjecti64vproc,
+			getquerybufferobjectiv: dummy_pfnglgetquerybufferobjectivproc,
+			getquerybufferobjectui64v: dummy_pfnglgetquerybufferobjectui64vproc,
+			getquerybufferobjectuiv: dummy_pfnglgetquerybufferobjectuivproc,
+			memorybarrierbyregion: dummy_pfnglmemorybarrierbyregionproc,
+			gettexturesubimage: dummy_pfnglgettexturesubimageproc,
+			getcompressedtexturesubimage: dummy_pfnglgetcompressedtexturesubimageproc,
+			getgraphicsresetstatus: dummy_pfnglgetgraphicsresetstatusproc,
+			getncompressedteximage: dummy_pfnglgetncompressedteximageproc,
+			getnteximage: dummy_pfnglgetnteximageproc,
+			getnuniformdv: dummy_pfnglgetnuniformdvproc,
+			getnuniformfv: dummy_pfnglgetnuniformfvproc,
+			getnuniformiv: dummy_pfnglgetnuniformivproc,
+			getnuniformuiv: dummy_pfnglgetnuniformuivproc,
+			readnpixels: dummy_pfnglreadnpixelsproc,
+			getnmapdv: dummy_pfnglgetnmapdvproc,
+			getnmapfv: dummy_pfnglgetnmapfvproc,
+			getnmapiv: dummy_pfnglgetnmapivproc,
+			getnpixelmapfv: dummy_pfnglgetnpixelmapfvproc,
+			getnpixelmapuiv: dummy_pfnglgetnpixelmapuivproc,
+			getnpixelmapusv: dummy_pfnglgetnpixelmapusvproc,
+			getnpolygonstipple: dummy_pfnglgetnpolygonstippleproc,
+			getncolortable: dummy_pfnglgetncolortableproc,
+			getnconvolutionfilter: dummy_pfnglgetnconvolutionfilterproc,
+			getnseparablefilter: dummy_pfnglgetnseparablefilterproc,
+			getnhistogram: dummy_pfnglgetnhistogramproc,
+			getnminmax: dummy_pfnglgetnminmaxproc,
+			texturebarrier: dummy_pfngltexturebarrierproc,
 		}
 	}
 }
@@ -9162,6 +11472,18 @@ type PFNGLSPECIALIZESHADERPROC = extern "system" fn(GLuint, *const GLchar, GLuin
 type PFNGLMULTIDRAWARRAYSINDIRECTCOUNTPROC = extern "system" fn(GLenum, *const c_void, GLintptr, GLsizei, GLsizei);
 type PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC = extern "system" fn(GLenum, GLenum, *const c_void, GLintptr, GLsizei, GLsizei);
 type PFNGLPOLYGONOFFSETCLAMPPROC = extern "system" fn(GLfloat, GLfloat, GLfloat);
+extern "system" fn dummy_pfnglspecializeshaderproc (_: GLuint, _: *const GLchar, _: GLuint, _: *const GLuint, _: *const GLuint) {
+	panic!("OpenGL Function pointer of glSpecializeShader() is NULL");
+}
+extern "system" fn dummy_pfnglmultidrawarraysindirectcountproc (_: GLenum, _: *const c_void, _: GLintptr, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glMultiDrawArraysIndirectCount() is NULL");
+}
+extern "system" fn dummy_pfnglmultidrawelementsindirectcountproc (_: GLenum, _: GLenum, _: *const c_void, _: GLintptr, _: GLsizei, _: GLsizei) {
+	panic!("OpenGL Function pointer of glMultiDrawElementsIndirectCount() is NULL");
+}
+extern "system" fn dummy_pfnglpolygonoffsetclampproc (_: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL Function pointer of glPolygonOffsetClamp() is NULL");
+}
 const SHADER_BINARY_FORMAT_SPIR_V: GLenum = 0x9551;
 const SPIR_V_BINARY: GLenum = 0x9552;
 const PARAMETER_BUFFER: GLenum = 0x80EE;
@@ -9245,10 +11567,10 @@ impl Default for Version46 {
 	fn default() -> Self {
 		Self {
 			available: false,
-			specializeshader: null(),
-			multidrawarraysindirectcount: null(),
-			multidrawelementsindirectcount: null(),
-			polygonoffsetclamp: null(),
+			specializeshader: dummy_pfnglspecializeshaderproc,
+			multidrawarraysindirectcount: dummy_pfnglmultidrawarraysindirectcountproc,
+			multidrawelementsindirectcount: dummy_pfnglmultidrawelementsindirectcountproc,
+			polygonoffsetclamp: dummy_pfnglpolygonoffsetclampproc,
 		}
 	}
 }
