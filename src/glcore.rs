@@ -432,7 +432,7 @@ pub trait GL_1_0 {
 	fn glGetError(&self) -> GLenum;
 	fn glGetFloatv(&self, pname: GLenum, data: *mut GLfloat);
 	fn glGetIntegerv(&self, pname: GLenum, data: *mut GLint);
-	fn glGetString(&self, name: GLenum) -> *const GLubyte;
+	fn glGetString(&self, name: GLenum) -> &'static str;
 	fn glGetTexImage(&self, target: GLenum, level: GLint, format: GLenum, type_: GLenum, pixels: *mut c_void);
 	fn glGetTexParameterfv(&self, target: GLenum, pname: GLenum, params: *mut GLfloat);
 	fn glGetTexParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint);
@@ -665,8 +665,8 @@ impl GL_1_0 for Version10 {
 		(self.getintegerv)(pname, data)
 	}
 	#[inline(always)]
-	fn glGetString(&self, name: GLenum) -> *const GLubyte {
-		(self.getstring)(name)
+	fn glGetString(&self, name: GLenum) -> &'static str {
+		unsafe{CStr::from_ptr((self.getstring)(name) as *const i8)}.to_str().unwrap()
 	}
 	#[inline(always)]
 	fn glGetTexImage(&self, target: GLenum, level: GLint, format: GLenum, type_: GLenum, pixels: *mut c_void) {
@@ -783,9 +783,9 @@ impl Version10 {
 	}
 	#[inline(always)]
 	fn fetch_version(&mut self) {
-		self.vendor = unsafe{CStr::from_ptr(self.glGetString(GL_VENDOR) as *const i8)}.to_str().unwrap();
-		self.renderer = unsafe{CStr::from_ptr(self.glGetString(GL_RENDERER) as *const i8)}.to_str().unwrap();
-		self.version = unsafe{CStr::from_ptr(self.glGetString(GL_VERSION) as *const i8)}.to_str().unwrap();
+		self.vendor = self.glGetString(GL_VENDOR);
+		self.renderer = self.glGetString(GL_RENDERER);
+		self.version = self.glGetString(GL_VERSION);
 		self.spec = "OpenGL";
 		let mut verstr = self.version;
 		if let Some((left, right)) = verstr.split_once(' ') {
@@ -4020,7 +4020,7 @@ impl Version20 {
 			vertexattrib4uiv: {let proc = get_proc_address("glVertexAttrib4uiv"); if proc == null() {dummy_pfnglvertexattrib4uivproc} else {unsafe{transmute(proc)}}},
 			vertexattrib4usv: {let proc = get_proc_address("glVertexAttrib4usv"); if proc == null() {dummy_pfnglvertexattrib4usvproc} else {unsafe{transmute(proc)}}},
 			vertexattribpointer: {let proc = get_proc_address("glVertexAttribPointer"); if proc == null() {dummy_pfnglvertexattribpointerproc} else {unsafe{transmute(proc)}}},
-			shading_language_version: unsafe{CStr::from_ptr(base.glGetString(GL_SHADING_LANGUAGE_VERSION) as *const i8)}.to_str().unwrap(),
+			shading_language_version: base.glGetString(GL_SHADING_LANGUAGE_VERSION),
 		}
 	}
 	#[inline(always)]
@@ -4896,7 +4896,7 @@ pub trait GL_3_0 {
 	fn glClearBufferuiv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLuint);
 	fn glClearBufferfv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLfloat);
 	fn glClearBufferfi(&self, buffer: GLenum, drawbuffer: GLint, depth: GLfloat, stencil: GLint);
-	fn glGetStringi(&self, name: GLenum, index: GLuint) -> *const GLubyte;
+	fn glGetStringi(&self, name: GLenum, index: GLuint) -> &'static str;
 	fn glIsRenderbuffer(&self, renderbuffer: GLuint) -> GLboolean;
 	fn glBindRenderbuffer(&self, target: GLenum, renderbuffer: GLuint);
 	fn glDeleteRenderbuffers(&self, n: GLsizei, renderbuffers: *const GLuint);
@@ -5244,8 +5244,8 @@ impl GL_3_0 for Version30 {
 		(self.clearbufferfi)(buffer, drawbuffer, depth, stencil)
 	}
 	#[inline(always)]
-	fn glGetStringi(&self, name: GLenum, index: GLuint) -> *const GLubyte {
-		(self.getstringi)(name, index)
+	fn glGetStringi(&self, name: GLenum, index: GLuint) -> &'static str {
+		unsafe{CStr::from_ptr((self.getstringi)(name, index) as *const i8)}.to_str().unwrap()
 	}
 	#[inline(always)]
 	fn glIsRenderbuffer(&self, renderbuffer: GLuint) -> GLboolean {
@@ -11754,8 +11754,8 @@ impl GL_1_0 for GLCore {
 		(self.version_1_0.getintegerv)(pname, data)
 	}
 	#[inline(always)]
-	fn glGetString(&self, name: GLenum) -> *const GLubyte {
-		(self.version_1_0.getstring)(name)
+	fn glGetString(&self, name: GLenum) -> &'static str {
+		unsafe{CStr::from_ptr((self.version_1_0.getstring)(name) as *const i8)}.to_str().unwrap()
 	}
 	#[inline(always)]
 	fn glGetTexImage(&self, target: GLenum, level: GLint, format: GLenum, type_: GLenum, pixels: *mut c_void) {
@@ -12978,8 +12978,8 @@ impl GL_3_0 for GLCore {
 		(self.version_3_0.clearbufferfi)(buffer, drawbuffer, depth, stencil)
 	}
 	#[inline(always)]
-	fn glGetStringi(&self, name: GLenum, index: GLuint) -> *const GLubyte {
-		(self.version_3_0.getstringi)(name, index)
+	fn glGetStringi(&self, name: GLenum, index: GLuint) -> &'static str {
+		unsafe{CStr::from_ptr((self.version_3_0.getstringi)(name, index) as *const i8)}.to_str().unwrap()
 	}
 	#[inline(always)]
 	fn glIsRenderbuffer(&self, renderbuffer: GLuint) -> GLboolean {
