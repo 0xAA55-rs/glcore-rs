@@ -1,3 +1,4 @@
+#![feature(associated_type_defaults)]
 mod glcore;
 
 use glfw::{Action, Context, Key};
