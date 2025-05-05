@@ -27,8 +27,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "glcore"
-version = "0.1.1"
+name = "glcore-rs"
+version = "0.1.2"
 dependencies = [
  "glfw",
 ]
