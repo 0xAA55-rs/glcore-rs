@@ -3,5 +3,5 @@ name = "glcore"
 version = "0.0.1"
 edition = "2024"
 
-[dependencies]
+[dev-dependencies]
 glfw = "0.59.0"
