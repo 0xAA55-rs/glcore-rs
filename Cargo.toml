@@ -7,7 +7,7 @@ readme = "Readme.md"
 license-file = "LICENSE"
 description = "The OpenGL core functions for Rust"
 repository = "https://github.com/0xAA55-rs/glcore-rs"
-keywords = ["OpenGL", "GLFW", "Game", "Render", "GPU", "Game Engine", "shader"]
+keywords = ["OpenGL", "GLFW", "Game Engine", "Render", "GPU"]
 
 [dev-dependencies]
 glfw = "0.59.0"
