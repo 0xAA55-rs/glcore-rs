@@ -1,5 +1,5 @@
 [package]
-name = "glcore"
+name = "glcore-rs"
 version = "0.1.1"
 edition = "2024"
 authors = ["0xAA55 <838816058@qq.com>"]
