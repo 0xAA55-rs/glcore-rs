@@ -1,6 +1,9 @@
-#![feature(associated_type_defaults)]
+
 mod glcore;
 
+pub use glcore::GL;
+
+#[allow(unused_imports)]
 use glfw::{Action, Context, Key};
 
 #[test]
@@ -21,6 +24,7 @@ fn test() {
     }
 }
 
+#[allow(dead_code)]
 fn handle_window_event(window: &mut glfw::Window, event: glfw::WindowEvent) {
     match event {
         glfw::WindowEvent::Key(Key::Escape, _, Action::Press, _) => {
