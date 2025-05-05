@@ -249,150 +249,54 @@ const TEXTURE_WRAP_T: GLenum = 0x2803;
 const REPEAT: GLint = 0x2901;
 
 pub trait GL_1_0 {
-	fn glCullFace(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glCullFace` is NULL");
-	}
-	fn glFrontFace(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glFrontFace` is NULL");
-	}
-	fn glHint(&self, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glHint` is NULL");
-	}
-	fn glLineWidth(&self, _: GLfloat) {
-		panic!("OpenGL function pointer of `glLineWidth` is NULL");
-	}
-	fn glPointSize(&self, _: GLfloat) {
-		panic!("OpenGL function pointer of `glPointSize` is NULL");
-	}
-	fn glPolygonMode(&self, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glPolygonMode` is NULL");
-	}
-	fn glScissor(&self, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glScissor` is NULL");
-	}
-	fn glTexParameterf(&self, _: GLenum, _: GLenum, _: GLfloat) {
-		panic!("OpenGL function pointer of `glTexParameterf` is NULL");
-	}
-	fn glTexParameterfv(&self, _: GLenum, _: GLenum, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glTexParameterfv` is NULL");
-	}
-	fn glTexParameteri(&self, _: GLenum, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glTexParameteri` is NULL");
-	}
-	fn glTexParameteriv(&self, _: GLenum, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glTexParameteriv` is NULL");
-	}
-	fn glTexImage1D(&self, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glTexImage1D` is NULL");
-	}
-	fn glTexImage2D(&self, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glTexImage2D` is NULL");
-	}
-	fn glDrawBuffer(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glDrawBuffer` is NULL");
-	}
-	fn glClear(&self, _: GLbitfield) {
-		panic!("OpenGL function pointer of `glClear` is NULL");
-	}
-	fn glClearColor(&self, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glClearColor` is NULL");
-	}
-	fn glClearStencil(&self, _: GLint) {
-		panic!("OpenGL function pointer of `glClearStencil` is NULL");
-	}
-	fn glClearDepth(&self, _: GLdouble) {
-		panic!("OpenGL function pointer of `glClearDepth` is NULL");
-	}
-	fn glStencilMask(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glStencilMask` is NULL");
-	}
-	fn glColorMask(&self, _: GLboolean, _: GLboolean, _: GLboolean, _: GLboolean) {
-		panic!("OpenGL function pointer of `glColorMask` is NULL");
-	}
-	fn glDepthMask(&self, _: GLboolean) {
-		panic!("OpenGL function pointer of `glDepthMask` is NULL");
-	}
-	fn glDisable(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glDisable` is NULL");
-	}
-	fn glEnable(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glEnable` is NULL");
-	}
-	fn glFinish(&self) {
-		panic!("OpenGL function pointer of `glFinish` is NULL");
-	}
-	fn glFlush(&self) {
-		panic!("OpenGL function pointer of `glFlush` is NULL");
-	}
-	fn glBlendFunc(&self, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlendFunc` is NULL");
-	}
-	fn glLogicOp(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glLogicOp` is NULL");
-	}
-	fn glStencilFunc(&self, _: GLenum, _: GLint, _: GLuint) {
-		panic!("OpenGL function pointer of `glStencilFunc` is NULL");
-	}
-	fn glStencilOp(&self, _: GLenum, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glStencilOp` is NULL");
-	}
-	fn glDepthFunc(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glDepthFunc` is NULL");
-	}
-	fn glPixelStoref(&self, _: GLenum, _: GLfloat) {
-		panic!("OpenGL function pointer of `glPixelStoref` is NULL");
-	}
-	fn glPixelStorei(&self, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glPixelStorei` is NULL");
-	}
-	fn glReadBuffer(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glReadBuffer` is NULL");
-	}
-	fn glReadPixels(&self, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glReadPixels` is NULL");
-	}
-	fn glGetBooleanv(&self, _: GLenum, _: *mut GLboolean) {
-		panic!("OpenGL function pointer of `glGetBooleanv` is NULL");
-	}
-	fn glGetDoublev(&self, _: GLenum, _: *mut GLdouble) {
-		panic!("OpenGL function pointer of `glGetDoublev` is NULL");
-	}
-	fn glGetError(&self) -> GLenum {
-		panic!("OpenGL function pointer of `glGetError` is NULL");
-	}
-	fn glGetFloatv(&self, _: GLenum, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetFloatv` is NULL");
-	}
-	fn glGetIntegerv(&self, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetIntegerv` is NULL");
-	}
-	fn glGetString(&self, _: GLenum) -> *const GLubyte {
-		panic!("OpenGL function pointer of `glGetString` is NULL");
-	}
-	fn glGetTexImage(&self, _: GLenum, _: GLint, _: GLenum, _: GLenum, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetTexImage` is NULL");
-	}
-	fn glGetTexParameterfv(&self, _: GLenum, _: GLenum, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetTexParameterfv` is NULL");
-	}
-	fn glGetTexParameteriv(&self, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetTexParameteriv` is NULL");
-	}
-	fn glGetTexLevelParameterfv(&self, _: GLenum, _: GLint, _: GLenum, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetTexLevelParameterfv` is NULL");
-	}
-	fn glGetTexLevelParameteriv(&self, _: GLenum, _: GLint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetTexLevelParameteriv` is NULL");
-	}
-	fn glIsEnabled(&self, _: GLenum) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsEnabled` is NULL");
-	}
-	fn glDepthRange(&self, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glDepthRange` is NULL");
-	}
-	fn glViewport(&self, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glViewport` is NULL");
-	}
+	fn glCullFace(&self, mode: GLenum);
+	fn glFrontFace(&self, mode: GLenum);
+	fn glHint(&self, target: GLenum, mode: GLenum);
+	fn glLineWidth(&self, width: GLfloat);
+	fn glPointSize(&self, size: GLfloat);
+	fn glPolygonMode(&self, face: GLenum, mode: GLenum);
+	fn glScissor(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
+	fn glTexParameterf(&self, target: GLenum, pname: GLenum, param: GLfloat);
+	fn glTexParameterfv(&self, target: GLenum, pname: GLenum, params: *const GLfloat);
+	fn glTexParameteri(&self, target: GLenum, pname: GLenum, param: GLint);
+	fn glTexParameteriv(&self, target: GLenum, pname: GLenum, params: *const GLint);
+	fn glTexImage1D(&self, target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, border: GLint, format: GLenum, type_: GLenum, pixels: *const c_void);
+	fn glTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, height: GLsizei, border: GLint, format: GLenum, type_: GLenum, pixels: *const c_void);
+	fn glDrawBuffer(&self, buf: GLenum);
+	fn glClear(&self, mask: GLbitfield);
+	fn glClearColor(&self, red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat);
+	fn glClearStencil(&self, s: GLint);
+	fn glClearDepth(&self, depth: GLdouble);
+	fn glStencilMask(&self, mask: GLuint);
+	fn glColorMask(&self, red: GLboolean, green: GLboolean, blue: GLboolean, alpha: GLboolean);
+	fn glDepthMask(&self, flag: GLboolean);
+	fn glDisable(&self, cap: GLenum);
+	fn glEnable(&self, cap: GLenum);
+	fn glFinish(&self);
+	fn glFlush(&self);
+	fn glBlendFunc(&self, sfactor: GLenum, dfactor: GLenum);
+	fn glLogicOp(&self, opcode: GLenum);
+	fn glStencilFunc(&self, func: GLenum, ref_: GLint, mask: GLuint);
+	fn glStencilOp(&self, fail: GLenum, zfail: GLenum, zpass: GLenum);
+	fn glDepthFunc(&self, func: GLenum);
+	fn glPixelStoref(&self, pname: GLenum, param: GLfloat);
+	fn glPixelStorei(&self, pname: GLenum, param: GLint);
+	fn glReadBuffer(&self, src: GLenum);
+	fn glReadPixels(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, pixels: *mut c_void);
+	fn glGetBooleanv(&self, pname: GLenum, data: *mut GLboolean);
+	fn glGetDoublev(&self, pname: GLenum, data: *mut GLdouble);
+	fn glGetError(&self) -> GLenum;
+	fn glGetFloatv(&self, pname: GLenum, data: *mut GLfloat);
+	fn glGetIntegerv(&self, pname: GLenum, data: *mut GLint);
+	fn glGetString(&self, name: GLenum) -> *const GLubyte;
+	fn glGetTexImage(&self, target: GLenum, level: GLint, format: GLenum, type_: GLenum, pixels: *mut c_void);
+	fn glGetTexParameterfv(&self, target: GLenum, pname: GLenum, params: *mut GLfloat);
+	fn glGetTexParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint);
+	fn glGetTexLevelParameterfv(&self, target: GLenum, level: GLint, pname: GLenum, params: *mut GLfloat);
+	fn glGetTexLevelParameteriv(&self, target: GLenum, level: GLint, pname: GLenum, params: *mut GLint);
+	fn glIsEnabled(&self, cap: GLenum) -> GLboolean;
+	fn glDepthRange(&self, n: GLdouble, f: GLdouble);
+	fn glViewport(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
 	fn get_version(&self) -> (&'static str, u32, u32, u32);
 	fn get_vendor(&self) -> &'static str;
 	fn get_renderer(&self) -> &'static str;
@@ -869,48 +773,20 @@ const RGBA16: GLenum = 0x805B;
 const VERTEX_ARRAY: GLenum = 0x8074;
 
 pub trait GL_1_1 {
-	fn glDrawArrays(&self, _: GLenum, _: GLint, _: GLsizei) {
-		panic!("OpenGL function pointer of `glDrawArrays` is NULL");
-	}
-	fn glDrawElements(&self, _: GLenum, _: GLsizei, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glDrawElements` is NULL");
-	}
-	fn glGetPointerv(&self, _: GLenum, _: *mut *mut c_void) {
-		panic!("OpenGL function pointer of `glGetPointerv` is NULL");
-	}
-	fn glPolygonOffset(&self, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glPolygonOffset` is NULL");
-	}
-	fn glCopyTexImage1D(&self, _: GLenum, _: GLint, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLint) {
-		panic!("OpenGL function pointer of `glCopyTexImage1D` is NULL");
-	}
-	fn glCopyTexImage2D(&self, _: GLenum, _: GLint, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLint) {
-		panic!("OpenGL function pointer of `glCopyTexImage2D` is NULL");
-	}
-	fn glCopyTexSubImage1D(&self, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei) {
-		panic!("OpenGL function pointer of `glCopyTexSubImage1D` is NULL");
-	}
-	fn glCopyTexSubImage2D(&self, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glCopyTexSubImage2D` is NULL");
-	}
-	fn glTexSubImage1D(&self, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glTexSubImage1D` is NULL");
-	}
-	fn glTexSubImage2D(&self, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glTexSubImage2D` is NULL");
-	}
-	fn glBindTexture(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindTexture` is NULL");
-	}
-	fn glDeleteTextures(&self, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glDeleteTextures` is NULL");
-	}
-	fn glGenTextures(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGenTextures` is NULL");
-	}
-	fn glIsTexture(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsTexture` is NULL");
-	}
+	fn glDrawArrays(&self, mode: GLenum, first: GLint, count: GLsizei);
+	fn glDrawElements(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void);
+	fn glGetPointerv(&self, pname: GLenum, params: *mut *mut c_void);
+	fn glPolygonOffset(&self, factor: GLfloat, units: GLfloat);
+	fn glCopyTexImage1D(&self, target: GLenum, level: GLint, internalformat: GLenum, x: GLint, y: GLint, width: GLsizei, border: GLint);
+	fn glCopyTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLenum, x: GLint, y: GLint, width: GLsizei, height: GLsizei, border: GLint);
+	fn glCopyTexSubImage1D(&self, target: GLenum, level: GLint, xoffset: GLint, x: GLint, y: GLint, width: GLsizei);
+	fn glCopyTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
+	fn glTexSubImage1D(&self, target: GLenum, level: GLint, xoffset: GLint, width: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void);
+	fn glTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void);
+	fn glBindTexture(&self, target: GLenum, texture: GLuint);
+	fn glDeleteTextures(&self, n: GLsizei, textures: *const GLuint);
+	fn glGenTextures(&self, n: GLsizei, textures: *mut GLuint);
+	fn glIsTexture(&self, texture: GLuint) -> GLboolean;
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -1091,18 +967,10 @@ const SEPARATE_SPECULAR_COLOR: GLenum = 0x81FA;
 const ALIASED_POINT_SIZE_RANGE: GLenum = 0x846D;
 
 pub trait GL_1_2 {
-	fn glDrawRangeElements(&self, _: GLenum, _: GLuint, _: GLuint, _: GLsizei, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glDrawRangeElements` is NULL");
-	}
-	fn glTexImage3D(&self, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glTexImage3D` is NULL");
-	}
-	fn glTexSubImage3D(&self, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glTexSubImage3D` is NULL");
-	}
-	fn glCopyTexSubImage3D(&self, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glCopyTexSubImage3D` is NULL");
-	}
+	fn glDrawRangeElements(&self, mode: GLenum, start: GLuint, end: GLuint, count: GLsizei, type_: GLenum, indices: *const c_void);
+	fn glTexImage3D(&self, target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, border: GLint, format: GLenum, type_: GLenum, pixels: *const c_void);
+	fn glTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void);
+	fn glCopyTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -1310,144 +1178,52 @@ const DOT3_RGB: GLenum = 0x86AE;
 const DOT3_RGBA: GLenum = 0x86AF;
 
 pub trait GL_1_3 {
-	fn glActiveTexture(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glActiveTexture` is NULL");
-	}
-	fn glSampleCoverage(&self, _: GLfloat, _: GLboolean) {
-		panic!("OpenGL function pointer of `glSampleCoverage` is NULL");
-	}
-	fn glCompressedTexImage3D(&self, _: GLenum, _: GLint, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLint, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glCompressedTexImage3D` is NULL");
-	}
-	fn glCompressedTexImage2D(&self, _: GLenum, _: GLint, _: GLenum, _: GLsizei, _: GLsizei, _: GLint, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glCompressedTexImage2D` is NULL");
-	}
-	fn glCompressedTexImage1D(&self, _: GLenum, _: GLint, _: GLenum, _: GLsizei, _: GLint, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glCompressedTexImage1D` is NULL");
-	}
-	fn glCompressedTexSubImage3D(&self, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glCompressedTexSubImage3D` is NULL");
-	}
-	fn glCompressedTexSubImage2D(&self, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glCompressedTexSubImage2D` is NULL");
-	}
-	fn glCompressedTexSubImage1D(&self, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glCompressedTexSubImage1D` is NULL");
-	}
-	fn glGetCompressedTexImage(&self, _: GLenum, _: GLint, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetCompressedTexImage` is NULL");
-	}
-	fn glClientActiveTexture(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glClientActiveTexture` is NULL");
-	}
-	fn glMultiTexCoord1d(&self, _: GLenum, _: GLdouble) {
-		panic!("OpenGL function pointer of `glMultiTexCoord1d` is NULL");
-	}
-	fn glMultiTexCoord1dv(&self, _: GLenum, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glMultiTexCoord1dv` is NULL");
-	}
-	fn glMultiTexCoord1f(&self, _: GLenum, _: GLfloat) {
-		panic!("OpenGL function pointer of `glMultiTexCoord1f` is NULL");
-	}
-	fn glMultiTexCoord1fv(&self, _: GLenum, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glMultiTexCoord1fv` is NULL");
-	}
-	fn glMultiTexCoord1i(&self, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glMultiTexCoord1i` is NULL");
-	}
-	fn glMultiTexCoord1iv(&self, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glMultiTexCoord1iv` is NULL");
-	}
-	fn glMultiTexCoord1s(&self, _: GLenum, _: GLshort) {
-		panic!("OpenGL function pointer of `glMultiTexCoord1s` is NULL");
-	}
-	fn glMultiTexCoord1sv(&self, _: GLenum, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glMultiTexCoord1sv` is NULL");
-	}
-	fn glMultiTexCoord2d(&self, _: GLenum, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glMultiTexCoord2d` is NULL");
-	}
-	fn glMultiTexCoord2dv(&self, _: GLenum, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glMultiTexCoord2dv` is NULL");
-	}
-	fn glMultiTexCoord2f(&self, _: GLenum, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glMultiTexCoord2f` is NULL");
-	}
-	fn glMultiTexCoord2fv(&self, _: GLenum, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glMultiTexCoord2fv` is NULL");
-	}
-	fn glMultiTexCoord2i(&self, _: GLenum, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glMultiTexCoord2i` is NULL");
-	}
-	fn glMultiTexCoord2iv(&self, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glMultiTexCoord2iv` is NULL");
-	}
-	fn glMultiTexCoord2s(&self, _: GLenum, _: GLshort, _: GLshort) {
-		panic!("OpenGL function pointer of `glMultiTexCoord2s` is NULL");
-	}
-	fn glMultiTexCoord2sv(&self, _: GLenum, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glMultiTexCoord2sv` is NULL");
-	}
-	fn glMultiTexCoord3d(&self, _: GLenum, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glMultiTexCoord3d` is NULL");
-	}
-	fn glMultiTexCoord3dv(&self, _: GLenum, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glMultiTexCoord3dv` is NULL");
-	}
-	fn glMultiTexCoord3f(&self, _: GLenum, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glMultiTexCoord3f` is NULL");
-	}
-	fn glMultiTexCoord3fv(&self, _: GLenum, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glMultiTexCoord3fv` is NULL");
-	}
-	fn glMultiTexCoord3i(&self, _: GLenum, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glMultiTexCoord3i` is NULL");
-	}
-	fn glMultiTexCoord3iv(&self, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glMultiTexCoord3iv` is NULL");
-	}
-	fn glMultiTexCoord3s(&self, _: GLenum, _: GLshort, _: GLshort, _: GLshort) {
-		panic!("OpenGL function pointer of `glMultiTexCoord3s` is NULL");
-	}
-	fn glMultiTexCoord3sv(&self, _: GLenum, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glMultiTexCoord3sv` is NULL");
-	}
-	fn glMultiTexCoord4d(&self, _: GLenum, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glMultiTexCoord4d` is NULL");
-	}
-	fn glMultiTexCoord4dv(&self, _: GLenum, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glMultiTexCoord4dv` is NULL");
-	}
-	fn glMultiTexCoord4f(&self, _: GLenum, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glMultiTexCoord4f` is NULL");
-	}
-	fn glMultiTexCoord4fv(&self, _: GLenum, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glMultiTexCoord4fv` is NULL");
-	}
-	fn glMultiTexCoord4i(&self, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glMultiTexCoord4i` is NULL");
-	}
-	fn glMultiTexCoord4iv(&self, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glMultiTexCoord4iv` is NULL");
-	}
-	fn glMultiTexCoord4s(&self, _: GLenum, _: GLshort, _: GLshort, _: GLshort, _: GLshort) {
-		panic!("OpenGL function pointer of `glMultiTexCoord4s` is NULL");
-	}
-	fn glMultiTexCoord4sv(&self, _: GLenum, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glMultiTexCoord4sv` is NULL");
-	}
-	fn glLoadTransposeMatrixf(&self, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glLoadTransposeMatrixf` is NULL");
-	}
-	fn glLoadTransposeMatrixd(&self, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glLoadTransposeMatrixd` is NULL");
-	}
-	fn glMultTransposeMatrixf(&self, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glMultTransposeMatrixf` is NULL");
-	}
-	fn glMultTransposeMatrixd(&self, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glMultTransposeMatrixd` is NULL");
-	}
+	fn glActiveTexture(&self, texture: GLenum);
+	fn glSampleCoverage(&self, value: GLfloat, invert: GLboolean);
+	fn glCompressedTexImage3D(&self, target: GLenum, level: GLint, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, border: GLint, imageSize: GLsizei, data: *const c_void);
+	fn glCompressedTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLenum, width: GLsizei, height: GLsizei, border: GLint, imageSize: GLsizei, data: *const c_void);
+	fn glCompressedTexImage1D(&self, target: GLenum, level: GLint, internalformat: GLenum, width: GLsizei, border: GLint, imageSize: GLsizei, data: *const c_void);
+	fn glCompressedTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void);
+	fn glCompressedTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void);
+	fn glCompressedTexSubImage1D(&self, target: GLenum, level: GLint, xoffset: GLint, width: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void);
+	fn glGetCompressedTexImage(&self, target: GLenum, level: GLint, img: *mut c_void);
+	fn glClientActiveTexture(&self, texture: GLenum);
+	fn glMultiTexCoord1d(&self, target: GLenum, s: GLdouble);
+	fn glMultiTexCoord1dv(&self, target: GLenum, v: *const GLdouble);
+	fn glMultiTexCoord1f(&self, target: GLenum, s: GLfloat);
+	fn glMultiTexCoord1fv(&self, target: GLenum, v: *const GLfloat);
+	fn glMultiTexCoord1i(&self, target: GLenum, s: GLint);
+	fn glMultiTexCoord1iv(&self, target: GLenum, v: *const GLint);
+	fn glMultiTexCoord1s(&self, target: GLenum, s: GLshort);
+	fn glMultiTexCoord1sv(&self, target: GLenum, v: *const GLshort);
+	fn glMultiTexCoord2d(&self, target: GLenum, s: GLdouble, t: GLdouble);
+	fn glMultiTexCoord2dv(&self, target: GLenum, v: *const GLdouble);
+	fn glMultiTexCoord2f(&self, target: GLenum, s: GLfloat, t: GLfloat);
+	fn glMultiTexCoord2fv(&self, target: GLenum, v: *const GLfloat);
+	fn glMultiTexCoord2i(&self, target: GLenum, s: GLint, t: GLint);
+	fn glMultiTexCoord2iv(&self, target: GLenum, v: *const GLint);
+	fn glMultiTexCoord2s(&self, target: GLenum, s: GLshort, t: GLshort);
+	fn glMultiTexCoord2sv(&self, target: GLenum, v: *const GLshort);
+	fn glMultiTexCoord3d(&self, target: GLenum, s: GLdouble, t: GLdouble, r: GLdouble);
+	fn glMultiTexCoord3dv(&self, target: GLenum, v: *const GLdouble);
+	fn glMultiTexCoord3f(&self, target: GLenum, s: GLfloat, t: GLfloat, r: GLfloat);
+	fn glMultiTexCoord3fv(&self, target: GLenum, v: *const GLfloat);
+	fn glMultiTexCoord3i(&self, target: GLenum, s: GLint, t: GLint, r: GLint);
+	fn glMultiTexCoord3iv(&self, target: GLenum, v: *const GLint);
+	fn glMultiTexCoord3s(&self, target: GLenum, s: GLshort, t: GLshort, r: GLshort);
+	fn glMultiTexCoord3sv(&self, target: GLenum, v: *const GLshort);
+	fn glMultiTexCoord4d(&self, target: GLenum, s: GLdouble, t: GLdouble, r: GLdouble, q: GLdouble);
+	fn glMultiTexCoord4dv(&self, target: GLenum, v: *const GLdouble);
+	fn glMultiTexCoord4f(&self, target: GLenum, s: GLfloat, t: GLfloat, r: GLfloat, q: GLfloat);
+	fn glMultiTexCoord4fv(&self, target: GLenum, v: *const GLfloat);
+	fn glMultiTexCoord4i(&self, target: GLenum, s: GLint, t: GLint, r: GLint, q: GLint);
+	fn glMultiTexCoord4iv(&self, target: GLenum, v: *const GLint);
+	fn glMultiTexCoord4s(&self, target: GLenum, s: GLshort, t: GLshort, r: GLshort, q: GLshort);
+	fn glMultiTexCoord4sv(&self, target: GLenum, v: *const GLshort);
+	fn glLoadTransposeMatrixf(&self, m: *const GLfloat);
+	fn glLoadTransposeMatrixd(&self, m: *const GLdouble);
+	fn glMultTransposeMatrixf(&self, m: *const GLfloat);
+	fn glMultTransposeMatrixd(&self, m: *const GLdouble);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -1904,147 +1680,53 @@ const MIN: GLenum = 0x8007;
 const MAX: GLenum = 0x8008;
 
 pub trait GL_1_4 {
-	fn glBlendFuncSeparate(&self, _: GLenum, _: GLenum, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlendFuncSeparate` is NULL");
-	}
-	fn glMultiDrawArrays(&self, _: GLenum, _: *const GLint, _: *const GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glMultiDrawArrays` is NULL");
-	}
-	fn glMultiDrawElements(&self, _: GLenum, _: *const GLsizei, _: GLenum, _: *const *const c_void, _: GLsizei) {
-		panic!("OpenGL function pointer of `glMultiDrawElements` is NULL");
-	}
-	fn glPointParameterf(&self, _: GLenum, _: GLfloat) {
-		panic!("OpenGL function pointer of `glPointParameterf` is NULL");
-	}
-	fn glPointParameterfv(&self, _: GLenum, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glPointParameterfv` is NULL");
-	}
-	fn glPointParameteri(&self, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glPointParameteri` is NULL");
-	}
-	fn glPointParameteriv(&self, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glPointParameteriv` is NULL");
-	}
-	fn glFogCoordf(&self, _: GLfloat) {
-		panic!("OpenGL function pointer of `glFogCoordf` is NULL");
-	}
-	fn glFogCoordfv(&self, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glFogCoordfv` is NULL");
-	}
-	fn glFogCoordd(&self, _: GLdouble) {
-		panic!("OpenGL function pointer of `glFogCoordd` is NULL");
-	}
-	fn glFogCoorddv(&self, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glFogCoorddv` is NULL");
-	}
-	fn glFogCoordPointer(&self, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glFogCoordPointer` is NULL");
-	}
-	fn glSecondaryColor3b(&self, _: GLbyte, _: GLbyte, _: GLbyte) {
-		panic!("OpenGL function pointer of `glSecondaryColor3b` is NULL");
-	}
-	fn glSecondaryColor3bv(&self, _: *const GLbyte) {
-		panic!("OpenGL function pointer of `glSecondaryColor3bv` is NULL");
-	}
-	fn glSecondaryColor3d(&self, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glSecondaryColor3d` is NULL");
-	}
-	fn glSecondaryColor3dv(&self, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glSecondaryColor3dv` is NULL");
-	}
-	fn glSecondaryColor3f(&self, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glSecondaryColor3f` is NULL");
-	}
-	fn glSecondaryColor3fv(&self, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glSecondaryColor3fv` is NULL");
-	}
-	fn glSecondaryColor3i(&self, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glSecondaryColor3i` is NULL");
-	}
-	fn glSecondaryColor3iv(&self, _: *const GLint) {
-		panic!("OpenGL function pointer of `glSecondaryColor3iv` is NULL");
-	}
-	fn glSecondaryColor3s(&self, _: GLshort, _: GLshort, _: GLshort) {
-		panic!("OpenGL function pointer of `glSecondaryColor3s` is NULL");
-	}
-	fn glSecondaryColor3sv(&self, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glSecondaryColor3sv` is NULL");
-	}
-	fn glSecondaryColor3ub(&self, _: GLubyte, _: GLubyte, _: GLubyte) {
-		panic!("OpenGL function pointer of `glSecondaryColor3ub` is NULL");
-	}
-	fn glSecondaryColor3ubv(&self, _: *const GLubyte) {
-		panic!("OpenGL function pointer of `glSecondaryColor3ubv` is NULL");
-	}
-	fn glSecondaryColor3ui(&self, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glSecondaryColor3ui` is NULL");
-	}
-	fn glSecondaryColor3uiv(&self, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glSecondaryColor3uiv` is NULL");
-	}
-	fn glSecondaryColor3us(&self, _: GLushort, _: GLushort, _: GLushort) {
-		panic!("OpenGL function pointer of `glSecondaryColor3us` is NULL");
-	}
-	fn glSecondaryColor3usv(&self, _: *const GLushort) {
-		panic!("OpenGL function pointer of `glSecondaryColor3usv` is NULL");
-	}
-	fn glSecondaryColorPointer(&self, _: GLint, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glSecondaryColorPointer` is NULL");
-	}
-	fn glWindowPos2d(&self, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glWindowPos2d` is NULL");
-	}
-	fn glWindowPos2dv(&self, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glWindowPos2dv` is NULL");
-	}
-	fn glWindowPos2f(&self, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glWindowPos2f` is NULL");
-	}
-	fn glWindowPos2fv(&self, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glWindowPos2fv` is NULL");
-	}
-	fn glWindowPos2i(&self, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glWindowPos2i` is NULL");
-	}
-	fn glWindowPos2iv(&self, _: *const GLint) {
-		panic!("OpenGL function pointer of `glWindowPos2iv` is NULL");
-	}
-	fn glWindowPos2s(&self, _: GLshort, _: GLshort) {
-		panic!("OpenGL function pointer of `glWindowPos2s` is NULL");
-	}
-	fn glWindowPos2sv(&self, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glWindowPos2sv` is NULL");
-	}
-	fn glWindowPos3d(&self, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glWindowPos3d` is NULL");
-	}
-	fn glWindowPos3dv(&self, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glWindowPos3dv` is NULL");
-	}
-	fn glWindowPos3f(&self, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glWindowPos3f` is NULL");
-	}
-	fn glWindowPos3fv(&self, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glWindowPos3fv` is NULL");
-	}
-	fn glWindowPos3i(&self, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glWindowPos3i` is NULL");
-	}
-	fn glWindowPos3iv(&self, _: *const GLint) {
-		panic!("OpenGL function pointer of `glWindowPos3iv` is NULL");
-	}
-	fn glWindowPos3s(&self, _: GLshort, _: GLshort, _: GLshort) {
-		panic!("OpenGL function pointer of `glWindowPos3s` is NULL");
-	}
-	fn glWindowPos3sv(&self, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glWindowPos3sv` is NULL");
-	}
-	fn glBlendColor(&self, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glBlendColor` is NULL");
-	}
-	fn glBlendEquation(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlendEquation` is NULL");
-	}
+	fn glBlendFuncSeparate(&self, sfactorRGB: GLenum, dfactorRGB: GLenum, sfactorAlpha: GLenum, dfactorAlpha: GLenum);
+	fn glMultiDrawArrays(&self, mode: GLenum, first: *const GLint, count: *const GLsizei, drawcount: GLsizei);
+	fn glMultiDrawElements(&self, mode: GLenum, count: *const GLsizei, type_: GLenum, indices: *const *const c_void, drawcount: GLsizei);
+	fn glPointParameterf(&self, pname: GLenum, param: GLfloat);
+	fn glPointParameterfv(&self, pname: GLenum, params: *const GLfloat);
+	fn glPointParameteri(&self, pname: GLenum, param: GLint);
+	fn glPointParameteriv(&self, pname: GLenum, params: *const GLint);
+	fn glFogCoordf(&self, coord: GLfloat);
+	fn glFogCoordfv(&self, coord: *const GLfloat);
+	fn glFogCoordd(&self, coord: GLdouble);
+	fn glFogCoorddv(&self, coord: *const GLdouble);
+	fn glFogCoordPointer(&self, type_: GLenum, stride: GLsizei, pointer: *const c_void);
+	fn glSecondaryColor3b(&self, red: GLbyte, green: GLbyte, blue: GLbyte);
+	fn glSecondaryColor3bv(&self, v: *const GLbyte);
+	fn glSecondaryColor3d(&self, red: GLdouble, green: GLdouble, blue: GLdouble);
+	fn glSecondaryColor3dv(&self, v: *const GLdouble);
+	fn glSecondaryColor3f(&self, red: GLfloat, green: GLfloat, blue: GLfloat);
+	fn glSecondaryColor3fv(&self, v: *const GLfloat);
+	fn glSecondaryColor3i(&self, red: GLint, green: GLint, blue: GLint);
+	fn glSecondaryColor3iv(&self, v: *const GLint);
+	fn glSecondaryColor3s(&self, red: GLshort, green: GLshort, blue: GLshort);
+	fn glSecondaryColor3sv(&self, v: *const GLshort);
+	fn glSecondaryColor3ub(&self, red: GLubyte, green: GLubyte, blue: GLubyte);
+	fn glSecondaryColor3ubv(&self, v: *const GLubyte);
+	fn glSecondaryColor3ui(&self, red: GLuint, green: GLuint, blue: GLuint);
+	fn glSecondaryColor3uiv(&self, v: *const GLuint);
+	fn glSecondaryColor3us(&self, red: GLushort, green: GLushort, blue: GLushort);
+	fn glSecondaryColor3usv(&self, v: *const GLushort);
+	fn glSecondaryColorPointer(&self, size: GLint, type_: GLenum, stride: GLsizei, pointer: *const c_void);
+	fn glWindowPos2d(&self, x: GLdouble, y: GLdouble);
+	fn glWindowPos2dv(&self, v: *const GLdouble);
+	fn glWindowPos2f(&self, x: GLfloat, y: GLfloat);
+	fn glWindowPos2fv(&self, v: *const GLfloat);
+	fn glWindowPos2i(&self, x: GLint, y: GLint);
+	fn glWindowPos2iv(&self, v: *const GLint);
+	fn glWindowPos2s(&self, x: GLshort, y: GLshort);
+	fn glWindowPos2sv(&self, v: *const GLshort);
+	fn glWindowPos3d(&self, x: GLdouble, y: GLdouble, z: GLdouble);
+	fn glWindowPos3dv(&self, v: *const GLdouble);
+	fn glWindowPos3f(&self, x: GLfloat, y: GLfloat, z: GLfloat);
+	fn glWindowPos3fv(&self, v: *const GLfloat);
+	fn glWindowPos3i(&self, x: GLint, y: GLint, z: GLint);
+	fn glWindowPos3iv(&self, v: *const GLint);
+	fn glWindowPos3s(&self, x: GLshort, y: GLshort, z: GLshort);
+	fn glWindowPos3sv(&self, v: *const GLshort);
+	fn glBlendColor(&self, red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat);
+	fn glBlendEquation(&self, mode: GLenum);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -2482,63 +2164,25 @@ const SRC0_ALPHA: GLenum = 0x8588;
 const SRC2_ALPHA: GLenum = 0x858A;
 
 pub trait GL_1_5 {
-	fn glGenQueries(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGenQueries` is NULL");
-	}
-	fn glDeleteQueries(&self, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glDeleteQueries` is NULL");
-	}
-	fn glIsQuery(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsQuery` is NULL");
-	}
-	fn glBeginQuery(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glBeginQuery` is NULL");
-	}
-	fn glEndQuery(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glEndQuery` is NULL");
-	}
-	fn glGetQueryiv(&self, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetQueryiv` is NULL");
-	}
-	fn glGetQueryObjectiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetQueryObjectiv` is NULL");
-	}
-	fn glGetQueryObjectuiv(&self, _: GLuint, _: GLenum, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetQueryObjectuiv` is NULL");
-	}
-	fn glBindBuffer(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindBuffer` is NULL");
-	}
-	fn glDeleteBuffers(&self, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glDeleteBuffers` is NULL");
-	}
-	fn glGenBuffers(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGenBuffers` is NULL");
-	}
-	fn glIsBuffer(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsBuffer` is NULL");
-	}
-	fn glBufferData(&self, _: GLenum, _: GLsizeiptr, _: *const c_void, _: GLenum) {
-		panic!("OpenGL function pointer of `glBufferData` is NULL");
-	}
-	fn glBufferSubData(&self, _: GLenum, _: GLintptr, _: GLsizeiptr, _: *const c_void) {
-		panic!("OpenGL function pointer of `glBufferSubData` is NULL");
-	}
-	fn glGetBufferSubData(&self, _: GLenum, _: GLintptr, _: GLsizeiptr, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetBufferSubData` is NULL");
-	}
-	fn glMapBuffer(&self, _: GLenum, _: GLenum) -> *mut c_void {
-		panic!("OpenGL function pointer of `glMapBuffer` is NULL");
-	}
-	fn glUnmapBuffer(&self, _: GLenum) -> GLboolean {
-		panic!("OpenGL function pointer of `glUnmapBuffer` is NULL");
-	}
-	fn glGetBufferParameteriv(&self, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetBufferParameteriv` is NULL");
-	}
-	fn glGetBufferPointerv(&self, _: GLenum, _: GLenum, _: *mut *mut c_void) {
-		panic!("OpenGL function pointer of `glGetBufferPointerv` is NULL");
-	}
+	fn glGenQueries(&self, n: GLsizei, ids: *mut GLuint);
+	fn glDeleteQueries(&self, n: GLsizei, ids: *const GLuint);
+	fn glIsQuery(&self, id: GLuint) -> GLboolean;
+	fn glBeginQuery(&self, target: GLenum, id: GLuint);
+	fn glEndQuery(&self, target: GLenum);
+	fn glGetQueryiv(&self, target: GLenum, pname: GLenum, params: *mut GLint);
+	fn glGetQueryObjectiv(&self, id: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetQueryObjectuiv(&self, id: GLuint, pname: GLenum, params: *mut GLuint);
+	fn glBindBuffer(&self, target: GLenum, buffer: GLuint);
+	fn glDeleteBuffers(&self, n: GLsizei, buffers: *const GLuint);
+	fn glGenBuffers(&self, n: GLsizei, buffers: *mut GLuint);
+	fn glIsBuffer(&self, buffer: GLuint) -> GLboolean;
+	fn glBufferData(&self, target: GLenum, size: GLsizeiptr, data: *const c_void, usage: GLenum);
+	fn glBufferSubData(&self, target: GLenum, offset: GLintptr, size: GLsizeiptr, data: *const c_void);
+	fn glGetBufferSubData(&self, target: GLenum, offset: GLintptr, size: GLsizeiptr, data: *mut c_void);
+	fn glMapBuffer(&self, target: GLenum, access: GLenum) -> *mut c_void;
+	fn glUnmapBuffer(&self, target: GLenum) -> GLboolean;
+	fn glGetBufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint);
+	fn glGetBufferPointerv(&self, target: GLenum, pname: GLenum, params: *mut *mut c_void);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -2887,285 +2531,99 @@ const COORD_REPLACE: GLenum = 0x8862;
 const MAX_TEXTURE_COORDS: GLenum = 0x8871;
 
 pub trait GL_2_0 {
-	fn glBlendEquationSeparate(&self, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlendEquationSeparate` is NULL");
-	}
-	fn glDrawBuffers(&self, _: GLsizei, _: *const GLenum) {
-		panic!("OpenGL function pointer of `glDrawBuffers` is NULL");
-	}
-	fn glStencilOpSeparate(&self, _: GLenum, _: GLenum, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glStencilOpSeparate` is NULL");
-	}
-	fn glStencilFuncSeparate(&self, _: GLenum, _: GLenum, _: GLint, _: GLuint) {
-		panic!("OpenGL function pointer of `glStencilFuncSeparate` is NULL");
-	}
-	fn glStencilMaskSeparate(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glStencilMaskSeparate` is NULL");
-	}
-	fn glAttachShader(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glAttachShader` is NULL");
-	}
-	fn glBindAttribLocation(&self, _: GLuint, _: GLuint, _: *const GLchar) {
-		panic!("OpenGL function pointer of `glBindAttribLocation` is NULL");
-	}
-	fn glCompileShader(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glCompileShader` is NULL");
-	}
-	fn glCreateProgram(&self) -> GLuint {
-		panic!("OpenGL function pointer of `glCreateProgram` is NULL");
-	}
-	fn glCreateShader(&self, _: GLenum) -> GLuint {
-		panic!("OpenGL function pointer of `glCreateShader` is NULL");
-	}
-	fn glDeleteProgram(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glDeleteProgram` is NULL");
-	}
-	fn glDeleteShader(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glDeleteShader` is NULL");
-	}
-	fn glDetachShader(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glDetachShader` is NULL");
-	}
-	fn glDisableVertexAttribArray(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glDisableVertexAttribArray` is NULL");
-	}
-	fn glEnableVertexAttribArray(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glEnableVertexAttribArray` is NULL");
-	}
-	fn glGetActiveAttrib(&self, _: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLint, _: *mut GLenum, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetActiveAttrib` is NULL");
-	}
-	fn glGetActiveUniform(&self, _: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLint, _: *mut GLenum, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetActiveUniform` is NULL");
-	}
-	fn glGetAttachedShaders(&self, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetAttachedShaders` is NULL");
-	}
-	fn glGetAttribLocation(&self, _: GLuint, _: *const GLchar) -> GLint {
-		panic!("OpenGL function pointer of `glGetAttribLocation` is NULL");
-	}
-	fn glGetProgramiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetProgramiv` is NULL");
-	}
-	fn glGetProgramInfoLog(&self, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetProgramInfoLog` is NULL");
-	}
-	fn glGetShaderiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetShaderiv` is NULL");
-	}
-	fn glGetShaderInfoLog(&self, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetShaderInfoLog` is NULL");
-	}
-	fn glGetShaderSource(&self, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetShaderSource` is NULL");
-	}
-	fn glGetUniformLocation(&self, _: GLuint, _: *const GLchar) -> GLint {
-		panic!("OpenGL function pointer of `glGetUniformLocation` is NULL");
-	}
-	fn glGetUniformfv(&self, _: GLuint, _: GLint, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetUniformfv` is NULL");
-	}
-	fn glGetUniformiv(&self, _: GLuint, _: GLint, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetUniformiv` is NULL");
-	}
-	fn glGetVertexAttribdv(&self, _: GLuint, _: GLenum, _: *mut GLdouble) {
-		panic!("OpenGL function pointer of `glGetVertexAttribdv` is NULL");
-	}
-	fn glGetVertexAttribfv(&self, _: GLuint, _: GLenum, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetVertexAttribfv` is NULL");
-	}
-	fn glGetVertexAttribiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetVertexAttribiv` is NULL");
-	}
-	fn glGetVertexAttribPointerv(&self, _: GLuint, _: GLenum, _: *mut *mut c_void) {
-		panic!("OpenGL function pointer of `glGetVertexAttribPointerv` is NULL");
-	}
-	fn glIsProgram(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsProgram` is NULL");
-	}
-	fn glIsShader(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsShader` is NULL");
-	}
-	fn glLinkProgram(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glLinkProgram` is NULL");
-	}
-	fn glShaderSource(&self, _: GLuint, _: GLsizei, _: *const *const GLchar, _: *const GLint) {
-		panic!("OpenGL function pointer of `glShaderSource` is NULL");
-	}
-	fn glUseProgram(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glUseProgram` is NULL");
-	}
-	fn glUniform1f(&self, _: GLint, _: GLfloat) {
-		panic!("OpenGL function pointer of `glUniform1f` is NULL");
-	}
-	fn glUniform2f(&self, _: GLint, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glUniform2f` is NULL");
-	}
-	fn glUniform3f(&self, _: GLint, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glUniform3f` is NULL");
-	}
-	fn glUniform4f(&self, _: GLint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glUniform4f` is NULL");
-	}
-	fn glUniform1i(&self, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glUniform1i` is NULL");
-	}
-	fn glUniform2i(&self, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glUniform2i` is NULL");
-	}
-	fn glUniform3i(&self, _: GLint, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glUniform3i` is NULL");
-	}
-	fn glUniform4i(&self, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glUniform4i` is NULL");
-	}
-	fn glUniform1fv(&self, _: GLint, _: GLsizei, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniform1fv` is NULL");
-	}
-	fn glUniform2fv(&self, _: GLint, _: GLsizei, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniform2fv` is NULL");
-	}
-	fn glUniform3fv(&self, _: GLint, _: GLsizei, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniform3fv` is NULL");
-	}
-	fn glUniform4fv(&self, _: GLint, _: GLsizei, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniform4fv` is NULL");
-	}
-	fn glUniform1iv(&self, _: GLint, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glUniform1iv` is NULL");
-	}
-	fn glUniform2iv(&self, _: GLint, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glUniform2iv` is NULL");
-	}
-	fn glUniform3iv(&self, _: GLint, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glUniform3iv` is NULL");
-	}
-	fn glUniform4iv(&self, _: GLint, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glUniform4iv` is NULL");
-	}
-	fn glUniformMatrix2fv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniformMatrix2fv` is NULL");
-	}
-	fn glUniformMatrix3fv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniformMatrix3fv` is NULL");
-	}
-	fn glUniformMatrix4fv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniformMatrix4fv` is NULL");
-	}
-	fn glValidateProgram(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glValidateProgram` is NULL");
-	}
-	fn glVertexAttrib1d(&self, _: GLuint, _: GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttrib1d` is NULL");
-	}
-	fn glVertexAttrib1dv(&self, _: GLuint, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttrib1dv` is NULL");
-	}
-	fn glVertexAttrib1f(&self, _: GLuint, _: GLfloat) {
-		panic!("OpenGL function pointer of `glVertexAttrib1f` is NULL");
-	}
-	fn glVertexAttrib1fv(&self, _: GLuint, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glVertexAttrib1fv` is NULL");
-	}
-	fn glVertexAttrib1s(&self, _: GLuint, _: GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttrib1s` is NULL");
-	}
-	fn glVertexAttrib1sv(&self, _: GLuint, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttrib1sv` is NULL");
-	}
-	fn glVertexAttrib2d(&self, _: GLuint, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttrib2d` is NULL");
-	}
-	fn glVertexAttrib2dv(&self, _: GLuint, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttrib2dv` is NULL");
-	}
-	fn glVertexAttrib2f(&self, _: GLuint, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glVertexAttrib2f` is NULL");
-	}
-	fn glVertexAttrib2fv(&self, _: GLuint, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glVertexAttrib2fv` is NULL");
-	}
-	fn glVertexAttrib2s(&self, _: GLuint, _: GLshort, _: GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttrib2s` is NULL");
-	}
-	fn glVertexAttrib2sv(&self, _: GLuint, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttrib2sv` is NULL");
-	}
-	fn glVertexAttrib3d(&self, _: GLuint, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttrib3d` is NULL");
-	}
-	fn glVertexAttrib3dv(&self, _: GLuint, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttrib3dv` is NULL");
-	}
-	fn glVertexAttrib3f(&self, _: GLuint, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glVertexAttrib3f` is NULL");
-	}
-	fn glVertexAttrib3fv(&self, _: GLuint, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glVertexAttrib3fv` is NULL");
-	}
-	fn glVertexAttrib3s(&self, _: GLuint, _: GLshort, _: GLshort, _: GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttrib3s` is NULL");
-	}
-	fn glVertexAttrib3sv(&self, _: GLuint, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttrib3sv` is NULL");
-	}
-	fn glVertexAttrib4Nbv(&self, _: GLuint, _: *const GLbyte) {
-		panic!("OpenGL function pointer of `glVertexAttrib4Nbv` is NULL");
-	}
-	fn glVertexAttrib4Niv(&self, _: GLuint, _: *const GLint) {
-		panic!("OpenGL function pointer of `glVertexAttrib4Niv` is NULL");
-	}
-	fn glVertexAttrib4Nsv(&self, _: GLuint, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttrib4Nsv` is NULL");
-	}
-	fn glVertexAttrib4Nub(&self, _: GLuint, _: GLubyte, _: GLubyte, _: GLubyte, _: GLubyte) {
-		panic!("OpenGL function pointer of `glVertexAttrib4Nub` is NULL");
-	}
-	fn glVertexAttrib4Nubv(&self, _: GLuint, _: *const GLubyte) {
-		panic!("OpenGL function pointer of `glVertexAttrib4Nubv` is NULL");
-	}
-	fn glVertexAttrib4Nuiv(&self, _: GLuint, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttrib4Nuiv` is NULL");
-	}
-	fn glVertexAttrib4Nusv(&self, _: GLuint, _: *const GLushort) {
-		panic!("OpenGL function pointer of `glVertexAttrib4Nusv` is NULL");
-	}
-	fn glVertexAttrib4bv(&self, _: GLuint, _: *const GLbyte) {
-		panic!("OpenGL function pointer of `glVertexAttrib4bv` is NULL");
-	}
-	fn glVertexAttrib4d(&self, _: GLuint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttrib4d` is NULL");
-	}
-	fn glVertexAttrib4dv(&self, _: GLuint, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttrib4dv` is NULL");
-	}
-	fn glVertexAttrib4f(&self, _: GLuint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glVertexAttrib4f` is NULL");
-	}
-	fn glVertexAttrib4fv(&self, _: GLuint, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glVertexAttrib4fv` is NULL");
-	}
-	fn glVertexAttrib4iv(&self, _: GLuint, _: *const GLint) {
-		panic!("OpenGL function pointer of `glVertexAttrib4iv` is NULL");
-	}
-	fn glVertexAttrib4s(&self, _: GLuint, _: GLshort, _: GLshort, _: GLshort, _: GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttrib4s` is NULL");
-	}
-	fn glVertexAttrib4sv(&self, _: GLuint, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttrib4sv` is NULL");
-	}
-	fn glVertexAttrib4ubv(&self, _: GLuint, _: *const GLubyte) {
-		panic!("OpenGL function pointer of `glVertexAttrib4ubv` is NULL");
-	}
-	fn glVertexAttrib4uiv(&self, _: GLuint, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttrib4uiv` is NULL");
-	}
-	fn glVertexAttrib4usv(&self, _: GLuint, _: *const GLushort) {
-		panic!("OpenGL function pointer of `glVertexAttrib4usv` is NULL");
-	}
-	fn glVertexAttribPointer(&self, _: GLuint, _: GLint, _: GLenum, _: GLboolean, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glVertexAttribPointer` is NULL");
-	}
+	fn glBlendEquationSeparate(&self, modeRGB: GLenum, modeAlpha: GLenum);
+	fn glDrawBuffers(&self, n: GLsizei, bufs: *const GLenum);
+	fn glStencilOpSeparate(&self, face: GLenum, sfail: GLenum, dpfail: GLenum, dppass: GLenum);
+	fn glStencilFuncSeparate(&self, face: GLenum, func: GLenum, ref_: GLint, mask: GLuint);
+	fn glStencilMaskSeparate(&self, face: GLenum, mask: GLuint);
+	fn glAttachShader(&self, program: GLuint, shader: GLuint);
+	fn glBindAttribLocation(&self, program: GLuint, index: GLuint, name: *const GLchar);
+	fn glCompileShader(&self, shader: GLuint);
+	fn glCreateProgram(&self) -> GLuint;
+	fn glCreateShader(&self, type_: GLenum) -> GLuint;
+	fn glDeleteProgram(&self, program: GLuint);
+	fn glDeleteShader(&self, shader: GLuint);
+	fn glDetachShader(&self, program: GLuint, shader: GLuint);
+	fn glDisableVertexAttribArray(&self, index: GLuint);
+	fn glEnableVertexAttribArray(&self, index: GLuint);
+	fn glGetActiveAttrib(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLint, type_: *mut GLenum, name: *mut GLchar);
+	fn glGetActiveUniform(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLint, type_: *mut GLenum, name: *mut GLchar);
+	fn glGetAttachedShaders(&self, program: GLuint, maxCount: GLsizei, count: *mut GLsizei, shaders: *mut GLuint);
+	fn glGetAttribLocation(&self, program: GLuint, name: *const GLchar) -> GLint;
+	fn glGetProgramiv(&self, program: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetProgramInfoLog(&self, program: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar);
+	fn glGetShaderiv(&self, shader: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetShaderInfoLog(&self, shader: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar);
+	fn glGetShaderSource(&self, shader: GLuint, bufSize: GLsizei, length: *mut GLsizei, source: *mut GLchar);
+	fn glGetUniformLocation(&self, program: GLuint, name: *const GLchar) -> GLint;
+	fn glGetUniformfv(&self, program: GLuint, location: GLint, params: *mut GLfloat);
+	fn glGetUniformiv(&self, program: GLuint, location: GLint, params: *mut GLint);
+	fn glGetVertexAttribdv(&self, index: GLuint, pname: GLenum, params: *mut GLdouble);
+	fn glGetVertexAttribfv(&self, index: GLuint, pname: GLenum, params: *mut GLfloat);
+	fn glGetVertexAttribiv(&self, index: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetVertexAttribPointerv(&self, index: GLuint, pname: GLenum, pointer: *mut *mut c_void);
+	fn glIsProgram(&self, program: GLuint) -> GLboolean;
+	fn glIsShader(&self, shader: GLuint) -> GLboolean;
+	fn glLinkProgram(&self, program: GLuint);
+	fn glShaderSource(&self, shader: GLuint, count: GLsizei, string_: *const *const GLchar, length: *const GLint);
+	fn glUseProgram(&self, program: GLuint);
+	fn glUniform1f(&self, location: GLint, v0: GLfloat);
+	fn glUniform2f(&self, location: GLint, v0: GLfloat, v1: GLfloat);
+	fn glUniform3f(&self, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat);
+	fn glUniform4f(&self, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat);
+	fn glUniform1i(&self, location: GLint, v0: GLint);
+	fn glUniform2i(&self, location: GLint, v0: GLint, v1: GLint);
+	fn glUniform3i(&self, location: GLint, v0: GLint, v1: GLint, v2: GLint);
+	fn glUniform4i(&self, location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint);
+	fn glUniform1fv(&self, location: GLint, count: GLsizei, value: *const GLfloat);
+	fn glUniform2fv(&self, location: GLint, count: GLsizei, value: *const GLfloat);
+	fn glUniform3fv(&self, location: GLint, count: GLsizei, value: *const GLfloat);
+	fn glUniform4fv(&self, location: GLint, count: GLsizei, value: *const GLfloat);
+	fn glUniform1iv(&self, location: GLint, count: GLsizei, value: *const GLint);
+	fn glUniform2iv(&self, location: GLint, count: GLsizei, value: *const GLint);
+	fn glUniform3iv(&self, location: GLint, count: GLsizei, value: *const GLint);
+	fn glUniform4iv(&self, location: GLint, count: GLsizei, value: *const GLint);
+	fn glUniformMatrix2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glUniformMatrix3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glUniformMatrix4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glValidateProgram(&self, program: GLuint);
+	fn glVertexAttrib1d(&self, index: GLuint, x: GLdouble);
+	fn glVertexAttrib1dv(&self, index: GLuint, v: *const GLdouble);
+	fn glVertexAttrib1f(&self, index: GLuint, x: GLfloat);
+	fn glVertexAttrib1fv(&self, index: GLuint, v: *const GLfloat);
+	fn glVertexAttrib1s(&self, index: GLuint, x: GLshort);
+	fn glVertexAttrib1sv(&self, index: GLuint, v: *const GLshort);
+	fn glVertexAttrib2d(&self, index: GLuint, x: GLdouble, y: GLdouble);
+	fn glVertexAttrib2dv(&self, index: GLuint, v: *const GLdouble);
+	fn glVertexAttrib2f(&self, index: GLuint, x: GLfloat, y: GLfloat);
+	fn glVertexAttrib2fv(&self, index: GLuint, v: *const GLfloat);
+	fn glVertexAttrib2s(&self, index: GLuint, x: GLshort, y: GLshort);
+	fn glVertexAttrib2sv(&self, index: GLuint, v: *const GLshort);
+	fn glVertexAttrib3d(&self, index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble);
+	fn glVertexAttrib3dv(&self, index: GLuint, v: *const GLdouble);
+	fn glVertexAttrib3f(&self, index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat);
+	fn glVertexAttrib3fv(&self, index: GLuint, v: *const GLfloat);
+	fn glVertexAttrib3s(&self, index: GLuint, x: GLshort, y: GLshort, z: GLshort);
+	fn glVertexAttrib3sv(&self, index: GLuint, v: *const GLshort);
+	fn glVertexAttrib4Nbv(&self, index: GLuint, v: *const GLbyte);
+	fn glVertexAttrib4Niv(&self, index: GLuint, v: *const GLint);
+	fn glVertexAttrib4Nsv(&self, index: GLuint, v: *const GLshort);
+	fn glVertexAttrib4Nub(&self, index: GLuint, x: GLubyte, y: GLubyte, z: GLubyte, w: GLubyte);
+	fn glVertexAttrib4Nubv(&self, index: GLuint, v: *const GLubyte);
+	fn glVertexAttrib4Nuiv(&self, index: GLuint, v: *const GLuint);
+	fn glVertexAttrib4Nusv(&self, index: GLuint, v: *const GLushort);
+	fn glVertexAttrib4bv(&self, index: GLuint, v: *const GLbyte);
+	fn glVertexAttrib4d(&self, index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+	fn glVertexAttrib4dv(&self, index: GLuint, v: *const GLdouble);
+	fn glVertexAttrib4f(&self, index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat);
+	fn glVertexAttrib4fv(&self, index: GLuint, v: *const GLfloat);
+	fn glVertexAttrib4iv(&self, index: GLuint, v: *const GLint);
+	fn glVertexAttrib4s(&self, index: GLuint, x: GLshort, y: GLshort, z: GLshort, w: GLshort);
+	fn glVertexAttrib4sv(&self, index: GLuint, v: *const GLshort);
+	fn glVertexAttrib4ubv(&self, index: GLuint, v: *const GLubyte);
+	fn glVertexAttrib4uiv(&self, index: GLuint, v: *const GLuint);
+	fn glVertexAttrib4usv(&self, index: GLuint, v: *const GLushort);
+	fn glVertexAttribPointer(&self, index: GLuint, size: GLint, type_: GLenum, normalized: GLboolean, stride: GLsizei, pointer: *const c_void);
 	fn get_shading_language_version(&self) -> &'static str;
 }
 
@@ -3891,24 +3349,12 @@ const COMPRESSED_SLUMINANCE: GLenum = 0x8C4A;
 const COMPRESSED_SLUMINANCE_ALPHA: GLenum = 0x8C4B;
 
 pub trait GL_2_1 {
-	fn glUniformMatrix2x3fv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniformMatrix2x3fv` is NULL");
-	}
-	fn glUniformMatrix3x2fv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniformMatrix3x2fv` is NULL");
-	}
-	fn glUniformMatrix2x4fv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniformMatrix2x4fv` is NULL");
-	}
-	fn glUniformMatrix4x2fv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniformMatrix4x2fv` is NULL");
-	}
-	fn glUniformMatrix3x4fv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniformMatrix3x4fv` is NULL");
-	}
-	fn glUniformMatrix4x3fv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glUniformMatrix4x3fv` is NULL");
-	}
+	fn glUniformMatrix2x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glUniformMatrix3x2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glUniformMatrix2x4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glUniformMatrix4x2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glUniformMatrix3x4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glUniformMatrix4x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -4310,258 +3756,90 @@ const CLAMP_FRAGMENT_COLOR: GLenum = 0x891B;
 const ALPHA_INTEGER: GLenum = 0x8D97;
 
 pub trait GL_3_0 {
-	fn glColorMaski(&self, _: GLuint, _: GLboolean, _: GLboolean, _: GLboolean, _: GLboolean) {
-		panic!("OpenGL function pointer of `glColorMaski` is NULL");
-	}
-	fn glGetBooleani_v(&self, _: GLenum, _: GLuint, _: *mut GLboolean) {
-		panic!("OpenGL function pointer of `glGetBooleani_v` is NULL");
-	}
-	fn glGetIntegeri_v(&self, _: GLenum, _: GLuint, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetIntegeri_v` is NULL");
-	}
-	fn glEnablei(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glEnablei` is NULL");
-	}
-	fn glDisablei(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glDisablei` is NULL");
-	}
-	fn glIsEnabledi(&self, _: GLenum, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsEnabledi` is NULL");
-	}
-	fn glBeginTransformFeedback(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glBeginTransformFeedback` is NULL");
-	}
-	fn glEndTransformFeedback(&self) {
-		panic!("OpenGL function pointer of `glEndTransformFeedback` is NULL");
-	}
-	fn glBindBufferRange(&self, _: GLenum, _: GLuint, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-		panic!("OpenGL function pointer of `glBindBufferRange` is NULL");
-	}
-	fn glBindBufferBase(&self, _: GLenum, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindBufferBase` is NULL");
-	}
-	fn glTransformFeedbackVaryings(&self, _: GLuint, _: GLsizei, _: *const *const GLchar, _: GLenum) {
-		panic!("OpenGL function pointer of `glTransformFeedbackVaryings` is NULL");
-	}
-	fn glGetTransformFeedbackVarying(&self, _: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLsizei, _: *mut GLenum, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetTransformFeedbackVarying` is NULL");
-	}
-	fn glClampColor(&self, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glClampColor` is NULL");
-	}
-	fn glBeginConditionalRender(&self, _: GLuint, _: GLenum) {
-		panic!("OpenGL function pointer of `glBeginConditionalRender` is NULL");
-	}
-	fn glEndConditionalRender(&self) {
-		panic!("OpenGL function pointer of `glEndConditionalRender` is NULL");
-	}
-	fn glVertexAttribIPointer(&self, _: GLuint, _: GLint, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glVertexAttribIPointer` is NULL");
-	}
-	fn glGetVertexAttribIiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetVertexAttribIiv` is NULL");
-	}
-	fn glGetVertexAttribIuiv(&self, _: GLuint, _: GLenum, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetVertexAttribIuiv` is NULL");
-	}
-	fn glVertexAttribI1i(&self, _: GLuint, _: GLint) {
-		panic!("OpenGL function pointer of `glVertexAttribI1i` is NULL");
-	}
-	fn glVertexAttribI2i(&self, _: GLuint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glVertexAttribI2i` is NULL");
-	}
-	fn glVertexAttribI3i(&self, _: GLuint, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glVertexAttribI3i` is NULL");
-	}
-	fn glVertexAttribI4i(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glVertexAttribI4i` is NULL");
-	}
-	fn glVertexAttribI1ui(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribI1ui` is NULL");
-	}
-	fn glVertexAttribI2ui(&self, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribI2ui` is NULL");
-	}
-	fn glVertexAttribI3ui(&self, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribI3ui` is NULL");
-	}
-	fn glVertexAttribI4ui(&self, _: GLuint, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribI4ui` is NULL");
-	}
-	fn glVertexAttribI1iv(&self, _: GLuint, _: *const GLint) {
-		panic!("OpenGL function pointer of `glVertexAttribI1iv` is NULL");
-	}
-	fn glVertexAttribI2iv(&self, _: GLuint, _: *const GLint) {
-		panic!("OpenGL function pointer of `glVertexAttribI2iv` is NULL");
-	}
-	fn glVertexAttribI3iv(&self, _: GLuint, _: *const GLint) {
-		panic!("OpenGL function pointer of `glVertexAttribI3iv` is NULL");
-	}
-	fn glVertexAttribI4iv(&self, _: GLuint, _: *const GLint) {
-		panic!("OpenGL function pointer of `glVertexAttribI4iv` is NULL");
-	}
-	fn glVertexAttribI1uiv(&self, _: GLuint, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribI1uiv` is NULL");
-	}
-	fn glVertexAttribI2uiv(&self, _: GLuint, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribI2uiv` is NULL");
-	}
-	fn glVertexAttribI3uiv(&self, _: GLuint, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribI3uiv` is NULL");
-	}
-	fn glVertexAttribI4uiv(&self, _: GLuint, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribI4uiv` is NULL");
-	}
-	fn glVertexAttribI4bv(&self, _: GLuint, _: *const GLbyte) {
-		panic!("OpenGL function pointer of `glVertexAttribI4bv` is NULL");
-	}
-	fn glVertexAttribI4sv(&self, _: GLuint, _: *const GLshort) {
-		panic!("OpenGL function pointer of `glVertexAttribI4sv` is NULL");
-	}
-	fn glVertexAttribI4ubv(&self, _: GLuint, _: *const GLubyte) {
-		panic!("OpenGL function pointer of `glVertexAttribI4ubv` is NULL");
-	}
-	fn glVertexAttribI4usv(&self, _: GLuint, _: *const GLushort) {
-		panic!("OpenGL function pointer of `glVertexAttribI4usv` is NULL");
-	}
-	fn glGetUniformuiv(&self, _: GLuint, _: GLint, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetUniformuiv` is NULL");
-	}
-	fn glBindFragDataLocation(&self, _: GLuint, _: GLuint, _: *const GLchar) {
-		panic!("OpenGL function pointer of `glBindFragDataLocation` is NULL");
-	}
-	fn glGetFragDataLocation(&self, _: GLuint, _: *const GLchar) -> GLint {
-		panic!("OpenGL function pointer of `glGetFragDataLocation` is NULL");
-	}
-	fn glUniform1ui(&self, _: GLint, _: GLuint) {
-		panic!("OpenGL function pointer of `glUniform1ui` is NULL");
-	}
-	fn glUniform2ui(&self, _: GLint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glUniform2ui` is NULL");
-	}
-	fn glUniform3ui(&self, _: GLint, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glUniform3ui` is NULL");
-	}
-	fn glUniform4ui(&self, _: GLint, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glUniform4ui` is NULL");
-	}
-	fn glUniform1uiv(&self, _: GLint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glUniform1uiv` is NULL");
-	}
-	fn glUniform2uiv(&self, _: GLint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glUniform2uiv` is NULL");
-	}
-	fn glUniform3uiv(&self, _: GLint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glUniform3uiv` is NULL");
-	}
-	fn glUniform4uiv(&self, _: GLint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glUniform4uiv` is NULL");
-	}
-	fn glTexParameterIiv(&self, _: GLenum, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glTexParameterIiv` is NULL");
-	}
-	fn glTexParameterIuiv(&self, _: GLenum, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glTexParameterIuiv` is NULL");
-	}
-	fn glGetTexParameterIiv(&self, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetTexParameterIiv` is NULL");
-	}
-	fn glGetTexParameterIuiv(&self, _: GLenum, _: GLenum, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetTexParameterIuiv` is NULL");
-	}
-	fn glClearBufferiv(&self, _: GLenum, _: GLint, _: *const GLint) {
-		panic!("OpenGL function pointer of `glClearBufferiv` is NULL");
-	}
-	fn glClearBufferuiv(&self, _: GLenum, _: GLint, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glClearBufferuiv` is NULL");
-	}
-	fn glClearBufferfv(&self, _: GLenum, _: GLint, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glClearBufferfv` is NULL");
-	}
-	fn glClearBufferfi(&self, _: GLenum, _: GLint, _: GLfloat, _: GLint) {
-		panic!("OpenGL function pointer of `glClearBufferfi` is NULL");
-	}
-	fn glGetStringi(&self, _: GLenum, _: GLuint) -> *const GLubyte {
-		panic!("OpenGL function pointer of `glGetStringi` is NULL");
-	}
-	fn glIsRenderbuffer(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsRenderbuffer` is NULL");
-	}
-	fn glBindRenderbuffer(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindRenderbuffer` is NULL");
-	}
-	fn glDeleteRenderbuffers(&self, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glDeleteRenderbuffers` is NULL");
-	}
-	fn glGenRenderbuffers(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGenRenderbuffers` is NULL");
-	}
-	fn glRenderbufferStorage(&self, _: GLenum, _: GLenum, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glRenderbufferStorage` is NULL");
-	}
-	fn glGetRenderbufferParameteriv(&self, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetRenderbufferParameteriv` is NULL");
-	}
-	fn glIsFramebuffer(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsFramebuffer` is NULL");
-	}
-	fn glBindFramebuffer(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindFramebuffer` is NULL");
-	}
-	fn glDeleteFramebuffers(&self, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glDeleteFramebuffers` is NULL");
-	}
-	fn glGenFramebuffers(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGenFramebuffers` is NULL");
-	}
-	fn glCheckFramebufferStatus(&self, _: GLenum) -> GLenum {
-		panic!("OpenGL function pointer of `glCheckFramebufferStatus` is NULL");
-	}
-	fn glFramebufferTexture1D(&self, _: GLenum, _: GLenum, _: GLenum, _: GLuint, _: GLint) {
-		panic!("OpenGL function pointer of `glFramebufferTexture1D` is NULL");
-	}
-	fn glFramebufferTexture2D(&self, _: GLenum, _: GLenum, _: GLenum, _: GLuint, _: GLint) {
-		panic!("OpenGL function pointer of `glFramebufferTexture2D` is NULL");
-	}
-	fn glFramebufferTexture3D(&self, _: GLenum, _: GLenum, _: GLenum, _: GLuint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glFramebufferTexture3D` is NULL");
-	}
-	fn glFramebufferRenderbuffer(&self, _: GLenum, _: GLenum, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glFramebufferRenderbuffer` is NULL");
-	}
-	fn glGetFramebufferAttachmentParameteriv(&self, _: GLenum, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetFramebufferAttachmentParameteriv` is NULL");
-	}
-	fn glGenerateMipmap(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glGenerateMipmap` is NULL");
-	}
-	fn glBlitFramebuffer(&self, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLbitfield, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlitFramebuffer` is NULL");
-	}
-	fn glRenderbufferStorageMultisample(&self, _: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glRenderbufferStorageMultisample` is NULL");
-	}
-	fn glFramebufferTextureLayer(&self, _: GLenum, _: GLenum, _: GLuint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glFramebufferTextureLayer` is NULL");
-	}
-	fn glMapBufferRange(&self, _: GLenum, _: GLintptr, _: GLsizeiptr, _: GLbitfield) -> *mut c_void {
-		panic!("OpenGL function pointer of `glMapBufferRange` is NULL");
-	}
-	fn glFlushMappedBufferRange(&self, _: GLenum, _: GLintptr, _: GLsizeiptr) {
-		panic!("OpenGL function pointer of `glFlushMappedBufferRange` is NULL");
-	}
-	fn glBindVertexArray(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindVertexArray` is NULL");
-	}
-	fn glDeleteVertexArrays(&self, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glDeleteVertexArrays` is NULL");
-	}
-	fn glGenVertexArrays(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGenVertexArrays` is NULL");
-	}
-	fn glIsVertexArray(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsVertexArray` is NULL");
-	}
+	fn glColorMaski(&self, index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean);
+	fn glGetBooleani_v(&self, target: GLenum, index: GLuint, data: *mut GLboolean);
+	fn glGetIntegeri_v(&self, target: GLenum, index: GLuint, data: *mut GLint);
+	fn glEnablei(&self, target: GLenum, index: GLuint);
+	fn glDisablei(&self, target: GLenum, index: GLuint);
+	fn glIsEnabledi(&self, target: GLenum, index: GLuint) -> GLboolean;
+	fn glBeginTransformFeedback(&self, primitiveMode: GLenum);
+	fn glEndTransformFeedback(&self);
+	fn glBindBufferRange(&self, target: GLenum, index: GLuint, buffer: GLuint, offset: GLintptr, size: GLsizeiptr);
+	fn glBindBufferBase(&self, target: GLenum, index: GLuint, buffer: GLuint);
+	fn glTransformFeedbackVaryings(&self, program: GLuint, count: GLsizei, varyings: *const *const GLchar, bufferMode: GLenum);
+	fn glGetTransformFeedbackVarying(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLsizei, type_: *mut GLenum, name: *mut GLchar);
+	fn glClampColor(&self, target: GLenum, clamp: GLenum);
+	fn glBeginConditionalRender(&self, id: GLuint, mode: GLenum);
+	fn glEndConditionalRender(&self);
+	fn glVertexAttribIPointer(&self, index: GLuint, size: GLint, type_: GLenum, stride: GLsizei, pointer: *const c_void);
+	fn glGetVertexAttribIiv(&self, index: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetVertexAttribIuiv(&self, index: GLuint, pname: GLenum, params: *mut GLuint);
+	fn glVertexAttribI1i(&self, index: GLuint, x: GLint);
+	fn glVertexAttribI2i(&self, index: GLuint, x: GLint, y: GLint);
+	fn glVertexAttribI3i(&self, index: GLuint, x: GLint, y: GLint, z: GLint);
+	fn glVertexAttribI4i(&self, index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint);
+	fn glVertexAttribI1ui(&self, index: GLuint, x: GLuint);
+	fn glVertexAttribI2ui(&self, index: GLuint, x: GLuint, y: GLuint);
+	fn glVertexAttribI3ui(&self, index: GLuint, x: GLuint, y: GLuint, z: GLuint);
+	fn glVertexAttribI4ui(&self, index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint);
+	fn glVertexAttribI1iv(&self, index: GLuint, v: *const GLint);
+	fn glVertexAttribI2iv(&self, index: GLuint, v: *const GLint);
+	fn glVertexAttribI3iv(&self, index: GLuint, v: *const GLint);
+	fn glVertexAttribI4iv(&self, index: GLuint, v: *const GLint);
+	fn glVertexAttribI1uiv(&self, index: GLuint, v: *const GLuint);
+	fn glVertexAttribI2uiv(&self, index: GLuint, v: *const GLuint);
+	fn glVertexAttribI3uiv(&self, index: GLuint, v: *const GLuint);
+	fn glVertexAttribI4uiv(&self, index: GLuint, v: *const GLuint);
+	fn glVertexAttribI4bv(&self, index: GLuint, v: *const GLbyte);
+	fn glVertexAttribI4sv(&self, index: GLuint, v: *const GLshort);
+	fn glVertexAttribI4ubv(&self, index: GLuint, v: *const GLubyte);
+	fn glVertexAttribI4usv(&self, index: GLuint, v: *const GLushort);
+	fn glGetUniformuiv(&self, program: GLuint, location: GLint, params: *mut GLuint);
+	fn glBindFragDataLocation(&self, program: GLuint, color: GLuint, name: *const GLchar);
+	fn glGetFragDataLocation(&self, program: GLuint, name: *const GLchar) -> GLint;
+	fn glUniform1ui(&self, location: GLint, v0: GLuint);
+	fn glUniform2ui(&self, location: GLint, v0: GLuint, v1: GLuint);
+	fn glUniform3ui(&self, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint);
+	fn glUniform4ui(&self, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint);
+	fn glUniform1uiv(&self, location: GLint, count: GLsizei, value: *const GLuint);
+	fn glUniform2uiv(&self, location: GLint, count: GLsizei, value: *const GLuint);
+	fn glUniform3uiv(&self, location: GLint, count: GLsizei, value: *const GLuint);
+	fn glUniform4uiv(&self, location: GLint, count: GLsizei, value: *const GLuint);
+	fn glTexParameterIiv(&self, target: GLenum, pname: GLenum, params: *const GLint);
+	fn glTexParameterIuiv(&self, target: GLenum, pname: GLenum, params: *const GLuint);
+	fn glGetTexParameterIiv(&self, target: GLenum, pname: GLenum, params: *mut GLint);
+	fn glGetTexParameterIuiv(&self, target: GLenum, pname: GLenum, params: *mut GLuint);
+	fn glClearBufferiv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLint);
+	fn glClearBufferuiv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLuint);
+	fn glClearBufferfv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLfloat);
+	fn glClearBufferfi(&self, buffer: GLenum, drawbuffer: GLint, depth: GLfloat, stencil: GLint);
+	fn glGetStringi(&self, name: GLenum, index: GLuint) -> *const GLubyte;
+	fn glIsRenderbuffer(&self, renderbuffer: GLuint) -> GLboolean;
+	fn glBindRenderbuffer(&self, target: GLenum, renderbuffer: GLuint);
+	fn glDeleteRenderbuffers(&self, n: GLsizei, renderbuffers: *const GLuint);
+	fn glGenRenderbuffers(&self, n: GLsizei, renderbuffers: *mut GLuint);
+	fn glRenderbufferStorage(&self, target: GLenum, internalformat: GLenum, width: GLsizei, height: GLsizei);
+	fn glGetRenderbufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint);
+	fn glIsFramebuffer(&self, framebuffer: GLuint) -> GLboolean;
+	fn glBindFramebuffer(&self, target: GLenum, framebuffer: GLuint);
+	fn glDeleteFramebuffers(&self, n: GLsizei, framebuffers: *const GLuint);
+	fn glGenFramebuffers(&self, n: GLsizei, framebuffers: *mut GLuint);
+	fn glCheckFramebufferStatus(&self, target: GLenum) -> GLenum;
+	fn glFramebufferTexture1D(&self, target: GLenum, attachment: GLenum, textarget: GLenum, texture: GLuint, level: GLint);
+	fn glFramebufferTexture2D(&self, target: GLenum, attachment: GLenum, textarget: GLenum, texture: GLuint, level: GLint);
+	fn glFramebufferTexture3D(&self, target: GLenum, attachment: GLenum, textarget: GLenum, texture: GLuint, level: GLint, zoffset: GLint);
+	fn glFramebufferRenderbuffer(&self, target: GLenum, attachment: GLenum, renderbuffertarget: GLenum, renderbuffer: GLuint);
+	fn glGetFramebufferAttachmentParameteriv(&self, target: GLenum, attachment: GLenum, pname: GLenum, params: *mut GLint);
+	fn glGenerateMipmap(&self, target: GLenum);
+	fn glBlitFramebuffer(&self, srcX0: GLint, srcY0: GLint, srcX1: GLint, srcY1: GLint, dstX0: GLint, dstY0: GLint, dstX1: GLint, dstY1: GLint, mask: GLbitfield, filter: GLenum);
+	fn glRenderbufferStorageMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei);
+	fn glFramebufferTextureLayer(&self, target: GLenum, attachment: GLenum, texture: GLuint, level: GLint, layer: GLint);
+	fn glMapBufferRange(&self, target: GLenum, offset: GLintptr, length: GLsizeiptr, access: GLbitfield) -> *mut c_void;
+	fn glFlushMappedBufferRange(&self, target: GLenum, offset: GLintptr, length: GLsizeiptr);
+	fn glBindVertexArray(&self, array: GLuint);
+	fn glDeleteVertexArrays(&self, n: GLsizei, arrays: *const GLuint);
+	fn glGenVertexArrays(&self, n: GLsizei, arrays: *mut GLuint);
+	fn glIsVertexArray(&self, array: GLuint) -> GLboolean;
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -5260,42 +4538,18 @@ const UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER: GLenum = 0x8A46;
 const INVALID_INDEX: GLuint = 0xFFFFFFFFu32;
 
 pub trait GL_3_1 {
-	fn glDrawArraysInstanced(&self, _: GLenum, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glDrawArraysInstanced` is NULL");
-	}
-	fn glDrawElementsInstanced(&self, _: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei) {
-		panic!("OpenGL function pointer of `glDrawElementsInstanced` is NULL");
-	}
-	fn glTexBuffer(&self, _: GLenum, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glTexBuffer` is NULL");
-	}
-	fn glPrimitiveRestartIndex(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glPrimitiveRestartIndex` is NULL");
-	}
-	fn glCopyBufferSubData(&self, _: GLenum, _: GLenum, _: GLintptr, _: GLintptr, _: GLsizeiptr) {
-		panic!("OpenGL function pointer of `glCopyBufferSubData` is NULL");
-	}
-	fn glGetUniformIndices(&self, _: GLuint, _: GLsizei, _: *const *const GLchar, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetUniformIndices` is NULL");
-	}
-	fn glGetActiveUniformsiv(&self, _: GLuint, _: GLsizei, _: *const GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetActiveUniformsiv` is NULL");
-	}
-	fn glGetActiveUniformName(&self, _: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetActiveUniformName` is NULL");
-	}
-	fn glGetUniformBlockIndex(&self, _: GLuint, _: *const GLchar) -> GLuint {
-		panic!("OpenGL function pointer of `glGetUniformBlockIndex` is NULL");
-	}
-	fn glGetActiveUniformBlockiv(&self, _: GLuint, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetActiveUniformBlockiv` is NULL");
-	}
-	fn glGetActiveUniformBlockName(&self, _: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetActiveUniformBlockName` is NULL");
-	}
-	fn glUniformBlockBinding(&self, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glUniformBlockBinding` is NULL");
-	}
+	fn glDrawArraysInstanced(&self, mode: GLenum, first: GLint, count: GLsizei, instancecount: GLsizei);
+	fn glDrawElementsInstanced(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei);
+	fn glTexBuffer(&self, target: GLenum, internalformat: GLenum, buffer: GLuint);
+	fn glPrimitiveRestartIndex(&self, index: GLuint);
+	fn glCopyBufferSubData(&self, readTarget: GLenum, writeTarget: GLenum, readOffset: GLintptr, writeOffset: GLintptr, size: GLsizeiptr);
+	fn glGetUniformIndices(&self, program: GLuint, uniformCount: GLsizei, uniformNames: *const *const GLchar, uniformIndices: *mut GLuint);
+	fn glGetActiveUniformsiv(&self, program: GLuint, uniformCount: GLsizei, uniformIndices: *const GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetActiveUniformName(&self, program: GLuint, uniformIndex: GLuint, bufSize: GLsizei, length: *mut GLsizei, uniformName: *mut GLchar);
+	fn glGetUniformBlockIndex(&self, program: GLuint, uniformBlockName: *const GLchar) -> GLuint;
+	fn glGetActiveUniformBlockiv(&self, program: GLuint, uniformBlockIndex: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetActiveUniformBlockName(&self, program: GLuint, uniformBlockIndex: GLuint, bufSize: GLsizei, length: *mut GLsizei, uniformBlockName: *mut GLchar);
+	fn glUniformBlockBinding(&self, program: GLuint, uniformBlockIndex: GLuint, uniformBlockBinding: GLuint);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -5503,63 +4757,25 @@ const MAX_DEPTH_TEXTURE_SAMPLES: GLenum = 0x910F;
 const MAX_INTEGER_SAMPLES: GLenum = 0x9110;
 
 pub trait GL_3_2 {
-	fn glDrawElementsBaseVertex(&self, _: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLint) {
-		panic!("OpenGL function pointer of `glDrawElementsBaseVertex` is NULL");
-	}
-	fn glDrawRangeElementsBaseVertex(&self, _: GLenum, _: GLuint, _: GLuint, _: GLsizei, _: GLenum, _: *const c_void, _: GLint) {
-		panic!("OpenGL function pointer of `glDrawRangeElementsBaseVertex` is NULL");
-	}
-	fn glDrawElementsInstancedBaseVertex(&self, _: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei, _: GLint) {
-		panic!("OpenGL function pointer of `glDrawElementsInstancedBaseVertex` is NULL");
-	}
-	fn glMultiDrawElementsBaseVertex(&self, _: GLenum, _: *const GLsizei, _: GLenum, _: *const *const c_void, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glMultiDrawElementsBaseVertex` is NULL");
-	}
-	fn glProvokingVertex(&self, _: GLenum) {
-		panic!("OpenGL function pointer of `glProvokingVertex` is NULL");
-	}
-	fn glFenceSync(&self, _: GLenum, _: GLbitfield) -> GLsync {
-		panic!("OpenGL function pointer of `glFenceSync` is NULL");
-	}
-	fn glIsSync(&self, _: GLsync) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsSync` is NULL");
-	}
-	fn glDeleteSync(&self, _: GLsync) {
-		panic!("OpenGL function pointer of `glDeleteSync` is NULL");
-	}
-	fn glClientWaitSync(&self, _: GLsync, _: GLbitfield, _: GLuint64) -> GLenum {
-		panic!("OpenGL function pointer of `glClientWaitSync` is NULL");
-	}
-	fn glWaitSync(&self, _: GLsync, _: GLbitfield, _: GLuint64) {
-		panic!("OpenGL function pointer of `glWaitSync` is NULL");
-	}
-	fn glGetInteger64v(&self, _: GLenum, _: *mut GLint64) {
-		panic!("OpenGL function pointer of `glGetInteger64v` is NULL");
-	}
-	fn glGetSynciv(&self, _: GLsync, _: GLenum, _: GLsizei, _: *mut GLsizei, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetSynciv` is NULL");
-	}
-	fn glGetInteger64i_v(&self, _: GLenum, _: GLuint, _: *mut GLint64) {
-		panic!("OpenGL function pointer of `glGetInteger64i_v` is NULL");
-	}
-	fn glGetBufferParameteri64v(&self, _: GLenum, _: GLenum, _: *mut GLint64) {
-		panic!("OpenGL function pointer of `glGetBufferParameteri64v` is NULL");
-	}
-	fn glFramebufferTexture(&self, _: GLenum, _: GLenum, _: GLuint, _: GLint) {
-		panic!("OpenGL function pointer of `glFramebufferTexture` is NULL");
-	}
-	fn glTexImage2DMultisample(&self, _: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLboolean) {
-		panic!("OpenGL function pointer of `glTexImage2DMultisample` is NULL");
-	}
-	fn glTexImage3DMultisample(&self, _: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLboolean) {
-		panic!("OpenGL function pointer of `glTexImage3DMultisample` is NULL");
-	}
-	fn glGetMultisamplefv(&self, _: GLenum, _: GLuint, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetMultisamplefv` is NULL");
-	}
-	fn glSampleMaski(&self, _: GLuint, _: GLbitfield) {
-		panic!("OpenGL function pointer of `glSampleMaski` is NULL");
-	}
+	fn glDrawElementsBaseVertex(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, basevertex: GLint);
+	fn glDrawRangeElementsBaseVertex(&self, mode: GLenum, start: GLuint, end: GLuint, count: GLsizei, type_: GLenum, indices: *const c_void, basevertex: GLint);
+	fn glDrawElementsInstancedBaseVertex(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei, basevertex: GLint);
+	fn glMultiDrawElementsBaseVertex(&self, mode: GLenum, count: *const GLsizei, type_: GLenum, indices: *const *const c_void, drawcount: GLsizei, basevertex: *const GLint);
+	fn glProvokingVertex(&self, mode: GLenum);
+	fn glFenceSync(&self, condition: GLenum, flags: GLbitfield) -> GLsync;
+	fn glIsSync(&self, sync: GLsync) -> GLboolean;
+	fn glDeleteSync(&self, sync: GLsync);
+	fn glClientWaitSync(&self, sync: GLsync, flags: GLbitfield, timeout: GLuint64) -> GLenum;
+	fn glWaitSync(&self, sync: GLsync, flags: GLbitfield, timeout: GLuint64);
+	fn glGetInteger64v(&self, pname: GLenum, data: *mut GLint64);
+	fn glGetSynciv(&self, sync: GLsync, pname: GLenum, count: GLsizei, length: *mut GLsizei, values: *mut GLint);
+	fn glGetInteger64i_v(&self, target: GLenum, index: GLuint, data: *mut GLint64);
+	fn glGetBufferParameteri64v(&self, target: GLenum, pname: GLenum, params: *mut GLint64);
+	fn glFramebufferTexture(&self, target: GLenum, attachment: GLenum, texture: GLuint, level: GLint);
+	fn glTexImage2DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, fixedsamplelocations: GLboolean);
+	fn glTexImage3DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, fixedsamplelocations: GLboolean);
+	fn glGetMultisamplefv(&self, pname: GLenum, index: GLuint, val: *mut GLfloat);
+	fn glSampleMaski(&self, maskNumber: GLuint, mask: GLbitfield);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -5804,180 +5020,64 @@ const TIMESTAMP: GLenum = 0x8E28;
 const INT_2_10_10_10_REV: GLenum = 0x8D9F;
 
 pub trait GL_3_3 {
-	fn glBindFragDataLocationIndexed(&self, _: GLuint, _: GLuint, _: GLuint, _: *const GLchar) {
-		panic!("OpenGL function pointer of `glBindFragDataLocationIndexed` is NULL");
-	}
-	fn glGetFragDataIndex(&self, _: GLuint, _: *const GLchar) -> GLint {
-		panic!("OpenGL function pointer of `glGetFragDataIndex` is NULL");
-	}
-	fn glGenSamplers(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGenSamplers` is NULL");
-	}
-	fn glDeleteSamplers(&self, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glDeleteSamplers` is NULL");
-	}
-	fn glIsSampler(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsSampler` is NULL");
-	}
-	fn glBindSampler(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindSampler` is NULL");
-	}
-	fn glSamplerParameteri(&self, _: GLuint, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glSamplerParameteri` is NULL");
-	}
-	fn glSamplerParameteriv(&self, _: GLuint, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glSamplerParameteriv` is NULL");
-	}
-	fn glSamplerParameterf(&self, _: GLuint, _: GLenum, _: GLfloat) {
-		panic!("OpenGL function pointer of `glSamplerParameterf` is NULL");
-	}
-	fn glSamplerParameterfv(&self, _: GLuint, _: GLenum, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glSamplerParameterfv` is NULL");
-	}
-	fn glSamplerParameterIiv(&self, _: GLuint, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glSamplerParameterIiv` is NULL");
-	}
-	fn glSamplerParameterIuiv(&self, _: GLuint, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glSamplerParameterIuiv` is NULL");
-	}
-	fn glGetSamplerParameteriv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetSamplerParameteriv` is NULL");
-	}
-	fn glGetSamplerParameterIiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetSamplerParameterIiv` is NULL");
-	}
-	fn glGetSamplerParameterfv(&self, _: GLuint, _: GLenum, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetSamplerParameterfv` is NULL");
-	}
-	fn glGetSamplerParameterIuiv(&self, _: GLuint, _: GLenum, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetSamplerParameterIuiv` is NULL");
-	}
-	fn glQueryCounter(&self, _: GLuint, _: GLenum) {
-		panic!("OpenGL function pointer of `glQueryCounter` is NULL");
-	}
-	fn glGetQueryObjecti64v(&self, _: GLuint, _: GLenum, _: *mut GLint64) {
-		panic!("OpenGL function pointer of `glGetQueryObjecti64v` is NULL");
-	}
-	fn glGetQueryObjectui64v(&self, _: GLuint, _: GLenum, _: *mut GLuint64) {
-		panic!("OpenGL function pointer of `glGetQueryObjectui64v` is NULL");
-	}
-	fn glVertexAttribDivisor(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribDivisor` is NULL");
-	}
-	fn glVertexAttribP1ui(&self, _: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribP1ui` is NULL");
-	}
-	fn glVertexAttribP1uiv(&self, _: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribP1uiv` is NULL");
-	}
-	fn glVertexAttribP2ui(&self, _: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribP2ui` is NULL");
-	}
-	fn glVertexAttribP2uiv(&self, _: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribP2uiv` is NULL");
-	}
-	fn glVertexAttribP3ui(&self, _: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribP3ui` is NULL");
-	}
-	fn glVertexAttribP3uiv(&self, _: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribP3uiv` is NULL");
-	}
-	fn glVertexAttribP4ui(&self, _: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribP4ui` is NULL");
-	}
-	fn glVertexAttribP4uiv(&self, _: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribP4uiv` is NULL");
-	}
-	fn glVertexP2ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexP2ui` is NULL");
-	}
-	fn glVertexP2uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexP2uiv` is NULL");
-	}
-	fn glVertexP3ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexP3ui` is NULL");
-	}
-	fn glVertexP3uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexP3uiv` is NULL");
-	}
-	fn glVertexP4ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexP4ui` is NULL");
-	}
-	fn glVertexP4uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glVertexP4uiv` is NULL");
-	}
-	fn glTexCoordP1ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glTexCoordP1ui` is NULL");
-	}
-	fn glTexCoordP1uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glTexCoordP1uiv` is NULL");
-	}
-	fn glTexCoordP2ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glTexCoordP2ui` is NULL");
-	}
-	fn glTexCoordP2uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glTexCoordP2uiv` is NULL");
-	}
-	fn glTexCoordP3ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glTexCoordP3ui` is NULL");
-	}
-	fn glTexCoordP3uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glTexCoordP3uiv` is NULL");
-	}
-	fn glTexCoordP4ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glTexCoordP4ui` is NULL");
-	}
-	fn glTexCoordP4uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glTexCoordP4uiv` is NULL");
-	}
-	fn glMultiTexCoordP1ui(&self, _: GLenum, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glMultiTexCoordP1ui` is NULL");
-	}
-	fn glMultiTexCoordP1uiv(&self, _: GLenum, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glMultiTexCoordP1uiv` is NULL");
-	}
-	fn glMultiTexCoordP2ui(&self, _: GLenum, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glMultiTexCoordP2ui` is NULL");
-	}
-	fn glMultiTexCoordP2uiv(&self, _: GLenum, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glMultiTexCoordP2uiv` is NULL");
-	}
-	fn glMultiTexCoordP3ui(&self, _: GLenum, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glMultiTexCoordP3ui` is NULL");
-	}
-	fn glMultiTexCoordP3uiv(&self, _: GLenum, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glMultiTexCoordP3uiv` is NULL");
-	}
-	fn glMultiTexCoordP4ui(&self, _: GLenum, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glMultiTexCoordP4ui` is NULL");
-	}
-	fn glMultiTexCoordP4uiv(&self, _: GLenum, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glMultiTexCoordP4uiv` is NULL");
-	}
-	fn glNormalP3ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glNormalP3ui` is NULL");
-	}
-	fn glNormalP3uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glNormalP3uiv` is NULL");
-	}
-	fn glColorP3ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glColorP3ui` is NULL");
-	}
-	fn glColorP3uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glColorP3uiv` is NULL");
-	}
-	fn glColorP4ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glColorP4ui` is NULL");
-	}
-	fn glColorP4uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glColorP4uiv` is NULL");
-	}
-	fn glSecondaryColorP3ui(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glSecondaryColorP3ui` is NULL");
-	}
-	fn glSecondaryColorP3uiv(&self, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glSecondaryColorP3uiv` is NULL");
-	}
+	fn glBindFragDataLocationIndexed(&self, program: GLuint, colorNumber: GLuint, index: GLuint, name: *const GLchar);
+	fn glGetFragDataIndex(&self, program: GLuint, name: *const GLchar) -> GLint;
+	fn glGenSamplers(&self, count: GLsizei, samplers: *mut GLuint);
+	fn glDeleteSamplers(&self, count: GLsizei, samplers: *const GLuint);
+	fn glIsSampler(&self, sampler: GLuint) -> GLboolean;
+	fn glBindSampler(&self, unit: GLuint, sampler: GLuint);
+	fn glSamplerParameteri(&self, sampler: GLuint, pname: GLenum, param: GLint);
+	fn glSamplerParameteriv(&self, sampler: GLuint, pname: GLenum, param: *const GLint);
+	fn glSamplerParameterf(&self, sampler: GLuint, pname: GLenum, param: GLfloat);
+	fn glSamplerParameterfv(&self, sampler: GLuint, pname: GLenum, param: *const GLfloat);
+	fn glSamplerParameterIiv(&self, sampler: GLuint, pname: GLenum, param: *const GLint);
+	fn glSamplerParameterIuiv(&self, sampler: GLuint, pname: GLenum, param: *const GLuint);
+	fn glGetSamplerParameteriv(&self, sampler: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetSamplerParameterIiv(&self, sampler: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetSamplerParameterfv(&self, sampler: GLuint, pname: GLenum, params: *mut GLfloat);
+	fn glGetSamplerParameterIuiv(&self, sampler: GLuint, pname: GLenum, params: *mut GLuint);
+	fn glQueryCounter(&self, id: GLuint, target: GLenum);
+	fn glGetQueryObjecti64v(&self, id: GLuint, pname: GLenum, params: *mut GLint64);
+	fn glGetQueryObjectui64v(&self, id: GLuint, pname: GLenum, params: *mut GLuint64);
+	fn glVertexAttribDivisor(&self, index: GLuint, divisor: GLuint);
+	fn glVertexAttribP1ui(&self, index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint);
+	fn glVertexAttribP1uiv(&self, index: GLuint, type_: GLenum, normalized: GLboolean, value: *const GLuint);
+	fn glVertexAttribP2ui(&self, index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint);
+	fn glVertexAttribP2uiv(&self, index: GLuint, type_: GLenum, normalized: GLboolean, value: *const GLuint);
+	fn glVertexAttribP3ui(&self, index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint);
+	fn glVertexAttribP3uiv(&self, index: GLuint, type_: GLenum, normalized: GLboolean, value: *const GLuint);
+	fn glVertexAttribP4ui(&self, index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint);
+	fn glVertexAttribP4uiv(&self, index: GLuint, type_: GLenum, normalized: GLboolean, value: *const GLuint);
+	fn glVertexP2ui(&self, type_: GLenum, value: GLuint);
+	fn glVertexP2uiv(&self, type_: GLenum, value: *const GLuint);
+	fn glVertexP3ui(&self, type_: GLenum, value: GLuint);
+	fn glVertexP3uiv(&self, type_: GLenum, value: *const GLuint);
+	fn glVertexP4ui(&self, type_: GLenum, value: GLuint);
+	fn glVertexP4uiv(&self, type_: GLenum, value: *const GLuint);
+	fn glTexCoordP1ui(&self, type_: GLenum, coords: GLuint);
+	fn glTexCoordP1uiv(&self, type_: GLenum, coords: *const GLuint);
+	fn glTexCoordP2ui(&self, type_: GLenum, coords: GLuint);
+	fn glTexCoordP2uiv(&self, type_: GLenum, coords: *const GLuint);
+	fn glTexCoordP3ui(&self, type_: GLenum, coords: GLuint);
+	fn glTexCoordP3uiv(&self, type_: GLenum, coords: *const GLuint);
+	fn glTexCoordP4ui(&self, type_: GLenum, coords: GLuint);
+	fn glTexCoordP4uiv(&self, type_: GLenum, coords: *const GLuint);
+	fn glMultiTexCoordP1ui(&self, texture: GLenum, type_: GLenum, coords: GLuint);
+	fn glMultiTexCoordP1uiv(&self, texture: GLenum, type_: GLenum, coords: *const GLuint);
+	fn glMultiTexCoordP2ui(&self, texture: GLenum, type_: GLenum, coords: GLuint);
+	fn glMultiTexCoordP2uiv(&self, texture: GLenum, type_: GLenum, coords: *const GLuint);
+	fn glMultiTexCoordP3ui(&self, texture: GLenum, type_: GLenum, coords: GLuint);
+	fn glMultiTexCoordP3uiv(&self, texture: GLenum, type_: GLenum, coords: *const GLuint);
+	fn glMultiTexCoordP4ui(&self, texture: GLenum, type_: GLenum, coords: GLuint);
+	fn glMultiTexCoordP4uiv(&self, texture: GLenum, type_: GLenum, coords: *const GLuint);
+	fn glNormalP3ui(&self, type_: GLenum, coords: GLuint);
+	fn glNormalP3uiv(&self, type_: GLenum, coords: *const GLuint);
+	fn glColorP3ui(&self, type_: GLenum, color: GLuint);
+	fn glColorP3uiv(&self, type_: GLenum, color: *const GLuint);
+	fn glColorP4ui(&self, type_: GLenum, color: GLuint);
+	fn glColorP4uiv(&self, type_: GLenum, color: *const GLuint);
+	fn glSecondaryColorP3ui(&self, type_: GLenum, color: GLuint);
+	fn glSecondaryColorP3uiv(&self, type_: GLenum, color: *const GLuint);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -6544,144 +5644,52 @@ const TRANSFORM_FEEDBACK_BINDING: GLenum = 0x8E25;
 const MAX_TRANSFORM_FEEDBACK_BUFFERS: GLenum = 0x8E70;
 
 pub trait GL_4_0 {
-	fn glMinSampleShading(&self, _: GLfloat) {
-		panic!("OpenGL function pointer of `glMinSampleShading` is NULL");
-	}
-	fn glBlendEquationi(&self, _: GLuint, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlendEquationi` is NULL");
-	}
-	fn glBlendEquationSeparatei(&self, _: GLuint, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlendEquationSeparatei` is NULL");
-	}
-	fn glBlendFunci(&self, _: GLuint, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlendFunci` is NULL");
-	}
-	fn glBlendFuncSeparatei(&self, _: GLuint, _: GLenum, _: GLenum, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlendFuncSeparatei` is NULL");
-	}
-	fn glDrawArraysIndirect(&self, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glDrawArraysIndirect` is NULL");
-	}
-	fn glDrawElementsIndirect(&self, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glDrawElementsIndirect` is NULL");
-	}
-	fn glUniform1d(&self, _: GLint, _: GLdouble) {
-		panic!("OpenGL function pointer of `glUniform1d` is NULL");
-	}
-	fn glUniform2d(&self, _: GLint, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glUniform2d` is NULL");
-	}
-	fn glUniform3d(&self, _: GLint, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glUniform3d` is NULL");
-	}
-	fn glUniform4d(&self, _: GLint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glUniform4d` is NULL");
-	}
-	fn glUniform1dv(&self, _: GLint, _: GLsizei, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniform1dv` is NULL");
-	}
-	fn glUniform2dv(&self, _: GLint, _: GLsizei, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniform2dv` is NULL");
-	}
-	fn glUniform3dv(&self, _: GLint, _: GLsizei, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniform3dv` is NULL");
-	}
-	fn glUniform4dv(&self, _: GLint, _: GLsizei, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniform4dv` is NULL");
-	}
-	fn glUniformMatrix2dv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniformMatrix2dv` is NULL");
-	}
-	fn glUniformMatrix3dv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniformMatrix3dv` is NULL");
-	}
-	fn glUniformMatrix4dv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniformMatrix4dv` is NULL");
-	}
-	fn glUniformMatrix2x3dv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniformMatrix2x3dv` is NULL");
-	}
-	fn glUniformMatrix2x4dv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniformMatrix2x4dv` is NULL");
-	}
-	fn glUniformMatrix3x2dv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniformMatrix3x2dv` is NULL");
-	}
-	fn glUniformMatrix3x4dv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniformMatrix3x4dv` is NULL");
-	}
-	fn glUniformMatrix4x2dv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniformMatrix4x2dv` is NULL");
-	}
-	fn glUniformMatrix4x3dv(&self, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glUniformMatrix4x3dv` is NULL");
-	}
-	fn glGetUniformdv(&self, _: GLuint, _: GLint, _: *mut GLdouble) {
-		panic!("OpenGL function pointer of `glGetUniformdv` is NULL");
-	}
-	fn glGetSubroutineUniformLocation(&self, _: GLuint, _: GLenum, _: *const GLchar) -> GLint {
-		panic!("OpenGL function pointer of `glGetSubroutineUniformLocation` is NULL");
-	}
-	fn glGetSubroutineIndex(&self, _: GLuint, _: GLenum, _: *const GLchar) -> GLuint {
-		panic!("OpenGL function pointer of `glGetSubroutineIndex` is NULL");
-	}
-	fn glGetActiveSubroutineUniformiv(&self, _: GLuint, _: GLenum, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetActiveSubroutineUniformiv` is NULL");
-	}
-	fn glGetActiveSubroutineUniformName(&self, _: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetActiveSubroutineUniformName` is NULL");
-	}
-	fn glGetActiveSubroutineName(&self, _: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetActiveSubroutineName` is NULL");
-	}
-	fn glUniformSubroutinesuiv(&self, _: GLenum, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glUniformSubroutinesuiv` is NULL");
-	}
-	fn glGetUniformSubroutineuiv(&self, _: GLenum, _: GLint, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetUniformSubroutineuiv` is NULL");
-	}
-	fn glGetProgramStageiv(&self, _: GLuint, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetProgramStageiv` is NULL");
-	}
-	fn glPatchParameteri(&self, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glPatchParameteri` is NULL");
-	}
-	fn glPatchParameterfv(&self, _: GLenum, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glPatchParameterfv` is NULL");
-	}
-	fn glBindTransformFeedback(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindTransformFeedback` is NULL");
-	}
-	fn glDeleteTransformFeedbacks(&self, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glDeleteTransformFeedbacks` is NULL");
-	}
-	fn glGenTransformFeedbacks(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGenTransformFeedbacks` is NULL");
-	}
-	fn glIsTransformFeedback(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsTransformFeedback` is NULL");
-	}
-	fn glPauseTransformFeedback(&self) {
-		panic!("OpenGL function pointer of `glPauseTransformFeedback` is NULL");
-	}
-	fn glResumeTransformFeedback(&self) {
-		panic!("OpenGL function pointer of `glResumeTransformFeedback` is NULL");
-	}
-	fn glDrawTransformFeedback(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glDrawTransformFeedback` is NULL");
-	}
-	fn glDrawTransformFeedbackStream(&self, _: GLenum, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glDrawTransformFeedbackStream` is NULL");
-	}
-	fn glBeginQueryIndexed(&self, _: GLenum, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glBeginQueryIndexed` is NULL");
-	}
-	fn glEndQueryIndexed(&self, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glEndQueryIndexed` is NULL");
-	}
-	fn glGetQueryIndexediv(&self, _: GLenum, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetQueryIndexediv` is NULL");
-	}
+	fn glMinSampleShading(&self, value: GLfloat);
+	fn glBlendEquationi(&self, buf: GLuint, mode: GLenum);
+	fn glBlendEquationSeparatei(&self, buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum);
+	fn glBlendFunci(&self, buf: GLuint, src: GLenum, dst: GLenum);
+	fn glBlendFuncSeparatei(&self, buf: GLuint, srcRGB: GLenum, dstRGB: GLenum, srcAlpha: GLenum, dstAlpha: GLenum);
+	fn glDrawArraysIndirect(&self, mode: GLenum, indirect: *const c_void);
+	fn glDrawElementsIndirect(&self, mode: GLenum, type_: GLenum, indirect: *const c_void);
+	fn glUniform1d(&self, location: GLint, x: GLdouble);
+	fn glUniform2d(&self, location: GLint, x: GLdouble, y: GLdouble);
+	fn glUniform3d(&self, location: GLint, x: GLdouble, y: GLdouble, z: GLdouble);
+	fn glUniform4d(&self, location: GLint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+	fn glUniform1dv(&self, location: GLint, count: GLsizei, value: *const GLdouble);
+	fn glUniform2dv(&self, location: GLint, count: GLsizei, value: *const GLdouble);
+	fn glUniform3dv(&self, location: GLint, count: GLsizei, value: *const GLdouble);
+	fn glUniform4dv(&self, location: GLint, count: GLsizei, value: *const GLdouble);
+	fn glUniformMatrix2dv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glUniformMatrix3dv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glUniformMatrix4dv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glUniformMatrix2x3dv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glUniformMatrix2x4dv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glUniformMatrix3x2dv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glUniformMatrix3x4dv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glUniformMatrix4x2dv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glUniformMatrix4x3dv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glGetUniformdv(&self, program: GLuint, location: GLint, params: *mut GLdouble);
+	fn glGetSubroutineUniformLocation(&self, program: GLuint, shadertype: GLenum, name: *const GLchar) -> GLint;
+	fn glGetSubroutineIndex(&self, program: GLuint, shadertype: GLenum, name: *const GLchar) -> GLuint;
+	fn glGetActiveSubroutineUniformiv(&self, program: GLuint, shadertype: GLenum, index: GLuint, pname: GLenum, values: *mut GLint);
+	fn glGetActiveSubroutineUniformName(&self, program: GLuint, shadertype: GLenum, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, name: *mut GLchar);
+	fn glGetActiveSubroutineName(&self, program: GLuint, shadertype: GLenum, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, name: *mut GLchar);
+	fn glUniformSubroutinesuiv(&self, shadertype: GLenum, count: GLsizei, indices: *const GLuint);
+	fn glGetUniformSubroutineuiv(&self, shadertype: GLenum, location: GLint, params: *mut GLuint);
+	fn glGetProgramStageiv(&self, program: GLuint, shadertype: GLenum, pname: GLenum, values: *mut GLint);
+	fn glPatchParameteri(&self, pname: GLenum, value: GLint);
+	fn glPatchParameterfv(&self, pname: GLenum, values: *const GLfloat);
+	fn glBindTransformFeedback(&self, target: GLenum, id: GLuint);
+	fn glDeleteTransformFeedbacks(&self, n: GLsizei, ids: *const GLuint);
+	fn glGenTransformFeedbacks(&self, n: GLsizei, ids: *mut GLuint);
+	fn glIsTransformFeedback(&self, id: GLuint) -> GLboolean;
+	fn glPauseTransformFeedback(&self);
+	fn glResumeTransformFeedback(&self);
+	fn glDrawTransformFeedback(&self, mode: GLenum, id: GLuint);
+	fn glDrawTransformFeedbackStream(&self, mode: GLenum, id: GLuint, stream: GLuint);
+	fn glBeginQueryIndexed(&self, target: GLenum, index: GLuint, id: GLuint);
+	fn glEndQueryIndexed(&self, target: GLenum, index: GLuint);
+	fn glGetQueryIndexediv(&self, target: GLenum, index: GLuint, pname: GLenum, params: *mut GLint);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -7164,270 +6172,94 @@ const VIEWPORT_INDEX_PROVOKING_VERTEX: GLenum = 0x825F;
 const UNDEFINED_VERTEX: GLenum = 0x8260;
 
 pub trait GL_4_1 {
-	fn glReleaseShaderCompiler(&self) {
-		panic!("OpenGL function pointer of `glReleaseShaderCompiler` is NULL");
-	}
-	fn glShaderBinary(&self, _: GLsizei, _: *const GLuint, _: GLenum, _: *const c_void, _: GLsizei) {
-		panic!("OpenGL function pointer of `glShaderBinary` is NULL");
-	}
-	fn glGetShaderPrecisionFormat(&self, _: GLenum, _: GLenum, _: *mut GLint, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetShaderPrecisionFormat` is NULL");
-	}
-	fn glDepthRangef(&self, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glDepthRangef` is NULL");
-	}
-	fn glClearDepthf(&self, _: GLfloat) {
-		panic!("OpenGL function pointer of `glClearDepthf` is NULL");
-	}
-	fn glGetProgramBinary(&self, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLenum, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetProgramBinary` is NULL");
-	}
-	fn glProgramBinary(&self, _: GLuint, _: GLenum, _: *const c_void, _: GLsizei) {
-		panic!("OpenGL function pointer of `glProgramBinary` is NULL");
-	}
-	fn glProgramParameteri(&self, _: GLuint, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glProgramParameteri` is NULL");
-	}
-	fn glUseProgramStages(&self, _: GLuint, _: GLbitfield, _: GLuint) {
-		panic!("OpenGL function pointer of `glUseProgramStages` is NULL");
-	}
-	fn glActiveShaderProgram(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glActiveShaderProgram` is NULL");
-	}
-	fn glCreateShaderProgramv(&self, _: GLenum, _: GLsizei, _: *const *const GLchar) -> GLuint {
-		panic!("OpenGL function pointer of `glCreateShaderProgramv` is NULL");
-	}
-	fn glBindProgramPipeline(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindProgramPipeline` is NULL");
-	}
-	fn glDeleteProgramPipelines(&self, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glDeleteProgramPipelines` is NULL");
-	}
-	fn glGenProgramPipelines(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGenProgramPipelines` is NULL");
-	}
-	fn glIsProgramPipeline(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glIsProgramPipeline` is NULL");
-	}
-	fn glGetProgramPipelineiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetProgramPipelineiv` is NULL");
-	}
-	fn glProgramUniform1i(&self, _: GLuint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glProgramUniform1i` is NULL");
-	}
-	fn glProgramUniform1iv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glProgramUniform1iv` is NULL");
-	}
-	fn glProgramUniform1f(&self, _: GLuint, _: GLint, _: GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniform1f` is NULL");
-	}
-	fn glProgramUniform1fv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniform1fv` is NULL");
-	}
-	fn glProgramUniform1d(&self, _: GLuint, _: GLint, _: GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniform1d` is NULL");
-	}
-	fn glProgramUniform1dv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniform1dv` is NULL");
-	}
-	fn glProgramUniform1ui(&self, _: GLuint, _: GLint, _: GLuint) {
-		panic!("OpenGL function pointer of `glProgramUniform1ui` is NULL");
-	}
-	fn glProgramUniform1uiv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glProgramUniform1uiv` is NULL");
-	}
-	fn glProgramUniform2i(&self, _: GLuint, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glProgramUniform2i` is NULL");
-	}
-	fn glProgramUniform2iv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glProgramUniform2iv` is NULL");
-	}
-	fn glProgramUniform2f(&self, _: GLuint, _: GLint, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniform2f` is NULL");
-	}
-	fn glProgramUniform2fv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniform2fv` is NULL");
-	}
-	fn glProgramUniform2d(&self, _: GLuint, _: GLint, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniform2d` is NULL");
-	}
-	fn glProgramUniform2dv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniform2dv` is NULL");
-	}
-	fn glProgramUniform2ui(&self, _: GLuint, _: GLint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glProgramUniform2ui` is NULL");
-	}
-	fn glProgramUniform2uiv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glProgramUniform2uiv` is NULL");
-	}
-	fn glProgramUniform3i(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glProgramUniform3i` is NULL");
-	}
-	fn glProgramUniform3iv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glProgramUniform3iv` is NULL");
-	}
-	fn glProgramUniform3f(&self, _: GLuint, _: GLint, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniform3f` is NULL");
-	}
-	fn glProgramUniform3fv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniform3fv` is NULL");
-	}
-	fn glProgramUniform3d(&self, _: GLuint, _: GLint, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniform3d` is NULL");
-	}
-	fn glProgramUniform3dv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniform3dv` is NULL");
-	}
-	fn glProgramUniform3ui(&self, _: GLuint, _: GLint, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glProgramUniform3ui` is NULL");
-	}
-	fn glProgramUniform3uiv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glProgramUniform3uiv` is NULL");
-	}
-	fn glProgramUniform4i(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glProgramUniform4i` is NULL");
-	}
-	fn glProgramUniform4iv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glProgramUniform4iv` is NULL");
-	}
-	fn glProgramUniform4f(&self, _: GLuint, _: GLint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniform4f` is NULL");
-	}
-	fn glProgramUniform4fv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniform4fv` is NULL");
-	}
-	fn glProgramUniform4d(&self, _: GLuint, _: GLint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniform4d` is NULL");
-	}
-	fn glProgramUniform4dv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniform4dv` is NULL");
-	}
-	fn glProgramUniform4ui(&self, _: GLuint, _: GLint, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glProgramUniform4ui` is NULL");
-	}
-	fn glProgramUniform4uiv(&self, _: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glProgramUniform4uiv` is NULL");
-	}
-	fn glProgramUniformMatrix2fv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix2fv` is NULL");
-	}
-	fn glProgramUniformMatrix3fv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix3fv` is NULL");
-	}
-	fn glProgramUniformMatrix4fv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix4fv` is NULL");
-	}
-	fn glProgramUniformMatrix2dv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix2dv` is NULL");
-	}
-	fn glProgramUniformMatrix3dv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix3dv` is NULL");
-	}
-	fn glProgramUniformMatrix4dv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix4dv` is NULL");
-	}
-	fn glProgramUniformMatrix2x3fv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix2x3fv` is NULL");
-	}
-	fn glProgramUniformMatrix3x2fv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix3x2fv` is NULL");
-	}
-	fn glProgramUniformMatrix2x4fv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix2x4fv` is NULL");
-	}
-	fn glProgramUniformMatrix4x2fv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix4x2fv` is NULL");
-	}
-	fn glProgramUniformMatrix3x4fv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix3x4fv` is NULL");
-	}
-	fn glProgramUniformMatrix4x3fv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix4x3fv` is NULL");
-	}
-	fn glProgramUniformMatrix2x3dv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix2x3dv` is NULL");
-	}
-	fn glProgramUniformMatrix3x2dv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix3x2dv` is NULL");
-	}
-	fn glProgramUniformMatrix2x4dv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix2x4dv` is NULL");
-	}
-	fn glProgramUniformMatrix4x2dv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix4x2dv` is NULL");
-	}
-	fn glProgramUniformMatrix3x4dv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix3x4dv` is NULL");
-	}
-	fn glProgramUniformMatrix4x3dv(&self, _: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glProgramUniformMatrix4x3dv` is NULL");
-	}
-	fn glValidateProgramPipeline(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glValidateProgramPipeline` is NULL");
-	}
-	fn glGetProgramPipelineInfoLog(&self, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetProgramPipelineInfoLog` is NULL");
-	}
-	fn glVertexAttribL1d(&self, _: GLuint, _: GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttribL1d` is NULL");
-	}
-	fn glVertexAttribL2d(&self, _: GLuint, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttribL2d` is NULL");
-	}
-	fn glVertexAttribL3d(&self, _: GLuint, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttribL3d` is NULL");
-	}
-	fn glVertexAttribL4d(&self, _: GLuint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttribL4d` is NULL");
-	}
-	fn glVertexAttribL1dv(&self, _: GLuint, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttribL1dv` is NULL");
-	}
-	fn glVertexAttribL2dv(&self, _: GLuint, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttribL2dv` is NULL");
-	}
-	fn glVertexAttribL3dv(&self, _: GLuint, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttribL3dv` is NULL");
-	}
-	fn glVertexAttribL4dv(&self, _: GLuint, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glVertexAttribL4dv` is NULL");
-	}
-	fn glVertexAttribLPointer(&self, _: GLuint, _: GLint, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glVertexAttribLPointer` is NULL");
-	}
-	fn glGetVertexAttribLdv(&self, _: GLuint, _: GLenum, _: *mut GLdouble) {
-		panic!("OpenGL function pointer of `glGetVertexAttribLdv` is NULL");
-	}
-	fn glViewportArrayv(&self, _: GLuint, _: GLsizei, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glViewportArrayv` is NULL");
-	}
-	fn glViewportIndexedf(&self, _: GLuint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glViewportIndexedf` is NULL");
-	}
-	fn glViewportIndexedfv(&self, _: GLuint, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glViewportIndexedfv` is NULL");
-	}
-	fn glScissorArrayv(&self, _: GLuint, _: GLsizei, _: *const GLint) {
-		panic!("OpenGL function pointer of `glScissorArrayv` is NULL");
-	}
-	fn glScissorIndexed(&self, _: GLuint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glScissorIndexed` is NULL");
-	}
-	fn glScissorIndexedv(&self, _: GLuint, _: *const GLint) {
-		panic!("OpenGL function pointer of `glScissorIndexedv` is NULL");
-	}
-	fn glDepthRangeArrayv(&self, _: GLuint, _: GLsizei, _: *const GLdouble) {
-		panic!("OpenGL function pointer of `glDepthRangeArrayv` is NULL");
-	}
-	fn glDepthRangeIndexed(&self, _: GLuint, _: GLdouble, _: GLdouble) {
-		panic!("OpenGL function pointer of `glDepthRangeIndexed` is NULL");
-	}
-	fn glGetFloati_v(&self, _: GLenum, _: GLuint, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetFloati_v` is NULL");
-	}
-	fn glGetDoublei_v(&self, _: GLenum, _: GLuint, _: *mut GLdouble) {
-		panic!("OpenGL function pointer of `glGetDoublei_v` is NULL");
-	}
+	fn glReleaseShaderCompiler(&self);
+	fn glShaderBinary(&self, count: GLsizei, shaders: *const GLuint, binaryFormat: GLenum, binary: *const c_void, length: GLsizei);
+	fn glGetShaderPrecisionFormat(&self, shadertype: GLenum, precisiontype: GLenum, range: *mut GLint, precision: *mut GLint);
+	fn glDepthRangef(&self, n: GLfloat, f: GLfloat);
+	fn glClearDepthf(&self, d: GLfloat);
+	fn glGetProgramBinary(&self, program: GLuint, bufSize: GLsizei, length: *mut GLsizei, binaryFormat: *mut GLenum, binary: *mut c_void);
+	fn glProgramBinary(&self, program: GLuint, binaryFormat: GLenum, binary: *const c_void, length: GLsizei);
+	fn glProgramParameteri(&self, program: GLuint, pname: GLenum, value: GLint);
+	fn glUseProgramStages(&self, pipeline: GLuint, stages: GLbitfield, program: GLuint);
+	fn glActiveShaderProgram(&self, pipeline: GLuint, program: GLuint);
+	fn glCreateShaderProgramv(&self, type_: GLenum, count: GLsizei, strings: *const *const GLchar) -> GLuint;
+	fn glBindProgramPipeline(&self, pipeline: GLuint);
+	fn glDeleteProgramPipelines(&self, n: GLsizei, pipelines: *const GLuint);
+	fn glGenProgramPipelines(&self, n: GLsizei, pipelines: *mut GLuint);
+	fn glIsProgramPipeline(&self, pipeline: GLuint) -> GLboolean;
+	fn glGetProgramPipelineiv(&self, pipeline: GLuint, pname: GLenum, params: *mut GLint);
+	fn glProgramUniform1i(&self, program: GLuint, location: GLint, v0: GLint);
+	fn glProgramUniform1iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint);
+	fn glProgramUniform1f(&self, program: GLuint, location: GLint, v0: GLfloat);
+	fn glProgramUniform1fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat);
+	fn glProgramUniform1d(&self, program: GLuint, location: GLint, v0: GLdouble);
+	fn glProgramUniform1dv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble);
+	fn glProgramUniform1ui(&self, program: GLuint, location: GLint, v0: GLuint);
+	fn glProgramUniform1uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint);
+	fn glProgramUniform2i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint);
+	fn glProgramUniform2iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint);
+	fn glProgramUniform2f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat);
+	fn glProgramUniform2fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat);
+	fn glProgramUniform2d(&self, program: GLuint, location: GLint, v0: GLdouble, v1: GLdouble);
+	fn glProgramUniform2dv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble);
+	fn glProgramUniform2ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint);
+	fn glProgramUniform2uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint);
+	fn glProgramUniform3i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint);
+	fn glProgramUniform3iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint);
+	fn glProgramUniform3f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat);
+	fn glProgramUniform3fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat);
+	fn glProgramUniform3d(&self, program: GLuint, location: GLint, v0: GLdouble, v1: GLdouble, v2: GLdouble);
+	fn glProgramUniform3dv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble);
+	fn glProgramUniform3ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint);
+	fn glProgramUniform3uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint);
+	fn glProgramUniform4i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint);
+	fn glProgramUniform4iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint);
+	fn glProgramUniform4f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat);
+	fn glProgramUniform4fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat);
+	fn glProgramUniform4d(&self, program: GLuint, location: GLint, v0: GLdouble, v1: GLdouble, v2: GLdouble, v3: GLdouble);
+	fn glProgramUniform4dv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble);
+	fn glProgramUniform4ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint);
+	fn glProgramUniform4uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint);
+	fn glProgramUniformMatrix2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glProgramUniformMatrix3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glProgramUniformMatrix4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glProgramUniformMatrix2dv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glProgramUniformMatrix3dv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glProgramUniformMatrix4dv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glProgramUniformMatrix2x3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glProgramUniformMatrix3x2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glProgramUniformMatrix2x4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glProgramUniformMatrix4x2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glProgramUniformMatrix3x4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glProgramUniformMatrix4x3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
+	fn glProgramUniformMatrix2x3dv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glProgramUniformMatrix3x2dv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glProgramUniformMatrix2x4dv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glProgramUniformMatrix4x2dv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glProgramUniformMatrix3x4dv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glProgramUniformMatrix4x3dv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLdouble);
+	fn glValidateProgramPipeline(&self, pipeline: GLuint);
+	fn glGetProgramPipelineInfoLog(&self, pipeline: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar);
+	fn glVertexAttribL1d(&self, index: GLuint, x: GLdouble);
+	fn glVertexAttribL2d(&self, index: GLuint, x: GLdouble, y: GLdouble);
+	fn glVertexAttribL3d(&self, index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble);
+	fn glVertexAttribL4d(&self, index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+	fn glVertexAttribL1dv(&self, index: GLuint, v: *const GLdouble);
+	fn glVertexAttribL2dv(&self, index: GLuint, v: *const GLdouble);
+	fn glVertexAttribL3dv(&self, index: GLuint, v: *const GLdouble);
+	fn glVertexAttribL4dv(&self, index: GLuint, v: *const GLdouble);
+	fn glVertexAttribLPointer(&self, index: GLuint, size: GLint, type_: GLenum, stride: GLsizei, pointer: *const c_void);
+	fn glGetVertexAttribLdv(&self, index: GLuint, pname: GLenum, params: *mut GLdouble);
+	fn glViewportArrayv(&self, first: GLuint, count: GLsizei, v: *const GLfloat);
+	fn glViewportIndexedf(&self, index: GLuint, x: GLfloat, y: GLfloat, w: GLfloat, h: GLfloat);
+	fn glViewportIndexedfv(&self, index: GLuint, v: *const GLfloat);
+	fn glScissorArrayv(&self, first: GLuint, count: GLsizei, v: *const GLint);
+	fn glScissorIndexed(&self, index: GLuint, left: GLint, bottom: GLint, width: GLsizei, height: GLsizei);
+	fn glScissorIndexedv(&self, index: GLuint, v: *const GLint);
+	fn glDepthRangeArrayv(&self, first: GLuint, count: GLsizei, v: *const GLdouble);
+	fn glDepthRangeIndexed(&self, index: GLuint, n: GLdouble, f: GLdouble);
+	fn glGetFloati_v(&self, target: GLenum, index: GLuint, data: *mut GLfloat);
+	fn glGetDoublei_v(&self, target: GLenum, index: GLuint, data: *mut GLdouble);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -8205,42 +7037,18 @@ const COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT: GLenum = 0x8E8F;
 const TEXTURE_IMMUTABLE_FORMAT: GLenum = 0x912F;
 
 pub trait GL_4_2 {
-	fn glDrawArraysInstancedBaseInstance(&self, _: GLenum, _: GLint, _: GLsizei, _: GLsizei, _: GLuint) {
-		panic!("OpenGL function pointer of `glDrawArraysInstancedBaseInstance` is NULL");
-	}
-	fn glDrawElementsInstancedBaseInstance(&self, _: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei, _: GLuint) {
-		panic!("OpenGL function pointer of `glDrawElementsInstancedBaseInstance` is NULL");
-	}
-	fn glDrawElementsInstancedBaseVertexBaseInstance(&self, _: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei, _: GLint, _: GLuint) {
-		panic!("OpenGL function pointer of `glDrawElementsInstancedBaseVertexBaseInstance` is NULL");
-	}
-	fn glGetInternalformativ(&self, _: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetInternalformativ` is NULL");
-	}
-	fn glGetActiveAtomicCounterBufferiv(&self, _: GLuint, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetActiveAtomicCounterBufferiv` is NULL");
-	}
-	fn glBindImageTexture(&self, _: GLuint, _: GLuint, _: GLint, _: GLboolean, _: GLint, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glBindImageTexture` is NULL");
-	}
-	fn glMemoryBarrier(&self, _: GLbitfield) {
-		panic!("OpenGL function pointer of `glMemoryBarrier` is NULL");
-	}
-	fn glTexStorage1D(&self, _: GLenum, _: GLsizei, _: GLenum, _: GLsizei) {
-		panic!("OpenGL function pointer of `glTexStorage1D` is NULL");
-	}
-	fn glTexStorage2D(&self, _: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glTexStorage2D` is NULL");
-	}
-	fn glTexStorage3D(&self, _: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glTexStorage3D` is NULL");
-	}
-	fn glDrawTransformFeedbackInstanced(&self, _: GLenum, _: GLuint, _: GLsizei) {
-		panic!("OpenGL function pointer of `glDrawTransformFeedbackInstanced` is NULL");
-	}
-	fn glDrawTransformFeedbackStreamInstanced(&self, _: GLenum, _: GLuint, _: GLuint, _: GLsizei) {
-		panic!("OpenGL function pointer of `glDrawTransformFeedbackStreamInstanced` is NULL");
-	}
+	fn glDrawArraysInstancedBaseInstance(&self, mode: GLenum, first: GLint, count: GLsizei, instancecount: GLsizei, baseinstance: GLuint);
+	fn glDrawElementsInstancedBaseInstance(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei, baseinstance: GLuint);
+	fn glDrawElementsInstancedBaseVertexBaseInstance(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei, basevertex: GLint, baseinstance: GLuint);
+	fn glGetInternalformativ(&self, target: GLenum, internalformat: GLenum, pname: GLenum, count: GLsizei, params: *mut GLint);
+	fn glGetActiveAtomicCounterBufferiv(&self, program: GLuint, bufferIndex: GLuint, pname: GLenum, params: *mut GLint);
+	fn glBindImageTexture(&self, unit: GLuint, texture: GLuint, level: GLint, layered: GLboolean, layer: GLint, access: GLenum, format: GLenum);
+	fn glMemoryBarrier(&self, barriers: GLbitfield);
+	fn glTexStorage1D(&self, target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei);
+	fn glTexStorage2D(&self, target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei);
+	fn glTexStorage3D(&self, target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei);
+	fn glDrawTransformFeedbackInstanced(&self, mode: GLenum, id: GLuint, instancecount: GLsizei);
+	fn glDrawTransformFeedbackStreamInstanced(&self, mode: GLenum, id: GLuint, stream: GLuint, instancecount: GLsizei);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -8664,135 +7472,49 @@ const VERTEX_BINDING_BUFFER: GLenum = 0x8F4F;
 const DISPLAY_LIST: GLenum = 0x82E7;
 
 pub trait GL_4_3 {
-	fn glClearBufferData(&self, _: GLenum, _: GLenum, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glClearBufferData` is NULL");
-	}
-	fn glClearBufferSubData(&self, _: GLenum, _: GLenum, _: GLintptr, _: GLsizeiptr, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glClearBufferSubData` is NULL");
-	}
-	fn glDispatchCompute(&self, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glDispatchCompute` is NULL");
-	}
-	fn glDispatchComputeIndirect(&self, _: GLintptr) {
-		panic!("OpenGL function pointer of `glDispatchComputeIndirect` is NULL");
-	}
-	fn glCopyImageSubData(&self, _: GLuint, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLuint, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glCopyImageSubData` is NULL");
-	}
-	fn glFramebufferParameteri(&self, _: GLenum, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glFramebufferParameteri` is NULL");
-	}
-	fn glGetFramebufferParameteriv(&self, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetFramebufferParameteriv` is NULL");
-	}
-	fn glGetInternalformati64v(&self, _: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut GLint64) {
-		panic!("OpenGL function pointer of `glGetInternalformati64v` is NULL");
-	}
-	fn glInvalidateTexSubImage(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glInvalidateTexSubImage` is NULL");
-	}
-	fn glInvalidateTexImage(&self, _: GLuint, _: GLint) {
-		panic!("OpenGL function pointer of `glInvalidateTexImage` is NULL");
-	}
-	fn glInvalidateBufferSubData(&self, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-		panic!("OpenGL function pointer of `glInvalidateBufferSubData` is NULL");
-	}
-	fn glInvalidateBufferData(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glInvalidateBufferData` is NULL");
-	}
-	fn glInvalidateFramebuffer(&self, _: GLenum, _: GLsizei, _: *const GLenum) {
-		panic!("OpenGL function pointer of `glInvalidateFramebuffer` is NULL");
-	}
-	fn glInvalidateSubFramebuffer(&self, _: GLenum, _: GLsizei, _: *const GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glInvalidateSubFramebuffer` is NULL");
-	}
-	fn glMultiDrawArraysIndirect(&self, _: GLenum, _: *const c_void, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glMultiDrawArraysIndirect` is NULL");
-	}
-	fn glMultiDrawElementsIndirect(&self, _: GLenum, _: GLenum, _: *const c_void, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glMultiDrawElementsIndirect` is NULL");
-	}
-	fn glGetProgramInterfaceiv(&self, _: GLuint, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetProgramInterfaceiv` is NULL");
-	}
-	fn glGetProgramResourceIndex(&self, _: GLuint, _: GLenum, _: *const GLchar) -> GLuint {
-		panic!("OpenGL function pointer of `glGetProgramResourceIndex` is NULL");
-	}
-	fn glGetProgramResourceName(&self, _: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetProgramResourceName` is NULL");
-	}
-	fn glGetProgramResourceiv(&self, _: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *const GLenum, _: GLsizei, _: *mut GLsizei, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetProgramResourceiv` is NULL");
-	}
-	fn glGetProgramResourceLocation(&self, _: GLuint, _: GLenum, _: *const GLchar) -> GLint {
-		panic!("OpenGL function pointer of `glGetProgramResourceLocation` is NULL");
-	}
-	fn glGetProgramResourceLocationIndex(&self, _: GLuint, _: GLenum, _: *const GLchar) -> GLint {
-		panic!("OpenGL function pointer of `glGetProgramResourceLocationIndex` is NULL");
-	}
-	fn glShaderStorageBlockBinding(&self, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glShaderStorageBlockBinding` is NULL");
-	}
-	fn glTexBufferRange(&self, _: GLenum, _: GLenum, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-		panic!("OpenGL function pointer of `glTexBufferRange` is NULL");
-	}
-	fn glTexStorage2DMultisample(&self, _: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLboolean) {
-		panic!("OpenGL function pointer of `glTexStorage2DMultisample` is NULL");
-	}
-	fn glTexStorage3DMultisample(&self, _: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLboolean) {
-		panic!("OpenGL function pointer of `glTexStorage3DMultisample` is NULL");
-	}
-	fn glTextureView(&self, _: GLuint, _: GLenum, _: GLuint, _: GLenum, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glTextureView` is NULL");
-	}
-	fn glBindVertexBuffer(&self, _: GLuint, _: GLuint, _: GLintptr, _: GLsizei) {
-		panic!("OpenGL function pointer of `glBindVertexBuffer` is NULL");
-	}
-	fn glVertexAttribFormat(&self, _: GLuint, _: GLint, _: GLenum, _: GLboolean, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribFormat` is NULL");
-	}
-	fn glVertexAttribIFormat(&self, _: GLuint, _: GLint, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribIFormat` is NULL");
-	}
-	fn glVertexAttribLFormat(&self, _: GLuint, _: GLint, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribLFormat` is NULL");
-	}
-	fn glVertexAttribBinding(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexAttribBinding` is NULL");
-	}
-	fn glVertexBindingDivisor(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexBindingDivisor` is NULL");
-	}
-	fn glDebugMessageControl(&self, _: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *const GLuint, _: GLboolean) {
-		panic!("OpenGL function pointer of `glDebugMessageControl` is NULL");
-	}
-	fn glDebugMessageInsert(&self, _: GLenum, _: GLenum, _: GLuint, _: GLenum, _: GLsizei, _: *const GLchar) {
-		panic!("OpenGL function pointer of `glDebugMessageInsert` is NULL");
-	}
-	fn glDebugMessageCallback(&self, _: GLDEBUGPROC, _: *const c_void) {
-		panic!("OpenGL function pointer of `glDebugMessageCallback` is NULL");
-	}
-	fn glGetDebugMessageLog(&self, _: GLuint, _: GLsizei, _: *mut GLenum, _: *mut GLenum, _: *mut GLuint, _: *mut GLenum, _: *mut GLsizei, _: *mut GLchar) -> GLuint {
-		panic!("OpenGL function pointer of `glGetDebugMessageLog` is NULL");
-	}
-	fn glPushDebugGroup(&self, _: GLenum, _: GLuint, _: GLsizei, _: *const GLchar) {
-		panic!("OpenGL function pointer of `glPushDebugGroup` is NULL");
-	}
-	fn glPopDebugGroup(&self) {
-		panic!("OpenGL function pointer of `glPopDebugGroup` is NULL");
-	}
-	fn glObjectLabel(&self, _: GLenum, _: GLuint, _: GLsizei, _: *const GLchar) {
-		panic!("OpenGL function pointer of `glObjectLabel` is NULL");
-	}
-	fn glGetObjectLabel(&self, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetObjectLabel` is NULL");
-	}
-	fn glObjectPtrLabel(&self, _: *const c_void, _: GLsizei, _: *const GLchar) {
-		panic!("OpenGL function pointer of `glObjectPtrLabel` is NULL");
-	}
-	fn glGetObjectPtrLabel(&self, _: *const c_void, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-		panic!("OpenGL function pointer of `glGetObjectPtrLabel` is NULL");
-	}
+	fn glClearBufferData(&self, target: GLenum, internalformat: GLenum, format: GLenum, type_: GLenum, data: *const c_void);
+	fn glClearBufferSubData(&self, target: GLenum, internalformat: GLenum, offset: GLintptr, size: GLsizeiptr, format: GLenum, type_: GLenum, data: *const c_void);
+	fn glDispatchCompute(&self, num_groups_x: GLuint, num_groups_y: GLuint, num_groups_z: GLuint);
+	fn glDispatchComputeIndirect(&self, indirect: GLintptr);
+	fn glCopyImageSubData(&self, srcName: GLuint, srcTarget: GLenum, srcLevel: GLint, srcX: GLint, srcY: GLint, srcZ: GLint, dstName: GLuint, dstTarget: GLenum, dstLevel: GLint, dstX: GLint, dstY: GLint, dstZ: GLint, srcWidth: GLsizei, srcHeight: GLsizei, srcDepth: GLsizei);
+	fn glFramebufferParameteri(&self, target: GLenum, pname: GLenum, param: GLint);
+	fn glGetFramebufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint);
+	fn glGetInternalformati64v(&self, target: GLenum, internalformat: GLenum, pname: GLenum, count: GLsizei, params: *mut GLint64);
+	fn glInvalidateTexSubImage(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei);
+	fn glInvalidateTexImage(&self, texture: GLuint, level: GLint);
+	fn glInvalidateBufferSubData(&self, buffer: GLuint, offset: GLintptr, length: GLsizeiptr);
+	fn glInvalidateBufferData(&self, buffer: GLuint);
+	fn glInvalidateFramebuffer(&self, target: GLenum, numAttachments: GLsizei, attachments: *const GLenum);
+	fn glInvalidateSubFramebuffer(&self, target: GLenum, numAttachments: GLsizei, attachments: *const GLenum, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
+	fn glMultiDrawArraysIndirect(&self, mode: GLenum, indirect: *const c_void, drawcount: GLsizei, stride: GLsizei);
+	fn glMultiDrawElementsIndirect(&self, mode: GLenum, type_: GLenum, indirect: *const c_void, drawcount: GLsizei, stride: GLsizei);
+	fn glGetProgramInterfaceiv(&self, program: GLuint, programInterface: GLenum, pname: GLenum, params: *mut GLint);
+	fn glGetProgramResourceIndex(&self, program: GLuint, programInterface: GLenum, name: *const GLchar) -> GLuint;
+	fn glGetProgramResourceName(&self, program: GLuint, programInterface: GLenum, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, name: *mut GLchar);
+	fn glGetProgramResourceiv(&self, program: GLuint, programInterface: GLenum, index: GLuint, propCount: GLsizei, props: *const GLenum, count: GLsizei, length: *mut GLsizei, params: *mut GLint);
+	fn glGetProgramResourceLocation(&self, program: GLuint, programInterface: GLenum, name: *const GLchar) -> GLint;
+	fn glGetProgramResourceLocationIndex(&self, program: GLuint, programInterface: GLenum, name: *const GLchar) -> GLint;
+	fn glShaderStorageBlockBinding(&self, program: GLuint, storageBlockIndex: GLuint, storageBlockBinding: GLuint);
+	fn glTexBufferRange(&self, target: GLenum, internalformat: GLenum, buffer: GLuint, offset: GLintptr, size: GLsizeiptr);
+	fn glTexStorage2DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, fixedsamplelocations: GLboolean);
+	fn glTexStorage3DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, fixedsamplelocations: GLboolean);
+	fn glTextureView(&self, texture: GLuint, target: GLenum, origtexture: GLuint, internalformat: GLenum, minlevel: GLuint, numlevels: GLuint, minlayer: GLuint, numlayers: GLuint);
+	fn glBindVertexBuffer(&self, bindingindex: GLuint, buffer: GLuint, offset: GLintptr, stride: GLsizei);
+	fn glVertexAttribFormat(&self, attribindex: GLuint, size: GLint, type_: GLenum, normalized: GLboolean, relativeoffset: GLuint);
+	fn glVertexAttribIFormat(&self, attribindex: GLuint, size: GLint, type_: GLenum, relativeoffset: GLuint);
+	fn glVertexAttribLFormat(&self, attribindex: GLuint, size: GLint, type_: GLenum, relativeoffset: GLuint);
+	fn glVertexAttribBinding(&self, attribindex: GLuint, bindingindex: GLuint);
+	fn glVertexBindingDivisor(&self, bindingindex: GLuint, divisor: GLuint);
+	fn glDebugMessageControl(&self, source: GLenum, type_: GLenum, severity: GLenum, count: GLsizei, ids: *const GLuint, enabled: GLboolean);
+	fn glDebugMessageInsert(&self, source: GLenum, type_: GLenum, id: GLuint, severity: GLenum, length: GLsizei, buf: *const GLchar);
+	fn glDebugMessageCallback(&self, callback: GLDEBUGPROC, userParam: *const c_void);
+	fn glGetDebugMessageLog(&self, count: GLuint, bufSize: GLsizei, sources: *mut GLenum, types: *mut GLenum, ids: *mut GLuint, severities: *mut GLenum, lengths: *mut GLsizei, messageLog: *mut GLchar) -> GLuint;
+	fn glPushDebugGroup(&self, source: GLenum, id: GLuint, length: GLsizei, message: *const GLchar);
+	fn glPopDebugGroup(&self);
+	fn glObjectLabel(&self, identifier: GLenum, name: GLuint, length: GLsizei, label: *const GLchar);
+	fn glGetObjectLabel(&self, identifier: GLenum, name: GLuint, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar);
+	fn glObjectPtrLabel(&self, ptr: *const c_void, length: GLsizei, label: *const GLchar);
+	fn glGetObjectPtrLabel(&self, ptr: *const c_void, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -9158,34 +7880,17 @@ const QUERY_BUFFER_BINDING: GLenum = 0x9193;
 const QUERY_RESULT_NO_WAIT: GLenum = 0x9194;
 const MIRROR_CLAMP_TO_EDGE: GLenum = 0x8743;
 
+
 pub trait GL_4_4 {
-	fn glBufferStorage(&self, _: GLenum, _: GLsizeiptr, _: *const c_void, _: GLbitfield) {
-		panic!("OpenGL function pointer of `glBufferStorage` is NULL");
-	}
-	fn glClearTexImage(&self, _: GLuint, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glClearTexImage` is NULL");
-	}
-	fn glClearTexSubImage(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glClearTexSubImage` is NULL");
-	}
-	fn glBindBuffersBase(&self, _: GLenum, _: GLuint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glBindBuffersBase` is NULL");
-	}
-	fn glBindBuffersRange(&self, _: GLenum, _: GLuint, _: GLsizei, _: *const GLuint, _: *const GLintptr, _: *const GLsizeiptr) {
-		panic!("OpenGL function pointer of `glBindBuffersRange` is NULL");
-	}
-	fn glBindTextures(&self, _: GLuint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glBindTextures` is NULL");
-	}
-	fn glBindSamplers(&self, _: GLuint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glBindSamplers` is NULL");
-	}
-	fn glBindImageTextures(&self, _: GLuint, _: GLsizei, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glBindImageTextures` is NULL");
-	}
-	fn glBindVertexBuffers(&self, _: GLuint, _: GLsizei, _: *const GLuint, _: *const GLintptr, _: *const GLsizei) {
-		panic!("OpenGL function pointer of `glBindVertexBuffers` is NULL");
-	}
+	fn glBufferStorage(&self, target: GLenum, size: GLsizeiptr, data: *const c_void, flags: GLbitfield);
+	fn glClearTexImage(&self, texture: GLuint, level: GLint, format: GLenum, type_: GLenum, data: *const c_void);
+	fn glClearTexSubImage(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, type_: GLenum, data: *const c_void);
+	fn glBindBuffersBase(&self, target: GLenum, first: GLuint, count: GLsizei, buffers: *const GLuint);
+	fn glBindBuffersRange(&self, target: GLenum, first: GLuint, count: GLsizei, buffers: *const GLuint, offsets: *const GLintptr, sizes: *const GLsizeiptr);
+	fn glBindTextures(&self, first: GLuint, count: GLsizei, textures: *const GLuint);
+	fn glBindSamplers(&self, first: GLuint, count: GLsizei, samplers: *const GLuint);
+	fn glBindImageTextures(&self, first: GLuint, count: GLsizei, textures: *const GLuint);
+	fn glBindVertexBuffers(&self, first: GLuint, count: GLsizei, buffers: *const GLuint, offsets: *const GLintptr, strides: *const GLsizei);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -9442,372 +8147,128 @@ const CONTEXT_RELEASE_BEHAVIOR: GLenum = 0x82FB;
 const CONTEXT_RELEASE_BEHAVIOR_FLUSH: GLenum = 0x82FC;
 
 pub trait GL_4_5 {
-	fn glClipControl(&self, _: GLenum, _: GLenum) {
-		panic!("OpenGL function pointer of `glClipControl` is NULL");
-	}
-	fn glCreateTransformFeedbacks(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glCreateTransformFeedbacks` is NULL");
-	}
-	fn glTransformFeedbackBufferBase(&self, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glTransformFeedbackBufferBase` is NULL");
-	}
-	fn glTransformFeedbackBufferRange(&self, _: GLuint, _: GLuint, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-		panic!("OpenGL function pointer of `glTransformFeedbackBufferRange` is NULL");
-	}
-	fn glGetTransformFeedbackiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetTransformFeedbackiv` is NULL");
-	}
-	fn glGetTransformFeedbacki_v(&self, _: GLuint, _: GLenum, _: GLuint, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetTransformFeedbacki_v` is NULL");
-	}
-	fn glGetTransformFeedbacki64_v(&self, _: GLuint, _: GLenum, _: GLuint, _: *mut GLint64) {
-		panic!("OpenGL function pointer of `glGetTransformFeedbacki64_v` is NULL");
-	}
-	fn glCreateBuffers(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glCreateBuffers` is NULL");
-	}
-	fn glNamedBufferStorage(&self, _: GLuint, _: GLsizeiptr, _: *const c_void, _: GLbitfield) {
-		panic!("OpenGL function pointer of `glNamedBufferStorage` is NULL");
-	}
-	fn glNamedBufferData(&self, _: GLuint, _: GLsizeiptr, _: *const c_void, _: GLenum) {
-		panic!("OpenGL function pointer of `glNamedBufferData` is NULL");
-	}
-	fn glNamedBufferSubData(&self, _: GLuint, _: GLintptr, _: GLsizeiptr, _: *const c_void) {
-		panic!("OpenGL function pointer of `glNamedBufferSubData` is NULL");
-	}
-	fn glCopyNamedBufferSubData(&self, _: GLuint, _: GLuint, _: GLintptr, _: GLintptr, _: GLsizeiptr) {
-		panic!("OpenGL function pointer of `glCopyNamedBufferSubData` is NULL");
-	}
-	fn glClearNamedBufferData(&self, _: GLuint, _: GLenum, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glClearNamedBufferData` is NULL");
-	}
-	fn glClearNamedBufferSubData(&self, _: GLuint, _: GLenum, _: GLintptr, _: GLsizeiptr, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glClearNamedBufferSubData` is NULL");
-	}
-	fn glMapNamedBuffer(&self, _: GLuint, _: GLenum) -> *mut c_void {
-		panic!("OpenGL function pointer of `glMapNamedBuffer` is NULL");
-	}
-	fn glMapNamedBufferRange(&self, _: GLuint, _: GLintptr, _: GLsizeiptr, _: GLbitfield) -> *mut c_void {
-		panic!("OpenGL function pointer of `glMapNamedBufferRange` is NULL");
-	}
-	fn glUnmapNamedBuffer(&self, _: GLuint) -> GLboolean {
-		panic!("OpenGL function pointer of `glUnmapNamedBuffer` is NULL");
-	}
-	fn glFlushMappedNamedBufferRange(&self, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-		panic!("OpenGL function pointer of `glFlushMappedNamedBufferRange` is NULL");
-	}
-	fn glGetNamedBufferParameteriv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetNamedBufferParameteriv` is NULL");
-	}
-	fn glGetNamedBufferParameteri64v(&self, _: GLuint, _: GLenum, _: *mut GLint64) {
-		panic!("OpenGL function pointer of `glGetNamedBufferParameteri64v` is NULL");
-	}
-	fn glGetNamedBufferPointerv(&self, _: GLuint, _: GLenum, _: *mut *mut c_void) {
-		panic!("OpenGL function pointer of `glGetNamedBufferPointerv` is NULL");
-	}
-	fn glGetNamedBufferSubData(&self, _: GLuint, _: GLintptr, _: GLsizeiptr, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetNamedBufferSubData` is NULL");
-	}
-	fn glCreateFramebuffers(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glCreateFramebuffers` is NULL");
-	}
-	fn glNamedFramebufferRenderbuffer(&self, _: GLuint, _: GLenum, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glNamedFramebufferRenderbuffer` is NULL");
-	}
-	fn glNamedFramebufferParameteri(&self, _: GLuint, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glNamedFramebufferParameteri` is NULL");
-	}
-	fn glNamedFramebufferTexture(&self, _: GLuint, _: GLenum, _: GLuint, _: GLint) {
-		panic!("OpenGL function pointer of `glNamedFramebufferTexture` is NULL");
-	}
-	fn glNamedFramebufferTextureLayer(&self, _: GLuint, _: GLenum, _: GLuint, _: GLint, _: GLint) {
-		panic!("OpenGL function pointer of `glNamedFramebufferTextureLayer` is NULL");
-	}
-	fn glNamedFramebufferDrawBuffer(&self, _: GLuint, _: GLenum) {
-		panic!("OpenGL function pointer of `glNamedFramebufferDrawBuffer` is NULL");
-	}
-	fn glNamedFramebufferDrawBuffers(&self, _: GLuint, _: GLsizei, _: *const GLenum) {
-		panic!("OpenGL function pointer of `glNamedFramebufferDrawBuffers` is NULL");
-	}
-	fn glNamedFramebufferReadBuffer(&self, _: GLuint, _: GLenum) {
-		panic!("OpenGL function pointer of `glNamedFramebufferReadBuffer` is NULL");
-	}
-	fn glInvalidateNamedFramebufferData(&self, _: GLuint, _: GLsizei, _: *const GLenum) {
-		panic!("OpenGL function pointer of `glInvalidateNamedFramebufferData` is NULL");
-	}
-	fn glInvalidateNamedFramebufferSubData(&self, _: GLuint, _: GLsizei, _: *const GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glInvalidateNamedFramebufferSubData` is NULL");
-	}
-	fn glClearNamedFramebufferiv(&self, _: GLuint, _: GLenum, _: GLint, _: *const GLint) {
-		panic!("OpenGL function pointer of `glClearNamedFramebufferiv` is NULL");
-	}
-	fn glClearNamedFramebufferuiv(&self, _: GLuint, _: GLenum, _: GLint, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glClearNamedFramebufferuiv` is NULL");
-	}
-	fn glClearNamedFramebufferfv(&self, _: GLuint, _: GLenum, _: GLint, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glClearNamedFramebufferfv` is NULL");
-	}
-	fn glClearNamedFramebufferfi(&self, _: GLuint, _: GLenum, _: GLint, _: GLfloat, _: GLint) {
-		panic!("OpenGL function pointer of `glClearNamedFramebufferfi` is NULL");
-	}
-	fn glBlitNamedFramebuffer(&self, _: GLuint, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLbitfield, _: GLenum) {
-		panic!("OpenGL function pointer of `glBlitNamedFramebuffer` is NULL");
-	}
-	fn glCheckNamedFramebufferStatus(&self, _: GLuint, _: GLenum) -> GLenum {
-		panic!("OpenGL function pointer of `glCheckNamedFramebufferStatus` is NULL");
-	}
-	fn glGetNamedFramebufferParameteriv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetNamedFramebufferParameteriv` is NULL");
-	}
-	fn glGetNamedFramebufferAttachmentParameteriv(&self, _: GLuint, _: GLenum, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetNamedFramebufferAttachmentParameteriv` is NULL");
-	}
-	fn glCreateRenderbuffers(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glCreateRenderbuffers` is NULL");
-	}
-	fn glNamedRenderbufferStorage(&self, _: GLuint, _: GLenum, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glNamedRenderbufferStorage` is NULL");
-	}
-	fn glNamedRenderbufferStorageMultisample(&self, _: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glNamedRenderbufferStorageMultisample` is NULL");
-	}
-	fn glGetNamedRenderbufferParameteriv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetNamedRenderbufferParameteriv` is NULL");
-	}
-	fn glCreateTextures(&self, _: GLenum, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glCreateTextures` is NULL");
-	}
-	fn glTextureBuffer(&self, _: GLuint, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glTextureBuffer` is NULL");
-	}
-	fn glTextureBufferRange(&self, _: GLuint, _: GLenum, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-		panic!("OpenGL function pointer of `glTextureBufferRange` is NULL");
-	}
-	fn glTextureStorage1D(&self, _: GLuint, _: GLsizei, _: GLenum, _: GLsizei) {
-		panic!("OpenGL function pointer of `glTextureStorage1D` is NULL");
-	}
-	fn glTextureStorage2D(&self, _: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glTextureStorage2D` is NULL");
-	}
-	fn glTextureStorage3D(&self, _: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glTextureStorage3D` is NULL");
-	}
-	fn glTextureStorage2DMultisample(&self, _: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLboolean) {
-		panic!("OpenGL function pointer of `glTextureStorage2DMultisample` is NULL");
-	}
-	fn glTextureStorage3DMultisample(&self, _: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLboolean) {
-		panic!("OpenGL function pointer of `glTextureStorage3DMultisample` is NULL");
-	}
-	fn glTextureSubImage1D(&self, _: GLuint, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glTextureSubImage1D` is NULL");
-	}
-	fn glTextureSubImage2D(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glTextureSubImage2D` is NULL");
-	}
-	fn glTextureSubImage3D(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-		panic!("OpenGL function pointer of `glTextureSubImage3D` is NULL");
-	}
-	fn glCompressedTextureSubImage1D(&self, _: GLuint, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glCompressedTextureSubImage1D` is NULL");
-	}
-	fn glCompressedTextureSubImage2D(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glCompressedTextureSubImage2D` is NULL");
-	}
-	fn glCompressedTextureSubImage3D(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-		panic!("OpenGL function pointer of `glCompressedTextureSubImage3D` is NULL");
-	}
-	fn glCopyTextureSubImage1D(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei) {
-		panic!("OpenGL function pointer of `glCopyTextureSubImage1D` is NULL");
-	}
-	fn glCopyTextureSubImage2D(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glCopyTextureSubImage2D` is NULL");
-	}
-	fn glCopyTextureSubImage3D(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glCopyTextureSubImage3D` is NULL");
-	}
-	fn glTextureParameterf(&self, _: GLuint, _: GLenum, _: GLfloat) {
-		panic!("OpenGL function pointer of `glTextureParameterf` is NULL");
-	}
-	fn glTextureParameterfv(&self, _: GLuint, _: GLenum, _: *const GLfloat) {
-		panic!("OpenGL function pointer of `glTextureParameterfv` is NULL");
-	}
-	fn glTextureParameteri(&self, _: GLuint, _: GLenum, _: GLint) {
-		panic!("OpenGL function pointer of `glTextureParameteri` is NULL");
-	}
-	fn glTextureParameterIiv(&self, _: GLuint, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glTextureParameterIiv` is NULL");
-	}
-	fn glTextureParameterIuiv(&self, _: GLuint, _: GLenum, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glTextureParameterIuiv` is NULL");
-	}
-	fn glTextureParameteriv(&self, _: GLuint, _: GLenum, _: *const GLint) {
-		panic!("OpenGL function pointer of `glTextureParameteriv` is NULL");
-	}
-	fn glGenerateTextureMipmap(&self, _: GLuint) {
-		panic!("OpenGL function pointer of `glGenerateTextureMipmap` is NULL");
-	}
-	fn glBindTextureUnit(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glBindTextureUnit` is NULL");
-	}
-	fn glGetTextureImage(&self, _: GLuint, _: GLint, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetTextureImage` is NULL");
-	}
-	fn glGetCompressedTextureImage(&self, _: GLuint, _: GLint, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetCompressedTextureImage` is NULL");
-	}
-	fn glGetTextureLevelParameterfv(&self, _: GLuint, _: GLint, _: GLenum, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetTextureLevelParameterfv` is NULL");
-	}
-	fn glGetTextureLevelParameteriv(&self, _: GLuint, _: GLint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetTextureLevelParameteriv` is NULL");
-	}
-	fn glGetTextureParameterfv(&self, _: GLuint, _: GLenum, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetTextureParameterfv` is NULL");
-	}
-	fn glGetTextureParameterIiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetTextureParameterIiv` is NULL");
-	}
-	fn glGetTextureParameterIuiv(&self, _: GLuint, _: GLenum, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetTextureParameterIuiv` is NULL");
-	}
-	fn glGetTextureParameteriv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetTextureParameteriv` is NULL");
-	}
-	fn glCreateVertexArrays(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glCreateVertexArrays` is NULL");
-	}
-	fn glDisableVertexArrayAttrib(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glDisableVertexArrayAttrib` is NULL");
-	}
-	fn glEnableVertexArrayAttrib(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glEnableVertexArrayAttrib` is NULL");
-	}
-	fn glVertexArrayElementBuffer(&self, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexArrayElementBuffer` is NULL");
-	}
-	fn glVertexArrayVertexBuffer(&self, _: GLuint, _: GLuint, _: GLuint, _: GLintptr, _: GLsizei) {
-		panic!("OpenGL function pointer of `glVertexArrayVertexBuffer` is NULL");
-	}
-	fn glVertexArrayVertexBuffers(&self, _: GLuint, _: GLuint, _: GLsizei, _: *const GLuint, _: *const GLintptr, _: *const GLsizei) {
-		panic!("OpenGL function pointer of `glVertexArrayVertexBuffers` is NULL");
-	}
-	fn glVertexArrayAttribBinding(&self, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexArrayAttribBinding` is NULL");
-	}
-	fn glVertexArrayAttribFormat(&self, _: GLuint, _: GLuint, _: GLint, _: GLenum, _: GLboolean, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexArrayAttribFormat` is NULL");
-	}
-	fn glVertexArrayAttribIFormat(&self, _: GLuint, _: GLuint, _: GLint, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexArrayAttribIFormat` is NULL");
-	}
-	fn glVertexArrayAttribLFormat(&self, _: GLuint, _: GLuint, _: GLint, _: GLenum, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexArrayAttribLFormat` is NULL");
-	}
-	fn glVertexArrayBindingDivisor(&self, _: GLuint, _: GLuint, _: GLuint) {
-		panic!("OpenGL function pointer of `glVertexArrayBindingDivisor` is NULL");
-	}
-	fn glGetVertexArrayiv(&self, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetVertexArrayiv` is NULL");
-	}
-	fn glGetVertexArrayIndexediv(&self, _: GLuint, _: GLuint, _: GLenum, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetVertexArrayIndexediv` is NULL");
-	}
-	fn glGetVertexArrayIndexed64iv(&self, _: GLuint, _: GLuint, _: GLenum, _: *mut GLint64) {
-		panic!("OpenGL function pointer of `glGetVertexArrayIndexed64iv` is NULL");
-	}
-	fn glCreateSamplers(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glCreateSamplers` is NULL");
-	}
-	fn glCreateProgramPipelines(&self, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glCreateProgramPipelines` is NULL");
-	}
-	fn glCreateQueries(&self, _: GLenum, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glCreateQueries` is NULL");
-	}
-	fn glGetQueryBufferObjecti64v(&self, _: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
-		panic!("OpenGL function pointer of `glGetQueryBufferObjecti64v` is NULL");
-	}
-	fn glGetQueryBufferObjectiv(&self, _: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
-		panic!("OpenGL function pointer of `glGetQueryBufferObjectiv` is NULL");
-	}
-	fn glGetQueryBufferObjectui64v(&self, _: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
-		panic!("OpenGL function pointer of `glGetQueryBufferObjectui64v` is NULL");
-	}
-	fn glGetQueryBufferObjectuiv(&self, _: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
-		panic!("OpenGL function pointer of `glGetQueryBufferObjectuiv` is NULL");
-	}
-	fn glMemoryBarrierByRegion(&self, _: GLbitfield) {
-		panic!("OpenGL function pointer of `glMemoryBarrierByRegion` is NULL");
-	}
-	fn glGetTextureSubImage(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetTextureSubImage` is NULL");
-	}
-	fn glGetCompressedTextureSubImage(&self, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetCompressedTextureSubImage` is NULL");
-	}
-	fn glGetGraphicsResetStatus(&self) -> GLenum {
-		panic!("OpenGL function pointer of `glGetGraphicsResetStatus` is NULL");
-	}
-	fn glGetnCompressedTexImage(&self, _: GLenum, _: GLint, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetnCompressedTexImage` is NULL");
-	}
-	fn glGetnTexImage(&self, _: GLenum, _: GLint, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetnTexImage` is NULL");
-	}
-	fn glGetnUniformdv(&self, _: GLuint, _: GLint, _: GLsizei, _: *mut GLdouble) {
-		panic!("OpenGL function pointer of `glGetnUniformdv` is NULL");
-	}
-	fn glGetnUniformfv(&self, _: GLuint, _: GLint, _: GLsizei, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetnUniformfv` is NULL");
-	}
-	fn glGetnUniformiv(&self, _: GLuint, _: GLint, _: GLsizei, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetnUniformiv` is NULL");
-	}
-	fn glGetnUniformuiv(&self, _: GLuint, _: GLint, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetnUniformuiv` is NULL");
-	}
-	fn glReadnPixels(&self, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glReadnPixels` is NULL");
-	}
-	fn glGetnMapdv(&self, _: GLenum, _: GLenum, _: GLsizei, _: *mut GLdouble) {
-		panic!("OpenGL function pointer of `glGetnMapdv` is NULL");
-	}
-	fn glGetnMapfv(&self, _: GLenum, _: GLenum, _: GLsizei, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetnMapfv` is NULL");
-	}
-	fn glGetnMapiv(&self, _: GLenum, _: GLenum, _: GLsizei, _: *mut GLint) {
-		panic!("OpenGL function pointer of `glGetnMapiv` is NULL");
-	}
-	fn glGetnPixelMapfv(&self, _: GLenum, _: GLsizei, _: *mut GLfloat) {
-		panic!("OpenGL function pointer of `glGetnPixelMapfv` is NULL");
-	}
-	fn glGetnPixelMapuiv(&self, _: GLenum, _: GLsizei, _: *mut GLuint) {
-		panic!("OpenGL function pointer of `glGetnPixelMapuiv` is NULL");
-	}
-	fn glGetnPixelMapusv(&self, _: GLenum, _: GLsizei, _: *mut GLushort) {
-		panic!("OpenGL function pointer of `glGetnPixelMapusv` is NULL");
-	}
-	fn glGetnPolygonStipple(&self, _: GLsizei, _: *mut GLubyte) {
-		panic!("OpenGL function pointer of `glGetnPolygonStipple` is NULL");
-	}
-	fn glGetnColorTable(&self, _: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetnColorTable` is NULL");
-	}
-	fn glGetnConvolutionFilter(&self, _: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetnConvolutionFilter` is NULL");
-	}
-	fn glGetnSeparableFilter(&self, _: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void, _: GLsizei, _: *mut c_void, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetnSeparableFilter` is NULL");
-	}
-	fn glGetnHistogram(&self, _: GLenum, _: GLboolean, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetnHistogram` is NULL");
-	}
-	fn glGetnMinmax(&self, _: GLenum, _: GLboolean, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-		panic!("OpenGL function pointer of `glGetnMinmax` is NULL");
-	}
-	fn glTextureBarrier(&self) {
-		panic!("OpenGL function pointer of `glTextureBarrier` is NULL");
-	}
+	fn glClipControl(&self, origin: GLenum, depth: GLenum);
+	fn glCreateTransformFeedbacks(&self, n: GLsizei, ids: *mut GLuint);
+	fn glTransformFeedbackBufferBase(&self, xfb: GLuint, index: GLuint, buffer: GLuint);
+	fn glTransformFeedbackBufferRange(&self, xfb: GLuint, index: GLuint, buffer: GLuint, offset: GLintptr, size: GLsizeiptr);
+	fn glGetTransformFeedbackiv(&self, xfb: GLuint, pname: GLenum, param: *mut GLint);
+	fn glGetTransformFeedbacki_v(&self, xfb: GLuint, pname: GLenum, index: GLuint, param: *mut GLint);
+	fn glGetTransformFeedbacki64_v(&self, xfb: GLuint, pname: GLenum, index: GLuint, param: *mut GLint64);
+	fn glCreateBuffers(&self, n: GLsizei, buffers: *mut GLuint);
+	fn glNamedBufferStorage(&self, buffer: GLuint, size: GLsizeiptr, data: *const c_void, flags: GLbitfield);
+	fn glNamedBufferData(&self, buffer: GLuint, size: GLsizeiptr, data: *const c_void, usage: GLenum);
+	fn glNamedBufferSubData(&self, buffer: GLuint, offset: GLintptr, size: GLsizeiptr, data: *const c_void);
+	fn glCopyNamedBufferSubData(&self, readBuffer: GLuint, writeBuffer: GLuint, readOffset: GLintptr, writeOffset: GLintptr, size: GLsizeiptr);
+	fn glClearNamedBufferData(&self, buffer: GLuint, internalformat: GLenum, format: GLenum, type_: GLenum, data: *const c_void);
+	fn glClearNamedBufferSubData(&self, buffer: GLuint, internalformat: GLenum, offset: GLintptr, size: GLsizeiptr, format: GLenum, type_: GLenum, data: *const c_void);
+	fn glMapNamedBuffer(&self, buffer: GLuint, access: GLenum) -> *mut c_void;
+	fn glMapNamedBufferRange(&self, buffer: GLuint, offset: GLintptr, length: GLsizeiptr, access: GLbitfield) -> *mut c_void;
+	fn glUnmapNamedBuffer(&self, buffer: GLuint) -> GLboolean;
+	fn glFlushMappedNamedBufferRange(&self, buffer: GLuint, offset: GLintptr, length: GLsizeiptr);
+	fn glGetNamedBufferParameteriv(&self, buffer: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetNamedBufferParameteri64v(&self, buffer: GLuint, pname: GLenum, params: *mut GLint64);
+	fn glGetNamedBufferPointerv(&self, buffer: GLuint, pname: GLenum, params: *mut *mut c_void);
+	fn glGetNamedBufferSubData(&self, buffer: GLuint, offset: GLintptr, size: GLsizeiptr, data: *mut c_void);
+	fn glCreateFramebuffers(&self, n: GLsizei, framebuffers: *mut GLuint);
+	fn glNamedFramebufferRenderbuffer(&self, framebuffer: GLuint, attachment: GLenum, renderbuffertarget: GLenum, renderbuffer: GLuint);
+	fn glNamedFramebufferParameteri(&self, framebuffer: GLuint, pname: GLenum, param: GLint);
+	fn glNamedFramebufferTexture(&self, framebuffer: GLuint, attachment: GLenum, texture: GLuint, level: GLint);
+	fn glNamedFramebufferTextureLayer(&self, framebuffer: GLuint, attachment: GLenum, texture: GLuint, level: GLint, layer: GLint);
+	fn glNamedFramebufferDrawBuffer(&self, framebuffer: GLuint, buf: GLenum);
+	fn glNamedFramebufferDrawBuffers(&self, framebuffer: GLuint, n: GLsizei, bufs: *const GLenum);
+	fn glNamedFramebufferReadBuffer(&self, framebuffer: GLuint, src: GLenum);
+	fn glInvalidateNamedFramebufferData(&self, framebuffer: GLuint, numAttachments: GLsizei, attachments: *const GLenum);
+	fn glInvalidateNamedFramebufferSubData(&self, framebuffer: GLuint, numAttachments: GLsizei, attachments: *const GLenum, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
+	fn glClearNamedFramebufferiv(&self, framebuffer: GLuint, buffer: GLenum, drawbuffer: GLint, value: *const GLint);
+	fn glClearNamedFramebufferuiv(&self, framebuffer: GLuint, buffer: GLenum, drawbuffer: GLint, value: *const GLuint);
+	fn glClearNamedFramebufferfv(&self, framebuffer: GLuint, buffer: GLenum, drawbuffer: GLint, value: *const GLfloat);
+	fn glClearNamedFramebufferfi(&self, framebuffer: GLuint, buffer: GLenum, drawbuffer: GLint, depth: GLfloat, stencil: GLint);
+	fn glBlitNamedFramebuffer(&self, readFramebuffer: GLuint, drawFramebuffer: GLuint, srcX0: GLint, srcY0: GLint, srcX1: GLint, srcY1: GLint, dstX0: GLint, dstY0: GLint, dstX1: GLint, dstY1: GLint, mask: GLbitfield, filter: GLenum);
+	fn glCheckNamedFramebufferStatus(&self, framebuffer: GLuint, target: GLenum) -> GLenum;
+	fn glGetNamedFramebufferParameteriv(&self, framebuffer: GLuint, pname: GLenum, param: *mut GLint);
+	fn glGetNamedFramebufferAttachmentParameteriv(&self, framebuffer: GLuint, attachment: GLenum, pname: GLenum, params: *mut GLint);
+	fn glCreateRenderbuffers(&self, n: GLsizei, renderbuffers: *mut GLuint);
+	fn glNamedRenderbufferStorage(&self, renderbuffer: GLuint, internalformat: GLenum, width: GLsizei, height: GLsizei);
+	fn glNamedRenderbufferStorageMultisample(&self, renderbuffer: GLuint, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei);
+	fn glGetNamedRenderbufferParameteriv(&self, renderbuffer: GLuint, pname: GLenum, params: *mut GLint);
+	fn glCreateTextures(&self, target: GLenum, n: GLsizei, textures: *mut GLuint);
+	fn glTextureBuffer(&self, texture: GLuint, internalformat: GLenum, buffer: GLuint);
+	fn glTextureBufferRange(&self, texture: GLuint, internalformat: GLenum, buffer: GLuint, offset: GLintptr, size: GLsizeiptr);
+	fn glTextureStorage1D(&self, texture: GLuint, levels: GLsizei, internalformat: GLenum, width: GLsizei);
+	fn glTextureStorage2D(&self, texture: GLuint, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei);
+	fn glTextureStorage3D(&self, texture: GLuint, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei);
+	fn glTextureStorage2DMultisample(&self, texture: GLuint, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, fixedsamplelocations: GLboolean);
+	fn glTextureStorage3DMultisample(&self, texture: GLuint, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, fixedsamplelocations: GLboolean);
+	fn glTextureSubImage1D(&self, texture: GLuint, level: GLint, xoffset: GLint, width: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void);
+	fn glTextureSubImage2D(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void);
+	fn glTextureSubImage3D(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void);
+	fn glCompressedTextureSubImage1D(&self, texture: GLuint, level: GLint, xoffset: GLint, width: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void);
+	fn glCompressedTextureSubImage2D(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void);
+	fn glCompressedTextureSubImage3D(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void);
+	fn glCopyTextureSubImage1D(&self, texture: GLuint, level: GLint, xoffset: GLint, x: GLint, y: GLint, width: GLsizei);
+	fn glCopyTextureSubImage2D(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
+	fn glCopyTextureSubImage3D(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
+	fn glTextureParameterf(&self, texture: GLuint, pname: GLenum, param: GLfloat);
+	fn glTextureParameterfv(&self, texture: GLuint, pname: GLenum, param: *const GLfloat);
+	fn glTextureParameteri(&self, texture: GLuint, pname: GLenum, param: GLint);
+	fn glTextureParameterIiv(&self, texture: GLuint, pname: GLenum, params: *const GLint);
+	fn glTextureParameterIuiv(&self, texture: GLuint, pname: GLenum, params: *const GLuint);
+	fn glTextureParameteriv(&self, texture: GLuint, pname: GLenum, param: *const GLint);
+	fn glGenerateTextureMipmap(&self, texture: GLuint);
+	fn glBindTextureUnit(&self, unit: GLuint, texture: GLuint);
+	fn glGetTextureImage(&self, texture: GLuint, level: GLint, format: GLenum, type_: GLenum, bufSize: GLsizei, pixels: *mut c_void);
+	fn glGetCompressedTextureImage(&self, texture: GLuint, level: GLint, bufSize: GLsizei, pixels: *mut c_void);
+	fn glGetTextureLevelParameterfv(&self, texture: GLuint, level: GLint, pname: GLenum, params: *mut GLfloat);
+	fn glGetTextureLevelParameteriv(&self, texture: GLuint, level: GLint, pname: GLenum, params: *mut GLint);
+	fn glGetTextureParameterfv(&self, texture: GLuint, pname: GLenum, params: *mut GLfloat);
+	fn glGetTextureParameterIiv(&self, texture: GLuint, pname: GLenum, params: *mut GLint);
+	fn glGetTextureParameterIuiv(&self, texture: GLuint, pname: GLenum, params: *mut GLuint);
+	fn glGetTextureParameteriv(&self, texture: GLuint, pname: GLenum, params: *mut GLint);
+	fn glCreateVertexArrays(&self, n: GLsizei, arrays: *mut GLuint);
+	fn glDisableVertexArrayAttrib(&self, vaobj: GLuint, index: GLuint);
+	fn glEnableVertexArrayAttrib(&self, vaobj: GLuint, index: GLuint);
+	fn glVertexArrayElementBuffer(&self, vaobj: GLuint, buffer: GLuint);
+	fn glVertexArrayVertexBuffer(&self, vaobj: GLuint, bindingindex: GLuint, buffer: GLuint, offset: GLintptr, stride: GLsizei);
+	fn glVertexArrayVertexBuffers(&self, vaobj: GLuint, first: GLuint, count: GLsizei, buffers: *const GLuint, offsets: *const GLintptr, strides: *const GLsizei);
+	fn glVertexArrayAttribBinding(&self, vaobj: GLuint, attribindex: GLuint, bindingindex: GLuint);
+	fn glVertexArrayAttribFormat(&self, vaobj: GLuint, attribindex: GLuint, size: GLint, type_: GLenum, normalized: GLboolean, relativeoffset: GLuint);
+	fn glVertexArrayAttribIFormat(&self, vaobj: GLuint, attribindex: GLuint, size: GLint, type_: GLenum, relativeoffset: GLuint);
+	fn glVertexArrayAttribLFormat(&self, vaobj: GLuint, attribindex: GLuint, size: GLint, type_: GLenum, relativeoffset: GLuint);
+	fn glVertexArrayBindingDivisor(&self, vaobj: GLuint, bindingindex: GLuint, divisor: GLuint);
+	fn glGetVertexArrayiv(&self, vaobj: GLuint, pname: GLenum, param: *mut GLint);
+	fn glGetVertexArrayIndexediv(&self, vaobj: GLuint, index: GLuint, pname: GLenum, param: *mut GLint);
+	fn glGetVertexArrayIndexed64iv(&self, vaobj: GLuint, index: GLuint, pname: GLenum, param: *mut GLint64);
+	fn glCreateSamplers(&self, n: GLsizei, samplers: *mut GLuint);
+	fn glCreateProgramPipelines(&self, n: GLsizei, pipelines: *mut GLuint);
+	fn glCreateQueries(&self, target: GLenum, n: GLsizei, ids: *mut GLuint);
+	fn glGetQueryBufferObjecti64v(&self, id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr);
+	fn glGetQueryBufferObjectiv(&self, id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr);
+	fn glGetQueryBufferObjectui64v(&self, id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr);
+	fn glGetQueryBufferObjectuiv(&self, id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr);
+	fn glMemoryBarrierByRegion(&self, barriers: GLbitfield);
+	fn glGetTextureSubImage(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, type_: GLenum, bufSize: GLsizei, pixels: *mut c_void);
+	fn glGetCompressedTextureSubImage(&self, texture: GLuint, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, bufSize: GLsizei, pixels: *mut c_void);
+	fn glGetGraphicsResetStatus(&self) -> GLenum;
+	fn glGetnCompressedTexImage(&self, target: GLenum, lod: GLint, bufSize: GLsizei, pixels: *mut c_void);
+	fn glGetnTexImage(&self, target: GLenum, level: GLint, format: GLenum, type_: GLenum, bufSize: GLsizei, pixels: *mut c_void);
+	fn glGetnUniformdv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLdouble);
+	fn glGetnUniformfv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLfloat);
+	fn glGetnUniformiv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLint);
+	fn glGetnUniformuiv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLuint);
+	fn glReadnPixels(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, bufSize: GLsizei, data: *mut c_void);
+	fn glGetnMapdv(&self, target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLdouble);
+	fn glGetnMapfv(&self, target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLfloat);
+	fn glGetnMapiv(&self, target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLint);
+	fn glGetnPixelMapfv(&self, map: GLenum, bufSize: GLsizei, values: *mut GLfloat);
+	fn glGetnPixelMapuiv(&self, map: GLenum, bufSize: GLsizei, values: *mut GLuint);
+	fn glGetnPixelMapusv(&self, map: GLenum, bufSize: GLsizei, values: *mut GLushort);
+	fn glGetnPolygonStipple(&self, bufSize: GLsizei, pattern: *mut GLubyte);
+	fn glGetnColorTable(&self, target: GLenum, format: GLenum, type_: GLenum, bufSize: GLsizei, table: *mut c_void);
+	fn glGetnConvolutionFilter(&self, target: GLenum, format: GLenum, type_: GLenum, bufSize: GLsizei, image: *mut c_void);
+	fn glGetnSeparableFilter(&self, target: GLenum, format: GLenum, type_: GLenum, rowBufSize: GLsizei, row: *mut c_void, columnBufSize: GLsizei, column: *mut c_void, span: *mut c_void);
+	fn glGetnHistogram(&self, target: GLenum, reset: GLboolean, format: GLenum, type_: GLenum, bufSize: GLsizei, values: *mut c_void);
+	fn glGetnMinmax(&self, target: GLenum, reset: GLboolean, format: GLenum, type_: GLenum, bufSize: GLsizei, values: *mut c_void);
+	fn glTextureBarrier(&self);
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -10725,18 +9186,10 @@ const TRANSFORM_FEEDBACK_OVERFLOW: GLenum = 0x82EC;
 const TRANSFORM_FEEDBACK_STREAM_OVERFLOW: GLenum = 0x82ED;
 
 pub trait GL_4_6 {
-	fn glSpecializeShader(&self, _: GLuint, _: *const GLchar, _: GLuint, _: *const GLuint, _: *const GLuint) {
-		panic!("OpenGL function pointer of `glSpecializeShader` is NULL");
-	}
-	fn glMultiDrawArraysIndirectCount(&self, _: GLenum, _: *const c_void, _: GLintptr, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glMultiDrawArraysIndirectCount` is NULL");
-	}
-	fn glMultiDrawElementsIndirectCount(&self, _: GLenum, _: GLenum, _: *const c_void, _: GLintptr, _: GLsizei, _: GLsizei) {
-		panic!("OpenGL function pointer of `glMultiDrawElementsIndirectCount` is NULL");
-	}
-	fn glPolygonOffsetClamp(&self, _: GLfloat, _: GLfloat, _: GLfloat) {
-		panic!("OpenGL function pointer of `glPolygonOffsetClamp` is NULL");
-	}
+	fn glSpecializeShader(&self, shader: GLuint, pEntryPoint: *const GLchar, numSpecializationConstants: GLuint, pConstantIndex: *const GLuint, pConstantValue: *const GLuint);
+	fn glMultiDrawArraysIndirectCount(&self, mode: GLenum, indirect: *const c_void, drawcount: GLintptr, maxdrawcount: GLsizei, stride: GLsizei);
+	fn glMultiDrawElementsIndirectCount(&self, mode: GLenum, type_: GLenum, indirect: *const c_void, drawcount: GLintptr, maxdrawcount: GLsizei, stride: GLsizei);
+	fn glPolygonOffsetClamp(&self, factor: GLfloat, units: GLfloat, clamp: GLfloat);
 }
 
 #[derive(Debug, Clone, Copy)]
