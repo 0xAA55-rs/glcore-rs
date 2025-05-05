@@ -2,7 +2,7 @@
 #![allow(non_snake_case)]
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
-use std::{mem::transmute, ffi::{c_void, CStr}, fmt::Debug};
+use std::{mem::transmute, ffi::{c_void, CStr}, fmt::Debug, ptr::null};
 type khronos_float_t = f32;
 type khronos_ssize_t = usize;
 type khronos_intptr_t = usize;
@@ -75,322 +75,322 @@ type PFNGLISENABLEDPROC = extern "system" fn(GLenum) -> GLboolean;
 type PFNGLDEPTHRANGEPROC = extern "system" fn(GLdouble, GLdouble);
 type PFNGLVIEWPORTPROC = extern "system" fn(GLint, GLint, GLsizei, GLsizei);
 extern "system" fn dummy_pfnglcullfaceproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glCullFace() is NULL");
+	panic!("OpenGL Function pointer of `glCullFace()` is NULL");
 }
 extern "system" fn dummy_pfnglfrontfaceproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glFrontFace() is NULL");
+	panic!("OpenGL Function pointer of `glFrontFace()` is NULL");
 }
 extern "system" fn dummy_pfnglhintproc (_: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glHint() is NULL");
+	panic!("OpenGL Function pointer of `glHint()` is NULL");
 }
 extern "system" fn dummy_pfngllinewidthproc (_: GLfloat) {
-	panic!("OpenGL Function pointer of glLineWidth() is NULL");
+	panic!("OpenGL Function pointer of `glLineWidth()` is NULL");
 }
 extern "system" fn dummy_pfnglpointsizeproc (_: GLfloat) {
-	panic!("OpenGL Function pointer of glPointSize() is NULL");
+	panic!("OpenGL Function pointer of `glPointSize()` is NULL");
 }
 extern "system" fn dummy_pfnglpolygonmodeproc (_: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glPolygonMode() is NULL");
+	panic!("OpenGL Function pointer of `glPolygonMode()` is NULL");
 }
 extern "system" fn dummy_pfnglscissorproc (_: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glScissor() is NULL");
+	panic!("OpenGL Function pointer of `glScissor()` is NULL");
 }
 extern "system" fn dummy_pfngltexparameterfproc (_: GLenum, _: GLenum, _: GLfloat) {
-	panic!("OpenGL Function pointer of glTexParameterf() is NULL");
+	panic!("OpenGL Function pointer of `glTexParameterf()` is NULL");
 }
 extern "system" fn dummy_pfngltexparameterfvproc (_: GLenum, _: GLenum, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glTexParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glTexParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfngltexparameteriproc (_: GLenum, _: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glTexParameteri() is NULL");
+	panic!("OpenGL Function pointer of `glTexParameteri()` is NULL");
 }
 extern "system" fn dummy_pfngltexparameterivproc (_: GLenum, _: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glTexParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glTexParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglteximage1dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glTexImage1D() is NULL");
+	panic!("OpenGL Function pointer of `glTexImage1D()` is NULL");
 }
 extern "system" fn dummy_pfnglteximage2dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glTexImage2D() is NULL");
+	panic!("OpenGL Function pointer of `glTexImage2D()` is NULL");
 }
 extern "system" fn dummy_pfngldrawbufferproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glDrawBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glDrawBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglclearproc (_: GLbitfield) {
-	panic!("OpenGL Function pointer of glClear() is NULL");
+	panic!("OpenGL Function pointer of `glClear()` is NULL");
 }
 extern "system" fn dummy_pfnglclearcolorproc (_: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glClearColor() is NULL");
+	panic!("OpenGL Function pointer of `glClearColor()` is NULL");
 }
 extern "system" fn dummy_pfnglclearstencilproc (_: GLint) {
-	panic!("OpenGL Function pointer of glClearStencil() is NULL");
+	panic!("OpenGL Function pointer of `glClearStencil()` is NULL");
 }
 extern "system" fn dummy_pfnglcleardepthproc (_: GLdouble) {
-	panic!("OpenGL Function pointer of glClearDepth() is NULL");
+	panic!("OpenGL Function pointer of `glClearDepth()` is NULL");
 }
 extern "system" fn dummy_pfnglstencilmaskproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glStencilMask() is NULL");
+	panic!("OpenGL Function pointer of `glStencilMask()` is NULL");
 }
 extern "system" fn dummy_pfnglcolormaskproc (_: GLboolean, _: GLboolean, _: GLboolean, _: GLboolean) {
-	panic!("OpenGL Function pointer of glColorMask() is NULL");
+	panic!("OpenGL Function pointer of `glColorMask()` is NULL");
 }
 extern "system" fn dummy_pfngldepthmaskproc (_: GLboolean) {
-	panic!("OpenGL Function pointer of glDepthMask() is NULL");
+	panic!("OpenGL Function pointer of `glDepthMask()` is NULL");
 }
 extern "system" fn dummy_pfngldisableproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glDisable() is NULL");
+	panic!("OpenGL Function pointer of `glDisable()` is NULL");
 }
 extern "system" fn dummy_pfnglenableproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glEnable() is NULL");
+	panic!("OpenGL Function pointer of `glEnable()` is NULL");
 }
 extern "system" fn dummy_pfnglfinishproc () {
-	panic!("OpenGL Function pointer of glFinish() is NULL");
+	panic!("OpenGL Function pointer of `glFinish()` is NULL");
 }
 extern "system" fn dummy_pfnglflushproc () {
-	panic!("OpenGL Function pointer of glFlush() is NULL");
+	panic!("OpenGL Function pointer of `glFlush()` is NULL");
 }
 extern "system" fn dummy_pfnglblendfuncproc (_: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glBlendFunc() is NULL");
+	panic!("OpenGL Function pointer of `glBlendFunc()` is NULL");
 }
 extern "system" fn dummy_pfngllogicopproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glLogicOp() is NULL");
+	panic!("OpenGL Function pointer of `glLogicOp()` is NULL");
 }
 extern "system" fn dummy_pfnglstencilfuncproc (_: GLenum, _: GLint, _: GLuint) {
-	panic!("OpenGL Function pointer of glStencilFunc() is NULL");
+	panic!("OpenGL Function pointer of `glStencilFunc()` is NULL");
 }
 extern "system" fn dummy_pfnglstencilopproc (_: GLenum, _: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glStencilOp() is NULL");
+	panic!("OpenGL Function pointer of `glStencilOp()` is NULL");
 }
 extern "system" fn dummy_pfngldepthfuncproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glDepthFunc() is NULL");
+	panic!("OpenGL Function pointer of `glDepthFunc()` is NULL");
 }
 extern "system" fn dummy_pfnglpixelstorefproc (_: GLenum, _: GLfloat) {
-	panic!("OpenGL Function pointer of glPixelStoref() is NULL");
+	panic!("OpenGL Function pointer of `glPixelStoref()` is NULL");
 }
 extern "system" fn dummy_pfnglpixelstoreiproc (_: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glPixelStorei() is NULL");
+	panic!("OpenGL Function pointer of `glPixelStorei()` is NULL");
 }
 extern "system" fn dummy_pfnglreadbufferproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glReadBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glReadBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglreadpixelsproc (_: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glReadPixels() is NULL");
+	panic!("OpenGL Function pointer of `glReadPixels()` is NULL");
 }
 extern "system" fn dummy_pfnglgetbooleanvproc (_: GLenum, _: *mut GLboolean) {
-	panic!("OpenGL Function pointer of glGetBooleanv() is NULL");
+	panic!("OpenGL Function pointer of `glGetBooleanv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetdoublevproc (_: GLenum, _: *mut GLdouble) {
-	panic!("OpenGL Function pointer of glGetDoublev() is NULL");
+	panic!("OpenGL Function pointer of `glGetDoublev()` is NULL");
 }
 extern "system" fn dummy_pfnglgeterrorproc () -> GLenum {
-	panic!("OpenGL Function pointer of glGetError() is NULL");
+	panic!("OpenGL Function pointer of `glGetError()` is NULL");
 }
 extern "system" fn dummy_pfnglgetfloatvproc (_: GLenum, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetFloatv() is NULL");
+	panic!("OpenGL Function pointer of `glGetFloatv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetintegervproc (_: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetIntegerv() is NULL");
+	panic!("OpenGL Function pointer of `glGetIntegerv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetstringproc (_: GLenum) -> *const GLubyte {
-	panic!("OpenGL Function pointer of glGetString() is NULL");
+	panic!("OpenGL Function pointer of `glGetString()` is NULL");
 }
 extern "system" fn dummy_pfnglgetteximageproc (_: GLenum, _: GLint, _: GLenum, _: GLenum, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetTexImage() is NULL");
+	panic!("OpenGL Function pointer of `glGetTexImage()` is NULL");
 }
 extern "system" fn dummy_pfnglgettexparameterfvproc (_: GLenum, _: GLenum, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetTexParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTexParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettexparameterivproc (_: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetTexParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTexParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettexlevelparameterfvproc (_: GLenum, _: GLint, _: GLenum, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetTexLevelParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTexLevelParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettexlevelparameterivproc (_: GLenum, _: GLint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetTexLevelParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTexLevelParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglisenabledproc (_: GLenum) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsEnabled() is NULL");
+	panic!("OpenGL Function pointer of `glIsEnabled()` is NULL");
 }
 extern "system" fn dummy_pfngldepthrangeproc (_: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glDepthRange() is NULL");
+	panic!("OpenGL Function pointer of `glDepthRange()` is NULL");
 }
 extern "system" fn dummy_pfnglviewportproc (_: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glViewport() is NULL");
+	panic!("OpenGL Function pointer of `glViewport()` is NULL");
 }
-const DEPTH_BUFFER_BIT: GLbitfield = 0x00000100;
-const STENCIL_BUFFER_BIT: GLbitfield = 0x00000400;
-const COLOR_BUFFER_BIT: GLbitfield = 0x00004000;
-const FALSE: GLenum = 0;
-const TRUE: GLenum = 1;
-const POINTS: GLenum = 0x0000;
-const LINES: GLenum = 0x0001;
-const LINE_LOOP: GLenum = 0x0002;
-const LINE_STRIP: GLenum = 0x0003;
-const TRIANGLES: GLenum = 0x0004;
-const TRIANGLE_STRIP: GLenum = 0x0005;
-const TRIANGLE_FAN: GLenum = 0x0006;
-const QUADS: GLenum = 0x0007;
-const NEVER: GLenum = 0x0200;
-const LESS: GLenum = 0x0201;
-const EQUAL: GLenum = 0x0202;
-const LEQUAL: GLenum = 0x0203;
-const GREATER: GLenum = 0x0204;
-const NOTEQUAL: GLenum = 0x0205;
-const GEQUAL: GLenum = 0x0206;
-const ALWAYS: GLenum = 0x0207;
-const ZERO: GLenum = 0;
-const ONE: GLenum = 1;
-const SRC_COLOR: GLenum = 0x0300;
-const ONE_MINUS_SRC_COLOR: GLenum = 0x0301;
-const SRC_ALPHA: GLenum = 0x0302;
-const ONE_MINUS_SRC_ALPHA: GLenum = 0x0303;
-const DST_ALPHA: GLenum = 0x0304;
-const ONE_MINUS_DST_ALPHA: GLenum = 0x0305;
-const DST_COLOR: GLenum = 0x0306;
-const ONE_MINUS_DST_COLOR: GLenum = 0x0307;
-const SRC_ALPHA_SATURATE: GLenum = 0x0308;
-const NONE: GLenum = 0;
-const FRONT_LEFT: GLenum = 0x0400;
-const FRONT_RIGHT: GLenum = 0x0401;
-const BACK_LEFT: GLenum = 0x0402;
-const BACK_RIGHT: GLenum = 0x0403;
-const FRONT: GLenum = 0x0404;
-const BACK: GLenum = 0x0405;
-const LEFT: GLenum = 0x0406;
-const RIGHT: GLenum = 0x0407;
-const FRONT_AND_BACK: GLenum = 0x0408;
-const NO_ERROR: GLenum = 0;
-const INVALID_ENUM: GLenum = 0x0500;
-const INVALID_VALUE: GLenum = 0x0501;
-const INVALID_OPERATION: GLenum = 0x0502;
-const OUT_OF_MEMORY: GLenum = 0x0505;
-const CW: GLenum = 0x0900;
-const CCW: GLenum = 0x0901;
-const POINT_SIZE: GLenum = 0x0B11;
-const POINT_SIZE_RANGE: GLenum = 0x0B12;
-const POINT_SIZE_GRANULARITY: GLenum = 0x0B13;
-const LINE_SMOOTH: GLenum = 0x0B20;
-const LINE_WIDTH: GLenum = 0x0B21;
-const LINE_WIDTH_RANGE: GLenum = 0x0B22;
-const LINE_WIDTH_GRANULARITY: GLenum = 0x0B23;
-const POLYGON_MODE: GLenum = 0x0B40;
-const POLYGON_SMOOTH: GLenum = 0x0B41;
-const CULL_FACE: GLenum = 0x0B44;
-const CULL_FACE_MODE: GLenum = 0x0B45;
-const FRONT_FACE: GLenum = 0x0B46;
-const DEPTH_RANGE: GLenum = 0x0B70;
-const DEPTH_TEST: GLenum = 0x0B71;
-const DEPTH_WRITEMASK: GLenum = 0x0B72;
-const DEPTH_CLEAR_VALUE: GLenum = 0x0B73;
-const DEPTH_FUNC: GLenum = 0x0B74;
-const STENCIL_TEST: GLenum = 0x0B90;
-const STENCIL_CLEAR_VALUE: GLenum = 0x0B91;
-const STENCIL_FUNC: GLenum = 0x0B92;
-const STENCIL_VALUE_MASK: GLenum = 0x0B93;
-const STENCIL_FAIL: GLenum = 0x0B94;
-const STENCIL_PASS_DEPTH_FAIL: GLenum = 0x0B95;
-const STENCIL_PASS_DEPTH_PASS: GLenum = 0x0B96;
-const STENCIL_REF: GLenum = 0x0B97;
-const STENCIL_WRITEMASK: GLenum = 0x0B98;
-const VIEWPORT: GLenum = 0x0BA2;
-const DITHER: GLenum = 0x0BD0;
-const BLEND_DST: GLenum = 0x0BE0;
-const BLEND_SRC: GLenum = 0x0BE1;
-const BLEND: GLenum = 0x0BE2;
-const LOGIC_OP_MODE: GLenum = 0x0BF0;
-const DRAW_BUFFER: GLenum = 0x0C01;
-const READ_BUFFER: GLenum = 0x0C02;
-const SCISSOR_BOX: GLenum = 0x0C10;
-const SCISSOR_TEST: GLenum = 0x0C11;
-const COLOR_CLEAR_VALUE: GLenum = 0x0C22;
-const COLOR_WRITEMASK: GLenum = 0x0C23;
-const DOUBLEBUFFER: GLenum = 0x0C32;
-const STEREO: GLenum = 0x0C33;
-const LINE_SMOOTH_HINT: GLenum = 0x0C52;
-const POLYGON_SMOOTH_HINT: GLenum = 0x0C53;
-const UNPACK_SWAP_BYTES: GLenum = 0x0CF0;
-const UNPACK_LSB_FIRST: GLenum = 0x0CF1;
-const UNPACK_ROW_LENGTH: GLenum = 0x0CF2;
-const UNPACK_SKIP_ROWS: GLenum = 0x0CF3;
-const UNPACK_SKIP_PIXELS: GLenum = 0x0CF4;
-const UNPACK_ALIGNMENT: GLenum = 0x0CF5;
-const PACK_SWAP_BYTES: GLenum = 0x0D00;
-const PACK_LSB_FIRST: GLenum = 0x0D01;
-const PACK_ROW_LENGTH: GLenum = 0x0D02;
-const PACK_SKIP_ROWS: GLenum = 0x0D03;
-const PACK_SKIP_PIXELS: GLenum = 0x0D04;
-const PACK_ALIGNMENT: GLenum = 0x0D05;
-const MAX_TEXTURE_SIZE: GLenum = 0x0D33;
-const MAX_VIEWPORT_DIMS: GLenum = 0x0D3A;
-const SUBPIXEL_BITS: GLenum = 0x0D50;
-const TEXTURE_1D: GLenum = 0x0DE0;
-const TEXTURE_2D: GLenum = 0x0DE1;
-const TEXTURE_WIDTH: GLenum = 0x1000;
-const TEXTURE_HEIGHT: GLenum = 0x1001;
-const TEXTURE_BORDER_COLOR: GLenum = 0x1004;
-const DONT_CARE: GLenum = 0x1100;
-const FASTEST: GLenum = 0x1101;
-const NICEST: GLenum = 0x1102;
-const BYTE: GLenum = 0x1400;
-const UNSIGNED_BYTE: GLenum = 0x1401;
-const SHORT: GLenum = 0x1402;
-const UNSIGNED_SHORT: GLenum = 0x1403;
-const INT: GLenum = 0x1404;
-const UNSIGNED_INT: GLenum = 0x1405;
-const FLOAT: GLenum = 0x1406;
-const STACK_OVERFLOW: GLenum = 0x0503;
-const STACK_UNDERFLOW: GLenum = 0x0504;
-const CLEAR: GLenum = 0x1500;
-const AND: GLenum = 0x1501;
-const AND_REVERSE: GLenum = 0x1502;
-const COPY: GLenum = 0x1503;
-const AND_INVERTED: GLenum = 0x1504;
-const NOOP: GLenum = 0x1505;
-const XOR: GLenum = 0x1506;
-const OR: GLenum = 0x1507;
-const NOR: GLenum = 0x1508;
-const EQUIV: GLenum = 0x1509;
-const INVERT: GLenum = 0x150A;
-const OR_REVERSE: GLenum = 0x150B;
-const COPY_INVERTED: GLenum = 0x150C;
-const OR_INVERTED: GLenum = 0x150D;
-const NAND: GLenum = 0x150E;
-const SET: GLenum = 0x150F;
-const TEXTURE: GLenum = 0x1702;
-const COLOR: GLenum = 0x1800;
-const DEPTH: GLenum = 0x1801;
-const STENCIL: GLenum = 0x1802;
-const STENCIL_INDEX: GLenum = 0x1901;
-const DEPTH_COMPONENT: GLenum = 0x1902;
-const RED: GLenum = 0x1903;
-const GREEN: GLenum = 0x1904;
-const BLUE: GLenum = 0x1905;
-const ALPHA: GLenum = 0x1906;
-const RGB: GLenum = 0x1907;
-const RGBA: GLenum = 0x1908;
-const POINT: GLenum = 0x1B00;
-const LINE: GLenum = 0x1B01;
-const FILL: GLenum = 0x1B02;
-const KEEP: GLenum = 0x1E00;
-const REPLACE: GLenum = 0x1E01;
-const INCR: GLenum = 0x1E02;
-const DECR: GLenum = 0x1E03;
-const VENDOR: GLenum = 0x1F00;
-const RENDERER: GLenum = 0x1F01;
-const VERSION: GLenum = 0x1F02;
-const EXTENSIONS: GLenum = 0x1F03;
-const NEAREST: GLint = 0x2600;
-const LINEAR: GLint = 0x2601;
-const NEAREST_MIPMAP_NEAREST: GLint = 0x2700;
-const LINEAR_MIPMAP_NEAREST: GLint = 0x2701;
-const NEAREST_MIPMAP_LINEAR: GLint = 0x2702;
-const LINEAR_MIPMAP_LINEAR: GLint = 0x2703;
-const TEXTURE_MAG_FILTER: GLenum = 0x2800;
-const TEXTURE_MIN_FILTER: GLenum = 0x2801;
-const TEXTURE_WRAP_S: GLenum = 0x2802;
-const TEXTURE_WRAP_T: GLenum = 0x2803;
-const REPEAT: GLint = 0x2901;
+pub const GL_DEPTH_BUFFER_BIT: GLbitfield = 0x00000100;
+pub const GL_STENCIL_BUFFER_BIT: GLbitfield = 0x00000400;
+pub const GL_COLOR_BUFFER_BIT: GLbitfield = 0x00004000;
+pub const GL_FALSE: GLenum = 0;
+pub const GL_TRUE: GLenum = 1;
+pub const GL_POINTS: GLenum = 0x0000;
+pub const GL_LINES: GLenum = 0x0001;
+pub const GL_LINE_LOOP: GLenum = 0x0002;
+pub const GL_LINE_STRIP: GLenum = 0x0003;
+pub const GL_TRIANGLES: GLenum = 0x0004;
+pub const GL_TRIANGLE_STRIP: GLenum = 0x0005;
+pub const GL_TRIANGLE_FAN: GLenum = 0x0006;
+pub const GL_QUADS: GLenum = 0x0007;
+pub const GL_NEVER: GLenum = 0x0200;
+pub const GL_LESS: GLenum = 0x0201;
+pub const GL_EQUAL: GLenum = 0x0202;
+pub const GL_LEQUAL: GLenum = 0x0203;
+pub const GL_GREATER: GLenum = 0x0204;
+pub const GL_NOTEQUAL: GLenum = 0x0205;
+pub const GL_GEQUAL: GLenum = 0x0206;
+pub const GL_ALWAYS: GLenum = 0x0207;
+pub const GL_ZERO: GLenum = 0;
+pub const GL_ONE: GLenum = 1;
+pub const GL_SRC_COLOR: GLenum = 0x0300;
+pub const GL_ONE_MINUS_SRC_COLOR: GLenum = 0x0301;
+pub const GL_SRC_ALPHA: GLenum = 0x0302;
+pub const GL_ONE_MINUS_SRC_ALPHA: GLenum = 0x0303;
+pub const GL_DST_ALPHA: GLenum = 0x0304;
+pub const GL_ONE_MINUS_DST_ALPHA: GLenum = 0x0305;
+pub const GL_DST_COLOR: GLenum = 0x0306;
+pub const GL_ONE_MINUS_DST_COLOR: GLenum = 0x0307;
+pub const GL_SRC_ALPHA_SATURATE: GLenum = 0x0308;
+pub const GL_NONE: GLenum = 0;
+pub const GL_FRONT_LEFT: GLenum = 0x0400;
+pub const GL_FRONT_RIGHT: GLenum = 0x0401;
+pub const GL_BACK_LEFT: GLenum = 0x0402;
+pub const GL_BACK_RIGHT: GLenum = 0x0403;
+pub const GL_FRONT: GLenum = 0x0404;
+pub const GL_BACK: GLenum = 0x0405;
+pub const GL_LEFT: GLenum = 0x0406;
+pub const GL_RIGHT: GLenum = 0x0407;
+pub const GL_FRONT_AND_BACK: GLenum = 0x0408;
+pub const GL_NO_ERROR: GLenum = 0;
+pub const GL_INVALID_ENUM: GLenum = 0x0500;
+pub const GL_INVALID_VALUE: GLenum = 0x0501;
+pub const GL_INVALID_OPERATION: GLenum = 0x0502;
+pub const GL_OUT_OF_MEMORY: GLenum = 0x0505;
+pub const GL_CW: GLenum = 0x0900;
+pub const GL_CCW: GLenum = 0x0901;
+pub const GL_POINT_SIZE: GLenum = 0x0B11;
+pub const GL_POINT_SIZE_RANGE: GLenum = 0x0B12;
+pub const GL_POINT_SIZE_GRANULARITY: GLenum = 0x0B13;
+pub const GL_LINE_SMOOTH: GLenum = 0x0B20;
+pub const GL_LINE_WIDTH: GLenum = 0x0B21;
+pub const GL_LINE_WIDTH_RANGE: GLenum = 0x0B22;
+pub const GL_LINE_WIDTH_GRANULARITY: GLenum = 0x0B23;
+pub const GL_POLYGON_MODE: GLenum = 0x0B40;
+pub const GL_POLYGON_SMOOTH: GLenum = 0x0B41;
+pub const GL_CULL_FACE: GLenum = 0x0B44;
+pub const GL_CULL_FACE_MODE: GLenum = 0x0B45;
+pub const GL_FRONT_FACE: GLenum = 0x0B46;
+pub const GL_DEPTH_RANGE: GLenum = 0x0B70;
+pub const GL_DEPTH_TEST: GLenum = 0x0B71;
+pub const GL_DEPTH_WRITEMASK: GLenum = 0x0B72;
+pub const GL_DEPTH_CLEAR_VALUE: GLenum = 0x0B73;
+pub const GL_DEPTH_FUNC: GLenum = 0x0B74;
+pub const GL_STENCIL_TEST: GLenum = 0x0B90;
+pub const GL_STENCIL_CLEAR_VALUE: GLenum = 0x0B91;
+pub const GL_STENCIL_FUNC: GLenum = 0x0B92;
+pub const GL_STENCIL_VALUE_MASK: GLenum = 0x0B93;
+pub const GL_STENCIL_FAIL: GLenum = 0x0B94;
+pub const GL_STENCIL_PASS_DEPTH_FAIL: GLenum = 0x0B95;
+pub const GL_STENCIL_PASS_DEPTH_PASS: GLenum = 0x0B96;
+pub const GL_STENCIL_REF: GLenum = 0x0B97;
+pub const GL_STENCIL_WRITEMASK: GLenum = 0x0B98;
+pub const GL_VIEWPORT: GLenum = 0x0BA2;
+pub const GL_DITHER: GLenum = 0x0BD0;
+pub const GL_BLEND_DST: GLenum = 0x0BE0;
+pub const GL_BLEND_SRC: GLenum = 0x0BE1;
+pub const GL_BLEND: GLenum = 0x0BE2;
+pub const GL_LOGIC_OP_MODE: GLenum = 0x0BF0;
+pub const GL_DRAW_BUFFER: GLenum = 0x0C01;
+pub const GL_READ_BUFFER: GLenum = 0x0C02;
+pub const GL_SCISSOR_BOX: GLenum = 0x0C10;
+pub const GL_SCISSOR_TEST: GLenum = 0x0C11;
+pub const GL_COLOR_CLEAR_VALUE: GLenum = 0x0C22;
+pub const GL_COLOR_WRITEMASK: GLenum = 0x0C23;
+pub const GL_DOUBLEBUFFER: GLenum = 0x0C32;
+pub const GL_STEREO: GLenum = 0x0C33;
+pub const GL_LINE_SMOOTH_HINT: GLenum = 0x0C52;
+pub const GL_POLYGON_SMOOTH_HINT: GLenum = 0x0C53;
+pub const GL_UNPACK_SWAP_BYTES: GLenum = 0x0CF0;
+pub const GL_UNPACK_LSB_FIRST: GLenum = 0x0CF1;
+pub const GL_UNPACK_ROW_LENGTH: GLenum = 0x0CF2;
+pub const GL_UNPACK_SKIP_ROWS: GLenum = 0x0CF3;
+pub const GL_UNPACK_SKIP_PIXELS: GLenum = 0x0CF4;
+pub const GL_UNPACK_ALIGNMENT: GLenum = 0x0CF5;
+pub const GL_PACK_SWAP_BYTES: GLenum = 0x0D00;
+pub const GL_PACK_LSB_FIRST: GLenum = 0x0D01;
+pub const GL_PACK_ROW_LENGTH: GLenum = 0x0D02;
+pub const GL_PACK_SKIP_ROWS: GLenum = 0x0D03;
+pub const GL_PACK_SKIP_PIXELS: GLenum = 0x0D04;
+pub const GL_PACK_ALIGNMENT: GLenum = 0x0D05;
+pub const GL_MAX_TEXTURE_SIZE: GLenum = 0x0D33;
+pub const GL_MAX_VIEWPORT_DIMS: GLenum = 0x0D3A;
+pub const GL_SUBPIXEL_BITS: GLenum = 0x0D50;
+pub const GL_TEXTURE_1D: GLenum = 0x0DE0;
+pub const GL_TEXTURE_2D: GLenum = 0x0DE1;
+pub const GL_TEXTURE_WIDTH: GLenum = 0x1000;
+pub const GL_TEXTURE_HEIGHT: GLenum = 0x1001;
+pub const GL_TEXTURE_BORDER_COLOR: GLenum = 0x1004;
+pub const GL_DONT_CARE: GLenum = 0x1100;
+pub const GL_FASTEST: GLenum = 0x1101;
+pub const GL_NICEST: GLenum = 0x1102;
+pub const GL_BYTE: GLenum = 0x1400;
+pub const GL_UNSIGNED_BYTE: GLenum = 0x1401;
+pub const GL_SHORT: GLenum = 0x1402;
+pub const GL_UNSIGNED_SHORT: GLenum = 0x1403;
+pub const GL_INT: GLenum = 0x1404;
+pub const GL_UNSIGNED_INT: GLenum = 0x1405;
+pub const GL_FLOAT: GLenum = 0x1406;
+pub const GL_STACK_OVERFLOW: GLenum = 0x0503;
+pub const GL_STACK_UNDERFLOW: GLenum = 0x0504;
+pub const GL_CLEAR: GLenum = 0x1500;
+pub const GL_AND: GLenum = 0x1501;
+pub const GL_AND_REVERSE: GLenum = 0x1502;
+pub const GL_COPY: GLenum = 0x1503;
+pub const GL_AND_INVERTED: GLenum = 0x1504;
+pub const GL_NOOP: GLenum = 0x1505;
+pub const GL_XOR: GLenum = 0x1506;
+pub const GL_OR: GLenum = 0x1507;
+pub const GL_NOR: GLenum = 0x1508;
+pub const GL_EQUIV: GLenum = 0x1509;
+pub const GL_INVERT: GLenum = 0x150A;
+pub const GL_OR_REVERSE: GLenum = 0x150B;
+pub const GL_COPY_INVERTED: GLenum = 0x150C;
+pub const GL_OR_INVERTED: GLenum = 0x150D;
+pub const GL_NAND: GLenum = 0x150E;
+pub const GL_SET: GLenum = 0x150F;
+pub const GL_TEXTURE: GLenum = 0x1702;
+pub const GL_COLOR: GLenum = 0x1800;
+pub const GL_DEPTH: GLenum = 0x1801;
+pub const GL_STENCIL: GLenum = 0x1802;
+pub const GL_STENCIL_INDEX: GLenum = 0x1901;
+pub const GL_DEPTH_COMPONENT: GLenum = 0x1902;
+pub const GL_RED: GLenum = 0x1903;
+pub const GL_GREEN: GLenum = 0x1904;
+pub const GL_BLUE: GLenum = 0x1905;
+pub const GL_ALPHA: GLenum = 0x1906;
+pub const GL_RGB: GLenum = 0x1907;
+pub const GL_RGBA: GLenum = 0x1908;
+pub const GL_POINT: GLenum = 0x1B00;
+pub const GL_LINE: GLenum = 0x1B01;
+pub const GL_FILL: GLenum = 0x1B02;
+pub const GL_KEEP: GLenum = 0x1E00;
+pub const GL_REPLACE: GLenum = 0x1E01;
+pub const GL_INCR: GLenum = 0x1E02;
+pub const GL_DECR: GLenum = 0x1E03;
+pub const GL_VENDOR: GLenum = 0x1F00;
+pub const GL_RENDERER: GLenum = 0x1F01;
+pub const GL_VERSION: GLenum = 0x1F02;
+pub const GL_EXTENSIONS: GLenum = 0x1F03;
+pub const GL_NEAREST: GLint = 0x2600;
+pub const GL_LINEAR: GLint = 0x2601;
+pub const GL_NEAREST_MIPMAP_NEAREST: GLint = 0x2700;
+pub const GL_LINEAR_MIPMAP_NEAREST: GLint = 0x2701;
+pub const GL_NEAREST_MIPMAP_LINEAR: GLint = 0x2702;
+pub const GL_LINEAR_MIPMAP_LINEAR: GLint = 0x2703;
+pub const GL_TEXTURE_MAG_FILTER: GLenum = 0x2800;
+pub const GL_TEXTURE_MIN_FILTER: GLenum = 0x2801;
+pub const GL_TEXTURE_WRAP_S: GLenum = 0x2802;
+pub const GL_TEXTURE_WRAP_T: GLenum = 0x2803;
+pub const GL_REPEAT: GLint = 0x2901;
 
 pub trait GL_1_0 {
 	fn glCullFace(&self, mode: GLenum);
@@ -447,7 +447,7 @@ pub trait GL_1_0 {
 	fn get_versionstr(&self) -> &'static str;
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version10 {
 	spec: &'static str,
 	major_version: u32,
@@ -719,7 +719,7 @@ impl GL_1_0 for Version10 {
 }
 
 impl Version10 {
-	pub fn new(get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let mut ret = Self {
 			available: true,
 			spec: "unknown",
@@ -729,68 +729,68 @@ impl Version10 {
 			vendor: "unknown",
 			renderer: "unknown",
 			version: "unknown",
-			cullface: unsafe{transmute(get_proc_address("glCullFace"))},
-			frontface: unsafe{transmute(get_proc_address("glFrontFace"))},
-			hint: unsafe{transmute(get_proc_address("glHint"))},
-			linewidth: unsafe{transmute(get_proc_address("glLineWidth"))},
-			pointsize: unsafe{transmute(get_proc_address("glPointSize"))},
-			polygonmode: unsafe{transmute(get_proc_address("glPolygonMode"))},
-			scissor: unsafe{transmute(get_proc_address("glScissor"))},
-			texparameterf: unsafe{transmute(get_proc_address("glTexParameterf"))},
-			texparameterfv: unsafe{transmute(get_proc_address("glTexParameterfv"))},
-			texparameteri: unsafe{transmute(get_proc_address("glTexParameteri"))},
-			texparameteriv: unsafe{transmute(get_proc_address("glTexParameteriv"))},
-			teximage1d: unsafe{transmute(get_proc_address("glTexImage1D"))},
-			teximage2d: unsafe{transmute(get_proc_address("glTexImage2D"))},
-			drawbuffer: unsafe{transmute(get_proc_address("glDrawBuffer"))},
-			clear: unsafe{transmute(get_proc_address("glClear"))},
-			clearcolor: unsafe{transmute(get_proc_address("glClearColor"))},
-			clearstencil: unsafe{transmute(get_proc_address("glClearStencil"))},
-			cleardepth: unsafe{transmute(get_proc_address("glClearDepth"))},
-			stencilmask: unsafe{transmute(get_proc_address("glStencilMask"))},
-			colormask: unsafe{transmute(get_proc_address("glColorMask"))},
-			depthmask: unsafe{transmute(get_proc_address("glDepthMask"))},
-			disable: unsafe{transmute(get_proc_address("glDisable"))},
-			enable: unsafe{transmute(get_proc_address("glEnable"))},
-			finish: unsafe{transmute(get_proc_address("glFinish"))},
-			flush: unsafe{transmute(get_proc_address("glFlush"))},
-			blendfunc: unsafe{transmute(get_proc_address("glBlendFunc"))},
-			logicop: unsafe{transmute(get_proc_address("glLogicOp"))},
-			stencilfunc: unsafe{transmute(get_proc_address("glStencilFunc"))},
-			stencilop: unsafe{transmute(get_proc_address("glStencilOp"))},
-			depthfunc: unsafe{transmute(get_proc_address("glDepthFunc"))},
-			pixelstoref: unsafe{transmute(get_proc_address("glPixelStoref"))},
-			pixelstorei: unsafe{transmute(get_proc_address("glPixelStorei"))},
-			readbuffer: unsafe{transmute(get_proc_address("glReadBuffer"))},
-			readpixels: unsafe{transmute(get_proc_address("glReadPixels"))},
-			getbooleanv: unsafe{transmute(get_proc_address("glGetBooleanv"))},
-			getdoublev: unsafe{transmute(get_proc_address("glGetDoublev"))},
-			geterror: unsafe{transmute(get_proc_address("glGetError"))},
-			getfloatv: unsafe{transmute(get_proc_address("glGetFloatv"))},
-			getintegerv: unsafe{transmute(get_proc_address("glGetIntegerv"))},
-			getstring: unsafe{transmute(get_proc_address("glGetString"))},
-			getteximage: unsafe{transmute(get_proc_address("glGetTexImage"))},
-			gettexparameterfv: unsafe{transmute(get_proc_address("glGetTexParameterfv"))},
-			gettexparameteriv: unsafe{transmute(get_proc_address("glGetTexParameteriv"))},
-			gettexlevelparameterfv: unsafe{transmute(get_proc_address("glGetTexLevelParameterfv"))},
-			gettexlevelparameteriv: unsafe{transmute(get_proc_address("glGetTexLevelParameteriv"))},
-			isenabled: unsafe{transmute(get_proc_address("glIsEnabled"))},
-			depthrange: unsafe{transmute(get_proc_address("glDepthRange"))},
-			viewport: unsafe{transmute(get_proc_address("glViewport"))},
+			cullface: {let proc = get_proc_address("glCullFace"); if proc == null() {dummy_pfnglcullfaceproc} else {unsafe{transmute(proc)}}},
+			frontface: {let proc = get_proc_address("glFrontFace"); if proc == null() {dummy_pfnglfrontfaceproc} else {unsafe{transmute(proc)}}},
+			hint: {let proc = get_proc_address("glHint"); if proc == null() {dummy_pfnglhintproc} else {unsafe{transmute(proc)}}},
+			linewidth: {let proc = get_proc_address("glLineWidth"); if proc == null() {dummy_pfngllinewidthproc} else {unsafe{transmute(proc)}}},
+			pointsize: {let proc = get_proc_address("glPointSize"); if proc == null() {dummy_pfnglpointsizeproc} else {unsafe{transmute(proc)}}},
+			polygonmode: {let proc = get_proc_address("glPolygonMode"); if proc == null() {dummy_pfnglpolygonmodeproc} else {unsafe{transmute(proc)}}},
+			scissor: {let proc = get_proc_address("glScissor"); if proc == null() {dummy_pfnglscissorproc} else {unsafe{transmute(proc)}}},
+			texparameterf: {let proc = get_proc_address("glTexParameterf"); if proc == null() {dummy_pfngltexparameterfproc} else {unsafe{transmute(proc)}}},
+			texparameterfv: {let proc = get_proc_address("glTexParameterfv"); if proc == null() {dummy_pfngltexparameterfvproc} else {unsafe{transmute(proc)}}},
+			texparameteri: {let proc = get_proc_address("glTexParameteri"); if proc == null() {dummy_pfngltexparameteriproc} else {unsafe{transmute(proc)}}},
+			texparameteriv: {let proc = get_proc_address("glTexParameteriv"); if proc == null() {dummy_pfngltexparameterivproc} else {unsafe{transmute(proc)}}},
+			teximage1d: {let proc = get_proc_address("glTexImage1D"); if proc == null() {dummy_pfnglteximage1dproc} else {unsafe{transmute(proc)}}},
+			teximage2d: {let proc = get_proc_address("glTexImage2D"); if proc == null() {dummy_pfnglteximage2dproc} else {unsafe{transmute(proc)}}},
+			drawbuffer: {let proc = get_proc_address("glDrawBuffer"); if proc == null() {dummy_pfngldrawbufferproc} else {unsafe{transmute(proc)}}},
+			clear: {let proc = get_proc_address("glClear"); if proc == null() {dummy_pfnglclearproc} else {unsafe{transmute(proc)}}},
+			clearcolor: {let proc = get_proc_address("glClearColor"); if proc == null() {dummy_pfnglclearcolorproc} else {unsafe{transmute(proc)}}},
+			clearstencil: {let proc = get_proc_address("glClearStencil"); if proc == null() {dummy_pfnglclearstencilproc} else {unsafe{transmute(proc)}}},
+			cleardepth: {let proc = get_proc_address("glClearDepth"); if proc == null() {dummy_pfnglcleardepthproc} else {unsafe{transmute(proc)}}},
+			stencilmask: {let proc = get_proc_address("glStencilMask"); if proc == null() {dummy_pfnglstencilmaskproc} else {unsafe{transmute(proc)}}},
+			colormask: {let proc = get_proc_address("glColorMask"); if proc == null() {dummy_pfnglcolormaskproc} else {unsafe{transmute(proc)}}},
+			depthmask: {let proc = get_proc_address("glDepthMask"); if proc == null() {dummy_pfngldepthmaskproc} else {unsafe{transmute(proc)}}},
+			disable: {let proc = get_proc_address("glDisable"); if proc == null() {dummy_pfngldisableproc} else {unsafe{transmute(proc)}}},
+			enable: {let proc = get_proc_address("glEnable"); if proc == null() {dummy_pfnglenableproc} else {unsafe{transmute(proc)}}},
+			finish: {let proc = get_proc_address("glFinish"); if proc == null() {dummy_pfnglfinishproc} else {unsafe{transmute(proc)}}},
+			flush: {let proc = get_proc_address("glFlush"); if proc == null() {dummy_pfnglflushproc} else {unsafe{transmute(proc)}}},
+			blendfunc: {let proc = get_proc_address("glBlendFunc"); if proc == null() {dummy_pfnglblendfuncproc} else {unsafe{transmute(proc)}}},
+			logicop: {let proc = get_proc_address("glLogicOp"); if proc == null() {dummy_pfngllogicopproc} else {unsafe{transmute(proc)}}},
+			stencilfunc: {let proc = get_proc_address("glStencilFunc"); if proc == null() {dummy_pfnglstencilfuncproc} else {unsafe{transmute(proc)}}},
+			stencilop: {let proc = get_proc_address("glStencilOp"); if proc == null() {dummy_pfnglstencilopproc} else {unsafe{transmute(proc)}}},
+			depthfunc: {let proc = get_proc_address("glDepthFunc"); if proc == null() {dummy_pfngldepthfuncproc} else {unsafe{transmute(proc)}}},
+			pixelstoref: {let proc = get_proc_address("glPixelStoref"); if proc == null() {dummy_pfnglpixelstorefproc} else {unsafe{transmute(proc)}}},
+			pixelstorei: {let proc = get_proc_address("glPixelStorei"); if proc == null() {dummy_pfnglpixelstoreiproc} else {unsafe{transmute(proc)}}},
+			readbuffer: {let proc = get_proc_address("glReadBuffer"); if proc == null() {dummy_pfnglreadbufferproc} else {unsafe{transmute(proc)}}},
+			readpixels: {let proc = get_proc_address("glReadPixels"); if proc == null() {dummy_pfnglreadpixelsproc} else {unsafe{transmute(proc)}}},
+			getbooleanv: {let proc = get_proc_address("glGetBooleanv"); if proc == null() {dummy_pfnglgetbooleanvproc} else {unsafe{transmute(proc)}}},
+			getdoublev: {let proc = get_proc_address("glGetDoublev"); if proc == null() {dummy_pfnglgetdoublevproc} else {unsafe{transmute(proc)}}},
+			geterror: {let proc = get_proc_address("glGetError"); if proc == null() {dummy_pfnglgeterrorproc} else {unsafe{transmute(proc)}}},
+			getfloatv: {let proc = get_proc_address("glGetFloatv"); if proc == null() {dummy_pfnglgetfloatvproc} else {unsafe{transmute(proc)}}},
+			getintegerv: {let proc = get_proc_address("glGetIntegerv"); if proc == null() {dummy_pfnglgetintegervproc} else {unsafe{transmute(proc)}}},
+			getstring: {let proc = get_proc_address("glGetString"); if proc == null() {dummy_pfnglgetstringproc} else {unsafe{transmute(proc)}}},
+			getteximage: {let proc = get_proc_address("glGetTexImage"); if proc == null() {dummy_pfnglgetteximageproc} else {unsafe{transmute(proc)}}},
+			gettexparameterfv: {let proc = get_proc_address("glGetTexParameterfv"); if proc == null() {dummy_pfnglgettexparameterfvproc} else {unsafe{transmute(proc)}}},
+			gettexparameteriv: {let proc = get_proc_address("glGetTexParameteriv"); if proc == null() {dummy_pfnglgettexparameterivproc} else {unsafe{transmute(proc)}}},
+			gettexlevelparameterfv: {let proc = get_proc_address("glGetTexLevelParameterfv"); if proc == null() {dummy_pfnglgettexlevelparameterfvproc} else {unsafe{transmute(proc)}}},
+			gettexlevelparameteriv: {let proc = get_proc_address("glGetTexLevelParameteriv"); if proc == null() {dummy_pfnglgettexlevelparameterivproc} else {unsafe{transmute(proc)}}},
+			isenabled: {let proc = get_proc_address("glIsEnabled"); if proc == null() {dummy_pfnglisenabledproc} else {unsafe{transmute(proc)}}},
+			depthrange: {let proc = get_proc_address("glDepthRange"); if proc == null() {dummy_pfngldepthrangeproc} else {unsafe{transmute(proc)}}},
+			viewport: {let proc = get_proc_address("glViewport"); if proc == null() {dummy_pfnglviewportproc} else {unsafe{transmute(proc)}}},
 		};
 		ret.fetch_version();
 		ret
 	}
 	#[inline(always)]
 	fn fetch_version(&mut self) {
-		self.vendor = unsafe{CStr::from_ptr(self.glGetString(VENDOR) as *const i8)}.to_str().unwrap();
-		self.renderer = unsafe{CStr::from_ptr(self.glGetString(RENDERER) as *const i8)}.to_str().unwrap();
-		self.version = unsafe{CStr::from_ptr(self.glGetString(VERSION) as *const i8)}.to_str().unwrap();
+		self.vendor = unsafe{CStr::from_ptr(self.glGetString(GL_VENDOR) as *const i8)}.to_str().unwrap();
+		self.renderer = unsafe{CStr::from_ptr(self.glGetString(GL_RENDERER) as *const i8)}.to_str().unwrap();
+		self.version = unsafe{CStr::from_ptr(self.glGetString(GL_VERSION) as *const i8)}.to_str().unwrap();
 		self.spec = "OpenGL";
 		let mut verstr = self.version;
-		if let Some((left, right)) = verstr.rsplit_once(' ') {
-			self.spec = left;
-			verstr = right;
+		if let Some((left, right)) = verstr.split_once(' ') {
+			verstr = left;
+			self.spec = right;
 		}
 		let mut v: Vec<&str> = verstr.split('.').collect();
 		v.resize(3, "0");
@@ -885,78 +885,78 @@ type PFNGLDELETETEXTURESPROC = extern "system" fn(GLsizei, *const GLuint);
 type PFNGLGENTEXTURESPROC = extern "system" fn(GLsizei, *mut GLuint);
 type PFNGLISTEXTUREPROC = extern "system" fn(GLuint) -> GLboolean;
 extern "system" fn dummy_pfngldrawarraysproc (_: GLenum, _: GLint, _: GLsizei) {
-	panic!("OpenGL Function pointer of glDrawArrays() is NULL");
+	panic!("OpenGL Function pointer of `glDrawArrays()` is NULL");
 }
 extern "system" fn dummy_pfngldrawelementsproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glDrawElements() is NULL");
+	panic!("OpenGL Function pointer of `glDrawElements()` is NULL");
 }
 extern "system" fn dummy_pfnglgetpointervproc (_: GLenum, _: *mut *mut c_void) {
-	panic!("OpenGL Function pointer of glGetPointerv() is NULL");
+	panic!("OpenGL Function pointer of `glGetPointerv()` is NULL");
 }
 extern "system" fn dummy_pfnglpolygonoffsetproc (_: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glPolygonOffset() is NULL");
+	panic!("OpenGL Function pointer of `glPolygonOffset()` is NULL");
 }
 extern "system" fn dummy_pfnglcopyteximage1dproc (_: GLenum, _: GLint, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLint) {
-	panic!("OpenGL Function pointer of glCopyTexImage1D() is NULL");
+	panic!("OpenGL Function pointer of `glCopyTexImage1D()` is NULL");
 }
 extern "system" fn dummy_pfnglcopyteximage2dproc (_: GLenum, _: GLint, _: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLint) {
-	panic!("OpenGL Function pointer of glCopyTexImage2D() is NULL");
+	panic!("OpenGL Function pointer of `glCopyTexImage2D()` is NULL");
 }
 extern "system" fn dummy_pfnglcopytexsubimage1dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei) {
-	panic!("OpenGL Function pointer of glCopyTexSubImage1D() is NULL");
+	panic!("OpenGL Function pointer of `glCopyTexSubImage1D()` is NULL");
 }
 extern "system" fn dummy_pfnglcopytexsubimage2dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glCopyTexSubImage2D() is NULL");
+	panic!("OpenGL Function pointer of `glCopyTexSubImage2D()` is NULL");
 }
 extern "system" fn dummy_pfngltexsubimage1dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glTexSubImage1D() is NULL");
+	panic!("OpenGL Function pointer of `glTexSubImage1D()` is NULL");
 }
 extern "system" fn dummy_pfngltexsubimage2dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glTexSubImage2D() is NULL");
+	panic!("OpenGL Function pointer of `glTexSubImage2D()` is NULL");
 }
 extern "system" fn dummy_pfnglbindtextureproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glBindTexture() is NULL");
+	panic!("OpenGL Function pointer of `glBindTexture()` is NULL");
 }
 extern "system" fn dummy_pfngldeletetexturesproc (_: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glDeleteTextures() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteTextures()` is NULL");
 }
 extern "system" fn dummy_pfnglgentexturesproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGenTextures() is NULL");
+	panic!("OpenGL Function pointer of `glGenTextures()` is NULL");
 }
 extern "system" fn dummy_pfnglistextureproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsTexture() is NULL");
+	panic!("OpenGL Function pointer of `glIsTexture()` is NULL");
 }
-const COLOR_LOGIC_OP: GLenum = 0x0BF2;
-const POLYGON_OFFSET_UNITS: GLenum = 0x2A00;
-const POLYGON_OFFSET_POINT: GLenum = 0x2A01;
-const POLYGON_OFFSET_LINE: GLenum = 0x2A02;
-const POLYGON_OFFSET_FILL: GLenum = 0x8037;
-const POLYGON_OFFSET_FACTOR: GLenum = 0x8038;
-const TEXTURE_BINDING_1D: GLenum = 0x8068;
-const TEXTURE_BINDING_2D: GLenum = 0x8069;
-const TEXTURE_INTERNAL_FORMAT: GLenum = 0x1003;
-const TEXTURE_RED_SIZE: GLenum = 0x805C;
-const TEXTURE_GREEN_SIZE: GLenum = 0x805D;
-const TEXTURE_BLUE_SIZE: GLenum = 0x805E;
-const TEXTURE_ALPHA_SIZE: GLenum = 0x805F;
-const DOUBLE: GLenum = 0x140A;
-const PROXY_TEXTURE_1D: GLenum = 0x8063;
-const PROXY_TEXTURE_2D: GLenum = 0x8064;
-const R3_G3_B2: GLenum = 0x2A10;
-const RGB4: GLenum = 0x804F;
-const RGB5: GLenum = 0x8050;
-const RGB8: GLenum = 0x8051;
-const RGB10: GLenum = 0x8052;
-const RGB12: GLenum = 0x8053;
-const RGB16: GLenum = 0x8054;
-const RGBA2: GLenum = 0x8055;
-const RGBA4: GLenum = 0x8056;
-const RGB5_A1: GLenum = 0x8057;
-const RGBA8: GLenum = 0x8058;
-const RGB10_A2: GLenum = 0x8059;
-const RGBA12: GLenum = 0x805A;
-const RGBA16: GLenum = 0x805B;
-const VERTEX_ARRAY: GLenum = 0x8074;
+pub const GL_COLOR_LOGIC_OP: GLenum = 0x0BF2;
+pub const GL_POLYGON_OFFSET_UNITS: GLenum = 0x2A00;
+pub const GL_POLYGON_OFFSET_POINT: GLenum = 0x2A01;
+pub const GL_POLYGON_OFFSET_LINE: GLenum = 0x2A02;
+pub const GL_POLYGON_OFFSET_FILL: GLenum = 0x8037;
+pub const GL_POLYGON_OFFSET_FACTOR: GLenum = 0x8038;
+pub const GL_TEXTURE_BINDING_1D: GLenum = 0x8068;
+pub const GL_TEXTURE_BINDING_2D: GLenum = 0x8069;
+pub const GL_TEXTURE_INTERNAL_FORMAT: GLenum = 0x1003;
+pub const GL_TEXTURE_RED_SIZE: GLenum = 0x805C;
+pub const GL_TEXTURE_GREEN_SIZE: GLenum = 0x805D;
+pub const GL_TEXTURE_BLUE_SIZE: GLenum = 0x805E;
+pub const GL_TEXTURE_ALPHA_SIZE: GLenum = 0x805F;
+pub const GL_DOUBLE: GLenum = 0x140A;
+pub const GL_PROXY_TEXTURE_1D: GLenum = 0x8063;
+pub const GL_PROXY_TEXTURE_2D: GLenum = 0x8064;
+pub const GL_R3_G3_B2: GLenum = 0x2A10;
+pub const GL_RGB4: GLenum = 0x804F;
+pub const GL_RGB5: GLenum = 0x8050;
+pub const GL_RGB8: GLenum = 0x8051;
+pub const GL_RGB10: GLenum = 0x8052;
+pub const GL_RGB12: GLenum = 0x8053;
+pub const GL_RGB16: GLenum = 0x8054;
+pub const GL_RGBA2: GLenum = 0x8055;
+pub const GL_RGBA4: GLenum = 0x8056;
+pub const GL_RGB5_A1: GLenum = 0x8057;
+pub const GL_RGBA8: GLenum = 0x8058;
+pub const GL_RGB10_A2: GLenum = 0x8059;
+pub const GL_RGBA12: GLenum = 0x805A;
+pub const GL_RGBA16: GLenum = 0x805B;
+pub const GL_VERTEX_ARRAY: GLenum = 0x8074;
 
 pub trait GL_1_1 {
 	fn glDrawArrays(&self, mode: GLenum, first: GLint, count: GLsizei);
@@ -975,7 +975,7 @@ pub trait GL_1_1 {
 	fn glIsTexture(&self, texture: GLuint) -> GLboolean;
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version11 {
 	available: bool,
 	drawarrays: PFNGLDRAWARRAYSPROC,
@@ -1054,7 +1054,7 @@ impl GL_1_1 for Version11 {
 }
 
 impl Version11 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 10100 {
@@ -1062,20 +1062,20 @@ impl Version11 {
 		}
 		Self {
 			available: true,
-			drawarrays: unsafe{transmute(get_proc_address("glDrawArrays"))},
-			drawelements: unsafe{transmute(get_proc_address("glDrawElements"))},
-			getpointerv: unsafe{transmute(get_proc_address("glGetPointerv"))},
-			polygonoffset: unsafe{transmute(get_proc_address("glPolygonOffset"))},
-			copyteximage1d: unsafe{transmute(get_proc_address("glCopyTexImage1D"))},
-			copyteximage2d: unsafe{transmute(get_proc_address("glCopyTexImage2D"))},
-			copytexsubimage1d: unsafe{transmute(get_proc_address("glCopyTexSubImage1D"))},
-			copytexsubimage2d: unsafe{transmute(get_proc_address("glCopyTexSubImage2D"))},
-			texsubimage1d: unsafe{transmute(get_proc_address("glTexSubImage1D"))},
-			texsubimage2d: unsafe{transmute(get_proc_address("glTexSubImage2D"))},
-			bindtexture: unsafe{transmute(get_proc_address("glBindTexture"))},
-			deletetextures: unsafe{transmute(get_proc_address("glDeleteTextures"))},
-			gentextures: unsafe{transmute(get_proc_address("glGenTextures"))},
-			istexture: unsafe{transmute(get_proc_address("glIsTexture"))},
+			drawarrays: {let proc = get_proc_address("glDrawArrays"); if proc == null() {dummy_pfngldrawarraysproc} else {unsafe{transmute(proc)}}},
+			drawelements: {let proc = get_proc_address("glDrawElements"); if proc == null() {dummy_pfngldrawelementsproc} else {unsafe{transmute(proc)}}},
+			getpointerv: {let proc = get_proc_address("glGetPointerv"); if proc == null() {dummy_pfnglgetpointervproc} else {unsafe{transmute(proc)}}},
+			polygonoffset: {let proc = get_proc_address("glPolygonOffset"); if proc == null() {dummy_pfnglpolygonoffsetproc} else {unsafe{transmute(proc)}}},
+			copyteximage1d: {let proc = get_proc_address("glCopyTexImage1D"); if proc == null() {dummy_pfnglcopyteximage1dproc} else {unsafe{transmute(proc)}}},
+			copyteximage2d: {let proc = get_proc_address("glCopyTexImage2D"); if proc == null() {dummy_pfnglcopyteximage2dproc} else {unsafe{transmute(proc)}}},
+			copytexsubimage1d: {let proc = get_proc_address("glCopyTexSubImage1D"); if proc == null() {dummy_pfnglcopytexsubimage1dproc} else {unsafe{transmute(proc)}}},
+			copytexsubimage2d: {let proc = get_proc_address("glCopyTexSubImage2D"); if proc == null() {dummy_pfnglcopytexsubimage2dproc} else {unsafe{transmute(proc)}}},
+			texsubimage1d: {let proc = get_proc_address("glTexSubImage1D"); if proc == null() {dummy_pfngltexsubimage1dproc} else {unsafe{transmute(proc)}}},
+			texsubimage2d: {let proc = get_proc_address("glTexSubImage2D"); if proc == null() {dummy_pfngltexsubimage2dproc} else {unsafe{transmute(proc)}}},
+			bindtexture: {let proc = get_proc_address("glBindTexture"); if proc == null() {dummy_pfnglbindtextureproc} else {unsafe{transmute(proc)}}},
+			deletetextures: {let proc = get_proc_address("glDeleteTextures"); if proc == null() {dummy_pfngldeletetexturesproc} else {unsafe{transmute(proc)}}},
+			gentextures: {let proc = get_proc_address("glGenTextures"); if proc == null() {dummy_pfnglgentexturesproc} else {unsafe{transmute(proc)}}},
+			istexture: {let proc = get_proc_address("glIsTexture"); if proc == null() {dummy_pfnglistextureproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -1111,58 +1111,58 @@ type PFNGLTEXIMAGE3DPROC = extern "system" fn(GLenum, GLint, GLint, GLsizei, GLs
 type PFNGLTEXSUBIMAGE3DPROC = extern "system" fn(GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, *const c_void);
 type PFNGLCOPYTEXSUBIMAGE3DPROC = extern "system" fn(GLenum, GLint, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei);
 extern "system" fn dummy_pfngldrawrangeelementsproc (_: GLenum, _: GLuint, _: GLuint, _: GLsizei, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glDrawRangeElements() is NULL");
+	panic!("OpenGL Function pointer of `glDrawRangeElements()` is NULL");
 }
 extern "system" fn dummy_pfnglteximage3dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glTexImage3D() is NULL");
+	panic!("OpenGL Function pointer of `glTexImage3D()` is NULL");
 }
 extern "system" fn dummy_pfngltexsubimage3dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glTexSubImage3D() is NULL");
+	panic!("OpenGL Function pointer of `glTexSubImage3D()` is NULL");
 }
 extern "system" fn dummy_pfnglcopytexsubimage3dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glCopyTexSubImage3D() is NULL");
+	panic!("OpenGL Function pointer of `glCopyTexSubImage3D()` is NULL");
 }
-const UNSIGNED_BYTE_3_3_2: GLenum = 0x8032;
-const UNSIGNED_SHORT_4_4_4_4: GLenum = 0x8033;
-const UNSIGNED_SHORT_5_5_5_1: GLenum = 0x8034;
-const UNSIGNED_INT_8_8_8_8: GLenum = 0x8035;
-const UNSIGNED_INT_10_10_10_2: GLenum = 0x8036;
-const TEXTURE_BINDING_3D: GLenum = 0x806A;
-const PACK_SKIP_IMAGES: GLenum = 0x806B;
-const PACK_IMAGE_HEIGHT: GLenum = 0x806C;
-const UNPACK_SKIP_IMAGES: GLenum = 0x806D;
-const UNPACK_IMAGE_HEIGHT: GLenum = 0x806E;
-const TEXTURE_3D: GLenum = 0x806F;
-const PROXY_TEXTURE_3D: GLenum = 0x8070;
-const TEXTURE_DEPTH: GLenum = 0x8071;
-const TEXTURE_WRAP_R: GLenum = 0x8072;
-const MAX_3D_TEXTURE_SIZE: GLenum = 0x8073;
-const UNSIGNED_BYTE_2_3_3_REV: GLenum = 0x8362;
-const UNSIGNED_SHORT_5_6_5: GLenum = 0x8363;
-const UNSIGNED_SHORT_5_6_5_REV: GLenum = 0x8364;
-const UNSIGNED_SHORT_4_4_4_4_REV: GLenum = 0x8365;
-const UNSIGNED_SHORT_1_5_5_5_REV: GLenum = 0x8366;
-const UNSIGNED_INT_8_8_8_8_REV: GLenum = 0x8367;
-const UNSIGNED_INT_2_10_10_10_REV: GLenum = 0x8368;
-const BGR: GLenum = 0x80E0;
-const BGRA: GLenum = 0x80E1;
-const MAX_ELEMENTS_VERTICES: GLenum = 0x80E8;
-const MAX_ELEMENTS_INDICES: GLenum = 0x80E9;
-const CLAMP_TO_EDGE: GLint = 0x812F;
-const TEXTURE_MIN_LOD: GLenum = 0x813A;
-const TEXTURE_MAX_LOD: GLenum = 0x813B;
-const TEXTURE_BASE_LEVEL: GLenum = 0x813C;
-const TEXTURE_MAX_LEVEL: GLenum = 0x813D;
-const SMOOTH_POINT_SIZE_RANGE: GLenum = 0x0B12;
-const SMOOTH_POINT_SIZE_GRANULARITY: GLenum = 0x0B13;
-const SMOOTH_LINE_WIDTH_RANGE: GLenum = 0x0B22;
-const SMOOTH_LINE_WIDTH_GRANULARITY: GLenum = 0x0B23;
-const ALIASED_LINE_WIDTH_RANGE: GLenum = 0x846E;
-const RESCALE_NORMAL: GLenum = 0x803A;
-const LIGHT_MODEL_COLOR_CONTROL: GLenum = 0x81F8;
-const SINGLE_COLOR: GLenum = 0x81F9;
-const SEPARATE_SPECULAR_COLOR: GLenum = 0x81FA;
-const ALIASED_POINT_SIZE_RANGE: GLenum = 0x846D;
+pub const GL_UNSIGNED_BYTE_3_3_2: GLenum = 0x8032;
+pub const GL_UNSIGNED_SHORT_4_4_4_4: GLenum = 0x8033;
+pub const GL_UNSIGNED_SHORT_5_5_5_1: GLenum = 0x8034;
+pub const GL_UNSIGNED_INT_8_8_8_8: GLenum = 0x8035;
+pub const GL_UNSIGNED_INT_10_10_10_2: GLenum = 0x8036;
+pub const GL_TEXTURE_BINDING_3D: GLenum = 0x806A;
+pub const GL_PACK_SKIP_IMAGES: GLenum = 0x806B;
+pub const GL_PACK_IMAGE_HEIGHT: GLenum = 0x806C;
+pub const GL_UNPACK_SKIP_IMAGES: GLenum = 0x806D;
+pub const GL_UNPACK_IMAGE_HEIGHT: GLenum = 0x806E;
+pub const GL_TEXTURE_3D: GLenum = 0x806F;
+pub const GL_PROXY_TEXTURE_3D: GLenum = 0x8070;
+pub const GL_TEXTURE_DEPTH: GLenum = 0x8071;
+pub const GL_TEXTURE_WRAP_R: GLenum = 0x8072;
+pub const GL_MAX_3D_TEXTURE_SIZE: GLenum = 0x8073;
+pub const GL_UNSIGNED_BYTE_2_3_3_REV: GLenum = 0x8362;
+pub const GL_UNSIGNED_SHORT_5_6_5: GLenum = 0x8363;
+pub const GL_UNSIGNED_SHORT_5_6_5_REV: GLenum = 0x8364;
+pub const GL_UNSIGNED_SHORT_4_4_4_4_REV: GLenum = 0x8365;
+pub const GL_UNSIGNED_SHORT_1_5_5_5_REV: GLenum = 0x8366;
+pub const GL_UNSIGNED_INT_8_8_8_8_REV: GLenum = 0x8367;
+pub const GL_UNSIGNED_INT_2_10_10_10_REV: GLenum = 0x8368;
+pub const GL_BGR: GLenum = 0x80E0;
+pub const GL_BGRA: GLenum = 0x80E1;
+pub const GL_MAX_ELEMENTS_VERTICES: GLenum = 0x80E8;
+pub const GL_MAX_ELEMENTS_INDICES: GLenum = 0x80E9;
+pub const GL_CLAMP_TO_EDGE: GLint = 0x812F;
+pub const GL_TEXTURE_MIN_LOD: GLenum = 0x813A;
+pub const GL_TEXTURE_MAX_LOD: GLenum = 0x813B;
+pub const GL_TEXTURE_BASE_LEVEL: GLenum = 0x813C;
+pub const GL_TEXTURE_MAX_LEVEL: GLenum = 0x813D;
+pub const GL_SMOOTH_POINT_SIZE_RANGE: GLenum = 0x0B12;
+pub const GL_SMOOTH_POINT_SIZE_GRANULARITY: GLenum = 0x0B13;
+pub const GL_SMOOTH_LINE_WIDTH_RANGE: GLenum = 0x0B22;
+pub const GL_SMOOTH_LINE_WIDTH_GRANULARITY: GLenum = 0x0B23;
+pub const GL_ALIASED_LINE_WIDTH_RANGE: GLenum = 0x846E;
+pub const GL_RESCALE_NORMAL: GLenum = 0x803A;
+pub const GL_LIGHT_MODEL_COLOR_CONTROL: GLenum = 0x81F8;
+pub const GL_SINGLE_COLOR: GLenum = 0x81F9;
+pub const GL_SEPARATE_SPECULAR_COLOR: GLenum = 0x81FA;
+pub const GL_ALIASED_POINT_SIZE_RANGE: GLenum = 0x846D;
 
 pub trait GL_1_2 {
 	fn glDrawRangeElements(&self, mode: GLenum, start: GLuint, end: GLuint, count: GLsizei, type_: GLenum, indices: *const c_void);
@@ -1171,7 +1171,7 @@ pub trait GL_1_2 {
 	fn glCopyTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version12 {
 	available: bool,
 	drawrangeelements: PFNGLDRAWRANGEELEMENTSPROC,
@@ -1200,7 +1200,7 @@ impl GL_1_2 for Version12 {
 }
 
 impl Version12 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 10200 {
@@ -1208,10 +1208,10 @@ impl Version12 {
 		}
 		Self {
 			available: true,
-			drawrangeelements: unsafe{transmute(get_proc_address("glDrawRangeElements"))},
-			teximage3d: unsafe{transmute(get_proc_address("glTexImage3D"))},
-			texsubimage3d: unsafe{transmute(get_proc_address("glTexSubImage3D"))},
-			copytexsubimage3d: unsafe{transmute(get_proc_address("glCopyTexSubImage3D"))},
+			drawrangeelements: {let proc = get_proc_address("glDrawRangeElements"); if proc == null() {dummy_pfngldrawrangeelementsproc} else {unsafe{transmute(proc)}}},
+			teximage3d: {let proc = get_proc_address("glTexImage3D"); if proc == null() {dummy_pfnglteximage3dproc} else {unsafe{transmute(proc)}}},
+			texsubimage3d: {let proc = get_proc_address("glTexSubImage3D"); if proc == null() {dummy_pfngltexsubimage3dproc} else {unsafe{transmute(proc)}}},
+			copytexsubimage3d: {let proc = get_proc_address("glCopyTexSubImage3D"); if proc == null() {dummy_pfnglcopytexsubimage3dproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -1279,239 +1279,239 @@ type PFNGLLOADTRANSPOSEMATRIXDPROC = extern "system" fn(*const GLdouble);
 type PFNGLMULTTRANSPOSEMATRIXFPROC = extern "system" fn(*const GLfloat);
 type PFNGLMULTTRANSPOSEMATRIXDPROC = extern "system" fn(*const GLdouble);
 extern "system" fn dummy_pfnglactivetextureproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glActiveTexture() is NULL");
+	panic!("OpenGL Function pointer of `glActiveTexture()` is NULL");
 }
 extern "system" fn dummy_pfnglsamplecoverageproc (_: GLfloat, _: GLboolean) {
-	panic!("OpenGL Function pointer of glSampleCoverage() is NULL");
+	panic!("OpenGL Function pointer of `glSampleCoverage()` is NULL");
 }
 extern "system" fn dummy_pfnglcompressedteximage3dproc (_: GLenum, _: GLint, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLint, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glCompressedTexImage3D() is NULL");
+	panic!("OpenGL Function pointer of `glCompressedTexImage3D()` is NULL");
 }
 extern "system" fn dummy_pfnglcompressedteximage2dproc (_: GLenum, _: GLint, _: GLenum, _: GLsizei, _: GLsizei, _: GLint, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glCompressedTexImage2D() is NULL");
+	panic!("OpenGL Function pointer of `glCompressedTexImage2D()` is NULL");
 }
 extern "system" fn dummy_pfnglcompressedteximage1dproc (_: GLenum, _: GLint, _: GLenum, _: GLsizei, _: GLint, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glCompressedTexImage1D() is NULL");
+	panic!("OpenGL Function pointer of `glCompressedTexImage1D()` is NULL");
 }
 extern "system" fn dummy_pfnglcompressedtexsubimage3dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glCompressedTexSubImage3D() is NULL");
+	panic!("OpenGL Function pointer of `glCompressedTexSubImage3D()` is NULL");
 }
 extern "system" fn dummy_pfnglcompressedtexsubimage2dproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glCompressedTexSubImage2D() is NULL");
+	panic!("OpenGL Function pointer of `glCompressedTexSubImage2D()` is NULL");
 }
 extern "system" fn dummy_pfnglcompressedtexsubimage1dproc (_: GLenum, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glCompressedTexSubImage1D() is NULL");
+	panic!("OpenGL Function pointer of `glCompressedTexSubImage1D()` is NULL");
 }
 extern "system" fn dummy_pfnglgetcompressedteximageproc (_: GLenum, _: GLint, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetCompressedTexImage() is NULL");
+	panic!("OpenGL Function pointer of `glGetCompressedTexImage()` is NULL");
 }
 extern "system" fn dummy_pfnglclientactivetextureproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glClientActiveTexture() is NULL");
+	panic!("OpenGL Function pointer of `glClientActiveTexture()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord1dproc (_: GLenum, _: GLdouble) {
-	panic!("OpenGL Function pointer of glMultiTexCoord1d() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord1d()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord1dvproc (_: GLenum, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glMultiTexCoord1dv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord1dv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord1fproc (_: GLenum, _: GLfloat) {
-	panic!("OpenGL Function pointer of glMultiTexCoord1f() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord1f()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord1fvproc (_: GLenum, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glMultiTexCoord1fv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord1fv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord1iproc (_: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glMultiTexCoord1i() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord1i()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord1ivproc (_: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glMultiTexCoord1iv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord1iv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord1sproc (_: GLenum, _: GLshort) {
-	panic!("OpenGL Function pointer of glMultiTexCoord1s() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord1s()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord1svproc (_: GLenum, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glMultiTexCoord1sv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord1sv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord2dproc (_: GLenum, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glMultiTexCoord2d() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord2d()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord2dvproc (_: GLenum, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glMultiTexCoord2dv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord2dv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord2fproc (_: GLenum, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glMultiTexCoord2f() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord2f()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord2fvproc (_: GLenum, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glMultiTexCoord2fv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord2fv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord2iproc (_: GLenum, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glMultiTexCoord2i() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord2i()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord2ivproc (_: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glMultiTexCoord2iv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord2iv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord2sproc (_: GLenum, _: GLshort, _: GLshort) {
-	panic!("OpenGL Function pointer of glMultiTexCoord2s() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord2s()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord2svproc (_: GLenum, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glMultiTexCoord2sv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord2sv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord3dproc (_: GLenum, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glMultiTexCoord3d() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord3d()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord3dvproc (_: GLenum, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glMultiTexCoord3dv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord3fproc (_: GLenum, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glMultiTexCoord3f() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord3f()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord3fvproc (_: GLenum, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glMultiTexCoord3fv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord3fv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord3iproc (_: GLenum, _: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glMultiTexCoord3i() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord3i()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord3ivproc (_: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glMultiTexCoord3iv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord3iv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord3sproc (_: GLenum, _: GLshort, _: GLshort, _: GLshort) {
-	panic!("OpenGL Function pointer of glMultiTexCoord3s() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord3s()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord3svproc (_: GLenum, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glMultiTexCoord3sv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord3sv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord4dproc (_: GLenum, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glMultiTexCoord4d() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord4d()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord4dvproc (_: GLenum, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glMultiTexCoord4dv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord4dv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord4fproc (_: GLenum, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glMultiTexCoord4f() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord4f()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord4fvproc (_: GLenum, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glMultiTexCoord4fv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord4fv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord4iproc (_: GLenum, _: GLint, _: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glMultiTexCoord4i() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord4i()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord4ivproc (_: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glMultiTexCoord4iv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord4iv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord4sproc (_: GLenum, _: GLshort, _: GLshort, _: GLshort, _: GLshort) {
-	panic!("OpenGL Function pointer of glMultiTexCoord4s() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord4s()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoord4svproc (_: GLenum, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glMultiTexCoord4sv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoord4sv()` is NULL");
 }
 extern "system" fn dummy_pfnglloadtransposematrixfproc (_: *const GLfloat) {
-	panic!("OpenGL Function pointer of glLoadTransposeMatrixf() is NULL");
+	panic!("OpenGL Function pointer of `glLoadTransposeMatrixf()` is NULL");
 }
 extern "system" fn dummy_pfnglloadtransposematrixdproc (_: *const GLdouble) {
-	panic!("OpenGL Function pointer of glLoadTransposeMatrixd() is NULL");
+	panic!("OpenGL Function pointer of `glLoadTransposeMatrixd()` is NULL");
 }
 extern "system" fn dummy_pfnglmulttransposematrixfproc (_: *const GLfloat) {
-	panic!("OpenGL Function pointer of glMultTransposeMatrixf() is NULL");
+	panic!("OpenGL Function pointer of `glMultTransposeMatrixf()` is NULL");
 }
 extern "system" fn dummy_pfnglmulttransposematrixdproc (_: *const GLdouble) {
-	panic!("OpenGL Function pointer of glMultTransposeMatrixd() is NULL");
+	panic!("OpenGL Function pointer of `glMultTransposeMatrixd()` is NULL");
 }
-const TEXTURE0: GLenum = 0x84C0;
-const TEXTURE1: GLenum = 0x84C1;
-const TEXTURE2: GLenum = 0x84C2;
-const TEXTURE3: GLenum = 0x84C3;
-const TEXTURE4: GLenum = 0x84C4;
-const TEXTURE5: GLenum = 0x84C5;
-const TEXTURE6: GLenum = 0x84C6;
-const TEXTURE7: GLenum = 0x84C7;
-const TEXTURE8: GLenum = 0x84C8;
-const TEXTURE9: GLenum = 0x84C9;
-const TEXTURE10: GLenum = 0x84CA;
-const TEXTURE11: GLenum = 0x84CB;
-const TEXTURE12: GLenum = 0x84CC;
-const TEXTURE13: GLenum = 0x84CD;
-const TEXTURE14: GLenum = 0x84CE;
-const TEXTURE15: GLenum = 0x84CF;
-const TEXTURE16: GLenum = 0x84D0;
-const TEXTURE17: GLenum = 0x84D1;
-const TEXTURE18: GLenum = 0x84D2;
-const TEXTURE19: GLenum = 0x84D3;
-const TEXTURE20: GLenum = 0x84D4;
-const TEXTURE21: GLenum = 0x84D5;
-const TEXTURE22: GLenum = 0x84D6;
-const TEXTURE23: GLenum = 0x84D7;
-const TEXTURE24: GLenum = 0x84D8;
-const TEXTURE25: GLenum = 0x84D9;
-const TEXTURE26: GLenum = 0x84DA;
-const TEXTURE27: GLenum = 0x84DB;
-const TEXTURE28: GLenum = 0x84DC;
-const TEXTURE29: GLenum = 0x84DD;
-const TEXTURE30: GLenum = 0x84DE;
-const TEXTURE31: GLenum = 0x84DF;
-const ACTIVE_TEXTURE: GLenum = 0x84E0;
-const MULTISAMPLE: GLenum = 0x809D;
-const SAMPLE_ALPHA_TO_COVERAGE: GLenum = 0x809E;
-const SAMPLE_ALPHA_TO_ONE: GLenum = 0x809F;
-const SAMPLE_COVERAGE: GLenum = 0x80A0;
-const SAMPLE_BUFFERS: GLenum = 0x80A8;
-const SAMPLES: GLenum = 0x80A9;
-const SAMPLE_COVERAGE_VALUE: GLenum = 0x80AA;
-const SAMPLE_COVERAGE_INVERT: GLenum = 0x80AB;
-const TEXTURE_CUBE_MAP: GLenum = 0x8513;
-const TEXTURE_BINDING_CUBE_MAP: GLenum = 0x8514;
-const TEXTURE_CUBE_MAP_POSITIVE_X: GLenum = 0x8515;
-const TEXTURE_CUBE_MAP_NEGATIVE_X: GLenum = 0x8516;
-const TEXTURE_CUBE_MAP_POSITIVE_Y: GLenum = 0x8517;
-const TEXTURE_CUBE_MAP_NEGATIVE_Y: GLenum = 0x8518;
-const TEXTURE_CUBE_MAP_POSITIVE_Z: GLenum = 0x8519;
-const TEXTURE_CUBE_MAP_NEGATIVE_Z: GLenum = 0x851A;
-const PROXY_TEXTURE_CUBE_MAP: GLenum = 0x851B;
-const MAX_CUBE_MAP_TEXTURE_SIZE: GLenum = 0x851C;
-const COMPRESSED_RGB: GLenum = 0x84ED;
-const COMPRESSED_RGBA: GLenum = 0x84EE;
-const TEXTURE_COMPRESSION_HINT: GLenum = 0x84EF;
-const TEXTURE_COMPRESSED_IMAGE_SIZE: GLenum = 0x86A0;
-const TEXTURE_COMPRESSED: GLenum = 0x86A1;
-const NUM_COMPRESSED_TEXTURE_FORMATS: GLenum = 0x86A2;
-const COMPRESSED_TEXTURE_FORMATS: GLenum = 0x86A3;
-const CLAMP_TO_BORDER: GLint = 0x812D;
-const CLIENT_ACTIVE_TEXTURE: GLenum = 0x84E1;
-const MAX_TEXTURE_UNITS: GLenum = 0x84E2;
-const TRANSPOSE_MODELVIEW_MATRIX: GLenum = 0x84E3;
-const TRANSPOSE_PROJECTION_MATRIX: GLenum = 0x84E4;
-const TRANSPOSE_TEXTURE_MATRIX: GLenum = 0x84E5;
-const TRANSPOSE_COLOR_MATRIX: GLenum = 0x84E6;
-const MULTISAMPLE_BIT: GLbitfield = 0x20000000;
-const NORMAL_MAP: GLenum = 0x8511;
-const REFLECTION_MAP: GLenum = 0x8512;
-const COMPRESSED_ALPHA: GLenum = 0x84E9;
-const COMPRESSED_LUMINANCE: GLenum = 0x84EA;
-const COMPRESSED_LUMINANCE_ALPHA: GLenum = 0x84EB;
-const COMPRESSED_INTENSITY: GLenum = 0x84EC;
-const COMBINE: GLenum = 0x8570;
-const COMBINE_RGB: GLenum = 0x8571;
-const COMBINE_ALPHA: GLenum = 0x8572;
-const SOURCE0_RGB: GLenum = 0x8580;
-const SOURCE1_RGB: GLenum = 0x8581;
-const SOURCE2_RGB: GLenum = 0x8582;
-const SOURCE0_ALPHA: GLenum = 0x8588;
-const SOURCE1_ALPHA: GLenum = 0x8589;
-const SOURCE2_ALPHA: GLenum = 0x858A;
-const OPERAND0_RGB: GLenum = 0x8590;
-const OPERAND1_RGB: GLenum = 0x8591;
-const OPERAND2_RGB: GLenum = 0x8592;
-const OPERAND0_ALPHA: GLenum = 0x8598;
-const OPERAND1_ALPHA: GLenum = 0x8599;
-const OPERAND2_ALPHA: GLenum = 0x859A;
-const RGB_SCALE: GLenum = 0x8573;
-const ADD_SIGNED: GLenum = 0x8574;
-const INTERPOLATE: GLenum = 0x8575;
-const SUBTRACT: GLenum = 0x84E7;
-const CONSTANT: GLenum = 0x8576;
-const PRIMARY_COLOR: GLenum = 0x8577;
-const PREVIOUS: GLenum = 0x8578;
-const DOT3_RGB: GLenum = 0x86AE;
-const DOT3_RGBA: GLenum = 0x86AF;
+pub const GL_TEXTURE0: GLenum = 0x84C0;
+pub const GL_TEXTURE1: GLenum = 0x84C1;
+pub const GL_TEXTURE2: GLenum = 0x84C2;
+pub const GL_TEXTURE3: GLenum = 0x84C3;
+pub const GL_TEXTURE4: GLenum = 0x84C4;
+pub const GL_TEXTURE5: GLenum = 0x84C5;
+pub const GL_TEXTURE6: GLenum = 0x84C6;
+pub const GL_TEXTURE7: GLenum = 0x84C7;
+pub const GL_TEXTURE8: GLenum = 0x84C8;
+pub const GL_TEXTURE9: GLenum = 0x84C9;
+pub const GL_TEXTURE10: GLenum = 0x84CA;
+pub const GL_TEXTURE11: GLenum = 0x84CB;
+pub const GL_TEXTURE12: GLenum = 0x84CC;
+pub const GL_TEXTURE13: GLenum = 0x84CD;
+pub const GL_TEXTURE14: GLenum = 0x84CE;
+pub const GL_TEXTURE15: GLenum = 0x84CF;
+pub const GL_TEXTURE16: GLenum = 0x84D0;
+pub const GL_TEXTURE17: GLenum = 0x84D1;
+pub const GL_TEXTURE18: GLenum = 0x84D2;
+pub const GL_TEXTURE19: GLenum = 0x84D3;
+pub const GL_TEXTURE20: GLenum = 0x84D4;
+pub const GL_TEXTURE21: GLenum = 0x84D5;
+pub const GL_TEXTURE22: GLenum = 0x84D6;
+pub const GL_TEXTURE23: GLenum = 0x84D7;
+pub const GL_TEXTURE24: GLenum = 0x84D8;
+pub const GL_TEXTURE25: GLenum = 0x84D9;
+pub const GL_TEXTURE26: GLenum = 0x84DA;
+pub const GL_TEXTURE27: GLenum = 0x84DB;
+pub const GL_TEXTURE28: GLenum = 0x84DC;
+pub const GL_TEXTURE29: GLenum = 0x84DD;
+pub const GL_TEXTURE30: GLenum = 0x84DE;
+pub const GL_TEXTURE31: GLenum = 0x84DF;
+pub const GL_ACTIVE_TEXTURE: GLenum = 0x84E0;
+pub const GL_MULTISAMPLE: GLenum = 0x809D;
+pub const GL_SAMPLE_ALPHA_TO_COVERAGE: GLenum = 0x809E;
+pub const GL_SAMPLE_ALPHA_TO_ONE: GLenum = 0x809F;
+pub const GL_SAMPLE_COVERAGE: GLenum = 0x80A0;
+pub const GL_SAMPLE_BUFFERS: GLenum = 0x80A8;
+pub const GL_SAMPLES: GLenum = 0x80A9;
+pub const GL_SAMPLE_COVERAGE_VALUE: GLenum = 0x80AA;
+pub const GL_SAMPLE_COVERAGE_INVERT: GLenum = 0x80AB;
+pub const GL_TEXTURE_CUBE_MAP: GLenum = 0x8513;
+pub const GL_TEXTURE_BINDING_CUBE_MAP: GLenum = 0x8514;
+pub const GL_TEXTURE_CUBE_MAP_POSITIVE_X: GLenum = 0x8515;
+pub const GL_TEXTURE_CUBE_MAP_NEGATIVE_X: GLenum = 0x8516;
+pub const GL_TEXTURE_CUBE_MAP_POSITIVE_Y: GLenum = 0x8517;
+pub const GL_TEXTURE_CUBE_MAP_NEGATIVE_Y: GLenum = 0x8518;
+pub const GL_TEXTURE_CUBE_MAP_POSITIVE_Z: GLenum = 0x8519;
+pub const GL_TEXTURE_CUBE_MAP_NEGATIVE_Z: GLenum = 0x851A;
+pub const GL_PROXY_TEXTURE_CUBE_MAP: GLenum = 0x851B;
+pub const GL_MAX_CUBE_MAP_TEXTURE_SIZE: GLenum = 0x851C;
+pub const GL_COMPRESSED_RGB: GLenum = 0x84ED;
+pub const GL_COMPRESSED_RGBA: GLenum = 0x84EE;
+pub const GL_TEXTURE_COMPRESSION_HINT: GLenum = 0x84EF;
+pub const GL_TEXTURE_COMPRESSED_IMAGE_SIZE: GLenum = 0x86A0;
+pub const GL_TEXTURE_COMPRESSED: GLenum = 0x86A1;
+pub const GL_NUM_COMPRESSED_TEXTURE_FORMATS: GLenum = 0x86A2;
+pub const GL_COMPRESSED_TEXTURE_FORMATS: GLenum = 0x86A3;
+pub const GL_CLAMP_TO_BORDER: GLint = 0x812D;
+pub const GL_CLIENT_ACTIVE_TEXTURE: GLenum = 0x84E1;
+pub const GL_MAX_TEXTURE_UNITS: GLenum = 0x84E2;
+pub const GL_TRANSPOSE_MODELVIEW_MATRIX: GLenum = 0x84E3;
+pub const GL_TRANSPOSE_PROJECTION_MATRIX: GLenum = 0x84E4;
+pub const GL_TRANSPOSE_TEXTURE_MATRIX: GLenum = 0x84E5;
+pub const GL_TRANSPOSE_COLOR_MATRIX: GLenum = 0x84E6;
+pub const GL_MULTISAMPLE_BIT: GLbitfield = 0x20000000;
+pub const GL_NORMAL_MAP: GLenum = 0x8511;
+pub const GL_REFLECTION_MAP: GLenum = 0x8512;
+pub const GL_COMPRESSED_ALPHA: GLenum = 0x84E9;
+pub const GL_COMPRESSED_LUMINANCE: GLenum = 0x84EA;
+pub const GL_COMPRESSED_LUMINANCE_ALPHA: GLenum = 0x84EB;
+pub const GL_COMPRESSED_INTENSITY: GLenum = 0x84EC;
+pub const GL_COMBINE: GLenum = 0x8570;
+pub const GL_COMBINE_RGB: GLenum = 0x8571;
+pub const GL_COMBINE_ALPHA: GLenum = 0x8572;
+pub const GL_SOURCE0_RGB: GLenum = 0x8580;
+pub const GL_SOURCE1_RGB: GLenum = 0x8581;
+pub const GL_SOURCE2_RGB: GLenum = 0x8582;
+pub const GL_SOURCE0_ALPHA: GLenum = 0x8588;
+pub const GL_SOURCE1_ALPHA: GLenum = 0x8589;
+pub const GL_SOURCE2_ALPHA: GLenum = 0x858A;
+pub const GL_OPERAND0_RGB: GLenum = 0x8590;
+pub const GL_OPERAND1_RGB: GLenum = 0x8591;
+pub const GL_OPERAND2_RGB: GLenum = 0x8592;
+pub const GL_OPERAND0_ALPHA: GLenum = 0x8598;
+pub const GL_OPERAND1_ALPHA: GLenum = 0x8599;
+pub const GL_OPERAND2_ALPHA: GLenum = 0x859A;
+pub const GL_RGB_SCALE: GLenum = 0x8573;
+pub const GL_ADD_SIGNED: GLenum = 0x8574;
+pub const GL_INTERPOLATE: GLenum = 0x8575;
+pub const GL_SUBTRACT: GLenum = 0x84E7;
+pub const GL_CONSTANT: GLenum = 0x8576;
+pub const GL_PRIMARY_COLOR: GLenum = 0x8577;
+pub const GL_PREVIOUS: GLenum = 0x8578;
+pub const GL_DOT3_RGB: GLenum = 0x86AE;
+pub const GL_DOT3_RGBA: GLenum = 0x86AF;
 
 pub trait GL_1_3 {
 	fn glActiveTexture(&self, texture: GLenum);
@@ -1562,7 +1562,7 @@ pub trait GL_1_3 {
 	fn glMultTransposeMatrixd(&self, m: *const GLdouble);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version13 {
 	available: bool,
 	activetexture: PFNGLACTIVETEXTUREPROC,
@@ -1801,7 +1801,7 @@ impl GL_1_3 for Version13 {
 }
 
 impl Version13 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 10300 {
@@ -1809,52 +1809,52 @@ impl Version13 {
 		}
 		Self {
 			available: true,
-			activetexture: unsafe{transmute(get_proc_address("glActiveTexture"))},
-			samplecoverage: unsafe{transmute(get_proc_address("glSampleCoverage"))},
-			compressedteximage3d: unsafe{transmute(get_proc_address("glCompressedTexImage3D"))},
-			compressedteximage2d: unsafe{transmute(get_proc_address("glCompressedTexImage2D"))},
-			compressedteximage1d: unsafe{transmute(get_proc_address("glCompressedTexImage1D"))},
-			compressedtexsubimage3d: unsafe{transmute(get_proc_address("glCompressedTexSubImage3D"))},
-			compressedtexsubimage2d: unsafe{transmute(get_proc_address("glCompressedTexSubImage2D"))},
-			compressedtexsubimage1d: unsafe{transmute(get_proc_address("glCompressedTexSubImage1D"))},
-			getcompressedteximage: unsafe{transmute(get_proc_address("glGetCompressedTexImage"))},
-			clientactivetexture: unsafe{transmute(get_proc_address("glClientActiveTexture"))},
-			multitexcoord1d: unsafe{transmute(get_proc_address("glMultiTexCoord1d"))},
-			multitexcoord1dv: unsafe{transmute(get_proc_address("glMultiTexCoord1dv"))},
-			multitexcoord1f: unsafe{transmute(get_proc_address("glMultiTexCoord1f"))},
-			multitexcoord1fv: unsafe{transmute(get_proc_address("glMultiTexCoord1fv"))},
-			multitexcoord1i: unsafe{transmute(get_proc_address("glMultiTexCoord1i"))},
-			multitexcoord1iv: unsafe{transmute(get_proc_address("glMultiTexCoord1iv"))},
-			multitexcoord1s: unsafe{transmute(get_proc_address("glMultiTexCoord1s"))},
-			multitexcoord1sv: unsafe{transmute(get_proc_address("glMultiTexCoord1sv"))},
-			multitexcoord2d: unsafe{transmute(get_proc_address("glMultiTexCoord2d"))},
-			multitexcoord2dv: unsafe{transmute(get_proc_address("glMultiTexCoord2dv"))},
-			multitexcoord2f: unsafe{transmute(get_proc_address("glMultiTexCoord2f"))},
-			multitexcoord2fv: unsafe{transmute(get_proc_address("glMultiTexCoord2fv"))},
-			multitexcoord2i: unsafe{transmute(get_proc_address("glMultiTexCoord2i"))},
-			multitexcoord2iv: unsafe{transmute(get_proc_address("glMultiTexCoord2iv"))},
-			multitexcoord2s: unsafe{transmute(get_proc_address("glMultiTexCoord2s"))},
-			multitexcoord2sv: unsafe{transmute(get_proc_address("glMultiTexCoord2sv"))},
-			multitexcoord3d: unsafe{transmute(get_proc_address("glMultiTexCoord3d"))},
-			multitexcoord3dv: unsafe{transmute(get_proc_address("glMultiTexCoord3dv"))},
-			multitexcoord3f: unsafe{transmute(get_proc_address("glMultiTexCoord3f"))},
-			multitexcoord3fv: unsafe{transmute(get_proc_address("glMultiTexCoord3fv"))},
-			multitexcoord3i: unsafe{transmute(get_proc_address("glMultiTexCoord3i"))},
-			multitexcoord3iv: unsafe{transmute(get_proc_address("glMultiTexCoord3iv"))},
-			multitexcoord3s: unsafe{transmute(get_proc_address("glMultiTexCoord3s"))},
-			multitexcoord3sv: unsafe{transmute(get_proc_address("glMultiTexCoord3sv"))},
-			multitexcoord4d: unsafe{transmute(get_proc_address("glMultiTexCoord4d"))},
-			multitexcoord4dv: unsafe{transmute(get_proc_address("glMultiTexCoord4dv"))},
-			multitexcoord4f: unsafe{transmute(get_proc_address("glMultiTexCoord4f"))},
-			multitexcoord4fv: unsafe{transmute(get_proc_address("glMultiTexCoord4fv"))},
-			multitexcoord4i: unsafe{transmute(get_proc_address("glMultiTexCoord4i"))},
-			multitexcoord4iv: unsafe{transmute(get_proc_address("glMultiTexCoord4iv"))},
-			multitexcoord4s: unsafe{transmute(get_proc_address("glMultiTexCoord4s"))},
-			multitexcoord4sv: unsafe{transmute(get_proc_address("glMultiTexCoord4sv"))},
-			loadtransposematrixf: unsafe{transmute(get_proc_address("glLoadTransposeMatrixf"))},
-			loadtransposematrixd: unsafe{transmute(get_proc_address("glLoadTransposeMatrixd"))},
-			multtransposematrixf: unsafe{transmute(get_proc_address("glMultTransposeMatrixf"))},
-			multtransposematrixd: unsafe{transmute(get_proc_address("glMultTransposeMatrixd"))},
+			activetexture: {let proc = get_proc_address("glActiveTexture"); if proc == null() {dummy_pfnglactivetextureproc} else {unsafe{transmute(proc)}}},
+			samplecoverage: {let proc = get_proc_address("glSampleCoverage"); if proc == null() {dummy_pfnglsamplecoverageproc} else {unsafe{transmute(proc)}}},
+			compressedteximage3d: {let proc = get_proc_address("glCompressedTexImage3D"); if proc == null() {dummy_pfnglcompressedteximage3dproc} else {unsafe{transmute(proc)}}},
+			compressedteximage2d: {let proc = get_proc_address("glCompressedTexImage2D"); if proc == null() {dummy_pfnglcompressedteximage2dproc} else {unsafe{transmute(proc)}}},
+			compressedteximage1d: {let proc = get_proc_address("glCompressedTexImage1D"); if proc == null() {dummy_pfnglcompressedteximage1dproc} else {unsafe{transmute(proc)}}},
+			compressedtexsubimage3d: {let proc = get_proc_address("glCompressedTexSubImage3D"); if proc == null() {dummy_pfnglcompressedtexsubimage3dproc} else {unsafe{transmute(proc)}}},
+			compressedtexsubimage2d: {let proc = get_proc_address("glCompressedTexSubImage2D"); if proc == null() {dummy_pfnglcompressedtexsubimage2dproc} else {unsafe{transmute(proc)}}},
+			compressedtexsubimage1d: {let proc = get_proc_address("glCompressedTexSubImage1D"); if proc == null() {dummy_pfnglcompressedtexsubimage1dproc} else {unsafe{transmute(proc)}}},
+			getcompressedteximage: {let proc = get_proc_address("glGetCompressedTexImage"); if proc == null() {dummy_pfnglgetcompressedteximageproc} else {unsafe{transmute(proc)}}},
+			clientactivetexture: {let proc = get_proc_address("glClientActiveTexture"); if proc == null() {dummy_pfnglclientactivetextureproc} else {unsafe{transmute(proc)}}},
+			multitexcoord1d: {let proc = get_proc_address("glMultiTexCoord1d"); if proc == null() {dummy_pfnglmultitexcoord1dproc} else {unsafe{transmute(proc)}}},
+			multitexcoord1dv: {let proc = get_proc_address("glMultiTexCoord1dv"); if proc == null() {dummy_pfnglmultitexcoord1dvproc} else {unsafe{transmute(proc)}}},
+			multitexcoord1f: {let proc = get_proc_address("glMultiTexCoord1f"); if proc == null() {dummy_pfnglmultitexcoord1fproc} else {unsafe{transmute(proc)}}},
+			multitexcoord1fv: {let proc = get_proc_address("glMultiTexCoord1fv"); if proc == null() {dummy_pfnglmultitexcoord1fvproc} else {unsafe{transmute(proc)}}},
+			multitexcoord1i: {let proc = get_proc_address("glMultiTexCoord1i"); if proc == null() {dummy_pfnglmultitexcoord1iproc} else {unsafe{transmute(proc)}}},
+			multitexcoord1iv: {let proc = get_proc_address("glMultiTexCoord1iv"); if proc == null() {dummy_pfnglmultitexcoord1ivproc} else {unsafe{transmute(proc)}}},
+			multitexcoord1s: {let proc = get_proc_address("glMultiTexCoord1s"); if proc == null() {dummy_pfnglmultitexcoord1sproc} else {unsafe{transmute(proc)}}},
+			multitexcoord1sv: {let proc = get_proc_address("glMultiTexCoord1sv"); if proc == null() {dummy_pfnglmultitexcoord1svproc} else {unsafe{transmute(proc)}}},
+			multitexcoord2d: {let proc = get_proc_address("glMultiTexCoord2d"); if proc == null() {dummy_pfnglmultitexcoord2dproc} else {unsafe{transmute(proc)}}},
+			multitexcoord2dv: {let proc = get_proc_address("glMultiTexCoord2dv"); if proc == null() {dummy_pfnglmultitexcoord2dvproc} else {unsafe{transmute(proc)}}},
+			multitexcoord2f: {let proc = get_proc_address("glMultiTexCoord2f"); if proc == null() {dummy_pfnglmultitexcoord2fproc} else {unsafe{transmute(proc)}}},
+			multitexcoord2fv: {let proc = get_proc_address("glMultiTexCoord2fv"); if proc == null() {dummy_pfnglmultitexcoord2fvproc} else {unsafe{transmute(proc)}}},
+			multitexcoord2i: {let proc = get_proc_address("glMultiTexCoord2i"); if proc == null() {dummy_pfnglmultitexcoord2iproc} else {unsafe{transmute(proc)}}},
+			multitexcoord2iv: {let proc = get_proc_address("glMultiTexCoord2iv"); if proc == null() {dummy_pfnglmultitexcoord2ivproc} else {unsafe{transmute(proc)}}},
+			multitexcoord2s: {let proc = get_proc_address("glMultiTexCoord2s"); if proc == null() {dummy_pfnglmultitexcoord2sproc} else {unsafe{transmute(proc)}}},
+			multitexcoord2sv: {let proc = get_proc_address("glMultiTexCoord2sv"); if proc == null() {dummy_pfnglmultitexcoord2svproc} else {unsafe{transmute(proc)}}},
+			multitexcoord3d: {let proc = get_proc_address("glMultiTexCoord3d"); if proc == null() {dummy_pfnglmultitexcoord3dproc} else {unsafe{transmute(proc)}}},
+			multitexcoord3dv: {let proc = get_proc_address("glMultiTexCoord3dv"); if proc == null() {dummy_pfnglmultitexcoord3dvproc} else {unsafe{transmute(proc)}}},
+			multitexcoord3f: {let proc = get_proc_address("glMultiTexCoord3f"); if proc == null() {dummy_pfnglmultitexcoord3fproc} else {unsafe{transmute(proc)}}},
+			multitexcoord3fv: {let proc = get_proc_address("glMultiTexCoord3fv"); if proc == null() {dummy_pfnglmultitexcoord3fvproc} else {unsafe{transmute(proc)}}},
+			multitexcoord3i: {let proc = get_proc_address("glMultiTexCoord3i"); if proc == null() {dummy_pfnglmultitexcoord3iproc} else {unsafe{transmute(proc)}}},
+			multitexcoord3iv: {let proc = get_proc_address("glMultiTexCoord3iv"); if proc == null() {dummy_pfnglmultitexcoord3ivproc} else {unsafe{transmute(proc)}}},
+			multitexcoord3s: {let proc = get_proc_address("glMultiTexCoord3s"); if proc == null() {dummy_pfnglmultitexcoord3sproc} else {unsafe{transmute(proc)}}},
+			multitexcoord3sv: {let proc = get_proc_address("glMultiTexCoord3sv"); if proc == null() {dummy_pfnglmultitexcoord3svproc} else {unsafe{transmute(proc)}}},
+			multitexcoord4d: {let proc = get_proc_address("glMultiTexCoord4d"); if proc == null() {dummy_pfnglmultitexcoord4dproc} else {unsafe{transmute(proc)}}},
+			multitexcoord4dv: {let proc = get_proc_address("glMultiTexCoord4dv"); if proc == null() {dummy_pfnglmultitexcoord4dvproc} else {unsafe{transmute(proc)}}},
+			multitexcoord4f: {let proc = get_proc_address("glMultiTexCoord4f"); if proc == null() {dummy_pfnglmultitexcoord4fproc} else {unsafe{transmute(proc)}}},
+			multitexcoord4fv: {let proc = get_proc_address("glMultiTexCoord4fv"); if proc == null() {dummy_pfnglmultitexcoord4fvproc} else {unsafe{transmute(proc)}}},
+			multitexcoord4i: {let proc = get_proc_address("glMultiTexCoord4i"); if proc == null() {dummy_pfnglmultitexcoord4iproc} else {unsafe{transmute(proc)}}},
+			multitexcoord4iv: {let proc = get_proc_address("glMultiTexCoord4iv"); if proc == null() {dummy_pfnglmultitexcoord4ivproc} else {unsafe{transmute(proc)}}},
+			multitexcoord4s: {let proc = get_proc_address("glMultiTexCoord4s"); if proc == null() {dummy_pfnglmultitexcoord4sproc} else {unsafe{transmute(proc)}}},
+			multitexcoord4sv: {let proc = get_proc_address("glMultiTexCoord4sv"); if proc == null() {dummy_pfnglmultitexcoord4svproc} else {unsafe{transmute(proc)}}},
+			loadtransposematrixf: {let proc = get_proc_address("glLoadTransposeMatrixf"); if proc == null() {dummy_pfnglloadtransposematrixfproc} else {unsafe{transmute(proc)}}},
+			loadtransposematrixd: {let proc = get_proc_address("glLoadTransposeMatrixd"); if proc == null() {dummy_pfnglloadtransposematrixdproc} else {unsafe{transmute(proc)}}},
+			multtransposematrixf: {let proc = get_proc_address("glMultTransposeMatrixf"); if proc == null() {dummy_pfnglmulttransposematrixfproc} else {unsafe{transmute(proc)}}},
+			multtransposematrixd: {let proc = get_proc_address("glMultTransposeMatrixd"); if proc == null() {dummy_pfnglmulttransposematrixdproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -1965,196 +1965,196 @@ type PFNGLWINDOWPOS3SVPROC = extern "system" fn(*const GLshort);
 type PFNGLBLENDCOLORPROC = extern "system" fn(GLfloat, GLfloat, GLfloat, GLfloat);
 type PFNGLBLENDEQUATIONPROC = extern "system" fn(GLenum);
 extern "system" fn dummy_pfnglblendfuncseparateproc (_: GLenum, _: GLenum, _: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glBlendFuncSeparate() is NULL");
+	panic!("OpenGL Function pointer of `glBlendFuncSeparate()` is NULL");
 }
 extern "system" fn dummy_pfnglmultidrawarraysproc (_: GLenum, _: *const GLint, _: *const GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glMultiDrawArrays() is NULL");
+	panic!("OpenGL Function pointer of `glMultiDrawArrays()` is NULL");
 }
 extern "system" fn dummy_pfnglmultidrawelementsproc (_: GLenum, _: *const GLsizei, _: GLenum, _: *const *const c_void, _: GLsizei) {
-	panic!("OpenGL Function pointer of glMultiDrawElements() is NULL");
+	panic!("OpenGL Function pointer of `glMultiDrawElements()` is NULL");
 }
 extern "system" fn dummy_pfnglpointparameterfproc (_: GLenum, _: GLfloat) {
-	panic!("OpenGL Function pointer of glPointParameterf() is NULL");
+	panic!("OpenGL Function pointer of `glPointParameterf()` is NULL");
 }
 extern "system" fn dummy_pfnglpointparameterfvproc (_: GLenum, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glPointParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glPointParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfnglpointparameteriproc (_: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glPointParameteri() is NULL");
+	panic!("OpenGL Function pointer of `glPointParameteri()` is NULL");
 }
 extern "system" fn dummy_pfnglpointparameterivproc (_: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glPointParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glPointParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglfogcoordfproc (_: GLfloat) {
-	panic!("OpenGL Function pointer of glFogCoordf() is NULL");
+	panic!("OpenGL Function pointer of `glFogCoordf()` is NULL");
 }
 extern "system" fn dummy_pfnglfogcoordfvproc (_: *const GLfloat) {
-	panic!("OpenGL Function pointer of glFogCoordfv() is NULL");
+	panic!("OpenGL Function pointer of `glFogCoordfv()` is NULL");
 }
 extern "system" fn dummy_pfnglfogcoorddproc (_: GLdouble) {
-	panic!("OpenGL Function pointer of glFogCoordd() is NULL");
+	panic!("OpenGL Function pointer of `glFogCoordd()` is NULL");
 }
 extern "system" fn dummy_pfnglfogcoorddvproc (_: *const GLdouble) {
-	panic!("OpenGL Function pointer of glFogCoorddv() is NULL");
+	panic!("OpenGL Function pointer of `glFogCoorddv()` is NULL");
 }
 extern "system" fn dummy_pfnglfogcoordpointerproc (_: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glFogCoordPointer() is NULL");
+	panic!("OpenGL Function pointer of `glFogCoordPointer()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3bproc (_: GLbyte, _: GLbyte, _: GLbyte) {
-	panic!("OpenGL Function pointer of glSecondaryColor3b() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3b()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3bvproc (_: *const GLbyte) {
-	panic!("OpenGL Function pointer of glSecondaryColor3bv() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3bv()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3dproc (_: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glSecondaryColor3d() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3d()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3dvproc (_: *const GLdouble) {
-	panic!("OpenGL Function pointer of glSecondaryColor3dv() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3fproc (_: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glSecondaryColor3f() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3f()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3fvproc (_: *const GLfloat) {
-	panic!("OpenGL Function pointer of glSecondaryColor3fv() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3fv()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3iproc (_: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glSecondaryColor3i() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3i()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3ivproc (_: *const GLint) {
-	panic!("OpenGL Function pointer of glSecondaryColor3iv() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3iv()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3sproc (_: GLshort, _: GLshort, _: GLshort) {
-	panic!("OpenGL Function pointer of glSecondaryColor3s() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3s()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3svproc (_: *const GLshort) {
-	panic!("OpenGL Function pointer of glSecondaryColor3sv() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3sv()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3ubproc (_: GLubyte, _: GLubyte, _: GLubyte) {
-	panic!("OpenGL Function pointer of glSecondaryColor3ub() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3ub()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3ubvproc (_: *const GLubyte) {
-	panic!("OpenGL Function pointer of glSecondaryColor3ubv() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3ubv()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3uiproc (_: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glSecondaryColor3ui() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3ui()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3uivproc (_: *const GLuint) {
-	panic!("OpenGL Function pointer of glSecondaryColor3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3usproc (_: GLushort, _: GLushort, _: GLushort) {
-	panic!("OpenGL Function pointer of glSecondaryColor3us() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3us()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolor3usvproc (_: *const GLushort) {
-	panic!("OpenGL Function pointer of glSecondaryColor3usv() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColor3usv()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolorpointerproc (_: GLint, _: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glSecondaryColorPointer() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColorPointer()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos2dproc (_: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glWindowPos2d() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos2d()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos2dvproc (_: *const GLdouble) {
-	panic!("OpenGL Function pointer of glWindowPos2dv() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos2dv()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos2fproc (_: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glWindowPos2f() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos2f()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos2fvproc (_: *const GLfloat) {
-	panic!("OpenGL Function pointer of glWindowPos2fv() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos2fv()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos2iproc (_: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glWindowPos2i() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos2i()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos2ivproc (_: *const GLint) {
-	panic!("OpenGL Function pointer of glWindowPos2iv() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos2iv()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos2sproc (_: GLshort, _: GLshort) {
-	panic!("OpenGL Function pointer of glWindowPos2s() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos2s()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos2svproc (_: *const GLshort) {
-	panic!("OpenGL Function pointer of glWindowPos2sv() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos2sv()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos3dproc (_: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glWindowPos3d() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos3d()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos3dvproc (_: *const GLdouble) {
-	panic!("OpenGL Function pointer of glWindowPos3dv() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos3fproc (_: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glWindowPos3f() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos3f()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos3fvproc (_: *const GLfloat) {
-	panic!("OpenGL Function pointer of glWindowPos3fv() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos3fv()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos3iproc (_: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glWindowPos3i() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos3i()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos3ivproc (_: *const GLint) {
-	panic!("OpenGL Function pointer of glWindowPos3iv() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos3iv()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos3sproc (_: GLshort, _: GLshort, _: GLshort) {
-	panic!("OpenGL Function pointer of glWindowPos3s() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos3s()` is NULL");
 }
 extern "system" fn dummy_pfnglwindowpos3svproc (_: *const GLshort) {
-	panic!("OpenGL Function pointer of glWindowPos3sv() is NULL");
+	panic!("OpenGL Function pointer of `glWindowPos3sv()` is NULL");
 }
 extern "system" fn dummy_pfnglblendcolorproc (_: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glBlendColor() is NULL");
+	panic!("OpenGL Function pointer of `glBlendColor()` is NULL");
 }
 extern "system" fn dummy_pfnglblendequationproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glBlendEquation() is NULL");
+	panic!("OpenGL Function pointer of `glBlendEquation()` is NULL");
 }
-const BLEND_DST_RGB: GLenum = 0x80C8;
-const BLEND_SRC_RGB: GLenum = 0x80C9;
-const BLEND_DST_ALPHA: GLenum = 0x80CA;
-const BLEND_SRC_ALPHA: GLenum = 0x80CB;
-const POINT_FADE_THRESHOLD_SIZE: GLenum = 0x8128;
-const DEPTH_COMPONENT16: GLenum = 0x81A5;
-const DEPTH_COMPONENT24: GLenum = 0x81A6;
-const DEPTH_COMPONENT32: GLenum = 0x81A7;
-const MIRRORED_REPEAT: GLint = 0x8370;
-const MAX_TEXTURE_LOD_BIAS: GLenum = 0x84FD;
-const TEXTURE_LOD_BIAS: GLenum = 0x8501;
-const INCR_WRAP: GLenum = 0x8507;
-const DECR_WRAP: GLenum = 0x8508;
-const TEXTURE_DEPTH_SIZE: GLenum = 0x884A;
-const TEXTURE_COMPARE_MODE: GLenum = 0x884C;
-const TEXTURE_COMPARE_FUNC: GLenum = 0x884D;
-const POINT_SIZE_MIN: GLenum = 0x8126;
-const POINT_SIZE_MAX: GLenum = 0x8127;
-const POINT_DISTANCE_ATTENUATION: GLenum = 0x8129;
-const GENERATE_MIPMAP: GLenum = 0x8191;
-const GENERATE_MIPMAP_HINT: GLenum = 0x8192;
-const FOG_COORDINATE_SOURCE: GLenum = 0x8450;
-const FOG_COORDINATE: GLenum = 0x8451;
-const FRAGMENT_DEPTH: GLenum = 0x8452;
-const CURRENT_FOG_COORDINATE: GLenum = 0x8453;
-const FOG_COORDINATE_ARRAY_TYPE: GLenum = 0x8454;
-const FOG_COORDINATE_ARRAY_STRIDE: GLenum = 0x8455;
-const FOG_COORDINATE_ARRAY_POINTER: GLenum = 0x8456;
-const FOG_COORDINATE_ARRAY: GLenum = 0x8457;
-const COLOR_SUM: GLenum = 0x8458;
-const CURRENT_SECONDARY_COLOR: GLenum = 0x8459;
-const SECONDARY_COLOR_ARRAY_SIZE: GLenum = 0x845A;
-const SECONDARY_COLOR_ARRAY_TYPE: GLenum = 0x845B;
-const SECONDARY_COLOR_ARRAY_STRIDE: GLenum = 0x845C;
-const SECONDARY_COLOR_ARRAY_POINTER: GLenum = 0x845D;
-const SECONDARY_COLOR_ARRAY: GLenum = 0x845E;
-const TEXTURE_FILTER_CONTROL: GLenum = 0x8500;
-const DEPTH_TEXTURE_MODE: GLenum = 0x884B;
-const COMPARE_R_TO_TEXTURE: GLenum = 0x884E;
-const BLEND_COLOR: GLenum = 0x8005;
-const BLEND_EQUATION: GLenum = 0x8009;
-const CONSTANT_COLOR: GLenum = 0x8001;
-const ONE_MINUS_CONSTANT_COLOR: GLenum = 0x8002;
-const CONSTANT_ALPHA: GLenum = 0x8003;
-const ONE_MINUS_CONSTANT_ALPHA: GLenum = 0x8004;
-const FUNC_ADD: GLenum = 0x8006;
-const FUNC_REVERSE_SUBTRACT: GLenum = 0x800B;
-const FUNC_SUBTRACT: GLenum = 0x800A;
-const MIN: GLenum = 0x8007;
-const MAX: GLenum = 0x8008;
+pub const GL_BLEND_DST_RGB: GLenum = 0x80C8;
+pub const GL_BLEND_SRC_RGB: GLenum = 0x80C9;
+pub const GL_BLEND_DST_ALPHA: GLenum = 0x80CA;
+pub const GL_BLEND_SRC_ALPHA: GLenum = 0x80CB;
+pub const GL_POINT_FADE_THRESHOLD_SIZE: GLenum = 0x8128;
+pub const GL_DEPTH_COMPONENT16: GLenum = 0x81A5;
+pub const GL_DEPTH_COMPONENT24: GLenum = 0x81A6;
+pub const GL_DEPTH_COMPONENT32: GLenum = 0x81A7;
+pub const GL_MIRRORED_REPEAT: GLint = 0x8370;
+pub const GL_MAX_TEXTURE_LOD_BIAS: GLenum = 0x84FD;
+pub const GL_TEXTURE_LOD_BIAS: GLenum = 0x8501;
+pub const GL_INCR_WRAP: GLenum = 0x8507;
+pub const GL_DECR_WRAP: GLenum = 0x8508;
+pub const GL_TEXTURE_DEPTH_SIZE: GLenum = 0x884A;
+pub const GL_TEXTURE_COMPARE_MODE: GLenum = 0x884C;
+pub const GL_TEXTURE_COMPARE_FUNC: GLenum = 0x884D;
+pub const GL_POINT_SIZE_MIN: GLenum = 0x8126;
+pub const GL_POINT_SIZE_MAX: GLenum = 0x8127;
+pub const GL_POINT_DISTANCE_ATTENUATION: GLenum = 0x8129;
+pub const GL_GENERATE_MIPMAP: GLenum = 0x8191;
+pub const GL_GENERATE_MIPMAP_HINT: GLenum = 0x8192;
+pub const GL_FOG_COORDINATE_SOURCE: GLenum = 0x8450;
+pub const GL_FOG_COORDINATE: GLenum = 0x8451;
+pub const GL_FRAGMENT_DEPTH: GLenum = 0x8452;
+pub const GL_CURRENT_FOG_COORDINATE: GLenum = 0x8453;
+pub const GL_FOG_COORDINATE_ARRAY_TYPE: GLenum = 0x8454;
+pub const GL_FOG_COORDINATE_ARRAY_STRIDE: GLenum = 0x8455;
+pub const GL_FOG_COORDINATE_ARRAY_POINTER: GLenum = 0x8456;
+pub const GL_FOG_COORDINATE_ARRAY: GLenum = 0x8457;
+pub const GL_COLOR_SUM: GLenum = 0x8458;
+pub const GL_CURRENT_SECONDARY_COLOR: GLenum = 0x8459;
+pub const GL_SECONDARY_COLOR_ARRAY_SIZE: GLenum = 0x845A;
+pub const GL_SECONDARY_COLOR_ARRAY_TYPE: GLenum = 0x845B;
+pub const GL_SECONDARY_COLOR_ARRAY_STRIDE: GLenum = 0x845C;
+pub const GL_SECONDARY_COLOR_ARRAY_POINTER: GLenum = 0x845D;
+pub const GL_SECONDARY_COLOR_ARRAY: GLenum = 0x845E;
+pub const GL_TEXTURE_FILTER_CONTROL: GLenum = 0x8500;
+pub const GL_DEPTH_TEXTURE_MODE: GLenum = 0x884B;
+pub const GL_COMPARE_R_TO_TEXTURE: GLenum = 0x884E;
+pub const GL_BLEND_COLOR: GLenum = 0x8005;
+pub const GL_BLEND_EQUATION: GLenum = 0x8009;
+pub const GL_CONSTANT_COLOR: GLenum = 0x8001;
+pub const GL_ONE_MINUS_CONSTANT_COLOR: GLenum = 0x8002;
+pub const GL_CONSTANT_ALPHA: GLenum = 0x8003;
+pub const GL_ONE_MINUS_CONSTANT_ALPHA: GLenum = 0x8004;
+pub const GL_FUNC_ADD: GLenum = 0x8006;
+pub const GL_FUNC_REVERSE_SUBTRACT: GLenum = 0x800B;
+pub const GL_FUNC_SUBTRACT: GLenum = 0x800A;
+pub const GL_MIN: GLenum = 0x8007;
+pub const GL_MAX: GLenum = 0x8008;
 
 pub trait GL_1_4 {
 	fn glBlendFuncSeparate(&self, sfactorRGB: GLenum, dfactorRGB: GLenum, sfactorAlpha: GLenum, dfactorAlpha: GLenum);
@@ -2206,7 +2206,7 @@ pub trait GL_1_4 {
 	fn glBlendEquation(&self, mode: GLenum);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version14 {
 	available: bool,
 	blendfuncseparate: PFNGLBLENDFUNCSEPARATEPROC,
@@ -2450,7 +2450,7 @@ impl GL_1_4 for Version14 {
 }
 
 impl Version14 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 10400 {
@@ -2458,53 +2458,53 @@ impl Version14 {
 		}
 		Self {
 			available: true,
-			blendfuncseparate: unsafe{transmute(get_proc_address("glBlendFuncSeparate"))},
-			multidrawarrays: unsafe{transmute(get_proc_address("glMultiDrawArrays"))},
-			multidrawelements: unsafe{transmute(get_proc_address("glMultiDrawElements"))},
-			pointparameterf: unsafe{transmute(get_proc_address("glPointParameterf"))},
-			pointparameterfv: unsafe{transmute(get_proc_address("glPointParameterfv"))},
-			pointparameteri: unsafe{transmute(get_proc_address("glPointParameteri"))},
-			pointparameteriv: unsafe{transmute(get_proc_address("glPointParameteriv"))},
-			fogcoordf: unsafe{transmute(get_proc_address("glFogCoordf"))},
-			fogcoordfv: unsafe{transmute(get_proc_address("glFogCoordfv"))},
-			fogcoordd: unsafe{transmute(get_proc_address("glFogCoordd"))},
-			fogcoorddv: unsafe{transmute(get_proc_address("glFogCoorddv"))},
-			fogcoordpointer: unsafe{transmute(get_proc_address("glFogCoordPointer"))},
-			secondarycolor3b: unsafe{transmute(get_proc_address("glSecondaryColor3b"))},
-			secondarycolor3bv: unsafe{transmute(get_proc_address("glSecondaryColor3bv"))},
-			secondarycolor3d: unsafe{transmute(get_proc_address("glSecondaryColor3d"))},
-			secondarycolor3dv: unsafe{transmute(get_proc_address("glSecondaryColor3dv"))},
-			secondarycolor3f: unsafe{transmute(get_proc_address("glSecondaryColor3f"))},
-			secondarycolor3fv: unsafe{transmute(get_proc_address("glSecondaryColor3fv"))},
-			secondarycolor3i: unsafe{transmute(get_proc_address("glSecondaryColor3i"))},
-			secondarycolor3iv: unsafe{transmute(get_proc_address("glSecondaryColor3iv"))},
-			secondarycolor3s: unsafe{transmute(get_proc_address("glSecondaryColor3s"))},
-			secondarycolor3sv: unsafe{transmute(get_proc_address("glSecondaryColor3sv"))},
-			secondarycolor3ub: unsafe{transmute(get_proc_address("glSecondaryColor3ub"))},
-			secondarycolor3ubv: unsafe{transmute(get_proc_address("glSecondaryColor3ubv"))},
-			secondarycolor3ui: unsafe{transmute(get_proc_address("glSecondaryColor3ui"))},
-			secondarycolor3uiv: unsafe{transmute(get_proc_address("glSecondaryColor3uiv"))},
-			secondarycolor3us: unsafe{transmute(get_proc_address("glSecondaryColor3us"))},
-			secondarycolor3usv: unsafe{transmute(get_proc_address("glSecondaryColor3usv"))},
-			secondarycolorpointer: unsafe{transmute(get_proc_address("glSecondaryColorPointer"))},
-			windowpos2d: unsafe{transmute(get_proc_address("glWindowPos2d"))},
-			windowpos2dv: unsafe{transmute(get_proc_address("glWindowPos2dv"))},
-			windowpos2f: unsafe{transmute(get_proc_address("glWindowPos2f"))},
-			windowpos2fv: unsafe{transmute(get_proc_address("glWindowPos2fv"))},
-			windowpos2i: unsafe{transmute(get_proc_address("glWindowPos2i"))},
-			windowpos2iv: unsafe{transmute(get_proc_address("glWindowPos2iv"))},
-			windowpos2s: unsafe{transmute(get_proc_address("glWindowPos2s"))},
-			windowpos2sv: unsafe{transmute(get_proc_address("glWindowPos2sv"))},
-			windowpos3d: unsafe{transmute(get_proc_address("glWindowPos3d"))},
-			windowpos3dv: unsafe{transmute(get_proc_address("glWindowPos3dv"))},
-			windowpos3f: unsafe{transmute(get_proc_address("glWindowPos3f"))},
-			windowpos3fv: unsafe{transmute(get_proc_address("glWindowPos3fv"))},
-			windowpos3i: unsafe{transmute(get_proc_address("glWindowPos3i"))},
-			windowpos3iv: unsafe{transmute(get_proc_address("glWindowPos3iv"))},
-			windowpos3s: unsafe{transmute(get_proc_address("glWindowPos3s"))},
-			windowpos3sv: unsafe{transmute(get_proc_address("glWindowPos3sv"))},
-			blendcolor: unsafe{transmute(get_proc_address("glBlendColor"))},
-			blendequation: unsafe{transmute(get_proc_address("glBlendEquation"))},
+			blendfuncseparate: {let proc = get_proc_address("glBlendFuncSeparate"); if proc == null() {dummy_pfnglblendfuncseparateproc} else {unsafe{transmute(proc)}}},
+			multidrawarrays: {let proc = get_proc_address("glMultiDrawArrays"); if proc == null() {dummy_pfnglmultidrawarraysproc} else {unsafe{transmute(proc)}}},
+			multidrawelements: {let proc = get_proc_address("glMultiDrawElements"); if proc == null() {dummy_pfnglmultidrawelementsproc} else {unsafe{transmute(proc)}}},
+			pointparameterf: {let proc = get_proc_address("glPointParameterf"); if proc == null() {dummy_pfnglpointparameterfproc} else {unsafe{transmute(proc)}}},
+			pointparameterfv: {let proc = get_proc_address("glPointParameterfv"); if proc == null() {dummy_pfnglpointparameterfvproc} else {unsafe{transmute(proc)}}},
+			pointparameteri: {let proc = get_proc_address("glPointParameteri"); if proc == null() {dummy_pfnglpointparameteriproc} else {unsafe{transmute(proc)}}},
+			pointparameteriv: {let proc = get_proc_address("glPointParameteriv"); if proc == null() {dummy_pfnglpointparameterivproc} else {unsafe{transmute(proc)}}},
+			fogcoordf: {let proc = get_proc_address("glFogCoordf"); if proc == null() {dummy_pfnglfogcoordfproc} else {unsafe{transmute(proc)}}},
+			fogcoordfv: {let proc = get_proc_address("glFogCoordfv"); if proc == null() {dummy_pfnglfogcoordfvproc} else {unsafe{transmute(proc)}}},
+			fogcoordd: {let proc = get_proc_address("glFogCoordd"); if proc == null() {dummy_pfnglfogcoorddproc} else {unsafe{transmute(proc)}}},
+			fogcoorddv: {let proc = get_proc_address("glFogCoorddv"); if proc == null() {dummy_pfnglfogcoorddvproc} else {unsafe{transmute(proc)}}},
+			fogcoordpointer: {let proc = get_proc_address("glFogCoordPointer"); if proc == null() {dummy_pfnglfogcoordpointerproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3b: {let proc = get_proc_address("glSecondaryColor3b"); if proc == null() {dummy_pfnglsecondarycolor3bproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3bv: {let proc = get_proc_address("glSecondaryColor3bv"); if proc == null() {dummy_pfnglsecondarycolor3bvproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3d: {let proc = get_proc_address("glSecondaryColor3d"); if proc == null() {dummy_pfnglsecondarycolor3dproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3dv: {let proc = get_proc_address("glSecondaryColor3dv"); if proc == null() {dummy_pfnglsecondarycolor3dvproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3f: {let proc = get_proc_address("glSecondaryColor3f"); if proc == null() {dummy_pfnglsecondarycolor3fproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3fv: {let proc = get_proc_address("glSecondaryColor3fv"); if proc == null() {dummy_pfnglsecondarycolor3fvproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3i: {let proc = get_proc_address("glSecondaryColor3i"); if proc == null() {dummy_pfnglsecondarycolor3iproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3iv: {let proc = get_proc_address("glSecondaryColor3iv"); if proc == null() {dummy_pfnglsecondarycolor3ivproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3s: {let proc = get_proc_address("glSecondaryColor3s"); if proc == null() {dummy_pfnglsecondarycolor3sproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3sv: {let proc = get_proc_address("glSecondaryColor3sv"); if proc == null() {dummy_pfnglsecondarycolor3svproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3ub: {let proc = get_proc_address("glSecondaryColor3ub"); if proc == null() {dummy_pfnglsecondarycolor3ubproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3ubv: {let proc = get_proc_address("glSecondaryColor3ubv"); if proc == null() {dummy_pfnglsecondarycolor3ubvproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3ui: {let proc = get_proc_address("glSecondaryColor3ui"); if proc == null() {dummy_pfnglsecondarycolor3uiproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3uiv: {let proc = get_proc_address("glSecondaryColor3uiv"); if proc == null() {dummy_pfnglsecondarycolor3uivproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3us: {let proc = get_proc_address("glSecondaryColor3us"); if proc == null() {dummy_pfnglsecondarycolor3usproc} else {unsafe{transmute(proc)}}},
+			secondarycolor3usv: {let proc = get_proc_address("glSecondaryColor3usv"); if proc == null() {dummy_pfnglsecondarycolor3usvproc} else {unsafe{transmute(proc)}}},
+			secondarycolorpointer: {let proc = get_proc_address("glSecondaryColorPointer"); if proc == null() {dummy_pfnglsecondarycolorpointerproc} else {unsafe{transmute(proc)}}},
+			windowpos2d: {let proc = get_proc_address("glWindowPos2d"); if proc == null() {dummy_pfnglwindowpos2dproc} else {unsafe{transmute(proc)}}},
+			windowpos2dv: {let proc = get_proc_address("glWindowPos2dv"); if proc == null() {dummy_pfnglwindowpos2dvproc} else {unsafe{transmute(proc)}}},
+			windowpos2f: {let proc = get_proc_address("glWindowPos2f"); if proc == null() {dummy_pfnglwindowpos2fproc} else {unsafe{transmute(proc)}}},
+			windowpos2fv: {let proc = get_proc_address("glWindowPos2fv"); if proc == null() {dummy_pfnglwindowpos2fvproc} else {unsafe{transmute(proc)}}},
+			windowpos2i: {let proc = get_proc_address("glWindowPos2i"); if proc == null() {dummy_pfnglwindowpos2iproc} else {unsafe{transmute(proc)}}},
+			windowpos2iv: {let proc = get_proc_address("glWindowPos2iv"); if proc == null() {dummy_pfnglwindowpos2ivproc} else {unsafe{transmute(proc)}}},
+			windowpos2s: {let proc = get_proc_address("glWindowPos2s"); if proc == null() {dummy_pfnglwindowpos2sproc} else {unsafe{transmute(proc)}}},
+			windowpos2sv: {let proc = get_proc_address("glWindowPos2sv"); if proc == null() {dummy_pfnglwindowpos2svproc} else {unsafe{transmute(proc)}}},
+			windowpos3d: {let proc = get_proc_address("glWindowPos3d"); if proc == null() {dummy_pfnglwindowpos3dproc} else {unsafe{transmute(proc)}}},
+			windowpos3dv: {let proc = get_proc_address("glWindowPos3dv"); if proc == null() {dummy_pfnglwindowpos3dvproc} else {unsafe{transmute(proc)}}},
+			windowpos3f: {let proc = get_proc_address("glWindowPos3f"); if proc == null() {dummy_pfnglwindowpos3fproc} else {unsafe{transmute(proc)}}},
+			windowpos3fv: {let proc = get_proc_address("glWindowPos3fv"); if proc == null() {dummy_pfnglwindowpos3fvproc} else {unsafe{transmute(proc)}}},
+			windowpos3i: {let proc = get_proc_address("glWindowPos3i"); if proc == null() {dummy_pfnglwindowpos3iproc} else {unsafe{transmute(proc)}}},
+			windowpos3iv: {let proc = get_proc_address("glWindowPos3iv"); if proc == null() {dummy_pfnglwindowpos3ivproc} else {unsafe{transmute(proc)}}},
+			windowpos3s: {let proc = get_proc_address("glWindowPos3s"); if proc == null() {dummy_pfnglwindowpos3sproc} else {unsafe{transmute(proc)}}},
+			windowpos3sv: {let proc = get_proc_address("glWindowPos3sv"); if proc == null() {dummy_pfnglwindowpos3svproc} else {unsafe{transmute(proc)}}},
+			blendcolor: {let proc = get_proc_address("glBlendColor"); if proc == null() {dummy_pfnglblendcolorproc} else {unsafe{transmute(proc)}}},
+			blendequation: {let proc = get_proc_address("glBlendEquation"); if proc == null() {dummy_pfnglblendequationproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -2590,112 +2590,112 @@ type PFNGLUNMAPBUFFERPROC = extern "system" fn(GLenum) -> GLboolean;
 type PFNGLGETBUFFERPARAMETERIVPROC = extern "system" fn(GLenum, GLenum, *mut GLint);
 type PFNGLGETBUFFERPOINTERVPROC = extern "system" fn(GLenum, GLenum, *mut *mut c_void);
 extern "system" fn dummy_pfnglgenqueriesproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGenQueries() is NULL");
+	panic!("OpenGL Function pointer of `glGenQueries()` is NULL");
 }
 extern "system" fn dummy_pfngldeletequeriesproc (_: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glDeleteQueries() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteQueries()` is NULL");
 }
 extern "system" fn dummy_pfnglisqueryproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsQuery() is NULL");
+	panic!("OpenGL Function pointer of `glIsQuery()` is NULL");
 }
 extern "system" fn dummy_pfnglbeginqueryproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glBeginQuery() is NULL");
+	panic!("OpenGL Function pointer of `glBeginQuery()` is NULL");
 }
 extern "system" fn dummy_pfnglendqueryproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glEndQuery() is NULL");
+	panic!("OpenGL Function pointer of `glEndQuery()` is NULL");
 }
 extern "system" fn dummy_pfnglgetqueryivproc (_: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetQueryiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetqueryobjectivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetQueryObjectiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryObjectiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetqueryobjectuivproc (_: GLuint, _: GLenum, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetQueryObjectuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryObjectuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglbindbufferproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glBindBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glBindBuffer()` is NULL");
 }
 extern "system" fn dummy_pfngldeletebuffersproc (_: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glDeleteBuffers() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteBuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglgenbuffersproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGenBuffers() is NULL");
+	panic!("OpenGL Function pointer of `glGenBuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglisbufferproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glIsBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglbufferdataproc (_: GLenum, _: GLsizeiptr, _: *const c_void, _: GLenum) {
-	panic!("OpenGL Function pointer of glBufferData() is NULL");
+	panic!("OpenGL Function pointer of `glBufferData()` is NULL");
 }
 extern "system" fn dummy_pfnglbuffersubdataproc (_: GLenum, _: GLintptr, _: GLsizeiptr, _: *const c_void) {
-	panic!("OpenGL Function pointer of glBufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glBufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglgetbuffersubdataproc (_: GLenum, _: GLintptr, _: GLsizeiptr, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetBufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glGetBufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglmapbufferproc (_: GLenum, _: GLenum) -> *mut c_void {
-	panic!("OpenGL Function pointer of glMapBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glMapBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglunmapbufferproc (_: GLenum) -> GLboolean {
-	panic!("OpenGL Function pointer of glUnmapBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glUnmapBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglgetbufferparameterivproc (_: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetBufferParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetBufferParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetbufferpointervproc (_: GLenum, _: GLenum, _: *mut *mut c_void) {
-	panic!("OpenGL Function pointer of glGetBufferPointerv() is NULL");
+	panic!("OpenGL Function pointer of `glGetBufferPointerv()` is NULL");
 }
-const BUFFER_SIZE: GLenum = 0x8764;
-const BUFFER_USAGE: GLenum = 0x8765;
-const QUERY_COUNTER_BITS: GLenum = 0x8864;
-const CURRENT_QUERY: GLenum = 0x8865;
-const QUERY_RESULT: GLenum = 0x8866;
-const QUERY_RESULT_AVAILABLE: GLenum = 0x8867;
-const ARRAY_BUFFER: GLenum = 0x8892;
-const ELEMENT_ARRAY_BUFFER: GLenum = 0x8893;
-const ARRAY_BUFFER_BINDING: GLenum = 0x8894;
-const ELEMENT_ARRAY_BUFFER_BINDING: GLenum = 0x8895;
-const VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: GLenum = 0x889F;
-const READ_ONLY: GLenum = 0x88B8;
-const WRITE_ONLY: GLenum = 0x88B9;
-const READ_WRITE: GLenum = 0x88BA;
-const BUFFER_ACCESS: GLenum = 0x88BB;
-const BUFFER_MAPPED: GLenum = 0x88BC;
-const BUFFER_MAP_POINTER: GLenum = 0x88BD;
-const STREAM_DRAW: GLenum = 0x88E0;
-const STREAM_READ: GLenum = 0x88E1;
-const STREAM_COPY: GLenum = 0x88E2;
-const STATIC_DRAW: GLenum = 0x88E4;
-const STATIC_READ: GLenum = 0x88E5;
-const STATIC_COPY: GLenum = 0x88E6;
-const DYNAMIC_DRAW: GLenum = 0x88E8;
-const DYNAMIC_READ: GLenum = 0x88E9;
-const DYNAMIC_COPY: GLenum = 0x88EA;
-const SAMPLES_PASSED: GLenum = 0x8914;
-const SRC1_ALPHA: GLenum = 0x8589;
-const VERTEX_ARRAY_BUFFER_BINDING: GLenum = 0x8896;
-const NORMAL_ARRAY_BUFFER_BINDING: GLenum = 0x8897;
-const COLOR_ARRAY_BUFFER_BINDING: GLenum = 0x8898;
-const INDEX_ARRAY_BUFFER_BINDING: GLenum = 0x8899;
-const TEXTURE_COORD_ARRAY_BUFFER_BINDING: GLenum = 0x889A;
-const EDGE_FLAG_ARRAY_BUFFER_BINDING: GLenum = 0x889B;
-const SECONDARY_COLOR_ARRAY_BUFFER_BINDING: GLenum = 0x889C;
-const FOG_COORDINATE_ARRAY_BUFFER_BINDING: GLenum = 0x889D;
-const WEIGHT_ARRAY_BUFFER_BINDING: GLenum = 0x889E;
-const FOG_COORD_SRC: GLenum = 0x8450;
-const FOG_COORD: GLenum = 0x8451;
-const CURRENT_FOG_COORD: GLenum = 0x8453;
-const FOG_COORD_ARRAY_TYPE: GLenum = 0x8454;
-const FOG_COORD_ARRAY_STRIDE: GLenum = 0x8455;
-const FOG_COORD_ARRAY_POINTER: GLenum = 0x8456;
-const FOG_COORD_ARRAY: GLenum = 0x8457;
-const FOG_COORD_ARRAY_BUFFER_BINDING: GLenum = 0x889D;
-const SRC0_RGB: GLenum = 0x8580;
-const SRC1_RGB: GLenum = 0x8581;
-const SRC2_RGB: GLenum = 0x8582;
-const SRC0_ALPHA: GLenum = 0x8588;
-const SRC2_ALPHA: GLenum = 0x858A;
+pub const GL_BUFFER_SIZE: GLenum = 0x8764;
+pub const GL_BUFFER_USAGE: GLenum = 0x8765;
+pub const GL_QUERY_COUNTER_BITS: GLenum = 0x8864;
+pub const GL_CURRENT_QUERY: GLenum = 0x8865;
+pub const GL_QUERY_RESULT: GLenum = 0x8866;
+pub const GL_QUERY_RESULT_AVAILABLE: GLenum = 0x8867;
+pub const GL_ARRAY_BUFFER: GLenum = 0x8892;
+pub const GL_ELEMENT_ARRAY_BUFFER: GLenum = 0x8893;
+pub const GL_ARRAY_BUFFER_BINDING: GLenum = 0x8894;
+pub const GL_ELEMENT_ARRAY_BUFFER_BINDING: GLenum = 0x8895;
+pub const GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: GLenum = 0x889F;
+pub const GL_READ_ONLY: GLenum = 0x88B8;
+pub const GL_WRITE_ONLY: GLenum = 0x88B9;
+pub const GL_READ_WRITE: GLenum = 0x88BA;
+pub const GL_BUFFER_ACCESS: GLenum = 0x88BB;
+pub const GL_BUFFER_MAPPED: GLenum = 0x88BC;
+pub const GL_BUFFER_MAP_POINTER: GLenum = 0x88BD;
+pub const GL_STREAM_DRAW: GLenum = 0x88E0;
+pub const GL_STREAM_READ: GLenum = 0x88E1;
+pub const GL_STREAM_COPY: GLenum = 0x88E2;
+pub const GL_STATIC_DRAW: GLenum = 0x88E4;
+pub const GL_STATIC_READ: GLenum = 0x88E5;
+pub const GL_STATIC_COPY: GLenum = 0x88E6;
+pub const GL_DYNAMIC_DRAW: GLenum = 0x88E8;
+pub const GL_DYNAMIC_READ: GLenum = 0x88E9;
+pub const GL_DYNAMIC_COPY: GLenum = 0x88EA;
+pub const GL_SAMPLES_PASSED: GLenum = 0x8914;
+pub const GL_SRC1_ALPHA: GLenum = 0x8589;
+pub const GL_VERTEX_ARRAY_BUFFER_BINDING: GLenum = 0x8896;
+pub const GL_NORMAL_ARRAY_BUFFER_BINDING: GLenum = 0x8897;
+pub const GL_COLOR_ARRAY_BUFFER_BINDING: GLenum = 0x8898;
+pub const GL_INDEX_ARRAY_BUFFER_BINDING: GLenum = 0x8899;
+pub const GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING: GLenum = 0x889A;
+pub const GL_EDGE_FLAG_ARRAY_BUFFER_BINDING: GLenum = 0x889B;
+pub const GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING: GLenum = 0x889C;
+pub const GL_FOG_COORDINATE_ARRAY_BUFFER_BINDING: GLenum = 0x889D;
+pub const GL_WEIGHT_ARRAY_BUFFER_BINDING: GLenum = 0x889E;
+pub const GL_FOG_COORD_SRC: GLenum = 0x8450;
+pub const GL_FOG_COORD: GLenum = 0x8451;
+pub const GL_CURRENT_FOG_COORD: GLenum = 0x8453;
+pub const GL_FOG_COORD_ARRAY_TYPE: GLenum = 0x8454;
+pub const GL_FOG_COORD_ARRAY_STRIDE: GLenum = 0x8455;
+pub const GL_FOG_COORD_ARRAY_POINTER: GLenum = 0x8456;
+pub const GL_FOG_COORD_ARRAY: GLenum = 0x8457;
+pub const GL_FOG_COORD_ARRAY_BUFFER_BINDING: GLenum = 0x889D;
+pub const GL_SRC0_RGB: GLenum = 0x8580;
+pub const GL_SRC1_RGB: GLenum = 0x8581;
+pub const GL_SRC2_RGB: GLenum = 0x8582;
+pub const GL_SRC0_ALPHA: GLenum = 0x8588;
+pub const GL_SRC2_ALPHA: GLenum = 0x858A;
 
 pub trait GL_1_5 {
 	fn glGenQueries(&self, n: GLsizei, ids: *mut GLuint);
@@ -2719,7 +2719,7 @@ pub trait GL_1_5 {
 	fn glGetBufferPointerv(&self, target: GLenum, pname: GLenum, params: *mut *mut c_void);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version15 {
 	available: bool,
 	genqueries: PFNGLGENQUERIESPROC,
@@ -2823,7 +2823,7 @@ impl GL_1_5 for Version15 {
 }
 
 impl Version15 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 10500 {
@@ -2831,25 +2831,25 @@ impl Version15 {
 		}
 		Self {
 			available: true,
-			genqueries: unsafe{transmute(get_proc_address("glGenQueries"))},
-			deletequeries: unsafe{transmute(get_proc_address("glDeleteQueries"))},
-			isquery: unsafe{transmute(get_proc_address("glIsQuery"))},
-			beginquery: unsafe{transmute(get_proc_address("glBeginQuery"))},
-			endquery: unsafe{transmute(get_proc_address("glEndQuery"))},
-			getqueryiv: unsafe{transmute(get_proc_address("glGetQueryiv"))},
-			getqueryobjectiv: unsafe{transmute(get_proc_address("glGetQueryObjectiv"))},
-			getqueryobjectuiv: unsafe{transmute(get_proc_address("glGetQueryObjectuiv"))},
-			bindbuffer: unsafe{transmute(get_proc_address("glBindBuffer"))},
-			deletebuffers: unsafe{transmute(get_proc_address("glDeleteBuffers"))},
-			genbuffers: unsafe{transmute(get_proc_address("glGenBuffers"))},
-			isbuffer: unsafe{transmute(get_proc_address("glIsBuffer"))},
-			bufferdata: unsafe{transmute(get_proc_address("glBufferData"))},
-			buffersubdata: unsafe{transmute(get_proc_address("glBufferSubData"))},
-			getbuffersubdata: unsafe{transmute(get_proc_address("glGetBufferSubData"))},
-			mapbuffer: unsafe{transmute(get_proc_address("glMapBuffer"))},
-			unmapbuffer: unsafe{transmute(get_proc_address("glUnmapBuffer"))},
-			getbufferparameteriv: unsafe{transmute(get_proc_address("glGetBufferParameteriv"))},
-			getbufferpointerv: unsafe{transmute(get_proc_address("glGetBufferPointerv"))},
+			genqueries: {let proc = get_proc_address("glGenQueries"); if proc == null() {dummy_pfnglgenqueriesproc} else {unsafe{transmute(proc)}}},
+			deletequeries: {let proc = get_proc_address("glDeleteQueries"); if proc == null() {dummy_pfngldeletequeriesproc} else {unsafe{transmute(proc)}}},
+			isquery: {let proc = get_proc_address("glIsQuery"); if proc == null() {dummy_pfnglisqueryproc} else {unsafe{transmute(proc)}}},
+			beginquery: {let proc = get_proc_address("glBeginQuery"); if proc == null() {dummy_pfnglbeginqueryproc} else {unsafe{transmute(proc)}}},
+			endquery: {let proc = get_proc_address("glEndQuery"); if proc == null() {dummy_pfnglendqueryproc} else {unsafe{transmute(proc)}}},
+			getqueryiv: {let proc = get_proc_address("glGetQueryiv"); if proc == null() {dummy_pfnglgetqueryivproc} else {unsafe{transmute(proc)}}},
+			getqueryobjectiv: {let proc = get_proc_address("glGetQueryObjectiv"); if proc == null() {dummy_pfnglgetqueryobjectivproc} else {unsafe{transmute(proc)}}},
+			getqueryobjectuiv: {let proc = get_proc_address("glGetQueryObjectuiv"); if proc == null() {dummy_pfnglgetqueryobjectuivproc} else {unsafe{transmute(proc)}}},
+			bindbuffer: {let proc = get_proc_address("glBindBuffer"); if proc == null() {dummy_pfnglbindbufferproc} else {unsafe{transmute(proc)}}},
+			deletebuffers: {let proc = get_proc_address("glDeleteBuffers"); if proc == null() {dummy_pfngldeletebuffersproc} else {unsafe{transmute(proc)}}},
+			genbuffers: {let proc = get_proc_address("glGenBuffers"); if proc == null() {dummy_pfnglgenbuffersproc} else {unsafe{transmute(proc)}}},
+			isbuffer: {let proc = get_proc_address("glIsBuffer"); if proc == null() {dummy_pfnglisbufferproc} else {unsafe{transmute(proc)}}},
+			bufferdata: {let proc = get_proc_address("glBufferData"); if proc == null() {dummy_pfnglbufferdataproc} else {unsafe{transmute(proc)}}},
+			buffersubdata: {let proc = get_proc_address("glBufferSubData"); if proc == null() {dummy_pfnglbuffersubdataproc} else {unsafe{transmute(proc)}}},
+			getbuffersubdata: {let proc = get_proc_address("glGetBufferSubData"); if proc == null() {dummy_pfnglgetbuffersubdataproc} else {unsafe{transmute(proc)}}},
+			mapbuffer: {let proc = get_proc_address("glMapBuffer"); if proc == null() {dummy_pfnglmapbufferproc} else {unsafe{transmute(proc)}}},
+			unmapbuffer: {let proc = get_proc_address("glUnmapBuffer"); if proc == null() {dummy_pfnglunmapbufferproc} else {unsafe{transmute(proc)}}},
+			getbufferparameteriv: {let proc = get_proc_address("glGetBufferParameteriv"); if proc == null() {dummy_pfnglgetbufferparameterivproc} else {unsafe{transmute(proc)}}},
+			getbufferpointerv: {let proc = get_proc_address("glGetBufferPointerv"); if proc == null() {dummy_pfnglgetbufferpointervproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -2980,368 +2980,368 @@ type PFNGLVERTEXATTRIB4UIVPROC = extern "system" fn(GLuint, *const GLuint);
 type PFNGLVERTEXATTRIB4USVPROC = extern "system" fn(GLuint, *const GLushort);
 type PFNGLVERTEXATTRIBPOINTERPROC = extern "system" fn(GLuint, GLint, GLenum, GLboolean, GLsizei, *const c_void);
 extern "system" fn dummy_pfnglblendequationseparateproc (_: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glBlendEquationSeparate() is NULL");
+	panic!("OpenGL Function pointer of `glBlendEquationSeparate()` is NULL");
 }
 extern "system" fn dummy_pfngldrawbuffersproc (_: GLsizei, _: *const GLenum) {
-	panic!("OpenGL Function pointer of glDrawBuffers() is NULL");
+	panic!("OpenGL Function pointer of `glDrawBuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglstencilopseparateproc (_: GLenum, _: GLenum, _: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glStencilOpSeparate() is NULL");
+	panic!("OpenGL Function pointer of `glStencilOpSeparate()` is NULL");
 }
 extern "system" fn dummy_pfnglstencilfuncseparateproc (_: GLenum, _: GLenum, _: GLint, _: GLuint) {
-	panic!("OpenGL Function pointer of glStencilFuncSeparate() is NULL");
+	panic!("OpenGL Function pointer of `glStencilFuncSeparate()` is NULL");
 }
 extern "system" fn dummy_pfnglstencilmaskseparateproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glStencilMaskSeparate() is NULL");
+	panic!("OpenGL Function pointer of `glStencilMaskSeparate()` is NULL");
 }
 extern "system" fn dummy_pfnglattachshaderproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glAttachShader() is NULL");
+	panic!("OpenGL Function pointer of `glAttachShader()` is NULL");
 }
 extern "system" fn dummy_pfnglbindattriblocationproc (_: GLuint, _: GLuint, _: *const GLchar) {
-	panic!("OpenGL Function pointer of glBindAttribLocation() is NULL");
+	panic!("OpenGL Function pointer of `glBindAttribLocation()` is NULL");
 }
 extern "system" fn dummy_pfnglcompileshaderproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glCompileShader() is NULL");
+	panic!("OpenGL Function pointer of `glCompileShader()` is NULL");
 }
 extern "system" fn dummy_pfnglcreateprogramproc () -> GLuint {
-	panic!("OpenGL Function pointer of glCreateProgram() is NULL");
+	panic!("OpenGL Function pointer of `glCreateProgram()` is NULL");
 }
 extern "system" fn dummy_pfnglcreateshaderproc (_: GLenum) -> GLuint {
-	panic!("OpenGL Function pointer of glCreateShader() is NULL");
+	panic!("OpenGL Function pointer of `glCreateShader()` is NULL");
 }
 extern "system" fn dummy_pfngldeleteprogramproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glDeleteProgram() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteProgram()` is NULL");
 }
 extern "system" fn dummy_pfngldeleteshaderproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glDeleteShader() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteShader()` is NULL");
 }
 extern "system" fn dummy_pfngldetachshaderproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glDetachShader() is NULL");
+	panic!("OpenGL Function pointer of `glDetachShader()` is NULL");
 }
 extern "system" fn dummy_pfngldisablevertexattribarrayproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glDisableVertexAttribArray() is NULL");
+	panic!("OpenGL Function pointer of `glDisableVertexAttribArray()` is NULL");
 }
 extern "system" fn dummy_pfnglenablevertexattribarrayproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glEnableVertexAttribArray() is NULL");
+	panic!("OpenGL Function pointer of `glEnableVertexAttribArray()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactiveattribproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLint, _: *mut GLenum, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetActiveAttrib() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveAttrib()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactiveuniformproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLint, _: *mut GLenum, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetActiveUniform() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveUniform()` is NULL");
 }
 extern "system" fn dummy_pfnglgetattachedshadersproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetAttachedShaders() is NULL");
+	panic!("OpenGL Function pointer of `glGetAttachedShaders()` is NULL");
 }
 extern "system" fn dummy_pfnglgetattriblocationproc (_: GLuint, _: *const GLchar) -> GLint {
-	panic!("OpenGL Function pointer of glGetAttribLocation() is NULL");
+	panic!("OpenGL Function pointer of `glGetAttribLocation()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogramivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetProgramiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprograminfologproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetProgramInfoLog() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramInfoLog()` is NULL");
 }
 extern "system" fn dummy_pfnglgetshaderivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetShaderiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetShaderiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetshaderinfologproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetShaderInfoLog() is NULL");
+	panic!("OpenGL Function pointer of `glGetShaderInfoLog()` is NULL");
 }
 extern "system" fn dummy_pfnglgetshadersourceproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetShaderSource() is NULL");
+	panic!("OpenGL Function pointer of `glGetShaderSource()` is NULL");
 }
 extern "system" fn dummy_pfnglgetuniformlocationproc (_: GLuint, _: *const GLchar) -> GLint {
-	panic!("OpenGL Function pointer of glGetUniformLocation() is NULL");
+	panic!("OpenGL Function pointer of `glGetUniformLocation()` is NULL");
 }
 extern "system" fn dummy_pfnglgetuniformfvproc (_: GLuint, _: GLint, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetUniformfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetUniformfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetuniformivproc (_: GLuint, _: GLint, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetUniformiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetUniformiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexattribdvproc (_: GLuint, _: GLenum, _: *mut GLdouble) {
-	panic!("OpenGL Function pointer of glGetVertexAttribdv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexAttribdv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexattribfvproc (_: GLuint, _: GLenum, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetVertexAttribfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexAttribfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexattribivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetVertexAttribiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexAttribiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexattribpointervproc (_: GLuint, _: GLenum, _: *mut *mut c_void) {
-	panic!("OpenGL Function pointer of glGetVertexAttribPointerv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexAttribPointerv()` is NULL");
 }
 extern "system" fn dummy_pfnglisprogramproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsProgram() is NULL");
+	panic!("OpenGL Function pointer of `glIsProgram()` is NULL");
 }
 extern "system" fn dummy_pfnglisshaderproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsShader() is NULL");
+	panic!("OpenGL Function pointer of `glIsShader()` is NULL");
 }
 extern "system" fn dummy_pfngllinkprogramproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glLinkProgram() is NULL");
+	panic!("OpenGL Function pointer of `glLinkProgram()` is NULL");
 }
 extern "system" fn dummy_pfnglshadersourceproc (_: GLuint, _: GLsizei, _: *const *const GLchar, _: *const GLint) {
-	panic!("OpenGL Function pointer of glShaderSource() is NULL");
+	panic!("OpenGL Function pointer of `glShaderSource()` is NULL");
 }
 extern "system" fn dummy_pfngluseprogramproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glUseProgram() is NULL");
+	panic!("OpenGL Function pointer of `glUseProgram()` is NULL");
 }
 extern "system" fn dummy_pfngluniform1fproc (_: GLint, _: GLfloat) {
-	panic!("OpenGL Function pointer of glUniform1f() is NULL");
+	panic!("OpenGL Function pointer of `glUniform1f()` is NULL");
 }
 extern "system" fn dummy_pfngluniform2fproc (_: GLint, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glUniform2f() is NULL");
+	panic!("OpenGL Function pointer of `glUniform2f()` is NULL");
 }
 extern "system" fn dummy_pfngluniform3fproc (_: GLint, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glUniform3f() is NULL");
+	panic!("OpenGL Function pointer of `glUniform3f()` is NULL");
 }
 extern "system" fn dummy_pfngluniform4fproc (_: GLint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glUniform4f() is NULL");
+	panic!("OpenGL Function pointer of `glUniform4f()` is NULL");
 }
 extern "system" fn dummy_pfngluniform1iproc (_: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glUniform1i() is NULL");
+	panic!("OpenGL Function pointer of `glUniform1i()` is NULL");
 }
 extern "system" fn dummy_pfngluniform2iproc (_: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glUniform2i() is NULL");
+	panic!("OpenGL Function pointer of `glUniform2i()` is NULL");
 }
 extern "system" fn dummy_pfngluniform3iproc (_: GLint, _: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glUniform3i() is NULL");
+	panic!("OpenGL Function pointer of `glUniform3i()` is NULL");
 }
 extern "system" fn dummy_pfngluniform4iproc (_: GLint, _: GLint, _: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glUniform4i() is NULL");
+	panic!("OpenGL Function pointer of `glUniform4i()` is NULL");
 }
 extern "system" fn dummy_pfngluniform1fvproc (_: GLint, _: GLsizei, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniform1fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform1fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform2fvproc (_: GLint, _: GLsizei, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniform2fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform2fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform3fvproc (_: GLint, _: GLsizei, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniform3fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform3fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform4fvproc (_: GLint, _: GLsizei, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniform4fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform4fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform1ivproc (_: GLint, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glUniform1iv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform1iv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform2ivproc (_: GLint, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glUniform2iv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform2iv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform3ivproc (_: GLint, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glUniform3iv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform3iv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform4ivproc (_: GLint, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glUniform4iv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform4iv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix2fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniformMatrix2fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix2fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix3fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniformMatrix3fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix3fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix4fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniformMatrix4fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix4fv()` is NULL");
 }
 extern "system" fn dummy_pfnglvalidateprogramproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glValidateProgram() is NULL");
+	panic!("OpenGL Function pointer of `glValidateProgram()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib1dproc (_: GLuint, _: GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttrib1d() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib1d()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib1dvproc (_: GLuint, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttrib1dv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib1dv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib1fproc (_: GLuint, _: GLfloat) {
-	panic!("OpenGL Function pointer of glVertexAttrib1f() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib1f()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib1fvproc (_: GLuint, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glVertexAttrib1fv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib1fv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib1sproc (_: GLuint, _: GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttrib1s() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib1s()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib1svproc (_: GLuint, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttrib1sv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib1sv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib2dproc (_: GLuint, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttrib2d() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib2d()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib2dvproc (_: GLuint, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttrib2dv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib2dv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib2fproc (_: GLuint, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glVertexAttrib2f() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib2f()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib2fvproc (_: GLuint, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glVertexAttrib2fv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib2fv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib2sproc (_: GLuint, _: GLshort, _: GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttrib2s() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib2s()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib2svproc (_: GLuint, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttrib2sv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib2sv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib3dproc (_: GLuint, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttrib3d() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib3d()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib3dvproc (_: GLuint, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttrib3dv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib3fproc (_: GLuint, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glVertexAttrib3f() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib3f()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib3fvproc (_: GLuint, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glVertexAttrib3fv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib3fv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib3sproc (_: GLuint, _: GLshort, _: GLshort, _: GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttrib3s() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib3s()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib3svproc (_: GLuint, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttrib3sv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib3sv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4nbvproc (_: GLuint, _: *const GLbyte) {
-	panic!("OpenGL Function pointer of glVertexAttrib4Nbv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4Nbv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4nivproc (_: GLuint, _: *const GLint) {
-	panic!("OpenGL Function pointer of glVertexAttrib4Niv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4Niv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4nsvproc (_: GLuint, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttrib4Nsv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4Nsv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4nubproc (_: GLuint, _: GLubyte, _: GLubyte, _: GLubyte, _: GLubyte) {
-	panic!("OpenGL Function pointer of glVertexAttrib4Nub() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4Nub()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4nubvproc (_: GLuint, _: *const GLubyte) {
-	panic!("OpenGL Function pointer of glVertexAttrib4Nubv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4Nubv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4nuivproc (_: GLuint, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttrib4Nuiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4Nuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4nusvproc (_: GLuint, _: *const GLushort) {
-	panic!("OpenGL Function pointer of glVertexAttrib4Nusv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4Nusv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4bvproc (_: GLuint, _: *const GLbyte) {
-	panic!("OpenGL Function pointer of glVertexAttrib4bv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4bv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4dproc (_: GLuint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttrib4d() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4d()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4dvproc (_: GLuint, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttrib4dv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4dv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4fproc (_: GLuint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glVertexAttrib4f() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4f()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4fvproc (_: GLuint, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glVertexAttrib4fv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4fv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4ivproc (_: GLuint, _: *const GLint) {
-	panic!("OpenGL Function pointer of glVertexAttrib4iv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4iv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4sproc (_: GLuint, _: GLshort, _: GLshort, _: GLshort, _: GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttrib4s() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4s()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4svproc (_: GLuint, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttrib4sv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4sv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4ubvproc (_: GLuint, _: *const GLubyte) {
-	panic!("OpenGL Function pointer of glVertexAttrib4ubv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4ubv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4uivproc (_: GLuint, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttrib4uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattrib4usvproc (_: GLuint, _: *const GLushort) {
-	panic!("OpenGL Function pointer of glVertexAttrib4usv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttrib4usv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribpointerproc (_: GLuint, _: GLint, _: GLenum, _: GLboolean, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glVertexAttribPointer() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribPointer()` is NULL");
 }
-const BLEND_EQUATION_RGB: GLenum = 0x8009;
-const VERTEX_ATTRIB_ARRAY_ENABLED: GLenum = 0x8622;
-const VERTEX_ATTRIB_ARRAY_SIZE: GLenum = 0x8623;
-const VERTEX_ATTRIB_ARRAY_STRIDE: GLenum = 0x8624;
-const VERTEX_ATTRIB_ARRAY_TYPE: GLenum = 0x8625;
-const CURRENT_VERTEX_ATTRIB: GLenum = 0x8626;
-const VERTEX_PROGRAM_POINT_SIZE: GLenum = 0x8642;
-const VERTEX_ATTRIB_ARRAY_POINTER: GLenum = 0x8645;
-const STENCIL_BACK_FUNC: GLenum = 0x8800;
-const STENCIL_BACK_FAIL: GLenum = 0x8801;
-const STENCIL_BACK_PASS_DEPTH_FAIL: GLenum = 0x8802;
-const STENCIL_BACK_PASS_DEPTH_PASS: GLenum = 0x8803;
-const MAX_DRAW_BUFFERS: GLenum = 0x8824;
-const DRAW_BUFFER0: GLenum = 0x8825;
-const DRAW_BUFFER1: GLenum = 0x8826;
-const DRAW_BUFFER2: GLenum = 0x8827;
-const DRAW_BUFFER3: GLenum = 0x8828;
-const DRAW_BUFFER4: GLenum = 0x8829;
-const DRAW_BUFFER5: GLenum = 0x882A;
-const DRAW_BUFFER6: GLenum = 0x882B;
-const DRAW_BUFFER7: GLenum = 0x882C;
-const DRAW_BUFFER8: GLenum = 0x882D;
-const DRAW_BUFFER9: GLenum = 0x882E;
-const DRAW_BUFFER10: GLenum = 0x882F;
-const DRAW_BUFFER11: GLenum = 0x8830;
-const DRAW_BUFFER12: GLenum = 0x8831;
-const DRAW_BUFFER13: GLenum = 0x8832;
-const DRAW_BUFFER14: GLenum = 0x8833;
-const DRAW_BUFFER15: GLenum = 0x8834;
-const BLEND_EQUATION_ALPHA: GLenum = 0x883D;
-const MAX_VERTEX_ATTRIBS: GLenum = 0x8869;
-const VERTEX_ATTRIB_ARRAY_NORMALIZED: GLenum = 0x886A;
-const MAX_TEXTURE_IMAGE_UNITS: GLenum = 0x8872;
-const FRAGMENT_SHADER: GLenum = 0x8B30;
-const VERTEX_SHADER: GLenum = 0x8B31;
-const MAX_FRAGMENT_UNIFORM_COMPONENTS: GLenum = 0x8B49;
-const MAX_VERTEX_UNIFORM_COMPONENTS: GLenum = 0x8B4A;
-const MAX_VARYING_FLOATS: GLenum = 0x8B4B;
-const MAX_VERTEX_TEXTURE_IMAGE_UNITS: GLenum = 0x8B4C;
-const MAX_COMBINED_TEXTURE_IMAGE_UNITS: GLenum = 0x8B4D;
-const SHADER_TYPE: GLenum = 0x8B4F;
-const FLOAT_VEC2: GLenum = 0x8B50;
-const FLOAT_VEC3: GLenum = 0x8B51;
-const FLOAT_VEC4: GLenum = 0x8B52;
-const INT_VEC2: GLenum = 0x8B53;
-const INT_VEC3: GLenum = 0x8B54;
-const INT_VEC4: GLenum = 0x8B55;
-const BOOL: GLenum = 0x8B56;
-const BOOL_VEC2: GLenum = 0x8B57;
-const BOOL_VEC3: GLenum = 0x8B58;
-const BOOL_VEC4: GLenum = 0x8B59;
-const FLOAT_MAT2: GLenum = 0x8B5A;
-const FLOAT_MAT3: GLenum = 0x8B5B;
-const FLOAT_MAT4: GLenum = 0x8B5C;
-const SAMPLER_1D: GLenum = 0x8B5D;
-const SAMPLER_2D: GLenum = 0x8B5E;
-const SAMPLER_3D: GLenum = 0x8B5F;
-const SAMPLER_CUBE: GLenum = 0x8B60;
-const SAMPLER_1D_SHADOW: GLenum = 0x8B61;
-const SAMPLER_2D_SHADOW: GLenum = 0x8B62;
-const DELETE_STATUS: GLenum = 0x8B80;
-const COMPILE_STATUS: GLenum = 0x8B81;
-const LINK_STATUS: GLenum = 0x8B82;
-const VALIDATE_STATUS: GLenum = 0x8B83;
-const INFO_LOG_LENGTH: GLenum = 0x8B84;
-const ATTACHED_SHADERS: GLenum = 0x8B85;
-const ACTIVE_UNIFORMS: GLenum = 0x8B86;
-const ACTIVE_UNIFORM_MAX_LENGTH: GLenum = 0x8B87;
-const SHADER_SOURCE_LENGTH: GLenum = 0x8B88;
-const ACTIVE_ATTRIBUTES: GLenum = 0x8B89;
-const ACTIVE_ATTRIBUTE_MAX_LENGTH: GLenum = 0x8B8A;
-const FRAGMENT_SHADER_DERIVATIVE_HINT: GLenum = 0x8B8B;
-const SHADING_LANGUAGE_VERSION: GLenum = 0x8B8C;
-const CURRENT_PROGRAM: GLenum = 0x8B8D;
-const POINT_SPRITE_COORD_ORIGIN: GLenum = 0x8CA0;
-const LOWER_LEFT: GLenum = 0x8CA1;
-const UPPER_LEFT: GLenum = 0x8CA2;
-const STENCIL_BACK_REF: GLenum = 0x8CA3;
-const STENCIL_BACK_VALUE_MASK: GLenum = 0x8CA4;
-const STENCIL_BACK_WRITEMASK: GLenum = 0x8CA5;
-const VERTEX_PROGRAM_TWO_SIDE: GLenum = 0x8643;
-const POINT_SPRITE: GLenum = 0x8861;
-const COORD_REPLACE: GLenum = 0x8862;
-const MAX_TEXTURE_COORDS: GLenum = 0x8871;
+pub const GL_BLEND_EQUATION_RGB: GLenum = 0x8009;
+pub const GL_VERTEX_ATTRIB_ARRAY_ENABLED: GLenum = 0x8622;
+pub const GL_VERTEX_ATTRIB_ARRAY_SIZE: GLenum = 0x8623;
+pub const GL_VERTEX_ATTRIB_ARRAY_STRIDE: GLenum = 0x8624;
+pub const GL_VERTEX_ATTRIB_ARRAY_TYPE: GLenum = 0x8625;
+pub const GL_CURRENT_VERTEX_ATTRIB: GLenum = 0x8626;
+pub const GL_VERTEX_PROGRAM_POINT_SIZE: GLenum = 0x8642;
+pub const GL_VERTEX_ATTRIB_ARRAY_POINTER: GLenum = 0x8645;
+pub const GL_STENCIL_BACK_FUNC: GLenum = 0x8800;
+pub const GL_STENCIL_BACK_FAIL: GLenum = 0x8801;
+pub const GL_STENCIL_BACK_PASS_DEPTH_FAIL: GLenum = 0x8802;
+pub const GL_STENCIL_BACK_PASS_DEPTH_PASS: GLenum = 0x8803;
+pub const GL_MAX_DRAW_BUFFERS: GLenum = 0x8824;
+pub const GL_DRAW_BUFFER0: GLenum = 0x8825;
+pub const GL_DRAW_BUFFER1: GLenum = 0x8826;
+pub const GL_DRAW_BUFFER2: GLenum = 0x8827;
+pub const GL_DRAW_BUFFER3: GLenum = 0x8828;
+pub const GL_DRAW_BUFFER4: GLenum = 0x8829;
+pub const GL_DRAW_BUFFER5: GLenum = 0x882A;
+pub const GL_DRAW_BUFFER6: GLenum = 0x882B;
+pub const GL_DRAW_BUFFER7: GLenum = 0x882C;
+pub const GL_DRAW_BUFFER8: GLenum = 0x882D;
+pub const GL_DRAW_BUFFER9: GLenum = 0x882E;
+pub const GL_DRAW_BUFFER10: GLenum = 0x882F;
+pub const GL_DRAW_BUFFER11: GLenum = 0x8830;
+pub const GL_DRAW_BUFFER12: GLenum = 0x8831;
+pub const GL_DRAW_BUFFER13: GLenum = 0x8832;
+pub const GL_DRAW_BUFFER14: GLenum = 0x8833;
+pub const GL_DRAW_BUFFER15: GLenum = 0x8834;
+pub const GL_BLEND_EQUATION_ALPHA: GLenum = 0x883D;
+pub const GL_MAX_VERTEX_ATTRIBS: GLenum = 0x8869;
+pub const GL_VERTEX_ATTRIB_ARRAY_NORMALIZED: GLenum = 0x886A;
+pub const GL_MAX_TEXTURE_IMAGE_UNITS: GLenum = 0x8872;
+pub const GL_FRAGMENT_SHADER: GLenum = 0x8B30;
+pub const GL_VERTEX_SHADER: GLenum = 0x8B31;
+pub const GL_MAX_FRAGMENT_UNIFORM_COMPONENTS: GLenum = 0x8B49;
+pub const GL_MAX_VERTEX_UNIFORM_COMPONENTS: GLenum = 0x8B4A;
+pub const GL_MAX_VARYING_FLOATS: GLenum = 0x8B4B;
+pub const GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS: GLenum = 0x8B4C;
+pub const GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS: GLenum = 0x8B4D;
+pub const GL_SHADER_TYPE: GLenum = 0x8B4F;
+pub const GL_FLOAT_VEC2: GLenum = 0x8B50;
+pub const GL_FLOAT_VEC3: GLenum = 0x8B51;
+pub const GL_FLOAT_VEC4: GLenum = 0x8B52;
+pub const GL_INT_VEC2: GLenum = 0x8B53;
+pub const GL_INT_VEC3: GLenum = 0x8B54;
+pub const GL_INT_VEC4: GLenum = 0x8B55;
+pub const GL_BOOL: GLenum = 0x8B56;
+pub const GL_BOOL_VEC2: GLenum = 0x8B57;
+pub const GL_BOOL_VEC3: GLenum = 0x8B58;
+pub const GL_BOOL_VEC4: GLenum = 0x8B59;
+pub const GL_FLOAT_MAT2: GLenum = 0x8B5A;
+pub const GL_FLOAT_MAT3: GLenum = 0x8B5B;
+pub const GL_FLOAT_MAT4: GLenum = 0x8B5C;
+pub const GL_SAMPLER_1D: GLenum = 0x8B5D;
+pub const GL_SAMPLER_2D: GLenum = 0x8B5E;
+pub const GL_SAMPLER_3D: GLenum = 0x8B5F;
+pub const GL_SAMPLER_CUBE: GLenum = 0x8B60;
+pub const GL_SAMPLER_1D_SHADOW: GLenum = 0x8B61;
+pub const GL_SAMPLER_2D_SHADOW: GLenum = 0x8B62;
+pub const GL_DELETE_STATUS: GLenum = 0x8B80;
+pub const GL_COMPILE_STATUS: GLenum = 0x8B81;
+pub const GL_LINK_STATUS: GLenum = 0x8B82;
+pub const GL_VALIDATE_STATUS: GLenum = 0x8B83;
+pub const GL_INFO_LOG_LENGTH: GLenum = 0x8B84;
+pub const GL_ATTACHED_SHADERS: GLenum = 0x8B85;
+pub const GL_ACTIVE_UNIFORMS: GLenum = 0x8B86;
+pub const GL_ACTIVE_UNIFORM_MAX_LENGTH: GLenum = 0x8B87;
+pub const GL_SHADER_SOURCE_LENGTH: GLenum = 0x8B88;
+pub const GL_ACTIVE_ATTRIBUTES: GLenum = 0x8B89;
+pub const GL_ACTIVE_ATTRIBUTE_MAX_LENGTH: GLenum = 0x8B8A;
+pub const GL_FRAGMENT_SHADER_DERIVATIVE_HINT: GLenum = 0x8B8B;
+pub const GL_SHADING_LANGUAGE_VERSION: GLenum = 0x8B8C;
+pub const GL_CURRENT_PROGRAM: GLenum = 0x8B8D;
+pub const GL_POINT_SPRITE_COORD_ORIGIN: GLenum = 0x8CA0;
+pub const GL_LOWER_LEFT: GLenum = 0x8CA1;
+pub const GL_UPPER_LEFT: GLenum = 0x8CA2;
+pub const GL_STENCIL_BACK_REF: GLenum = 0x8CA3;
+pub const GL_STENCIL_BACK_VALUE_MASK: GLenum = 0x8CA4;
+pub const GL_STENCIL_BACK_WRITEMASK: GLenum = 0x8CA5;
+pub const GL_VERTEX_PROGRAM_TWO_SIDE: GLenum = 0x8643;
+pub const GL_POINT_SPRITE: GLenum = 0x8861;
+pub const GL_COORD_REPLACE: GLenum = 0x8862;
+pub const GL_MAX_TEXTURE_COORDS: GLenum = 0x8871;
 
 pub trait GL_2_0 {
 	fn glBlendEquationSeparate(&self, modeRGB: GLenum, modeAlpha: GLenum);
@@ -3440,7 +3440,7 @@ pub trait GL_2_0 {
 	fn get_shading_language_version(&self) -> &'static str;
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version20 {
 	shading_language_version: &'static str,
 	available: bool,
@@ -3919,7 +3919,7 @@ impl GL_2_0 for Version20 {
 }
 
 impl Version20 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 20000 {
@@ -3927,100 +3927,100 @@ impl Version20 {
 		}
 		Self {
 			available: true,
-			blendequationseparate: unsafe{transmute(get_proc_address("glBlendEquationSeparate"))},
-			drawbuffers: unsafe{transmute(get_proc_address("glDrawBuffers"))},
-			stencilopseparate: unsafe{transmute(get_proc_address("glStencilOpSeparate"))},
-			stencilfuncseparate: unsafe{transmute(get_proc_address("glStencilFuncSeparate"))},
-			stencilmaskseparate: unsafe{transmute(get_proc_address("glStencilMaskSeparate"))},
-			attachshader: unsafe{transmute(get_proc_address("glAttachShader"))},
-			bindattriblocation: unsafe{transmute(get_proc_address("glBindAttribLocation"))},
-			compileshader: unsafe{transmute(get_proc_address("glCompileShader"))},
-			createprogram: unsafe{transmute(get_proc_address("glCreateProgram"))},
-			createshader: unsafe{transmute(get_proc_address("glCreateShader"))},
-			deleteprogram: unsafe{transmute(get_proc_address("glDeleteProgram"))},
-			deleteshader: unsafe{transmute(get_proc_address("glDeleteShader"))},
-			detachshader: unsafe{transmute(get_proc_address("glDetachShader"))},
-			disablevertexattribarray: unsafe{transmute(get_proc_address("glDisableVertexAttribArray"))},
-			enablevertexattribarray: unsafe{transmute(get_proc_address("glEnableVertexAttribArray"))},
-			getactiveattrib: unsafe{transmute(get_proc_address("glGetActiveAttrib"))},
-			getactiveuniform: unsafe{transmute(get_proc_address("glGetActiveUniform"))},
-			getattachedshaders: unsafe{transmute(get_proc_address("glGetAttachedShaders"))},
-			getattriblocation: unsafe{transmute(get_proc_address("glGetAttribLocation"))},
-			getprogramiv: unsafe{transmute(get_proc_address("glGetProgramiv"))},
-			getprograminfolog: unsafe{transmute(get_proc_address("glGetProgramInfoLog"))},
-			getshaderiv: unsafe{transmute(get_proc_address("glGetShaderiv"))},
-			getshaderinfolog: unsafe{transmute(get_proc_address("glGetShaderInfoLog"))},
-			getshadersource: unsafe{transmute(get_proc_address("glGetShaderSource"))},
-			getuniformlocation: unsafe{transmute(get_proc_address("glGetUniformLocation"))},
-			getuniformfv: unsafe{transmute(get_proc_address("glGetUniformfv"))},
-			getuniformiv: unsafe{transmute(get_proc_address("glGetUniformiv"))},
-			getvertexattribdv: unsafe{transmute(get_proc_address("glGetVertexAttribdv"))},
-			getvertexattribfv: unsafe{transmute(get_proc_address("glGetVertexAttribfv"))},
-			getvertexattribiv: unsafe{transmute(get_proc_address("glGetVertexAttribiv"))},
-			getvertexattribpointerv: unsafe{transmute(get_proc_address("glGetVertexAttribPointerv"))},
-			isprogram: unsafe{transmute(get_proc_address("glIsProgram"))},
-			isshader: unsafe{transmute(get_proc_address("glIsShader"))},
-			linkprogram: unsafe{transmute(get_proc_address("glLinkProgram"))},
-			shadersource: unsafe{transmute(get_proc_address("glShaderSource"))},
-			useprogram: unsafe{transmute(get_proc_address("glUseProgram"))},
-			uniform1f: unsafe{transmute(get_proc_address("glUniform1f"))},
-			uniform2f: unsafe{transmute(get_proc_address("glUniform2f"))},
-			uniform3f: unsafe{transmute(get_proc_address("glUniform3f"))},
-			uniform4f: unsafe{transmute(get_proc_address("glUniform4f"))},
-			uniform1i: unsafe{transmute(get_proc_address("glUniform1i"))},
-			uniform2i: unsafe{transmute(get_proc_address("glUniform2i"))},
-			uniform3i: unsafe{transmute(get_proc_address("glUniform3i"))},
-			uniform4i: unsafe{transmute(get_proc_address("glUniform4i"))},
-			uniform1fv: unsafe{transmute(get_proc_address("glUniform1fv"))},
-			uniform2fv: unsafe{transmute(get_proc_address("glUniform2fv"))},
-			uniform3fv: unsafe{transmute(get_proc_address("glUniform3fv"))},
-			uniform4fv: unsafe{transmute(get_proc_address("glUniform4fv"))},
-			uniform1iv: unsafe{transmute(get_proc_address("glUniform1iv"))},
-			uniform2iv: unsafe{transmute(get_proc_address("glUniform2iv"))},
-			uniform3iv: unsafe{transmute(get_proc_address("glUniform3iv"))},
-			uniform4iv: unsafe{transmute(get_proc_address("glUniform4iv"))},
-			uniformmatrix2fv: unsafe{transmute(get_proc_address("glUniformMatrix2fv"))},
-			uniformmatrix3fv: unsafe{transmute(get_proc_address("glUniformMatrix3fv"))},
-			uniformmatrix4fv: unsafe{transmute(get_proc_address("glUniformMatrix4fv"))},
-			validateprogram: unsafe{transmute(get_proc_address("glValidateProgram"))},
-			vertexattrib1d: unsafe{transmute(get_proc_address("glVertexAttrib1d"))},
-			vertexattrib1dv: unsafe{transmute(get_proc_address("glVertexAttrib1dv"))},
-			vertexattrib1f: unsafe{transmute(get_proc_address("glVertexAttrib1f"))},
-			vertexattrib1fv: unsafe{transmute(get_proc_address("glVertexAttrib1fv"))},
-			vertexattrib1s: unsafe{transmute(get_proc_address("glVertexAttrib1s"))},
-			vertexattrib1sv: unsafe{transmute(get_proc_address("glVertexAttrib1sv"))},
-			vertexattrib2d: unsafe{transmute(get_proc_address("glVertexAttrib2d"))},
-			vertexattrib2dv: unsafe{transmute(get_proc_address("glVertexAttrib2dv"))},
-			vertexattrib2f: unsafe{transmute(get_proc_address("glVertexAttrib2f"))},
-			vertexattrib2fv: unsafe{transmute(get_proc_address("glVertexAttrib2fv"))},
-			vertexattrib2s: unsafe{transmute(get_proc_address("glVertexAttrib2s"))},
-			vertexattrib2sv: unsafe{transmute(get_proc_address("glVertexAttrib2sv"))},
-			vertexattrib3d: unsafe{transmute(get_proc_address("glVertexAttrib3d"))},
-			vertexattrib3dv: unsafe{transmute(get_proc_address("glVertexAttrib3dv"))},
-			vertexattrib3f: unsafe{transmute(get_proc_address("glVertexAttrib3f"))},
-			vertexattrib3fv: unsafe{transmute(get_proc_address("glVertexAttrib3fv"))},
-			vertexattrib3s: unsafe{transmute(get_proc_address("glVertexAttrib3s"))},
-			vertexattrib3sv: unsafe{transmute(get_proc_address("glVertexAttrib3sv"))},
-			vertexattrib4nbv: unsafe{transmute(get_proc_address("glVertexAttrib4Nbv"))},
-			vertexattrib4niv: unsafe{transmute(get_proc_address("glVertexAttrib4Niv"))},
-			vertexattrib4nsv: unsafe{transmute(get_proc_address("glVertexAttrib4Nsv"))},
-			vertexattrib4nub: unsafe{transmute(get_proc_address("glVertexAttrib4Nub"))},
-			vertexattrib4nubv: unsafe{transmute(get_proc_address("glVertexAttrib4Nubv"))},
-			vertexattrib4nuiv: unsafe{transmute(get_proc_address("glVertexAttrib4Nuiv"))},
-			vertexattrib4nusv: unsafe{transmute(get_proc_address("glVertexAttrib4Nusv"))},
-			vertexattrib4bv: unsafe{transmute(get_proc_address("glVertexAttrib4bv"))},
-			vertexattrib4d: unsafe{transmute(get_proc_address("glVertexAttrib4d"))},
-			vertexattrib4dv: unsafe{transmute(get_proc_address("glVertexAttrib4dv"))},
-			vertexattrib4f: unsafe{transmute(get_proc_address("glVertexAttrib4f"))},
-			vertexattrib4fv: unsafe{transmute(get_proc_address("glVertexAttrib4fv"))},
-			vertexattrib4iv: unsafe{transmute(get_proc_address("glVertexAttrib4iv"))},
-			vertexattrib4s: unsafe{transmute(get_proc_address("glVertexAttrib4s"))},
-			vertexattrib4sv: unsafe{transmute(get_proc_address("glVertexAttrib4sv"))},
-			vertexattrib4ubv: unsafe{transmute(get_proc_address("glVertexAttrib4ubv"))},
-			vertexattrib4uiv: unsafe{transmute(get_proc_address("glVertexAttrib4uiv"))},
-			vertexattrib4usv: unsafe{transmute(get_proc_address("glVertexAttrib4usv"))},
-			vertexattribpointer: unsafe{transmute(get_proc_address("glVertexAttribPointer"))},
-			shading_language_version: unsafe{CStr::from_ptr(base.glGetString(SHADING_LANGUAGE_VERSION) as *const i8)}.to_str().unwrap(),
+			blendequationseparate: {let proc = get_proc_address("glBlendEquationSeparate"); if proc == null() {dummy_pfnglblendequationseparateproc} else {unsafe{transmute(proc)}}},
+			drawbuffers: {let proc = get_proc_address("glDrawBuffers"); if proc == null() {dummy_pfngldrawbuffersproc} else {unsafe{transmute(proc)}}},
+			stencilopseparate: {let proc = get_proc_address("glStencilOpSeparate"); if proc == null() {dummy_pfnglstencilopseparateproc} else {unsafe{transmute(proc)}}},
+			stencilfuncseparate: {let proc = get_proc_address("glStencilFuncSeparate"); if proc == null() {dummy_pfnglstencilfuncseparateproc} else {unsafe{transmute(proc)}}},
+			stencilmaskseparate: {let proc = get_proc_address("glStencilMaskSeparate"); if proc == null() {dummy_pfnglstencilmaskseparateproc} else {unsafe{transmute(proc)}}},
+			attachshader: {let proc = get_proc_address("glAttachShader"); if proc == null() {dummy_pfnglattachshaderproc} else {unsafe{transmute(proc)}}},
+			bindattriblocation: {let proc = get_proc_address("glBindAttribLocation"); if proc == null() {dummy_pfnglbindattriblocationproc} else {unsafe{transmute(proc)}}},
+			compileshader: {let proc = get_proc_address("glCompileShader"); if proc == null() {dummy_pfnglcompileshaderproc} else {unsafe{transmute(proc)}}},
+			createprogram: {let proc = get_proc_address("glCreateProgram"); if proc == null() {dummy_pfnglcreateprogramproc} else {unsafe{transmute(proc)}}},
+			createshader: {let proc = get_proc_address("glCreateShader"); if proc == null() {dummy_pfnglcreateshaderproc} else {unsafe{transmute(proc)}}},
+			deleteprogram: {let proc = get_proc_address("glDeleteProgram"); if proc == null() {dummy_pfngldeleteprogramproc} else {unsafe{transmute(proc)}}},
+			deleteshader: {let proc = get_proc_address("glDeleteShader"); if proc == null() {dummy_pfngldeleteshaderproc} else {unsafe{transmute(proc)}}},
+			detachshader: {let proc = get_proc_address("glDetachShader"); if proc == null() {dummy_pfngldetachshaderproc} else {unsafe{transmute(proc)}}},
+			disablevertexattribarray: {let proc = get_proc_address("glDisableVertexAttribArray"); if proc == null() {dummy_pfngldisablevertexattribarrayproc} else {unsafe{transmute(proc)}}},
+			enablevertexattribarray: {let proc = get_proc_address("glEnableVertexAttribArray"); if proc == null() {dummy_pfnglenablevertexattribarrayproc} else {unsafe{transmute(proc)}}},
+			getactiveattrib: {let proc = get_proc_address("glGetActiveAttrib"); if proc == null() {dummy_pfnglgetactiveattribproc} else {unsafe{transmute(proc)}}},
+			getactiveuniform: {let proc = get_proc_address("glGetActiveUniform"); if proc == null() {dummy_pfnglgetactiveuniformproc} else {unsafe{transmute(proc)}}},
+			getattachedshaders: {let proc = get_proc_address("glGetAttachedShaders"); if proc == null() {dummy_pfnglgetattachedshadersproc} else {unsafe{transmute(proc)}}},
+			getattriblocation: {let proc = get_proc_address("glGetAttribLocation"); if proc == null() {dummy_pfnglgetattriblocationproc} else {unsafe{transmute(proc)}}},
+			getprogramiv: {let proc = get_proc_address("glGetProgramiv"); if proc == null() {dummy_pfnglgetprogramivproc} else {unsafe{transmute(proc)}}},
+			getprograminfolog: {let proc = get_proc_address("glGetProgramInfoLog"); if proc == null() {dummy_pfnglgetprograminfologproc} else {unsafe{transmute(proc)}}},
+			getshaderiv: {let proc = get_proc_address("glGetShaderiv"); if proc == null() {dummy_pfnglgetshaderivproc} else {unsafe{transmute(proc)}}},
+			getshaderinfolog: {let proc = get_proc_address("glGetShaderInfoLog"); if proc == null() {dummy_pfnglgetshaderinfologproc} else {unsafe{transmute(proc)}}},
+			getshadersource: {let proc = get_proc_address("glGetShaderSource"); if proc == null() {dummy_pfnglgetshadersourceproc} else {unsafe{transmute(proc)}}},
+			getuniformlocation: {let proc = get_proc_address("glGetUniformLocation"); if proc == null() {dummy_pfnglgetuniformlocationproc} else {unsafe{transmute(proc)}}},
+			getuniformfv: {let proc = get_proc_address("glGetUniformfv"); if proc == null() {dummy_pfnglgetuniformfvproc} else {unsafe{transmute(proc)}}},
+			getuniformiv: {let proc = get_proc_address("glGetUniformiv"); if proc == null() {dummy_pfnglgetuniformivproc} else {unsafe{transmute(proc)}}},
+			getvertexattribdv: {let proc = get_proc_address("glGetVertexAttribdv"); if proc == null() {dummy_pfnglgetvertexattribdvproc} else {unsafe{transmute(proc)}}},
+			getvertexattribfv: {let proc = get_proc_address("glGetVertexAttribfv"); if proc == null() {dummy_pfnglgetvertexattribfvproc} else {unsafe{transmute(proc)}}},
+			getvertexattribiv: {let proc = get_proc_address("glGetVertexAttribiv"); if proc == null() {dummy_pfnglgetvertexattribivproc} else {unsafe{transmute(proc)}}},
+			getvertexattribpointerv: {let proc = get_proc_address("glGetVertexAttribPointerv"); if proc == null() {dummy_pfnglgetvertexattribpointervproc} else {unsafe{transmute(proc)}}},
+			isprogram: {let proc = get_proc_address("glIsProgram"); if proc == null() {dummy_pfnglisprogramproc} else {unsafe{transmute(proc)}}},
+			isshader: {let proc = get_proc_address("glIsShader"); if proc == null() {dummy_pfnglisshaderproc} else {unsafe{transmute(proc)}}},
+			linkprogram: {let proc = get_proc_address("glLinkProgram"); if proc == null() {dummy_pfngllinkprogramproc} else {unsafe{transmute(proc)}}},
+			shadersource: {let proc = get_proc_address("glShaderSource"); if proc == null() {dummy_pfnglshadersourceproc} else {unsafe{transmute(proc)}}},
+			useprogram: {let proc = get_proc_address("glUseProgram"); if proc == null() {dummy_pfngluseprogramproc} else {unsafe{transmute(proc)}}},
+			uniform1f: {let proc = get_proc_address("glUniform1f"); if proc == null() {dummy_pfngluniform1fproc} else {unsafe{transmute(proc)}}},
+			uniform2f: {let proc = get_proc_address("glUniform2f"); if proc == null() {dummy_pfngluniform2fproc} else {unsafe{transmute(proc)}}},
+			uniform3f: {let proc = get_proc_address("glUniform3f"); if proc == null() {dummy_pfngluniform3fproc} else {unsafe{transmute(proc)}}},
+			uniform4f: {let proc = get_proc_address("glUniform4f"); if proc == null() {dummy_pfngluniform4fproc} else {unsafe{transmute(proc)}}},
+			uniform1i: {let proc = get_proc_address("glUniform1i"); if proc == null() {dummy_pfngluniform1iproc} else {unsafe{transmute(proc)}}},
+			uniform2i: {let proc = get_proc_address("glUniform2i"); if proc == null() {dummy_pfngluniform2iproc} else {unsafe{transmute(proc)}}},
+			uniform3i: {let proc = get_proc_address("glUniform3i"); if proc == null() {dummy_pfngluniform3iproc} else {unsafe{transmute(proc)}}},
+			uniform4i: {let proc = get_proc_address("glUniform4i"); if proc == null() {dummy_pfngluniform4iproc} else {unsafe{transmute(proc)}}},
+			uniform1fv: {let proc = get_proc_address("glUniform1fv"); if proc == null() {dummy_pfngluniform1fvproc} else {unsafe{transmute(proc)}}},
+			uniform2fv: {let proc = get_proc_address("glUniform2fv"); if proc == null() {dummy_pfngluniform2fvproc} else {unsafe{transmute(proc)}}},
+			uniform3fv: {let proc = get_proc_address("glUniform3fv"); if proc == null() {dummy_pfngluniform3fvproc} else {unsafe{transmute(proc)}}},
+			uniform4fv: {let proc = get_proc_address("glUniform4fv"); if proc == null() {dummy_pfngluniform4fvproc} else {unsafe{transmute(proc)}}},
+			uniform1iv: {let proc = get_proc_address("glUniform1iv"); if proc == null() {dummy_pfngluniform1ivproc} else {unsafe{transmute(proc)}}},
+			uniform2iv: {let proc = get_proc_address("glUniform2iv"); if proc == null() {dummy_pfngluniform2ivproc} else {unsafe{transmute(proc)}}},
+			uniform3iv: {let proc = get_proc_address("glUniform3iv"); if proc == null() {dummy_pfngluniform3ivproc} else {unsafe{transmute(proc)}}},
+			uniform4iv: {let proc = get_proc_address("glUniform4iv"); if proc == null() {dummy_pfngluniform4ivproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix2fv: {let proc = get_proc_address("glUniformMatrix2fv"); if proc == null() {dummy_pfngluniformmatrix2fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix3fv: {let proc = get_proc_address("glUniformMatrix3fv"); if proc == null() {dummy_pfngluniformmatrix3fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix4fv: {let proc = get_proc_address("glUniformMatrix4fv"); if proc == null() {dummy_pfngluniformmatrix4fvproc} else {unsafe{transmute(proc)}}},
+			validateprogram: {let proc = get_proc_address("glValidateProgram"); if proc == null() {dummy_pfnglvalidateprogramproc} else {unsafe{transmute(proc)}}},
+			vertexattrib1d: {let proc = get_proc_address("glVertexAttrib1d"); if proc == null() {dummy_pfnglvertexattrib1dproc} else {unsafe{transmute(proc)}}},
+			vertexattrib1dv: {let proc = get_proc_address("glVertexAttrib1dv"); if proc == null() {dummy_pfnglvertexattrib1dvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib1f: {let proc = get_proc_address("glVertexAttrib1f"); if proc == null() {dummy_pfnglvertexattrib1fproc} else {unsafe{transmute(proc)}}},
+			vertexattrib1fv: {let proc = get_proc_address("glVertexAttrib1fv"); if proc == null() {dummy_pfnglvertexattrib1fvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib1s: {let proc = get_proc_address("glVertexAttrib1s"); if proc == null() {dummy_pfnglvertexattrib1sproc} else {unsafe{transmute(proc)}}},
+			vertexattrib1sv: {let proc = get_proc_address("glVertexAttrib1sv"); if proc == null() {dummy_pfnglvertexattrib1svproc} else {unsafe{transmute(proc)}}},
+			vertexattrib2d: {let proc = get_proc_address("glVertexAttrib2d"); if proc == null() {dummy_pfnglvertexattrib2dproc} else {unsafe{transmute(proc)}}},
+			vertexattrib2dv: {let proc = get_proc_address("glVertexAttrib2dv"); if proc == null() {dummy_pfnglvertexattrib2dvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib2f: {let proc = get_proc_address("glVertexAttrib2f"); if proc == null() {dummy_pfnglvertexattrib2fproc} else {unsafe{transmute(proc)}}},
+			vertexattrib2fv: {let proc = get_proc_address("glVertexAttrib2fv"); if proc == null() {dummy_pfnglvertexattrib2fvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib2s: {let proc = get_proc_address("glVertexAttrib2s"); if proc == null() {dummy_pfnglvertexattrib2sproc} else {unsafe{transmute(proc)}}},
+			vertexattrib2sv: {let proc = get_proc_address("glVertexAttrib2sv"); if proc == null() {dummy_pfnglvertexattrib2svproc} else {unsafe{transmute(proc)}}},
+			vertexattrib3d: {let proc = get_proc_address("glVertexAttrib3d"); if proc == null() {dummy_pfnglvertexattrib3dproc} else {unsafe{transmute(proc)}}},
+			vertexattrib3dv: {let proc = get_proc_address("glVertexAttrib3dv"); if proc == null() {dummy_pfnglvertexattrib3dvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib3f: {let proc = get_proc_address("glVertexAttrib3f"); if proc == null() {dummy_pfnglvertexattrib3fproc} else {unsafe{transmute(proc)}}},
+			vertexattrib3fv: {let proc = get_proc_address("glVertexAttrib3fv"); if proc == null() {dummy_pfnglvertexattrib3fvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib3s: {let proc = get_proc_address("glVertexAttrib3s"); if proc == null() {dummy_pfnglvertexattrib3sproc} else {unsafe{transmute(proc)}}},
+			vertexattrib3sv: {let proc = get_proc_address("glVertexAttrib3sv"); if proc == null() {dummy_pfnglvertexattrib3svproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4nbv: {let proc = get_proc_address("glVertexAttrib4Nbv"); if proc == null() {dummy_pfnglvertexattrib4nbvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4niv: {let proc = get_proc_address("glVertexAttrib4Niv"); if proc == null() {dummy_pfnglvertexattrib4nivproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4nsv: {let proc = get_proc_address("glVertexAttrib4Nsv"); if proc == null() {dummy_pfnglvertexattrib4nsvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4nub: {let proc = get_proc_address("glVertexAttrib4Nub"); if proc == null() {dummy_pfnglvertexattrib4nubproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4nubv: {let proc = get_proc_address("glVertexAttrib4Nubv"); if proc == null() {dummy_pfnglvertexattrib4nubvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4nuiv: {let proc = get_proc_address("glVertexAttrib4Nuiv"); if proc == null() {dummy_pfnglvertexattrib4nuivproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4nusv: {let proc = get_proc_address("glVertexAttrib4Nusv"); if proc == null() {dummy_pfnglvertexattrib4nusvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4bv: {let proc = get_proc_address("glVertexAttrib4bv"); if proc == null() {dummy_pfnglvertexattrib4bvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4d: {let proc = get_proc_address("glVertexAttrib4d"); if proc == null() {dummy_pfnglvertexattrib4dproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4dv: {let proc = get_proc_address("glVertexAttrib4dv"); if proc == null() {dummy_pfnglvertexattrib4dvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4f: {let proc = get_proc_address("glVertexAttrib4f"); if proc == null() {dummy_pfnglvertexattrib4fproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4fv: {let proc = get_proc_address("glVertexAttrib4fv"); if proc == null() {dummy_pfnglvertexattrib4fvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4iv: {let proc = get_proc_address("glVertexAttrib4iv"); if proc == null() {dummy_pfnglvertexattrib4ivproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4s: {let proc = get_proc_address("glVertexAttrib4s"); if proc == null() {dummy_pfnglvertexattrib4sproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4sv: {let proc = get_proc_address("glVertexAttrib4sv"); if proc == null() {dummy_pfnglvertexattrib4svproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4ubv: {let proc = get_proc_address("glVertexAttrib4ubv"); if proc == null() {dummy_pfnglvertexattrib4ubvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4uiv: {let proc = get_proc_address("glVertexAttrib4uiv"); if proc == null() {dummy_pfnglvertexattrib4uivproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4usv: {let proc = get_proc_address("glVertexAttrib4usv"); if proc == null() {dummy_pfnglvertexattrib4usvproc} else {unsafe{transmute(proc)}}},
+			vertexattribpointer: {let proc = get_proc_address("glVertexAttribPointer"); if proc == null() {dummy_pfnglvertexattribpointerproc} else {unsafe{transmute(proc)}}},
+			shading_language_version: unsafe{CStr::from_ptr(base.glGetString(GL_SHADING_LANGUAGE_VERSION) as *const i8)}.to_str().unwrap(),
 		}
 	}
 	#[inline(always)]
@@ -4138,46 +4138,46 @@ type PFNGLUNIFORMMATRIX4X2FVPROC = extern "system" fn(GLint, GLsizei, GLboolean,
 type PFNGLUNIFORMMATRIX3X4FVPROC = extern "system" fn(GLint, GLsizei, GLboolean, *const GLfloat);
 type PFNGLUNIFORMMATRIX4X3FVPROC = extern "system" fn(GLint, GLsizei, GLboolean, *const GLfloat);
 extern "system" fn dummy_pfngluniformmatrix2x3fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniformMatrix2x3fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix2x3fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix3x2fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniformMatrix3x2fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix3x2fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix2x4fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniformMatrix2x4fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix2x4fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix4x2fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniformMatrix4x2fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix4x2fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix3x4fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniformMatrix3x4fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix3x4fv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix4x3fvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glUniformMatrix4x3fv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix4x3fv()` is NULL");
 }
-const PIXEL_PACK_BUFFER: GLenum = 0x88EB;
-const PIXEL_UNPACK_BUFFER: GLenum = 0x88EC;
-const PIXEL_PACK_BUFFER_BINDING: GLenum = 0x88ED;
-const PIXEL_UNPACK_BUFFER_BINDING: GLenum = 0x88EF;
-const FLOAT_MAT2x3: GLenum = 0x8B65;
-const FLOAT_MAT2x4: GLenum = 0x8B66;
-const FLOAT_MAT3x2: GLenum = 0x8B67;
-const FLOAT_MAT3x4: GLenum = 0x8B68;
-const FLOAT_MAT4x2: GLenum = 0x8B69;
-const FLOAT_MAT4x3: GLenum = 0x8B6A;
-const SRGB: GLenum = 0x8C40;
-const SRGB8: GLenum = 0x8C41;
-const SRGB_ALPHA: GLenum = 0x8C42;
-const SRGB8_ALPHA8: GLenum = 0x8C43;
-const COMPRESSED_SRGB: GLenum = 0x8C48;
-const COMPRESSED_SRGB_ALPHA: GLenum = 0x8C49;
-const CURRENT_RASTER_SECONDARY_COLOR: GLenum = 0x845F;
-const SLUMINANCE_ALPHA: GLenum = 0x8C44;
-const SLUMINANCE8_ALPHA8: GLenum = 0x8C45;
-const SLUMINANCE: GLenum = 0x8C46;
-const SLUMINANCE8: GLenum = 0x8C47;
-const COMPRESSED_SLUMINANCE: GLenum = 0x8C4A;
-const COMPRESSED_SLUMINANCE_ALPHA: GLenum = 0x8C4B;
+pub const GL_PIXEL_PACK_BUFFER: GLenum = 0x88EB;
+pub const GL_PIXEL_UNPACK_BUFFER: GLenum = 0x88EC;
+pub const GL_PIXEL_PACK_BUFFER_BINDING: GLenum = 0x88ED;
+pub const GL_PIXEL_UNPACK_BUFFER_BINDING: GLenum = 0x88EF;
+pub const GL_FLOAT_MAT2x3: GLenum = 0x8B65;
+pub const GL_FLOAT_MAT2x4: GLenum = 0x8B66;
+pub const GL_FLOAT_MAT3x2: GLenum = 0x8B67;
+pub const GL_FLOAT_MAT3x4: GLenum = 0x8B68;
+pub const GL_FLOAT_MAT4x2: GLenum = 0x8B69;
+pub const GL_FLOAT_MAT4x3: GLenum = 0x8B6A;
+pub const GL_SRGB: GLenum = 0x8C40;
+pub const GL_SRGB8: GLenum = 0x8C41;
+pub const GL_SRGB_ALPHA: GLenum = 0x8C42;
+pub const GL_SRGB8_ALPHA8: GLenum = 0x8C43;
+pub const GL_COMPRESSED_SRGB: GLenum = 0x8C48;
+pub const GL_COMPRESSED_SRGB_ALPHA: GLenum = 0x8C49;
+pub const GL_CURRENT_RASTER_SECONDARY_COLOR: GLenum = 0x845F;
+pub const GL_SLUMINANCE_ALPHA: GLenum = 0x8C44;
+pub const GL_SLUMINANCE8_ALPHA8: GLenum = 0x8C45;
+pub const GL_SLUMINANCE: GLenum = 0x8C46;
+pub const GL_SLUMINANCE8: GLenum = 0x8C47;
+pub const GL_COMPRESSED_SLUMINANCE: GLenum = 0x8C4A;
+pub const GL_COMPRESSED_SLUMINANCE_ALPHA: GLenum = 0x8C4B;
 
 pub trait GL_2_1 {
 	fn glUniformMatrix2x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
@@ -4188,7 +4188,7 @@ pub trait GL_2_1 {
 	fn glUniformMatrix4x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version21 {
 	available: bool,
 	uniformmatrix2x3fv: PFNGLUNIFORMMATRIX2X3FVPROC,
@@ -4227,7 +4227,7 @@ impl GL_2_1 for Version21 {
 }
 
 impl Version21 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 20100 {
@@ -4235,12 +4235,12 @@ impl Version21 {
 		}
 		Self {
 			available: true,
-			uniformmatrix2x3fv: unsafe{transmute(get_proc_address("glUniformMatrix2x3fv"))},
-			uniformmatrix3x2fv: unsafe{transmute(get_proc_address("glUniformMatrix3x2fv"))},
-			uniformmatrix2x4fv: unsafe{transmute(get_proc_address("glUniformMatrix2x4fv"))},
-			uniformmatrix4x2fv: unsafe{transmute(get_proc_address("glUniformMatrix4x2fv"))},
-			uniformmatrix3x4fv: unsafe{transmute(get_proc_address("glUniformMatrix3x4fv"))},
-			uniformmatrix4x3fv: unsafe{transmute(get_proc_address("glUniformMatrix4x3fv"))},
+			uniformmatrix2x3fv: {let proc = get_proc_address("glUniformMatrix2x3fv"); if proc == null() {dummy_pfngluniformmatrix2x3fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix3x2fv: {let proc = get_proc_address("glUniformMatrix3x2fv"); if proc == null() {dummy_pfngluniformmatrix3x2fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix2x4fv: {let proc = get_proc_address("glUniformMatrix2x4fv"); if proc == null() {dummy_pfngluniformmatrix2x4fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix4x2fv: {let proc = get_proc_address("glUniformMatrix4x2fv"); if proc == null() {dummy_pfngluniformmatrix4x2fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix3x4fv: {let proc = get_proc_address("glUniformMatrix3x4fv"); if proc == null() {dummy_pfngluniformmatrix3x4fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix4x3fv: {let proc = get_proc_address("glUniformMatrix4x3fv"); if proc == null() {dummy_pfngluniformmatrix4x3fvproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -4349,494 +4349,494 @@ type PFNGLDELETEVERTEXARRAYSPROC = extern "system" fn(GLsizei, *const GLuint);
 type PFNGLGENVERTEXARRAYSPROC = extern "system" fn(GLsizei, *mut GLuint);
 type PFNGLISVERTEXARRAYPROC = extern "system" fn(GLuint) -> GLboolean;
 extern "system" fn dummy_pfnglcolormaskiproc (_: GLuint, _: GLboolean, _: GLboolean, _: GLboolean, _: GLboolean) {
-	panic!("OpenGL Function pointer of glColorMaski() is NULL");
+	panic!("OpenGL Function pointer of `glColorMaski()` is NULL");
 }
 extern "system" fn dummy_pfnglgetbooleani_vproc (_: GLenum, _: GLuint, _: *mut GLboolean) {
-	panic!("OpenGL Function pointer of glGetBooleani_v() is NULL");
+	panic!("OpenGL Function pointer of `glGetBooleani_v()` is NULL");
 }
 extern "system" fn dummy_pfnglgetintegeri_vproc (_: GLenum, _: GLuint, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetIntegeri_v() is NULL");
+	panic!("OpenGL Function pointer of `glGetIntegeri_v()` is NULL");
 }
 extern "system" fn dummy_pfnglenableiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glEnablei() is NULL");
+	panic!("OpenGL Function pointer of `glEnablei()` is NULL");
 }
 extern "system" fn dummy_pfngldisableiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glDisablei() is NULL");
+	panic!("OpenGL Function pointer of `glDisablei()` is NULL");
 }
 extern "system" fn dummy_pfnglisenablediproc (_: GLenum, _: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsEnabledi() is NULL");
+	panic!("OpenGL Function pointer of `glIsEnabledi()` is NULL");
 }
 extern "system" fn dummy_pfnglbegintransformfeedbackproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glBeginTransformFeedback() is NULL");
+	panic!("OpenGL Function pointer of `glBeginTransformFeedback()` is NULL");
 }
 extern "system" fn dummy_pfnglendtransformfeedbackproc () {
-	panic!("OpenGL Function pointer of glEndTransformFeedback() is NULL");
+	panic!("OpenGL Function pointer of `glEndTransformFeedback()` is NULL");
 }
 extern "system" fn dummy_pfnglbindbufferrangeproc (_: GLenum, _: GLuint, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-	panic!("OpenGL Function pointer of glBindBufferRange() is NULL");
+	panic!("OpenGL Function pointer of `glBindBufferRange()` is NULL");
 }
 extern "system" fn dummy_pfnglbindbufferbaseproc (_: GLenum, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glBindBufferBase() is NULL");
+	panic!("OpenGL Function pointer of `glBindBufferBase()` is NULL");
 }
 extern "system" fn dummy_pfngltransformfeedbackvaryingsproc (_: GLuint, _: GLsizei, _: *const *const GLchar, _: GLenum) {
-	panic!("OpenGL Function pointer of glTransformFeedbackVaryings() is NULL");
+	panic!("OpenGL Function pointer of `glTransformFeedbackVaryings()` is NULL");
 }
 extern "system" fn dummy_pfnglgettransformfeedbackvaryingproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLsizei, _: *mut GLenum, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetTransformFeedbackVarying() is NULL");
+	panic!("OpenGL Function pointer of `glGetTransformFeedbackVarying()` is NULL");
 }
 extern "system" fn dummy_pfnglclampcolorproc (_: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glClampColor() is NULL");
+	panic!("OpenGL Function pointer of `glClampColor()` is NULL");
 }
 extern "system" fn dummy_pfnglbeginconditionalrenderproc (_: GLuint, _: GLenum) {
-	panic!("OpenGL Function pointer of glBeginConditionalRender() is NULL");
+	panic!("OpenGL Function pointer of `glBeginConditionalRender()` is NULL");
 }
 extern "system" fn dummy_pfnglendconditionalrenderproc () {
-	panic!("OpenGL Function pointer of glEndConditionalRender() is NULL");
+	panic!("OpenGL Function pointer of `glEndConditionalRender()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribipointerproc (_: GLuint, _: GLint, _: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glVertexAttribIPointer() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribIPointer()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexattribiivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetVertexAttribIiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexAttribIiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexattribiuivproc (_: GLuint, _: GLenum, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetVertexAttribIuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexAttribIuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi1iproc (_: GLuint, _: GLint) {
-	panic!("OpenGL Function pointer of glVertexAttribI1i() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI1i()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi2iproc (_: GLuint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glVertexAttribI2i() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI2i()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi3iproc (_: GLuint, _: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glVertexAttribI3i() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI3i()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi4iproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glVertexAttribI4i() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI4i()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi1uiproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribI1ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI1ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi2uiproc (_: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribI2ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI2ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi3uiproc (_: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribI3ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI3ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi4uiproc (_: GLuint, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribI4ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI4ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi1ivproc (_: GLuint, _: *const GLint) {
-	panic!("OpenGL Function pointer of glVertexAttribI1iv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI1iv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi2ivproc (_: GLuint, _: *const GLint) {
-	panic!("OpenGL Function pointer of glVertexAttribI2iv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI2iv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi3ivproc (_: GLuint, _: *const GLint) {
-	panic!("OpenGL Function pointer of glVertexAttribI3iv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI3iv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi4ivproc (_: GLuint, _: *const GLint) {
-	panic!("OpenGL Function pointer of glVertexAttribI4iv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI4iv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi1uivproc (_: GLuint, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribI1uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI1uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi2uivproc (_: GLuint, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribI2uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI2uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi3uivproc (_: GLuint, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribI3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI3uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi4uivproc (_: GLuint, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribI4uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI4uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi4bvproc (_: GLuint, _: *const GLbyte) {
-	panic!("OpenGL Function pointer of glVertexAttribI4bv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI4bv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi4svproc (_: GLuint, _: *const GLshort) {
-	panic!("OpenGL Function pointer of glVertexAttribI4sv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI4sv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi4ubvproc (_: GLuint, _: *const GLubyte) {
-	panic!("OpenGL Function pointer of glVertexAttribI4ubv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI4ubv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribi4usvproc (_: GLuint, _: *const GLushort) {
-	panic!("OpenGL Function pointer of glVertexAttribI4usv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribI4usv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetuniformuivproc (_: GLuint, _: GLint, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetUniformuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetUniformuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglbindfragdatalocationproc (_: GLuint, _: GLuint, _: *const GLchar) {
-	panic!("OpenGL Function pointer of glBindFragDataLocation() is NULL");
+	panic!("OpenGL Function pointer of `glBindFragDataLocation()` is NULL");
 }
 extern "system" fn dummy_pfnglgetfragdatalocationproc (_: GLuint, _: *const GLchar) -> GLint {
-	panic!("OpenGL Function pointer of glGetFragDataLocation() is NULL");
+	panic!("OpenGL Function pointer of `glGetFragDataLocation()` is NULL");
 }
 extern "system" fn dummy_pfngluniform1uiproc (_: GLint, _: GLuint) {
-	panic!("OpenGL Function pointer of glUniform1ui() is NULL");
+	panic!("OpenGL Function pointer of `glUniform1ui()` is NULL");
 }
 extern "system" fn dummy_pfngluniform2uiproc (_: GLint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glUniform2ui() is NULL");
+	panic!("OpenGL Function pointer of `glUniform2ui()` is NULL");
 }
 extern "system" fn dummy_pfngluniform3uiproc (_: GLint, _: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glUniform3ui() is NULL");
+	panic!("OpenGL Function pointer of `glUniform3ui()` is NULL");
 }
 extern "system" fn dummy_pfngluniform4uiproc (_: GLint, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glUniform4ui() is NULL");
+	panic!("OpenGL Function pointer of `glUniform4ui()` is NULL");
 }
 extern "system" fn dummy_pfngluniform1uivproc (_: GLint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glUniform1uiv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform1uiv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform2uivproc (_: GLint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glUniform2uiv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform2uiv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform3uivproc (_: GLint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glUniform3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform3uiv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform4uivproc (_: GLint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glUniform4uiv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform4uiv()` is NULL");
 }
 extern "system" fn dummy_pfngltexparameteriivproc (_: GLenum, _: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glTexParameterIiv() is NULL");
+	panic!("OpenGL Function pointer of `glTexParameterIiv()` is NULL");
 }
 extern "system" fn dummy_pfngltexparameteriuivproc (_: GLenum, _: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glTexParameterIuiv() is NULL");
+	panic!("OpenGL Function pointer of `glTexParameterIuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettexparameteriivproc (_: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetTexParameterIiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTexParameterIiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettexparameteriuivproc (_: GLenum, _: GLenum, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetTexParameterIuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTexParameterIuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglclearbufferivproc (_: GLenum, _: GLint, _: *const GLint) {
-	panic!("OpenGL Function pointer of glClearBufferiv() is NULL");
+	panic!("OpenGL Function pointer of `glClearBufferiv()` is NULL");
 }
 extern "system" fn dummy_pfnglclearbufferuivproc (_: GLenum, _: GLint, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glClearBufferuiv() is NULL");
+	panic!("OpenGL Function pointer of `glClearBufferuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglclearbufferfvproc (_: GLenum, _: GLint, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glClearBufferfv() is NULL");
+	panic!("OpenGL Function pointer of `glClearBufferfv()` is NULL");
 }
 extern "system" fn dummy_pfnglclearbufferfiproc (_: GLenum, _: GLint, _: GLfloat, _: GLint) {
-	panic!("OpenGL Function pointer of glClearBufferfi() is NULL");
+	panic!("OpenGL Function pointer of `glClearBufferfi()` is NULL");
 }
 extern "system" fn dummy_pfnglgetstringiproc (_: GLenum, _: GLuint) -> *const GLubyte {
-	panic!("OpenGL Function pointer of glGetStringi() is NULL");
+	panic!("OpenGL Function pointer of `glGetStringi()` is NULL");
 }
 extern "system" fn dummy_pfnglisrenderbufferproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsRenderbuffer() is NULL");
+	panic!("OpenGL Function pointer of `glIsRenderbuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglbindrenderbufferproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glBindRenderbuffer() is NULL");
+	panic!("OpenGL Function pointer of `glBindRenderbuffer()` is NULL");
 }
 extern "system" fn dummy_pfngldeleterenderbuffersproc (_: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glDeleteRenderbuffers() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteRenderbuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglgenrenderbuffersproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGenRenderbuffers() is NULL");
+	panic!("OpenGL Function pointer of `glGenRenderbuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglrenderbufferstorageproc (_: GLenum, _: GLenum, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glRenderbufferStorage() is NULL");
+	panic!("OpenGL Function pointer of `glRenderbufferStorage()` is NULL");
 }
 extern "system" fn dummy_pfnglgetrenderbufferparameterivproc (_: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetRenderbufferParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetRenderbufferParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglisframebufferproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsFramebuffer() is NULL");
+	panic!("OpenGL Function pointer of `glIsFramebuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglbindframebufferproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glBindFramebuffer() is NULL");
+	panic!("OpenGL Function pointer of `glBindFramebuffer()` is NULL");
 }
 extern "system" fn dummy_pfngldeleteframebuffersproc (_: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glDeleteFramebuffers() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteFramebuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglgenframebuffersproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGenFramebuffers() is NULL");
+	panic!("OpenGL Function pointer of `glGenFramebuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglcheckframebufferstatusproc (_: GLenum) -> GLenum {
-	panic!("OpenGL Function pointer of glCheckFramebufferStatus() is NULL");
+	panic!("OpenGL Function pointer of `glCheckFramebufferStatus()` is NULL");
 }
 extern "system" fn dummy_pfnglframebuffertexture1dproc (_: GLenum, _: GLenum, _: GLenum, _: GLuint, _: GLint) {
-	panic!("OpenGL Function pointer of glFramebufferTexture1D() is NULL");
+	panic!("OpenGL Function pointer of `glFramebufferTexture1D()` is NULL");
 }
 extern "system" fn dummy_pfnglframebuffertexture2dproc (_: GLenum, _: GLenum, _: GLenum, _: GLuint, _: GLint) {
-	panic!("OpenGL Function pointer of glFramebufferTexture2D() is NULL");
+	panic!("OpenGL Function pointer of `glFramebufferTexture2D()` is NULL");
 }
 extern "system" fn dummy_pfnglframebuffertexture3dproc (_: GLenum, _: GLenum, _: GLenum, _: GLuint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glFramebufferTexture3D() is NULL");
+	panic!("OpenGL Function pointer of `glFramebufferTexture3D()` is NULL");
 }
 extern "system" fn dummy_pfnglframebufferrenderbufferproc (_: GLenum, _: GLenum, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glFramebufferRenderbuffer() is NULL");
+	panic!("OpenGL Function pointer of `glFramebufferRenderbuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglgetframebufferattachmentparameterivproc (_: GLenum, _: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetFramebufferAttachmentParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetFramebufferAttachmentParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglgeneratemipmapproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glGenerateMipmap() is NULL");
+	panic!("OpenGL Function pointer of `glGenerateMipmap()` is NULL");
 }
 extern "system" fn dummy_pfnglblitframebufferproc (_: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLbitfield, _: GLenum) {
-	panic!("OpenGL Function pointer of glBlitFramebuffer() is NULL");
+	panic!("OpenGL Function pointer of `glBlitFramebuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglrenderbufferstoragemultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glRenderbufferStorageMultisample() is NULL");
+	panic!("OpenGL Function pointer of `glRenderbufferStorageMultisample()` is NULL");
 }
 extern "system" fn dummy_pfnglframebuffertexturelayerproc (_: GLenum, _: GLenum, _: GLuint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glFramebufferTextureLayer() is NULL");
+	panic!("OpenGL Function pointer of `glFramebufferTextureLayer()` is NULL");
 }
 extern "system" fn dummy_pfnglmapbufferrangeproc (_: GLenum, _: GLintptr, _: GLsizeiptr, _: GLbitfield) -> *mut c_void {
-	panic!("OpenGL Function pointer of glMapBufferRange() is NULL");
+	panic!("OpenGL Function pointer of `glMapBufferRange()` is NULL");
 }
 extern "system" fn dummy_pfnglflushmappedbufferrangeproc (_: GLenum, _: GLintptr, _: GLsizeiptr) {
-	panic!("OpenGL Function pointer of glFlushMappedBufferRange() is NULL");
+	panic!("OpenGL Function pointer of `glFlushMappedBufferRange()` is NULL");
 }
 extern "system" fn dummy_pfnglbindvertexarrayproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glBindVertexArray() is NULL");
+	panic!("OpenGL Function pointer of `glBindVertexArray()` is NULL");
 }
 extern "system" fn dummy_pfngldeletevertexarraysproc (_: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glDeleteVertexArrays() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteVertexArrays()` is NULL");
 }
 extern "system" fn dummy_pfnglgenvertexarraysproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGenVertexArrays() is NULL");
+	panic!("OpenGL Function pointer of `glGenVertexArrays()` is NULL");
 }
 extern "system" fn dummy_pfnglisvertexarrayproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsVertexArray() is NULL");
+	panic!("OpenGL Function pointer of `glIsVertexArray()` is NULL");
 }
-const COMPARE_REF_TO_TEXTURE: GLenum = 0x884E;
-const CLIP_DISTANCE0: GLenum = 0x3000;
-const CLIP_DISTANCE1: GLenum = 0x3001;
-const CLIP_DISTANCE2: GLenum = 0x3002;
-const CLIP_DISTANCE3: GLenum = 0x3003;
-const CLIP_DISTANCE4: GLenum = 0x3004;
-const CLIP_DISTANCE5: GLenum = 0x3005;
-const CLIP_DISTANCE6: GLenum = 0x3006;
-const CLIP_DISTANCE7: GLenum = 0x3007;
-const MAX_CLIP_DISTANCES: GLenum = 0x0D32;
-const MAJOR_VERSION: GLenum = 0x821B;
-const MINOR_VERSION: GLenum = 0x821C;
-const NUM_EXTENSIONS: GLenum = 0x821D;
-const CONTEXT_FLAGS: GLenum = 0x821E;
-const COMPRESSED_RED: GLenum = 0x8225;
-const COMPRESSED_RG: GLenum = 0x8226;
-const CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT: GLbitfield = 0x00000001;
-const RGBA32F: GLenum = 0x8814;
-const RGB32F: GLenum = 0x8815;
-const RGBA16F: GLenum = 0x881A;
-const RGB16F: GLenum = 0x881B;
-const VERTEX_ATTRIB_ARRAY_INTEGER: GLenum = 0x88FD;
-const MAX_ARRAY_TEXTURE_LAYERS: GLenum = 0x88FF;
-const MIN_PROGRAM_TEXEL_OFFSET: GLenum = 0x8904;
-const MAX_PROGRAM_TEXEL_OFFSET: GLenum = 0x8905;
-const CLAMP_READ_COLOR: GLenum = 0x891C;
-const FIXED_ONLY: GLenum = 0x891D;
-const MAX_VARYING_COMPONENTS: GLenum = 0x8B4B;
-const TEXTURE_1D_ARRAY: GLenum = 0x8C18;
-const PROXY_TEXTURE_1D_ARRAY: GLenum = 0x8C19;
-const TEXTURE_2D_ARRAY: GLenum = 0x8C1A;
-const PROXY_TEXTURE_2D_ARRAY: GLenum = 0x8C1B;
-const TEXTURE_BINDING_1D_ARRAY: GLenum = 0x8C1C;
-const TEXTURE_BINDING_2D_ARRAY: GLenum = 0x8C1D;
-const R11F_G11F_B10F: GLenum = 0x8C3A;
-const UNSIGNED_INT_10F_11F_11F_REV: GLenum = 0x8C3B;
-const RGB9_E5: GLenum = 0x8C3D;
-const UNSIGNED_INT_5_9_9_9_REV: GLenum = 0x8C3E;
-const TEXTURE_SHARED_SIZE: GLenum = 0x8C3F;
-const TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH: GLenum = 0x8C76;
-const TRANSFORM_FEEDBACK_BUFFER_MODE: GLenum = 0x8C7F;
-const MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS: GLenum = 0x8C80;
-const TRANSFORM_FEEDBACK_VARYINGS: GLenum = 0x8C83;
-const TRANSFORM_FEEDBACK_BUFFER_START: GLenum = 0x8C84;
-const TRANSFORM_FEEDBACK_BUFFER_SIZE: GLenum = 0x8C85;
-const PRIMITIVES_GENERATED: GLenum = 0x8C87;
-const TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN: GLenum = 0x8C88;
-const RASTERIZER_DISCARD: GLenum = 0x8C89;
-const MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS: GLenum = 0x8C8A;
-const MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS: GLenum = 0x8C8B;
-const INTERLEAVED_ATTRIBS: GLenum = 0x8C8C;
-const SEPARATE_ATTRIBS: GLenum = 0x8C8D;
-const TRANSFORM_FEEDBACK_BUFFER: GLenum = 0x8C8E;
-const TRANSFORM_FEEDBACK_BUFFER_BINDING: GLenum = 0x8C8F;
-const RGBA32UI: GLenum = 0x8D70;
-const RGB32UI: GLenum = 0x8D71;
-const RGBA16UI: GLenum = 0x8D76;
-const RGB16UI: GLenum = 0x8D77;
-const RGBA8UI: GLenum = 0x8D7C;
-const RGB8UI: GLenum = 0x8D7D;
-const RGBA32I: GLenum = 0x8D82;
-const RGB32I: GLenum = 0x8D83;
-const RGBA16I: GLenum = 0x8D88;
-const RGB16I: GLenum = 0x8D89;
-const RGBA8I: GLenum = 0x8D8E;
-const RGB8I: GLenum = 0x8D8F;
-const RED_INTEGER: GLenum = 0x8D94;
-const GREEN_INTEGER: GLenum = 0x8D95;
-const BLUE_INTEGER: GLenum = 0x8D96;
-const RGB_INTEGER: GLenum = 0x8D98;
-const RGBA_INTEGER: GLenum = 0x8D99;
-const BGR_INTEGER: GLenum = 0x8D9A;
-const BGRA_INTEGER: GLenum = 0x8D9B;
-const SAMPLER_1D_ARRAY: GLenum = 0x8DC0;
-const SAMPLER_2D_ARRAY: GLenum = 0x8DC1;
-const SAMPLER_1D_ARRAY_SHADOW: GLenum = 0x8DC3;
-const SAMPLER_2D_ARRAY_SHADOW: GLenum = 0x8DC4;
-const SAMPLER_CUBE_SHADOW: GLenum = 0x8DC5;
-const UNSIGNED_INT_VEC2: GLenum = 0x8DC6;
-const UNSIGNED_INT_VEC3: GLenum = 0x8DC7;
-const UNSIGNED_INT_VEC4: GLenum = 0x8DC8;
-const INT_SAMPLER_1D: GLenum = 0x8DC9;
-const INT_SAMPLER_2D: GLenum = 0x8DCA;
-const INT_SAMPLER_3D: GLenum = 0x8DCB;
-const INT_SAMPLER_CUBE: GLenum = 0x8DCC;
-const INT_SAMPLER_1D_ARRAY: GLenum = 0x8DCE;
-const INT_SAMPLER_2D_ARRAY: GLenum = 0x8DCF;
-const UNSIGNED_INT_SAMPLER_1D: GLenum = 0x8DD1;
-const UNSIGNED_INT_SAMPLER_2D: GLenum = 0x8DD2;
-const UNSIGNED_INT_SAMPLER_3D: GLenum = 0x8DD3;
-const UNSIGNED_INT_SAMPLER_CUBE: GLenum = 0x8DD4;
-const UNSIGNED_INT_SAMPLER_1D_ARRAY: GLenum = 0x8DD6;
-const UNSIGNED_INT_SAMPLER_2D_ARRAY: GLenum = 0x8DD7;
-const QUERY_WAIT: GLenum = 0x8E13;
-const QUERY_NO_WAIT: GLenum = 0x8E14;
-const QUERY_BY_REGION_WAIT: GLenum = 0x8E15;
-const QUERY_BY_REGION_NO_WAIT: GLenum = 0x8E16;
-const BUFFER_ACCESS_FLAGS: GLenum = 0x911F;
-const BUFFER_MAP_LENGTH: GLenum = 0x9120;
-const BUFFER_MAP_OFFSET: GLenum = 0x9121;
-const DEPTH_COMPONENT32F: GLenum = 0x8CAC;
-const DEPTH32F_STENCIL8: GLenum = 0x8CAD;
-const FLOAT_32_UNSIGNED_INT_24_8_REV: GLenum = 0x8DAD;
-const INVALID_FRAMEBUFFER_OPERATION: GLenum = 0x0506;
-const FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING: GLenum = 0x8210;
-const FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE: GLenum = 0x8211;
-const FRAMEBUFFER_ATTACHMENT_RED_SIZE: GLenum = 0x8212;
-const FRAMEBUFFER_ATTACHMENT_GREEN_SIZE: GLenum = 0x8213;
-const FRAMEBUFFER_ATTACHMENT_BLUE_SIZE: GLenum = 0x8214;
-const FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE: GLenum = 0x8215;
-const FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE: GLenum = 0x8216;
-const FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE: GLenum = 0x8217;
-const FRAMEBUFFER_DEFAULT: GLenum = 0x8218;
-const FRAMEBUFFER_UNDEFINED: GLenum = 0x8219;
-const DEPTH_STENCIL_ATTACHMENT: GLenum = 0x821A;
-const MAX_RENDERBUFFER_SIZE: GLenum = 0x84E8;
-const DEPTH_STENCIL: GLenum = 0x84F9;
-const UNSIGNED_INT_24_8: GLenum = 0x84FA;
-const DEPTH24_STENCIL8: GLenum = 0x88F0;
-const TEXTURE_STENCIL_SIZE: GLenum = 0x88F1;
-const TEXTURE_RED_TYPE: GLenum = 0x8C10;
-const TEXTURE_GREEN_TYPE: GLenum = 0x8C11;
-const TEXTURE_BLUE_TYPE: GLenum = 0x8C12;
-const TEXTURE_ALPHA_TYPE: GLenum = 0x8C13;
-const TEXTURE_DEPTH_TYPE: GLenum = 0x8C16;
-const UNSIGNED_NORMALIZED: GLenum = 0x8C17;
-const FRAMEBUFFER_BINDING: GLenum = 0x8CA6;
-const DRAW_FRAMEBUFFER_BINDING: GLenum = 0x8CA6;
-const RENDERBUFFER_BINDING: GLenum = 0x8CA7;
-const READ_FRAMEBUFFER: GLenum = 0x8CA8;
-const DRAW_FRAMEBUFFER: GLenum = 0x8CA9;
-const READ_FRAMEBUFFER_BINDING: GLenum = 0x8CAA;
-const RENDERBUFFER_SAMPLES: GLenum = 0x8CAB;
-const FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE: GLenum = 0x8CD0;
-const FRAMEBUFFER_ATTACHMENT_OBJECT_NAME: GLenum = 0x8CD1;
-const FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL: GLenum = 0x8CD2;
-const FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE: GLenum = 0x8CD3;
-const FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER: GLenum = 0x8CD4;
-const FRAMEBUFFER_COMPLETE: GLenum = 0x8CD5;
-const FRAMEBUFFER_INCOMPLETE_ATTACHMENT: GLenum = 0x8CD6;
-const FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT: GLenum = 0x8CD7;
-const FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER: GLenum = 0x8CDB;
-const FRAMEBUFFER_INCOMPLETE_READ_BUFFER: GLenum = 0x8CDC;
-const FRAMEBUFFER_UNSUPPORTED: GLenum = 0x8CDD;
-const MAX_COLOR_ATTACHMENTS: GLenum = 0x8CDF;
-const COLOR_ATTACHMENT0: GLenum = 0x8CE0;
-const COLOR_ATTACHMENT1: GLenum = 0x8CE1;
-const COLOR_ATTACHMENT2: GLenum = 0x8CE2;
-const COLOR_ATTACHMENT3: GLenum = 0x8CE3;
-const COLOR_ATTACHMENT4: GLenum = 0x8CE4;
-const COLOR_ATTACHMENT5: GLenum = 0x8CE5;
-const COLOR_ATTACHMENT6: GLenum = 0x8CE6;
-const COLOR_ATTACHMENT7: GLenum = 0x8CE7;
-const COLOR_ATTACHMENT8: GLenum = 0x8CE8;
-const COLOR_ATTACHMENT9: GLenum = 0x8CE9;
-const COLOR_ATTACHMENT10: GLenum = 0x8CEA;
-const COLOR_ATTACHMENT11: GLenum = 0x8CEB;
-const COLOR_ATTACHMENT12: GLenum = 0x8CEC;
-const COLOR_ATTACHMENT13: GLenum = 0x8CED;
-const COLOR_ATTACHMENT14: GLenum = 0x8CEE;
-const COLOR_ATTACHMENT15: GLenum = 0x8CEF;
-const COLOR_ATTACHMENT16: GLenum = 0x8CF0;
-const COLOR_ATTACHMENT17: GLenum = 0x8CF1;
-const COLOR_ATTACHMENT18: GLenum = 0x8CF2;
-const COLOR_ATTACHMENT19: GLenum = 0x8CF3;
-const COLOR_ATTACHMENT20: GLenum = 0x8CF4;
-const COLOR_ATTACHMENT21: GLenum = 0x8CF5;
-const COLOR_ATTACHMENT22: GLenum = 0x8CF6;
-const COLOR_ATTACHMENT23: GLenum = 0x8CF7;
-const COLOR_ATTACHMENT24: GLenum = 0x8CF8;
-const COLOR_ATTACHMENT25: GLenum = 0x8CF9;
-const COLOR_ATTACHMENT26: GLenum = 0x8CFA;
-const COLOR_ATTACHMENT27: GLenum = 0x8CFB;
-const COLOR_ATTACHMENT28: GLenum = 0x8CFC;
-const COLOR_ATTACHMENT29: GLenum = 0x8CFD;
-const COLOR_ATTACHMENT30: GLenum = 0x8CFE;
-const COLOR_ATTACHMENT31: GLenum = 0x8CFF;
-const DEPTH_ATTACHMENT: GLenum = 0x8D00;
-const STENCIL_ATTACHMENT: GLenum = 0x8D20;
-const FRAMEBUFFER: GLenum = 0x8D40;
-const RENDERBUFFER: GLenum = 0x8D41;
-const RENDERBUFFER_WIDTH: GLenum = 0x8D42;
-const RENDERBUFFER_HEIGHT: GLenum = 0x8D43;
-const RENDERBUFFER_INTERNAL_FORMAT: GLenum = 0x8D44;
-const STENCIL_INDEX1: GLenum = 0x8D46;
-const STENCIL_INDEX4: GLenum = 0x8D47;
-const STENCIL_INDEX8: GLenum = 0x8D48;
-const STENCIL_INDEX16: GLenum = 0x8D49;
-const RENDERBUFFER_RED_SIZE: GLenum = 0x8D50;
-const RENDERBUFFER_GREEN_SIZE: GLenum = 0x8D51;
-const RENDERBUFFER_BLUE_SIZE: GLenum = 0x8D52;
-const RENDERBUFFER_ALPHA_SIZE: GLenum = 0x8D53;
-const RENDERBUFFER_DEPTH_SIZE: GLenum = 0x8D54;
-const RENDERBUFFER_STENCIL_SIZE: GLenum = 0x8D55;
-const FRAMEBUFFER_INCOMPLETE_MULTISAMPLE: GLenum = 0x8D56;
-const MAX_SAMPLES: GLenum = 0x8D57;
-const INDEX: GLenum = 0x8222;
-const TEXTURE_LUMINANCE_TYPE: GLenum = 0x8C14;
-const TEXTURE_INTENSITY_TYPE: GLenum = 0x8C15;
-const FRAMEBUFFER_SRGB: GLenum = 0x8DB9;
-const HALF_FLOAT: GLenum = 0x140B;
-const MAP_READ_BIT: GLbitfield = 0x0001;
-const MAP_WRITE_BIT: GLbitfield = 0x0002;
-const MAP_INVALIDATE_RANGE_BIT: GLbitfield = 0x0004;
-const MAP_INVALIDATE_BUFFER_BIT: GLbitfield = 0x0008;
-const MAP_FLUSH_EXPLICIT_BIT: GLbitfield = 0x0010;
-const MAP_UNSYNCHRONIZED_BIT: GLbitfield = 0x0020;
-const COMPRESSED_RED_RGTC1: GLenum = 0x8DBB;
-const COMPRESSED_SIGNED_RED_RGTC1: GLenum = 0x8DBC;
-const COMPRESSED_RG_RGTC2: GLenum = 0x8DBD;
-const COMPRESSED_SIGNED_RG_RGTC2: GLenum = 0x8DBE;
-const RG: GLenum = 0x8227;
-const RG_INTEGER: GLenum = 0x8228;
-const R8: GLenum = 0x8229;
-const R16: GLenum = 0x822A;
-const RG8: GLenum = 0x822B;
-const RG16: GLenum = 0x822C;
-const R16F: GLenum = 0x822D;
-const R32F: GLenum = 0x822E;
-const RG16F: GLenum = 0x822F;
-const RG32F: GLenum = 0x8230;
-const R8I: GLenum = 0x8231;
-const R8UI: GLenum = 0x8232;
-const R16I: GLenum = 0x8233;
-const R16UI: GLenum = 0x8234;
-const R32I: GLenum = 0x8235;
-const R32UI: GLenum = 0x8236;
-const RG8I: GLenum = 0x8237;
-const RG8UI: GLenum = 0x8238;
-const RG16I: GLenum = 0x8239;
-const RG16UI: GLenum = 0x823A;
-const RG32I: GLenum = 0x823B;
-const RG32UI: GLenum = 0x823C;
-const VERTEX_ARRAY_BINDING: GLenum = 0x85B5;
-const CLAMP_VERTEX_COLOR: GLenum = 0x891A;
-const CLAMP_FRAGMENT_COLOR: GLenum = 0x891B;
-const ALPHA_INTEGER: GLenum = 0x8D97;
+pub const GL_COMPARE_REF_TO_TEXTURE: GLenum = 0x884E;
+pub const GL_CLIP_DISTANCE0: GLenum = 0x3000;
+pub const GL_CLIP_DISTANCE1: GLenum = 0x3001;
+pub const GL_CLIP_DISTANCE2: GLenum = 0x3002;
+pub const GL_CLIP_DISTANCE3: GLenum = 0x3003;
+pub const GL_CLIP_DISTANCE4: GLenum = 0x3004;
+pub const GL_CLIP_DISTANCE5: GLenum = 0x3005;
+pub const GL_CLIP_DISTANCE6: GLenum = 0x3006;
+pub const GL_CLIP_DISTANCE7: GLenum = 0x3007;
+pub const GL_MAX_CLIP_DISTANCES: GLenum = 0x0D32;
+pub const GL_MAJOR_VERSION: GLenum = 0x821B;
+pub const GL_MINOR_VERSION: GLenum = 0x821C;
+pub const GL_NUM_EXTENSIONS: GLenum = 0x821D;
+pub const GL_CONTEXT_FLAGS: GLenum = 0x821E;
+pub const GL_COMPRESSED_RED: GLenum = 0x8225;
+pub const GL_COMPRESSED_RG: GLenum = 0x8226;
+pub const GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT: GLbitfield = 0x00000001;
+pub const GL_RGBA32F: GLenum = 0x8814;
+pub const GL_RGB32F: GLenum = 0x8815;
+pub const GL_RGBA16F: GLenum = 0x881A;
+pub const GL_RGB16F: GLenum = 0x881B;
+pub const GL_VERTEX_ATTRIB_ARRAY_INTEGER: GLenum = 0x88FD;
+pub const GL_MAX_ARRAY_TEXTURE_LAYERS: GLenum = 0x88FF;
+pub const GL_MIN_PROGRAM_TEXEL_OFFSET: GLenum = 0x8904;
+pub const GL_MAX_PROGRAM_TEXEL_OFFSET: GLenum = 0x8905;
+pub const GL_CLAMP_READ_COLOR: GLenum = 0x891C;
+pub const GL_FIXED_ONLY: GLenum = 0x891D;
+pub const GL_MAX_VARYING_COMPONENTS: GLenum = 0x8B4B;
+pub const GL_TEXTURE_1D_ARRAY: GLenum = 0x8C18;
+pub const GL_PROXY_TEXTURE_1D_ARRAY: GLenum = 0x8C19;
+pub const GL_TEXTURE_2D_ARRAY: GLenum = 0x8C1A;
+pub const GL_PROXY_TEXTURE_2D_ARRAY: GLenum = 0x8C1B;
+pub const GL_TEXTURE_BINDING_1D_ARRAY: GLenum = 0x8C1C;
+pub const GL_TEXTURE_BINDING_2D_ARRAY: GLenum = 0x8C1D;
+pub const GL_R11F_G11F_B10F: GLenum = 0x8C3A;
+pub const GL_UNSIGNED_INT_10F_11F_11F_REV: GLenum = 0x8C3B;
+pub const GL_RGB9_E5: GLenum = 0x8C3D;
+pub const GL_UNSIGNED_INT_5_9_9_9_REV: GLenum = 0x8C3E;
+pub const GL_TEXTURE_SHARED_SIZE: GLenum = 0x8C3F;
+pub const GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH: GLenum = 0x8C76;
+pub const GL_TRANSFORM_FEEDBACK_BUFFER_MODE: GLenum = 0x8C7F;
+pub const GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS: GLenum = 0x8C80;
+pub const GL_TRANSFORM_FEEDBACK_VARYINGS: GLenum = 0x8C83;
+pub const GL_TRANSFORM_FEEDBACK_BUFFER_START: GLenum = 0x8C84;
+pub const GL_TRANSFORM_FEEDBACK_BUFFER_SIZE: GLenum = 0x8C85;
+pub const GL_PRIMITIVES_GENERATED: GLenum = 0x8C87;
+pub const GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN: GLenum = 0x8C88;
+pub const GL_RASTERIZER_DISCARD: GLenum = 0x8C89;
+pub const GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS: GLenum = 0x8C8A;
+pub const GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS: GLenum = 0x8C8B;
+pub const GL_INTERLEAVED_ATTRIBS: GLenum = 0x8C8C;
+pub const GL_SEPARATE_ATTRIBS: GLenum = 0x8C8D;
+pub const GL_TRANSFORM_FEEDBACK_BUFFER: GLenum = 0x8C8E;
+pub const GL_TRANSFORM_FEEDBACK_BUFFER_BINDING: GLenum = 0x8C8F;
+pub const GL_RGBA32UI: GLenum = 0x8D70;
+pub const GL_RGB32UI: GLenum = 0x8D71;
+pub const GL_RGBA16UI: GLenum = 0x8D76;
+pub const GL_RGB16UI: GLenum = 0x8D77;
+pub const GL_RGBA8UI: GLenum = 0x8D7C;
+pub const GL_RGB8UI: GLenum = 0x8D7D;
+pub const GL_RGBA32I: GLenum = 0x8D82;
+pub const GL_RGB32I: GLenum = 0x8D83;
+pub const GL_RGBA16I: GLenum = 0x8D88;
+pub const GL_RGB16I: GLenum = 0x8D89;
+pub const GL_RGBA8I: GLenum = 0x8D8E;
+pub const GL_RGB8I: GLenum = 0x8D8F;
+pub const GL_RED_INTEGER: GLenum = 0x8D94;
+pub const GL_GREEN_INTEGER: GLenum = 0x8D95;
+pub const GL_BLUE_INTEGER: GLenum = 0x8D96;
+pub const GL_RGB_INTEGER: GLenum = 0x8D98;
+pub const GL_RGBA_INTEGER: GLenum = 0x8D99;
+pub const GL_BGR_INTEGER: GLenum = 0x8D9A;
+pub const GL_BGRA_INTEGER: GLenum = 0x8D9B;
+pub const GL_SAMPLER_1D_ARRAY: GLenum = 0x8DC0;
+pub const GL_SAMPLER_2D_ARRAY: GLenum = 0x8DC1;
+pub const GL_SAMPLER_1D_ARRAY_SHADOW: GLenum = 0x8DC3;
+pub const GL_SAMPLER_2D_ARRAY_SHADOW: GLenum = 0x8DC4;
+pub const GL_SAMPLER_CUBE_SHADOW: GLenum = 0x8DC5;
+pub const GL_UNSIGNED_INT_VEC2: GLenum = 0x8DC6;
+pub const GL_UNSIGNED_INT_VEC3: GLenum = 0x8DC7;
+pub const GL_UNSIGNED_INT_VEC4: GLenum = 0x8DC8;
+pub const GL_INT_SAMPLER_1D: GLenum = 0x8DC9;
+pub const GL_INT_SAMPLER_2D: GLenum = 0x8DCA;
+pub const GL_INT_SAMPLER_3D: GLenum = 0x8DCB;
+pub const GL_INT_SAMPLER_CUBE: GLenum = 0x8DCC;
+pub const GL_INT_SAMPLER_1D_ARRAY: GLenum = 0x8DCE;
+pub const GL_INT_SAMPLER_2D_ARRAY: GLenum = 0x8DCF;
+pub const GL_UNSIGNED_INT_SAMPLER_1D: GLenum = 0x8DD1;
+pub const GL_UNSIGNED_INT_SAMPLER_2D: GLenum = 0x8DD2;
+pub const GL_UNSIGNED_INT_SAMPLER_3D: GLenum = 0x8DD3;
+pub const GL_UNSIGNED_INT_SAMPLER_CUBE: GLenum = 0x8DD4;
+pub const GL_UNSIGNED_INT_SAMPLER_1D_ARRAY: GLenum = 0x8DD6;
+pub const GL_UNSIGNED_INT_SAMPLER_2D_ARRAY: GLenum = 0x8DD7;
+pub const GL_QUERY_WAIT: GLenum = 0x8E13;
+pub const GL_QUERY_NO_WAIT: GLenum = 0x8E14;
+pub const GL_QUERY_BY_REGION_WAIT: GLenum = 0x8E15;
+pub const GL_QUERY_BY_REGION_NO_WAIT: GLenum = 0x8E16;
+pub const GL_BUFFER_ACCESS_FLAGS: GLenum = 0x911F;
+pub const GL_BUFFER_MAP_LENGTH: GLenum = 0x9120;
+pub const GL_BUFFER_MAP_OFFSET: GLenum = 0x9121;
+pub const GL_DEPTH_COMPONENT32F: GLenum = 0x8CAC;
+pub const GL_DEPTH32F_STENCIL8: GLenum = 0x8CAD;
+pub const GL_FLOAT_32_UNSIGNED_INT_24_8_REV: GLenum = 0x8DAD;
+pub const GL_INVALID_FRAMEBUFFER_OPERATION: GLenum = 0x0506;
+pub const GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING: GLenum = 0x8210;
+pub const GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE: GLenum = 0x8211;
+pub const GL_FRAMEBUFFER_ATTACHMENT_RED_SIZE: GLenum = 0x8212;
+pub const GL_FRAMEBUFFER_ATTACHMENT_GREEN_SIZE: GLenum = 0x8213;
+pub const GL_FRAMEBUFFER_ATTACHMENT_BLUE_SIZE: GLenum = 0x8214;
+pub const GL_FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE: GLenum = 0x8215;
+pub const GL_FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE: GLenum = 0x8216;
+pub const GL_FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE: GLenum = 0x8217;
+pub const GL_FRAMEBUFFER_DEFAULT: GLenum = 0x8218;
+pub const GL_FRAMEBUFFER_UNDEFINED: GLenum = 0x8219;
+pub const GL_DEPTH_STENCIL_ATTACHMENT: GLenum = 0x821A;
+pub const GL_MAX_RENDERBUFFER_SIZE: GLenum = 0x84E8;
+pub const GL_DEPTH_STENCIL: GLenum = 0x84F9;
+pub const GL_UNSIGNED_INT_24_8: GLenum = 0x84FA;
+pub const GL_DEPTH24_STENCIL8: GLenum = 0x88F0;
+pub const GL_TEXTURE_STENCIL_SIZE: GLenum = 0x88F1;
+pub const GL_TEXTURE_RED_TYPE: GLenum = 0x8C10;
+pub const GL_TEXTURE_GREEN_TYPE: GLenum = 0x8C11;
+pub const GL_TEXTURE_BLUE_TYPE: GLenum = 0x8C12;
+pub const GL_TEXTURE_ALPHA_TYPE: GLenum = 0x8C13;
+pub const GL_TEXTURE_DEPTH_TYPE: GLenum = 0x8C16;
+pub const GL_UNSIGNED_NORMALIZED: GLenum = 0x8C17;
+pub const GL_FRAMEBUFFER_BINDING: GLenum = 0x8CA6;
+pub const GL_DRAW_FRAMEBUFFER_BINDING: GLenum = 0x8CA6;
+pub const GL_RENDERBUFFER_BINDING: GLenum = 0x8CA7;
+pub const GL_READ_FRAMEBUFFER: GLenum = 0x8CA8;
+pub const GL_DRAW_FRAMEBUFFER: GLenum = 0x8CA9;
+pub const GL_READ_FRAMEBUFFER_BINDING: GLenum = 0x8CAA;
+pub const GL_RENDERBUFFER_SAMPLES: GLenum = 0x8CAB;
+pub const GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE: GLenum = 0x8CD0;
+pub const GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME: GLenum = 0x8CD1;
+pub const GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL: GLenum = 0x8CD2;
+pub const GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE: GLenum = 0x8CD3;
+pub const GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER: GLenum = 0x8CD4;
+pub const GL_FRAMEBUFFER_COMPLETE: GLenum = 0x8CD5;
+pub const GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT: GLenum = 0x8CD6;
+pub const GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT: GLenum = 0x8CD7;
+pub const GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER: GLenum = 0x8CDB;
+pub const GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER: GLenum = 0x8CDC;
+pub const GL_FRAMEBUFFER_UNSUPPORTED: GLenum = 0x8CDD;
+pub const GL_MAX_COLOR_ATTACHMENTS: GLenum = 0x8CDF;
+pub const GL_COLOR_ATTACHMENT0: GLenum = 0x8CE0;
+pub const GL_COLOR_ATTACHMENT1: GLenum = 0x8CE1;
+pub const GL_COLOR_ATTACHMENT2: GLenum = 0x8CE2;
+pub const GL_COLOR_ATTACHMENT3: GLenum = 0x8CE3;
+pub const GL_COLOR_ATTACHMENT4: GLenum = 0x8CE4;
+pub const GL_COLOR_ATTACHMENT5: GLenum = 0x8CE5;
+pub const GL_COLOR_ATTACHMENT6: GLenum = 0x8CE6;
+pub const GL_COLOR_ATTACHMENT7: GLenum = 0x8CE7;
+pub const GL_COLOR_ATTACHMENT8: GLenum = 0x8CE8;
+pub const GL_COLOR_ATTACHMENT9: GLenum = 0x8CE9;
+pub const GL_COLOR_ATTACHMENT10: GLenum = 0x8CEA;
+pub const GL_COLOR_ATTACHMENT11: GLenum = 0x8CEB;
+pub const GL_COLOR_ATTACHMENT12: GLenum = 0x8CEC;
+pub const GL_COLOR_ATTACHMENT13: GLenum = 0x8CED;
+pub const GL_COLOR_ATTACHMENT14: GLenum = 0x8CEE;
+pub const GL_COLOR_ATTACHMENT15: GLenum = 0x8CEF;
+pub const GL_COLOR_ATTACHMENT16: GLenum = 0x8CF0;
+pub const GL_COLOR_ATTACHMENT17: GLenum = 0x8CF1;
+pub const GL_COLOR_ATTACHMENT18: GLenum = 0x8CF2;
+pub const GL_COLOR_ATTACHMENT19: GLenum = 0x8CF3;
+pub const GL_COLOR_ATTACHMENT20: GLenum = 0x8CF4;
+pub const GL_COLOR_ATTACHMENT21: GLenum = 0x8CF5;
+pub const GL_COLOR_ATTACHMENT22: GLenum = 0x8CF6;
+pub const GL_COLOR_ATTACHMENT23: GLenum = 0x8CF7;
+pub const GL_COLOR_ATTACHMENT24: GLenum = 0x8CF8;
+pub const GL_COLOR_ATTACHMENT25: GLenum = 0x8CF9;
+pub const GL_COLOR_ATTACHMENT26: GLenum = 0x8CFA;
+pub const GL_COLOR_ATTACHMENT27: GLenum = 0x8CFB;
+pub const GL_COLOR_ATTACHMENT28: GLenum = 0x8CFC;
+pub const GL_COLOR_ATTACHMENT29: GLenum = 0x8CFD;
+pub const GL_COLOR_ATTACHMENT30: GLenum = 0x8CFE;
+pub const GL_COLOR_ATTACHMENT31: GLenum = 0x8CFF;
+pub const GL_DEPTH_ATTACHMENT: GLenum = 0x8D00;
+pub const GL_STENCIL_ATTACHMENT: GLenum = 0x8D20;
+pub const GL_FRAMEBUFFER: GLenum = 0x8D40;
+pub const GL_RENDERBUFFER: GLenum = 0x8D41;
+pub const GL_RENDERBUFFER_WIDTH: GLenum = 0x8D42;
+pub const GL_RENDERBUFFER_HEIGHT: GLenum = 0x8D43;
+pub const GL_RENDERBUFFER_INTERNAL_FORMAT: GLenum = 0x8D44;
+pub const GL_STENCIL_INDEX1: GLenum = 0x8D46;
+pub const GL_STENCIL_INDEX4: GLenum = 0x8D47;
+pub const GL_STENCIL_INDEX8: GLenum = 0x8D48;
+pub const GL_STENCIL_INDEX16: GLenum = 0x8D49;
+pub const GL_RENDERBUFFER_RED_SIZE: GLenum = 0x8D50;
+pub const GL_RENDERBUFFER_GREEN_SIZE: GLenum = 0x8D51;
+pub const GL_RENDERBUFFER_BLUE_SIZE: GLenum = 0x8D52;
+pub const GL_RENDERBUFFER_ALPHA_SIZE: GLenum = 0x8D53;
+pub const GL_RENDERBUFFER_DEPTH_SIZE: GLenum = 0x8D54;
+pub const GL_RENDERBUFFER_STENCIL_SIZE: GLenum = 0x8D55;
+pub const GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE: GLenum = 0x8D56;
+pub const GL_MAX_SAMPLES: GLenum = 0x8D57;
+pub const GL_INDEX: GLenum = 0x8222;
+pub const GL_TEXTURE_LUMINANCE_TYPE: GLenum = 0x8C14;
+pub const GL_TEXTURE_INTENSITY_TYPE: GLenum = 0x8C15;
+pub const GL_FRAMEBUFFER_SRGB: GLenum = 0x8DB9;
+pub const GL_HALF_FLOAT: GLenum = 0x140B;
+pub const GL_MAP_READ_BIT: GLbitfield = 0x0001;
+pub const GL_MAP_WRITE_BIT: GLbitfield = 0x0002;
+pub const GL_MAP_INVALIDATE_RANGE_BIT: GLbitfield = 0x0004;
+pub const GL_MAP_INVALIDATE_BUFFER_BIT: GLbitfield = 0x0008;
+pub const GL_MAP_FLUSH_EXPLICIT_BIT: GLbitfield = 0x0010;
+pub const GL_MAP_UNSYNCHRONIZED_BIT: GLbitfield = 0x0020;
+pub const GL_COMPRESSED_RED_RGTC1: GLenum = 0x8DBB;
+pub const GL_COMPRESSED_SIGNED_RED_RGTC1: GLenum = 0x8DBC;
+pub const GL_COMPRESSED_RG_RGTC2: GLenum = 0x8DBD;
+pub const GL_COMPRESSED_SIGNED_RG_RGTC2: GLenum = 0x8DBE;
+pub const GL_RG: GLenum = 0x8227;
+pub const GL_RG_INTEGER: GLenum = 0x8228;
+pub const GL_R8: GLenum = 0x8229;
+pub const GL_R16: GLenum = 0x822A;
+pub const GL_RG8: GLenum = 0x822B;
+pub const GL_RG16: GLenum = 0x822C;
+pub const GL_R16F: GLenum = 0x822D;
+pub const GL_R32F: GLenum = 0x822E;
+pub const GL_RG16F: GLenum = 0x822F;
+pub const GL_RG32F: GLenum = 0x8230;
+pub const GL_R8I: GLenum = 0x8231;
+pub const GL_R8UI: GLenum = 0x8232;
+pub const GL_R16I: GLenum = 0x8233;
+pub const GL_R16UI: GLenum = 0x8234;
+pub const GL_R32I: GLenum = 0x8235;
+pub const GL_R32UI: GLenum = 0x8236;
+pub const GL_RG8I: GLenum = 0x8237;
+pub const GL_RG8UI: GLenum = 0x8238;
+pub const GL_RG16I: GLenum = 0x8239;
+pub const GL_RG16UI: GLenum = 0x823A;
+pub const GL_RG32I: GLenum = 0x823B;
+pub const GL_RG32UI: GLenum = 0x823C;
+pub const GL_VERTEX_ARRAY_BINDING: GLenum = 0x85B5;
+pub const GL_CLAMP_VERTEX_COLOR: GLenum = 0x891A;
+pub const GL_CLAMP_FRAGMENT_COLOR: GLenum = 0x891B;
+pub const GL_ALPHA_INTEGER: GLenum = 0x8D97;
 
 pub trait GL_3_0 {
 	fn glColorMaski(&self, index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean);
@@ -4925,7 +4925,7 @@ pub trait GL_3_0 {
 	fn glIsVertexArray(&self, array: GLuint) -> GLboolean;
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version30 {
 	available: bool,
 	colormaski: PFNGLCOLORMASKIPROC,
@@ -5354,7 +5354,7 @@ impl GL_3_0 for Version30 {
 }
 
 impl Version30 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 30000 {
@@ -5362,90 +5362,90 @@ impl Version30 {
 		}
 		Self {
 			available: true,
-			colormaski: unsafe{transmute(get_proc_address("glColorMaski"))},
-			getbooleani_v: unsafe{transmute(get_proc_address("glGetBooleani_v"))},
-			getintegeri_v: unsafe{transmute(get_proc_address("glGetIntegeri_v"))},
-			enablei: unsafe{transmute(get_proc_address("glEnablei"))},
-			disablei: unsafe{transmute(get_proc_address("glDisablei"))},
-			isenabledi: unsafe{transmute(get_proc_address("glIsEnabledi"))},
-			begintransformfeedback: unsafe{transmute(get_proc_address("glBeginTransformFeedback"))},
-			endtransformfeedback: unsafe{transmute(get_proc_address("glEndTransformFeedback"))},
-			bindbufferrange: unsafe{transmute(get_proc_address("glBindBufferRange"))},
-			bindbufferbase: unsafe{transmute(get_proc_address("glBindBufferBase"))},
-			transformfeedbackvaryings: unsafe{transmute(get_proc_address("glTransformFeedbackVaryings"))},
-			gettransformfeedbackvarying: unsafe{transmute(get_proc_address("glGetTransformFeedbackVarying"))},
-			clampcolor: unsafe{transmute(get_proc_address("glClampColor"))},
-			beginconditionalrender: unsafe{transmute(get_proc_address("glBeginConditionalRender"))},
-			endconditionalrender: unsafe{transmute(get_proc_address("glEndConditionalRender"))},
-			vertexattribipointer: unsafe{transmute(get_proc_address("glVertexAttribIPointer"))},
-			getvertexattribiiv: unsafe{transmute(get_proc_address("glGetVertexAttribIiv"))},
-			getvertexattribiuiv: unsafe{transmute(get_proc_address("glGetVertexAttribIuiv"))},
-			vertexattribi1i: unsafe{transmute(get_proc_address("glVertexAttribI1i"))},
-			vertexattribi2i: unsafe{transmute(get_proc_address("glVertexAttribI2i"))},
-			vertexattribi3i: unsafe{transmute(get_proc_address("glVertexAttribI3i"))},
-			vertexattribi4i: unsafe{transmute(get_proc_address("glVertexAttribI4i"))},
-			vertexattribi1ui: unsafe{transmute(get_proc_address("glVertexAttribI1ui"))},
-			vertexattribi2ui: unsafe{transmute(get_proc_address("glVertexAttribI2ui"))},
-			vertexattribi3ui: unsafe{transmute(get_proc_address("glVertexAttribI3ui"))},
-			vertexattribi4ui: unsafe{transmute(get_proc_address("glVertexAttribI4ui"))},
-			vertexattribi1iv: unsafe{transmute(get_proc_address("glVertexAttribI1iv"))},
-			vertexattribi2iv: unsafe{transmute(get_proc_address("glVertexAttribI2iv"))},
-			vertexattribi3iv: unsafe{transmute(get_proc_address("glVertexAttribI3iv"))},
-			vertexattribi4iv: unsafe{transmute(get_proc_address("glVertexAttribI4iv"))},
-			vertexattribi1uiv: unsafe{transmute(get_proc_address("glVertexAttribI1uiv"))},
-			vertexattribi2uiv: unsafe{transmute(get_proc_address("glVertexAttribI2uiv"))},
-			vertexattribi3uiv: unsafe{transmute(get_proc_address("glVertexAttribI3uiv"))},
-			vertexattribi4uiv: unsafe{transmute(get_proc_address("glVertexAttribI4uiv"))},
-			vertexattribi4bv: unsafe{transmute(get_proc_address("glVertexAttribI4bv"))},
-			vertexattribi4sv: unsafe{transmute(get_proc_address("glVertexAttribI4sv"))},
-			vertexattribi4ubv: unsafe{transmute(get_proc_address("glVertexAttribI4ubv"))},
-			vertexattribi4usv: unsafe{transmute(get_proc_address("glVertexAttribI4usv"))},
-			getuniformuiv: unsafe{transmute(get_proc_address("glGetUniformuiv"))},
-			bindfragdatalocation: unsafe{transmute(get_proc_address("glBindFragDataLocation"))},
-			getfragdatalocation: unsafe{transmute(get_proc_address("glGetFragDataLocation"))},
-			uniform1ui: unsafe{transmute(get_proc_address("glUniform1ui"))},
-			uniform2ui: unsafe{transmute(get_proc_address("glUniform2ui"))},
-			uniform3ui: unsafe{transmute(get_proc_address("glUniform3ui"))},
-			uniform4ui: unsafe{transmute(get_proc_address("glUniform4ui"))},
-			uniform1uiv: unsafe{transmute(get_proc_address("glUniform1uiv"))},
-			uniform2uiv: unsafe{transmute(get_proc_address("glUniform2uiv"))},
-			uniform3uiv: unsafe{transmute(get_proc_address("glUniform3uiv"))},
-			uniform4uiv: unsafe{transmute(get_proc_address("glUniform4uiv"))},
-			texparameteriiv: unsafe{transmute(get_proc_address("glTexParameterIiv"))},
-			texparameteriuiv: unsafe{transmute(get_proc_address("glTexParameterIuiv"))},
-			gettexparameteriiv: unsafe{transmute(get_proc_address("glGetTexParameterIiv"))},
-			gettexparameteriuiv: unsafe{transmute(get_proc_address("glGetTexParameterIuiv"))},
-			clearbufferiv: unsafe{transmute(get_proc_address("glClearBufferiv"))},
-			clearbufferuiv: unsafe{transmute(get_proc_address("glClearBufferuiv"))},
-			clearbufferfv: unsafe{transmute(get_proc_address("glClearBufferfv"))},
-			clearbufferfi: unsafe{transmute(get_proc_address("glClearBufferfi"))},
-			getstringi: unsafe{transmute(get_proc_address("glGetStringi"))},
-			isrenderbuffer: unsafe{transmute(get_proc_address("glIsRenderbuffer"))},
-			bindrenderbuffer: unsafe{transmute(get_proc_address("glBindRenderbuffer"))},
-			deleterenderbuffers: unsafe{transmute(get_proc_address("glDeleteRenderbuffers"))},
-			genrenderbuffers: unsafe{transmute(get_proc_address("glGenRenderbuffers"))},
-			renderbufferstorage: unsafe{transmute(get_proc_address("glRenderbufferStorage"))},
-			getrenderbufferparameteriv: unsafe{transmute(get_proc_address("glGetRenderbufferParameteriv"))},
-			isframebuffer: unsafe{transmute(get_proc_address("glIsFramebuffer"))},
-			bindframebuffer: unsafe{transmute(get_proc_address("glBindFramebuffer"))},
-			deleteframebuffers: unsafe{transmute(get_proc_address("glDeleteFramebuffers"))},
-			genframebuffers: unsafe{transmute(get_proc_address("glGenFramebuffers"))},
-			checkframebufferstatus: unsafe{transmute(get_proc_address("glCheckFramebufferStatus"))},
-			framebuffertexture1d: unsafe{transmute(get_proc_address("glFramebufferTexture1D"))},
-			framebuffertexture2d: unsafe{transmute(get_proc_address("glFramebufferTexture2D"))},
-			framebuffertexture3d: unsafe{transmute(get_proc_address("glFramebufferTexture3D"))},
-			framebufferrenderbuffer: unsafe{transmute(get_proc_address("glFramebufferRenderbuffer"))},
-			getframebufferattachmentparameteriv: unsafe{transmute(get_proc_address("glGetFramebufferAttachmentParameteriv"))},
-			generatemipmap: unsafe{transmute(get_proc_address("glGenerateMipmap"))},
-			blitframebuffer: unsafe{transmute(get_proc_address("glBlitFramebuffer"))},
-			renderbufferstoragemultisample: unsafe{transmute(get_proc_address("glRenderbufferStorageMultisample"))},
-			framebuffertexturelayer: unsafe{transmute(get_proc_address("glFramebufferTextureLayer"))},
-			mapbufferrange: unsafe{transmute(get_proc_address("glMapBufferRange"))},
-			flushmappedbufferrange: unsafe{transmute(get_proc_address("glFlushMappedBufferRange"))},
-			bindvertexarray: unsafe{transmute(get_proc_address("glBindVertexArray"))},
-			deletevertexarrays: unsafe{transmute(get_proc_address("glDeleteVertexArrays"))},
-			genvertexarrays: unsafe{transmute(get_proc_address("glGenVertexArrays"))},
-			isvertexarray: unsafe{transmute(get_proc_address("glIsVertexArray"))},
+			colormaski: {let proc = get_proc_address("glColorMaski"); if proc == null() {dummy_pfnglcolormaskiproc} else {unsafe{transmute(proc)}}},
+			getbooleani_v: {let proc = get_proc_address("glGetBooleani_v"); if proc == null() {dummy_pfnglgetbooleani_vproc} else {unsafe{transmute(proc)}}},
+			getintegeri_v: {let proc = get_proc_address("glGetIntegeri_v"); if proc == null() {dummy_pfnglgetintegeri_vproc} else {unsafe{transmute(proc)}}},
+			enablei: {let proc = get_proc_address("glEnablei"); if proc == null() {dummy_pfnglenableiproc} else {unsafe{transmute(proc)}}},
+			disablei: {let proc = get_proc_address("glDisablei"); if proc == null() {dummy_pfngldisableiproc} else {unsafe{transmute(proc)}}},
+			isenabledi: {let proc = get_proc_address("glIsEnabledi"); if proc == null() {dummy_pfnglisenablediproc} else {unsafe{transmute(proc)}}},
+			begintransformfeedback: {let proc = get_proc_address("glBeginTransformFeedback"); if proc == null() {dummy_pfnglbegintransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			endtransformfeedback: {let proc = get_proc_address("glEndTransformFeedback"); if proc == null() {dummy_pfnglendtransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			bindbufferrange: {let proc = get_proc_address("glBindBufferRange"); if proc == null() {dummy_pfnglbindbufferrangeproc} else {unsafe{transmute(proc)}}},
+			bindbufferbase: {let proc = get_proc_address("glBindBufferBase"); if proc == null() {dummy_pfnglbindbufferbaseproc} else {unsafe{transmute(proc)}}},
+			transformfeedbackvaryings: {let proc = get_proc_address("glTransformFeedbackVaryings"); if proc == null() {dummy_pfngltransformfeedbackvaryingsproc} else {unsafe{transmute(proc)}}},
+			gettransformfeedbackvarying: {let proc = get_proc_address("glGetTransformFeedbackVarying"); if proc == null() {dummy_pfnglgettransformfeedbackvaryingproc} else {unsafe{transmute(proc)}}},
+			clampcolor: {let proc = get_proc_address("glClampColor"); if proc == null() {dummy_pfnglclampcolorproc} else {unsafe{transmute(proc)}}},
+			beginconditionalrender: {let proc = get_proc_address("glBeginConditionalRender"); if proc == null() {dummy_pfnglbeginconditionalrenderproc} else {unsafe{transmute(proc)}}},
+			endconditionalrender: {let proc = get_proc_address("glEndConditionalRender"); if proc == null() {dummy_pfnglendconditionalrenderproc} else {unsafe{transmute(proc)}}},
+			vertexattribipointer: {let proc = get_proc_address("glVertexAttribIPointer"); if proc == null() {dummy_pfnglvertexattribipointerproc} else {unsafe{transmute(proc)}}},
+			getvertexattribiiv: {let proc = get_proc_address("glGetVertexAttribIiv"); if proc == null() {dummy_pfnglgetvertexattribiivproc} else {unsafe{transmute(proc)}}},
+			getvertexattribiuiv: {let proc = get_proc_address("glGetVertexAttribIuiv"); if proc == null() {dummy_pfnglgetvertexattribiuivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi1i: {let proc = get_proc_address("glVertexAttribI1i"); if proc == null() {dummy_pfnglvertexattribi1iproc} else {unsafe{transmute(proc)}}},
+			vertexattribi2i: {let proc = get_proc_address("glVertexAttribI2i"); if proc == null() {dummy_pfnglvertexattribi2iproc} else {unsafe{transmute(proc)}}},
+			vertexattribi3i: {let proc = get_proc_address("glVertexAttribI3i"); if proc == null() {dummy_pfnglvertexattribi3iproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4i: {let proc = get_proc_address("glVertexAttribI4i"); if proc == null() {dummy_pfnglvertexattribi4iproc} else {unsafe{transmute(proc)}}},
+			vertexattribi1ui: {let proc = get_proc_address("glVertexAttribI1ui"); if proc == null() {dummy_pfnglvertexattribi1uiproc} else {unsafe{transmute(proc)}}},
+			vertexattribi2ui: {let proc = get_proc_address("glVertexAttribI2ui"); if proc == null() {dummy_pfnglvertexattribi2uiproc} else {unsafe{transmute(proc)}}},
+			vertexattribi3ui: {let proc = get_proc_address("glVertexAttribI3ui"); if proc == null() {dummy_pfnglvertexattribi3uiproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4ui: {let proc = get_proc_address("glVertexAttribI4ui"); if proc == null() {dummy_pfnglvertexattribi4uiproc} else {unsafe{transmute(proc)}}},
+			vertexattribi1iv: {let proc = get_proc_address("glVertexAttribI1iv"); if proc == null() {dummy_pfnglvertexattribi1ivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi2iv: {let proc = get_proc_address("glVertexAttribI2iv"); if proc == null() {dummy_pfnglvertexattribi2ivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi3iv: {let proc = get_proc_address("glVertexAttribI3iv"); if proc == null() {dummy_pfnglvertexattribi3ivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4iv: {let proc = get_proc_address("glVertexAttribI4iv"); if proc == null() {dummy_pfnglvertexattribi4ivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi1uiv: {let proc = get_proc_address("glVertexAttribI1uiv"); if proc == null() {dummy_pfnglvertexattribi1uivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi2uiv: {let proc = get_proc_address("glVertexAttribI2uiv"); if proc == null() {dummy_pfnglvertexattribi2uivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi3uiv: {let proc = get_proc_address("glVertexAttribI3uiv"); if proc == null() {dummy_pfnglvertexattribi3uivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4uiv: {let proc = get_proc_address("glVertexAttribI4uiv"); if proc == null() {dummy_pfnglvertexattribi4uivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4bv: {let proc = get_proc_address("glVertexAttribI4bv"); if proc == null() {dummy_pfnglvertexattribi4bvproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4sv: {let proc = get_proc_address("glVertexAttribI4sv"); if proc == null() {dummy_pfnglvertexattribi4svproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4ubv: {let proc = get_proc_address("glVertexAttribI4ubv"); if proc == null() {dummy_pfnglvertexattribi4ubvproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4usv: {let proc = get_proc_address("glVertexAttribI4usv"); if proc == null() {dummy_pfnglvertexattribi4usvproc} else {unsafe{transmute(proc)}}},
+			getuniformuiv: {let proc = get_proc_address("glGetUniformuiv"); if proc == null() {dummy_pfnglgetuniformuivproc} else {unsafe{transmute(proc)}}},
+			bindfragdatalocation: {let proc = get_proc_address("glBindFragDataLocation"); if proc == null() {dummy_pfnglbindfragdatalocationproc} else {unsafe{transmute(proc)}}},
+			getfragdatalocation: {let proc = get_proc_address("glGetFragDataLocation"); if proc == null() {dummy_pfnglgetfragdatalocationproc} else {unsafe{transmute(proc)}}},
+			uniform1ui: {let proc = get_proc_address("glUniform1ui"); if proc == null() {dummy_pfngluniform1uiproc} else {unsafe{transmute(proc)}}},
+			uniform2ui: {let proc = get_proc_address("glUniform2ui"); if proc == null() {dummy_pfngluniform2uiproc} else {unsafe{transmute(proc)}}},
+			uniform3ui: {let proc = get_proc_address("glUniform3ui"); if proc == null() {dummy_pfngluniform3uiproc} else {unsafe{transmute(proc)}}},
+			uniform4ui: {let proc = get_proc_address("glUniform4ui"); if proc == null() {dummy_pfngluniform4uiproc} else {unsafe{transmute(proc)}}},
+			uniform1uiv: {let proc = get_proc_address("glUniform1uiv"); if proc == null() {dummy_pfngluniform1uivproc} else {unsafe{transmute(proc)}}},
+			uniform2uiv: {let proc = get_proc_address("glUniform2uiv"); if proc == null() {dummy_pfngluniform2uivproc} else {unsafe{transmute(proc)}}},
+			uniform3uiv: {let proc = get_proc_address("glUniform3uiv"); if proc == null() {dummy_pfngluniform3uivproc} else {unsafe{transmute(proc)}}},
+			uniform4uiv: {let proc = get_proc_address("glUniform4uiv"); if proc == null() {dummy_pfngluniform4uivproc} else {unsafe{transmute(proc)}}},
+			texparameteriiv: {let proc = get_proc_address("glTexParameterIiv"); if proc == null() {dummy_pfngltexparameteriivproc} else {unsafe{transmute(proc)}}},
+			texparameteriuiv: {let proc = get_proc_address("glTexParameterIuiv"); if proc == null() {dummy_pfngltexparameteriuivproc} else {unsafe{transmute(proc)}}},
+			gettexparameteriiv: {let proc = get_proc_address("glGetTexParameterIiv"); if proc == null() {dummy_pfnglgettexparameteriivproc} else {unsafe{transmute(proc)}}},
+			gettexparameteriuiv: {let proc = get_proc_address("glGetTexParameterIuiv"); if proc == null() {dummy_pfnglgettexparameteriuivproc} else {unsafe{transmute(proc)}}},
+			clearbufferiv: {let proc = get_proc_address("glClearBufferiv"); if proc == null() {dummy_pfnglclearbufferivproc} else {unsafe{transmute(proc)}}},
+			clearbufferuiv: {let proc = get_proc_address("glClearBufferuiv"); if proc == null() {dummy_pfnglclearbufferuivproc} else {unsafe{transmute(proc)}}},
+			clearbufferfv: {let proc = get_proc_address("glClearBufferfv"); if proc == null() {dummy_pfnglclearbufferfvproc} else {unsafe{transmute(proc)}}},
+			clearbufferfi: {let proc = get_proc_address("glClearBufferfi"); if proc == null() {dummy_pfnglclearbufferfiproc} else {unsafe{transmute(proc)}}},
+			getstringi: {let proc = get_proc_address("glGetStringi"); if proc == null() {dummy_pfnglgetstringiproc} else {unsafe{transmute(proc)}}},
+			isrenderbuffer: {let proc = get_proc_address("glIsRenderbuffer"); if proc == null() {dummy_pfnglisrenderbufferproc} else {unsafe{transmute(proc)}}},
+			bindrenderbuffer: {let proc = get_proc_address("glBindRenderbuffer"); if proc == null() {dummy_pfnglbindrenderbufferproc} else {unsafe{transmute(proc)}}},
+			deleterenderbuffers: {let proc = get_proc_address("glDeleteRenderbuffers"); if proc == null() {dummy_pfngldeleterenderbuffersproc} else {unsafe{transmute(proc)}}},
+			genrenderbuffers: {let proc = get_proc_address("glGenRenderbuffers"); if proc == null() {dummy_pfnglgenrenderbuffersproc} else {unsafe{transmute(proc)}}},
+			renderbufferstorage: {let proc = get_proc_address("glRenderbufferStorage"); if proc == null() {dummy_pfnglrenderbufferstorageproc} else {unsafe{transmute(proc)}}},
+			getrenderbufferparameteriv: {let proc = get_proc_address("glGetRenderbufferParameteriv"); if proc == null() {dummy_pfnglgetrenderbufferparameterivproc} else {unsafe{transmute(proc)}}},
+			isframebuffer: {let proc = get_proc_address("glIsFramebuffer"); if proc == null() {dummy_pfnglisframebufferproc} else {unsafe{transmute(proc)}}},
+			bindframebuffer: {let proc = get_proc_address("glBindFramebuffer"); if proc == null() {dummy_pfnglbindframebufferproc} else {unsafe{transmute(proc)}}},
+			deleteframebuffers: {let proc = get_proc_address("glDeleteFramebuffers"); if proc == null() {dummy_pfngldeleteframebuffersproc} else {unsafe{transmute(proc)}}},
+			genframebuffers: {let proc = get_proc_address("glGenFramebuffers"); if proc == null() {dummy_pfnglgenframebuffersproc} else {unsafe{transmute(proc)}}},
+			checkframebufferstatus: {let proc = get_proc_address("glCheckFramebufferStatus"); if proc == null() {dummy_pfnglcheckframebufferstatusproc} else {unsafe{transmute(proc)}}},
+			framebuffertexture1d: {let proc = get_proc_address("glFramebufferTexture1D"); if proc == null() {dummy_pfnglframebuffertexture1dproc} else {unsafe{transmute(proc)}}},
+			framebuffertexture2d: {let proc = get_proc_address("glFramebufferTexture2D"); if proc == null() {dummy_pfnglframebuffertexture2dproc} else {unsafe{transmute(proc)}}},
+			framebuffertexture3d: {let proc = get_proc_address("glFramebufferTexture3D"); if proc == null() {dummy_pfnglframebuffertexture3dproc} else {unsafe{transmute(proc)}}},
+			framebufferrenderbuffer: {let proc = get_proc_address("glFramebufferRenderbuffer"); if proc == null() {dummy_pfnglframebufferrenderbufferproc} else {unsafe{transmute(proc)}}},
+			getframebufferattachmentparameteriv: {let proc = get_proc_address("glGetFramebufferAttachmentParameteriv"); if proc == null() {dummy_pfnglgetframebufferattachmentparameterivproc} else {unsafe{transmute(proc)}}},
+			generatemipmap: {let proc = get_proc_address("glGenerateMipmap"); if proc == null() {dummy_pfnglgeneratemipmapproc} else {unsafe{transmute(proc)}}},
+			blitframebuffer: {let proc = get_proc_address("glBlitFramebuffer"); if proc == null() {dummy_pfnglblitframebufferproc} else {unsafe{transmute(proc)}}},
+			renderbufferstoragemultisample: {let proc = get_proc_address("glRenderbufferStorageMultisample"); if proc == null() {dummy_pfnglrenderbufferstoragemultisampleproc} else {unsafe{transmute(proc)}}},
+			framebuffertexturelayer: {let proc = get_proc_address("glFramebufferTextureLayer"); if proc == null() {dummy_pfnglframebuffertexturelayerproc} else {unsafe{transmute(proc)}}},
+			mapbufferrange: {let proc = get_proc_address("glMapBufferRange"); if proc == null() {dummy_pfnglmapbufferrangeproc} else {unsafe{transmute(proc)}}},
+			flushmappedbufferrange: {let proc = get_proc_address("glFlushMappedBufferRange"); if proc == null() {dummy_pfnglflushmappedbufferrangeproc} else {unsafe{transmute(proc)}}},
+			bindvertexarray: {let proc = get_proc_address("glBindVertexArray"); if proc == null() {dummy_pfnglbindvertexarrayproc} else {unsafe{transmute(proc)}}},
+			deletevertexarrays: {let proc = get_proc_address("glDeleteVertexArrays"); if proc == null() {dummy_pfngldeletevertexarraysproc} else {unsafe{transmute(proc)}}},
+			genvertexarrays: {let proc = get_proc_address("glGenVertexArrays"); if proc == null() {dummy_pfnglgenvertexarraysproc} else {unsafe{transmute(proc)}}},
+			isvertexarray: {let proc = get_proc_address("glIsVertexArray"); if proc == null() {dummy_pfnglisvertexarrayproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -5559,102 +5559,102 @@ type PFNGLGETACTIVEUNIFORMBLOCKIVPROC = extern "system" fn(GLuint, GLuint, GLenu
 type PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC = extern "system" fn(GLuint, GLuint, GLsizei, *mut GLsizei, *mut GLchar);
 type PFNGLUNIFORMBLOCKBINDINGPROC = extern "system" fn(GLuint, GLuint, GLuint);
 extern "system" fn dummy_pfngldrawarraysinstancedproc (_: GLenum, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glDrawArraysInstanced() is NULL");
+	panic!("OpenGL Function pointer of `glDrawArraysInstanced()` is NULL");
 }
 extern "system" fn dummy_pfngldrawelementsinstancedproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei) {
-	panic!("OpenGL Function pointer of glDrawElementsInstanced() is NULL");
+	panic!("OpenGL Function pointer of `glDrawElementsInstanced()` is NULL");
 }
 extern "system" fn dummy_pfngltexbufferproc (_: GLenum, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glTexBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glTexBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglprimitiverestartindexproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glPrimitiveRestartIndex() is NULL");
+	panic!("OpenGL Function pointer of `glPrimitiveRestartIndex()` is NULL");
 }
 extern "system" fn dummy_pfnglcopybuffersubdataproc (_: GLenum, _: GLenum, _: GLintptr, _: GLintptr, _: GLsizeiptr) {
-	panic!("OpenGL Function pointer of glCopyBufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glCopyBufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglgetuniformindicesproc (_: GLuint, _: GLsizei, _: *const *const GLchar, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetUniformIndices() is NULL");
+	panic!("OpenGL Function pointer of `glGetUniformIndices()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactiveuniformsivproc (_: GLuint, _: GLsizei, _: *const GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetActiveUniformsiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveUniformsiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactiveuniformnameproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetActiveUniformName() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveUniformName()` is NULL");
 }
 extern "system" fn dummy_pfnglgetuniformblockindexproc (_: GLuint, _: *const GLchar) -> GLuint {
-	panic!("OpenGL Function pointer of glGetUniformBlockIndex() is NULL");
+	panic!("OpenGL Function pointer of `glGetUniformBlockIndex()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactiveuniformblockivproc (_: GLuint, _: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetActiveUniformBlockiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveUniformBlockiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactiveuniformblocknameproc (_: GLuint, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetActiveUniformBlockName() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveUniformBlockName()` is NULL");
 }
 extern "system" fn dummy_pfngluniformblockbindingproc (_: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glUniformBlockBinding() is NULL");
+	panic!("OpenGL Function pointer of `glUniformBlockBinding()` is NULL");
 }
-const SAMPLER_2D_RECT: GLenum = 0x8B63;
-const SAMPLER_2D_RECT_SHADOW: GLenum = 0x8B64;
-const SAMPLER_BUFFER: GLenum = 0x8DC2;
-const INT_SAMPLER_2D_RECT: GLenum = 0x8DCD;
-const INT_SAMPLER_BUFFER: GLenum = 0x8DD0;
-const UNSIGNED_INT_SAMPLER_2D_RECT: GLenum = 0x8DD5;
-const UNSIGNED_INT_SAMPLER_BUFFER: GLenum = 0x8DD8;
-const TEXTURE_BUFFER: GLenum = 0x8C2A;
-const MAX_TEXTURE_BUFFER_SIZE: GLenum = 0x8C2B;
-const TEXTURE_BINDING_BUFFER: GLenum = 0x8C2C;
-const TEXTURE_BUFFER_DATA_STORE_BINDING: GLenum = 0x8C2D;
-const TEXTURE_RECTANGLE: GLenum = 0x84F5;
-const TEXTURE_BINDING_RECTANGLE: GLenum = 0x84F6;
-const PROXY_TEXTURE_RECTANGLE: GLenum = 0x84F7;
-const MAX_RECTANGLE_TEXTURE_SIZE: GLenum = 0x84F8;
-const R8_SNORM: GLenum = 0x8F94;
-const RG8_SNORM: GLenum = 0x8F95;
-const RGB8_SNORM: GLenum = 0x8F96;
-const RGBA8_SNORM: GLenum = 0x8F97;
-const R16_SNORM: GLenum = 0x8F98;
-const RG16_SNORM: GLenum = 0x8F99;
-const RGB16_SNORM: GLenum = 0x8F9A;
-const RGBA16_SNORM: GLenum = 0x8F9B;
-const SIGNED_NORMALIZED: GLenum = 0x8F9C;
-const PRIMITIVE_RESTART: GLenum = 0x8F9D;
-const PRIMITIVE_RESTART_INDEX: GLenum = 0x8F9E;
-const COPY_READ_BUFFER: GLenum = 0x8F36;
-const COPY_WRITE_BUFFER: GLenum = 0x8F37;
-const UNIFORM_BUFFER: GLenum = 0x8A11;
-const UNIFORM_BUFFER_BINDING: GLenum = 0x8A28;
-const UNIFORM_BUFFER_START: GLenum = 0x8A29;
-const UNIFORM_BUFFER_SIZE: GLenum = 0x8A2A;
-const MAX_VERTEX_UNIFORM_BLOCKS: GLenum = 0x8A2B;
-const MAX_GEOMETRY_UNIFORM_BLOCKS: GLenum = 0x8A2C;
-const MAX_FRAGMENT_UNIFORM_BLOCKS: GLenum = 0x8A2D;
-const MAX_COMBINED_UNIFORM_BLOCKS: GLenum = 0x8A2E;
-const MAX_UNIFORM_BUFFER_BINDINGS: GLenum = 0x8A2F;
-const MAX_UNIFORM_BLOCK_SIZE: GLenum = 0x8A30;
-const MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS: GLenum = 0x8A31;
-const MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS: GLenum = 0x8A32;
-const MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS: GLenum = 0x8A33;
-const UNIFORM_BUFFER_OFFSET_ALIGNMENT: GLenum = 0x8A34;
-const ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH: GLenum = 0x8A35;
-const ACTIVE_UNIFORM_BLOCKS: GLenum = 0x8A36;
-const UNIFORM_TYPE: GLenum = 0x8A37;
-const UNIFORM_SIZE: GLenum = 0x8A38;
-const UNIFORM_NAME_LENGTH: GLenum = 0x8A39;
-const UNIFORM_BLOCK_INDEX: GLenum = 0x8A3A;
-const UNIFORM_OFFSET: GLenum = 0x8A3B;
-const UNIFORM_ARRAY_STRIDE: GLenum = 0x8A3C;
-const UNIFORM_MATRIX_STRIDE: GLenum = 0x8A3D;
-const UNIFORM_IS_ROW_MAJOR: GLenum = 0x8A3E;
-const UNIFORM_BLOCK_BINDING: GLenum = 0x8A3F;
-const UNIFORM_BLOCK_DATA_SIZE: GLenum = 0x8A40;
-const UNIFORM_BLOCK_NAME_LENGTH: GLenum = 0x8A41;
-const UNIFORM_BLOCK_ACTIVE_UNIFORMS: GLenum = 0x8A42;
-const UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES: GLenum = 0x8A43;
-const UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER: GLenum = 0x8A44;
-const UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER: GLenum = 0x8A45;
-const UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER: GLenum = 0x8A46;
-const INVALID_INDEX: GLuint = 0xFFFFFFFFu32;
+pub const GL_SAMPLER_2D_RECT: GLenum = 0x8B63;
+pub const GL_SAMPLER_2D_RECT_SHADOW: GLenum = 0x8B64;
+pub const GL_SAMPLER_BUFFER: GLenum = 0x8DC2;
+pub const GL_INT_SAMPLER_2D_RECT: GLenum = 0x8DCD;
+pub const GL_INT_SAMPLER_BUFFER: GLenum = 0x8DD0;
+pub const GL_UNSIGNED_INT_SAMPLER_2D_RECT: GLenum = 0x8DD5;
+pub const GL_UNSIGNED_INT_SAMPLER_BUFFER: GLenum = 0x8DD8;
+pub const GL_TEXTURE_BUFFER: GLenum = 0x8C2A;
+pub const GL_MAX_TEXTURE_BUFFER_SIZE: GLenum = 0x8C2B;
+pub const GL_TEXTURE_BINDING_BUFFER: GLenum = 0x8C2C;
+pub const GL_TEXTURE_BUFFER_DATA_STORE_BINDING: GLenum = 0x8C2D;
+pub const GL_TEXTURE_RECTANGLE: GLenum = 0x84F5;
+pub const GL_TEXTURE_BINDING_RECTANGLE: GLenum = 0x84F6;
+pub const GL_PROXY_TEXTURE_RECTANGLE: GLenum = 0x84F7;
+pub const GL_MAX_RECTANGLE_TEXTURE_SIZE: GLenum = 0x84F8;
+pub const GL_R8_SNORM: GLenum = 0x8F94;
+pub const GL_RG8_SNORM: GLenum = 0x8F95;
+pub const GL_RGB8_SNORM: GLenum = 0x8F96;
+pub const GL_RGBA8_SNORM: GLenum = 0x8F97;
+pub const GL_R16_SNORM: GLenum = 0x8F98;
+pub const GL_RG16_SNORM: GLenum = 0x8F99;
+pub const GL_RGB16_SNORM: GLenum = 0x8F9A;
+pub const GL_RGBA16_SNORM: GLenum = 0x8F9B;
+pub const GL_SIGNED_NORMALIZED: GLenum = 0x8F9C;
+pub const GL_PRIMITIVE_RESTART: GLenum = 0x8F9D;
+pub const GL_PRIMITIVE_RESTART_INDEX: GLenum = 0x8F9E;
+pub const GL_COPY_READ_BUFFER: GLenum = 0x8F36;
+pub const GL_COPY_WRITE_BUFFER: GLenum = 0x8F37;
+pub const GL_UNIFORM_BUFFER: GLenum = 0x8A11;
+pub const GL_UNIFORM_BUFFER_BINDING: GLenum = 0x8A28;
+pub const GL_UNIFORM_BUFFER_START: GLenum = 0x8A29;
+pub const GL_UNIFORM_BUFFER_SIZE: GLenum = 0x8A2A;
+pub const GL_MAX_VERTEX_UNIFORM_BLOCKS: GLenum = 0x8A2B;
+pub const GL_MAX_GEOMETRY_UNIFORM_BLOCKS: GLenum = 0x8A2C;
+pub const GL_MAX_FRAGMENT_UNIFORM_BLOCKS: GLenum = 0x8A2D;
+pub const GL_MAX_COMBINED_UNIFORM_BLOCKS: GLenum = 0x8A2E;
+pub const GL_MAX_UNIFORM_BUFFER_BINDINGS: GLenum = 0x8A2F;
+pub const GL_MAX_UNIFORM_BLOCK_SIZE: GLenum = 0x8A30;
+pub const GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS: GLenum = 0x8A31;
+pub const GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS: GLenum = 0x8A32;
+pub const GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS: GLenum = 0x8A33;
+pub const GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT: GLenum = 0x8A34;
+pub const GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH: GLenum = 0x8A35;
+pub const GL_ACTIVE_UNIFORM_BLOCKS: GLenum = 0x8A36;
+pub const GL_UNIFORM_TYPE: GLenum = 0x8A37;
+pub const GL_UNIFORM_SIZE: GLenum = 0x8A38;
+pub const GL_UNIFORM_NAME_LENGTH: GLenum = 0x8A39;
+pub const GL_UNIFORM_BLOCK_INDEX: GLenum = 0x8A3A;
+pub const GL_UNIFORM_OFFSET: GLenum = 0x8A3B;
+pub const GL_UNIFORM_ARRAY_STRIDE: GLenum = 0x8A3C;
+pub const GL_UNIFORM_MATRIX_STRIDE: GLenum = 0x8A3D;
+pub const GL_UNIFORM_IS_ROW_MAJOR: GLenum = 0x8A3E;
+pub const GL_UNIFORM_BLOCK_BINDING: GLenum = 0x8A3F;
+pub const GL_UNIFORM_BLOCK_DATA_SIZE: GLenum = 0x8A40;
+pub const GL_UNIFORM_BLOCK_NAME_LENGTH: GLenum = 0x8A41;
+pub const GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS: GLenum = 0x8A42;
+pub const GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES: GLenum = 0x8A43;
+pub const GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER: GLenum = 0x8A44;
+pub const GL_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER: GLenum = 0x8A45;
+pub const GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER: GLenum = 0x8A46;
+pub const GL_INVALID_INDEX: GLuint = 0xFFFFFFFFu32;
 
 pub trait GL_3_1 {
 	fn glDrawArraysInstanced(&self, mode: GLenum, first: GLint, count: GLsizei, instancecount: GLsizei);
@@ -5671,7 +5671,7 @@ pub trait GL_3_1 {
 	fn glUniformBlockBinding(&self, program: GLuint, uniformBlockIndex: GLuint, uniformBlockBinding: GLuint);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version31 {
 	available: bool,
 	drawarraysinstanced: PFNGLDRAWARRAYSINSTANCEDPROC,
@@ -5740,7 +5740,7 @@ impl GL_3_1 for Version31 {
 }
 
 impl Version31 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 30100 {
@@ -5748,18 +5748,18 @@ impl Version31 {
 		}
 		Self {
 			available: true,
-			drawarraysinstanced: unsafe{transmute(get_proc_address("glDrawArraysInstanced"))},
-			drawelementsinstanced: unsafe{transmute(get_proc_address("glDrawElementsInstanced"))},
-			texbuffer: unsafe{transmute(get_proc_address("glTexBuffer"))},
-			primitiverestartindex: unsafe{transmute(get_proc_address("glPrimitiveRestartIndex"))},
-			copybuffersubdata: unsafe{transmute(get_proc_address("glCopyBufferSubData"))},
-			getuniformindices: unsafe{transmute(get_proc_address("glGetUniformIndices"))},
-			getactiveuniformsiv: unsafe{transmute(get_proc_address("glGetActiveUniformsiv"))},
-			getactiveuniformname: unsafe{transmute(get_proc_address("glGetActiveUniformName"))},
-			getuniformblockindex: unsafe{transmute(get_proc_address("glGetUniformBlockIndex"))},
-			getactiveuniformblockiv: unsafe{transmute(get_proc_address("glGetActiveUniformBlockiv"))},
-			getactiveuniformblockname: unsafe{transmute(get_proc_address("glGetActiveUniformBlockName"))},
-			uniformblockbinding: unsafe{transmute(get_proc_address("glUniformBlockBinding"))},
+			drawarraysinstanced: {let proc = get_proc_address("glDrawArraysInstanced"); if proc == null() {dummy_pfngldrawarraysinstancedproc} else {unsafe{transmute(proc)}}},
+			drawelementsinstanced: {let proc = get_proc_address("glDrawElementsInstanced"); if proc == null() {dummy_pfngldrawelementsinstancedproc} else {unsafe{transmute(proc)}}},
+			texbuffer: {let proc = get_proc_address("glTexBuffer"); if proc == null() {dummy_pfngltexbufferproc} else {unsafe{transmute(proc)}}},
+			primitiverestartindex: {let proc = get_proc_address("glPrimitiveRestartIndex"); if proc == null() {dummy_pfnglprimitiverestartindexproc} else {unsafe{transmute(proc)}}},
+			copybuffersubdata: {let proc = get_proc_address("glCopyBufferSubData"); if proc == null() {dummy_pfnglcopybuffersubdataproc} else {unsafe{transmute(proc)}}},
+			getuniformindices: {let proc = get_proc_address("glGetUniformIndices"); if proc == null() {dummy_pfnglgetuniformindicesproc} else {unsafe{transmute(proc)}}},
+			getactiveuniformsiv: {let proc = get_proc_address("glGetActiveUniformsiv"); if proc == null() {dummy_pfnglgetactiveuniformsivproc} else {unsafe{transmute(proc)}}},
+			getactiveuniformname: {let proc = get_proc_address("glGetActiveUniformName"); if proc == null() {dummy_pfnglgetactiveuniformnameproc} else {unsafe{transmute(proc)}}},
+			getuniformblockindex: {let proc = get_proc_address("glGetUniformBlockIndex"); if proc == null() {dummy_pfnglgetuniformblockindexproc} else {unsafe{transmute(proc)}}},
+			getactiveuniformblockiv: {let proc = get_proc_address("glGetActiveUniformBlockiv"); if proc == null() {dummy_pfnglgetactiveuniformblockivproc} else {unsafe{transmute(proc)}}},
+			getactiveuniformblockname: {let proc = get_proc_address("glGetActiveUniformBlockName"); if proc == null() {dummy_pfnglgetactiveuniformblocknameproc} else {unsafe{transmute(proc)}}},
+			uniformblockbinding: {let proc = get_proc_address("glUniformBlockBinding"); if proc == null() {dummy_pfngluniformblockbindingproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -5811,126 +5811,126 @@ type PFNGLTEXIMAGE3DMULTISAMPLEPROC = extern "system" fn(GLenum, GLsizei, GLenum
 type PFNGLGETMULTISAMPLEFVPROC = extern "system" fn(GLenum, GLuint, *mut GLfloat);
 type PFNGLSAMPLEMASKIPROC = extern "system" fn(GLuint, GLbitfield);
 extern "system" fn dummy_pfngldrawelementsbasevertexproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLint) {
-	panic!("OpenGL Function pointer of glDrawElementsBaseVertex() is NULL");
+	panic!("OpenGL Function pointer of `glDrawElementsBaseVertex()` is NULL");
 }
 extern "system" fn dummy_pfngldrawrangeelementsbasevertexproc (_: GLenum, _: GLuint, _: GLuint, _: GLsizei, _: GLenum, _: *const c_void, _: GLint) {
-	panic!("OpenGL Function pointer of glDrawRangeElementsBaseVertex() is NULL");
+	panic!("OpenGL Function pointer of `glDrawRangeElementsBaseVertex()` is NULL");
 }
 extern "system" fn dummy_pfngldrawelementsinstancedbasevertexproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei, _: GLint) {
-	panic!("OpenGL Function pointer of glDrawElementsInstancedBaseVertex() is NULL");
+	panic!("OpenGL Function pointer of `glDrawElementsInstancedBaseVertex()` is NULL");
 }
 extern "system" fn dummy_pfnglmultidrawelementsbasevertexproc (_: GLenum, _: *const GLsizei, _: GLenum, _: *const *const c_void, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glMultiDrawElementsBaseVertex() is NULL");
+	panic!("OpenGL Function pointer of `glMultiDrawElementsBaseVertex()` is NULL");
 }
 extern "system" fn dummy_pfnglprovokingvertexproc (_: GLenum) {
-	panic!("OpenGL Function pointer of glProvokingVertex() is NULL");
+	panic!("OpenGL Function pointer of `glProvokingVertex()` is NULL");
 }
 extern "system" fn dummy_pfnglfencesyncproc (_: GLenum, _: GLbitfield) -> GLsync {
-	panic!("OpenGL Function pointer of glFenceSync() is NULL");
+	panic!("OpenGL Function pointer of `glFenceSync()` is NULL");
 }
 extern "system" fn dummy_pfnglissyncproc (_: GLsync) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsSync() is NULL");
+	panic!("OpenGL Function pointer of `glIsSync()` is NULL");
 }
 extern "system" fn dummy_pfngldeletesyncproc (_: GLsync) {
-	panic!("OpenGL Function pointer of glDeleteSync() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteSync()` is NULL");
 }
 extern "system" fn dummy_pfnglclientwaitsyncproc (_: GLsync, _: GLbitfield, _: GLuint64) -> GLenum {
-	panic!("OpenGL Function pointer of glClientWaitSync() is NULL");
+	panic!("OpenGL Function pointer of `glClientWaitSync()` is NULL");
 }
 extern "system" fn dummy_pfnglwaitsyncproc (_: GLsync, _: GLbitfield, _: GLuint64) {
-	panic!("OpenGL Function pointer of glWaitSync() is NULL");
+	panic!("OpenGL Function pointer of `glWaitSync()` is NULL");
 }
 extern "system" fn dummy_pfnglgetinteger64vproc (_: GLenum, _: *mut GLint64) {
-	panic!("OpenGL Function pointer of glGetInteger64v() is NULL");
+	panic!("OpenGL Function pointer of `glGetInteger64v()` is NULL");
 }
 extern "system" fn dummy_pfnglgetsyncivproc (_: GLsync, _: GLenum, _: GLsizei, _: *mut GLsizei, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetSynciv() is NULL");
+	panic!("OpenGL Function pointer of `glGetSynciv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetinteger64i_vproc (_: GLenum, _: GLuint, _: *mut GLint64) {
-	panic!("OpenGL Function pointer of glGetInteger64i_v() is NULL");
+	panic!("OpenGL Function pointer of `glGetInteger64i_v()` is NULL");
 }
 extern "system" fn dummy_pfnglgetbufferparameteri64vproc (_: GLenum, _: GLenum, _: *mut GLint64) {
-	panic!("OpenGL Function pointer of glGetBufferParameteri64v() is NULL");
+	panic!("OpenGL Function pointer of `glGetBufferParameteri64v()` is NULL");
 }
 extern "system" fn dummy_pfnglframebuffertextureproc (_: GLenum, _: GLenum, _: GLuint, _: GLint) {
-	panic!("OpenGL Function pointer of glFramebufferTexture() is NULL");
+	panic!("OpenGL Function pointer of `glFramebufferTexture()` is NULL");
 }
 extern "system" fn dummy_pfnglteximage2dmultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLboolean) {
-	panic!("OpenGL Function pointer of glTexImage2DMultisample() is NULL");
+	panic!("OpenGL Function pointer of `glTexImage2DMultisample()` is NULL");
 }
 extern "system" fn dummy_pfnglteximage3dmultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLboolean) {
-	panic!("OpenGL Function pointer of glTexImage3DMultisample() is NULL");
+	panic!("OpenGL Function pointer of `glTexImage3DMultisample()` is NULL");
 }
 extern "system" fn dummy_pfnglgetmultisamplefvproc (_: GLenum, _: GLuint, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetMultisamplefv() is NULL");
+	panic!("OpenGL Function pointer of `glGetMultisamplefv()` is NULL");
 }
 extern "system" fn dummy_pfnglsamplemaskiproc (_: GLuint, _: GLbitfield) {
-	panic!("OpenGL Function pointer of glSampleMaski() is NULL");
+	panic!("OpenGL Function pointer of `glSampleMaski()` is NULL");
 }
-const CONTEXT_CORE_PROFILE_BIT: GLbitfield = 0x00000001;
-const CONTEXT_COMPATIBILITY_PROFILE_BIT: GLbitfield = 0x00000002;
-const LINES_ADJACENCY: GLenum = 0x000A;
-const LINE_STRIP_ADJACENCY: GLenum = 0x000B;
-const TRIANGLES_ADJACENCY: GLenum = 0x000C;
-const TRIANGLE_STRIP_ADJACENCY: GLenum = 0x000D;
-const PROGRAM_POINT_SIZE: GLenum = 0x8642;
-const MAX_GEOMETRY_TEXTURE_IMAGE_UNITS: GLenum = 0x8C29;
-const FRAMEBUFFER_ATTACHMENT_LAYERED: GLenum = 0x8DA7;
-const FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS: GLenum = 0x8DA8;
-const GEOMETRY_SHADER: GLenum = 0x8DD9;
-const GEOMETRY_VERTICES_OUT: GLenum = 0x8916;
-const GEOMETRY_INPUT_TYPE: GLenum = 0x8917;
-const GEOMETRY_OUTPUT_TYPE: GLenum = 0x8918;
-const MAX_GEOMETRY_UNIFORM_COMPONENTS: GLenum = 0x8DDF;
-const MAX_GEOMETRY_OUTPUT_VERTICES: GLenum = 0x8DE0;
-const MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS: GLenum = 0x8DE1;
-const MAX_VERTEX_OUTPUT_COMPONENTS: GLenum = 0x9122;
-const MAX_GEOMETRY_INPUT_COMPONENTS: GLenum = 0x9123;
-const MAX_GEOMETRY_OUTPUT_COMPONENTS: GLenum = 0x9124;
-const MAX_FRAGMENT_INPUT_COMPONENTS: GLenum = 0x9125;
-const CONTEXT_PROFILE_MASK: GLenum = 0x9126;
-const DEPTH_CLAMP: GLenum = 0x864F;
-const QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION: GLenum = 0x8E4C;
-const FIRST_VERTEX_CONVENTION: GLenum = 0x8E4D;
-const LAST_VERTEX_CONVENTION: GLenum = 0x8E4E;
-const PROVOKING_VERTEX: GLenum = 0x8E4F;
-const TEXTURE_CUBE_MAP_SEAMLESS: GLenum = 0x884F;
-const MAX_SERVER_WAIT_TIMEOUT: GLenum = 0x9111;
-const OBJECT_TYPE: GLenum = 0x9112;
-const SYNC_CONDITION: GLenum = 0x9113;
-const SYNC_STATUS: GLenum = 0x9114;
-const SYNC_FLAGS: GLenum = 0x9115;
-const SYNC_FENCE: GLenum = 0x9116;
-const SYNC_GPU_COMMANDS_COMPLETE: GLenum = 0x9117;
-const UNSIGNALED: GLenum = 0x9118;
-const SIGNALED: GLenum = 0x9119;
-const ALREADY_SIGNALED: GLenum = 0x911A;
-const TIMEOUT_EXPIRED: GLenum = 0x911B;
-const CONDITION_SATISFIED: GLenum = 0x911C;
-const WAIT_FAILED: GLenum = 0x911D;
-const TIMEOUT_IGNORED: GLuint64 = 0xFFFFFFFFFFFFFFFFu64;
-const SYNC_FLUSH_COMMANDS_BIT: GLbitfield = 0x00000001;
-const SAMPLE_POSITION: GLenum = 0x8E50;
-const SAMPLE_MASK: GLenum = 0x8E51;
-const SAMPLE_MASK_VALUE: GLenum = 0x8E52;
-const MAX_SAMPLE_MASK_WORDS: GLenum = 0x8E59;
-const TEXTURE_2D_MULTISAMPLE: GLenum = 0x9100;
-const PROXY_TEXTURE_2D_MULTISAMPLE: GLenum = 0x9101;
-const TEXTURE_2D_MULTISAMPLE_ARRAY: GLenum = 0x9102;
-const PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY: GLenum = 0x9103;
-const TEXTURE_BINDING_2D_MULTISAMPLE: GLenum = 0x9104;
-const TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY: GLenum = 0x9105;
-const TEXTURE_SAMPLES: GLenum = 0x9106;
-const TEXTURE_FIXED_SAMPLE_LOCATIONS: GLenum = 0x9107;
-const SAMPLER_2D_MULTISAMPLE: GLenum = 0x9108;
-const INT_SAMPLER_2D_MULTISAMPLE: GLenum = 0x9109;
-const UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE: GLenum = 0x910A;
-const SAMPLER_2D_MULTISAMPLE_ARRAY: GLenum = 0x910B;
-const INT_SAMPLER_2D_MULTISAMPLE_ARRAY: GLenum = 0x910C;
-const UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY: GLenum = 0x910D;
-const MAX_COLOR_TEXTURE_SAMPLES: GLenum = 0x910E;
-const MAX_DEPTH_TEXTURE_SAMPLES: GLenum = 0x910F;
-const MAX_INTEGER_SAMPLES: GLenum = 0x9110;
+pub const GL_CONTEXT_CORE_PROFILE_BIT: GLbitfield = 0x00000001;
+pub const GL_CONTEXT_COMPATIBILITY_PROFILE_BIT: GLbitfield = 0x00000002;
+pub const GL_LINES_ADJACENCY: GLenum = 0x000A;
+pub const GL_LINE_STRIP_ADJACENCY: GLenum = 0x000B;
+pub const GL_TRIANGLES_ADJACENCY: GLenum = 0x000C;
+pub const GL_TRIANGLE_STRIP_ADJACENCY: GLenum = 0x000D;
+pub const GL_PROGRAM_POINT_SIZE: GLenum = 0x8642;
+pub const GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS: GLenum = 0x8C29;
+pub const GL_FRAMEBUFFER_ATTACHMENT_LAYERED: GLenum = 0x8DA7;
+pub const GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS: GLenum = 0x8DA8;
+pub const GL_GEOMETRY_SHADER: GLenum = 0x8DD9;
+pub const GL_GEOMETRY_VERTICES_OUT: GLenum = 0x8916;
+pub const GL_GEOMETRY_INPUT_TYPE: GLenum = 0x8917;
+pub const GL_GEOMETRY_OUTPUT_TYPE: GLenum = 0x8918;
+pub const GL_MAX_GEOMETRY_UNIFORM_COMPONENTS: GLenum = 0x8DDF;
+pub const GL_MAX_GEOMETRY_OUTPUT_VERTICES: GLenum = 0x8DE0;
+pub const GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS: GLenum = 0x8DE1;
+pub const GL_MAX_VERTEX_OUTPUT_COMPONENTS: GLenum = 0x9122;
+pub const GL_MAX_GEOMETRY_INPUT_COMPONENTS: GLenum = 0x9123;
+pub const GL_MAX_GEOMETRY_OUTPUT_COMPONENTS: GLenum = 0x9124;
+pub const GL_MAX_FRAGMENT_INPUT_COMPONENTS: GLenum = 0x9125;
+pub const GL_CONTEXT_PROFILE_MASK: GLenum = 0x9126;
+pub const GL_DEPTH_CLAMP: GLenum = 0x864F;
+pub const GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION: GLenum = 0x8E4C;
+pub const GL_FIRST_VERTEX_CONVENTION: GLenum = 0x8E4D;
+pub const GL_LAST_VERTEX_CONVENTION: GLenum = 0x8E4E;
+pub const GL_PROVOKING_VERTEX: GLenum = 0x8E4F;
+pub const GL_TEXTURE_CUBE_MAP_SEAMLESS: GLenum = 0x884F;
+pub const GL_MAX_SERVER_WAIT_TIMEOUT: GLenum = 0x9111;
+pub const GL_OBJECT_TYPE: GLenum = 0x9112;
+pub const GL_SYNC_CONDITION: GLenum = 0x9113;
+pub const GL_SYNC_STATUS: GLenum = 0x9114;
+pub const GL_SYNC_FLAGS: GLenum = 0x9115;
+pub const GL_SYNC_FENCE: GLenum = 0x9116;
+pub const GL_SYNC_GPU_COMMANDS_COMPLETE: GLenum = 0x9117;
+pub const GL_UNSIGNALED: GLenum = 0x9118;
+pub const GL_SIGNALED: GLenum = 0x9119;
+pub const GL_ALREADY_SIGNALED: GLenum = 0x911A;
+pub const GL_TIMEOUT_EXPIRED: GLenum = 0x911B;
+pub const GL_CONDITION_SATISFIED: GLenum = 0x911C;
+pub const GL_WAIT_FAILED: GLenum = 0x911D;
+pub const GL_TIMEOUT_IGNORED: GLuint64 = 0xFFFFFFFFFFFFFFFFu64;
+pub const GL_SYNC_FLUSH_COMMANDS_BIT: GLbitfield = 0x00000001;
+pub const GL_SAMPLE_POSITION: GLenum = 0x8E50;
+pub const GL_SAMPLE_MASK: GLenum = 0x8E51;
+pub const GL_SAMPLE_MASK_VALUE: GLenum = 0x8E52;
+pub const GL_MAX_SAMPLE_MASK_WORDS: GLenum = 0x8E59;
+pub const GL_TEXTURE_2D_MULTISAMPLE: GLenum = 0x9100;
+pub const GL_PROXY_TEXTURE_2D_MULTISAMPLE: GLenum = 0x9101;
+pub const GL_TEXTURE_2D_MULTISAMPLE_ARRAY: GLenum = 0x9102;
+pub const GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY: GLenum = 0x9103;
+pub const GL_TEXTURE_BINDING_2D_MULTISAMPLE: GLenum = 0x9104;
+pub const GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY: GLenum = 0x9105;
+pub const GL_TEXTURE_SAMPLES: GLenum = 0x9106;
+pub const GL_TEXTURE_FIXED_SAMPLE_LOCATIONS: GLenum = 0x9107;
+pub const GL_SAMPLER_2D_MULTISAMPLE: GLenum = 0x9108;
+pub const GL_INT_SAMPLER_2D_MULTISAMPLE: GLenum = 0x9109;
+pub const GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE: GLenum = 0x910A;
+pub const GL_SAMPLER_2D_MULTISAMPLE_ARRAY: GLenum = 0x910B;
+pub const GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY: GLenum = 0x910C;
+pub const GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY: GLenum = 0x910D;
+pub const GL_MAX_COLOR_TEXTURE_SAMPLES: GLenum = 0x910E;
+pub const GL_MAX_DEPTH_TEXTURE_SAMPLES: GLenum = 0x910F;
+pub const GL_MAX_INTEGER_SAMPLES: GLenum = 0x9110;
 
 pub trait GL_3_2 {
 	fn glDrawElementsBaseVertex(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, basevertex: GLint);
@@ -5954,7 +5954,7 @@ pub trait GL_3_2 {
 	fn glSampleMaski(&self, maskNumber: GLuint, mask: GLbitfield);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version32 {
 	available: bool,
 	drawelementsbasevertex: PFNGLDRAWELEMENTSBASEVERTEXPROC,
@@ -6058,7 +6058,7 @@ impl GL_3_2 for Version32 {
 }
 
 impl Version32 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 30200 {
@@ -6066,25 +6066,25 @@ impl Version32 {
 		}
 		Self {
 			available: true,
-			drawelementsbasevertex: unsafe{transmute(get_proc_address("glDrawElementsBaseVertex"))},
-			drawrangeelementsbasevertex: unsafe{transmute(get_proc_address("glDrawRangeElementsBaseVertex"))},
-			drawelementsinstancedbasevertex: unsafe{transmute(get_proc_address("glDrawElementsInstancedBaseVertex"))},
-			multidrawelementsbasevertex: unsafe{transmute(get_proc_address("glMultiDrawElementsBaseVertex"))},
-			provokingvertex: unsafe{transmute(get_proc_address("glProvokingVertex"))},
-			fencesync: unsafe{transmute(get_proc_address("glFenceSync"))},
-			issync: unsafe{transmute(get_proc_address("glIsSync"))},
-			deletesync: unsafe{transmute(get_proc_address("glDeleteSync"))},
-			clientwaitsync: unsafe{transmute(get_proc_address("glClientWaitSync"))},
-			waitsync: unsafe{transmute(get_proc_address("glWaitSync"))},
-			getinteger64v: unsafe{transmute(get_proc_address("glGetInteger64v"))},
-			getsynciv: unsafe{transmute(get_proc_address("glGetSynciv"))},
-			getinteger64i_v: unsafe{transmute(get_proc_address("glGetInteger64i_v"))},
-			getbufferparameteri64v: unsafe{transmute(get_proc_address("glGetBufferParameteri64v"))},
-			framebuffertexture: unsafe{transmute(get_proc_address("glFramebufferTexture"))},
-			teximage2dmultisample: unsafe{transmute(get_proc_address("glTexImage2DMultisample"))},
-			teximage3dmultisample: unsafe{transmute(get_proc_address("glTexImage3DMultisample"))},
-			getmultisamplefv: unsafe{transmute(get_proc_address("glGetMultisamplefv"))},
-			samplemaski: unsafe{transmute(get_proc_address("glSampleMaski"))},
+			drawelementsbasevertex: {let proc = get_proc_address("glDrawElementsBaseVertex"); if proc == null() {dummy_pfngldrawelementsbasevertexproc} else {unsafe{transmute(proc)}}},
+			drawrangeelementsbasevertex: {let proc = get_proc_address("glDrawRangeElementsBaseVertex"); if proc == null() {dummy_pfngldrawrangeelementsbasevertexproc} else {unsafe{transmute(proc)}}},
+			drawelementsinstancedbasevertex: {let proc = get_proc_address("glDrawElementsInstancedBaseVertex"); if proc == null() {dummy_pfngldrawelementsinstancedbasevertexproc} else {unsafe{transmute(proc)}}},
+			multidrawelementsbasevertex: {let proc = get_proc_address("glMultiDrawElementsBaseVertex"); if proc == null() {dummy_pfnglmultidrawelementsbasevertexproc} else {unsafe{transmute(proc)}}},
+			provokingvertex: {let proc = get_proc_address("glProvokingVertex"); if proc == null() {dummy_pfnglprovokingvertexproc} else {unsafe{transmute(proc)}}},
+			fencesync: {let proc = get_proc_address("glFenceSync"); if proc == null() {dummy_pfnglfencesyncproc} else {unsafe{transmute(proc)}}},
+			issync: {let proc = get_proc_address("glIsSync"); if proc == null() {dummy_pfnglissyncproc} else {unsafe{transmute(proc)}}},
+			deletesync: {let proc = get_proc_address("glDeleteSync"); if proc == null() {dummy_pfngldeletesyncproc} else {unsafe{transmute(proc)}}},
+			clientwaitsync: {let proc = get_proc_address("glClientWaitSync"); if proc == null() {dummy_pfnglclientwaitsyncproc} else {unsafe{transmute(proc)}}},
+			waitsync: {let proc = get_proc_address("glWaitSync"); if proc == null() {dummy_pfnglwaitsyncproc} else {unsafe{transmute(proc)}}},
+			getinteger64v: {let proc = get_proc_address("glGetInteger64v"); if proc == null() {dummy_pfnglgetinteger64vproc} else {unsafe{transmute(proc)}}},
+			getsynciv: {let proc = get_proc_address("glGetSynciv"); if proc == null() {dummy_pfnglgetsyncivproc} else {unsafe{transmute(proc)}}},
+			getinteger64i_v: {let proc = get_proc_address("glGetInteger64i_v"); if proc == null() {dummy_pfnglgetinteger64i_vproc} else {unsafe{transmute(proc)}}},
+			getbufferparameteri64v: {let proc = get_proc_address("glGetBufferParameteri64v"); if proc == null() {dummy_pfnglgetbufferparameteri64vproc} else {unsafe{transmute(proc)}}},
+			framebuffertexture: {let proc = get_proc_address("glFramebufferTexture"); if proc == null() {dummy_pfnglframebuffertextureproc} else {unsafe{transmute(proc)}}},
+			teximage2dmultisample: {let proc = get_proc_address("glTexImage2DMultisample"); if proc == null() {dummy_pfnglteximage2dmultisampleproc} else {unsafe{transmute(proc)}}},
+			teximage3dmultisample: {let proc = get_proc_address("glTexImage3DMultisample"); if proc == null() {dummy_pfnglteximage3dmultisampleproc} else {unsafe{transmute(proc)}}},
+			getmultisamplefv: {let proc = get_proc_address("glGetMultisamplefv"); if proc == null() {dummy_pfnglgetmultisamplefvproc} else {unsafe{transmute(proc)}}},
+			samplemaski: {let proc = get_proc_address("glSampleMaski"); if proc == null() {dummy_pfnglsamplemaskiproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -6179,195 +6179,195 @@ type PFNGLCOLORP4UIVPROC = extern "system" fn(GLenum, *const GLuint);
 type PFNGLSECONDARYCOLORP3UIPROC = extern "system" fn(GLenum, GLuint);
 type PFNGLSECONDARYCOLORP3UIVPROC = extern "system" fn(GLenum, *const GLuint);
 extern "system" fn dummy_pfnglbindfragdatalocationindexedproc (_: GLuint, _: GLuint, _: GLuint, _: *const GLchar) {
-	panic!("OpenGL Function pointer of glBindFragDataLocationIndexed() is NULL");
+	panic!("OpenGL Function pointer of `glBindFragDataLocationIndexed()` is NULL");
 }
 extern "system" fn dummy_pfnglgetfragdataindexproc (_: GLuint, _: *const GLchar) -> GLint {
-	panic!("OpenGL Function pointer of glGetFragDataIndex() is NULL");
+	panic!("OpenGL Function pointer of `glGetFragDataIndex()` is NULL");
 }
 extern "system" fn dummy_pfnglgensamplersproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGenSamplers() is NULL");
+	panic!("OpenGL Function pointer of `glGenSamplers()` is NULL");
 }
 extern "system" fn dummy_pfngldeletesamplersproc (_: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glDeleteSamplers() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteSamplers()` is NULL");
 }
 extern "system" fn dummy_pfnglissamplerproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsSampler() is NULL");
+	panic!("OpenGL Function pointer of `glIsSampler()` is NULL");
 }
 extern "system" fn dummy_pfnglbindsamplerproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glBindSampler() is NULL");
+	panic!("OpenGL Function pointer of `glBindSampler()` is NULL");
 }
 extern "system" fn dummy_pfnglsamplerparameteriproc (_: GLuint, _: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glSamplerParameteri() is NULL");
+	panic!("OpenGL Function pointer of `glSamplerParameteri()` is NULL");
 }
 extern "system" fn dummy_pfnglsamplerparameterivproc (_: GLuint, _: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glSamplerParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glSamplerParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglsamplerparameterfproc (_: GLuint, _: GLenum, _: GLfloat) {
-	panic!("OpenGL Function pointer of glSamplerParameterf() is NULL");
+	panic!("OpenGL Function pointer of `glSamplerParameterf()` is NULL");
 }
 extern "system" fn dummy_pfnglsamplerparameterfvproc (_: GLuint, _: GLenum, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glSamplerParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glSamplerParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfnglsamplerparameteriivproc (_: GLuint, _: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glSamplerParameterIiv() is NULL");
+	panic!("OpenGL Function pointer of `glSamplerParameterIiv()` is NULL");
 }
 extern "system" fn dummy_pfnglsamplerparameteriuivproc (_: GLuint, _: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glSamplerParameterIuiv() is NULL");
+	panic!("OpenGL Function pointer of `glSamplerParameterIuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetsamplerparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetSamplerParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetSamplerParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetsamplerparameteriivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetSamplerParameterIiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetSamplerParameterIiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetsamplerparameterfvproc (_: GLuint, _: GLenum, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetSamplerParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetSamplerParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetsamplerparameteriuivproc (_: GLuint, _: GLenum, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetSamplerParameterIuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetSamplerParameterIuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglquerycounterproc (_: GLuint, _: GLenum) {
-	panic!("OpenGL Function pointer of glQueryCounter() is NULL");
+	panic!("OpenGL Function pointer of `glQueryCounter()` is NULL");
 }
 extern "system" fn dummy_pfnglgetqueryobjecti64vproc (_: GLuint, _: GLenum, _: *mut GLint64) {
-	panic!("OpenGL Function pointer of glGetQueryObjecti64v() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryObjecti64v()` is NULL");
 }
 extern "system" fn dummy_pfnglgetqueryobjectui64vproc (_: GLuint, _: GLenum, _: *mut GLuint64) {
-	panic!("OpenGL Function pointer of glGetQueryObjectui64v() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryObjectui64v()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribdivisorproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribDivisor() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribDivisor()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribp1uiproc (_: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribP1ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribP1ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribp1uivproc (_: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribP1uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribP1uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribp2uiproc (_: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribP2ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribP2ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribp2uivproc (_: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribP2uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribP2uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribp3uiproc (_: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribP3ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribP3ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribp3uivproc (_: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribP3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribP3uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribp4uiproc (_: GLuint, _: GLenum, _: GLboolean, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribP4ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribP4ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribp4uivproc (_: GLuint, _: GLenum, _: GLboolean, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribP4uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribP4uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexp2uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexP2ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexP2ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexp2uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexP2uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexP2uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexp3uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexP3ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexP3ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexp3uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexP3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexP3uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexp4uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexP4ui() is NULL");
+	panic!("OpenGL Function pointer of `glVertexP4ui()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexp4uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glVertexP4uiv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexP4uiv()` is NULL");
 }
 extern "system" fn dummy_pfngltexcoordp1uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glTexCoordP1ui() is NULL");
+	panic!("OpenGL Function pointer of `glTexCoordP1ui()` is NULL");
 }
 extern "system" fn dummy_pfngltexcoordp1uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glTexCoordP1uiv() is NULL");
+	panic!("OpenGL Function pointer of `glTexCoordP1uiv()` is NULL");
 }
 extern "system" fn dummy_pfngltexcoordp2uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glTexCoordP2ui() is NULL");
+	panic!("OpenGL Function pointer of `glTexCoordP2ui()` is NULL");
 }
 extern "system" fn dummy_pfngltexcoordp2uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glTexCoordP2uiv() is NULL");
+	panic!("OpenGL Function pointer of `glTexCoordP2uiv()` is NULL");
 }
 extern "system" fn dummy_pfngltexcoordp3uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glTexCoordP3ui() is NULL");
+	panic!("OpenGL Function pointer of `glTexCoordP3ui()` is NULL");
 }
 extern "system" fn dummy_pfngltexcoordp3uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glTexCoordP3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glTexCoordP3uiv()` is NULL");
 }
 extern "system" fn dummy_pfngltexcoordp4uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glTexCoordP4ui() is NULL");
+	panic!("OpenGL Function pointer of `glTexCoordP4ui()` is NULL");
 }
 extern "system" fn dummy_pfngltexcoordp4uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glTexCoordP4uiv() is NULL");
+	panic!("OpenGL Function pointer of `glTexCoordP4uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoordp1uiproc (_: GLenum, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glMultiTexCoordP1ui() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoordP1ui()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoordp1uivproc (_: GLenum, _: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glMultiTexCoordP1uiv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoordP1uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoordp2uiproc (_: GLenum, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glMultiTexCoordP2ui() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoordP2ui()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoordp2uivproc (_: GLenum, _: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glMultiTexCoordP2uiv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoordP2uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoordp3uiproc (_: GLenum, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glMultiTexCoordP3ui() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoordP3ui()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoordp3uivproc (_: GLenum, _: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glMultiTexCoordP3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoordP3uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoordp4uiproc (_: GLenum, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glMultiTexCoordP4ui() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoordP4ui()` is NULL");
 }
 extern "system" fn dummy_pfnglmultitexcoordp4uivproc (_: GLenum, _: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glMultiTexCoordP4uiv() is NULL");
+	panic!("OpenGL Function pointer of `glMultiTexCoordP4uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglnormalp3uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glNormalP3ui() is NULL");
+	panic!("OpenGL Function pointer of `glNormalP3ui()` is NULL");
 }
 extern "system" fn dummy_pfnglnormalp3uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glNormalP3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glNormalP3uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglcolorp3uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glColorP3ui() is NULL");
+	panic!("OpenGL Function pointer of `glColorP3ui()` is NULL");
 }
 extern "system" fn dummy_pfnglcolorp3uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glColorP3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glColorP3uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglcolorp4uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glColorP4ui() is NULL");
+	panic!("OpenGL Function pointer of `glColorP4ui()` is NULL");
 }
 extern "system" fn dummy_pfnglcolorp4uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glColorP4uiv() is NULL");
+	panic!("OpenGL Function pointer of `glColorP4uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolorp3uiproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glSecondaryColorP3ui() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColorP3ui()` is NULL");
 }
 extern "system" fn dummy_pfnglsecondarycolorp3uivproc (_: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glSecondaryColorP3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glSecondaryColorP3uiv()` is NULL");
 }
-const VERTEX_ATTRIB_ARRAY_DIVISOR: GLenum = 0x88FE;
-const SRC1_COLOR: GLenum = 0x88F9;
-const ONE_MINUS_SRC1_COLOR: GLenum = 0x88FA;
-const ONE_MINUS_SRC1_ALPHA: GLenum = 0x88FB;
-const MAX_DUAL_SOURCE_DRAW_BUFFERS: GLenum = 0x88FC;
-const ANY_SAMPLES_PASSED: GLenum = 0x8C2F;
-const SAMPLER_BINDING: GLenum = 0x8919;
-const RGB10_A2UI: GLenum = 0x906F;
-const TEXTURE_SWIZZLE_R: GLenum = 0x8E42;
-const TEXTURE_SWIZZLE_G: GLenum = 0x8E43;
-const TEXTURE_SWIZZLE_B: GLenum = 0x8E44;
-const TEXTURE_SWIZZLE_A: GLenum = 0x8E45;
-const TEXTURE_SWIZZLE_RGBA: GLenum = 0x8E46;
-const TIME_ELAPSED: GLenum = 0x88BF;
-const TIMESTAMP: GLenum = 0x8E28;
-const INT_2_10_10_10_REV: GLenum = 0x8D9F;
+pub const GL_VERTEX_ATTRIB_ARRAY_DIVISOR: GLenum = 0x88FE;
+pub const GL_SRC1_COLOR: GLenum = 0x88F9;
+pub const GL_ONE_MINUS_SRC1_COLOR: GLenum = 0x88FA;
+pub const GL_ONE_MINUS_SRC1_ALPHA: GLenum = 0x88FB;
+pub const GL_MAX_DUAL_SOURCE_DRAW_BUFFERS: GLenum = 0x88FC;
+pub const GL_ANY_SAMPLES_PASSED: GLenum = 0x8C2F;
+pub const GL_SAMPLER_BINDING: GLenum = 0x8919;
+pub const GL_RGB10_A2UI: GLenum = 0x906F;
+pub const GL_TEXTURE_SWIZZLE_R: GLenum = 0x8E42;
+pub const GL_TEXTURE_SWIZZLE_G: GLenum = 0x8E43;
+pub const GL_TEXTURE_SWIZZLE_B: GLenum = 0x8E44;
+pub const GL_TEXTURE_SWIZZLE_A: GLenum = 0x8E45;
+pub const GL_TEXTURE_SWIZZLE_RGBA: GLenum = 0x8E46;
+pub const GL_TIME_ELAPSED: GLenum = 0x88BF;
+pub const GL_TIMESTAMP: GLenum = 0x8E28;
+pub const GL_INT_2_10_10_10_REV: GLenum = 0x8D9F;
 
 pub trait GL_3_3 {
 	fn glBindFragDataLocationIndexed(&self, program: GLuint, colorNumber: GLuint, index: GLuint, name: *const GLchar);
@@ -6430,7 +6430,7 @@ pub trait GL_3_3 {
 	fn glSecondaryColorP3uiv(&self, type_: GLenum, color: *const GLuint);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version33 {
 	available: bool,
 	bindfragdatalocationindexed: PFNGLBINDFRAGDATALOCATIONINDEXEDPROC,
@@ -6729,7 +6729,7 @@ impl GL_3_3 for Version33 {
 }
 
 impl Version33 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 30300 {
@@ -6737,64 +6737,64 @@ impl Version33 {
 		}
 		Self {
 			available: true,
-			bindfragdatalocationindexed: unsafe{transmute(get_proc_address("glBindFragDataLocationIndexed"))},
-			getfragdataindex: unsafe{transmute(get_proc_address("glGetFragDataIndex"))},
-			gensamplers: unsafe{transmute(get_proc_address("glGenSamplers"))},
-			deletesamplers: unsafe{transmute(get_proc_address("glDeleteSamplers"))},
-			issampler: unsafe{transmute(get_proc_address("glIsSampler"))},
-			bindsampler: unsafe{transmute(get_proc_address("glBindSampler"))},
-			samplerparameteri: unsafe{transmute(get_proc_address("glSamplerParameteri"))},
-			samplerparameteriv: unsafe{transmute(get_proc_address("glSamplerParameteriv"))},
-			samplerparameterf: unsafe{transmute(get_proc_address("glSamplerParameterf"))},
-			samplerparameterfv: unsafe{transmute(get_proc_address("glSamplerParameterfv"))},
-			samplerparameteriiv: unsafe{transmute(get_proc_address("glSamplerParameterIiv"))},
-			samplerparameteriuiv: unsafe{transmute(get_proc_address("glSamplerParameterIuiv"))},
-			getsamplerparameteriv: unsafe{transmute(get_proc_address("glGetSamplerParameteriv"))},
-			getsamplerparameteriiv: unsafe{transmute(get_proc_address("glGetSamplerParameterIiv"))},
-			getsamplerparameterfv: unsafe{transmute(get_proc_address("glGetSamplerParameterfv"))},
-			getsamplerparameteriuiv: unsafe{transmute(get_proc_address("glGetSamplerParameterIuiv"))},
-			querycounter: unsafe{transmute(get_proc_address("glQueryCounter"))},
-			getqueryobjecti64v: unsafe{transmute(get_proc_address("glGetQueryObjecti64v"))},
-			getqueryobjectui64v: unsafe{transmute(get_proc_address("glGetQueryObjectui64v"))},
-			vertexattribdivisor: unsafe{transmute(get_proc_address("glVertexAttribDivisor"))},
-			vertexattribp1ui: unsafe{transmute(get_proc_address("glVertexAttribP1ui"))},
-			vertexattribp1uiv: unsafe{transmute(get_proc_address("glVertexAttribP1uiv"))},
-			vertexattribp2ui: unsafe{transmute(get_proc_address("glVertexAttribP2ui"))},
-			vertexattribp2uiv: unsafe{transmute(get_proc_address("glVertexAttribP2uiv"))},
-			vertexattribp3ui: unsafe{transmute(get_proc_address("glVertexAttribP3ui"))},
-			vertexattribp3uiv: unsafe{transmute(get_proc_address("glVertexAttribP3uiv"))},
-			vertexattribp4ui: unsafe{transmute(get_proc_address("glVertexAttribP4ui"))},
-			vertexattribp4uiv: unsafe{transmute(get_proc_address("glVertexAttribP4uiv"))},
-			vertexp2ui: unsafe{transmute(get_proc_address("glVertexP2ui"))},
-			vertexp2uiv: unsafe{transmute(get_proc_address("glVertexP2uiv"))},
-			vertexp3ui: unsafe{transmute(get_proc_address("glVertexP3ui"))},
-			vertexp3uiv: unsafe{transmute(get_proc_address("glVertexP3uiv"))},
-			vertexp4ui: unsafe{transmute(get_proc_address("glVertexP4ui"))},
-			vertexp4uiv: unsafe{transmute(get_proc_address("glVertexP4uiv"))},
-			texcoordp1ui: unsafe{transmute(get_proc_address("glTexCoordP1ui"))},
-			texcoordp1uiv: unsafe{transmute(get_proc_address("glTexCoordP1uiv"))},
-			texcoordp2ui: unsafe{transmute(get_proc_address("glTexCoordP2ui"))},
-			texcoordp2uiv: unsafe{transmute(get_proc_address("glTexCoordP2uiv"))},
-			texcoordp3ui: unsafe{transmute(get_proc_address("glTexCoordP3ui"))},
-			texcoordp3uiv: unsafe{transmute(get_proc_address("glTexCoordP3uiv"))},
-			texcoordp4ui: unsafe{transmute(get_proc_address("glTexCoordP4ui"))},
-			texcoordp4uiv: unsafe{transmute(get_proc_address("glTexCoordP4uiv"))},
-			multitexcoordp1ui: unsafe{transmute(get_proc_address("glMultiTexCoordP1ui"))},
-			multitexcoordp1uiv: unsafe{transmute(get_proc_address("glMultiTexCoordP1uiv"))},
-			multitexcoordp2ui: unsafe{transmute(get_proc_address("glMultiTexCoordP2ui"))},
-			multitexcoordp2uiv: unsafe{transmute(get_proc_address("glMultiTexCoordP2uiv"))},
-			multitexcoordp3ui: unsafe{transmute(get_proc_address("glMultiTexCoordP3ui"))},
-			multitexcoordp3uiv: unsafe{transmute(get_proc_address("glMultiTexCoordP3uiv"))},
-			multitexcoordp4ui: unsafe{transmute(get_proc_address("glMultiTexCoordP4ui"))},
-			multitexcoordp4uiv: unsafe{transmute(get_proc_address("glMultiTexCoordP4uiv"))},
-			normalp3ui: unsafe{transmute(get_proc_address("glNormalP3ui"))},
-			normalp3uiv: unsafe{transmute(get_proc_address("glNormalP3uiv"))},
-			colorp3ui: unsafe{transmute(get_proc_address("glColorP3ui"))},
-			colorp3uiv: unsafe{transmute(get_proc_address("glColorP3uiv"))},
-			colorp4ui: unsafe{transmute(get_proc_address("glColorP4ui"))},
-			colorp4uiv: unsafe{transmute(get_proc_address("glColorP4uiv"))},
-			secondarycolorp3ui: unsafe{transmute(get_proc_address("glSecondaryColorP3ui"))},
-			secondarycolorp3uiv: unsafe{transmute(get_proc_address("glSecondaryColorP3uiv"))},
+			bindfragdatalocationindexed: {let proc = get_proc_address("glBindFragDataLocationIndexed"); if proc == null() {dummy_pfnglbindfragdatalocationindexedproc} else {unsafe{transmute(proc)}}},
+			getfragdataindex: {let proc = get_proc_address("glGetFragDataIndex"); if proc == null() {dummy_pfnglgetfragdataindexproc} else {unsafe{transmute(proc)}}},
+			gensamplers: {let proc = get_proc_address("glGenSamplers"); if proc == null() {dummy_pfnglgensamplersproc} else {unsafe{transmute(proc)}}},
+			deletesamplers: {let proc = get_proc_address("glDeleteSamplers"); if proc == null() {dummy_pfngldeletesamplersproc} else {unsafe{transmute(proc)}}},
+			issampler: {let proc = get_proc_address("glIsSampler"); if proc == null() {dummy_pfnglissamplerproc} else {unsafe{transmute(proc)}}},
+			bindsampler: {let proc = get_proc_address("glBindSampler"); if proc == null() {dummy_pfnglbindsamplerproc} else {unsafe{transmute(proc)}}},
+			samplerparameteri: {let proc = get_proc_address("glSamplerParameteri"); if proc == null() {dummy_pfnglsamplerparameteriproc} else {unsafe{transmute(proc)}}},
+			samplerparameteriv: {let proc = get_proc_address("glSamplerParameteriv"); if proc == null() {dummy_pfnglsamplerparameterivproc} else {unsafe{transmute(proc)}}},
+			samplerparameterf: {let proc = get_proc_address("glSamplerParameterf"); if proc == null() {dummy_pfnglsamplerparameterfproc} else {unsafe{transmute(proc)}}},
+			samplerparameterfv: {let proc = get_proc_address("glSamplerParameterfv"); if proc == null() {dummy_pfnglsamplerparameterfvproc} else {unsafe{transmute(proc)}}},
+			samplerparameteriiv: {let proc = get_proc_address("glSamplerParameterIiv"); if proc == null() {dummy_pfnglsamplerparameteriivproc} else {unsafe{transmute(proc)}}},
+			samplerparameteriuiv: {let proc = get_proc_address("glSamplerParameterIuiv"); if proc == null() {dummy_pfnglsamplerparameteriuivproc} else {unsafe{transmute(proc)}}},
+			getsamplerparameteriv: {let proc = get_proc_address("glGetSamplerParameteriv"); if proc == null() {dummy_pfnglgetsamplerparameterivproc} else {unsafe{transmute(proc)}}},
+			getsamplerparameteriiv: {let proc = get_proc_address("glGetSamplerParameterIiv"); if proc == null() {dummy_pfnglgetsamplerparameteriivproc} else {unsafe{transmute(proc)}}},
+			getsamplerparameterfv: {let proc = get_proc_address("glGetSamplerParameterfv"); if proc == null() {dummy_pfnglgetsamplerparameterfvproc} else {unsafe{transmute(proc)}}},
+			getsamplerparameteriuiv: {let proc = get_proc_address("glGetSamplerParameterIuiv"); if proc == null() {dummy_pfnglgetsamplerparameteriuivproc} else {unsafe{transmute(proc)}}},
+			querycounter: {let proc = get_proc_address("glQueryCounter"); if proc == null() {dummy_pfnglquerycounterproc} else {unsafe{transmute(proc)}}},
+			getqueryobjecti64v: {let proc = get_proc_address("glGetQueryObjecti64v"); if proc == null() {dummy_pfnglgetqueryobjecti64vproc} else {unsafe{transmute(proc)}}},
+			getqueryobjectui64v: {let proc = get_proc_address("glGetQueryObjectui64v"); if proc == null() {dummy_pfnglgetqueryobjectui64vproc} else {unsafe{transmute(proc)}}},
+			vertexattribdivisor: {let proc = get_proc_address("glVertexAttribDivisor"); if proc == null() {dummy_pfnglvertexattribdivisorproc} else {unsafe{transmute(proc)}}},
+			vertexattribp1ui: {let proc = get_proc_address("glVertexAttribP1ui"); if proc == null() {dummy_pfnglvertexattribp1uiproc} else {unsafe{transmute(proc)}}},
+			vertexattribp1uiv: {let proc = get_proc_address("glVertexAttribP1uiv"); if proc == null() {dummy_pfnglvertexattribp1uivproc} else {unsafe{transmute(proc)}}},
+			vertexattribp2ui: {let proc = get_proc_address("glVertexAttribP2ui"); if proc == null() {dummy_pfnglvertexattribp2uiproc} else {unsafe{transmute(proc)}}},
+			vertexattribp2uiv: {let proc = get_proc_address("glVertexAttribP2uiv"); if proc == null() {dummy_pfnglvertexattribp2uivproc} else {unsafe{transmute(proc)}}},
+			vertexattribp3ui: {let proc = get_proc_address("glVertexAttribP3ui"); if proc == null() {dummy_pfnglvertexattribp3uiproc} else {unsafe{transmute(proc)}}},
+			vertexattribp3uiv: {let proc = get_proc_address("glVertexAttribP3uiv"); if proc == null() {dummy_pfnglvertexattribp3uivproc} else {unsafe{transmute(proc)}}},
+			vertexattribp4ui: {let proc = get_proc_address("glVertexAttribP4ui"); if proc == null() {dummy_pfnglvertexattribp4uiproc} else {unsafe{transmute(proc)}}},
+			vertexattribp4uiv: {let proc = get_proc_address("glVertexAttribP4uiv"); if proc == null() {dummy_pfnglvertexattribp4uivproc} else {unsafe{transmute(proc)}}},
+			vertexp2ui: {let proc = get_proc_address("glVertexP2ui"); if proc == null() {dummy_pfnglvertexp2uiproc} else {unsafe{transmute(proc)}}},
+			vertexp2uiv: {let proc = get_proc_address("glVertexP2uiv"); if proc == null() {dummy_pfnglvertexp2uivproc} else {unsafe{transmute(proc)}}},
+			vertexp3ui: {let proc = get_proc_address("glVertexP3ui"); if proc == null() {dummy_pfnglvertexp3uiproc} else {unsafe{transmute(proc)}}},
+			vertexp3uiv: {let proc = get_proc_address("glVertexP3uiv"); if proc == null() {dummy_pfnglvertexp3uivproc} else {unsafe{transmute(proc)}}},
+			vertexp4ui: {let proc = get_proc_address("glVertexP4ui"); if proc == null() {dummy_pfnglvertexp4uiproc} else {unsafe{transmute(proc)}}},
+			vertexp4uiv: {let proc = get_proc_address("glVertexP4uiv"); if proc == null() {dummy_pfnglvertexp4uivproc} else {unsafe{transmute(proc)}}},
+			texcoordp1ui: {let proc = get_proc_address("glTexCoordP1ui"); if proc == null() {dummy_pfngltexcoordp1uiproc} else {unsafe{transmute(proc)}}},
+			texcoordp1uiv: {let proc = get_proc_address("glTexCoordP1uiv"); if proc == null() {dummy_pfngltexcoordp1uivproc} else {unsafe{transmute(proc)}}},
+			texcoordp2ui: {let proc = get_proc_address("glTexCoordP2ui"); if proc == null() {dummy_pfngltexcoordp2uiproc} else {unsafe{transmute(proc)}}},
+			texcoordp2uiv: {let proc = get_proc_address("glTexCoordP2uiv"); if proc == null() {dummy_pfngltexcoordp2uivproc} else {unsafe{transmute(proc)}}},
+			texcoordp3ui: {let proc = get_proc_address("glTexCoordP3ui"); if proc == null() {dummy_pfngltexcoordp3uiproc} else {unsafe{transmute(proc)}}},
+			texcoordp3uiv: {let proc = get_proc_address("glTexCoordP3uiv"); if proc == null() {dummy_pfngltexcoordp3uivproc} else {unsafe{transmute(proc)}}},
+			texcoordp4ui: {let proc = get_proc_address("glTexCoordP4ui"); if proc == null() {dummy_pfngltexcoordp4uiproc} else {unsafe{transmute(proc)}}},
+			texcoordp4uiv: {let proc = get_proc_address("glTexCoordP4uiv"); if proc == null() {dummy_pfngltexcoordp4uivproc} else {unsafe{transmute(proc)}}},
+			multitexcoordp1ui: {let proc = get_proc_address("glMultiTexCoordP1ui"); if proc == null() {dummy_pfnglmultitexcoordp1uiproc} else {unsafe{transmute(proc)}}},
+			multitexcoordp1uiv: {let proc = get_proc_address("glMultiTexCoordP1uiv"); if proc == null() {dummy_pfnglmultitexcoordp1uivproc} else {unsafe{transmute(proc)}}},
+			multitexcoordp2ui: {let proc = get_proc_address("glMultiTexCoordP2ui"); if proc == null() {dummy_pfnglmultitexcoordp2uiproc} else {unsafe{transmute(proc)}}},
+			multitexcoordp2uiv: {let proc = get_proc_address("glMultiTexCoordP2uiv"); if proc == null() {dummy_pfnglmultitexcoordp2uivproc} else {unsafe{transmute(proc)}}},
+			multitexcoordp3ui: {let proc = get_proc_address("glMultiTexCoordP3ui"); if proc == null() {dummy_pfnglmultitexcoordp3uiproc} else {unsafe{transmute(proc)}}},
+			multitexcoordp3uiv: {let proc = get_proc_address("glMultiTexCoordP3uiv"); if proc == null() {dummy_pfnglmultitexcoordp3uivproc} else {unsafe{transmute(proc)}}},
+			multitexcoordp4ui: {let proc = get_proc_address("glMultiTexCoordP4ui"); if proc == null() {dummy_pfnglmultitexcoordp4uiproc} else {unsafe{transmute(proc)}}},
+			multitexcoordp4uiv: {let proc = get_proc_address("glMultiTexCoordP4uiv"); if proc == null() {dummy_pfnglmultitexcoordp4uivproc} else {unsafe{transmute(proc)}}},
+			normalp3ui: {let proc = get_proc_address("glNormalP3ui"); if proc == null() {dummy_pfnglnormalp3uiproc} else {unsafe{transmute(proc)}}},
+			normalp3uiv: {let proc = get_proc_address("glNormalP3uiv"); if proc == null() {dummy_pfnglnormalp3uivproc} else {unsafe{transmute(proc)}}},
+			colorp3ui: {let proc = get_proc_address("glColorP3ui"); if proc == null() {dummy_pfnglcolorp3uiproc} else {unsafe{transmute(proc)}}},
+			colorp3uiv: {let proc = get_proc_address("glColorP3uiv"); if proc == null() {dummy_pfnglcolorp3uivproc} else {unsafe{transmute(proc)}}},
+			colorp4ui: {let proc = get_proc_address("glColorP4ui"); if proc == null() {dummy_pfnglcolorp4uiproc} else {unsafe{transmute(proc)}}},
+			colorp4uiv: {let proc = get_proc_address("glColorP4uiv"); if proc == null() {dummy_pfnglcolorp4uivproc} else {unsafe{transmute(proc)}}},
+			secondarycolorp3ui: {let proc = get_proc_address("glSecondaryColorP3ui"); if proc == null() {dummy_pfnglsecondarycolorp3uiproc} else {unsafe{transmute(proc)}}},
+			secondarycolorp3uiv: {let proc = get_proc_address("glSecondaryColorP3uiv"); if proc == null() {dummy_pfnglsecondarycolorp3uivproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -6916,220 +6916,220 @@ type PFNGLBEGINQUERYINDEXEDPROC = extern "system" fn(GLenum, GLuint, GLuint);
 type PFNGLENDQUERYINDEXEDPROC = extern "system" fn(GLenum, GLuint);
 type PFNGLGETQUERYINDEXEDIVPROC = extern "system" fn(GLenum, GLuint, GLenum, *mut GLint);
 extern "system" fn dummy_pfnglminsampleshadingproc (_: GLfloat) {
-	panic!("OpenGL Function pointer of glMinSampleShading() is NULL");
+	panic!("OpenGL Function pointer of `glMinSampleShading()` is NULL");
 }
 extern "system" fn dummy_pfnglblendequationiproc (_: GLuint, _: GLenum) {
-	panic!("OpenGL Function pointer of glBlendEquationi() is NULL");
+	panic!("OpenGL Function pointer of `glBlendEquationi()` is NULL");
 }
 extern "system" fn dummy_pfnglblendequationseparateiproc (_: GLuint, _: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glBlendEquationSeparatei() is NULL");
+	panic!("OpenGL Function pointer of `glBlendEquationSeparatei()` is NULL");
 }
 extern "system" fn dummy_pfnglblendfunciproc (_: GLuint, _: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glBlendFunci() is NULL");
+	panic!("OpenGL Function pointer of `glBlendFunci()` is NULL");
 }
 extern "system" fn dummy_pfnglblendfuncseparateiproc (_: GLuint, _: GLenum, _: GLenum, _: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glBlendFuncSeparatei() is NULL");
+	panic!("OpenGL Function pointer of `glBlendFuncSeparatei()` is NULL");
 }
 extern "system" fn dummy_pfngldrawarraysindirectproc (_: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glDrawArraysIndirect() is NULL");
+	panic!("OpenGL Function pointer of `glDrawArraysIndirect()` is NULL");
 }
 extern "system" fn dummy_pfngldrawelementsindirectproc (_: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glDrawElementsIndirect() is NULL");
+	panic!("OpenGL Function pointer of `glDrawElementsIndirect()` is NULL");
 }
 extern "system" fn dummy_pfngluniform1dproc (_: GLint, _: GLdouble) {
-	panic!("OpenGL Function pointer of glUniform1d() is NULL");
+	panic!("OpenGL Function pointer of `glUniform1d()` is NULL");
 }
 extern "system" fn dummy_pfngluniform2dproc (_: GLint, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glUniform2d() is NULL");
+	panic!("OpenGL Function pointer of `glUniform2d()` is NULL");
 }
 extern "system" fn dummy_pfngluniform3dproc (_: GLint, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glUniform3d() is NULL");
+	panic!("OpenGL Function pointer of `glUniform3d()` is NULL");
 }
 extern "system" fn dummy_pfngluniform4dproc (_: GLint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glUniform4d() is NULL");
+	panic!("OpenGL Function pointer of `glUniform4d()` is NULL");
 }
 extern "system" fn dummy_pfngluniform1dvproc (_: GLint, _: GLsizei, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniform1dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform1dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform2dvproc (_: GLint, _: GLsizei, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniform2dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform2dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform3dvproc (_: GLint, _: GLsizei, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniform3dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform3dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniform4dvproc (_: GLint, _: GLsizei, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniform4dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniform4dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix2dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniformMatrix2dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix2dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix3dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniformMatrix3dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix3dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix4dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniformMatrix4dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix4dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix2x3dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniformMatrix2x3dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix2x3dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix2x4dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniformMatrix2x4dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix2x4dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix3x2dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniformMatrix3x2dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix3x2dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix3x4dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniformMatrix3x4dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix3x4dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix4x2dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniformMatrix4x2dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix4x2dv()` is NULL");
 }
 extern "system" fn dummy_pfngluniformmatrix4x3dvproc (_: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glUniformMatrix4x3dv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformMatrix4x3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetuniformdvproc (_: GLuint, _: GLint, _: *mut GLdouble) {
-	panic!("OpenGL Function pointer of glGetUniformdv() is NULL");
+	panic!("OpenGL Function pointer of `glGetUniformdv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetsubroutineuniformlocationproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLint {
-	panic!("OpenGL Function pointer of glGetSubroutineUniformLocation() is NULL");
+	panic!("OpenGL Function pointer of `glGetSubroutineUniformLocation()` is NULL");
 }
 extern "system" fn dummy_pfnglgetsubroutineindexproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLuint {
-	panic!("OpenGL Function pointer of glGetSubroutineIndex() is NULL");
+	panic!("OpenGL Function pointer of `glGetSubroutineIndex()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactivesubroutineuniformivproc (_: GLuint, _: GLenum, _: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetActiveSubroutineUniformiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveSubroutineUniformiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactivesubroutineuniformnameproc (_: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetActiveSubroutineUniformName() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveSubroutineUniformName()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactivesubroutinenameproc (_: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetActiveSubroutineName() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveSubroutineName()` is NULL");
 }
 extern "system" fn dummy_pfngluniformsubroutinesuivproc (_: GLenum, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glUniformSubroutinesuiv() is NULL");
+	panic!("OpenGL Function pointer of `glUniformSubroutinesuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetuniformsubroutineuivproc (_: GLenum, _: GLint, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetUniformSubroutineuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetUniformSubroutineuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogramstageivproc (_: GLuint, _: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetProgramStageiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramStageiv()` is NULL");
 }
 extern "system" fn dummy_pfnglpatchparameteriproc (_: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glPatchParameteri() is NULL");
+	panic!("OpenGL Function pointer of `glPatchParameteri()` is NULL");
 }
 extern "system" fn dummy_pfnglpatchparameterfvproc (_: GLenum, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glPatchParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glPatchParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfnglbindtransformfeedbackproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glBindTransformFeedback() is NULL");
+	panic!("OpenGL Function pointer of `glBindTransformFeedback()` is NULL");
 }
 extern "system" fn dummy_pfngldeletetransformfeedbacksproc (_: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glDeleteTransformFeedbacks() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteTransformFeedbacks()` is NULL");
 }
 extern "system" fn dummy_pfnglgentransformfeedbacksproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGenTransformFeedbacks() is NULL");
+	panic!("OpenGL Function pointer of `glGenTransformFeedbacks()` is NULL");
 }
 extern "system" fn dummy_pfnglistransformfeedbackproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsTransformFeedback() is NULL");
+	panic!("OpenGL Function pointer of `glIsTransformFeedback()` is NULL");
 }
 extern "system" fn dummy_pfnglpausetransformfeedbackproc () {
-	panic!("OpenGL Function pointer of glPauseTransformFeedback() is NULL");
+	panic!("OpenGL Function pointer of `glPauseTransformFeedback()` is NULL");
 }
 extern "system" fn dummy_pfnglresumetransformfeedbackproc () {
-	panic!("OpenGL Function pointer of glResumeTransformFeedback() is NULL");
+	panic!("OpenGL Function pointer of `glResumeTransformFeedback()` is NULL");
 }
 extern "system" fn dummy_pfngldrawtransformfeedbackproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glDrawTransformFeedback() is NULL");
+	panic!("OpenGL Function pointer of `glDrawTransformFeedback()` is NULL");
 }
 extern "system" fn dummy_pfngldrawtransformfeedbackstreamproc (_: GLenum, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glDrawTransformFeedbackStream() is NULL");
+	panic!("OpenGL Function pointer of `glDrawTransformFeedbackStream()` is NULL");
 }
 extern "system" fn dummy_pfnglbeginqueryindexedproc (_: GLenum, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glBeginQueryIndexed() is NULL");
+	panic!("OpenGL Function pointer of `glBeginQueryIndexed()` is NULL");
 }
 extern "system" fn dummy_pfnglendqueryindexedproc (_: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glEndQueryIndexed() is NULL");
+	panic!("OpenGL Function pointer of `glEndQueryIndexed()` is NULL");
 }
 extern "system" fn dummy_pfnglgetqueryindexedivproc (_: GLenum, _: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetQueryIndexediv() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryIndexediv()` is NULL");
 }
-const SAMPLE_SHADING: GLenum = 0x8C36;
-const MIN_SAMPLE_SHADING_VALUE: GLenum = 0x8C37;
-const MIN_PROGRAM_TEXTURE_GATHER_OFFSET: GLenum = 0x8E5E;
-const MAX_PROGRAM_TEXTURE_GATHER_OFFSET: GLenum = 0x8E5F;
-const TEXTURE_CUBE_MAP_ARRAY: GLenum = 0x9009;
-const TEXTURE_BINDING_CUBE_MAP_ARRAY: GLenum = 0x900A;
-const PROXY_TEXTURE_CUBE_MAP_ARRAY: GLenum = 0x900B;
-const SAMPLER_CUBE_MAP_ARRAY: GLenum = 0x900C;
-const SAMPLER_CUBE_MAP_ARRAY_SHADOW: GLenum = 0x900D;
-const INT_SAMPLER_CUBE_MAP_ARRAY: GLenum = 0x900E;
-const UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY: GLenum = 0x900F;
-const DRAW_INDIRECT_BUFFER: GLenum = 0x8F3F;
-const DRAW_INDIRECT_BUFFER_BINDING: GLenum = 0x8F43;
-const GEOMETRY_SHADER_INVOCATIONS: GLenum = 0x887F;
-const MAX_GEOMETRY_SHADER_INVOCATIONS: GLenum = 0x8E5A;
-const MIN_FRAGMENT_INTERPOLATION_OFFSET: GLenum = 0x8E5B;
-const MAX_FRAGMENT_INTERPOLATION_OFFSET: GLenum = 0x8E5C;
-const FRAGMENT_INTERPOLATION_OFFSET_BITS: GLenum = 0x8E5D;
-const MAX_VERTEX_STREAMS: GLenum = 0x8E71;
-const DOUBLE_VEC2: GLenum = 0x8FFC;
-const DOUBLE_VEC3: GLenum = 0x8FFD;
-const DOUBLE_VEC4: GLenum = 0x8FFE;
-const DOUBLE_MAT2: GLenum = 0x8F46;
-const DOUBLE_MAT3: GLenum = 0x8F47;
-const DOUBLE_MAT4: GLenum = 0x8F48;
-const DOUBLE_MAT2x3: GLenum = 0x8F49;
-const DOUBLE_MAT2x4: GLenum = 0x8F4A;
-const DOUBLE_MAT3x2: GLenum = 0x8F4B;
-const DOUBLE_MAT3x4: GLenum = 0x8F4C;
-const DOUBLE_MAT4x2: GLenum = 0x8F4D;
-const DOUBLE_MAT4x3: GLenum = 0x8F4E;
-const ACTIVE_SUBROUTINES: GLenum = 0x8DE5;
-const ACTIVE_SUBROUTINE_UNIFORMS: GLenum = 0x8DE6;
-const ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS: GLenum = 0x8E47;
-const ACTIVE_SUBROUTINE_MAX_LENGTH: GLenum = 0x8E48;
-const ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH: GLenum = 0x8E49;
-const MAX_SUBROUTINES: GLenum = 0x8DE7;
-const MAX_SUBROUTINE_UNIFORM_LOCATIONS: GLenum = 0x8DE8;
-const NUM_COMPATIBLE_SUBROUTINES: GLenum = 0x8E4A;
-const COMPATIBLE_SUBROUTINES: GLenum = 0x8E4B;
-const PATCHES: GLenum = 0x000E;
-const PATCH_VERTICES: GLenum = 0x8E72;
-const PATCH_DEFAULT_INNER_LEVEL: GLenum = 0x8E73;
-const PATCH_DEFAULT_OUTER_LEVEL: GLenum = 0x8E74;
-const TESS_CONTROL_OUTPUT_VERTICES: GLenum = 0x8E75;
-const TESS_GEN_MODE: GLenum = 0x8E76;
-const TESS_GEN_SPACING: GLenum = 0x8E77;
-const TESS_GEN_VERTEX_ORDER: GLenum = 0x8E78;
-const TESS_GEN_POINT_MODE: GLenum = 0x8E79;
-const ISOLINES: GLenum = 0x8E7A;
-const FRACTIONAL_ODD: GLenum = 0x8E7B;
-const FRACTIONAL_EVEN: GLenum = 0x8E7C;
-const MAX_PATCH_VERTICES: GLenum = 0x8E7D;
-const MAX_TESS_GEN_LEVEL: GLenum = 0x8E7E;
-const MAX_TESS_CONTROL_UNIFORM_COMPONENTS: GLenum = 0x8E7F;
-const MAX_TESS_EVALUATION_UNIFORM_COMPONENTS: GLenum = 0x8E80;
-const MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS: GLenum = 0x8E81;
-const MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS: GLenum = 0x8E82;
-const MAX_TESS_CONTROL_OUTPUT_COMPONENTS: GLenum = 0x8E83;
-const MAX_TESS_PATCH_COMPONENTS: GLenum = 0x8E84;
-const MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS: GLenum = 0x8E85;
-const MAX_TESS_EVALUATION_OUTPUT_COMPONENTS: GLenum = 0x8E86;
-const MAX_TESS_CONTROL_UNIFORM_BLOCKS: GLenum = 0x8E89;
-const MAX_TESS_EVALUATION_UNIFORM_BLOCKS: GLenum = 0x8E8A;
-const MAX_TESS_CONTROL_INPUT_COMPONENTS: GLenum = 0x886C;
-const MAX_TESS_EVALUATION_INPUT_COMPONENTS: GLenum = 0x886D;
-const MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS: GLenum = 0x8E1E;
-const MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS: GLenum = 0x8E1F;
-const UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER: GLenum = 0x84F0;
-const UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER: GLenum = 0x84F1;
-const TESS_EVALUATION_SHADER: GLenum = 0x8E87;
-const TESS_CONTROL_SHADER: GLenum = 0x8E88;
-const TRANSFORM_FEEDBACK: GLenum = 0x8E22;
-const TRANSFORM_FEEDBACK_BUFFER_PAUSED: GLenum = 0x8E23;
-const TRANSFORM_FEEDBACK_BUFFER_ACTIVE: GLenum = 0x8E24;
-const TRANSFORM_FEEDBACK_BINDING: GLenum = 0x8E25;
-const MAX_TRANSFORM_FEEDBACK_BUFFERS: GLenum = 0x8E70;
+pub const GL_SAMPLE_SHADING: GLenum = 0x8C36;
+pub const GL_MIN_SAMPLE_SHADING_VALUE: GLenum = 0x8C37;
+pub const GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET: GLenum = 0x8E5E;
+pub const GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET: GLenum = 0x8E5F;
+pub const GL_TEXTURE_CUBE_MAP_ARRAY: GLenum = 0x9009;
+pub const GL_TEXTURE_BINDING_CUBE_MAP_ARRAY: GLenum = 0x900A;
+pub const GL_PROXY_TEXTURE_CUBE_MAP_ARRAY: GLenum = 0x900B;
+pub const GL_SAMPLER_CUBE_MAP_ARRAY: GLenum = 0x900C;
+pub const GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW: GLenum = 0x900D;
+pub const GL_INT_SAMPLER_CUBE_MAP_ARRAY: GLenum = 0x900E;
+pub const GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY: GLenum = 0x900F;
+pub const GL_DRAW_INDIRECT_BUFFER: GLenum = 0x8F3F;
+pub const GL_DRAW_INDIRECT_BUFFER_BINDING: GLenum = 0x8F43;
+pub const GL_GEOMETRY_SHADER_INVOCATIONS: GLenum = 0x887F;
+pub const GL_MAX_GEOMETRY_SHADER_INVOCATIONS: GLenum = 0x8E5A;
+pub const GL_MIN_FRAGMENT_INTERPOLATION_OFFSET: GLenum = 0x8E5B;
+pub const GL_MAX_FRAGMENT_INTERPOLATION_OFFSET: GLenum = 0x8E5C;
+pub const GL_FRAGMENT_INTERPOLATION_OFFSET_BITS: GLenum = 0x8E5D;
+pub const GL_MAX_VERTEX_STREAMS: GLenum = 0x8E71;
+pub const GL_DOUBLE_VEC2: GLenum = 0x8FFC;
+pub const GL_DOUBLE_VEC3: GLenum = 0x8FFD;
+pub const GL_DOUBLE_VEC4: GLenum = 0x8FFE;
+pub const GL_DOUBLE_MAT2: GLenum = 0x8F46;
+pub const GL_DOUBLE_MAT3: GLenum = 0x8F47;
+pub const GL_DOUBLE_MAT4: GLenum = 0x8F48;
+pub const GL_DOUBLE_MAT2x3: GLenum = 0x8F49;
+pub const GL_DOUBLE_MAT2x4: GLenum = 0x8F4A;
+pub const GL_DOUBLE_MAT3x2: GLenum = 0x8F4B;
+pub const GL_DOUBLE_MAT3x4: GLenum = 0x8F4C;
+pub const GL_DOUBLE_MAT4x2: GLenum = 0x8F4D;
+pub const GL_DOUBLE_MAT4x3: GLenum = 0x8F4E;
+pub const GL_ACTIVE_SUBROUTINES: GLenum = 0x8DE5;
+pub const GL_ACTIVE_SUBROUTINE_UNIFORMS: GLenum = 0x8DE6;
+pub const GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS: GLenum = 0x8E47;
+pub const GL_ACTIVE_SUBROUTINE_MAX_LENGTH: GLenum = 0x8E48;
+pub const GL_ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH: GLenum = 0x8E49;
+pub const GL_MAX_SUBROUTINES: GLenum = 0x8DE7;
+pub const GL_MAX_SUBROUTINE_UNIFORM_LOCATIONS: GLenum = 0x8DE8;
+pub const GL_NUM_COMPATIBLE_SUBROUTINES: GLenum = 0x8E4A;
+pub const GL_COMPATIBLE_SUBROUTINES: GLenum = 0x8E4B;
+pub const GL_PATCHES: GLenum = 0x000E;
+pub const GL_PATCH_VERTICES: GLenum = 0x8E72;
+pub const GL_PATCH_DEFAULT_INNER_LEVEL: GLenum = 0x8E73;
+pub const GL_PATCH_DEFAULT_OUTER_LEVEL: GLenum = 0x8E74;
+pub const GL_TESS_CONTROL_OUTPUT_VERTICES: GLenum = 0x8E75;
+pub const GL_TESS_GEN_MODE: GLenum = 0x8E76;
+pub const GL_TESS_GEN_SPACING: GLenum = 0x8E77;
+pub const GL_TESS_GEN_VERTEX_ORDER: GLenum = 0x8E78;
+pub const GL_TESS_GEN_POINT_MODE: GLenum = 0x8E79;
+pub const GL_ISOLINES: GLenum = 0x8E7A;
+pub const GL_FRACTIONAL_ODD: GLenum = 0x8E7B;
+pub const GL_FRACTIONAL_EVEN: GLenum = 0x8E7C;
+pub const GL_MAX_PATCH_VERTICES: GLenum = 0x8E7D;
+pub const GL_MAX_TESS_GEN_LEVEL: GLenum = 0x8E7E;
+pub const GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS: GLenum = 0x8E7F;
+pub const GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS: GLenum = 0x8E80;
+pub const GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS: GLenum = 0x8E81;
+pub const GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS: GLenum = 0x8E82;
+pub const GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS: GLenum = 0x8E83;
+pub const GL_MAX_TESS_PATCH_COMPONENTS: GLenum = 0x8E84;
+pub const GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS: GLenum = 0x8E85;
+pub const GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS: GLenum = 0x8E86;
+pub const GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS: GLenum = 0x8E89;
+pub const GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS: GLenum = 0x8E8A;
+pub const GL_MAX_TESS_CONTROL_INPUT_COMPONENTS: GLenum = 0x886C;
+pub const GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS: GLenum = 0x886D;
+pub const GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS: GLenum = 0x8E1E;
+pub const GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS: GLenum = 0x8E1F;
+pub const GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER: GLenum = 0x84F0;
+pub const GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER: GLenum = 0x84F1;
+pub const GL_TESS_EVALUATION_SHADER: GLenum = 0x8E87;
+pub const GL_TESS_CONTROL_SHADER: GLenum = 0x8E88;
+pub const GL_TRANSFORM_FEEDBACK: GLenum = 0x8E22;
+pub const GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED: GLenum = 0x8E23;
+pub const GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE: GLenum = 0x8E24;
+pub const GL_TRANSFORM_FEEDBACK_BINDING: GLenum = 0x8E25;
+pub const GL_MAX_TRANSFORM_FEEDBACK_BUFFERS: GLenum = 0x8E70;
 
 pub trait GL_4_0 {
 	fn glMinSampleShading(&self, value: GLfloat);
@@ -7180,7 +7180,7 @@ pub trait GL_4_0 {
 	fn glGetQueryIndexediv(&self, target: GLenum, index: GLuint, pname: GLenum, params: *mut GLint);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version40 {
 	available: bool,
 	minsampleshading: PFNGLMINSAMPLESHADINGPROC,
@@ -7419,7 +7419,7 @@ impl GL_4_0 for Version40 {
 }
 
 impl Version40 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 40000 {
@@ -7427,52 +7427,52 @@ impl Version40 {
 		}
 		Self {
 			available: true,
-			minsampleshading: unsafe{transmute(get_proc_address("glMinSampleShading"))},
-			blendequationi: unsafe{transmute(get_proc_address("glBlendEquationi"))},
-			blendequationseparatei: unsafe{transmute(get_proc_address("glBlendEquationSeparatei"))},
-			blendfunci: unsafe{transmute(get_proc_address("glBlendFunci"))},
-			blendfuncseparatei: unsafe{transmute(get_proc_address("glBlendFuncSeparatei"))},
-			drawarraysindirect: unsafe{transmute(get_proc_address("glDrawArraysIndirect"))},
-			drawelementsindirect: unsafe{transmute(get_proc_address("glDrawElementsIndirect"))},
-			uniform1d: unsafe{transmute(get_proc_address("glUniform1d"))},
-			uniform2d: unsafe{transmute(get_proc_address("glUniform2d"))},
-			uniform3d: unsafe{transmute(get_proc_address("glUniform3d"))},
-			uniform4d: unsafe{transmute(get_proc_address("glUniform4d"))},
-			uniform1dv: unsafe{transmute(get_proc_address("glUniform1dv"))},
-			uniform2dv: unsafe{transmute(get_proc_address("glUniform2dv"))},
-			uniform3dv: unsafe{transmute(get_proc_address("glUniform3dv"))},
-			uniform4dv: unsafe{transmute(get_proc_address("glUniform4dv"))},
-			uniformmatrix2dv: unsafe{transmute(get_proc_address("glUniformMatrix2dv"))},
-			uniformmatrix3dv: unsafe{transmute(get_proc_address("glUniformMatrix3dv"))},
-			uniformmatrix4dv: unsafe{transmute(get_proc_address("glUniformMatrix4dv"))},
-			uniformmatrix2x3dv: unsafe{transmute(get_proc_address("glUniformMatrix2x3dv"))},
-			uniformmatrix2x4dv: unsafe{transmute(get_proc_address("glUniformMatrix2x4dv"))},
-			uniformmatrix3x2dv: unsafe{transmute(get_proc_address("glUniformMatrix3x2dv"))},
-			uniformmatrix3x4dv: unsafe{transmute(get_proc_address("glUniformMatrix3x4dv"))},
-			uniformmatrix4x2dv: unsafe{transmute(get_proc_address("glUniformMatrix4x2dv"))},
-			uniformmatrix4x3dv: unsafe{transmute(get_proc_address("glUniformMatrix4x3dv"))},
-			getuniformdv: unsafe{transmute(get_proc_address("glGetUniformdv"))},
-			getsubroutineuniformlocation: unsafe{transmute(get_proc_address("glGetSubroutineUniformLocation"))},
-			getsubroutineindex: unsafe{transmute(get_proc_address("glGetSubroutineIndex"))},
-			getactivesubroutineuniformiv: unsafe{transmute(get_proc_address("glGetActiveSubroutineUniformiv"))},
-			getactivesubroutineuniformname: unsafe{transmute(get_proc_address("glGetActiveSubroutineUniformName"))},
-			getactivesubroutinename: unsafe{transmute(get_proc_address("glGetActiveSubroutineName"))},
-			uniformsubroutinesuiv: unsafe{transmute(get_proc_address("glUniformSubroutinesuiv"))},
-			getuniformsubroutineuiv: unsafe{transmute(get_proc_address("glGetUniformSubroutineuiv"))},
-			getprogramstageiv: unsafe{transmute(get_proc_address("glGetProgramStageiv"))},
-			patchparameteri: unsafe{transmute(get_proc_address("glPatchParameteri"))},
-			patchparameterfv: unsafe{transmute(get_proc_address("glPatchParameterfv"))},
-			bindtransformfeedback: unsafe{transmute(get_proc_address("glBindTransformFeedback"))},
-			deletetransformfeedbacks: unsafe{transmute(get_proc_address("glDeleteTransformFeedbacks"))},
-			gentransformfeedbacks: unsafe{transmute(get_proc_address("glGenTransformFeedbacks"))},
-			istransformfeedback: unsafe{transmute(get_proc_address("glIsTransformFeedback"))},
-			pausetransformfeedback: unsafe{transmute(get_proc_address("glPauseTransformFeedback"))},
-			resumetransformfeedback: unsafe{transmute(get_proc_address("glResumeTransformFeedback"))},
-			drawtransformfeedback: unsafe{transmute(get_proc_address("glDrawTransformFeedback"))},
-			drawtransformfeedbackstream: unsafe{transmute(get_proc_address("glDrawTransformFeedbackStream"))},
-			beginqueryindexed: unsafe{transmute(get_proc_address("glBeginQueryIndexed"))},
-			endqueryindexed: unsafe{transmute(get_proc_address("glEndQueryIndexed"))},
-			getqueryindexediv: unsafe{transmute(get_proc_address("glGetQueryIndexediv"))},
+			minsampleshading: {let proc = get_proc_address("glMinSampleShading"); if proc == null() {dummy_pfnglminsampleshadingproc} else {unsafe{transmute(proc)}}},
+			blendequationi: {let proc = get_proc_address("glBlendEquationi"); if proc == null() {dummy_pfnglblendequationiproc} else {unsafe{transmute(proc)}}},
+			blendequationseparatei: {let proc = get_proc_address("glBlendEquationSeparatei"); if proc == null() {dummy_pfnglblendequationseparateiproc} else {unsafe{transmute(proc)}}},
+			blendfunci: {let proc = get_proc_address("glBlendFunci"); if proc == null() {dummy_pfnglblendfunciproc} else {unsafe{transmute(proc)}}},
+			blendfuncseparatei: {let proc = get_proc_address("glBlendFuncSeparatei"); if proc == null() {dummy_pfnglblendfuncseparateiproc} else {unsafe{transmute(proc)}}},
+			drawarraysindirect: {let proc = get_proc_address("glDrawArraysIndirect"); if proc == null() {dummy_pfngldrawarraysindirectproc} else {unsafe{transmute(proc)}}},
+			drawelementsindirect: {let proc = get_proc_address("glDrawElementsIndirect"); if proc == null() {dummy_pfngldrawelementsindirectproc} else {unsafe{transmute(proc)}}},
+			uniform1d: {let proc = get_proc_address("glUniform1d"); if proc == null() {dummy_pfngluniform1dproc} else {unsafe{transmute(proc)}}},
+			uniform2d: {let proc = get_proc_address("glUniform2d"); if proc == null() {dummy_pfngluniform2dproc} else {unsafe{transmute(proc)}}},
+			uniform3d: {let proc = get_proc_address("glUniform3d"); if proc == null() {dummy_pfngluniform3dproc} else {unsafe{transmute(proc)}}},
+			uniform4d: {let proc = get_proc_address("glUniform4d"); if proc == null() {dummy_pfngluniform4dproc} else {unsafe{transmute(proc)}}},
+			uniform1dv: {let proc = get_proc_address("glUniform1dv"); if proc == null() {dummy_pfngluniform1dvproc} else {unsafe{transmute(proc)}}},
+			uniform2dv: {let proc = get_proc_address("glUniform2dv"); if proc == null() {dummy_pfngluniform2dvproc} else {unsafe{transmute(proc)}}},
+			uniform3dv: {let proc = get_proc_address("glUniform3dv"); if proc == null() {dummy_pfngluniform3dvproc} else {unsafe{transmute(proc)}}},
+			uniform4dv: {let proc = get_proc_address("glUniform4dv"); if proc == null() {dummy_pfngluniform4dvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix2dv: {let proc = get_proc_address("glUniformMatrix2dv"); if proc == null() {dummy_pfngluniformmatrix2dvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix3dv: {let proc = get_proc_address("glUniformMatrix3dv"); if proc == null() {dummy_pfngluniformmatrix3dvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix4dv: {let proc = get_proc_address("glUniformMatrix4dv"); if proc == null() {dummy_pfngluniformmatrix4dvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix2x3dv: {let proc = get_proc_address("glUniformMatrix2x3dv"); if proc == null() {dummy_pfngluniformmatrix2x3dvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix2x4dv: {let proc = get_proc_address("glUniformMatrix2x4dv"); if proc == null() {dummy_pfngluniformmatrix2x4dvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix3x2dv: {let proc = get_proc_address("glUniformMatrix3x2dv"); if proc == null() {dummy_pfngluniformmatrix3x2dvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix3x4dv: {let proc = get_proc_address("glUniformMatrix3x4dv"); if proc == null() {dummy_pfngluniformmatrix3x4dvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix4x2dv: {let proc = get_proc_address("glUniformMatrix4x2dv"); if proc == null() {dummy_pfngluniformmatrix4x2dvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix4x3dv: {let proc = get_proc_address("glUniformMatrix4x3dv"); if proc == null() {dummy_pfngluniformmatrix4x3dvproc} else {unsafe{transmute(proc)}}},
+			getuniformdv: {let proc = get_proc_address("glGetUniformdv"); if proc == null() {dummy_pfnglgetuniformdvproc} else {unsafe{transmute(proc)}}},
+			getsubroutineuniformlocation: {let proc = get_proc_address("glGetSubroutineUniformLocation"); if proc == null() {dummy_pfnglgetsubroutineuniformlocationproc} else {unsafe{transmute(proc)}}},
+			getsubroutineindex: {let proc = get_proc_address("glGetSubroutineIndex"); if proc == null() {dummy_pfnglgetsubroutineindexproc} else {unsafe{transmute(proc)}}},
+			getactivesubroutineuniformiv: {let proc = get_proc_address("glGetActiveSubroutineUniformiv"); if proc == null() {dummy_pfnglgetactivesubroutineuniformivproc} else {unsafe{transmute(proc)}}},
+			getactivesubroutineuniformname: {let proc = get_proc_address("glGetActiveSubroutineUniformName"); if proc == null() {dummy_pfnglgetactivesubroutineuniformnameproc} else {unsafe{transmute(proc)}}},
+			getactivesubroutinename: {let proc = get_proc_address("glGetActiveSubroutineName"); if proc == null() {dummy_pfnglgetactivesubroutinenameproc} else {unsafe{transmute(proc)}}},
+			uniformsubroutinesuiv: {let proc = get_proc_address("glUniformSubroutinesuiv"); if proc == null() {dummy_pfngluniformsubroutinesuivproc} else {unsafe{transmute(proc)}}},
+			getuniformsubroutineuiv: {let proc = get_proc_address("glGetUniformSubroutineuiv"); if proc == null() {dummy_pfnglgetuniformsubroutineuivproc} else {unsafe{transmute(proc)}}},
+			getprogramstageiv: {let proc = get_proc_address("glGetProgramStageiv"); if proc == null() {dummy_pfnglgetprogramstageivproc} else {unsafe{transmute(proc)}}},
+			patchparameteri: {let proc = get_proc_address("glPatchParameteri"); if proc == null() {dummy_pfnglpatchparameteriproc} else {unsafe{transmute(proc)}}},
+			patchparameterfv: {let proc = get_proc_address("glPatchParameterfv"); if proc == null() {dummy_pfnglpatchparameterfvproc} else {unsafe{transmute(proc)}}},
+			bindtransformfeedback: {let proc = get_proc_address("glBindTransformFeedback"); if proc == null() {dummy_pfnglbindtransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			deletetransformfeedbacks: {let proc = get_proc_address("glDeleteTransformFeedbacks"); if proc == null() {dummy_pfngldeletetransformfeedbacksproc} else {unsafe{transmute(proc)}}},
+			gentransformfeedbacks: {let proc = get_proc_address("glGenTransformFeedbacks"); if proc == null() {dummy_pfnglgentransformfeedbacksproc} else {unsafe{transmute(proc)}}},
+			istransformfeedback: {let proc = get_proc_address("glIsTransformFeedback"); if proc == null() {dummy_pfnglistransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			pausetransformfeedback: {let proc = get_proc_address("glPauseTransformFeedback"); if proc == null() {dummy_pfnglpausetransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			resumetransformfeedback: {let proc = get_proc_address("glResumeTransformFeedback"); if proc == null() {dummy_pfnglresumetransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			drawtransformfeedback: {let proc = get_proc_address("glDrawTransformFeedback"); if proc == null() {dummy_pfngldrawtransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			drawtransformfeedbackstream: {let proc = get_proc_address("glDrawTransformFeedbackStream"); if proc == null() {dummy_pfngldrawtransformfeedbackstreamproc} else {unsafe{transmute(proc)}}},
+			beginqueryindexed: {let proc = get_proc_address("glBeginQueryIndexed"); if proc == null() {dummy_pfnglbeginqueryindexedproc} else {unsafe{transmute(proc)}}},
+			endqueryindexed: {let proc = get_proc_address("glEndQueryIndexed"); if proc == null() {dummy_pfnglendqueryindexedproc} else {unsafe{transmute(proc)}}},
+			getqueryindexediv: {let proc = get_proc_address("glGetQueryIndexediv"); if proc == null() {dummy_pfnglgetqueryindexedivproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -7624,304 +7624,304 @@ type PFNGLDEPTHRANGEINDEXEDPROC = extern "system" fn(GLuint, GLdouble, GLdouble)
 type PFNGLGETFLOATI_VPROC = extern "system" fn(GLenum, GLuint, *mut GLfloat);
 type PFNGLGETDOUBLEI_VPROC = extern "system" fn(GLenum, GLuint, *mut GLdouble);
 extern "system" fn dummy_pfnglreleaseshadercompilerproc () {
-	panic!("OpenGL Function pointer of glReleaseShaderCompiler() is NULL");
+	panic!("OpenGL Function pointer of `glReleaseShaderCompiler()` is NULL");
 }
 extern "system" fn dummy_pfnglshaderbinaryproc (_: GLsizei, _: *const GLuint, _: GLenum, _: *const c_void, _: GLsizei) {
-	panic!("OpenGL Function pointer of glShaderBinary() is NULL");
+	panic!("OpenGL Function pointer of `glShaderBinary()` is NULL");
 }
 extern "system" fn dummy_pfnglgetshaderprecisionformatproc (_: GLenum, _: GLenum, _: *mut GLint, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetShaderPrecisionFormat() is NULL");
+	panic!("OpenGL Function pointer of `glGetShaderPrecisionFormat()` is NULL");
 }
 extern "system" fn dummy_pfngldepthrangefproc (_: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glDepthRangef() is NULL");
+	panic!("OpenGL Function pointer of `glDepthRangef()` is NULL");
 }
 extern "system" fn dummy_pfnglcleardepthfproc (_: GLfloat) {
-	panic!("OpenGL Function pointer of glClearDepthf() is NULL");
+	panic!("OpenGL Function pointer of `glClearDepthf()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogrambinaryproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLenum, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetProgramBinary() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramBinary()` is NULL");
 }
 extern "system" fn dummy_pfnglprogrambinaryproc (_: GLuint, _: GLenum, _: *const c_void, _: GLsizei) {
-	panic!("OpenGL Function pointer of glProgramBinary() is NULL");
+	panic!("OpenGL Function pointer of `glProgramBinary()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramparameteriproc (_: GLuint, _: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glProgramParameteri() is NULL");
+	panic!("OpenGL Function pointer of `glProgramParameteri()` is NULL");
 }
 extern "system" fn dummy_pfngluseprogramstagesproc (_: GLuint, _: GLbitfield, _: GLuint) {
-	panic!("OpenGL Function pointer of glUseProgramStages() is NULL");
+	panic!("OpenGL Function pointer of `glUseProgramStages()` is NULL");
 }
 extern "system" fn dummy_pfnglactiveshaderprogramproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glActiveShaderProgram() is NULL");
+	panic!("OpenGL Function pointer of `glActiveShaderProgram()` is NULL");
 }
 extern "system" fn dummy_pfnglcreateshaderprogramvproc (_: GLenum, _: GLsizei, _: *const *const GLchar) -> GLuint {
-	panic!("OpenGL Function pointer of glCreateShaderProgramv() is NULL");
+	panic!("OpenGL Function pointer of `glCreateShaderProgramv()` is NULL");
 }
 extern "system" fn dummy_pfnglbindprogrampipelineproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glBindProgramPipeline() is NULL");
+	panic!("OpenGL Function pointer of `glBindProgramPipeline()` is NULL");
 }
 extern "system" fn dummy_pfngldeleteprogrampipelinesproc (_: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glDeleteProgramPipelines() is NULL");
+	panic!("OpenGL Function pointer of `glDeleteProgramPipelines()` is NULL");
 }
 extern "system" fn dummy_pfnglgenprogrampipelinesproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGenProgramPipelines() is NULL");
+	panic!("OpenGL Function pointer of `glGenProgramPipelines()` is NULL");
 }
 extern "system" fn dummy_pfnglisprogrampipelineproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glIsProgramPipeline() is NULL");
+	panic!("OpenGL Function pointer of `glIsProgramPipeline()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogrampipelineivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetProgramPipelineiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramPipelineiv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform1iproc (_: GLuint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glProgramUniform1i() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform1i()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform1ivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glProgramUniform1iv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform1iv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform1fproc (_: GLuint, _: GLint, _: GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniform1f() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform1f()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform1fvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniform1fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform1fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform1dproc (_: GLuint, _: GLint, _: GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniform1d() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform1d()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform1dvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniform1dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform1dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform1uiproc (_: GLuint, _: GLint, _: GLuint) {
-	panic!("OpenGL Function pointer of glProgramUniform1ui() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform1ui()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform1uivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glProgramUniform1uiv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform1uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform2iproc (_: GLuint, _: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glProgramUniform2i() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform2i()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform2ivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glProgramUniform2iv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform2iv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform2fproc (_: GLuint, _: GLint, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniform2f() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform2f()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform2fvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniform2fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform2fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform2dproc (_: GLuint, _: GLint, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniform2d() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform2d()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform2dvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniform2dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform2dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform2uiproc (_: GLuint, _: GLint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glProgramUniform2ui() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform2ui()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform2uivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glProgramUniform2uiv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform2uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform3iproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glProgramUniform3i() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform3i()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform3ivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glProgramUniform3iv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform3iv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform3fproc (_: GLuint, _: GLint, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniform3f() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform3f()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform3fvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniform3fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform3fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform3dproc (_: GLuint, _: GLint, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniform3d() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform3d()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform3dvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniform3dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform3uiproc (_: GLuint, _: GLint, _: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glProgramUniform3ui() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform3ui()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform3uivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glProgramUniform3uiv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform3uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform4iproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glProgramUniform4i() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform4i()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform4ivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glProgramUniform4iv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform4iv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform4fproc (_: GLuint, _: GLint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniform4f() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform4f()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform4fvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniform4fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform4fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform4dproc (_: GLuint, _: GLint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniform4d() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform4d()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform4dvproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniform4dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform4dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform4uiproc (_: GLuint, _: GLint, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glProgramUniform4ui() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform4ui()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniform4uivproc (_: GLuint, _: GLint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glProgramUniform4uiv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniform4uiv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix2fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix2fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix2fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix3fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix3fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix3fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix4fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix4fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix4fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix2dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix2dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix2dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix3dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix3dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix4dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix4dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix4dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix2x3fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix2x3fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix2x3fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix3x2fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix3x2fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix3x2fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix2x4fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix2x4fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix2x4fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix4x2fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix4x2fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix4x2fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix3x4fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix3x4fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix3x4fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix4x3fvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix4x3fv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix4x3fv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix2x3dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix2x3dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix2x3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix3x2dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix3x2dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix3x2dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix2x4dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix2x4dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix2x4dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix4x2dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix4x2dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix4x2dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix3x4dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix3x4dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix3x4dv()` is NULL");
 }
 extern "system" fn dummy_pfnglprogramuniformmatrix4x3dvproc (_: GLuint, _: GLint, _: GLsizei, _: GLboolean, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glProgramUniformMatrix4x3dv() is NULL");
+	panic!("OpenGL Function pointer of `glProgramUniformMatrix4x3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglvalidateprogrampipelineproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glValidateProgramPipeline() is NULL");
+	panic!("OpenGL Function pointer of `glValidateProgramPipeline()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogrampipelineinfologproc (_: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetProgramPipelineInfoLog() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramPipelineInfoLog()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribl1dproc (_: GLuint, _: GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttribL1d() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribL1d()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribl2dproc (_: GLuint, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttribL2d() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribL2d()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribl3dproc (_: GLuint, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttribL3d() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribL3d()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribl4dproc (_: GLuint, _: GLdouble, _: GLdouble, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttribL4d() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribL4d()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribl1dvproc (_: GLuint, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttribL1dv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribL1dv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribl2dvproc (_: GLuint, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttribL2dv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribL2dv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribl3dvproc (_: GLuint, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttribL3dv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribL3dv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribl4dvproc (_: GLuint, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glVertexAttribL4dv() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribL4dv()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattriblpointerproc (_: GLuint, _: GLint, _: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glVertexAttribLPointer() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribLPointer()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexattribldvproc (_: GLuint, _: GLenum, _: *mut GLdouble) {
-	panic!("OpenGL Function pointer of glGetVertexAttribLdv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexAttribLdv()` is NULL");
 }
 extern "system" fn dummy_pfnglviewportarrayvproc (_: GLuint, _: GLsizei, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glViewportArrayv() is NULL");
+	panic!("OpenGL Function pointer of `glViewportArrayv()` is NULL");
 }
 extern "system" fn dummy_pfnglviewportindexedfproc (_: GLuint, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glViewportIndexedf() is NULL");
+	panic!("OpenGL Function pointer of `glViewportIndexedf()` is NULL");
 }
 extern "system" fn dummy_pfnglviewportindexedfvproc (_: GLuint, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glViewportIndexedfv() is NULL");
+	panic!("OpenGL Function pointer of `glViewportIndexedfv()` is NULL");
 }
 extern "system" fn dummy_pfnglscissorarrayvproc (_: GLuint, _: GLsizei, _: *const GLint) {
-	panic!("OpenGL Function pointer of glScissorArrayv() is NULL");
+	panic!("OpenGL Function pointer of `glScissorArrayv()` is NULL");
 }
 extern "system" fn dummy_pfnglscissorindexedproc (_: GLuint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glScissorIndexed() is NULL");
+	panic!("OpenGL Function pointer of `glScissorIndexed()` is NULL");
 }
 extern "system" fn dummy_pfnglscissorindexedvproc (_: GLuint, _: *const GLint) {
-	panic!("OpenGL Function pointer of glScissorIndexedv() is NULL");
+	panic!("OpenGL Function pointer of `glScissorIndexedv()` is NULL");
 }
 extern "system" fn dummy_pfngldepthrangearrayvproc (_: GLuint, _: GLsizei, _: *const GLdouble) {
-	panic!("OpenGL Function pointer of glDepthRangeArrayv() is NULL");
+	panic!("OpenGL Function pointer of `glDepthRangeArrayv()` is NULL");
 }
 extern "system" fn dummy_pfngldepthrangeindexedproc (_: GLuint, _: GLdouble, _: GLdouble) {
-	panic!("OpenGL Function pointer of glDepthRangeIndexed() is NULL");
+	panic!("OpenGL Function pointer of `glDepthRangeIndexed()` is NULL");
 }
 extern "system" fn dummy_pfnglgetfloati_vproc (_: GLenum, _: GLuint, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetFloati_v() is NULL");
+	panic!("OpenGL Function pointer of `glGetFloati_v()` is NULL");
 }
 extern "system" fn dummy_pfnglgetdoublei_vproc (_: GLenum, _: GLuint, _: *mut GLdouble) {
-	panic!("OpenGL Function pointer of glGetDoublei_v() is NULL");
+	panic!("OpenGL Function pointer of `glGetDoublei_v()` is NULL");
 }
-const FIXED: GLenum = 0x140C;
-const IMPLEMENTATION_COLOR_READ_TYPE: GLenum = 0x8B9A;
-const IMPLEMENTATION_COLOR_READ_FORMAT: GLenum = 0x8B9B;
-const LOW_FLOAT: GLenum = 0x8DF0;
-const MEDIUM_FLOAT: GLenum = 0x8DF1;
-const HIGH_FLOAT: GLenum = 0x8DF2;
-const LOW_INT: GLenum = 0x8DF3;
-const MEDIUM_INT: GLenum = 0x8DF4;
-const HIGH_INT: GLenum = 0x8DF5;
-const SHADER_COMPILER: GLenum = 0x8DFA;
-const SHADER_BINARY_FORMATS: GLenum = 0x8DF8;
-const NUM_SHADER_BINARY_FORMATS: GLenum = 0x8DF9;
-const MAX_VERTEX_UNIFORM_VECTORS: GLenum = 0x8DFB;
-const MAX_VARYING_VECTORS: GLenum = 0x8DFC;
-const MAX_FRAGMENT_UNIFORM_VECTORS: GLenum = 0x8DFD;
-const RGB565: GLenum = 0x8D62;
-const PROGRAM_BINARY_RETRIEVABLE_HINT: GLenum = 0x8257;
-const PROGRAM_BINARY_LENGTH: GLenum = 0x8741;
-const NUM_PROGRAM_BINARY_FORMATS: GLenum = 0x87FE;
-const PROGRAM_BINARY_FORMATS: GLenum = 0x87FF;
-const VERTEX_SHADER_BIT: GLbitfield = 0x00000001;
-const FRAGMENT_SHADER_BIT: GLbitfield = 0x00000002;
-const GEOMETRY_SHADER_BIT: GLbitfield = 0x00000004;
-const TESS_CONTROL_SHADER_BIT: GLbitfield = 0x00000008;
-const TESS_EVALUATION_SHADER_BIT: GLbitfield = 0x00000010;
-const ALL_SHADER_BITS: GLbitfield = 0xFFFFFFFF;
-const PROGRAM_SEPARABLE: GLenum = 0x8258;
-const ACTIVE_PROGRAM: GLenum = 0x8259;
-const PROGRAM_PIPELINE_BINDING: GLenum = 0x825A;
-const MAX_VIEWPORTS: GLenum = 0x825B;
-const VIEWPORT_SUBPIXEL_BITS: GLenum = 0x825C;
-const VIEWPORT_BOUNDS_RANGE: GLenum = 0x825D;
-const LAYER_PROVOKING_VERTEX: GLenum = 0x825E;
-const VIEWPORT_INDEX_PROVOKING_VERTEX: GLenum = 0x825F;
-const UNDEFINED_VERTEX: GLenum = 0x8260;
+pub const GL_FIXED: GLenum = 0x140C;
+pub const GL_IMPLEMENTATION_COLOR_READ_TYPE: GLenum = 0x8B9A;
+pub const GL_IMPLEMENTATION_COLOR_READ_FORMAT: GLenum = 0x8B9B;
+pub const GL_LOW_FLOAT: GLenum = 0x8DF0;
+pub const GL_MEDIUM_FLOAT: GLenum = 0x8DF1;
+pub const GL_HIGH_FLOAT: GLenum = 0x8DF2;
+pub const GL_LOW_INT: GLenum = 0x8DF3;
+pub const GL_MEDIUM_INT: GLenum = 0x8DF4;
+pub const GL_HIGH_INT: GLenum = 0x8DF5;
+pub const GL_SHADER_COMPILER: GLenum = 0x8DFA;
+pub const GL_SHADER_BINARY_FORMATS: GLenum = 0x8DF8;
+pub const GL_NUM_SHADER_BINARY_FORMATS: GLenum = 0x8DF9;
+pub const GL_MAX_VERTEX_UNIFORM_VECTORS: GLenum = 0x8DFB;
+pub const GL_MAX_VARYING_VECTORS: GLenum = 0x8DFC;
+pub const GL_MAX_FRAGMENT_UNIFORM_VECTORS: GLenum = 0x8DFD;
+pub const GL_RGB565: GLenum = 0x8D62;
+pub const GL_PROGRAM_BINARY_RETRIEVABLE_HINT: GLenum = 0x8257;
+pub const GL_PROGRAM_BINARY_LENGTH: GLenum = 0x8741;
+pub const GL_NUM_PROGRAM_BINARY_FORMATS: GLenum = 0x87FE;
+pub const GL_PROGRAM_BINARY_FORMATS: GLenum = 0x87FF;
+pub const GL_VERTEX_SHADER_BIT: GLbitfield = 0x00000001;
+pub const GL_FRAGMENT_SHADER_BIT: GLbitfield = 0x00000002;
+pub const GL_GEOMETRY_SHADER_BIT: GLbitfield = 0x00000004;
+pub const GL_TESS_CONTROL_SHADER_BIT: GLbitfield = 0x00000008;
+pub const GL_TESS_EVALUATION_SHADER_BIT: GLbitfield = 0x00000010;
+pub const GL_ALL_SHADER_BITS: GLbitfield = 0xFFFFFFFF;
+pub const GL_PROGRAM_SEPARABLE: GLenum = 0x8258;
+pub const GL_ACTIVE_PROGRAM: GLenum = 0x8259;
+pub const GL_PROGRAM_PIPELINE_BINDING: GLenum = 0x825A;
+pub const GL_MAX_VIEWPORTS: GLenum = 0x825B;
+pub const GL_VIEWPORT_SUBPIXEL_BITS: GLenum = 0x825C;
+pub const GL_VIEWPORT_BOUNDS_RANGE: GLenum = 0x825D;
+pub const GL_LAYER_PROVOKING_VERTEX: GLenum = 0x825E;
+pub const GL_VIEWPORT_INDEX_PROVOKING_VERTEX: GLenum = 0x825F;
+pub const GL_UNDEFINED_VERTEX: GLenum = 0x8260;
 
 pub trait GL_4_1 {
 	fn glReleaseShaderCompiler(&self);
@@ -8014,7 +8014,7 @@ pub trait GL_4_1 {
 	fn glGetDoublei_v(&self, target: GLenum, index: GLuint, data: *mut GLdouble);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version41 {
 	available: bool,
 	releaseshadercompiler: PFNGLRELEASESHADERCOMPILERPROC,
@@ -8463,7 +8463,7 @@ impl GL_4_1 for Version41 {
 }
 
 impl Version41 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 40100 {
@@ -8471,94 +8471,94 @@ impl Version41 {
 		}
 		Self {
 			available: true,
-			releaseshadercompiler: unsafe{transmute(get_proc_address("glReleaseShaderCompiler"))},
-			shaderbinary: unsafe{transmute(get_proc_address("glShaderBinary"))},
-			getshaderprecisionformat: unsafe{transmute(get_proc_address("glGetShaderPrecisionFormat"))},
-			depthrangef: unsafe{transmute(get_proc_address("glDepthRangef"))},
-			cleardepthf: unsafe{transmute(get_proc_address("glClearDepthf"))},
-			getprogrambinary: unsafe{transmute(get_proc_address("glGetProgramBinary"))},
-			programbinary: unsafe{transmute(get_proc_address("glProgramBinary"))},
-			programparameteri: unsafe{transmute(get_proc_address("glProgramParameteri"))},
-			useprogramstages: unsafe{transmute(get_proc_address("glUseProgramStages"))},
-			activeshaderprogram: unsafe{transmute(get_proc_address("glActiveShaderProgram"))},
-			createshaderprogramv: unsafe{transmute(get_proc_address("glCreateShaderProgramv"))},
-			bindprogrampipeline: unsafe{transmute(get_proc_address("glBindProgramPipeline"))},
-			deleteprogrampipelines: unsafe{transmute(get_proc_address("glDeleteProgramPipelines"))},
-			genprogrampipelines: unsafe{transmute(get_proc_address("glGenProgramPipelines"))},
-			isprogrampipeline: unsafe{transmute(get_proc_address("glIsProgramPipeline"))},
-			getprogrampipelineiv: unsafe{transmute(get_proc_address("glGetProgramPipelineiv"))},
-			programuniform1i: unsafe{transmute(get_proc_address("glProgramUniform1i"))},
-			programuniform1iv: unsafe{transmute(get_proc_address("glProgramUniform1iv"))},
-			programuniform1f: unsafe{transmute(get_proc_address("glProgramUniform1f"))},
-			programuniform1fv: unsafe{transmute(get_proc_address("glProgramUniform1fv"))},
-			programuniform1d: unsafe{transmute(get_proc_address("glProgramUniform1d"))},
-			programuniform1dv: unsafe{transmute(get_proc_address("glProgramUniform1dv"))},
-			programuniform1ui: unsafe{transmute(get_proc_address("glProgramUniform1ui"))},
-			programuniform1uiv: unsafe{transmute(get_proc_address("glProgramUniform1uiv"))},
-			programuniform2i: unsafe{transmute(get_proc_address("glProgramUniform2i"))},
-			programuniform2iv: unsafe{transmute(get_proc_address("glProgramUniform2iv"))},
-			programuniform2f: unsafe{transmute(get_proc_address("glProgramUniform2f"))},
-			programuniform2fv: unsafe{transmute(get_proc_address("glProgramUniform2fv"))},
-			programuniform2d: unsafe{transmute(get_proc_address("glProgramUniform2d"))},
-			programuniform2dv: unsafe{transmute(get_proc_address("glProgramUniform2dv"))},
-			programuniform2ui: unsafe{transmute(get_proc_address("glProgramUniform2ui"))},
-			programuniform2uiv: unsafe{transmute(get_proc_address("glProgramUniform2uiv"))},
-			programuniform3i: unsafe{transmute(get_proc_address("glProgramUniform3i"))},
-			programuniform3iv: unsafe{transmute(get_proc_address("glProgramUniform3iv"))},
-			programuniform3f: unsafe{transmute(get_proc_address("glProgramUniform3f"))},
-			programuniform3fv: unsafe{transmute(get_proc_address("glProgramUniform3fv"))},
-			programuniform3d: unsafe{transmute(get_proc_address("glProgramUniform3d"))},
-			programuniform3dv: unsafe{transmute(get_proc_address("glProgramUniform3dv"))},
-			programuniform3ui: unsafe{transmute(get_proc_address("glProgramUniform3ui"))},
-			programuniform3uiv: unsafe{transmute(get_proc_address("glProgramUniform3uiv"))},
-			programuniform4i: unsafe{transmute(get_proc_address("glProgramUniform4i"))},
-			programuniform4iv: unsafe{transmute(get_proc_address("glProgramUniform4iv"))},
-			programuniform4f: unsafe{transmute(get_proc_address("glProgramUniform4f"))},
-			programuniform4fv: unsafe{transmute(get_proc_address("glProgramUniform4fv"))},
-			programuniform4d: unsafe{transmute(get_proc_address("glProgramUniform4d"))},
-			programuniform4dv: unsafe{transmute(get_proc_address("glProgramUniform4dv"))},
-			programuniform4ui: unsafe{transmute(get_proc_address("glProgramUniform4ui"))},
-			programuniform4uiv: unsafe{transmute(get_proc_address("glProgramUniform4uiv"))},
-			programuniformmatrix2fv: unsafe{transmute(get_proc_address("glProgramUniformMatrix2fv"))},
-			programuniformmatrix3fv: unsafe{transmute(get_proc_address("glProgramUniformMatrix3fv"))},
-			programuniformmatrix4fv: unsafe{transmute(get_proc_address("glProgramUniformMatrix4fv"))},
-			programuniformmatrix2dv: unsafe{transmute(get_proc_address("glProgramUniformMatrix2dv"))},
-			programuniformmatrix3dv: unsafe{transmute(get_proc_address("glProgramUniformMatrix3dv"))},
-			programuniformmatrix4dv: unsafe{transmute(get_proc_address("glProgramUniformMatrix4dv"))},
-			programuniformmatrix2x3fv: unsafe{transmute(get_proc_address("glProgramUniformMatrix2x3fv"))},
-			programuniformmatrix3x2fv: unsafe{transmute(get_proc_address("glProgramUniformMatrix3x2fv"))},
-			programuniformmatrix2x4fv: unsafe{transmute(get_proc_address("glProgramUniformMatrix2x4fv"))},
-			programuniformmatrix4x2fv: unsafe{transmute(get_proc_address("glProgramUniformMatrix4x2fv"))},
-			programuniformmatrix3x4fv: unsafe{transmute(get_proc_address("glProgramUniformMatrix3x4fv"))},
-			programuniformmatrix4x3fv: unsafe{transmute(get_proc_address("glProgramUniformMatrix4x3fv"))},
-			programuniformmatrix2x3dv: unsafe{transmute(get_proc_address("glProgramUniformMatrix2x3dv"))},
-			programuniformmatrix3x2dv: unsafe{transmute(get_proc_address("glProgramUniformMatrix3x2dv"))},
-			programuniformmatrix2x4dv: unsafe{transmute(get_proc_address("glProgramUniformMatrix2x4dv"))},
-			programuniformmatrix4x2dv: unsafe{transmute(get_proc_address("glProgramUniformMatrix4x2dv"))},
-			programuniformmatrix3x4dv: unsafe{transmute(get_proc_address("glProgramUniformMatrix3x4dv"))},
-			programuniformmatrix4x3dv: unsafe{transmute(get_proc_address("glProgramUniformMatrix4x3dv"))},
-			validateprogrampipeline: unsafe{transmute(get_proc_address("glValidateProgramPipeline"))},
-			getprogrampipelineinfolog: unsafe{transmute(get_proc_address("glGetProgramPipelineInfoLog"))},
-			vertexattribl1d: unsafe{transmute(get_proc_address("glVertexAttribL1d"))},
-			vertexattribl2d: unsafe{transmute(get_proc_address("glVertexAttribL2d"))},
-			vertexattribl3d: unsafe{transmute(get_proc_address("glVertexAttribL3d"))},
-			vertexattribl4d: unsafe{transmute(get_proc_address("glVertexAttribL4d"))},
-			vertexattribl1dv: unsafe{transmute(get_proc_address("glVertexAttribL1dv"))},
-			vertexattribl2dv: unsafe{transmute(get_proc_address("glVertexAttribL2dv"))},
-			vertexattribl3dv: unsafe{transmute(get_proc_address("glVertexAttribL3dv"))},
-			vertexattribl4dv: unsafe{transmute(get_proc_address("glVertexAttribL4dv"))},
-			vertexattriblpointer: unsafe{transmute(get_proc_address("glVertexAttribLPointer"))},
-			getvertexattribldv: unsafe{transmute(get_proc_address("glGetVertexAttribLdv"))},
-			viewportarrayv: unsafe{transmute(get_proc_address("glViewportArrayv"))},
-			viewportindexedf: unsafe{transmute(get_proc_address("glViewportIndexedf"))},
-			viewportindexedfv: unsafe{transmute(get_proc_address("glViewportIndexedfv"))},
-			scissorarrayv: unsafe{transmute(get_proc_address("glScissorArrayv"))},
-			scissorindexed: unsafe{transmute(get_proc_address("glScissorIndexed"))},
-			scissorindexedv: unsafe{transmute(get_proc_address("glScissorIndexedv"))},
-			depthrangearrayv: unsafe{transmute(get_proc_address("glDepthRangeArrayv"))},
-			depthrangeindexed: unsafe{transmute(get_proc_address("glDepthRangeIndexed"))},
-			getfloati_v: unsafe{transmute(get_proc_address("glGetFloati_v"))},
-			getdoublei_v: unsafe{transmute(get_proc_address("glGetDoublei_v"))},
+			releaseshadercompiler: {let proc = get_proc_address("glReleaseShaderCompiler"); if proc == null() {dummy_pfnglreleaseshadercompilerproc} else {unsafe{transmute(proc)}}},
+			shaderbinary: {let proc = get_proc_address("glShaderBinary"); if proc == null() {dummy_pfnglshaderbinaryproc} else {unsafe{transmute(proc)}}},
+			getshaderprecisionformat: {let proc = get_proc_address("glGetShaderPrecisionFormat"); if proc == null() {dummy_pfnglgetshaderprecisionformatproc} else {unsafe{transmute(proc)}}},
+			depthrangef: {let proc = get_proc_address("glDepthRangef"); if proc == null() {dummy_pfngldepthrangefproc} else {unsafe{transmute(proc)}}},
+			cleardepthf: {let proc = get_proc_address("glClearDepthf"); if proc == null() {dummy_pfnglcleardepthfproc} else {unsafe{transmute(proc)}}},
+			getprogrambinary: {let proc = get_proc_address("glGetProgramBinary"); if proc == null() {dummy_pfnglgetprogrambinaryproc} else {unsafe{transmute(proc)}}},
+			programbinary: {let proc = get_proc_address("glProgramBinary"); if proc == null() {dummy_pfnglprogrambinaryproc} else {unsafe{transmute(proc)}}},
+			programparameteri: {let proc = get_proc_address("glProgramParameteri"); if proc == null() {dummy_pfnglprogramparameteriproc} else {unsafe{transmute(proc)}}},
+			useprogramstages: {let proc = get_proc_address("glUseProgramStages"); if proc == null() {dummy_pfngluseprogramstagesproc} else {unsafe{transmute(proc)}}},
+			activeshaderprogram: {let proc = get_proc_address("glActiveShaderProgram"); if proc == null() {dummy_pfnglactiveshaderprogramproc} else {unsafe{transmute(proc)}}},
+			createshaderprogramv: {let proc = get_proc_address("glCreateShaderProgramv"); if proc == null() {dummy_pfnglcreateshaderprogramvproc} else {unsafe{transmute(proc)}}},
+			bindprogrampipeline: {let proc = get_proc_address("glBindProgramPipeline"); if proc == null() {dummy_pfnglbindprogrampipelineproc} else {unsafe{transmute(proc)}}},
+			deleteprogrampipelines: {let proc = get_proc_address("glDeleteProgramPipelines"); if proc == null() {dummy_pfngldeleteprogrampipelinesproc} else {unsafe{transmute(proc)}}},
+			genprogrampipelines: {let proc = get_proc_address("glGenProgramPipelines"); if proc == null() {dummy_pfnglgenprogrampipelinesproc} else {unsafe{transmute(proc)}}},
+			isprogrampipeline: {let proc = get_proc_address("glIsProgramPipeline"); if proc == null() {dummy_pfnglisprogrampipelineproc} else {unsafe{transmute(proc)}}},
+			getprogrampipelineiv: {let proc = get_proc_address("glGetProgramPipelineiv"); if proc == null() {dummy_pfnglgetprogrampipelineivproc} else {unsafe{transmute(proc)}}},
+			programuniform1i: {let proc = get_proc_address("glProgramUniform1i"); if proc == null() {dummy_pfnglprogramuniform1iproc} else {unsafe{transmute(proc)}}},
+			programuniform1iv: {let proc = get_proc_address("glProgramUniform1iv"); if proc == null() {dummy_pfnglprogramuniform1ivproc} else {unsafe{transmute(proc)}}},
+			programuniform1f: {let proc = get_proc_address("glProgramUniform1f"); if proc == null() {dummy_pfnglprogramuniform1fproc} else {unsafe{transmute(proc)}}},
+			programuniform1fv: {let proc = get_proc_address("glProgramUniform1fv"); if proc == null() {dummy_pfnglprogramuniform1fvproc} else {unsafe{transmute(proc)}}},
+			programuniform1d: {let proc = get_proc_address("glProgramUniform1d"); if proc == null() {dummy_pfnglprogramuniform1dproc} else {unsafe{transmute(proc)}}},
+			programuniform1dv: {let proc = get_proc_address("glProgramUniform1dv"); if proc == null() {dummy_pfnglprogramuniform1dvproc} else {unsafe{transmute(proc)}}},
+			programuniform1ui: {let proc = get_proc_address("glProgramUniform1ui"); if proc == null() {dummy_pfnglprogramuniform1uiproc} else {unsafe{transmute(proc)}}},
+			programuniform1uiv: {let proc = get_proc_address("glProgramUniform1uiv"); if proc == null() {dummy_pfnglprogramuniform1uivproc} else {unsafe{transmute(proc)}}},
+			programuniform2i: {let proc = get_proc_address("glProgramUniform2i"); if proc == null() {dummy_pfnglprogramuniform2iproc} else {unsafe{transmute(proc)}}},
+			programuniform2iv: {let proc = get_proc_address("glProgramUniform2iv"); if proc == null() {dummy_pfnglprogramuniform2ivproc} else {unsafe{transmute(proc)}}},
+			programuniform2f: {let proc = get_proc_address("glProgramUniform2f"); if proc == null() {dummy_pfnglprogramuniform2fproc} else {unsafe{transmute(proc)}}},
+			programuniform2fv: {let proc = get_proc_address("glProgramUniform2fv"); if proc == null() {dummy_pfnglprogramuniform2fvproc} else {unsafe{transmute(proc)}}},
+			programuniform2d: {let proc = get_proc_address("glProgramUniform2d"); if proc == null() {dummy_pfnglprogramuniform2dproc} else {unsafe{transmute(proc)}}},
+			programuniform2dv: {let proc = get_proc_address("glProgramUniform2dv"); if proc == null() {dummy_pfnglprogramuniform2dvproc} else {unsafe{transmute(proc)}}},
+			programuniform2ui: {let proc = get_proc_address("glProgramUniform2ui"); if proc == null() {dummy_pfnglprogramuniform2uiproc} else {unsafe{transmute(proc)}}},
+			programuniform2uiv: {let proc = get_proc_address("glProgramUniform2uiv"); if proc == null() {dummy_pfnglprogramuniform2uivproc} else {unsafe{transmute(proc)}}},
+			programuniform3i: {let proc = get_proc_address("glProgramUniform3i"); if proc == null() {dummy_pfnglprogramuniform3iproc} else {unsafe{transmute(proc)}}},
+			programuniform3iv: {let proc = get_proc_address("glProgramUniform3iv"); if proc == null() {dummy_pfnglprogramuniform3ivproc} else {unsafe{transmute(proc)}}},
+			programuniform3f: {let proc = get_proc_address("glProgramUniform3f"); if proc == null() {dummy_pfnglprogramuniform3fproc} else {unsafe{transmute(proc)}}},
+			programuniform3fv: {let proc = get_proc_address("glProgramUniform3fv"); if proc == null() {dummy_pfnglprogramuniform3fvproc} else {unsafe{transmute(proc)}}},
+			programuniform3d: {let proc = get_proc_address("glProgramUniform3d"); if proc == null() {dummy_pfnglprogramuniform3dproc} else {unsafe{transmute(proc)}}},
+			programuniform3dv: {let proc = get_proc_address("glProgramUniform3dv"); if proc == null() {dummy_pfnglprogramuniform3dvproc} else {unsafe{transmute(proc)}}},
+			programuniform3ui: {let proc = get_proc_address("glProgramUniform3ui"); if proc == null() {dummy_pfnglprogramuniform3uiproc} else {unsafe{transmute(proc)}}},
+			programuniform3uiv: {let proc = get_proc_address("glProgramUniform3uiv"); if proc == null() {dummy_pfnglprogramuniform3uivproc} else {unsafe{transmute(proc)}}},
+			programuniform4i: {let proc = get_proc_address("glProgramUniform4i"); if proc == null() {dummy_pfnglprogramuniform4iproc} else {unsafe{transmute(proc)}}},
+			programuniform4iv: {let proc = get_proc_address("glProgramUniform4iv"); if proc == null() {dummy_pfnglprogramuniform4ivproc} else {unsafe{transmute(proc)}}},
+			programuniform4f: {let proc = get_proc_address("glProgramUniform4f"); if proc == null() {dummy_pfnglprogramuniform4fproc} else {unsafe{transmute(proc)}}},
+			programuniform4fv: {let proc = get_proc_address("glProgramUniform4fv"); if proc == null() {dummy_pfnglprogramuniform4fvproc} else {unsafe{transmute(proc)}}},
+			programuniform4d: {let proc = get_proc_address("glProgramUniform4d"); if proc == null() {dummy_pfnglprogramuniform4dproc} else {unsafe{transmute(proc)}}},
+			programuniform4dv: {let proc = get_proc_address("glProgramUniform4dv"); if proc == null() {dummy_pfnglprogramuniform4dvproc} else {unsafe{transmute(proc)}}},
+			programuniform4ui: {let proc = get_proc_address("glProgramUniform4ui"); if proc == null() {dummy_pfnglprogramuniform4uiproc} else {unsafe{transmute(proc)}}},
+			programuniform4uiv: {let proc = get_proc_address("glProgramUniform4uiv"); if proc == null() {dummy_pfnglprogramuniform4uivproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix2fv: {let proc = get_proc_address("glProgramUniformMatrix2fv"); if proc == null() {dummy_pfnglprogramuniformmatrix2fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix3fv: {let proc = get_proc_address("glProgramUniformMatrix3fv"); if proc == null() {dummy_pfnglprogramuniformmatrix3fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix4fv: {let proc = get_proc_address("glProgramUniformMatrix4fv"); if proc == null() {dummy_pfnglprogramuniformmatrix4fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix2dv: {let proc = get_proc_address("glProgramUniformMatrix2dv"); if proc == null() {dummy_pfnglprogramuniformmatrix2dvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix3dv: {let proc = get_proc_address("glProgramUniformMatrix3dv"); if proc == null() {dummy_pfnglprogramuniformmatrix3dvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix4dv: {let proc = get_proc_address("glProgramUniformMatrix4dv"); if proc == null() {dummy_pfnglprogramuniformmatrix4dvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix2x3fv: {let proc = get_proc_address("glProgramUniformMatrix2x3fv"); if proc == null() {dummy_pfnglprogramuniformmatrix2x3fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix3x2fv: {let proc = get_proc_address("glProgramUniformMatrix3x2fv"); if proc == null() {dummy_pfnglprogramuniformmatrix3x2fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix2x4fv: {let proc = get_proc_address("glProgramUniformMatrix2x4fv"); if proc == null() {dummy_pfnglprogramuniformmatrix2x4fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix4x2fv: {let proc = get_proc_address("glProgramUniformMatrix4x2fv"); if proc == null() {dummy_pfnglprogramuniformmatrix4x2fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix3x4fv: {let proc = get_proc_address("glProgramUniformMatrix3x4fv"); if proc == null() {dummy_pfnglprogramuniformmatrix3x4fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix4x3fv: {let proc = get_proc_address("glProgramUniformMatrix4x3fv"); if proc == null() {dummy_pfnglprogramuniformmatrix4x3fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix2x3dv: {let proc = get_proc_address("glProgramUniformMatrix2x3dv"); if proc == null() {dummy_pfnglprogramuniformmatrix2x3dvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix3x2dv: {let proc = get_proc_address("glProgramUniformMatrix3x2dv"); if proc == null() {dummy_pfnglprogramuniformmatrix3x2dvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix2x4dv: {let proc = get_proc_address("glProgramUniformMatrix2x4dv"); if proc == null() {dummy_pfnglprogramuniformmatrix2x4dvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix4x2dv: {let proc = get_proc_address("glProgramUniformMatrix4x2dv"); if proc == null() {dummy_pfnglprogramuniformmatrix4x2dvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix3x4dv: {let proc = get_proc_address("glProgramUniformMatrix3x4dv"); if proc == null() {dummy_pfnglprogramuniformmatrix3x4dvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix4x3dv: {let proc = get_proc_address("glProgramUniformMatrix4x3dv"); if proc == null() {dummy_pfnglprogramuniformmatrix4x3dvproc} else {unsafe{transmute(proc)}}},
+			validateprogrampipeline: {let proc = get_proc_address("glValidateProgramPipeline"); if proc == null() {dummy_pfnglvalidateprogrampipelineproc} else {unsafe{transmute(proc)}}},
+			getprogrampipelineinfolog: {let proc = get_proc_address("glGetProgramPipelineInfoLog"); if proc == null() {dummy_pfnglgetprogrampipelineinfologproc} else {unsafe{transmute(proc)}}},
+			vertexattribl1d: {let proc = get_proc_address("glVertexAttribL1d"); if proc == null() {dummy_pfnglvertexattribl1dproc} else {unsafe{transmute(proc)}}},
+			vertexattribl2d: {let proc = get_proc_address("glVertexAttribL2d"); if proc == null() {dummy_pfnglvertexattribl2dproc} else {unsafe{transmute(proc)}}},
+			vertexattribl3d: {let proc = get_proc_address("glVertexAttribL3d"); if proc == null() {dummy_pfnglvertexattribl3dproc} else {unsafe{transmute(proc)}}},
+			vertexattribl4d: {let proc = get_proc_address("glVertexAttribL4d"); if proc == null() {dummy_pfnglvertexattribl4dproc} else {unsafe{transmute(proc)}}},
+			vertexattribl1dv: {let proc = get_proc_address("glVertexAttribL1dv"); if proc == null() {dummy_pfnglvertexattribl1dvproc} else {unsafe{transmute(proc)}}},
+			vertexattribl2dv: {let proc = get_proc_address("glVertexAttribL2dv"); if proc == null() {dummy_pfnglvertexattribl2dvproc} else {unsafe{transmute(proc)}}},
+			vertexattribl3dv: {let proc = get_proc_address("glVertexAttribL3dv"); if proc == null() {dummy_pfnglvertexattribl3dvproc} else {unsafe{transmute(proc)}}},
+			vertexattribl4dv: {let proc = get_proc_address("glVertexAttribL4dv"); if proc == null() {dummy_pfnglvertexattribl4dvproc} else {unsafe{transmute(proc)}}},
+			vertexattriblpointer: {let proc = get_proc_address("glVertexAttribLPointer"); if proc == null() {dummy_pfnglvertexattriblpointerproc} else {unsafe{transmute(proc)}}},
+			getvertexattribldv: {let proc = get_proc_address("glGetVertexAttribLdv"); if proc == null() {dummy_pfnglgetvertexattribldvproc} else {unsafe{transmute(proc)}}},
+			viewportarrayv: {let proc = get_proc_address("glViewportArrayv"); if proc == null() {dummy_pfnglviewportarrayvproc} else {unsafe{transmute(proc)}}},
+			viewportindexedf: {let proc = get_proc_address("glViewportIndexedf"); if proc == null() {dummy_pfnglviewportindexedfproc} else {unsafe{transmute(proc)}}},
+			viewportindexedfv: {let proc = get_proc_address("glViewportIndexedfv"); if proc == null() {dummy_pfnglviewportindexedfvproc} else {unsafe{transmute(proc)}}},
+			scissorarrayv: {let proc = get_proc_address("glScissorArrayv"); if proc == null() {dummy_pfnglscissorarrayvproc} else {unsafe{transmute(proc)}}},
+			scissorindexed: {let proc = get_proc_address("glScissorIndexed"); if proc == null() {dummy_pfnglscissorindexedproc} else {unsafe{transmute(proc)}}},
+			scissorindexedv: {let proc = get_proc_address("glScissorIndexedv"); if proc == null() {dummy_pfnglscissorindexedvproc} else {unsafe{transmute(proc)}}},
+			depthrangearrayv: {let proc = get_proc_address("glDepthRangeArrayv"); if proc == null() {dummy_pfngldepthrangearrayvproc} else {unsafe{transmute(proc)}}},
+			depthrangeindexed: {let proc = get_proc_address("glDepthRangeIndexed"); if proc == null() {dummy_pfngldepthrangeindexedproc} else {unsafe{transmute(proc)}}},
+			getfloati_v: {let proc = get_proc_address("glGetFloati_v"); if proc == null() {dummy_pfnglgetfloati_vproc} else {unsafe{transmute(proc)}}},
+			getdoublei_v: {let proc = get_proc_address("glGetDoublei_v"); if proc == null() {dummy_pfnglgetdoublei_vproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -8676,153 +8676,153 @@ type PFNGLTEXSTORAGE3DPROC = extern "system" fn(GLenum, GLsizei, GLenum, GLsizei
 type PFNGLDRAWTRANSFORMFEEDBACKINSTANCEDPROC = extern "system" fn(GLenum, GLuint, GLsizei);
 type PFNGLDRAWTRANSFORMFEEDBACKSTREAMINSTANCEDPROC = extern "system" fn(GLenum, GLuint, GLuint, GLsizei);
 extern "system" fn dummy_pfngldrawarraysinstancedbaseinstanceproc (_: GLenum, _: GLint, _: GLsizei, _: GLsizei, _: GLuint) {
-	panic!("OpenGL Function pointer of glDrawArraysInstancedBaseInstance() is NULL");
+	panic!("OpenGL Function pointer of `glDrawArraysInstancedBaseInstance()` is NULL");
 }
 extern "system" fn dummy_pfngldrawelementsinstancedbaseinstanceproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei, _: GLuint) {
-	panic!("OpenGL Function pointer of glDrawElementsInstancedBaseInstance() is NULL");
+	panic!("OpenGL Function pointer of `glDrawElementsInstancedBaseInstance()` is NULL");
 }
 extern "system" fn dummy_pfngldrawelementsinstancedbasevertexbaseinstanceproc (_: GLenum, _: GLsizei, _: GLenum, _: *const c_void, _: GLsizei, _: GLint, _: GLuint) {
-	panic!("OpenGL Function pointer of glDrawElementsInstancedBaseVertexBaseInstance() is NULL");
+	panic!("OpenGL Function pointer of `glDrawElementsInstancedBaseVertexBaseInstance()` is NULL");
 }
 extern "system" fn dummy_pfnglgetinternalformativproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetInternalformativ() is NULL");
+	panic!("OpenGL Function pointer of `glGetInternalformativ()` is NULL");
 }
 extern "system" fn dummy_pfnglgetactiveatomiccounterbufferivproc (_: GLuint, _: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetActiveAtomicCounterBufferiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetActiveAtomicCounterBufferiv()` is NULL");
 }
 extern "system" fn dummy_pfnglbindimagetextureproc (_: GLuint, _: GLuint, _: GLint, _: GLboolean, _: GLint, _: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glBindImageTexture() is NULL");
+	panic!("OpenGL Function pointer of `glBindImageTexture()` is NULL");
 }
 extern "system" fn dummy_pfnglmemorybarrierproc (_: GLbitfield) {
-	panic!("OpenGL Function pointer of glMemoryBarrier() is NULL");
+	panic!("OpenGL Function pointer of `glMemoryBarrier()` is NULL");
 }
 extern "system" fn dummy_pfngltexstorage1dproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei) {
-	panic!("OpenGL Function pointer of glTexStorage1D() is NULL");
+	panic!("OpenGL Function pointer of `glTexStorage1D()` is NULL");
 }
 extern "system" fn dummy_pfngltexstorage2dproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glTexStorage2D() is NULL");
+	panic!("OpenGL Function pointer of `glTexStorage2D()` is NULL");
 }
 extern "system" fn dummy_pfngltexstorage3dproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glTexStorage3D() is NULL");
+	panic!("OpenGL Function pointer of `glTexStorage3D()` is NULL");
 }
 extern "system" fn dummy_pfngldrawtransformfeedbackinstancedproc (_: GLenum, _: GLuint, _: GLsizei) {
-	panic!("OpenGL Function pointer of glDrawTransformFeedbackInstanced() is NULL");
+	panic!("OpenGL Function pointer of `glDrawTransformFeedbackInstanced()` is NULL");
 }
 extern "system" fn dummy_pfngldrawtransformfeedbackstreaminstancedproc (_: GLenum, _: GLuint, _: GLuint, _: GLsizei) {
-	panic!("OpenGL Function pointer of glDrawTransformFeedbackStreamInstanced() is NULL");
+	panic!("OpenGL Function pointer of `glDrawTransformFeedbackStreamInstanced()` is NULL");
 }
-const COPY_READ_BUFFER_BINDING: GLenum = 0x8F36;
-const COPY_WRITE_BUFFER_BINDING: GLenum = 0x8F37;
-const TRANSFORM_FEEDBACK_ACTIVE: GLenum = 0x8E24;
-const TRANSFORM_FEEDBACK_PAUSED: GLenum = 0x8E23;
-const UNPACK_COMPRESSED_BLOCK_WIDTH: GLenum = 0x9127;
-const UNPACK_COMPRESSED_BLOCK_HEIGHT: GLenum = 0x9128;
-const UNPACK_COMPRESSED_BLOCK_DEPTH: GLenum = 0x9129;
-const UNPACK_COMPRESSED_BLOCK_SIZE: GLenum = 0x912A;
-const PACK_COMPRESSED_BLOCK_WIDTH: GLenum = 0x912B;
-const PACK_COMPRESSED_BLOCK_HEIGHT: GLenum = 0x912C;
-const PACK_COMPRESSED_BLOCK_DEPTH: GLenum = 0x912D;
-const PACK_COMPRESSED_BLOCK_SIZE: GLenum = 0x912E;
-const NUM_SAMPLE_COUNTS: GLenum = 0x9380;
-const MIN_MAP_BUFFER_ALIGNMENT: GLenum = 0x90BC;
-const ATOMIC_COUNTER_BUFFER: GLenum = 0x92C0;
-const ATOMIC_COUNTER_BUFFER_BINDING: GLenum = 0x92C1;
-const ATOMIC_COUNTER_BUFFER_START: GLenum = 0x92C2;
-const ATOMIC_COUNTER_BUFFER_SIZE: GLenum = 0x92C3;
-const ATOMIC_COUNTER_BUFFER_DATA_SIZE: GLenum = 0x92C4;
-const ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTERS: GLenum = 0x92C5;
-const ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTER_INDICES: GLenum = 0x92C6;
-const ATOMIC_COUNTER_BUFFER_REFERENCED_BY_VERTEX_SHADER: GLenum = 0x92C7;
-const ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_CONTROL_SHADER: GLenum = 0x92C8;
-const ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_EVALUATION_SHADER: GLenum = 0x92C9;
-const ATOMIC_COUNTER_BUFFER_REFERENCED_BY_GEOMETRY_SHADER: GLenum = 0x92CA;
-const ATOMIC_COUNTER_BUFFER_REFERENCED_BY_FRAGMENT_SHADER: GLenum = 0x92CB;
-const MAX_VERTEX_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92CC;
-const MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92CD;
-const MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92CE;
-const MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92CF;
-const MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92D0;
-const MAX_COMBINED_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92D1;
-const MAX_VERTEX_ATOMIC_COUNTERS: GLenum = 0x92D2;
-const MAX_TESS_CONTROL_ATOMIC_COUNTERS: GLenum = 0x92D3;
-const MAX_TESS_EVALUATION_ATOMIC_COUNTERS: GLenum = 0x92D4;
-const MAX_GEOMETRY_ATOMIC_COUNTERS: GLenum = 0x92D5;
-const MAX_FRAGMENT_ATOMIC_COUNTERS: GLenum = 0x92D6;
-const MAX_COMBINED_ATOMIC_COUNTERS: GLenum = 0x92D7;
-const MAX_ATOMIC_COUNTER_BUFFER_SIZE: GLenum = 0x92D8;
-const MAX_ATOMIC_COUNTER_BUFFER_BINDINGS: GLenum = 0x92DC;
-const ACTIVE_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92D9;
-const UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX: GLenum = 0x92DA;
-const UNSIGNED_INT_ATOMIC_COUNTER: GLenum = 0x92DB;
-const VERTEX_ATTRIB_ARRAY_BARRIER_BIT: GLbitfield = 0x00000001;
-const ELEMENT_ARRAY_BARRIER_BIT: GLbitfield = 0x00000002;
-const UNIFORM_BARRIER_BIT: GLbitfield = 0x00000004;
-const TEXTURE_FETCH_BARRIER_BIT: GLbitfield = 0x00000008;
-const SHADER_IMAGE_ACCESS_BARRIER_BIT: GLbitfield = 0x00000020;
-const COMMAND_BARRIER_BIT: GLbitfield = 0x00000040;
-const PIXEL_BUFFER_BARRIER_BIT: GLbitfield = 0x00000080;
-const TEXTURE_UPDATE_BARRIER_BIT: GLbitfield = 0x00000100;
-const BUFFER_UPDATE_BARRIER_BIT: GLbitfield = 0x00000200;
-const FRAMEBUFFER_BARRIER_BIT: GLbitfield = 0x00000400;
-const TRANSFORM_FEEDBACK_BARRIER_BIT: GLbitfield = 0x00000800;
-const ATOMIC_COUNTER_BARRIER_BIT: GLbitfield = 0x00001000;
-const ALL_BARRIER_BITS: GLbitfield = 0xFFFFFFFF;
-const MAX_IMAGE_UNITS: GLenum = 0x8F38;
-const MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS: GLenum = 0x8F39;
-const IMAGE_BINDING_NAME: GLenum = 0x8F3A;
-const IMAGE_BINDING_LEVEL: GLenum = 0x8F3B;
-const IMAGE_BINDING_LAYERED: GLenum = 0x8F3C;
-const IMAGE_BINDING_LAYER: GLenum = 0x8F3D;
-const IMAGE_BINDING_ACCESS: GLenum = 0x8F3E;
-const IMAGE_1D: GLenum = 0x904C;
-const IMAGE_2D: GLenum = 0x904D;
-const IMAGE_3D: GLenum = 0x904E;
-const IMAGE_2D_RECT: GLenum = 0x904F;
-const IMAGE_CUBE: GLenum = 0x9050;
-const IMAGE_BUFFER: GLenum = 0x9051;
-const IMAGE_1D_ARRAY: GLenum = 0x9052;
-const IMAGE_2D_ARRAY: GLenum = 0x9053;
-const IMAGE_CUBE_MAP_ARRAY: GLenum = 0x9054;
-const IMAGE_2D_MULTISAMPLE: GLenum = 0x9055;
-const IMAGE_2D_MULTISAMPLE_ARRAY: GLenum = 0x9056;
-const INT_IMAGE_1D: GLenum = 0x9057;
-const INT_IMAGE_2D: GLenum = 0x9058;
-const INT_IMAGE_3D: GLenum = 0x9059;
-const INT_IMAGE_2D_RECT: GLenum = 0x905A;
-const INT_IMAGE_CUBE: GLenum = 0x905B;
-const INT_IMAGE_BUFFER: GLenum = 0x905C;
-const INT_IMAGE_1D_ARRAY: GLenum = 0x905D;
-const INT_IMAGE_2D_ARRAY: GLenum = 0x905E;
-const INT_IMAGE_CUBE_MAP_ARRAY: GLenum = 0x905F;
-const INT_IMAGE_2D_MULTISAMPLE: GLenum = 0x9060;
-const INT_IMAGE_2D_MULTISAMPLE_ARRAY: GLenum = 0x9061;
-const UNSIGNED_INT_IMAGE_1D: GLenum = 0x9062;
-const UNSIGNED_INT_IMAGE_2D: GLenum = 0x9063;
-const UNSIGNED_INT_IMAGE_3D: GLenum = 0x9064;
-const UNSIGNED_INT_IMAGE_2D_RECT: GLenum = 0x9065;
-const UNSIGNED_INT_IMAGE_CUBE: GLenum = 0x9066;
-const UNSIGNED_INT_IMAGE_BUFFER: GLenum = 0x9067;
-const UNSIGNED_INT_IMAGE_1D_ARRAY: GLenum = 0x9068;
-const UNSIGNED_INT_IMAGE_2D_ARRAY: GLenum = 0x9069;
-const UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY: GLenum = 0x906A;
-const UNSIGNED_INT_IMAGE_2D_MULTISAMPLE: GLenum = 0x906B;
-const UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY: GLenum = 0x906C;
-const MAX_IMAGE_SAMPLES: GLenum = 0x906D;
-const IMAGE_BINDING_FORMAT: GLenum = 0x906E;
-const IMAGE_FORMAT_COMPATIBILITY_TYPE: GLenum = 0x90C7;
-const IMAGE_FORMAT_COMPATIBILITY_BY_SIZE: GLenum = 0x90C8;
-const IMAGE_FORMAT_COMPATIBILITY_BY_CLASS: GLenum = 0x90C9;
-const MAX_VERTEX_IMAGE_UNIFORMS: GLenum = 0x90CA;
-const MAX_TESS_CONTROL_IMAGE_UNIFORMS: GLenum = 0x90CB;
-const MAX_TESS_EVALUATION_IMAGE_UNIFORMS: GLenum = 0x90CC;
-const MAX_GEOMETRY_IMAGE_UNIFORMS: GLenum = 0x90CD;
-const MAX_FRAGMENT_IMAGE_UNIFORMS: GLenum = 0x90CE;
-const MAX_COMBINED_IMAGE_UNIFORMS: GLenum = 0x90CF;
-const COMPRESSED_RGBA_BPTC_UNORM: GLenum = 0x8E8C;
-const COMPRESSED_SRGB_ALPHA_BPTC_UNORM: GLenum = 0x8E8D;
-const COMPRESSED_RGB_BPTC_SIGNED_FLOAT: GLenum = 0x8E8E;
-const COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT: GLenum = 0x8E8F;
-const TEXTURE_IMMUTABLE_FORMAT: GLenum = 0x912F;
+pub const GL_COPY_READ_BUFFER_BINDING: GLenum = 0x8F36;
+pub const GL_COPY_WRITE_BUFFER_BINDING: GLenum = 0x8F37;
+pub const GL_TRANSFORM_FEEDBACK_ACTIVE: GLenum = 0x8E24;
+pub const GL_TRANSFORM_FEEDBACK_PAUSED: GLenum = 0x8E23;
+pub const GL_UNPACK_COMPRESSED_BLOCK_WIDTH: GLenum = 0x9127;
+pub const GL_UNPACK_COMPRESSED_BLOCK_HEIGHT: GLenum = 0x9128;
+pub const GL_UNPACK_COMPRESSED_BLOCK_DEPTH: GLenum = 0x9129;
+pub const GL_UNPACK_COMPRESSED_BLOCK_SIZE: GLenum = 0x912A;
+pub const GL_PACK_COMPRESSED_BLOCK_WIDTH: GLenum = 0x912B;
+pub const GL_PACK_COMPRESSED_BLOCK_HEIGHT: GLenum = 0x912C;
+pub const GL_PACK_COMPRESSED_BLOCK_DEPTH: GLenum = 0x912D;
+pub const GL_PACK_COMPRESSED_BLOCK_SIZE: GLenum = 0x912E;
+pub const GL_NUM_SAMPLE_COUNTS: GLenum = 0x9380;
+pub const GL_MIN_MAP_BUFFER_ALIGNMENT: GLenum = 0x90BC;
+pub const GL_ATOMIC_COUNTER_BUFFER: GLenum = 0x92C0;
+pub const GL_ATOMIC_COUNTER_BUFFER_BINDING: GLenum = 0x92C1;
+pub const GL_ATOMIC_COUNTER_BUFFER_START: GLenum = 0x92C2;
+pub const GL_ATOMIC_COUNTER_BUFFER_SIZE: GLenum = 0x92C3;
+pub const GL_ATOMIC_COUNTER_BUFFER_DATA_SIZE: GLenum = 0x92C4;
+pub const GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTERS: GLenum = 0x92C5;
+pub const GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTER_INDICES: GLenum = 0x92C6;
+pub const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_VERTEX_SHADER: GLenum = 0x92C7;
+pub const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_CONTROL_SHADER: GLenum = 0x92C8;
+pub const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_EVALUATION_SHADER: GLenum = 0x92C9;
+pub const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_GEOMETRY_SHADER: GLenum = 0x92CA;
+pub const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_FRAGMENT_SHADER: GLenum = 0x92CB;
+pub const GL_MAX_VERTEX_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92CC;
+pub const GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92CD;
+pub const GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92CE;
+pub const GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92CF;
+pub const GL_MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92D0;
+pub const GL_MAX_COMBINED_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92D1;
+pub const GL_MAX_VERTEX_ATOMIC_COUNTERS: GLenum = 0x92D2;
+pub const GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS: GLenum = 0x92D3;
+pub const GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS: GLenum = 0x92D4;
+pub const GL_MAX_GEOMETRY_ATOMIC_COUNTERS: GLenum = 0x92D5;
+pub const GL_MAX_FRAGMENT_ATOMIC_COUNTERS: GLenum = 0x92D6;
+pub const GL_MAX_COMBINED_ATOMIC_COUNTERS: GLenum = 0x92D7;
+pub const GL_MAX_ATOMIC_COUNTER_BUFFER_SIZE: GLenum = 0x92D8;
+pub const GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS: GLenum = 0x92DC;
+pub const GL_ACTIVE_ATOMIC_COUNTER_BUFFERS: GLenum = 0x92D9;
+pub const GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX: GLenum = 0x92DA;
+pub const GL_UNSIGNED_INT_ATOMIC_COUNTER: GLenum = 0x92DB;
+pub const GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT: GLbitfield = 0x00000001;
+pub const GL_ELEMENT_ARRAY_BARRIER_BIT: GLbitfield = 0x00000002;
+pub const GL_UNIFORM_BARRIER_BIT: GLbitfield = 0x00000004;
+pub const GL_TEXTURE_FETCH_BARRIER_BIT: GLbitfield = 0x00000008;
+pub const GL_SHADER_IMAGE_ACCESS_BARRIER_BIT: GLbitfield = 0x00000020;
+pub const GL_COMMAND_BARRIER_BIT: GLbitfield = 0x00000040;
+pub const GL_PIXEL_BUFFER_BARRIER_BIT: GLbitfield = 0x00000080;
+pub const GL_TEXTURE_UPDATE_BARRIER_BIT: GLbitfield = 0x00000100;
+pub const GL_BUFFER_UPDATE_BARRIER_BIT: GLbitfield = 0x00000200;
+pub const GL_FRAMEBUFFER_BARRIER_BIT: GLbitfield = 0x00000400;
+pub const GL_TRANSFORM_FEEDBACK_BARRIER_BIT: GLbitfield = 0x00000800;
+pub const GL_ATOMIC_COUNTER_BARRIER_BIT: GLbitfield = 0x00001000;
+pub const GL_ALL_BARRIER_BITS: GLbitfield = 0xFFFFFFFF;
+pub const GL_MAX_IMAGE_UNITS: GLenum = 0x8F38;
+pub const GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS: GLenum = 0x8F39;
+pub const GL_IMAGE_BINDING_NAME: GLenum = 0x8F3A;
+pub const GL_IMAGE_BINDING_LEVEL: GLenum = 0x8F3B;
+pub const GL_IMAGE_BINDING_LAYERED: GLenum = 0x8F3C;
+pub const GL_IMAGE_BINDING_LAYER: GLenum = 0x8F3D;
+pub const GL_IMAGE_BINDING_ACCESS: GLenum = 0x8F3E;
+pub const GL_IMAGE_1D: GLenum = 0x904C;
+pub const GL_IMAGE_2D: GLenum = 0x904D;
+pub const GL_IMAGE_3D: GLenum = 0x904E;
+pub const GL_IMAGE_2D_RECT: GLenum = 0x904F;
+pub const GL_IMAGE_CUBE: GLenum = 0x9050;
+pub const GL_IMAGE_BUFFER: GLenum = 0x9051;
+pub const GL_IMAGE_1D_ARRAY: GLenum = 0x9052;
+pub const GL_IMAGE_2D_ARRAY: GLenum = 0x9053;
+pub const GL_IMAGE_CUBE_MAP_ARRAY: GLenum = 0x9054;
+pub const GL_IMAGE_2D_MULTISAMPLE: GLenum = 0x9055;
+pub const GL_IMAGE_2D_MULTISAMPLE_ARRAY: GLenum = 0x9056;
+pub const GL_INT_IMAGE_1D: GLenum = 0x9057;
+pub const GL_INT_IMAGE_2D: GLenum = 0x9058;
+pub const GL_INT_IMAGE_3D: GLenum = 0x9059;
+pub const GL_INT_IMAGE_2D_RECT: GLenum = 0x905A;
+pub const GL_INT_IMAGE_CUBE: GLenum = 0x905B;
+pub const GL_INT_IMAGE_BUFFER: GLenum = 0x905C;
+pub const GL_INT_IMAGE_1D_ARRAY: GLenum = 0x905D;
+pub const GL_INT_IMAGE_2D_ARRAY: GLenum = 0x905E;
+pub const GL_INT_IMAGE_CUBE_MAP_ARRAY: GLenum = 0x905F;
+pub const GL_INT_IMAGE_2D_MULTISAMPLE: GLenum = 0x9060;
+pub const GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY: GLenum = 0x9061;
+pub const GL_UNSIGNED_INT_IMAGE_1D: GLenum = 0x9062;
+pub const GL_UNSIGNED_INT_IMAGE_2D: GLenum = 0x9063;
+pub const GL_UNSIGNED_INT_IMAGE_3D: GLenum = 0x9064;
+pub const GL_UNSIGNED_INT_IMAGE_2D_RECT: GLenum = 0x9065;
+pub const GL_UNSIGNED_INT_IMAGE_CUBE: GLenum = 0x9066;
+pub const GL_UNSIGNED_INT_IMAGE_BUFFER: GLenum = 0x9067;
+pub const GL_UNSIGNED_INT_IMAGE_1D_ARRAY: GLenum = 0x9068;
+pub const GL_UNSIGNED_INT_IMAGE_2D_ARRAY: GLenum = 0x9069;
+pub const GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY: GLenum = 0x906A;
+pub const GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE: GLenum = 0x906B;
+pub const GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY: GLenum = 0x906C;
+pub const GL_MAX_IMAGE_SAMPLES: GLenum = 0x906D;
+pub const GL_IMAGE_BINDING_FORMAT: GLenum = 0x906E;
+pub const GL_IMAGE_FORMAT_COMPATIBILITY_TYPE: GLenum = 0x90C7;
+pub const GL_IMAGE_FORMAT_COMPATIBILITY_BY_SIZE: GLenum = 0x90C8;
+pub const GL_IMAGE_FORMAT_COMPATIBILITY_BY_CLASS: GLenum = 0x90C9;
+pub const GL_MAX_VERTEX_IMAGE_UNIFORMS: GLenum = 0x90CA;
+pub const GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS: GLenum = 0x90CB;
+pub const GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS: GLenum = 0x90CC;
+pub const GL_MAX_GEOMETRY_IMAGE_UNIFORMS: GLenum = 0x90CD;
+pub const GL_MAX_FRAGMENT_IMAGE_UNIFORMS: GLenum = 0x90CE;
+pub const GL_MAX_COMBINED_IMAGE_UNIFORMS: GLenum = 0x90CF;
+pub const GL_COMPRESSED_RGBA_BPTC_UNORM: GLenum = 0x8E8C;
+pub const GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM: GLenum = 0x8E8D;
+pub const GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT: GLenum = 0x8E8E;
+pub const GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT: GLenum = 0x8E8F;
+pub const GL_TEXTURE_IMMUTABLE_FORMAT: GLenum = 0x912F;
 
 pub trait GL_4_2 {
 	fn glDrawArraysInstancedBaseInstance(&self, mode: GLenum, first: GLint, count: GLsizei, instancecount: GLsizei, baseinstance: GLuint);
@@ -8839,7 +8839,7 @@ pub trait GL_4_2 {
 	fn glDrawTransformFeedbackStreamInstanced(&self, mode: GLenum, id: GLuint, stream: GLuint, instancecount: GLsizei);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version42 {
 	available: bool,
 	drawarraysinstancedbaseinstance: PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC,
@@ -8908,7 +8908,7 @@ impl GL_4_2 for Version42 {
 }
 
 impl Version42 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 40200 {
@@ -8916,18 +8916,18 @@ impl Version42 {
 		}
 		Self {
 			available: true,
-			drawarraysinstancedbaseinstance: unsafe{transmute(get_proc_address("glDrawArraysInstancedBaseInstance"))},
-			drawelementsinstancedbaseinstance: unsafe{transmute(get_proc_address("glDrawElementsInstancedBaseInstance"))},
-			drawelementsinstancedbasevertexbaseinstance: unsafe{transmute(get_proc_address("glDrawElementsInstancedBaseVertexBaseInstance"))},
-			getinternalformativ: unsafe{transmute(get_proc_address("glGetInternalformativ"))},
-			getactiveatomiccounterbufferiv: unsafe{transmute(get_proc_address("glGetActiveAtomicCounterBufferiv"))},
-			bindimagetexture: unsafe{transmute(get_proc_address("glBindImageTexture"))},
-			memorybarrier: unsafe{transmute(get_proc_address("glMemoryBarrier"))},
-			texstorage1d: unsafe{transmute(get_proc_address("glTexStorage1D"))},
-			texstorage2d: unsafe{transmute(get_proc_address("glTexStorage2D"))},
-			texstorage3d: unsafe{transmute(get_proc_address("glTexStorage3D"))},
-			drawtransformfeedbackinstanced: unsafe{transmute(get_proc_address("glDrawTransformFeedbackInstanced"))},
-			drawtransformfeedbackstreaminstanced: unsafe{transmute(get_proc_address("glDrawTransformFeedbackStreamInstanced"))},
+			drawarraysinstancedbaseinstance: {let proc = get_proc_address("glDrawArraysInstancedBaseInstance"); if proc == null() {dummy_pfngldrawarraysinstancedbaseinstanceproc} else {unsafe{transmute(proc)}}},
+			drawelementsinstancedbaseinstance: {let proc = get_proc_address("glDrawElementsInstancedBaseInstance"); if proc == null() {dummy_pfngldrawelementsinstancedbaseinstanceproc} else {unsafe{transmute(proc)}}},
+			drawelementsinstancedbasevertexbaseinstance: {let proc = get_proc_address("glDrawElementsInstancedBaseVertexBaseInstance"); if proc == null() {dummy_pfngldrawelementsinstancedbasevertexbaseinstanceproc} else {unsafe{transmute(proc)}}},
+			getinternalformativ: {let proc = get_proc_address("glGetInternalformativ"); if proc == null() {dummy_pfnglgetinternalformativproc} else {unsafe{transmute(proc)}}},
+			getactiveatomiccounterbufferiv: {let proc = get_proc_address("glGetActiveAtomicCounterBufferiv"); if proc == null() {dummy_pfnglgetactiveatomiccounterbufferivproc} else {unsafe{transmute(proc)}}},
+			bindimagetexture: {let proc = get_proc_address("glBindImageTexture"); if proc == null() {dummy_pfnglbindimagetextureproc} else {unsafe{transmute(proc)}}},
+			memorybarrier: {let proc = get_proc_address("glMemoryBarrier"); if proc == null() {dummy_pfnglmemorybarrierproc} else {unsafe{transmute(proc)}}},
+			texstorage1d: {let proc = get_proc_address("glTexStorage1D"); if proc == null() {dummy_pfngltexstorage1dproc} else {unsafe{transmute(proc)}}},
+			texstorage2d: {let proc = get_proc_address("glTexStorage2D"); if proc == null() {dummy_pfngltexstorage2dproc} else {unsafe{transmute(proc)}}},
+			texstorage3d: {let proc = get_proc_address("glTexStorage3D"); if proc == null() {dummy_pfngltexstorage3dproc} else {unsafe{transmute(proc)}}},
+			drawtransformfeedbackinstanced: {let proc = get_proc_address("glDrawTransformFeedbackInstanced"); if proc == null() {dummy_pfngldrawtransformfeedbackinstancedproc} else {unsafe{transmute(proc)}}},
+			drawtransformfeedbackstreaminstanced: {let proc = get_proc_address("glDrawTransformFeedbackStreamInstanced"); if proc == null() {dummy_pfngldrawtransformfeedbackstreaminstancedproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -9000,393 +9000,393 @@ type PFNGLGETOBJECTLABELPROC = extern "system" fn(GLenum, GLuint, GLsizei, *mut 
 type PFNGLOBJECTPTRLABELPROC = extern "system" fn(*const c_void, GLsizei, *const GLchar);
 type PFNGLGETOBJECTPTRLABELPROC = extern "system" fn(*const c_void, GLsizei, *mut GLsizei, *mut GLchar);
 extern "system" fn dummy_pfnglclearbufferdataproc (_: GLenum, _: GLenum, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glClearBufferData() is NULL");
+	panic!("OpenGL Function pointer of `glClearBufferData()` is NULL");
 }
 extern "system" fn dummy_pfnglclearbuffersubdataproc (_: GLenum, _: GLenum, _: GLintptr, _: GLsizeiptr, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glClearBufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glClearBufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfngldispatchcomputeproc (_: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glDispatchCompute() is NULL");
+	panic!("OpenGL Function pointer of `glDispatchCompute()` is NULL");
 }
 extern "system" fn dummy_pfngldispatchcomputeindirectproc (_: GLintptr) {
-	panic!("OpenGL Function pointer of glDispatchComputeIndirect() is NULL");
+	panic!("OpenGL Function pointer of `glDispatchComputeIndirect()` is NULL");
 }
 extern "system" fn dummy_pfnglcopyimagesubdataproc (_: GLuint, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLuint, _: GLenum, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glCopyImageSubData() is NULL");
+	panic!("OpenGL Function pointer of `glCopyImageSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglframebufferparameteriproc (_: GLenum, _: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glFramebufferParameteri() is NULL");
+	panic!("OpenGL Function pointer of `glFramebufferParameteri()` is NULL");
 }
 extern "system" fn dummy_pfnglgetframebufferparameterivproc (_: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetFramebufferParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetFramebufferParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetinternalformati64vproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut GLint64) {
-	panic!("OpenGL Function pointer of glGetInternalformati64v() is NULL");
+	panic!("OpenGL Function pointer of `glGetInternalformati64v()` is NULL");
 }
 extern "system" fn dummy_pfnglinvalidatetexsubimageproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glInvalidateTexSubImage() is NULL");
+	panic!("OpenGL Function pointer of `glInvalidateTexSubImage()` is NULL");
 }
 extern "system" fn dummy_pfnglinvalidateteximageproc (_: GLuint, _: GLint) {
-	panic!("OpenGL Function pointer of glInvalidateTexImage() is NULL");
+	panic!("OpenGL Function pointer of `glInvalidateTexImage()` is NULL");
 }
 extern "system" fn dummy_pfnglinvalidatebuffersubdataproc (_: GLuint, _: GLintptr, _: GLsizeiptr) {
-	panic!("OpenGL Function pointer of glInvalidateBufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glInvalidateBufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglinvalidatebufferdataproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glInvalidateBufferData() is NULL");
+	panic!("OpenGL Function pointer of `glInvalidateBufferData()` is NULL");
 }
 extern "system" fn dummy_pfnglinvalidateframebufferproc (_: GLenum, _: GLsizei, _: *const GLenum) {
-	panic!("OpenGL Function pointer of glInvalidateFramebuffer() is NULL");
+	panic!("OpenGL Function pointer of `glInvalidateFramebuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglinvalidatesubframebufferproc (_: GLenum, _: GLsizei, _: *const GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glInvalidateSubFramebuffer() is NULL");
+	panic!("OpenGL Function pointer of `glInvalidateSubFramebuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglmultidrawarraysindirectproc (_: GLenum, _: *const c_void, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glMultiDrawArraysIndirect() is NULL");
+	panic!("OpenGL Function pointer of `glMultiDrawArraysIndirect()` is NULL");
 }
 extern "system" fn dummy_pfnglmultidrawelementsindirectproc (_: GLenum, _: GLenum, _: *const c_void, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glMultiDrawElementsIndirect() is NULL");
+	panic!("OpenGL Function pointer of `glMultiDrawElementsIndirect()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprograminterfaceivproc (_: GLuint, _: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetProgramInterfaceiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramInterfaceiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogramresourceindexproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLuint {
-	panic!("OpenGL Function pointer of glGetProgramResourceIndex() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramResourceIndex()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogramresourcenameproc (_: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetProgramResourceName() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramResourceName()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogramresourceivproc (_: GLuint, _: GLenum, _: GLuint, _: GLsizei, _: *const GLenum, _: GLsizei, _: *mut GLsizei, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetProgramResourceiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramResourceiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogramresourcelocationproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLint {
-	panic!("OpenGL Function pointer of glGetProgramResourceLocation() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramResourceLocation()` is NULL");
 }
 extern "system" fn dummy_pfnglgetprogramresourcelocationindexproc (_: GLuint, _: GLenum, _: *const GLchar) -> GLint {
-	panic!("OpenGL Function pointer of glGetProgramResourceLocationIndex() is NULL");
+	panic!("OpenGL Function pointer of `glGetProgramResourceLocationIndex()` is NULL");
 }
 extern "system" fn dummy_pfnglshaderstorageblockbindingproc (_: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glShaderStorageBlockBinding() is NULL");
+	panic!("OpenGL Function pointer of `glShaderStorageBlockBinding()` is NULL");
 }
 extern "system" fn dummy_pfngltexbufferrangeproc (_: GLenum, _: GLenum, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-	panic!("OpenGL Function pointer of glTexBufferRange() is NULL");
+	panic!("OpenGL Function pointer of `glTexBufferRange()` is NULL");
 }
 extern "system" fn dummy_pfngltexstorage2dmultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLboolean) {
-	panic!("OpenGL Function pointer of glTexStorage2DMultisample() is NULL");
+	panic!("OpenGL Function pointer of `glTexStorage2DMultisample()` is NULL");
 }
 extern "system" fn dummy_pfngltexstorage3dmultisampleproc (_: GLenum, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLboolean) {
-	panic!("OpenGL Function pointer of glTexStorage3DMultisample() is NULL");
+	panic!("OpenGL Function pointer of `glTexStorage3DMultisample()` is NULL");
 }
 extern "system" fn dummy_pfngltextureviewproc (_: GLuint, _: GLenum, _: GLuint, _: GLenum, _: GLuint, _: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glTextureView() is NULL");
+	panic!("OpenGL Function pointer of `glTextureView()` is NULL");
 }
 extern "system" fn dummy_pfnglbindvertexbufferproc (_: GLuint, _: GLuint, _: GLintptr, _: GLsizei) {
-	panic!("OpenGL Function pointer of glBindVertexBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glBindVertexBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribformatproc (_: GLuint, _: GLint, _: GLenum, _: GLboolean, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribFormat() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribFormat()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribiformatproc (_: GLuint, _: GLint, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribIFormat() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribIFormat()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattriblformatproc (_: GLuint, _: GLint, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribLFormat() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribLFormat()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexattribbindingproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexAttribBinding() is NULL");
+	panic!("OpenGL Function pointer of `glVertexAttribBinding()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexbindingdivisorproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexBindingDivisor() is NULL");
+	panic!("OpenGL Function pointer of `glVertexBindingDivisor()` is NULL");
 }
 extern "system" fn dummy_pfngldebugmessagecontrolproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *const GLuint, _: GLboolean) {
-	panic!("OpenGL Function pointer of glDebugMessageControl() is NULL");
+	panic!("OpenGL Function pointer of `glDebugMessageControl()` is NULL");
 }
 extern "system" fn dummy_pfngldebugmessageinsertproc (_: GLenum, _: GLenum, _: GLuint, _: GLenum, _: GLsizei, _: *const GLchar) {
-	panic!("OpenGL Function pointer of glDebugMessageInsert() is NULL");
+	panic!("OpenGL Function pointer of `glDebugMessageInsert()` is NULL");
 }
 extern "system" fn dummy_pfngldebugmessagecallbackproc (_: GLDEBUGPROC, _: *const c_void) {
-	panic!("OpenGL Function pointer of glDebugMessageCallback() is NULL");
+	panic!("OpenGL Function pointer of `glDebugMessageCallback()` is NULL");
 }
 extern "system" fn dummy_pfnglgetdebugmessagelogproc (_: GLuint, _: GLsizei, _: *mut GLenum, _: *mut GLenum, _: *mut GLuint, _: *mut GLenum, _: *mut GLsizei, _: *mut GLchar) -> GLuint {
-	panic!("OpenGL Function pointer of glGetDebugMessageLog() is NULL");
+	panic!("OpenGL Function pointer of `glGetDebugMessageLog()` is NULL");
 }
 extern "system" fn dummy_pfnglpushdebuggroupproc (_: GLenum, _: GLuint, _: GLsizei, _: *const GLchar) {
-	panic!("OpenGL Function pointer of glPushDebugGroup() is NULL");
+	panic!("OpenGL Function pointer of `glPushDebugGroup()` is NULL");
 }
 extern "system" fn dummy_pfnglpopdebuggroupproc () {
-	panic!("OpenGL Function pointer of glPopDebugGroup() is NULL");
+	panic!("OpenGL Function pointer of `glPopDebugGroup()` is NULL");
 }
 extern "system" fn dummy_pfnglobjectlabelproc (_: GLenum, _: GLuint, _: GLsizei, _: *const GLchar) {
-	panic!("OpenGL Function pointer of glObjectLabel() is NULL");
+	panic!("OpenGL Function pointer of `glObjectLabel()` is NULL");
 }
 extern "system" fn dummy_pfnglgetobjectlabelproc (_: GLenum, _: GLuint, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetObjectLabel() is NULL");
+	panic!("OpenGL Function pointer of `glGetObjectLabel()` is NULL");
 }
 extern "system" fn dummy_pfnglobjectptrlabelproc (_: *const c_void, _: GLsizei, _: *const GLchar) {
-	panic!("OpenGL Function pointer of glObjectPtrLabel() is NULL");
+	panic!("OpenGL Function pointer of `glObjectPtrLabel()` is NULL");
 }
 extern "system" fn dummy_pfnglgetobjectptrlabelproc (_: *const c_void, _: GLsizei, _: *mut GLsizei, _: *mut GLchar) {
-	panic!("OpenGL Function pointer of glGetObjectPtrLabel() is NULL");
+	panic!("OpenGL Function pointer of `glGetObjectPtrLabel()` is NULL");
 }
-const NUM_SHADING_LANGUAGE_VERSIONS: GLenum = 0x82E9;
-const VERTEX_ATTRIB_ARRAY_LONG: GLenum = 0x874E;
-const COMPRESSED_RGB8_ETC2: GLenum = 0x9274;
-const COMPRESSED_SRGB8_ETC2: GLenum = 0x9275;
-const COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2: GLenum = 0x9276;
-const COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2: GLenum = 0x9277;
-const COMPRESSED_RGBA8_ETC2_EAC: GLenum = 0x9278;
-const COMPRESSED_SRGB8_ALPHA8_ETC2_EAC: GLenum = 0x9279;
-const COMPRESSED_R11_EAC: GLenum = 0x9270;
-const COMPRESSED_SIGNED_R11_EAC: GLenum = 0x9271;
-const COMPRESSED_RG11_EAC: GLenum = 0x9272;
-const COMPRESSED_SIGNED_RG11_EAC: GLenum = 0x9273;
-const PRIMITIVE_RESTART_FIXED_INDEX: GLenum = 0x8D69;
-const ANY_SAMPLES_PASSED_CONSERVATIVE: GLenum = 0x8D6A;
-const MAX_ELEMENT_INDEX: GLenum = 0x8D6B;
-const COMPUTE_SHADER: GLenum = 0x91B9;
-const MAX_COMPUTE_UNIFORM_BLOCKS: GLenum = 0x91BB;
-const MAX_COMPUTE_TEXTURE_IMAGE_UNITS: GLenum = 0x91BC;
-const MAX_COMPUTE_IMAGE_UNIFORMS: GLenum = 0x91BD;
-const MAX_COMPUTE_SHARED_MEMORY_SIZE: GLenum = 0x8262;
-const MAX_COMPUTE_UNIFORM_COMPONENTS: GLenum = 0x8263;
-const MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS: GLenum = 0x8264;
-const MAX_COMPUTE_ATOMIC_COUNTERS: GLenum = 0x8265;
-const MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS: GLenum = 0x8266;
-const MAX_COMPUTE_WORK_GROUP_INVOCATIONS: GLenum = 0x90EB;
-const MAX_COMPUTE_WORK_GROUP_COUNT: GLenum = 0x91BE;
-const MAX_COMPUTE_WORK_GROUP_SIZE: GLenum = 0x91BF;
-const COMPUTE_WORK_GROUP_SIZE: GLenum = 0x8267;
-const UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER: GLenum = 0x90EC;
-const ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER: GLenum = 0x90ED;
-const DISPATCH_INDIRECT_BUFFER: GLenum = 0x90EE;
-const DISPATCH_INDIRECT_BUFFER_BINDING: GLenum = 0x90EF;
-const COMPUTE_SHADER_BIT: GLbitfield = 0x00000020;
-const DEBUG_OUTPUT_SYNCHRONOUS: GLenum = 0x8242;
-const DEBUG_NEXT_LOGGED_MESSAGE_LENGTH: GLenum = 0x8243;
-const DEBUG_CALLBACK_FUNCTION: GLenum = 0x8244;
-const DEBUG_CALLBACK_USER_PARAM: GLenum = 0x8245;
-const DEBUG_SOURCE_API: GLenum = 0x8246;
-const DEBUG_SOURCE_WINDOW_SYSTEM: GLenum = 0x8247;
-const DEBUG_SOURCE_SHADER_COMPILER: GLenum = 0x8248;
-const DEBUG_SOURCE_THIRD_PARTY: GLenum = 0x8249;
-const DEBUG_SOURCE_APPLICATION: GLenum = 0x824A;
-const DEBUG_SOURCE_OTHER: GLenum = 0x824B;
-const DEBUG_TYPE_ERROR: GLenum = 0x824C;
-const DEBUG_TYPE_DEPRECATED_BEHAVIOR: GLenum = 0x824D;
-const DEBUG_TYPE_UNDEFINED_BEHAVIOR: GLenum = 0x824E;
-const DEBUG_TYPE_PORTABILITY: GLenum = 0x824F;
-const DEBUG_TYPE_PERFORMANCE: GLenum = 0x8250;
-const DEBUG_TYPE_OTHER: GLenum = 0x8251;
-const MAX_DEBUG_MESSAGE_LENGTH: GLenum = 0x9143;
-const MAX_DEBUG_LOGGED_MESSAGES: GLenum = 0x9144;
-const DEBUG_LOGGED_MESSAGES: GLenum = 0x9145;
-const DEBUG_SEVERITY_HIGH: GLenum = 0x9146;
-const DEBUG_SEVERITY_MEDIUM: GLenum = 0x9147;
-const DEBUG_SEVERITY_LOW: GLenum = 0x9148;
-const DEBUG_TYPE_MARKER: GLenum = 0x8268;
-const DEBUG_TYPE_PUSH_GROUP: GLenum = 0x8269;
-const DEBUG_TYPE_POP_GROUP: GLenum = 0x826A;
-const DEBUG_SEVERITY_NOTIFICATION: GLenum = 0x826B;
-const MAX_DEBUG_GROUP_STACK_DEPTH: GLenum = 0x826C;
-const DEBUG_GROUP_STACK_DEPTH: GLenum = 0x826D;
-const BUFFER: GLenum = 0x82E0;
-const SHADER: GLenum = 0x82E1;
-const PROGRAM: GLenum = 0x82E2;
-const QUERY: GLenum = 0x82E3;
-const PROGRAM_PIPELINE: GLenum = 0x82E4;
-const SAMPLER: GLenum = 0x82E6;
-const MAX_LABEL_LENGTH: GLenum = 0x82E8;
-const DEBUG_OUTPUT: GLenum = 0x92E0;
-const CONTEXT_FLAG_DEBUG_BIT: GLbitfield = 0x00000002;
-const MAX_UNIFORM_LOCATIONS: GLenum = 0x826E;
-const FRAMEBUFFER_DEFAULT_WIDTH: GLenum = 0x9310;
-const FRAMEBUFFER_DEFAULT_HEIGHT: GLenum = 0x9311;
-const FRAMEBUFFER_DEFAULT_LAYERS: GLenum = 0x9312;
-const FRAMEBUFFER_DEFAULT_SAMPLES: GLenum = 0x9313;
-const FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS: GLenum = 0x9314;
-const MAX_FRAMEBUFFER_WIDTH: GLenum = 0x9315;
-const MAX_FRAMEBUFFER_HEIGHT: GLenum = 0x9316;
-const MAX_FRAMEBUFFER_LAYERS: GLenum = 0x9317;
-const MAX_FRAMEBUFFER_SAMPLES: GLenum = 0x9318;
-const INTERNALFORMAT_SUPPORTED: GLenum = 0x826F;
-const INTERNALFORMAT_PREFERRED: GLenum = 0x8270;
-const INTERNALFORMAT_RED_SIZE: GLenum = 0x8271;
-const INTERNALFORMAT_GREEN_SIZE: GLenum = 0x8272;
-const INTERNALFORMAT_BLUE_SIZE: GLenum = 0x8273;
-const INTERNALFORMAT_ALPHA_SIZE: GLenum = 0x8274;
-const INTERNALFORMAT_DEPTH_SIZE: GLenum = 0x8275;
-const INTERNALFORMAT_STENCIL_SIZE: GLenum = 0x8276;
-const INTERNALFORMAT_SHARED_SIZE: GLenum = 0x8277;
-const INTERNALFORMAT_RED_TYPE: GLenum = 0x8278;
-const INTERNALFORMAT_GREEN_TYPE: GLenum = 0x8279;
-const INTERNALFORMAT_BLUE_TYPE: GLenum = 0x827A;
-const INTERNALFORMAT_ALPHA_TYPE: GLenum = 0x827B;
-const INTERNALFORMAT_DEPTH_TYPE: GLenum = 0x827C;
-const INTERNALFORMAT_STENCIL_TYPE: GLenum = 0x827D;
-const MAX_WIDTH: GLenum = 0x827E;
-const MAX_HEIGHT: GLenum = 0x827F;
-const MAX_DEPTH: GLenum = 0x8280;
-const MAX_LAYERS: GLenum = 0x8281;
-const MAX_COMBINED_DIMENSIONS: GLenum = 0x8282;
-const COLOR_COMPONENTS: GLenum = 0x8283;
-const DEPTH_COMPONENTS: GLenum = 0x8284;
-const STENCIL_COMPONENTS: GLenum = 0x8285;
-const COLOR_RENDERABLE: GLenum = 0x8286;
-const DEPTH_RENDERABLE: GLenum = 0x8287;
-const STENCIL_RENDERABLE: GLenum = 0x8288;
-const FRAMEBUFFER_RENDERABLE: GLenum = 0x8289;
-const FRAMEBUFFER_RENDERABLE_LAYERED: GLenum = 0x828A;
-const FRAMEBUFFER_BLEND: GLenum = 0x828B;
-const READ_PIXELS: GLenum = 0x828C;
-const READ_PIXELS_FORMAT: GLenum = 0x828D;
-const READ_PIXELS_TYPE: GLenum = 0x828E;
-const TEXTURE_IMAGE_FORMAT: GLenum = 0x828F;
-const TEXTURE_IMAGE_TYPE: GLenum = 0x8290;
-const GET_TEXTURE_IMAGE_FORMAT: GLenum = 0x8291;
-const GET_TEXTURE_IMAGE_TYPE: GLenum = 0x8292;
-const MIPMAP: GLenum = 0x8293;
-const MANUAL_GENERATE_MIPMAP: GLenum = 0x8294;
-const AUTO_GENERATE_MIPMAP: GLenum = 0x8295;
-const COLOR_ENCODING: GLenum = 0x8296;
-const SRGB_READ: GLenum = 0x8297;
-const SRGB_WRITE: GLenum = 0x8298;
-const FILTER: GLenum = 0x829A;
-const VERTEX_TEXTURE: GLenum = 0x829B;
-const TESS_CONTROL_TEXTURE: GLenum = 0x829C;
-const TESS_EVALUATION_TEXTURE: GLenum = 0x829D;
-const GEOMETRY_TEXTURE: GLenum = 0x829E;
-const FRAGMENT_TEXTURE: GLenum = 0x829F;
-const COMPUTE_TEXTURE: GLenum = 0x82A0;
-const TEXTURE_SHADOW: GLenum = 0x82A1;
-const TEXTURE_GATHER: GLenum = 0x82A2;
-const TEXTURE_GATHER_SHADOW: GLenum = 0x82A3;
-const SHADER_IMAGE_LOAD: GLenum = 0x82A4;
-const SHADER_IMAGE_STORE: GLenum = 0x82A5;
-const SHADER_IMAGE_ATOMIC: GLenum = 0x82A6;
-const IMAGE_TEXEL_SIZE: GLenum = 0x82A7;
-const IMAGE_COMPATIBILITY_CLASS: GLenum = 0x82A8;
-const IMAGE_PIXEL_FORMAT: GLenum = 0x82A9;
-const IMAGE_PIXEL_TYPE: GLenum = 0x82AA;
-const SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST: GLenum = 0x82AC;
-const SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST: GLenum = 0x82AD;
-const SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE: GLenum = 0x82AE;
-const SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE: GLenum = 0x82AF;
-const TEXTURE_COMPRESSED_BLOCK_WIDTH: GLenum = 0x82B1;
-const TEXTURE_COMPRESSED_BLOCK_HEIGHT: GLenum = 0x82B2;
-const TEXTURE_COMPRESSED_BLOCK_SIZE: GLenum = 0x82B3;
-const CLEAR_BUFFER: GLenum = 0x82B4;
-const TEXTURE_VIEW: GLenum = 0x82B5;
-const VIEW_COMPATIBILITY_CLASS: GLenum = 0x82B6;
-const FULL_SUPPORT: GLenum = 0x82B7;
-const CAVEAT_SUPPORT: GLenum = 0x82B8;
-const IMAGE_CLASS_4_X_32: GLenum = 0x82B9;
-const IMAGE_CLASS_2_X_32: GLenum = 0x82BA;
-const IMAGE_CLASS_1_X_32: GLenum = 0x82BB;
-const IMAGE_CLASS_4_X_16: GLenum = 0x82BC;
-const IMAGE_CLASS_2_X_16: GLenum = 0x82BD;
-const IMAGE_CLASS_1_X_16: GLenum = 0x82BE;
-const IMAGE_CLASS_4_X_8: GLenum = 0x82BF;
-const IMAGE_CLASS_2_X_8: GLenum = 0x82C0;
-const IMAGE_CLASS_1_X_8: GLenum = 0x82C1;
-const IMAGE_CLASS_11_11_10: GLenum = 0x82C2;
-const IMAGE_CLASS_10_10_10_2: GLenum = 0x82C3;
-const VIEW_CLASS_128_BITS: GLenum = 0x82C4;
-const VIEW_CLASS_96_BITS: GLenum = 0x82C5;
-const VIEW_CLASS_64_BITS: GLenum = 0x82C6;
-const VIEW_CLASS_48_BITS: GLenum = 0x82C7;
-const VIEW_CLASS_32_BITS: GLenum = 0x82C8;
-const VIEW_CLASS_24_BITS: GLenum = 0x82C9;
-const VIEW_CLASS_16_BITS: GLenum = 0x82CA;
-const VIEW_CLASS_8_BITS: GLenum = 0x82CB;
-const VIEW_CLASS_S3TC_DXT1_RGB: GLenum = 0x82CC;
-const VIEW_CLASS_S3TC_DXT1_RGBA: GLenum = 0x82CD;
-const VIEW_CLASS_S3TC_DXT3_RGBA: GLenum = 0x82CE;
-const VIEW_CLASS_S3TC_DXT5_RGBA: GLenum = 0x82CF;
-const VIEW_CLASS_RGTC1_RED: GLenum = 0x82D0;
-const VIEW_CLASS_RGTC2_RG: GLenum = 0x82D1;
-const VIEW_CLASS_BPTC_UNORM: GLenum = 0x82D2;
-const VIEW_CLASS_BPTC_FLOAT: GLenum = 0x82D3;
-const UNIFORM: GLenum = 0x92E1;
-const UNIFORM_BLOCK: GLenum = 0x92E2;
-const PROGRAM_INPUT: GLenum = 0x92E3;
-const PROGRAM_OUTPUT: GLenum = 0x92E4;
-const BUFFER_VARIABLE: GLenum = 0x92E5;
-const SHADER_STORAGE_BLOCK: GLenum = 0x92E6;
-const VERTEX_SUBROUTINE: GLenum = 0x92E8;
-const TESS_CONTROL_SUBROUTINE: GLenum = 0x92E9;
-const TESS_EVALUATION_SUBROUTINE: GLenum = 0x92EA;
-const GEOMETRY_SUBROUTINE: GLenum = 0x92EB;
-const FRAGMENT_SUBROUTINE: GLenum = 0x92EC;
-const COMPUTE_SUBROUTINE: GLenum = 0x92ED;
-const VERTEX_SUBROUTINE_UNIFORM: GLenum = 0x92EE;
-const TESS_CONTROL_SUBROUTINE_UNIFORM: GLenum = 0x92EF;
-const TESS_EVALUATION_SUBROUTINE_UNIFORM: GLenum = 0x92F0;
-const GEOMETRY_SUBROUTINE_UNIFORM: GLenum = 0x92F1;
-const FRAGMENT_SUBROUTINE_UNIFORM: GLenum = 0x92F2;
-const COMPUTE_SUBROUTINE_UNIFORM: GLenum = 0x92F3;
-const TRANSFORM_FEEDBACK_VARYING: GLenum = 0x92F4;
-const ACTIVE_RESOURCES: GLenum = 0x92F5;
-const MAX_NAME_LENGTH: GLenum = 0x92F6;
-const MAX_NUM_ACTIVE_VARIABLES: GLenum = 0x92F7;
-const MAX_NUM_COMPATIBLE_SUBROUTINES: GLenum = 0x92F8;
-const NAME_LENGTH: GLenum = 0x92F9;
-const TYPE: GLenum = 0x92FA;
-const ARRAY_SIZE: GLenum = 0x92FB;
-const OFFSET: GLenum = 0x92FC;
-const BLOCK_INDEX: GLenum = 0x92FD;
-const ARRAY_STRIDE: GLenum = 0x92FE;
-const MATRIX_STRIDE: GLenum = 0x92FF;
-const IS_ROW_MAJOR: GLenum = 0x9300;
-const ATOMIC_COUNTER_BUFFER_INDEX: GLenum = 0x9301;
-const BUFFER_BINDING: GLenum = 0x9302;
-const BUFFER_DATA_SIZE: GLenum = 0x9303;
-const NUM_ACTIVE_VARIABLES: GLenum = 0x9304;
-const ACTIVE_VARIABLES: GLenum = 0x9305;
-const REFERENCED_BY_VERTEX_SHADER: GLenum = 0x9306;
-const REFERENCED_BY_TESS_CONTROL_SHADER: GLenum = 0x9307;
-const REFERENCED_BY_TESS_EVALUATION_SHADER: GLenum = 0x9308;
-const REFERENCED_BY_GEOMETRY_SHADER: GLenum = 0x9309;
-const REFERENCED_BY_FRAGMENT_SHADER: GLenum = 0x930A;
-const REFERENCED_BY_COMPUTE_SHADER: GLenum = 0x930B;
-const TOP_LEVEL_ARRAY_SIZE: GLenum = 0x930C;
-const TOP_LEVEL_ARRAY_STRIDE: GLenum = 0x930D;
-const LOCATION: GLenum = 0x930E;
-const LOCATION_INDEX: GLenum = 0x930F;
-const IS_PER_PATCH: GLenum = 0x92E7;
-const SHADER_STORAGE_BUFFER: GLenum = 0x90D2;
-const SHADER_STORAGE_BUFFER_BINDING: GLenum = 0x90D3;
-const SHADER_STORAGE_BUFFER_START: GLenum = 0x90D4;
-const SHADER_STORAGE_BUFFER_SIZE: GLenum = 0x90D5;
-const MAX_VERTEX_SHADER_STORAGE_BLOCKS: GLenum = 0x90D6;
-const MAX_GEOMETRY_SHADER_STORAGE_BLOCKS: GLenum = 0x90D7;
-const MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS: GLenum = 0x90D8;
-const MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS: GLenum = 0x90D9;
-const MAX_FRAGMENT_SHADER_STORAGE_BLOCKS: GLenum = 0x90DA;
-const MAX_COMPUTE_SHADER_STORAGE_BLOCKS: GLenum = 0x90DB;
-const MAX_COMBINED_SHADER_STORAGE_BLOCKS: GLenum = 0x90DC;
-const MAX_SHADER_STORAGE_BUFFER_BINDINGS: GLenum = 0x90DD;
-const MAX_SHADER_STORAGE_BLOCK_SIZE: GLenum = 0x90DE;
-const SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT: GLenum = 0x90DF;
-const SHADER_STORAGE_BARRIER_BIT: GLbitfield = 0x00002000;
-const MAX_COMBINED_SHADER_OUTPUT_RESOURCES: GLenum = 0x8F39;
-const DEPTH_STENCIL_TEXTURE_MODE: GLenum = 0x90EA;
-const TEXTURE_BUFFER_OFFSET: GLenum = 0x919D;
-const TEXTURE_BUFFER_SIZE: GLenum = 0x919E;
-const TEXTURE_BUFFER_OFFSET_ALIGNMENT: GLenum = 0x919F;
-const TEXTURE_VIEW_MIN_LEVEL: GLenum = 0x82DB;
-const TEXTURE_VIEW_NUM_LEVELS: GLenum = 0x82DC;
-const TEXTURE_VIEW_MIN_LAYER: GLenum = 0x82DD;
-const TEXTURE_VIEW_NUM_LAYERS: GLenum = 0x82DE;
-const TEXTURE_IMMUTABLE_LEVELS: GLenum = 0x82DF;
-const VERTEX_ATTRIB_BINDING: GLenum = 0x82D4;
-const VERTEX_ATTRIB_RELATIVE_OFFSET: GLenum = 0x82D5;
-const VERTEX_BINDING_DIVISOR: GLenum = 0x82D6;
-const VERTEX_BINDING_OFFSET: GLenum = 0x82D7;
-const VERTEX_BINDING_STRIDE: GLenum = 0x82D8;
-const MAX_VERTEX_ATTRIB_RELATIVE_OFFSET: GLenum = 0x82D9;
-const MAX_VERTEX_ATTRIB_BINDINGS: GLenum = 0x82DA;
-const VERTEX_BINDING_BUFFER: GLenum = 0x8F4F;
-const DISPLAY_LIST: GLenum = 0x82E7;
+pub const GL_NUM_SHADING_LANGUAGE_VERSIONS: GLenum = 0x82E9;
+pub const GL_VERTEX_ATTRIB_ARRAY_LONG: GLenum = 0x874E;
+pub const GL_COMPRESSED_RGB8_ETC2: GLenum = 0x9274;
+pub const GL_COMPRESSED_SRGB8_ETC2: GLenum = 0x9275;
+pub const GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2: GLenum = 0x9276;
+pub const GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2: GLenum = 0x9277;
+pub const GL_COMPRESSED_RGBA8_ETC2_EAC: GLenum = 0x9278;
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC: GLenum = 0x9279;
+pub const GL_COMPRESSED_R11_EAC: GLenum = 0x9270;
+pub const GL_COMPRESSED_SIGNED_R11_EAC: GLenum = 0x9271;
+pub const GL_COMPRESSED_RG11_EAC: GLenum = 0x9272;
+pub const GL_COMPRESSED_SIGNED_RG11_EAC: GLenum = 0x9273;
+pub const GL_PRIMITIVE_RESTART_FIXED_INDEX: GLenum = 0x8D69;
+pub const GL_ANY_SAMPLES_PASSED_CONSERVATIVE: GLenum = 0x8D6A;
+pub const GL_MAX_ELEMENT_INDEX: GLenum = 0x8D6B;
+pub const GL_COMPUTE_SHADER: GLenum = 0x91B9;
+pub const GL_MAX_COMPUTE_UNIFORM_BLOCKS: GLenum = 0x91BB;
+pub const GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS: GLenum = 0x91BC;
+pub const GL_MAX_COMPUTE_IMAGE_UNIFORMS: GLenum = 0x91BD;
+pub const GL_MAX_COMPUTE_SHARED_MEMORY_SIZE: GLenum = 0x8262;
+pub const GL_MAX_COMPUTE_UNIFORM_COMPONENTS: GLenum = 0x8263;
+pub const GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS: GLenum = 0x8264;
+pub const GL_MAX_COMPUTE_ATOMIC_COUNTERS: GLenum = 0x8265;
+pub const GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS: GLenum = 0x8266;
+pub const GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS: GLenum = 0x90EB;
+pub const GL_MAX_COMPUTE_WORK_GROUP_COUNT: GLenum = 0x91BE;
+pub const GL_MAX_COMPUTE_WORK_GROUP_SIZE: GLenum = 0x91BF;
+pub const GL_COMPUTE_WORK_GROUP_SIZE: GLenum = 0x8267;
+pub const GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER: GLenum = 0x90EC;
+pub const GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER: GLenum = 0x90ED;
+pub const GL_DISPATCH_INDIRECT_BUFFER: GLenum = 0x90EE;
+pub const GL_DISPATCH_INDIRECT_BUFFER_BINDING: GLenum = 0x90EF;
+pub const GL_COMPUTE_SHADER_BIT: GLbitfield = 0x00000020;
+pub const GL_DEBUG_OUTPUT_SYNCHRONOUS: GLenum = 0x8242;
+pub const GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH: GLenum = 0x8243;
+pub const GL_DEBUG_CALLBACK_FUNCTION: GLenum = 0x8244;
+pub const GL_DEBUG_CALLBACK_USER_PARAM: GLenum = 0x8245;
+pub const GL_DEBUG_SOURCE_API: GLenum = 0x8246;
+pub const GL_DEBUG_SOURCE_WINDOW_SYSTEM: GLenum = 0x8247;
+pub const GL_DEBUG_SOURCE_SHADER_COMPILER: GLenum = 0x8248;
+pub const GL_DEBUG_SOURCE_THIRD_PARTY: GLenum = 0x8249;
+pub const GL_DEBUG_SOURCE_APPLICATION: GLenum = 0x824A;
+pub const GL_DEBUG_SOURCE_OTHER: GLenum = 0x824B;
+pub const GL_DEBUG_TYPE_ERROR: GLenum = 0x824C;
+pub const GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR: GLenum = 0x824D;
+pub const GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR: GLenum = 0x824E;
+pub const GL_DEBUG_TYPE_PORTABILITY: GLenum = 0x824F;
+pub const GL_DEBUG_TYPE_PERFORMANCE: GLenum = 0x8250;
+pub const GL_DEBUG_TYPE_OTHER: GLenum = 0x8251;
+pub const GL_MAX_DEBUG_MESSAGE_LENGTH: GLenum = 0x9143;
+pub const GL_MAX_DEBUG_LOGGED_MESSAGES: GLenum = 0x9144;
+pub const GL_DEBUG_LOGGED_MESSAGES: GLenum = 0x9145;
+pub const GL_DEBUG_SEVERITY_HIGH: GLenum = 0x9146;
+pub const GL_DEBUG_SEVERITY_MEDIUM: GLenum = 0x9147;
+pub const GL_DEBUG_SEVERITY_LOW: GLenum = 0x9148;
+pub const GL_DEBUG_TYPE_MARKER: GLenum = 0x8268;
+pub const GL_DEBUG_TYPE_PUSH_GROUP: GLenum = 0x8269;
+pub const GL_DEBUG_TYPE_POP_GROUP: GLenum = 0x826A;
+pub const GL_DEBUG_SEVERITY_NOTIFICATION: GLenum = 0x826B;
+pub const GL_MAX_DEBUG_GROUP_STACK_DEPTH: GLenum = 0x826C;
+pub const GL_DEBUG_GROUP_STACK_DEPTH: GLenum = 0x826D;
+pub const GL_BUFFER: GLenum = 0x82E0;
+pub const GL_SHADER: GLenum = 0x82E1;
+pub const GL_PROGRAM: GLenum = 0x82E2;
+pub const GL_QUERY: GLenum = 0x82E3;
+pub const GL_PROGRAM_PIPELINE: GLenum = 0x82E4;
+pub const GL_SAMPLER: GLenum = 0x82E6;
+pub const GL_MAX_LABEL_LENGTH: GLenum = 0x82E8;
+pub const GL_DEBUG_OUTPUT: GLenum = 0x92E0;
+pub const GL_CONTEXT_FLAG_DEBUG_BIT: GLbitfield = 0x00000002;
+pub const GL_MAX_UNIFORM_LOCATIONS: GLenum = 0x826E;
+pub const GL_FRAMEBUFFER_DEFAULT_WIDTH: GLenum = 0x9310;
+pub const GL_FRAMEBUFFER_DEFAULT_HEIGHT: GLenum = 0x9311;
+pub const GL_FRAMEBUFFER_DEFAULT_LAYERS: GLenum = 0x9312;
+pub const GL_FRAMEBUFFER_DEFAULT_SAMPLES: GLenum = 0x9313;
+pub const GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS: GLenum = 0x9314;
+pub const GL_MAX_FRAMEBUFFER_WIDTH: GLenum = 0x9315;
+pub const GL_MAX_FRAMEBUFFER_HEIGHT: GLenum = 0x9316;
+pub const GL_MAX_FRAMEBUFFER_LAYERS: GLenum = 0x9317;
+pub const GL_MAX_FRAMEBUFFER_SAMPLES: GLenum = 0x9318;
+pub const GL_INTERNALFORMAT_SUPPORTED: GLenum = 0x826F;
+pub const GL_INTERNALFORMAT_PREFERRED: GLenum = 0x8270;
+pub const GL_INTERNALFORMAT_RED_SIZE: GLenum = 0x8271;
+pub const GL_INTERNALFORMAT_GREEN_SIZE: GLenum = 0x8272;
+pub const GL_INTERNALFORMAT_BLUE_SIZE: GLenum = 0x8273;
+pub const GL_INTERNALFORMAT_ALPHA_SIZE: GLenum = 0x8274;
+pub const GL_INTERNALFORMAT_DEPTH_SIZE: GLenum = 0x8275;
+pub const GL_INTERNALFORMAT_STENCIL_SIZE: GLenum = 0x8276;
+pub const GL_INTERNALFORMAT_SHARED_SIZE: GLenum = 0x8277;
+pub const GL_INTERNALFORMAT_RED_TYPE: GLenum = 0x8278;
+pub const GL_INTERNALFORMAT_GREEN_TYPE: GLenum = 0x8279;
+pub const GL_INTERNALFORMAT_BLUE_TYPE: GLenum = 0x827A;
+pub const GL_INTERNALFORMAT_ALPHA_TYPE: GLenum = 0x827B;
+pub const GL_INTERNALFORMAT_DEPTH_TYPE: GLenum = 0x827C;
+pub const GL_INTERNALFORMAT_STENCIL_TYPE: GLenum = 0x827D;
+pub const GL_MAX_WIDTH: GLenum = 0x827E;
+pub const GL_MAX_HEIGHT: GLenum = 0x827F;
+pub const GL_MAX_DEPTH: GLenum = 0x8280;
+pub const GL_MAX_LAYERS: GLenum = 0x8281;
+pub const GL_MAX_COMBINED_DIMENSIONS: GLenum = 0x8282;
+pub const GL_COLOR_COMPONENTS: GLenum = 0x8283;
+pub const GL_DEPTH_COMPONENTS: GLenum = 0x8284;
+pub const GL_STENCIL_COMPONENTS: GLenum = 0x8285;
+pub const GL_COLOR_RENDERABLE: GLenum = 0x8286;
+pub const GL_DEPTH_RENDERABLE: GLenum = 0x8287;
+pub const GL_STENCIL_RENDERABLE: GLenum = 0x8288;
+pub const GL_FRAMEBUFFER_RENDERABLE: GLenum = 0x8289;
+pub const GL_FRAMEBUFFER_RENDERABLE_LAYERED: GLenum = 0x828A;
+pub const GL_FRAMEBUFFER_BLEND: GLenum = 0x828B;
+pub const GL_READ_PIXELS: GLenum = 0x828C;
+pub const GL_READ_PIXELS_FORMAT: GLenum = 0x828D;
+pub const GL_READ_PIXELS_TYPE: GLenum = 0x828E;
+pub const GL_TEXTURE_IMAGE_FORMAT: GLenum = 0x828F;
+pub const GL_TEXTURE_IMAGE_TYPE: GLenum = 0x8290;
+pub const GL_GET_TEXTURE_IMAGE_FORMAT: GLenum = 0x8291;
+pub const GL_GET_TEXTURE_IMAGE_TYPE: GLenum = 0x8292;
+pub const GL_MIPMAP: GLenum = 0x8293;
+pub const GL_MANUAL_GENERATE_MIPMAP: GLenum = 0x8294;
+pub const GL_AUTO_GENERATE_MIPMAP: GLenum = 0x8295;
+pub const GL_COLOR_ENCODING: GLenum = 0x8296;
+pub const GL_SRGB_READ: GLenum = 0x8297;
+pub const GL_SRGB_WRITE: GLenum = 0x8298;
+pub const GL_FILTER: GLenum = 0x829A;
+pub const GL_VERTEX_TEXTURE: GLenum = 0x829B;
+pub const GL_TESS_CONTROL_TEXTURE: GLenum = 0x829C;
+pub const GL_TESS_EVALUATION_TEXTURE: GLenum = 0x829D;
+pub const GL_GEOMETRY_TEXTURE: GLenum = 0x829E;
+pub const GL_FRAGMENT_TEXTURE: GLenum = 0x829F;
+pub const GL_COMPUTE_TEXTURE: GLenum = 0x82A0;
+pub const GL_TEXTURE_SHADOW: GLenum = 0x82A1;
+pub const GL_TEXTURE_GATHER: GLenum = 0x82A2;
+pub const GL_TEXTURE_GATHER_SHADOW: GLenum = 0x82A3;
+pub const GL_SHADER_IMAGE_LOAD: GLenum = 0x82A4;
+pub const GL_SHADER_IMAGE_STORE: GLenum = 0x82A5;
+pub const GL_SHADER_IMAGE_ATOMIC: GLenum = 0x82A6;
+pub const GL_IMAGE_TEXEL_SIZE: GLenum = 0x82A7;
+pub const GL_IMAGE_COMPATIBILITY_CLASS: GLenum = 0x82A8;
+pub const GL_IMAGE_PIXEL_FORMAT: GLenum = 0x82A9;
+pub const GL_IMAGE_PIXEL_TYPE: GLenum = 0x82AA;
+pub const GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST: GLenum = 0x82AC;
+pub const GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST: GLenum = 0x82AD;
+pub const GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE: GLenum = 0x82AE;
+pub const GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE: GLenum = 0x82AF;
+pub const GL_TEXTURE_COMPRESSED_BLOCK_WIDTH: GLenum = 0x82B1;
+pub const GL_TEXTURE_COMPRESSED_BLOCK_HEIGHT: GLenum = 0x82B2;
+pub const GL_TEXTURE_COMPRESSED_BLOCK_SIZE: GLenum = 0x82B3;
+pub const GL_CLEAR_BUFFER: GLenum = 0x82B4;
+pub const GL_TEXTURE_VIEW: GLenum = 0x82B5;
+pub const GL_VIEW_COMPATIBILITY_CLASS: GLenum = 0x82B6;
+pub const GL_FULL_SUPPORT: GLenum = 0x82B7;
+pub const GL_CAVEAT_SUPPORT: GLenum = 0x82B8;
+pub const GL_IMAGE_CLASS_4_X_32: GLenum = 0x82B9;
+pub const GL_IMAGE_CLASS_2_X_32: GLenum = 0x82BA;
+pub const GL_IMAGE_CLASS_1_X_32: GLenum = 0x82BB;
+pub const GL_IMAGE_CLASS_4_X_16: GLenum = 0x82BC;
+pub const GL_IMAGE_CLASS_2_X_16: GLenum = 0x82BD;
+pub const GL_IMAGE_CLASS_1_X_16: GLenum = 0x82BE;
+pub const GL_IMAGE_CLASS_4_X_8: GLenum = 0x82BF;
+pub const GL_IMAGE_CLASS_2_X_8: GLenum = 0x82C0;
+pub const GL_IMAGE_CLASS_1_X_8: GLenum = 0x82C1;
+pub const GL_IMAGE_CLASS_11_11_10: GLenum = 0x82C2;
+pub const GL_IMAGE_CLASS_10_10_10_2: GLenum = 0x82C3;
+pub const GL_VIEW_CLASS_128_BITS: GLenum = 0x82C4;
+pub const GL_VIEW_CLASS_96_BITS: GLenum = 0x82C5;
+pub const GL_VIEW_CLASS_64_BITS: GLenum = 0x82C6;
+pub const GL_VIEW_CLASS_48_BITS: GLenum = 0x82C7;
+pub const GL_VIEW_CLASS_32_BITS: GLenum = 0x82C8;
+pub const GL_VIEW_CLASS_24_BITS: GLenum = 0x82C9;
+pub const GL_VIEW_CLASS_16_BITS: GLenum = 0x82CA;
+pub const GL_VIEW_CLASS_8_BITS: GLenum = 0x82CB;
+pub const GL_VIEW_CLASS_S3TC_DXT1_RGB: GLenum = 0x82CC;
+pub const GL_VIEW_CLASS_S3TC_DXT1_RGBA: GLenum = 0x82CD;
+pub const GL_VIEW_CLASS_S3TC_DXT3_RGBA: GLenum = 0x82CE;
+pub const GL_VIEW_CLASS_S3TC_DXT5_RGBA: GLenum = 0x82CF;
+pub const GL_VIEW_CLASS_RGTC1_RED: GLenum = 0x82D0;
+pub const GL_VIEW_CLASS_RGTC2_RG: GLenum = 0x82D1;
+pub const GL_VIEW_CLASS_BPTC_UNORM: GLenum = 0x82D2;
+pub const GL_VIEW_CLASS_BPTC_FLOAT: GLenum = 0x82D3;
+pub const GL_UNIFORM: GLenum = 0x92E1;
+pub const GL_UNIFORM_BLOCK: GLenum = 0x92E2;
+pub const GL_PROGRAM_INPUT: GLenum = 0x92E3;
+pub const GL_PROGRAM_OUTPUT: GLenum = 0x92E4;
+pub const GL_BUFFER_VARIABLE: GLenum = 0x92E5;
+pub const GL_SHADER_STORAGE_BLOCK: GLenum = 0x92E6;
+pub const GL_VERTEX_SUBROUTINE: GLenum = 0x92E8;
+pub const GL_TESS_CONTROL_SUBROUTINE: GLenum = 0x92E9;
+pub const GL_TESS_EVALUATION_SUBROUTINE: GLenum = 0x92EA;
+pub const GL_GEOMETRY_SUBROUTINE: GLenum = 0x92EB;
+pub const GL_FRAGMENT_SUBROUTINE: GLenum = 0x92EC;
+pub const GL_COMPUTE_SUBROUTINE: GLenum = 0x92ED;
+pub const GL_VERTEX_SUBROUTINE_UNIFORM: GLenum = 0x92EE;
+pub const GL_TESS_CONTROL_SUBROUTINE_UNIFORM: GLenum = 0x92EF;
+pub const GL_TESS_EVALUATION_SUBROUTINE_UNIFORM: GLenum = 0x92F0;
+pub const GL_GEOMETRY_SUBROUTINE_UNIFORM: GLenum = 0x92F1;
+pub const GL_FRAGMENT_SUBROUTINE_UNIFORM: GLenum = 0x92F2;
+pub const GL_COMPUTE_SUBROUTINE_UNIFORM: GLenum = 0x92F3;
+pub const GL_TRANSFORM_FEEDBACK_VARYING: GLenum = 0x92F4;
+pub const GL_ACTIVE_RESOURCES: GLenum = 0x92F5;
+pub const GL_MAX_NAME_LENGTH: GLenum = 0x92F6;
+pub const GL_MAX_NUM_ACTIVE_VARIABLES: GLenum = 0x92F7;
+pub const GL_MAX_NUM_COMPATIBLE_SUBROUTINES: GLenum = 0x92F8;
+pub const GL_NAME_LENGTH: GLenum = 0x92F9;
+pub const GL_TYPE: GLenum = 0x92FA;
+pub const GL_ARRAY_SIZE: GLenum = 0x92FB;
+pub const GL_OFFSET: GLenum = 0x92FC;
+pub const GL_BLOCK_INDEX: GLenum = 0x92FD;
+pub const GL_ARRAY_STRIDE: GLenum = 0x92FE;
+pub const GL_MATRIX_STRIDE: GLenum = 0x92FF;
+pub const GL_IS_ROW_MAJOR: GLenum = 0x9300;
+pub const GL_ATOMIC_COUNTER_BUFFER_INDEX: GLenum = 0x9301;
+pub const GL_BUFFER_BINDING: GLenum = 0x9302;
+pub const GL_BUFFER_DATA_SIZE: GLenum = 0x9303;
+pub const GL_NUM_ACTIVE_VARIABLES: GLenum = 0x9304;
+pub const GL_ACTIVE_VARIABLES: GLenum = 0x9305;
+pub const GL_REFERENCED_BY_VERTEX_SHADER: GLenum = 0x9306;
+pub const GL_REFERENCED_BY_TESS_CONTROL_SHADER: GLenum = 0x9307;
+pub const GL_REFERENCED_BY_TESS_EVALUATION_SHADER: GLenum = 0x9308;
+pub const GL_REFERENCED_BY_GEOMETRY_SHADER: GLenum = 0x9309;
+pub const GL_REFERENCED_BY_FRAGMENT_SHADER: GLenum = 0x930A;
+pub const GL_REFERENCED_BY_COMPUTE_SHADER: GLenum = 0x930B;
+pub const GL_TOP_LEVEL_ARRAY_SIZE: GLenum = 0x930C;
+pub const GL_TOP_LEVEL_ARRAY_STRIDE: GLenum = 0x930D;
+pub const GL_LOCATION: GLenum = 0x930E;
+pub const GL_LOCATION_INDEX: GLenum = 0x930F;
+pub const GL_IS_PER_PATCH: GLenum = 0x92E7;
+pub const GL_SHADER_STORAGE_BUFFER: GLenum = 0x90D2;
+pub const GL_SHADER_STORAGE_BUFFER_BINDING: GLenum = 0x90D3;
+pub const GL_SHADER_STORAGE_BUFFER_START: GLenum = 0x90D4;
+pub const GL_SHADER_STORAGE_BUFFER_SIZE: GLenum = 0x90D5;
+pub const GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS: GLenum = 0x90D6;
+pub const GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS: GLenum = 0x90D7;
+pub const GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS: GLenum = 0x90D8;
+pub const GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS: GLenum = 0x90D9;
+pub const GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS: GLenum = 0x90DA;
+pub const GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS: GLenum = 0x90DB;
+pub const GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS: GLenum = 0x90DC;
+pub const GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS: GLenum = 0x90DD;
+pub const GL_MAX_SHADER_STORAGE_BLOCK_SIZE: GLenum = 0x90DE;
+pub const GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT: GLenum = 0x90DF;
+pub const GL_SHADER_STORAGE_BARRIER_BIT: GLbitfield = 0x00002000;
+pub const GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES: GLenum = 0x8F39;
+pub const GL_DEPTH_STENCIL_TEXTURE_MODE: GLenum = 0x90EA;
+pub const GL_TEXTURE_BUFFER_OFFSET: GLenum = 0x919D;
+pub const GL_TEXTURE_BUFFER_SIZE: GLenum = 0x919E;
+pub const GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT: GLenum = 0x919F;
+pub const GL_TEXTURE_VIEW_MIN_LEVEL: GLenum = 0x82DB;
+pub const GL_TEXTURE_VIEW_NUM_LEVELS: GLenum = 0x82DC;
+pub const GL_TEXTURE_VIEW_MIN_LAYER: GLenum = 0x82DD;
+pub const GL_TEXTURE_VIEW_NUM_LAYERS: GLenum = 0x82DE;
+pub const GL_TEXTURE_IMMUTABLE_LEVELS: GLenum = 0x82DF;
+pub const GL_VERTEX_ATTRIB_BINDING: GLenum = 0x82D4;
+pub const GL_VERTEX_ATTRIB_RELATIVE_OFFSET: GLenum = 0x82D5;
+pub const GL_VERTEX_BINDING_DIVISOR: GLenum = 0x82D6;
+pub const GL_VERTEX_BINDING_OFFSET: GLenum = 0x82D7;
+pub const GL_VERTEX_BINDING_STRIDE: GLenum = 0x82D8;
+pub const GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET: GLenum = 0x82D9;
+pub const GL_MAX_VERTEX_ATTRIB_BINDINGS: GLenum = 0x82DA;
+pub const GL_VERTEX_BINDING_BUFFER: GLenum = 0x8F4F;
+pub const GL_DISPLAY_LIST: GLenum = 0x82E7;
 
 pub trait GL_4_3 {
 	fn glClearBufferData(&self, target: GLenum, internalformat: GLenum, format: GLenum, type_: GLenum, data: *const c_void);
@@ -9434,7 +9434,7 @@ pub trait GL_4_3 {
 	fn glGetObjectPtrLabel(&self, ptr: *const c_void, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version43 {
 	available: bool,
 	clearbufferdata: PFNGLCLEARBUFFERDATAPROC,
@@ -9658,7 +9658,7 @@ impl GL_4_3 for Version43 {
 }
 
 impl Version43 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 40300 {
@@ -9666,49 +9666,49 @@ impl Version43 {
 		}
 		Self {
 			available: true,
-			clearbufferdata: unsafe{transmute(get_proc_address("glClearBufferData"))},
-			clearbuffersubdata: unsafe{transmute(get_proc_address("glClearBufferSubData"))},
-			dispatchcompute: unsafe{transmute(get_proc_address("glDispatchCompute"))},
-			dispatchcomputeindirect: unsafe{transmute(get_proc_address("glDispatchComputeIndirect"))},
-			copyimagesubdata: unsafe{transmute(get_proc_address("glCopyImageSubData"))},
-			framebufferparameteri: unsafe{transmute(get_proc_address("glFramebufferParameteri"))},
-			getframebufferparameteriv: unsafe{transmute(get_proc_address("glGetFramebufferParameteriv"))},
-			getinternalformati64v: unsafe{transmute(get_proc_address("glGetInternalformati64v"))},
-			invalidatetexsubimage: unsafe{transmute(get_proc_address("glInvalidateTexSubImage"))},
-			invalidateteximage: unsafe{transmute(get_proc_address("glInvalidateTexImage"))},
-			invalidatebuffersubdata: unsafe{transmute(get_proc_address("glInvalidateBufferSubData"))},
-			invalidatebufferdata: unsafe{transmute(get_proc_address("glInvalidateBufferData"))},
-			invalidateframebuffer: unsafe{transmute(get_proc_address("glInvalidateFramebuffer"))},
-			invalidatesubframebuffer: unsafe{transmute(get_proc_address("glInvalidateSubFramebuffer"))},
-			multidrawarraysindirect: unsafe{transmute(get_proc_address("glMultiDrawArraysIndirect"))},
-			multidrawelementsindirect: unsafe{transmute(get_proc_address("glMultiDrawElementsIndirect"))},
-			getprograminterfaceiv: unsafe{transmute(get_proc_address("glGetProgramInterfaceiv"))},
-			getprogramresourceindex: unsafe{transmute(get_proc_address("glGetProgramResourceIndex"))},
-			getprogramresourcename: unsafe{transmute(get_proc_address("glGetProgramResourceName"))},
-			getprogramresourceiv: unsafe{transmute(get_proc_address("glGetProgramResourceiv"))},
-			getprogramresourcelocation: unsafe{transmute(get_proc_address("glGetProgramResourceLocation"))},
-			getprogramresourcelocationindex: unsafe{transmute(get_proc_address("glGetProgramResourceLocationIndex"))},
-			shaderstorageblockbinding: unsafe{transmute(get_proc_address("glShaderStorageBlockBinding"))},
-			texbufferrange: unsafe{transmute(get_proc_address("glTexBufferRange"))},
-			texstorage2dmultisample: unsafe{transmute(get_proc_address("glTexStorage2DMultisample"))},
-			texstorage3dmultisample: unsafe{transmute(get_proc_address("glTexStorage3DMultisample"))},
-			textureview: unsafe{transmute(get_proc_address("glTextureView"))},
-			bindvertexbuffer: unsafe{transmute(get_proc_address("glBindVertexBuffer"))},
-			vertexattribformat: unsafe{transmute(get_proc_address("glVertexAttribFormat"))},
-			vertexattribiformat: unsafe{transmute(get_proc_address("glVertexAttribIFormat"))},
-			vertexattriblformat: unsafe{transmute(get_proc_address("glVertexAttribLFormat"))},
-			vertexattribbinding: unsafe{transmute(get_proc_address("glVertexAttribBinding"))},
-			vertexbindingdivisor: unsafe{transmute(get_proc_address("glVertexBindingDivisor"))},
-			debugmessagecontrol: unsafe{transmute(get_proc_address("glDebugMessageControl"))},
-			debugmessageinsert: unsafe{transmute(get_proc_address("glDebugMessageInsert"))},
-			debugmessagecallback: unsafe{transmute(get_proc_address("glDebugMessageCallback"))},
-			getdebugmessagelog: unsafe{transmute(get_proc_address("glGetDebugMessageLog"))},
-			pushdebuggroup: unsafe{transmute(get_proc_address("glPushDebugGroup"))},
-			popdebuggroup: unsafe{transmute(get_proc_address("glPopDebugGroup"))},
-			objectlabel: unsafe{transmute(get_proc_address("glObjectLabel"))},
-			getobjectlabel: unsafe{transmute(get_proc_address("glGetObjectLabel"))},
-			objectptrlabel: unsafe{transmute(get_proc_address("glObjectPtrLabel"))},
-			getobjectptrlabel: unsafe{transmute(get_proc_address("glGetObjectPtrLabel"))},
+			clearbufferdata: {let proc = get_proc_address("glClearBufferData"); if proc == null() {dummy_pfnglclearbufferdataproc} else {unsafe{transmute(proc)}}},
+			clearbuffersubdata: {let proc = get_proc_address("glClearBufferSubData"); if proc == null() {dummy_pfnglclearbuffersubdataproc} else {unsafe{transmute(proc)}}},
+			dispatchcompute: {let proc = get_proc_address("glDispatchCompute"); if proc == null() {dummy_pfngldispatchcomputeproc} else {unsafe{transmute(proc)}}},
+			dispatchcomputeindirect: {let proc = get_proc_address("glDispatchComputeIndirect"); if proc == null() {dummy_pfngldispatchcomputeindirectproc} else {unsafe{transmute(proc)}}},
+			copyimagesubdata: {let proc = get_proc_address("glCopyImageSubData"); if proc == null() {dummy_pfnglcopyimagesubdataproc} else {unsafe{transmute(proc)}}},
+			framebufferparameteri: {let proc = get_proc_address("glFramebufferParameteri"); if proc == null() {dummy_pfnglframebufferparameteriproc} else {unsafe{transmute(proc)}}},
+			getframebufferparameteriv: {let proc = get_proc_address("glGetFramebufferParameteriv"); if proc == null() {dummy_pfnglgetframebufferparameterivproc} else {unsafe{transmute(proc)}}},
+			getinternalformati64v: {let proc = get_proc_address("glGetInternalformati64v"); if proc == null() {dummy_pfnglgetinternalformati64vproc} else {unsafe{transmute(proc)}}},
+			invalidatetexsubimage: {let proc = get_proc_address("glInvalidateTexSubImage"); if proc == null() {dummy_pfnglinvalidatetexsubimageproc} else {unsafe{transmute(proc)}}},
+			invalidateteximage: {let proc = get_proc_address("glInvalidateTexImage"); if proc == null() {dummy_pfnglinvalidateteximageproc} else {unsafe{transmute(proc)}}},
+			invalidatebuffersubdata: {let proc = get_proc_address("glInvalidateBufferSubData"); if proc == null() {dummy_pfnglinvalidatebuffersubdataproc} else {unsafe{transmute(proc)}}},
+			invalidatebufferdata: {let proc = get_proc_address("glInvalidateBufferData"); if proc == null() {dummy_pfnglinvalidatebufferdataproc} else {unsafe{transmute(proc)}}},
+			invalidateframebuffer: {let proc = get_proc_address("glInvalidateFramebuffer"); if proc == null() {dummy_pfnglinvalidateframebufferproc} else {unsafe{transmute(proc)}}},
+			invalidatesubframebuffer: {let proc = get_proc_address("glInvalidateSubFramebuffer"); if proc == null() {dummy_pfnglinvalidatesubframebufferproc} else {unsafe{transmute(proc)}}},
+			multidrawarraysindirect: {let proc = get_proc_address("glMultiDrawArraysIndirect"); if proc == null() {dummy_pfnglmultidrawarraysindirectproc} else {unsafe{transmute(proc)}}},
+			multidrawelementsindirect: {let proc = get_proc_address("glMultiDrawElementsIndirect"); if proc == null() {dummy_pfnglmultidrawelementsindirectproc} else {unsafe{transmute(proc)}}},
+			getprograminterfaceiv: {let proc = get_proc_address("glGetProgramInterfaceiv"); if proc == null() {dummy_pfnglgetprograminterfaceivproc} else {unsafe{transmute(proc)}}},
+			getprogramresourceindex: {let proc = get_proc_address("glGetProgramResourceIndex"); if proc == null() {dummy_pfnglgetprogramresourceindexproc} else {unsafe{transmute(proc)}}},
+			getprogramresourcename: {let proc = get_proc_address("glGetProgramResourceName"); if proc == null() {dummy_pfnglgetprogramresourcenameproc} else {unsafe{transmute(proc)}}},
+			getprogramresourceiv: {let proc = get_proc_address("glGetProgramResourceiv"); if proc == null() {dummy_pfnglgetprogramresourceivproc} else {unsafe{transmute(proc)}}},
+			getprogramresourcelocation: {let proc = get_proc_address("glGetProgramResourceLocation"); if proc == null() {dummy_pfnglgetprogramresourcelocationproc} else {unsafe{transmute(proc)}}},
+			getprogramresourcelocationindex: {let proc = get_proc_address("glGetProgramResourceLocationIndex"); if proc == null() {dummy_pfnglgetprogramresourcelocationindexproc} else {unsafe{transmute(proc)}}},
+			shaderstorageblockbinding: {let proc = get_proc_address("glShaderStorageBlockBinding"); if proc == null() {dummy_pfnglshaderstorageblockbindingproc} else {unsafe{transmute(proc)}}},
+			texbufferrange: {let proc = get_proc_address("glTexBufferRange"); if proc == null() {dummy_pfngltexbufferrangeproc} else {unsafe{transmute(proc)}}},
+			texstorage2dmultisample: {let proc = get_proc_address("glTexStorage2DMultisample"); if proc == null() {dummy_pfngltexstorage2dmultisampleproc} else {unsafe{transmute(proc)}}},
+			texstorage3dmultisample: {let proc = get_proc_address("glTexStorage3DMultisample"); if proc == null() {dummy_pfngltexstorage3dmultisampleproc} else {unsafe{transmute(proc)}}},
+			textureview: {let proc = get_proc_address("glTextureView"); if proc == null() {dummy_pfngltextureviewproc} else {unsafe{transmute(proc)}}},
+			bindvertexbuffer: {let proc = get_proc_address("glBindVertexBuffer"); if proc == null() {dummy_pfnglbindvertexbufferproc} else {unsafe{transmute(proc)}}},
+			vertexattribformat: {let proc = get_proc_address("glVertexAttribFormat"); if proc == null() {dummy_pfnglvertexattribformatproc} else {unsafe{transmute(proc)}}},
+			vertexattribiformat: {let proc = get_proc_address("glVertexAttribIFormat"); if proc == null() {dummy_pfnglvertexattribiformatproc} else {unsafe{transmute(proc)}}},
+			vertexattriblformat: {let proc = get_proc_address("glVertexAttribLFormat"); if proc == null() {dummy_pfnglvertexattriblformatproc} else {unsafe{transmute(proc)}}},
+			vertexattribbinding: {let proc = get_proc_address("glVertexAttribBinding"); if proc == null() {dummy_pfnglvertexattribbindingproc} else {unsafe{transmute(proc)}}},
+			vertexbindingdivisor: {let proc = get_proc_address("glVertexBindingDivisor"); if proc == null() {dummy_pfnglvertexbindingdivisorproc} else {unsafe{transmute(proc)}}},
+			debugmessagecontrol: {let proc = get_proc_address("glDebugMessageControl"); if proc == null() {dummy_pfngldebugmessagecontrolproc} else {unsafe{transmute(proc)}}},
+			debugmessageinsert: {let proc = get_proc_address("glDebugMessageInsert"); if proc == null() {dummy_pfngldebugmessageinsertproc} else {unsafe{transmute(proc)}}},
+			debugmessagecallback: {let proc = get_proc_address("glDebugMessageCallback"); if proc == null() {dummy_pfngldebugmessagecallbackproc} else {unsafe{transmute(proc)}}},
+			getdebugmessagelog: {let proc = get_proc_address("glGetDebugMessageLog"); if proc == null() {dummy_pfnglgetdebugmessagelogproc} else {unsafe{transmute(proc)}}},
+			pushdebuggroup: {let proc = get_proc_address("glPushDebugGroup"); if proc == null() {dummy_pfnglpushdebuggroupproc} else {unsafe{transmute(proc)}}},
+			popdebuggroup: {let proc = get_proc_address("glPopDebugGroup"); if proc == null() {dummy_pfnglpopdebuggroupproc} else {unsafe{transmute(proc)}}},
+			objectlabel: {let proc = get_proc_address("glObjectLabel"); if proc == null() {dummy_pfnglobjectlabelproc} else {unsafe{transmute(proc)}}},
+			getobjectlabel: {let proc = get_proc_address("glGetObjectLabel"); if proc == null() {dummy_pfnglgetobjectlabelproc} else {unsafe{transmute(proc)}}},
+			objectptrlabel: {let proc = get_proc_address("glObjectPtrLabel"); if proc == null() {dummy_pfnglobjectptrlabelproc} else {unsafe{transmute(proc)}}},
+			getobjectptrlabel: {let proc = get_proc_address("glGetObjectPtrLabel"); if proc == null() {dummy_pfnglgetobjectptrlabelproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -9778,51 +9778,51 @@ type PFNGLBINDSAMPLERSPROC = extern "system" fn(GLuint, GLsizei, *const GLuint);
 type PFNGLBINDIMAGETEXTURESPROC = extern "system" fn(GLuint, GLsizei, *const GLuint);
 type PFNGLBINDVERTEXBUFFERSPROC = extern "system" fn(GLuint, GLsizei, *const GLuint, *const GLintptr, *const GLsizei);
 extern "system" fn dummy_pfnglbufferstorageproc (_: GLenum, _: GLsizeiptr, _: *const c_void, _: GLbitfield) {
-	panic!("OpenGL Function pointer of glBufferStorage() is NULL");
+	panic!("OpenGL Function pointer of `glBufferStorage()` is NULL");
 }
 extern "system" fn dummy_pfnglclearteximageproc (_: GLuint, _: GLint, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glClearTexImage() is NULL");
+	panic!("OpenGL Function pointer of `glClearTexImage()` is NULL");
 }
 extern "system" fn dummy_pfnglcleartexsubimageproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glClearTexSubImage() is NULL");
+	panic!("OpenGL Function pointer of `glClearTexSubImage()` is NULL");
 }
 extern "system" fn dummy_pfnglbindbuffersbaseproc (_: GLenum, _: GLuint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glBindBuffersBase() is NULL");
+	panic!("OpenGL Function pointer of `glBindBuffersBase()` is NULL");
 }
 extern "system" fn dummy_pfnglbindbuffersrangeproc (_: GLenum, _: GLuint, _: GLsizei, _: *const GLuint, _: *const GLintptr, _: *const GLsizeiptr) {
-	panic!("OpenGL Function pointer of glBindBuffersRange() is NULL");
+	panic!("OpenGL Function pointer of `glBindBuffersRange()` is NULL");
 }
 extern "system" fn dummy_pfnglbindtexturesproc (_: GLuint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glBindTextures() is NULL");
+	panic!("OpenGL Function pointer of `glBindTextures()` is NULL");
 }
 extern "system" fn dummy_pfnglbindsamplersproc (_: GLuint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glBindSamplers() is NULL");
+	panic!("OpenGL Function pointer of `glBindSamplers()` is NULL");
 }
 extern "system" fn dummy_pfnglbindimagetexturesproc (_: GLuint, _: GLsizei, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glBindImageTextures() is NULL");
+	panic!("OpenGL Function pointer of `glBindImageTextures()` is NULL");
 }
 extern "system" fn dummy_pfnglbindvertexbuffersproc (_: GLuint, _: GLsizei, _: *const GLuint, _: *const GLintptr, _: *const GLsizei) {
-	panic!("OpenGL Function pointer of glBindVertexBuffers() is NULL");
+	panic!("OpenGL Function pointer of `glBindVertexBuffers()` is NULL");
 }
-const MAX_VERTEX_ATTRIB_STRIDE: GLenum = 0x82E5;
-const PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED: GLenum = 0x8221;
-const TEXTURE_BUFFER_BINDING: GLenum = 0x8C2A;
-const MAP_PERSISTENT_BIT: GLbitfield = 0x0040;
-const MAP_COHERENT_BIT: GLbitfield = 0x0080;
-const DYNAMIC_STORAGE_BIT: GLbitfield = 0x0100;
-const CLIENT_STORAGE_BIT: GLbitfield = 0x0200;
-const CLIENT_MAPPED_BUFFER_BARRIER_BIT: GLbitfield = 0x00004000;
-const BUFFER_IMMUTABLE_STORAGE: GLenum = 0x821F;
-const BUFFER_STORAGE_FLAGS: GLenum = 0x8220;
-const CLEAR_TEXTURE: GLenum = 0x9365;
-const LOCATION_COMPONENT: GLenum = 0x934A;
-const TRANSFORM_FEEDBACK_BUFFER_INDEX: GLenum = 0x934B;
-const TRANSFORM_FEEDBACK_BUFFER_STRIDE: GLenum = 0x934C;
-const QUERY_BUFFER: GLenum = 0x9192;
-const QUERY_BUFFER_BARRIER_BIT: GLbitfield = 0x00008000;
-const QUERY_BUFFER_BINDING: GLenum = 0x9193;
-const QUERY_RESULT_NO_WAIT: GLenum = 0x9194;
-const MIRROR_CLAMP_TO_EDGE: GLenum = 0x8743;
+pub const GL_MAX_VERTEX_ATTRIB_STRIDE: GLenum = 0x82E5;
+pub const GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED: GLenum = 0x8221;
+pub const GL_TEXTURE_BUFFER_BINDING: GLenum = 0x8C2A;
+pub const GL_MAP_PERSISTENT_BIT: GLbitfield = 0x0040;
+pub const GL_MAP_COHERENT_BIT: GLbitfield = 0x0080;
+pub const GL_DYNAMIC_STORAGE_BIT: GLbitfield = 0x0100;
+pub const GL_CLIENT_STORAGE_BIT: GLbitfield = 0x0200;
+pub const GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT: GLbitfield = 0x00004000;
+pub const GL_BUFFER_IMMUTABLE_STORAGE: GLenum = 0x821F;
+pub const GL_BUFFER_STORAGE_FLAGS: GLenum = 0x8220;
+pub const GL_CLEAR_TEXTURE: GLenum = 0x9365;
+pub const GL_LOCATION_COMPONENT: GLenum = 0x934A;
+pub const GL_TRANSFORM_FEEDBACK_BUFFER_INDEX: GLenum = 0x934B;
+pub const GL_TRANSFORM_FEEDBACK_BUFFER_STRIDE: GLenum = 0x934C;
+pub const GL_QUERY_BUFFER: GLenum = 0x9192;
+pub const GL_QUERY_BUFFER_BARRIER_BIT: GLbitfield = 0x00008000;
+pub const GL_QUERY_BUFFER_BINDING: GLenum = 0x9193;
+pub const GL_QUERY_RESULT_NO_WAIT: GLenum = 0x9194;
+pub const GL_MIRROR_CLAMP_TO_EDGE: GLenum = 0x8743;
 
 pub trait GL_4_4 {
 	fn glBufferStorage(&self, target: GLenum, size: GLsizeiptr, data: *const c_void, flags: GLbitfield);
@@ -9836,7 +9836,7 @@ pub trait GL_4_4 {
 	fn glBindVertexBuffers(&self, first: GLuint, count: GLsizei, buffers: *const GLuint, offsets: *const GLintptr, strides: *const GLsizei);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version44 {
 	available: bool,
 	bufferstorage: PFNGLBUFFERSTORAGEPROC,
@@ -9890,7 +9890,7 @@ impl GL_4_4 for Version44 {
 }
 
 impl Version44 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 40400 {
@@ -9898,15 +9898,15 @@ impl Version44 {
 		}
 		Self {
 			available: true,
-			bufferstorage: unsafe{transmute(get_proc_address("glBufferStorage"))},
-			clearteximage: unsafe{transmute(get_proc_address("glClearTexImage"))},
-			cleartexsubimage: unsafe{transmute(get_proc_address("glClearTexSubImage"))},
-			bindbuffersbase: unsafe{transmute(get_proc_address("glBindBuffersBase"))},
-			bindbuffersrange: unsafe{transmute(get_proc_address("glBindBuffersRange"))},
-			bindtextures: unsafe{transmute(get_proc_address("glBindTextures"))},
-			bindsamplers: unsafe{transmute(get_proc_address("glBindSamplers"))},
-			bindimagetextures: unsafe{transmute(get_proc_address("glBindImageTextures"))},
-			bindvertexbuffers: unsafe{transmute(get_proc_address("glBindVertexBuffers"))},
+			bufferstorage: {let proc = get_proc_address("glBufferStorage"); if proc == null() {dummy_pfnglbufferstorageproc} else {unsafe{transmute(proc)}}},
+			clearteximage: {let proc = get_proc_address("glClearTexImage"); if proc == null() {dummy_pfnglclearteximageproc} else {unsafe{transmute(proc)}}},
+			cleartexsubimage: {let proc = get_proc_address("glClearTexSubImage"); if proc == null() {dummy_pfnglcleartexsubimageproc} else {unsafe{transmute(proc)}}},
+			bindbuffersbase: {let proc = get_proc_address("glBindBuffersBase"); if proc == null() {dummy_pfnglbindbuffersbaseproc} else {unsafe{transmute(proc)}}},
+			bindbuffersrange: {let proc = get_proc_address("glBindBuffersRange"); if proc == null() {dummy_pfnglbindbuffersrangeproc} else {unsafe{transmute(proc)}}},
+			bindtextures: {let proc = get_proc_address("glBindTextures"); if proc == null() {dummy_pfnglbindtexturesproc} else {unsafe{transmute(proc)}}},
+			bindsamplers: {let proc = get_proc_address("glBindSamplers"); if proc == null() {dummy_pfnglbindsamplersproc} else {unsafe{transmute(proc)}}},
+			bindimagetextures: {let proc = get_proc_address("glBindImageTextures"); if proc == null() {dummy_pfnglbindimagetexturesproc} else {unsafe{transmute(proc)}}},
+			bindvertexbuffers: {let proc = get_proc_address("glBindVertexBuffers"); if proc == null() {dummy_pfnglbindvertexbuffersproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -10055,405 +10055,405 @@ type PFNGLGETNHISTOGRAMPROC = extern "system" fn(GLenum, GLboolean, GLenum, GLen
 type PFNGLGETNMINMAXPROC = extern "system" fn(GLenum, GLboolean, GLenum, GLenum, GLsizei, *mut c_void);
 type PFNGLTEXTUREBARRIERPROC = extern "system" fn();
 extern "system" fn dummy_pfnglclipcontrolproc (_: GLenum, _: GLenum) {
-	panic!("OpenGL Function pointer of glClipControl() is NULL");
+	panic!("OpenGL Function pointer of `glClipControl()` is NULL");
 }
 extern "system" fn dummy_pfnglcreatetransformfeedbacksproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glCreateTransformFeedbacks() is NULL");
+	panic!("OpenGL Function pointer of `glCreateTransformFeedbacks()` is NULL");
 }
 extern "system" fn dummy_pfngltransformfeedbackbufferbaseproc (_: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glTransformFeedbackBufferBase() is NULL");
+	panic!("OpenGL Function pointer of `glTransformFeedbackBufferBase()` is NULL");
 }
 extern "system" fn dummy_pfngltransformfeedbackbufferrangeproc (_: GLuint, _: GLuint, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-	panic!("OpenGL Function pointer of glTransformFeedbackBufferRange() is NULL");
+	panic!("OpenGL Function pointer of `glTransformFeedbackBufferRange()` is NULL");
 }
 extern "system" fn dummy_pfnglgettransformfeedbackivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetTransformFeedbackiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTransformFeedbackiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettransformfeedbacki_vproc (_: GLuint, _: GLenum, _: GLuint, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetTransformFeedbacki_v() is NULL");
+	panic!("OpenGL Function pointer of `glGetTransformFeedbacki_v()` is NULL");
 }
 extern "system" fn dummy_pfnglgettransformfeedbacki64_vproc (_: GLuint, _: GLenum, _: GLuint, _: *mut GLint64) {
-	panic!("OpenGL Function pointer of glGetTransformFeedbacki64_v() is NULL");
+	panic!("OpenGL Function pointer of `glGetTransformFeedbacki64_v()` is NULL");
 }
 extern "system" fn dummy_pfnglcreatebuffersproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glCreateBuffers() is NULL");
+	panic!("OpenGL Function pointer of `glCreateBuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedbufferstorageproc (_: GLuint, _: GLsizeiptr, _: *const c_void, _: GLbitfield) {
-	panic!("OpenGL Function pointer of glNamedBufferStorage() is NULL");
+	panic!("OpenGL Function pointer of `glNamedBufferStorage()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedbufferdataproc (_: GLuint, _: GLsizeiptr, _: *const c_void, _: GLenum) {
-	panic!("OpenGL Function pointer of glNamedBufferData() is NULL");
+	panic!("OpenGL Function pointer of `glNamedBufferData()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedbuffersubdataproc (_: GLuint, _: GLintptr, _: GLsizeiptr, _: *const c_void) {
-	panic!("OpenGL Function pointer of glNamedBufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glNamedBufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglcopynamedbuffersubdataproc (_: GLuint, _: GLuint, _: GLintptr, _: GLintptr, _: GLsizeiptr) {
-	panic!("OpenGL Function pointer of glCopyNamedBufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glCopyNamedBufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglclearnamedbufferdataproc (_: GLuint, _: GLenum, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glClearNamedBufferData() is NULL");
+	panic!("OpenGL Function pointer of `glClearNamedBufferData()` is NULL");
 }
 extern "system" fn dummy_pfnglclearnamedbuffersubdataproc (_: GLuint, _: GLenum, _: GLintptr, _: GLsizeiptr, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glClearNamedBufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glClearNamedBufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglmapnamedbufferproc (_: GLuint, _: GLenum) -> *mut c_void {
-	panic!("OpenGL Function pointer of glMapNamedBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glMapNamedBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglmapnamedbufferrangeproc (_: GLuint, _: GLintptr, _: GLsizeiptr, _: GLbitfield) -> *mut c_void {
-	panic!("OpenGL Function pointer of glMapNamedBufferRange() is NULL");
+	panic!("OpenGL Function pointer of `glMapNamedBufferRange()` is NULL");
 }
 extern "system" fn dummy_pfnglunmapnamedbufferproc (_: GLuint) -> GLboolean {
-	panic!("OpenGL Function pointer of glUnmapNamedBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glUnmapNamedBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglflushmappednamedbufferrangeproc (_: GLuint, _: GLintptr, _: GLsizeiptr) {
-	panic!("OpenGL Function pointer of glFlushMappedNamedBufferRange() is NULL");
+	panic!("OpenGL Function pointer of `glFlushMappedNamedBufferRange()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnamedbufferparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetNamedBufferParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetNamedBufferParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnamedbufferparameteri64vproc (_: GLuint, _: GLenum, _: *mut GLint64) {
-	panic!("OpenGL Function pointer of glGetNamedBufferParameteri64v() is NULL");
+	panic!("OpenGL Function pointer of `glGetNamedBufferParameteri64v()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnamedbufferpointervproc (_: GLuint, _: GLenum, _: *mut *mut c_void) {
-	panic!("OpenGL Function pointer of glGetNamedBufferPointerv() is NULL");
+	panic!("OpenGL Function pointer of `glGetNamedBufferPointerv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnamedbuffersubdataproc (_: GLuint, _: GLintptr, _: GLsizeiptr, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetNamedBufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glGetNamedBufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglcreateframebuffersproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glCreateFramebuffers() is NULL");
+	panic!("OpenGL Function pointer of `glCreateFramebuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedframebufferrenderbufferproc (_: GLuint, _: GLenum, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glNamedFramebufferRenderbuffer() is NULL");
+	panic!("OpenGL Function pointer of `glNamedFramebufferRenderbuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedframebufferparameteriproc (_: GLuint, _: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glNamedFramebufferParameteri() is NULL");
+	panic!("OpenGL Function pointer of `glNamedFramebufferParameteri()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedframebuffertextureproc (_: GLuint, _: GLenum, _: GLuint, _: GLint) {
-	panic!("OpenGL Function pointer of glNamedFramebufferTexture() is NULL");
+	panic!("OpenGL Function pointer of `glNamedFramebufferTexture()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedframebuffertexturelayerproc (_: GLuint, _: GLenum, _: GLuint, _: GLint, _: GLint) {
-	panic!("OpenGL Function pointer of glNamedFramebufferTextureLayer() is NULL");
+	panic!("OpenGL Function pointer of `glNamedFramebufferTextureLayer()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedframebufferdrawbufferproc (_: GLuint, _: GLenum) {
-	panic!("OpenGL Function pointer of glNamedFramebufferDrawBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glNamedFramebufferDrawBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedframebufferdrawbuffersproc (_: GLuint, _: GLsizei, _: *const GLenum) {
-	panic!("OpenGL Function pointer of glNamedFramebufferDrawBuffers() is NULL");
+	panic!("OpenGL Function pointer of `glNamedFramebufferDrawBuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedframebufferreadbufferproc (_: GLuint, _: GLenum) {
-	panic!("OpenGL Function pointer of glNamedFramebufferReadBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glNamedFramebufferReadBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglinvalidatenamedframebufferdataproc (_: GLuint, _: GLsizei, _: *const GLenum) {
-	panic!("OpenGL Function pointer of glInvalidateNamedFramebufferData() is NULL");
+	panic!("OpenGL Function pointer of `glInvalidateNamedFramebufferData()` is NULL");
 }
 extern "system" fn dummy_pfnglinvalidatenamedframebuffersubdataproc (_: GLuint, _: GLsizei, _: *const GLenum, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glInvalidateNamedFramebufferSubData() is NULL");
+	panic!("OpenGL Function pointer of `glInvalidateNamedFramebufferSubData()` is NULL");
 }
 extern "system" fn dummy_pfnglclearnamedframebufferivproc (_: GLuint, _: GLenum, _: GLint, _: *const GLint) {
-	panic!("OpenGL Function pointer of glClearNamedFramebufferiv() is NULL");
+	panic!("OpenGL Function pointer of `glClearNamedFramebufferiv()` is NULL");
 }
 extern "system" fn dummy_pfnglclearnamedframebufferuivproc (_: GLuint, _: GLenum, _: GLint, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glClearNamedFramebufferuiv() is NULL");
+	panic!("OpenGL Function pointer of `glClearNamedFramebufferuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglclearnamedframebufferfvproc (_: GLuint, _: GLenum, _: GLint, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glClearNamedFramebufferfv() is NULL");
+	panic!("OpenGL Function pointer of `glClearNamedFramebufferfv()` is NULL");
 }
 extern "system" fn dummy_pfnglclearnamedframebufferfiproc (_: GLuint, _: GLenum, _: GLint, _: GLfloat, _: GLint) {
-	panic!("OpenGL Function pointer of glClearNamedFramebufferfi() is NULL");
+	panic!("OpenGL Function pointer of `glClearNamedFramebufferfi()` is NULL");
 }
 extern "system" fn dummy_pfnglblitnamedframebufferproc (_: GLuint, _: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLbitfield, _: GLenum) {
-	panic!("OpenGL Function pointer of glBlitNamedFramebuffer() is NULL");
+	panic!("OpenGL Function pointer of `glBlitNamedFramebuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglchecknamedframebufferstatusproc (_: GLuint, _: GLenum) -> GLenum {
-	panic!("OpenGL Function pointer of glCheckNamedFramebufferStatus() is NULL");
+	panic!("OpenGL Function pointer of `glCheckNamedFramebufferStatus()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnamedframebufferparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetNamedFramebufferParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetNamedFramebufferParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnamedframebufferattachmentparameterivproc (_: GLuint, _: GLenum, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetNamedFramebufferAttachmentParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetNamedFramebufferAttachmentParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglcreaterenderbuffersproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glCreateRenderbuffers() is NULL");
+	panic!("OpenGL Function pointer of `glCreateRenderbuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedrenderbufferstorageproc (_: GLuint, _: GLenum, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glNamedRenderbufferStorage() is NULL");
+	panic!("OpenGL Function pointer of `glNamedRenderbufferStorage()` is NULL");
 }
 extern "system" fn dummy_pfnglnamedrenderbufferstoragemultisampleproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glNamedRenderbufferStorageMultisample() is NULL");
+	panic!("OpenGL Function pointer of `glNamedRenderbufferStorageMultisample()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnamedrenderbufferparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetNamedRenderbufferParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetNamedRenderbufferParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglcreatetexturesproc (_: GLenum, _: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glCreateTextures() is NULL");
+	panic!("OpenGL Function pointer of `glCreateTextures()` is NULL");
 }
 extern "system" fn dummy_pfngltexturebufferproc (_: GLuint, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glTextureBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glTextureBuffer()` is NULL");
 }
 extern "system" fn dummy_pfngltexturebufferrangeproc (_: GLuint, _: GLenum, _: GLuint, _: GLintptr, _: GLsizeiptr) {
-	panic!("OpenGL Function pointer of glTextureBufferRange() is NULL");
+	panic!("OpenGL Function pointer of `glTextureBufferRange()` is NULL");
 }
 extern "system" fn dummy_pfngltexturestorage1dproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei) {
-	panic!("OpenGL Function pointer of glTextureStorage1D() is NULL");
+	panic!("OpenGL Function pointer of `glTextureStorage1D()` is NULL");
 }
 extern "system" fn dummy_pfngltexturestorage2dproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glTextureStorage2D() is NULL");
+	panic!("OpenGL Function pointer of `glTextureStorage2D()` is NULL");
 }
 extern "system" fn dummy_pfngltexturestorage3dproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glTextureStorage3D() is NULL");
+	panic!("OpenGL Function pointer of `glTextureStorage3D()` is NULL");
 }
 extern "system" fn dummy_pfngltexturestorage2dmultisampleproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLboolean) {
-	panic!("OpenGL Function pointer of glTextureStorage2DMultisample() is NULL");
+	panic!("OpenGL Function pointer of `glTextureStorage2DMultisample()` is NULL");
 }
 extern "system" fn dummy_pfngltexturestorage3dmultisampleproc (_: GLuint, _: GLsizei, _: GLenum, _: GLsizei, _: GLsizei, _: GLsizei, _: GLboolean) {
-	panic!("OpenGL Function pointer of glTextureStorage3DMultisample() is NULL");
+	panic!("OpenGL Function pointer of `glTextureStorage3DMultisample()` is NULL");
 }
 extern "system" fn dummy_pfngltexturesubimage1dproc (_: GLuint, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glTextureSubImage1D() is NULL");
+	panic!("OpenGL Function pointer of `glTextureSubImage1D()` is NULL");
 }
 extern "system" fn dummy_pfngltexturesubimage2dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glTextureSubImage2D() is NULL");
+	panic!("OpenGL Function pointer of `glTextureSubImage2D()` is NULL");
 }
 extern "system" fn dummy_pfngltexturesubimage3dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: *const c_void) {
-	panic!("OpenGL Function pointer of glTextureSubImage3D() is NULL");
+	panic!("OpenGL Function pointer of `glTextureSubImage3D()` is NULL");
 }
 extern "system" fn dummy_pfnglcompressedtexturesubimage1dproc (_: GLuint, _: GLint, _: GLint, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glCompressedTextureSubImage1D() is NULL");
+	panic!("OpenGL Function pointer of `glCompressedTextureSubImage1D()` is NULL");
 }
 extern "system" fn dummy_pfnglcompressedtexturesubimage2dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glCompressedTextureSubImage2D() is NULL");
+	panic!("OpenGL Function pointer of `glCompressedTextureSubImage2D()` is NULL");
 }
 extern "system" fn dummy_pfnglcompressedtexturesubimage3dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLsizei, _: *const c_void) {
-	panic!("OpenGL Function pointer of glCompressedTextureSubImage3D() is NULL");
+	panic!("OpenGL Function pointer of `glCompressedTextureSubImage3D()` is NULL");
 }
 extern "system" fn dummy_pfnglcopytexturesubimage1dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei) {
-	panic!("OpenGL Function pointer of glCopyTextureSubImage1D() is NULL");
+	panic!("OpenGL Function pointer of `glCopyTextureSubImage1D()` is NULL");
 }
 extern "system" fn dummy_pfnglcopytexturesubimage2dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glCopyTextureSubImage2D() is NULL");
+	panic!("OpenGL Function pointer of `glCopyTextureSubImage2D()` is NULL");
 }
 extern "system" fn dummy_pfnglcopytexturesubimage3dproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glCopyTextureSubImage3D() is NULL");
+	panic!("OpenGL Function pointer of `glCopyTextureSubImage3D()` is NULL");
 }
 extern "system" fn dummy_pfngltextureparameterfproc (_: GLuint, _: GLenum, _: GLfloat) {
-	panic!("OpenGL Function pointer of glTextureParameterf() is NULL");
+	panic!("OpenGL Function pointer of `glTextureParameterf()` is NULL");
 }
 extern "system" fn dummy_pfngltextureparameterfvproc (_: GLuint, _: GLenum, _: *const GLfloat) {
-	panic!("OpenGL Function pointer of glTextureParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glTextureParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfngltextureparameteriproc (_: GLuint, _: GLenum, _: GLint) {
-	panic!("OpenGL Function pointer of glTextureParameteri() is NULL");
+	panic!("OpenGL Function pointer of `glTextureParameteri()` is NULL");
 }
 extern "system" fn dummy_pfngltextureparameteriivproc (_: GLuint, _: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glTextureParameterIiv() is NULL");
+	panic!("OpenGL Function pointer of `glTextureParameterIiv()` is NULL");
 }
 extern "system" fn dummy_pfngltextureparameteriuivproc (_: GLuint, _: GLenum, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glTextureParameterIuiv() is NULL");
+	panic!("OpenGL Function pointer of `glTextureParameterIuiv()` is NULL");
 }
 extern "system" fn dummy_pfngltextureparameterivproc (_: GLuint, _: GLenum, _: *const GLint) {
-	panic!("OpenGL Function pointer of glTextureParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glTextureParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglgeneratetexturemipmapproc (_: GLuint) {
-	panic!("OpenGL Function pointer of glGenerateTextureMipmap() is NULL");
+	panic!("OpenGL Function pointer of `glGenerateTextureMipmap()` is NULL");
 }
 extern "system" fn dummy_pfnglbindtextureunitproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glBindTextureUnit() is NULL");
+	panic!("OpenGL Function pointer of `glBindTextureUnit()` is NULL");
 }
 extern "system" fn dummy_pfnglgettextureimageproc (_: GLuint, _: GLint, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetTextureImage() is NULL");
+	panic!("OpenGL Function pointer of `glGetTextureImage()` is NULL");
 }
 extern "system" fn dummy_pfnglgetcompressedtextureimageproc (_: GLuint, _: GLint, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetCompressedTextureImage() is NULL");
+	panic!("OpenGL Function pointer of `glGetCompressedTextureImage()` is NULL");
 }
 extern "system" fn dummy_pfnglgettexturelevelparameterfvproc (_: GLuint, _: GLint, _: GLenum, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetTextureLevelParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTextureLevelParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettexturelevelparameterivproc (_: GLuint, _: GLint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetTextureLevelParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTextureLevelParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettextureparameterfvproc (_: GLuint, _: GLenum, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetTextureParameterfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTextureParameterfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettextureparameteriivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetTextureParameterIiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTextureParameterIiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettextureparameteriuivproc (_: GLuint, _: GLenum, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetTextureParameterIuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTextureParameterIuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgettextureparameterivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetTextureParameteriv() is NULL");
+	panic!("OpenGL Function pointer of `glGetTextureParameteriv()` is NULL");
 }
 extern "system" fn dummy_pfnglcreatevertexarraysproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glCreateVertexArrays() is NULL");
+	panic!("OpenGL Function pointer of `glCreateVertexArrays()` is NULL");
 }
 extern "system" fn dummy_pfngldisablevertexarrayattribproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glDisableVertexArrayAttrib() is NULL");
+	panic!("OpenGL Function pointer of `glDisableVertexArrayAttrib()` is NULL");
 }
 extern "system" fn dummy_pfnglenablevertexarrayattribproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glEnableVertexArrayAttrib() is NULL");
+	panic!("OpenGL Function pointer of `glEnableVertexArrayAttrib()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexarrayelementbufferproc (_: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexArrayElementBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glVertexArrayElementBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexarrayvertexbufferproc (_: GLuint, _: GLuint, _: GLuint, _: GLintptr, _: GLsizei) {
-	panic!("OpenGL Function pointer of glVertexArrayVertexBuffer() is NULL");
+	panic!("OpenGL Function pointer of `glVertexArrayVertexBuffer()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexarrayvertexbuffersproc (_: GLuint, _: GLuint, _: GLsizei, _: *const GLuint, _: *const GLintptr, _: *const GLsizei) {
-	panic!("OpenGL Function pointer of glVertexArrayVertexBuffers() is NULL");
+	panic!("OpenGL Function pointer of `glVertexArrayVertexBuffers()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexarrayattribbindingproc (_: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexArrayAttribBinding() is NULL");
+	panic!("OpenGL Function pointer of `glVertexArrayAttribBinding()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexarrayattribformatproc (_: GLuint, _: GLuint, _: GLint, _: GLenum, _: GLboolean, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexArrayAttribFormat() is NULL");
+	panic!("OpenGL Function pointer of `glVertexArrayAttribFormat()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexarrayattribiformatproc (_: GLuint, _: GLuint, _: GLint, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexArrayAttribIFormat() is NULL");
+	panic!("OpenGL Function pointer of `glVertexArrayAttribIFormat()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexarrayattriblformatproc (_: GLuint, _: GLuint, _: GLint, _: GLenum, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexArrayAttribLFormat() is NULL");
+	panic!("OpenGL Function pointer of `glVertexArrayAttribLFormat()` is NULL");
 }
 extern "system" fn dummy_pfnglvertexarraybindingdivisorproc (_: GLuint, _: GLuint, _: GLuint) {
-	panic!("OpenGL Function pointer of glVertexArrayBindingDivisor() is NULL");
+	panic!("OpenGL Function pointer of `glVertexArrayBindingDivisor()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexarrayivproc (_: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetVertexArrayiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexArrayiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexarrayindexedivproc (_: GLuint, _: GLuint, _: GLenum, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetVertexArrayIndexediv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexArrayIndexediv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetvertexarrayindexed64ivproc (_: GLuint, _: GLuint, _: GLenum, _: *mut GLint64) {
-	panic!("OpenGL Function pointer of glGetVertexArrayIndexed64iv() is NULL");
+	panic!("OpenGL Function pointer of `glGetVertexArrayIndexed64iv()` is NULL");
 }
 extern "system" fn dummy_pfnglcreatesamplersproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glCreateSamplers() is NULL");
+	panic!("OpenGL Function pointer of `glCreateSamplers()` is NULL");
 }
 extern "system" fn dummy_pfnglcreateprogrampipelinesproc (_: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glCreateProgramPipelines() is NULL");
+	panic!("OpenGL Function pointer of `glCreateProgramPipelines()` is NULL");
 }
 extern "system" fn dummy_pfnglcreatequeriesproc (_: GLenum, _: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glCreateQueries() is NULL");
+	panic!("OpenGL Function pointer of `glCreateQueries()` is NULL");
 }
 extern "system" fn dummy_pfnglgetquerybufferobjecti64vproc (_: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
-	panic!("OpenGL Function pointer of glGetQueryBufferObjecti64v() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryBufferObjecti64v()` is NULL");
 }
 extern "system" fn dummy_pfnglgetquerybufferobjectivproc (_: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
-	panic!("OpenGL Function pointer of glGetQueryBufferObjectiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryBufferObjectiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetquerybufferobjectui64vproc (_: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
-	panic!("OpenGL Function pointer of glGetQueryBufferObjectui64v() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryBufferObjectui64v()` is NULL");
 }
 extern "system" fn dummy_pfnglgetquerybufferobjectuivproc (_: GLuint, _: GLuint, _: GLenum, _: GLintptr) {
-	panic!("OpenGL Function pointer of glGetQueryBufferObjectuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetQueryBufferObjectuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglmemorybarrierbyregionproc (_: GLbitfield) {
-	panic!("OpenGL Function pointer of glMemoryBarrierByRegion() is NULL");
+	panic!("OpenGL Function pointer of `glMemoryBarrierByRegion()` is NULL");
 }
 extern "system" fn dummy_pfnglgettexturesubimageproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetTextureSubImage() is NULL");
+	panic!("OpenGL Function pointer of `glGetTextureSubImage()` is NULL");
 }
 extern "system" fn dummy_pfnglgetcompressedtexturesubimageproc (_: GLuint, _: GLint, _: GLint, _: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLsizei, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetCompressedTextureSubImage() is NULL");
+	panic!("OpenGL Function pointer of `glGetCompressedTextureSubImage()` is NULL");
 }
 extern "system" fn dummy_pfnglgetgraphicsresetstatusproc () -> GLenum {
-	panic!("OpenGL Function pointer of glGetGraphicsResetStatus() is NULL");
+	panic!("OpenGL Function pointer of `glGetGraphicsResetStatus()` is NULL");
 }
 extern "system" fn dummy_pfnglgetncompressedteximageproc (_: GLenum, _: GLint, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetnCompressedTexImage() is NULL");
+	panic!("OpenGL Function pointer of `glGetnCompressedTexImage()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnteximageproc (_: GLenum, _: GLint, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetnTexImage() is NULL");
+	panic!("OpenGL Function pointer of `glGetnTexImage()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnuniformdvproc (_: GLuint, _: GLint, _: GLsizei, _: *mut GLdouble) {
-	panic!("OpenGL Function pointer of glGetnUniformdv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnUniformdv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnuniformfvproc (_: GLuint, _: GLint, _: GLsizei, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetnUniformfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnUniformfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnuniformivproc (_: GLuint, _: GLint, _: GLsizei, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetnUniformiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnUniformiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnuniformuivproc (_: GLuint, _: GLint, _: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetnUniformuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnUniformuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglreadnpixelsproc (_: GLint, _: GLint, _: GLsizei, _: GLsizei, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glReadnPixels() is NULL");
+	panic!("OpenGL Function pointer of `glReadnPixels()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnmapdvproc (_: GLenum, _: GLenum, _: GLsizei, _: *mut GLdouble) {
-	panic!("OpenGL Function pointer of glGetnMapdv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnMapdv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnmapfvproc (_: GLenum, _: GLenum, _: GLsizei, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetnMapfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnMapfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnmapivproc (_: GLenum, _: GLenum, _: GLsizei, _: *mut GLint) {
-	panic!("OpenGL Function pointer of glGetnMapiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnMapiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnpixelmapfvproc (_: GLenum, _: GLsizei, _: *mut GLfloat) {
-	panic!("OpenGL Function pointer of glGetnPixelMapfv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnPixelMapfv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnpixelmapuivproc (_: GLenum, _: GLsizei, _: *mut GLuint) {
-	panic!("OpenGL Function pointer of glGetnPixelMapuiv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnPixelMapuiv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnpixelmapusvproc (_: GLenum, _: GLsizei, _: *mut GLushort) {
-	panic!("OpenGL Function pointer of glGetnPixelMapusv() is NULL");
+	panic!("OpenGL Function pointer of `glGetnPixelMapusv()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnpolygonstippleproc (_: GLsizei, _: *mut GLubyte) {
-	panic!("OpenGL Function pointer of glGetnPolygonStipple() is NULL");
+	panic!("OpenGL Function pointer of `glGetnPolygonStipple()` is NULL");
 }
 extern "system" fn dummy_pfnglgetncolortableproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetnColorTable() is NULL");
+	panic!("OpenGL Function pointer of `glGetnColorTable()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnconvolutionfilterproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetnConvolutionFilter() is NULL");
+	panic!("OpenGL Function pointer of `glGetnConvolutionFilter()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnseparablefilterproc (_: GLenum, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void, _: GLsizei, _: *mut c_void, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetnSeparableFilter() is NULL");
+	panic!("OpenGL Function pointer of `glGetnSeparableFilter()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnhistogramproc (_: GLenum, _: GLboolean, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetnHistogram() is NULL");
+	panic!("OpenGL Function pointer of `glGetnHistogram()` is NULL");
 }
 extern "system" fn dummy_pfnglgetnminmaxproc (_: GLenum, _: GLboolean, _: GLenum, _: GLenum, _: GLsizei, _: *mut c_void) {
-	panic!("OpenGL Function pointer of glGetnMinmax() is NULL");
+	panic!("OpenGL Function pointer of `glGetnMinmax()` is NULL");
 }
 extern "system" fn dummy_pfngltexturebarrierproc () {
-	panic!("OpenGL Function pointer of glTextureBarrier() is NULL");
+	panic!("OpenGL Function pointer of `glTextureBarrier()` is NULL");
 }
-const CONTEXT_LOST: GLenum = 0x0507;
-const NEGATIVE_ONE_TO_ONE: GLenum = 0x935E;
-const ZERO_TO_ONE: GLenum = 0x935F;
-const CLIP_ORIGIN: GLenum = 0x935C;
-const CLIP_DEPTH_MODE: GLenum = 0x935D;
-const QUERY_WAIT_INVERTED: GLenum = 0x8E17;
-const QUERY_NO_WAIT_INVERTED: GLenum = 0x8E18;
-const QUERY_BY_REGION_WAIT_INVERTED: GLenum = 0x8E19;
-const QUERY_BY_REGION_NO_WAIT_INVERTED: GLenum = 0x8E1A;
-const MAX_CULL_DISTANCES: GLenum = 0x82F9;
-const MAX_COMBINED_CLIP_AND_CULL_DISTANCES: GLenum = 0x82FA;
-const TEXTURE_TARGET: GLenum = 0x1006;
-const QUERY_TARGET: GLenum = 0x82EA;
-const GUILTY_CONTEXT_RESET: GLenum = 0x8253;
-const INNOCENT_CONTEXT_RESET: GLenum = 0x8254;
-const UNKNOWN_CONTEXT_RESET: GLenum = 0x8255;
-const RESET_NOTIFICATION_STRATEGY: GLenum = 0x8256;
-const LOSE_CONTEXT_ON_RESET: GLenum = 0x8252;
-const NO_RESET_NOTIFICATION: GLenum = 0x8261;
-const CONTEXT_FLAG_ROBUST_ACCESS_BIT: GLbitfield = 0x00000004;
-const COLOR_TABLE: GLenum = 0x80D0;
-const POST_CONVOLUTION_COLOR_TABLE: GLenum = 0x80D1;
-const POST_COLOR_MATRIX_COLOR_TABLE: GLenum = 0x80D2;
-const PROXY_COLOR_TABLE: GLenum = 0x80D3;
-const PROXY_POST_CONVOLUTION_COLOR_TABLE: GLenum = 0x80D4;
-const PROXY_POST_COLOR_MATRIX_COLOR_TABLE: GLenum = 0x80D5;
-const CONVOLUTION_1D: GLenum = 0x8010;
-const CONVOLUTION_2D: GLenum = 0x8011;
-const SEPARABLE_2D: GLenum = 0x8012;
-const HISTOGRAM: GLenum = 0x8024;
-const PROXY_HISTOGRAM: GLenum = 0x8025;
-const MINMAX: GLenum = 0x802E;
-const CONTEXT_RELEASE_BEHAVIOR: GLenum = 0x82FB;
-const CONTEXT_RELEASE_BEHAVIOR_FLUSH: GLenum = 0x82FC;
+pub const GL_CONTEXT_LOST: GLenum = 0x0507;
+pub const GL_NEGATIVE_ONE_TO_ONE: GLenum = 0x935E;
+pub const GL_ZERO_TO_ONE: GLenum = 0x935F;
+pub const GL_CLIP_ORIGIN: GLenum = 0x935C;
+pub const GL_CLIP_DEPTH_MODE: GLenum = 0x935D;
+pub const GL_QUERY_WAIT_INVERTED: GLenum = 0x8E17;
+pub const GL_QUERY_NO_WAIT_INVERTED: GLenum = 0x8E18;
+pub const GL_QUERY_BY_REGION_WAIT_INVERTED: GLenum = 0x8E19;
+pub const GL_QUERY_BY_REGION_NO_WAIT_INVERTED: GLenum = 0x8E1A;
+pub const GL_MAX_CULL_DISTANCES: GLenum = 0x82F9;
+pub const GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES: GLenum = 0x82FA;
+pub const GL_TEXTURE_TARGET: GLenum = 0x1006;
+pub const GL_QUERY_TARGET: GLenum = 0x82EA;
+pub const GL_GUILTY_CONTEXT_RESET: GLenum = 0x8253;
+pub const GL_INNOCENT_CONTEXT_RESET: GLenum = 0x8254;
+pub const GL_UNKNOWN_CONTEXT_RESET: GLenum = 0x8255;
+pub const GL_RESET_NOTIFICATION_STRATEGY: GLenum = 0x8256;
+pub const GL_LOSE_CONTEXT_ON_RESET: GLenum = 0x8252;
+pub const GL_NO_RESET_NOTIFICATION: GLenum = 0x8261;
+pub const GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT: GLbitfield = 0x00000004;
+pub const GL_COLOR_TABLE: GLenum = 0x80D0;
+pub const GL_POST_CONVOLUTION_COLOR_TABLE: GLenum = 0x80D1;
+pub const GL_POST_COLOR_MATRIX_COLOR_TABLE: GLenum = 0x80D2;
+pub const GL_PROXY_COLOR_TABLE: GLenum = 0x80D3;
+pub const GL_PROXY_POST_CONVOLUTION_COLOR_TABLE: GLenum = 0x80D4;
+pub const GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE: GLenum = 0x80D5;
+pub const GL_CONVOLUTION_1D: GLenum = 0x8010;
+pub const GL_CONVOLUTION_2D: GLenum = 0x8011;
+pub const GL_SEPARABLE_2D: GLenum = 0x8012;
+pub const GL_HISTOGRAM: GLenum = 0x8024;
+pub const GL_PROXY_HISTOGRAM: GLenum = 0x8025;
+pub const GL_MINMAX: GLenum = 0x802E;
+pub const GL_CONTEXT_RELEASE_BEHAVIOR: GLenum = 0x82FB;
+pub const GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH: GLenum = 0x82FC;
 
 pub trait GL_4_5 {
 	fn glClipControl(&self, origin: GLenum, depth: GLenum);
@@ -10580,7 +10580,7 @@ pub trait GL_4_5 {
 	fn glTextureBarrier(&self);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version45 {
 	available: bool,
 	clipcontrol: PFNGLCLIPCONTROLPROC,
@@ -11199,7 +11199,7 @@ impl GL_4_5 for Version45 {
 }
 
 impl Version45 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 40500 {
@@ -11207,128 +11207,128 @@ impl Version45 {
 		}
 		Self {
 			available: true,
-			clipcontrol: unsafe{transmute(get_proc_address("glClipControl"))},
-			createtransformfeedbacks: unsafe{transmute(get_proc_address("glCreateTransformFeedbacks"))},
-			transformfeedbackbufferbase: unsafe{transmute(get_proc_address("glTransformFeedbackBufferBase"))},
-			transformfeedbackbufferrange: unsafe{transmute(get_proc_address("glTransformFeedbackBufferRange"))},
-			gettransformfeedbackiv: unsafe{transmute(get_proc_address("glGetTransformFeedbackiv"))},
-			gettransformfeedbacki_v: unsafe{transmute(get_proc_address("glGetTransformFeedbacki_v"))},
-			gettransformfeedbacki64_v: unsafe{transmute(get_proc_address("glGetTransformFeedbacki64_v"))},
-			createbuffers: unsafe{transmute(get_proc_address("glCreateBuffers"))},
-			namedbufferstorage: unsafe{transmute(get_proc_address("glNamedBufferStorage"))},
-			namedbufferdata: unsafe{transmute(get_proc_address("glNamedBufferData"))},
-			namedbuffersubdata: unsafe{transmute(get_proc_address("glNamedBufferSubData"))},
-			copynamedbuffersubdata: unsafe{transmute(get_proc_address("glCopyNamedBufferSubData"))},
-			clearnamedbufferdata: unsafe{transmute(get_proc_address("glClearNamedBufferData"))},
-			clearnamedbuffersubdata: unsafe{transmute(get_proc_address("glClearNamedBufferSubData"))},
-			mapnamedbuffer: unsafe{transmute(get_proc_address("glMapNamedBuffer"))},
-			mapnamedbufferrange: unsafe{transmute(get_proc_address("glMapNamedBufferRange"))},
-			unmapnamedbuffer: unsafe{transmute(get_proc_address("glUnmapNamedBuffer"))},
-			flushmappednamedbufferrange: unsafe{transmute(get_proc_address("glFlushMappedNamedBufferRange"))},
-			getnamedbufferparameteriv: unsafe{transmute(get_proc_address("glGetNamedBufferParameteriv"))},
-			getnamedbufferparameteri64v: unsafe{transmute(get_proc_address("glGetNamedBufferParameteri64v"))},
-			getnamedbufferpointerv: unsafe{transmute(get_proc_address("glGetNamedBufferPointerv"))},
-			getnamedbuffersubdata: unsafe{transmute(get_proc_address("glGetNamedBufferSubData"))},
-			createframebuffers: unsafe{transmute(get_proc_address("glCreateFramebuffers"))},
-			namedframebufferrenderbuffer: unsafe{transmute(get_proc_address("glNamedFramebufferRenderbuffer"))},
-			namedframebufferparameteri: unsafe{transmute(get_proc_address("glNamedFramebufferParameteri"))},
-			namedframebuffertexture: unsafe{transmute(get_proc_address("glNamedFramebufferTexture"))},
-			namedframebuffertexturelayer: unsafe{transmute(get_proc_address("glNamedFramebufferTextureLayer"))},
-			namedframebufferdrawbuffer: unsafe{transmute(get_proc_address("glNamedFramebufferDrawBuffer"))},
-			namedframebufferdrawbuffers: unsafe{transmute(get_proc_address("glNamedFramebufferDrawBuffers"))},
-			namedframebufferreadbuffer: unsafe{transmute(get_proc_address("glNamedFramebufferReadBuffer"))},
-			invalidatenamedframebufferdata: unsafe{transmute(get_proc_address("glInvalidateNamedFramebufferData"))},
-			invalidatenamedframebuffersubdata: unsafe{transmute(get_proc_address("glInvalidateNamedFramebufferSubData"))},
-			clearnamedframebufferiv: unsafe{transmute(get_proc_address("glClearNamedFramebufferiv"))},
-			clearnamedframebufferuiv: unsafe{transmute(get_proc_address("glClearNamedFramebufferuiv"))},
-			clearnamedframebufferfv: unsafe{transmute(get_proc_address("glClearNamedFramebufferfv"))},
-			clearnamedframebufferfi: unsafe{transmute(get_proc_address("glClearNamedFramebufferfi"))},
-			blitnamedframebuffer: unsafe{transmute(get_proc_address("glBlitNamedFramebuffer"))},
-			checknamedframebufferstatus: unsafe{transmute(get_proc_address("glCheckNamedFramebufferStatus"))},
-			getnamedframebufferparameteriv: unsafe{transmute(get_proc_address("glGetNamedFramebufferParameteriv"))},
-			getnamedframebufferattachmentparameteriv: unsafe{transmute(get_proc_address("glGetNamedFramebufferAttachmentParameteriv"))},
-			createrenderbuffers: unsafe{transmute(get_proc_address("glCreateRenderbuffers"))},
-			namedrenderbufferstorage: unsafe{transmute(get_proc_address("glNamedRenderbufferStorage"))},
-			namedrenderbufferstoragemultisample: unsafe{transmute(get_proc_address("glNamedRenderbufferStorageMultisample"))},
-			getnamedrenderbufferparameteriv: unsafe{transmute(get_proc_address("glGetNamedRenderbufferParameteriv"))},
-			createtextures: unsafe{transmute(get_proc_address("glCreateTextures"))},
-			texturebuffer: unsafe{transmute(get_proc_address("glTextureBuffer"))},
-			texturebufferrange: unsafe{transmute(get_proc_address("glTextureBufferRange"))},
-			texturestorage1d: unsafe{transmute(get_proc_address("glTextureStorage1D"))},
-			texturestorage2d: unsafe{transmute(get_proc_address("glTextureStorage2D"))},
-			texturestorage3d: unsafe{transmute(get_proc_address("glTextureStorage3D"))},
-			texturestorage2dmultisample: unsafe{transmute(get_proc_address("glTextureStorage2DMultisample"))},
-			texturestorage3dmultisample: unsafe{transmute(get_proc_address("glTextureStorage3DMultisample"))},
-			texturesubimage1d: unsafe{transmute(get_proc_address("glTextureSubImage1D"))},
-			texturesubimage2d: unsafe{transmute(get_proc_address("glTextureSubImage2D"))},
-			texturesubimage3d: unsafe{transmute(get_proc_address("glTextureSubImage3D"))},
-			compressedtexturesubimage1d: unsafe{transmute(get_proc_address("glCompressedTextureSubImage1D"))},
-			compressedtexturesubimage2d: unsafe{transmute(get_proc_address("glCompressedTextureSubImage2D"))},
-			compressedtexturesubimage3d: unsafe{transmute(get_proc_address("glCompressedTextureSubImage3D"))},
-			copytexturesubimage1d: unsafe{transmute(get_proc_address("glCopyTextureSubImage1D"))},
-			copytexturesubimage2d: unsafe{transmute(get_proc_address("glCopyTextureSubImage2D"))},
-			copytexturesubimage3d: unsafe{transmute(get_proc_address("glCopyTextureSubImage3D"))},
-			textureparameterf: unsafe{transmute(get_proc_address("glTextureParameterf"))},
-			textureparameterfv: unsafe{transmute(get_proc_address("glTextureParameterfv"))},
-			textureparameteri: unsafe{transmute(get_proc_address("glTextureParameteri"))},
-			textureparameteriiv: unsafe{transmute(get_proc_address("glTextureParameterIiv"))},
-			textureparameteriuiv: unsafe{transmute(get_proc_address("glTextureParameterIuiv"))},
-			textureparameteriv: unsafe{transmute(get_proc_address("glTextureParameteriv"))},
-			generatetexturemipmap: unsafe{transmute(get_proc_address("glGenerateTextureMipmap"))},
-			bindtextureunit: unsafe{transmute(get_proc_address("glBindTextureUnit"))},
-			gettextureimage: unsafe{transmute(get_proc_address("glGetTextureImage"))},
-			getcompressedtextureimage: unsafe{transmute(get_proc_address("glGetCompressedTextureImage"))},
-			gettexturelevelparameterfv: unsafe{transmute(get_proc_address("glGetTextureLevelParameterfv"))},
-			gettexturelevelparameteriv: unsafe{transmute(get_proc_address("glGetTextureLevelParameteriv"))},
-			gettextureparameterfv: unsafe{transmute(get_proc_address("glGetTextureParameterfv"))},
-			gettextureparameteriiv: unsafe{transmute(get_proc_address("glGetTextureParameterIiv"))},
-			gettextureparameteriuiv: unsafe{transmute(get_proc_address("glGetTextureParameterIuiv"))},
-			gettextureparameteriv: unsafe{transmute(get_proc_address("glGetTextureParameteriv"))},
-			createvertexarrays: unsafe{transmute(get_proc_address("glCreateVertexArrays"))},
-			disablevertexarrayattrib: unsafe{transmute(get_proc_address("glDisableVertexArrayAttrib"))},
-			enablevertexarrayattrib: unsafe{transmute(get_proc_address("glEnableVertexArrayAttrib"))},
-			vertexarrayelementbuffer: unsafe{transmute(get_proc_address("glVertexArrayElementBuffer"))},
-			vertexarrayvertexbuffer: unsafe{transmute(get_proc_address("glVertexArrayVertexBuffer"))},
-			vertexarrayvertexbuffers: unsafe{transmute(get_proc_address("glVertexArrayVertexBuffers"))},
-			vertexarrayattribbinding: unsafe{transmute(get_proc_address("glVertexArrayAttribBinding"))},
-			vertexarrayattribformat: unsafe{transmute(get_proc_address("glVertexArrayAttribFormat"))},
-			vertexarrayattribiformat: unsafe{transmute(get_proc_address("glVertexArrayAttribIFormat"))},
-			vertexarrayattriblformat: unsafe{transmute(get_proc_address("glVertexArrayAttribLFormat"))},
-			vertexarraybindingdivisor: unsafe{transmute(get_proc_address("glVertexArrayBindingDivisor"))},
-			getvertexarrayiv: unsafe{transmute(get_proc_address("glGetVertexArrayiv"))},
-			getvertexarrayindexediv: unsafe{transmute(get_proc_address("glGetVertexArrayIndexediv"))},
-			getvertexarrayindexed64iv: unsafe{transmute(get_proc_address("glGetVertexArrayIndexed64iv"))},
-			createsamplers: unsafe{transmute(get_proc_address("glCreateSamplers"))},
-			createprogrampipelines: unsafe{transmute(get_proc_address("glCreateProgramPipelines"))},
-			createqueries: unsafe{transmute(get_proc_address("glCreateQueries"))},
-			getquerybufferobjecti64v: unsafe{transmute(get_proc_address("glGetQueryBufferObjecti64v"))},
-			getquerybufferobjectiv: unsafe{transmute(get_proc_address("glGetQueryBufferObjectiv"))},
-			getquerybufferobjectui64v: unsafe{transmute(get_proc_address("glGetQueryBufferObjectui64v"))},
-			getquerybufferobjectuiv: unsafe{transmute(get_proc_address("glGetQueryBufferObjectuiv"))},
-			memorybarrierbyregion: unsafe{transmute(get_proc_address("glMemoryBarrierByRegion"))},
-			gettexturesubimage: unsafe{transmute(get_proc_address("glGetTextureSubImage"))},
-			getcompressedtexturesubimage: unsafe{transmute(get_proc_address("glGetCompressedTextureSubImage"))},
-			getgraphicsresetstatus: unsafe{transmute(get_proc_address("glGetGraphicsResetStatus"))},
-			getncompressedteximage: unsafe{transmute(get_proc_address("glGetnCompressedTexImage"))},
-			getnteximage: unsafe{transmute(get_proc_address("glGetnTexImage"))},
-			getnuniformdv: unsafe{transmute(get_proc_address("glGetnUniformdv"))},
-			getnuniformfv: unsafe{transmute(get_proc_address("glGetnUniformfv"))},
-			getnuniformiv: unsafe{transmute(get_proc_address("glGetnUniformiv"))},
-			getnuniformuiv: unsafe{transmute(get_proc_address("glGetnUniformuiv"))},
-			readnpixels: unsafe{transmute(get_proc_address("glReadnPixels"))},
-			getnmapdv: unsafe{transmute(get_proc_address("glGetnMapdv"))},
-			getnmapfv: unsafe{transmute(get_proc_address("glGetnMapfv"))},
-			getnmapiv: unsafe{transmute(get_proc_address("glGetnMapiv"))},
-			getnpixelmapfv: unsafe{transmute(get_proc_address("glGetnPixelMapfv"))},
-			getnpixelmapuiv: unsafe{transmute(get_proc_address("glGetnPixelMapuiv"))},
-			getnpixelmapusv: unsafe{transmute(get_proc_address("glGetnPixelMapusv"))},
-			getnpolygonstipple: unsafe{transmute(get_proc_address("glGetnPolygonStipple"))},
-			getncolortable: unsafe{transmute(get_proc_address("glGetnColorTable"))},
-			getnconvolutionfilter: unsafe{transmute(get_proc_address("glGetnConvolutionFilter"))},
-			getnseparablefilter: unsafe{transmute(get_proc_address("glGetnSeparableFilter"))},
-			getnhistogram: unsafe{transmute(get_proc_address("glGetnHistogram"))},
-			getnminmax: unsafe{transmute(get_proc_address("glGetnMinmax"))},
-			texturebarrier: unsafe{transmute(get_proc_address("glTextureBarrier"))},
+			clipcontrol: {let proc = get_proc_address("glClipControl"); if proc == null() {dummy_pfnglclipcontrolproc} else {unsafe{transmute(proc)}}},
+			createtransformfeedbacks: {let proc = get_proc_address("glCreateTransformFeedbacks"); if proc == null() {dummy_pfnglcreatetransformfeedbacksproc} else {unsafe{transmute(proc)}}},
+			transformfeedbackbufferbase: {let proc = get_proc_address("glTransformFeedbackBufferBase"); if proc == null() {dummy_pfngltransformfeedbackbufferbaseproc} else {unsafe{transmute(proc)}}},
+			transformfeedbackbufferrange: {let proc = get_proc_address("glTransformFeedbackBufferRange"); if proc == null() {dummy_pfngltransformfeedbackbufferrangeproc} else {unsafe{transmute(proc)}}},
+			gettransformfeedbackiv: {let proc = get_proc_address("glGetTransformFeedbackiv"); if proc == null() {dummy_pfnglgettransformfeedbackivproc} else {unsafe{transmute(proc)}}},
+			gettransformfeedbacki_v: {let proc = get_proc_address("glGetTransformFeedbacki_v"); if proc == null() {dummy_pfnglgettransformfeedbacki_vproc} else {unsafe{transmute(proc)}}},
+			gettransformfeedbacki64_v: {let proc = get_proc_address("glGetTransformFeedbacki64_v"); if proc == null() {dummy_pfnglgettransformfeedbacki64_vproc} else {unsafe{transmute(proc)}}},
+			createbuffers: {let proc = get_proc_address("glCreateBuffers"); if proc == null() {dummy_pfnglcreatebuffersproc} else {unsafe{transmute(proc)}}},
+			namedbufferstorage: {let proc = get_proc_address("glNamedBufferStorage"); if proc == null() {dummy_pfnglnamedbufferstorageproc} else {unsafe{transmute(proc)}}},
+			namedbufferdata: {let proc = get_proc_address("glNamedBufferData"); if proc == null() {dummy_pfnglnamedbufferdataproc} else {unsafe{transmute(proc)}}},
+			namedbuffersubdata: {let proc = get_proc_address("glNamedBufferSubData"); if proc == null() {dummy_pfnglnamedbuffersubdataproc} else {unsafe{transmute(proc)}}},
+			copynamedbuffersubdata: {let proc = get_proc_address("glCopyNamedBufferSubData"); if proc == null() {dummy_pfnglcopynamedbuffersubdataproc} else {unsafe{transmute(proc)}}},
+			clearnamedbufferdata: {let proc = get_proc_address("glClearNamedBufferData"); if proc == null() {dummy_pfnglclearnamedbufferdataproc} else {unsafe{transmute(proc)}}},
+			clearnamedbuffersubdata: {let proc = get_proc_address("glClearNamedBufferSubData"); if proc == null() {dummy_pfnglclearnamedbuffersubdataproc} else {unsafe{transmute(proc)}}},
+			mapnamedbuffer: {let proc = get_proc_address("glMapNamedBuffer"); if proc == null() {dummy_pfnglmapnamedbufferproc} else {unsafe{transmute(proc)}}},
+			mapnamedbufferrange: {let proc = get_proc_address("glMapNamedBufferRange"); if proc == null() {dummy_pfnglmapnamedbufferrangeproc} else {unsafe{transmute(proc)}}},
+			unmapnamedbuffer: {let proc = get_proc_address("glUnmapNamedBuffer"); if proc == null() {dummy_pfnglunmapnamedbufferproc} else {unsafe{transmute(proc)}}},
+			flushmappednamedbufferrange: {let proc = get_proc_address("glFlushMappedNamedBufferRange"); if proc == null() {dummy_pfnglflushmappednamedbufferrangeproc} else {unsafe{transmute(proc)}}},
+			getnamedbufferparameteriv: {let proc = get_proc_address("glGetNamedBufferParameteriv"); if proc == null() {dummy_pfnglgetnamedbufferparameterivproc} else {unsafe{transmute(proc)}}},
+			getnamedbufferparameteri64v: {let proc = get_proc_address("glGetNamedBufferParameteri64v"); if proc == null() {dummy_pfnglgetnamedbufferparameteri64vproc} else {unsafe{transmute(proc)}}},
+			getnamedbufferpointerv: {let proc = get_proc_address("glGetNamedBufferPointerv"); if proc == null() {dummy_pfnglgetnamedbufferpointervproc} else {unsafe{transmute(proc)}}},
+			getnamedbuffersubdata: {let proc = get_proc_address("glGetNamedBufferSubData"); if proc == null() {dummy_pfnglgetnamedbuffersubdataproc} else {unsafe{transmute(proc)}}},
+			createframebuffers: {let proc = get_proc_address("glCreateFramebuffers"); if proc == null() {dummy_pfnglcreateframebuffersproc} else {unsafe{transmute(proc)}}},
+			namedframebufferrenderbuffer: {let proc = get_proc_address("glNamedFramebufferRenderbuffer"); if proc == null() {dummy_pfnglnamedframebufferrenderbufferproc} else {unsafe{transmute(proc)}}},
+			namedframebufferparameteri: {let proc = get_proc_address("glNamedFramebufferParameteri"); if proc == null() {dummy_pfnglnamedframebufferparameteriproc} else {unsafe{transmute(proc)}}},
+			namedframebuffertexture: {let proc = get_proc_address("glNamedFramebufferTexture"); if proc == null() {dummy_pfnglnamedframebuffertextureproc} else {unsafe{transmute(proc)}}},
+			namedframebuffertexturelayer: {let proc = get_proc_address("glNamedFramebufferTextureLayer"); if proc == null() {dummy_pfnglnamedframebuffertexturelayerproc} else {unsafe{transmute(proc)}}},
+			namedframebufferdrawbuffer: {let proc = get_proc_address("glNamedFramebufferDrawBuffer"); if proc == null() {dummy_pfnglnamedframebufferdrawbufferproc} else {unsafe{transmute(proc)}}},
+			namedframebufferdrawbuffers: {let proc = get_proc_address("glNamedFramebufferDrawBuffers"); if proc == null() {dummy_pfnglnamedframebufferdrawbuffersproc} else {unsafe{transmute(proc)}}},
+			namedframebufferreadbuffer: {let proc = get_proc_address("glNamedFramebufferReadBuffer"); if proc == null() {dummy_pfnglnamedframebufferreadbufferproc} else {unsafe{transmute(proc)}}},
+			invalidatenamedframebufferdata: {let proc = get_proc_address("glInvalidateNamedFramebufferData"); if proc == null() {dummy_pfnglinvalidatenamedframebufferdataproc} else {unsafe{transmute(proc)}}},
+			invalidatenamedframebuffersubdata: {let proc = get_proc_address("glInvalidateNamedFramebufferSubData"); if proc == null() {dummy_pfnglinvalidatenamedframebuffersubdataproc} else {unsafe{transmute(proc)}}},
+			clearnamedframebufferiv: {let proc = get_proc_address("glClearNamedFramebufferiv"); if proc == null() {dummy_pfnglclearnamedframebufferivproc} else {unsafe{transmute(proc)}}},
+			clearnamedframebufferuiv: {let proc = get_proc_address("glClearNamedFramebufferuiv"); if proc == null() {dummy_pfnglclearnamedframebufferuivproc} else {unsafe{transmute(proc)}}},
+			clearnamedframebufferfv: {let proc = get_proc_address("glClearNamedFramebufferfv"); if proc == null() {dummy_pfnglclearnamedframebufferfvproc} else {unsafe{transmute(proc)}}},
+			clearnamedframebufferfi: {let proc = get_proc_address("glClearNamedFramebufferfi"); if proc == null() {dummy_pfnglclearnamedframebufferfiproc} else {unsafe{transmute(proc)}}},
+			blitnamedframebuffer: {let proc = get_proc_address("glBlitNamedFramebuffer"); if proc == null() {dummy_pfnglblitnamedframebufferproc} else {unsafe{transmute(proc)}}},
+			checknamedframebufferstatus: {let proc = get_proc_address("glCheckNamedFramebufferStatus"); if proc == null() {dummy_pfnglchecknamedframebufferstatusproc} else {unsafe{transmute(proc)}}},
+			getnamedframebufferparameteriv: {let proc = get_proc_address("glGetNamedFramebufferParameteriv"); if proc == null() {dummy_pfnglgetnamedframebufferparameterivproc} else {unsafe{transmute(proc)}}},
+			getnamedframebufferattachmentparameteriv: {let proc = get_proc_address("glGetNamedFramebufferAttachmentParameteriv"); if proc == null() {dummy_pfnglgetnamedframebufferattachmentparameterivproc} else {unsafe{transmute(proc)}}},
+			createrenderbuffers: {let proc = get_proc_address("glCreateRenderbuffers"); if proc == null() {dummy_pfnglcreaterenderbuffersproc} else {unsafe{transmute(proc)}}},
+			namedrenderbufferstorage: {let proc = get_proc_address("glNamedRenderbufferStorage"); if proc == null() {dummy_pfnglnamedrenderbufferstorageproc} else {unsafe{transmute(proc)}}},
+			namedrenderbufferstoragemultisample: {let proc = get_proc_address("glNamedRenderbufferStorageMultisample"); if proc == null() {dummy_pfnglnamedrenderbufferstoragemultisampleproc} else {unsafe{transmute(proc)}}},
+			getnamedrenderbufferparameteriv: {let proc = get_proc_address("glGetNamedRenderbufferParameteriv"); if proc == null() {dummy_pfnglgetnamedrenderbufferparameterivproc} else {unsafe{transmute(proc)}}},
+			createtextures: {let proc = get_proc_address("glCreateTextures"); if proc == null() {dummy_pfnglcreatetexturesproc} else {unsafe{transmute(proc)}}},
+			texturebuffer: {let proc = get_proc_address("glTextureBuffer"); if proc == null() {dummy_pfngltexturebufferproc} else {unsafe{transmute(proc)}}},
+			texturebufferrange: {let proc = get_proc_address("glTextureBufferRange"); if proc == null() {dummy_pfngltexturebufferrangeproc} else {unsafe{transmute(proc)}}},
+			texturestorage1d: {let proc = get_proc_address("glTextureStorage1D"); if proc == null() {dummy_pfngltexturestorage1dproc} else {unsafe{transmute(proc)}}},
+			texturestorage2d: {let proc = get_proc_address("glTextureStorage2D"); if proc == null() {dummy_pfngltexturestorage2dproc} else {unsafe{transmute(proc)}}},
+			texturestorage3d: {let proc = get_proc_address("glTextureStorage3D"); if proc == null() {dummy_pfngltexturestorage3dproc} else {unsafe{transmute(proc)}}},
+			texturestorage2dmultisample: {let proc = get_proc_address("glTextureStorage2DMultisample"); if proc == null() {dummy_pfngltexturestorage2dmultisampleproc} else {unsafe{transmute(proc)}}},
+			texturestorage3dmultisample: {let proc = get_proc_address("glTextureStorage3DMultisample"); if proc == null() {dummy_pfngltexturestorage3dmultisampleproc} else {unsafe{transmute(proc)}}},
+			texturesubimage1d: {let proc = get_proc_address("glTextureSubImage1D"); if proc == null() {dummy_pfngltexturesubimage1dproc} else {unsafe{transmute(proc)}}},
+			texturesubimage2d: {let proc = get_proc_address("glTextureSubImage2D"); if proc == null() {dummy_pfngltexturesubimage2dproc} else {unsafe{transmute(proc)}}},
+			texturesubimage3d: {let proc = get_proc_address("glTextureSubImage3D"); if proc == null() {dummy_pfngltexturesubimage3dproc} else {unsafe{transmute(proc)}}},
+			compressedtexturesubimage1d: {let proc = get_proc_address("glCompressedTextureSubImage1D"); if proc == null() {dummy_pfnglcompressedtexturesubimage1dproc} else {unsafe{transmute(proc)}}},
+			compressedtexturesubimage2d: {let proc = get_proc_address("glCompressedTextureSubImage2D"); if proc == null() {dummy_pfnglcompressedtexturesubimage2dproc} else {unsafe{transmute(proc)}}},
+			compressedtexturesubimage3d: {let proc = get_proc_address("glCompressedTextureSubImage3D"); if proc == null() {dummy_pfnglcompressedtexturesubimage3dproc} else {unsafe{transmute(proc)}}},
+			copytexturesubimage1d: {let proc = get_proc_address("glCopyTextureSubImage1D"); if proc == null() {dummy_pfnglcopytexturesubimage1dproc} else {unsafe{transmute(proc)}}},
+			copytexturesubimage2d: {let proc = get_proc_address("glCopyTextureSubImage2D"); if proc == null() {dummy_pfnglcopytexturesubimage2dproc} else {unsafe{transmute(proc)}}},
+			copytexturesubimage3d: {let proc = get_proc_address("glCopyTextureSubImage3D"); if proc == null() {dummy_pfnglcopytexturesubimage3dproc} else {unsafe{transmute(proc)}}},
+			textureparameterf: {let proc = get_proc_address("glTextureParameterf"); if proc == null() {dummy_pfngltextureparameterfproc} else {unsafe{transmute(proc)}}},
+			textureparameterfv: {let proc = get_proc_address("glTextureParameterfv"); if proc == null() {dummy_pfngltextureparameterfvproc} else {unsafe{transmute(proc)}}},
+			textureparameteri: {let proc = get_proc_address("glTextureParameteri"); if proc == null() {dummy_pfngltextureparameteriproc} else {unsafe{transmute(proc)}}},
+			textureparameteriiv: {let proc = get_proc_address("glTextureParameterIiv"); if proc == null() {dummy_pfngltextureparameteriivproc} else {unsafe{transmute(proc)}}},
+			textureparameteriuiv: {let proc = get_proc_address("glTextureParameterIuiv"); if proc == null() {dummy_pfngltextureparameteriuivproc} else {unsafe{transmute(proc)}}},
+			textureparameteriv: {let proc = get_proc_address("glTextureParameteriv"); if proc == null() {dummy_pfngltextureparameterivproc} else {unsafe{transmute(proc)}}},
+			generatetexturemipmap: {let proc = get_proc_address("glGenerateTextureMipmap"); if proc == null() {dummy_pfnglgeneratetexturemipmapproc} else {unsafe{transmute(proc)}}},
+			bindtextureunit: {let proc = get_proc_address("glBindTextureUnit"); if proc == null() {dummy_pfnglbindtextureunitproc} else {unsafe{transmute(proc)}}},
+			gettextureimage: {let proc = get_proc_address("glGetTextureImage"); if proc == null() {dummy_pfnglgettextureimageproc} else {unsafe{transmute(proc)}}},
+			getcompressedtextureimage: {let proc = get_proc_address("glGetCompressedTextureImage"); if proc == null() {dummy_pfnglgetcompressedtextureimageproc} else {unsafe{transmute(proc)}}},
+			gettexturelevelparameterfv: {let proc = get_proc_address("glGetTextureLevelParameterfv"); if proc == null() {dummy_pfnglgettexturelevelparameterfvproc} else {unsafe{transmute(proc)}}},
+			gettexturelevelparameteriv: {let proc = get_proc_address("glGetTextureLevelParameteriv"); if proc == null() {dummy_pfnglgettexturelevelparameterivproc} else {unsafe{transmute(proc)}}},
+			gettextureparameterfv: {let proc = get_proc_address("glGetTextureParameterfv"); if proc == null() {dummy_pfnglgettextureparameterfvproc} else {unsafe{transmute(proc)}}},
+			gettextureparameteriiv: {let proc = get_proc_address("glGetTextureParameterIiv"); if proc == null() {dummy_pfnglgettextureparameteriivproc} else {unsafe{transmute(proc)}}},
+			gettextureparameteriuiv: {let proc = get_proc_address("glGetTextureParameterIuiv"); if proc == null() {dummy_pfnglgettextureparameteriuivproc} else {unsafe{transmute(proc)}}},
+			gettextureparameteriv: {let proc = get_proc_address("glGetTextureParameteriv"); if proc == null() {dummy_pfnglgettextureparameterivproc} else {unsafe{transmute(proc)}}},
+			createvertexarrays: {let proc = get_proc_address("glCreateVertexArrays"); if proc == null() {dummy_pfnglcreatevertexarraysproc} else {unsafe{transmute(proc)}}},
+			disablevertexarrayattrib: {let proc = get_proc_address("glDisableVertexArrayAttrib"); if proc == null() {dummy_pfngldisablevertexarrayattribproc} else {unsafe{transmute(proc)}}},
+			enablevertexarrayattrib: {let proc = get_proc_address("glEnableVertexArrayAttrib"); if proc == null() {dummy_pfnglenablevertexarrayattribproc} else {unsafe{transmute(proc)}}},
+			vertexarrayelementbuffer: {let proc = get_proc_address("glVertexArrayElementBuffer"); if proc == null() {dummy_pfnglvertexarrayelementbufferproc} else {unsafe{transmute(proc)}}},
+			vertexarrayvertexbuffer: {let proc = get_proc_address("glVertexArrayVertexBuffer"); if proc == null() {dummy_pfnglvertexarrayvertexbufferproc} else {unsafe{transmute(proc)}}},
+			vertexarrayvertexbuffers: {let proc = get_proc_address("glVertexArrayVertexBuffers"); if proc == null() {dummy_pfnglvertexarrayvertexbuffersproc} else {unsafe{transmute(proc)}}},
+			vertexarrayattribbinding: {let proc = get_proc_address("glVertexArrayAttribBinding"); if proc == null() {dummy_pfnglvertexarrayattribbindingproc} else {unsafe{transmute(proc)}}},
+			vertexarrayattribformat: {let proc = get_proc_address("glVertexArrayAttribFormat"); if proc == null() {dummy_pfnglvertexarrayattribformatproc} else {unsafe{transmute(proc)}}},
+			vertexarrayattribiformat: {let proc = get_proc_address("glVertexArrayAttribIFormat"); if proc == null() {dummy_pfnglvertexarrayattribiformatproc} else {unsafe{transmute(proc)}}},
+			vertexarrayattriblformat: {let proc = get_proc_address("glVertexArrayAttribLFormat"); if proc == null() {dummy_pfnglvertexarrayattriblformatproc} else {unsafe{transmute(proc)}}},
+			vertexarraybindingdivisor: {let proc = get_proc_address("glVertexArrayBindingDivisor"); if proc == null() {dummy_pfnglvertexarraybindingdivisorproc} else {unsafe{transmute(proc)}}},
+			getvertexarrayiv: {let proc = get_proc_address("glGetVertexArrayiv"); if proc == null() {dummy_pfnglgetvertexarrayivproc} else {unsafe{transmute(proc)}}},
+			getvertexarrayindexediv: {let proc = get_proc_address("glGetVertexArrayIndexediv"); if proc == null() {dummy_pfnglgetvertexarrayindexedivproc} else {unsafe{transmute(proc)}}},
+			getvertexarrayindexed64iv: {let proc = get_proc_address("glGetVertexArrayIndexed64iv"); if proc == null() {dummy_pfnglgetvertexarrayindexed64ivproc} else {unsafe{transmute(proc)}}},
+			createsamplers: {let proc = get_proc_address("glCreateSamplers"); if proc == null() {dummy_pfnglcreatesamplersproc} else {unsafe{transmute(proc)}}},
+			createprogrampipelines: {let proc = get_proc_address("glCreateProgramPipelines"); if proc == null() {dummy_pfnglcreateprogrampipelinesproc} else {unsafe{transmute(proc)}}},
+			createqueries: {let proc = get_proc_address("glCreateQueries"); if proc == null() {dummy_pfnglcreatequeriesproc} else {unsafe{transmute(proc)}}},
+			getquerybufferobjecti64v: {let proc = get_proc_address("glGetQueryBufferObjecti64v"); if proc == null() {dummy_pfnglgetquerybufferobjecti64vproc} else {unsafe{transmute(proc)}}},
+			getquerybufferobjectiv: {let proc = get_proc_address("glGetQueryBufferObjectiv"); if proc == null() {dummy_pfnglgetquerybufferobjectivproc} else {unsafe{transmute(proc)}}},
+			getquerybufferobjectui64v: {let proc = get_proc_address("glGetQueryBufferObjectui64v"); if proc == null() {dummy_pfnglgetquerybufferobjectui64vproc} else {unsafe{transmute(proc)}}},
+			getquerybufferobjectuiv: {let proc = get_proc_address("glGetQueryBufferObjectuiv"); if proc == null() {dummy_pfnglgetquerybufferobjectuivproc} else {unsafe{transmute(proc)}}},
+			memorybarrierbyregion: {let proc = get_proc_address("glMemoryBarrierByRegion"); if proc == null() {dummy_pfnglmemorybarrierbyregionproc} else {unsafe{transmute(proc)}}},
+			gettexturesubimage: {let proc = get_proc_address("glGetTextureSubImage"); if proc == null() {dummy_pfnglgettexturesubimageproc} else {unsafe{transmute(proc)}}},
+			getcompressedtexturesubimage: {let proc = get_proc_address("glGetCompressedTextureSubImage"); if proc == null() {dummy_pfnglgetcompressedtexturesubimageproc} else {unsafe{transmute(proc)}}},
+			getgraphicsresetstatus: {let proc = get_proc_address("glGetGraphicsResetStatus"); if proc == null() {dummy_pfnglgetgraphicsresetstatusproc} else {unsafe{transmute(proc)}}},
+			getncompressedteximage: {let proc = get_proc_address("glGetnCompressedTexImage"); if proc == null() {dummy_pfnglgetncompressedteximageproc} else {unsafe{transmute(proc)}}},
+			getnteximage: {let proc = get_proc_address("glGetnTexImage"); if proc == null() {dummy_pfnglgetnteximageproc} else {unsafe{transmute(proc)}}},
+			getnuniformdv: {let proc = get_proc_address("glGetnUniformdv"); if proc == null() {dummy_pfnglgetnuniformdvproc} else {unsafe{transmute(proc)}}},
+			getnuniformfv: {let proc = get_proc_address("glGetnUniformfv"); if proc == null() {dummy_pfnglgetnuniformfvproc} else {unsafe{transmute(proc)}}},
+			getnuniformiv: {let proc = get_proc_address("glGetnUniformiv"); if proc == null() {dummy_pfnglgetnuniformivproc} else {unsafe{transmute(proc)}}},
+			getnuniformuiv: {let proc = get_proc_address("glGetnUniformuiv"); if proc == null() {dummy_pfnglgetnuniformuivproc} else {unsafe{transmute(proc)}}},
+			readnpixels: {let proc = get_proc_address("glReadnPixels"); if proc == null() {dummy_pfnglreadnpixelsproc} else {unsafe{transmute(proc)}}},
+			getnmapdv: {let proc = get_proc_address("glGetnMapdv"); if proc == null() {dummy_pfnglgetnmapdvproc} else {unsafe{transmute(proc)}}},
+			getnmapfv: {let proc = get_proc_address("glGetnMapfv"); if proc == null() {dummy_pfnglgetnmapfvproc} else {unsafe{transmute(proc)}}},
+			getnmapiv: {let proc = get_proc_address("glGetnMapiv"); if proc == null() {dummy_pfnglgetnmapivproc} else {unsafe{transmute(proc)}}},
+			getnpixelmapfv: {let proc = get_proc_address("glGetnPixelMapfv"); if proc == null() {dummy_pfnglgetnpixelmapfvproc} else {unsafe{transmute(proc)}}},
+			getnpixelmapuiv: {let proc = get_proc_address("glGetnPixelMapuiv"); if proc == null() {dummy_pfnglgetnpixelmapuivproc} else {unsafe{transmute(proc)}}},
+			getnpixelmapusv: {let proc = get_proc_address("glGetnPixelMapusv"); if proc == null() {dummy_pfnglgetnpixelmapusvproc} else {unsafe{transmute(proc)}}},
+			getnpolygonstipple: {let proc = get_proc_address("glGetnPolygonStipple"); if proc == null() {dummy_pfnglgetnpolygonstippleproc} else {unsafe{transmute(proc)}}},
+			getncolortable: {let proc = get_proc_address("glGetnColorTable"); if proc == null() {dummy_pfnglgetncolortableproc} else {unsafe{transmute(proc)}}},
+			getnconvolutionfilter: {let proc = get_proc_address("glGetnConvolutionFilter"); if proc == null() {dummy_pfnglgetnconvolutionfilterproc} else {unsafe{transmute(proc)}}},
+			getnseparablefilter: {let proc = get_proc_address("glGetnSeparableFilter"); if proc == null() {dummy_pfnglgetnseparablefilterproc} else {unsafe{transmute(proc)}}},
+			getnhistogram: {let proc = get_proc_address("glGetnHistogram"); if proc == null() {dummy_pfnglgetnhistogramproc} else {unsafe{transmute(proc)}}},
+			getnminmax: {let proc = get_proc_address("glGetnMinmax"); if proc == null() {dummy_pfnglgetnminmaxproc} else {unsafe{transmute(proc)}}},
+			texturebarrier: {let proc = get_proc_address("glTextureBarrier"); if proc == null() {dummy_pfngltexturebarrierproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -11472,39 +11472,39 @@ type PFNGLMULTIDRAWARRAYSINDIRECTCOUNTPROC = extern "system" fn(GLenum, *const c
 type PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC = extern "system" fn(GLenum, GLenum, *const c_void, GLintptr, GLsizei, GLsizei);
 type PFNGLPOLYGONOFFSETCLAMPPROC = extern "system" fn(GLfloat, GLfloat, GLfloat);
 extern "system" fn dummy_pfnglspecializeshaderproc (_: GLuint, _: *const GLchar, _: GLuint, _: *const GLuint, _: *const GLuint) {
-	panic!("OpenGL Function pointer of glSpecializeShader() is NULL");
+	panic!("OpenGL Function pointer of `glSpecializeShader()` is NULL");
 }
 extern "system" fn dummy_pfnglmultidrawarraysindirectcountproc (_: GLenum, _: *const c_void, _: GLintptr, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glMultiDrawArraysIndirectCount() is NULL");
+	panic!("OpenGL Function pointer of `glMultiDrawArraysIndirectCount()` is NULL");
 }
 extern "system" fn dummy_pfnglmultidrawelementsindirectcountproc (_: GLenum, _: GLenum, _: *const c_void, _: GLintptr, _: GLsizei, _: GLsizei) {
-	panic!("OpenGL Function pointer of glMultiDrawElementsIndirectCount() is NULL");
+	panic!("OpenGL Function pointer of `glMultiDrawElementsIndirectCount()` is NULL");
 }
 extern "system" fn dummy_pfnglpolygonoffsetclampproc (_: GLfloat, _: GLfloat, _: GLfloat) {
-	panic!("OpenGL Function pointer of glPolygonOffsetClamp() is NULL");
+	panic!("OpenGL Function pointer of `glPolygonOffsetClamp()` is NULL");
 }
-const SHADER_BINARY_FORMAT_SPIR_V: GLenum = 0x9551;
-const SPIR_V_BINARY: GLenum = 0x9552;
-const PARAMETER_BUFFER: GLenum = 0x80EE;
-const PARAMETER_BUFFER_BINDING: GLenum = 0x80EF;
-const CONTEXT_FLAG_NO_ERROR_BIT: GLbitfield = 0x00000008;
-const VERTICES_SUBMITTED: GLenum = 0x82EE;
-const PRIMITIVES_SUBMITTED: GLenum = 0x82EF;
-const VERTEX_SHADER_INVOCATIONS: GLenum = 0x82F0;
-const TESS_CONTROL_SHADER_PATCHES: GLenum = 0x82F1;
-const TESS_EVALUATION_SHADER_INVOCATIONS: GLenum = 0x82F2;
-const GEOMETRY_SHADER_PRIMITIVES_EMITTED: GLenum = 0x82F3;
-const FRAGMENT_SHADER_INVOCATIONS: GLenum = 0x82F4;
-const COMPUTE_SHADER_INVOCATIONS: GLenum = 0x82F5;
-const CLIPPING_INPUT_PRIMITIVES: GLenum = 0x82F6;
-const CLIPPING_OUTPUT_PRIMITIVES: GLenum = 0x82F7;
-const POLYGON_OFFSET_CLAMP: GLenum = 0x8E1B;
-const SPIR_V_EXTENSIONS: GLenum = 0x9553;
-const NUM_SPIR_V_EXTENSIONS: GLenum = 0x9554;
-const TEXTURE_MAX_ANISOTROPY: GLenum = 0x84FE;
-const MAX_TEXTURE_MAX_ANISOTROPY: GLenum = 0x84FF;
-const TRANSFORM_FEEDBACK_OVERFLOW: GLenum = 0x82EC;
-const TRANSFORM_FEEDBACK_STREAM_OVERFLOW: GLenum = 0x82ED;
+pub const GL_SHADER_BINARY_FORMAT_SPIR_V: GLenum = 0x9551;
+pub const GL_SPIR_V_BINARY: GLenum = 0x9552;
+pub const GL_PARAMETER_BUFFER: GLenum = 0x80EE;
+pub const GL_PARAMETER_BUFFER_BINDING: GLenum = 0x80EF;
+pub const GL_CONTEXT_FLAG_NO_ERROR_BIT: GLbitfield = 0x00000008;
+pub const GL_VERTICES_SUBMITTED: GLenum = 0x82EE;
+pub const GL_PRIMITIVES_SUBMITTED: GLenum = 0x82EF;
+pub const GL_VERTEX_SHADER_INVOCATIONS: GLenum = 0x82F0;
+pub const GL_TESS_CONTROL_SHADER_PATCHES: GLenum = 0x82F1;
+pub const GL_TESS_EVALUATION_SHADER_INVOCATIONS: GLenum = 0x82F2;
+pub const GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED: GLenum = 0x82F3;
+pub const GL_FRAGMENT_SHADER_INVOCATIONS: GLenum = 0x82F4;
+pub const GL_COMPUTE_SHADER_INVOCATIONS: GLenum = 0x82F5;
+pub const GL_CLIPPING_INPUT_PRIMITIVES: GLenum = 0x82F6;
+pub const GL_CLIPPING_OUTPUT_PRIMITIVES: GLenum = 0x82F7;
+pub const GL_POLYGON_OFFSET_CLAMP: GLenum = 0x8E1B;
+pub const GL_SPIR_V_EXTENSIONS: GLenum = 0x9553;
+pub const GL_NUM_SPIR_V_EXTENSIONS: GLenum = 0x9554;
+pub const GL_TEXTURE_MAX_ANISOTROPY: GLenum = 0x84FE;
+pub const GL_MAX_TEXTURE_MAX_ANISOTROPY: GLenum = 0x84FF;
+pub const GL_TRANSFORM_FEEDBACK_OVERFLOW: GLenum = 0x82EC;
+pub const GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW: GLenum = 0x82ED;
 
 pub trait GL_4_6 {
 	fn glSpecializeShader(&self, shader: GLuint, pEntryPoint: *const GLchar, numSpecializationConstants: GLuint, pConstantIndex: *const GLuint, pConstantValue: *const GLuint);
@@ -11513,7 +11513,7 @@ pub trait GL_4_6 {
 	fn glPolygonOffsetClamp(&self, factor: GLfloat, units: GLfloat, clamp: GLfloat);
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version46 {
 	available: bool,
 	specializeshader: PFNGLSPECIALIZESHADERPROC,
@@ -11542,7 +11542,7 @@ impl GL_4_6 for Version46 {
 }
 
 impl Version46 {
-	pub fn new(base: impl GL_1_0, get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
 		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
 		if bigver < 40600 {
@@ -11550,10 +11550,10 @@ impl Version46 {
 		}
 		Self {
 			available: true,
-			specializeshader: unsafe{transmute(get_proc_address("glSpecializeShader"))},
-			multidrawarraysindirectcount: unsafe{transmute(get_proc_address("glMultiDrawArraysIndirectCount"))},
-			multidrawelementsindirectcount: unsafe{transmute(get_proc_address("glMultiDrawElementsIndirectCount"))},
-			polygonoffsetclamp: unsafe{transmute(get_proc_address("glPolygonOffsetClamp"))},
+			specializeshader: {let proc = get_proc_address("glSpecializeShader"); if proc == null() {dummy_pfnglspecializeshaderproc} else {unsafe{transmute(proc)}}},
+			multidrawarraysindirectcount: {let proc = get_proc_address("glMultiDrawArraysIndirectCount"); if proc == null() {dummy_pfnglmultidrawarraysindirectcountproc} else {unsafe{transmute(proc)}}},
+			multidrawelementsindirectcount: {let proc = get_proc_address("glMultiDrawElementsIndirectCount"); if proc == null() {dummy_pfnglmultidrawelementsindirectcountproc} else {unsafe{transmute(proc)}}},
+			polygonoffsetclamp: {let proc = get_proc_address("glPolygonOffsetClamp"); if proc == null() {dummy_pfnglpolygonoffsetclampproc} else {unsafe{transmute(proc)}}},
 		}
 	}
 	#[inline(always)]
@@ -11573,7 +11573,7 @@ impl Default for Version46 {
 		}
 	}
 }
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct GLCore {
 	pub version_1_0: Version10,
 	pub version_1_1: Version11,
@@ -14770,31 +14770,31 @@ impl GL_4_6 for GLCore {
 }
 
 impl GLCore {
-	pub fn new(get_proc_address: &impl Fn(&'static str) -> *const c_void) -> Self {
-		let version_1_0 = Version10::new(get_proc_address);
+	pub fn new(mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
+		let version_1_0 = Version10::new(&mut get_proc_address);
 		if !version_1_0.available {
 			return Self::default();
 		}
 		Self {
 			version_1_0,
-			version_1_1: Version11::new(version_1_0, get_proc_address),
-			version_1_2: Version12::new(version_1_0, get_proc_address),
-			version_1_3: Version13::new(version_1_0, get_proc_address),
-			version_1_4: Version14::new(version_1_0, get_proc_address),
-			version_1_5: Version15::new(version_1_0, get_proc_address),
-			version_2_0: Version20::new(version_1_0, get_proc_address),
-			version_2_1: Version21::new(version_1_0, get_proc_address),
-			version_3_0: Version30::new(version_1_0, get_proc_address),
-			version_3_1: Version31::new(version_1_0, get_proc_address),
-			version_3_2: Version32::new(version_1_0, get_proc_address),
-			version_3_3: Version33::new(version_1_0, get_proc_address),
-			version_4_0: Version40::new(version_1_0, get_proc_address),
-			version_4_1: Version41::new(version_1_0, get_proc_address),
-			version_4_2: Version42::new(version_1_0, get_proc_address),
-			version_4_3: Version43::new(version_1_0, get_proc_address),
-			version_4_4: Version44::new(version_1_0, get_proc_address),
-			version_4_5: Version45::new(version_1_0, get_proc_address),
-			version_4_6: Version46::new(version_1_0, get_proc_address),
+			version_1_1: Version11::new(version_1_0, &mut get_proc_address),
+			version_1_2: Version12::new(version_1_0, &mut get_proc_address),
+			version_1_3: Version13::new(version_1_0, &mut get_proc_address),
+			version_1_4: Version14::new(version_1_0, &mut get_proc_address),
+			version_1_5: Version15::new(version_1_0, &mut get_proc_address),
+			version_2_0: Version20::new(version_1_0, &mut get_proc_address),
+			version_2_1: Version21::new(version_1_0, &mut get_proc_address),
+			version_3_0: Version30::new(version_1_0, &mut get_proc_address),
+			version_3_1: Version31::new(version_1_0, &mut get_proc_address),
+			version_3_2: Version32::new(version_1_0, &mut get_proc_address),
+			version_3_3: Version33::new(version_1_0, &mut get_proc_address),
+			version_4_0: Version40::new(version_1_0, &mut get_proc_address),
+			version_4_1: Version41::new(version_1_0, &mut get_proc_address),
+			version_4_2: Version42::new(version_1_0, &mut get_proc_address),
+			version_4_3: Version43::new(version_1_0, &mut get_proc_address),
+			version_4_4: Version44::new(version_1_0, &mut get_proc_address),
+			version_4_5: Version45::new(version_1_0, &mut get_proc_address),
+			version_4_6: Version46::new(version_1_0, &mut get_proc_address),
 		}
 	}
 }
