@@ -2,7 +2,7 @@
 #![allow(non_snake_case)]
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
-use std::{mem::transmute, ffi::{c_void, CStr}, fmt::Debug, ptr::null};
+use std::{mem::transmute, ffi::{c_void, CStr}, fmt::{self, Debug, Formatter}, ptr::null};
 type khronos_float_t = f32;
 type khronos_ssize_t = usize;
 type khronos_intptr_t = usize;
@@ -447,7 +447,7 @@ pub trait GL_1_0 {
 	fn get_versionstr(&self) -> &'static str;
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version10 {
 	spec: &'static str,
 	major_version: u32,
@@ -867,7 +867,74 @@ impl Default for Version10 {
 		}
 	}
 }
-
+impl Debug for Version10 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version10")
+			.field("available", &self.available)
+			.field("spec", &self.spec)
+			.field("major_version", &self.major_version)
+			.field("minor_version", &self.minor_version)
+			.field("release_version", &self.release_version)
+			.field("vendor", &self.vendor)
+			.field("renderer", &self.renderer)
+			.field("version", &self.version)
+			.field("cullface", unsafe{if transmute::<_, *const c_void>(self.cullface) == (dummy_pfnglcullfaceproc as *const c_void) {&null::<PFNGLCULLFACEPROC>()} else {&self.cullface}})
+			.field("frontface", unsafe{if transmute::<_, *const c_void>(self.frontface) == (dummy_pfnglfrontfaceproc as *const c_void) {&null::<PFNGLFRONTFACEPROC>()} else {&self.frontface}})
+			.field("hint", unsafe{if transmute::<_, *const c_void>(self.hint) == (dummy_pfnglhintproc as *const c_void) {&null::<PFNGLHINTPROC>()} else {&self.hint}})
+			.field("linewidth", unsafe{if transmute::<_, *const c_void>(self.linewidth) == (dummy_pfngllinewidthproc as *const c_void) {&null::<PFNGLLINEWIDTHPROC>()} else {&self.linewidth}})
+			.field("pointsize", unsafe{if transmute::<_, *const c_void>(self.pointsize) == (dummy_pfnglpointsizeproc as *const c_void) {&null::<PFNGLPOINTSIZEPROC>()} else {&self.pointsize}})
+			.field("polygonmode", unsafe{if transmute::<_, *const c_void>(self.polygonmode) == (dummy_pfnglpolygonmodeproc as *const c_void) {&null::<PFNGLPOLYGONMODEPROC>()} else {&self.polygonmode}})
+			.field("scissor", unsafe{if transmute::<_, *const c_void>(self.scissor) == (dummy_pfnglscissorproc as *const c_void) {&null::<PFNGLSCISSORPROC>()} else {&self.scissor}})
+			.field("texparameterf", unsafe{if transmute::<_, *const c_void>(self.texparameterf) == (dummy_pfngltexparameterfproc as *const c_void) {&null::<PFNGLTEXPARAMETERFPROC>()} else {&self.texparameterf}})
+			.field("texparameterfv", unsafe{if transmute::<_, *const c_void>(self.texparameterfv) == (dummy_pfngltexparameterfvproc as *const c_void) {&null::<PFNGLTEXPARAMETERFVPROC>()} else {&self.texparameterfv}})
+			.field("texparameteri", unsafe{if transmute::<_, *const c_void>(self.texparameteri) == (dummy_pfngltexparameteriproc as *const c_void) {&null::<PFNGLTEXPARAMETERIPROC>()} else {&self.texparameteri}})
+			.field("texparameteriv", unsafe{if transmute::<_, *const c_void>(self.texparameteriv) == (dummy_pfngltexparameterivproc as *const c_void) {&null::<PFNGLTEXPARAMETERIVPROC>()} else {&self.texparameteriv}})
+			.field("teximage1d", unsafe{if transmute::<_, *const c_void>(self.teximage1d) == (dummy_pfnglteximage1dproc as *const c_void) {&null::<PFNGLTEXIMAGE1DPROC>()} else {&self.teximage1d}})
+			.field("teximage2d", unsafe{if transmute::<_, *const c_void>(self.teximage2d) == (dummy_pfnglteximage2dproc as *const c_void) {&null::<PFNGLTEXIMAGE2DPROC>()} else {&self.teximage2d}})
+			.field("drawbuffer", unsafe{if transmute::<_, *const c_void>(self.drawbuffer) == (dummy_pfngldrawbufferproc as *const c_void) {&null::<PFNGLDRAWBUFFERPROC>()} else {&self.drawbuffer}})
+			.field("clear", unsafe{if transmute::<_, *const c_void>(self.clear) == (dummy_pfnglclearproc as *const c_void) {&null::<PFNGLCLEARPROC>()} else {&self.clear}})
+			.field("clearcolor", unsafe{if transmute::<_, *const c_void>(self.clearcolor) == (dummy_pfnglclearcolorproc as *const c_void) {&null::<PFNGLCLEARCOLORPROC>()} else {&self.clearcolor}})
+			.field("clearstencil", unsafe{if transmute::<_, *const c_void>(self.clearstencil) == (dummy_pfnglclearstencilproc as *const c_void) {&null::<PFNGLCLEARSTENCILPROC>()} else {&self.clearstencil}})
+			.field("cleardepth", unsafe{if transmute::<_, *const c_void>(self.cleardepth) == (dummy_pfnglcleardepthproc as *const c_void) {&null::<PFNGLCLEARDEPTHPROC>()} else {&self.cleardepth}})
+			.field("stencilmask", unsafe{if transmute::<_, *const c_void>(self.stencilmask) == (dummy_pfnglstencilmaskproc as *const c_void) {&null::<PFNGLSTENCILMASKPROC>()} else {&self.stencilmask}})
+			.field("colormask", unsafe{if transmute::<_, *const c_void>(self.colormask) == (dummy_pfnglcolormaskproc as *const c_void) {&null::<PFNGLCOLORMASKPROC>()} else {&self.colormask}})
+			.field("depthmask", unsafe{if transmute::<_, *const c_void>(self.depthmask) == (dummy_pfngldepthmaskproc as *const c_void) {&null::<PFNGLDEPTHMASKPROC>()} else {&self.depthmask}})
+			.field("disable", unsafe{if transmute::<_, *const c_void>(self.disable) == (dummy_pfngldisableproc as *const c_void) {&null::<PFNGLDISABLEPROC>()} else {&self.disable}})
+			.field("enable", unsafe{if transmute::<_, *const c_void>(self.enable) == (dummy_pfnglenableproc as *const c_void) {&null::<PFNGLENABLEPROC>()} else {&self.enable}})
+			.field("finish", unsafe{if transmute::<_, *const c_void>(self.finish) == (dummy_pfnglfinishproc as *const c_void) {&null::<PFNGLFINISHPROC>()} else {&self.finish}})
+			.field("flush", unsafe{if transmute::<_, *const c_void>(self.flush) == (dummy_pfnglflushproc as *const c_void) {&null::<PFNGLFLUSHPROC>()} else {&self.flush}})
+			.field("blendfunc", unsafe{if transmute::<_, *const c_void>(self.blendfunc) == (dummy_pfnglblendfuncproc as *const c_void) {&null::<PFNGLBLENDFUNCPROC>()} else {&self.blendfunc}})
+			.field("logicop", unsafe{if transmute::<_, *const c_void>(self.logicop) == (dummy_pfngllogicopproc as *const c_void) {&null::<PFNGLLOGICOPPROC>()} else {&self.logicop}})
+			.field("stencilfunc", unsafe{if transmute::<_, *const c_void>(self.stencilfunc) == (dummy_pfnglstencilfuncproc as *const c_void) {&null::<PFNGLSTENCILFUNCPROC>()} else {&self.stencilfunc}})
+			.field("stencilop", unsafe{if transmute::<_, *const c_void>(self.stencilop) == (dummy_pfnglstencilopproc as *const c_void) {&null::<PFNGLSTENCILOPPROC>()} else {&self.stencilop}})
+			.field("depthfunc", unsafe{if transmute::<_, *const c_void>(self.depthfunc) == (dummy_pfngldepthfuncproc as *const c_void) {&null::<PFNGLDEPTHFUNCPROC>()} else {&self.depthfunc}})
+			.field("pixelstoref", unsafe{if transmute::<_, *const c_void>(self.pixelstoref) == (dummy_pfnglpixelstorefproc as *const c_void) {&null::<PFNGLPIXELSTOREFPROC>()} else {&self.pixelstoref}})
+			.field("pixelstorei", unsafe{if transmute::<_, *const c_void>(self.pixelstorei) == (dummy_pfnglpixelstoreiproc as *const c_void) {&null::<PFNGLPIXELSTOREIPROC>()} else {&self.pixelstorei}})
+			.field("readbuffer", unsafe{if transmute::<_, *const c_void>(self.readbuffer) == (dummy_pfnglreadbufferproc as *const c_void) {&null::<PFNGLREADBUFFERPROC>()} else {&self.readbuffer}})
+			.field("readpixels", unsafe{if transmute::<_, *const c_void>(self.readpixels) == (dummy_pfnglreadpixelsproc as *const c_void) {&null::<PFNGLREADPIXELSPROC>()} else {&self.readpixels}})
+			.field("getbooleanv", unsafe{if transmute::<_, *const c_void>(self.getbooleanv) == (dummy_pfnglgetbooleanvproc as *const c_void) {&null::<PFNGLGETBOOLEANVPROC>()} else {&self.getbooleanv}})
+			.field("getdoublev", unsafe{if transmute::<_, *const c_void>(self.getdoublev) == (dummy_pfnglgetdoublevproc as *const c_void) {&null::<PFNGLGETDOUBLEVPROC>()} else {&self.getdoublev}})
+			.field("geterror", unsafe{if transmute::<_, *const c_void>(self.geterror) == (dummy_pfnglgeterrorproc as *const c_void) {&null::<PFNGLGETERRORPROC>()} else {&self.geterror}})
+			.field("getfloatv", unsafe{if transmute::<_, *const c_void>(self.getfloatv) == (dummy_pfnglgetfloatvproc as *const c_void) {&null::<PFNGLGETFLOATVPROC>()} else {&self.getfloatv}})
+			.field("getintegerv", unsafe{if transmute::<_, *const c_void>(self.getintegerv) == (dummy_pfnglgetintegervproc as *const c_void) {&null::<PFNGLGETINTEGERVPROC>()} else {&self.getintegerv}})
+			.field("getstring", unsafe{if transmute::<_, *const c_void>(self.getstring) == (dummy_pfnglgetstringproc as *const c_void) {&null::<PFNGLGETSTRINGPROC>()} else {&self.getstring}})
+			.field("getteximage", unsafe{if transmute::<_, *const c_void>(self.getteximage) == (dummy_pfnglgetteximageproc as *const c_void) {&null::<PFNGLGETTEXIMAGEPROC>()} else {&self.getteximage}})
+			.field("gettexparameterfv", unsafe{if transmute::<_, *const c_void>(self.gettexparameterfv) == (dummy_pfnglgettexparameterfvproc as *const c_void) {&null::<PFNGLGETTEXPARAMETERFVPROC>()} else {&self.gettexparameterfv}})
+			.field("gettexparameteriv", unsafe{if transmute::<_, *const c_void>(self.gettexparameteriv) == (dummy_pfnglgettexparameterivproc as *const c_void) {&null::<PFNGLGETTEXPARAMETERIVPROC>()} else {&self.gettexparameteriv}})
+			.field("gettexlevelparameterfv", unsafe{if transmute::<_, *const c_void>(self.gettexlevelparameterfv) == (dummy_pfnglgettexlevelparameterfvproc as *const c_void) {&null::<PFNGLGETTEXLEVELPARAMETERFVPROC>()} else {&self.gettexlevelparameterfv}})
+			.field("gettexlevelparameteriv", unsafe{if transmute::<_, *const c_void>(self.gettexlevelparameteriv) == (dummy_pfnglgettexlevelparameterivproc as *const c_void) {&null::<PFNGLGETTEXLEVELPARAMETERIVPROC>()} else {&self.gettexlevelparameteriv}})
+			.field("isenabled", unsafe{if transmute::<_, *const c_void>(self.isenabled) == (dummy_pfnglisenabledproc as *const c_void) {&null::<PFNGLISENABLEDPROC>()} else {&self.isenabled}})
+			.field("depthrange", unsafe{if transmute::<_, *const c_void>(self.depthrange) == (dummy_pfngldepthrangeproc as *const c_void) {&null::<PFNGLDEPTHRANGEPROC>()} else {&self.depthrange}})
+			.field("viewport", unsafe{if transmute::<_, *const c_void>(self.viewport) == (dummy_pfnglviewportproc as *const c_void) {&null::<PFNGLVIEWPORTPROC>()} else {&self.viewport}})
+			.finish()
+		} else {
+			f.debug_struct("Version10")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type GLclampf = khronos_float_t;
 type GLclampd = f64;
 type PFNGLDRAWARRAYSPROC = extern "system" fn(GLenum, GLint, GLsizei);
@@ -975,7 +1042,7 @@ pub trait GL_1_1 {
 	fn glIsTexture(&self, texture: GLuint) -> GLboolean;
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version11 {
 	available: bool,
 	drawarrays: PFNGLDRAWARRAYSPROC,
@@ -1105,7 +1172,33 @@ impl Default for Version11 {
 		}
 	}
 }
-
+impl Debug for Version11 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version11")
+			.field("available", &self.available)
+			.field("drawarrays", unsafe{if transmute::<_, *const c_void>(self.drawarrays) == (dummy_pfngldrawarraysproc as *const c_void) {&null::<PFNGLDRAWARRAYSPROC>()} else {&self.drawarrays}})
+			.field("drawelements", unsafe{if transmute::<_, *const c_void>(self.drawelements) == (dummy_pfngldrawelementsproc as *const c_void) {&null::<PFNGLDRAWELEMENTSPROC>()} else {&self.drawelements}})
+			.field("getpointerv", unsafe{if transmute::<_, *const c_void>(self.getpointerv) == (dummy_pfnglgetpointervproc as *const c_void) {&null::<PFNGLGETPOINTERVPROC>()} else {&self.getpointerv}})
+			.field("polygonoffset", unsafe{if transmute::<_, *const c_void>(self.polygonoffset) == (dummy_pfnglpolygonoffsetproc as *const c_void) {&null::<PFNGLPOLYGONOFFSETPROC>()} else {&self.polygonoffset}})
+			.field("copyteximage1d", unsafe{if transmute::<_, *const c_void>(self.copyteximage1d) == (dummy_pfnglcopyteximage1dproc as *const c_void) {&null::<PFNGLCOPYTEXIMAGE1DPROC>()} else {&self.copyteximage1d}})
+			.field("copyteximage2d", unsafe{if transmute::<_, *const c_void>(self.copyteximage2d) == (dummy_pfnglcopyteximage2dproc as *const c_void) {&null::<PFNGLCOPYTEXIMAGE2DPROC>()} else {&self.copyteximage2d}})
+			.field("copytexsubimage1d", unsafe{if transmute::<_, *const c_void>(self.copytexsubimage1d) == (dummy_pfnglcopytexsubimage1dproc as *const c_void) {&null::<PFNGLCOPYTEXSUBIMAGE1DPROC>()} else {&self.copytexsubimage1d}})
+			.field("copytexsubimage2d", unsafe{if transmute::<_, *const c_void>(self.copytexsubimage2d) == (dummy_pfnglcopytexsubimage2dproc as *const c_void) {&null::<PFNGLCOPYTEXSUBIMAGE2DPROC>()} else {&self.copytexsubimage2d}})
+			.field("texsubimage1d", unsafe{if transmute::<_, *const c_void>(self.texsubimage1d) == (dummy_pfngltexsubimage1dproc as *const c_void) {&null::<PFNGLTEXSUBIMAGE1DPROC>()} else {&self.texsubimage1d}})
+			.field("texsubimage2d", unsafe{if transmute::<_, *const c_void>(self.texsubimage2d) == (dummy_pfngltexsubimage2dproc as *const c_void) {&null::<PFNGLTEXSUBIMAGE2DPROC>()} else {&self.texsubimage2d}})
+			.field("bindtexture", unsafe{if transmute::<_, *const c_void>(self.bindtexture) == (dummy_pfnglbindtextureproc as *const c_void) {&null::<PFNGLBINDTEXTUREPROC>()} else {&self.bindtexture}})
+			.field("deletetextures", unsafe{if transmute::<_, *const c_void>(self.deletetextures) == (dummy_pfngldeletetexturesproc as *const c_void) {&null::<PFNGLDELETETEXTURESPROC>()} else {&self.deletetextures}})
+			.field("gentextures", unsafe{if transmute::<_, *const c_void>(self.gentextures) == (dummy_pfnglgentexturesproc as *const c_void) {&null::<PFNGLGENTEXTURESPROC>()} else {&self.gentextures}})
+			.field("istexture", unsafe{if transmute::<_, *const c_void>(self.istexture) == (dummy_pfnglistextureproc as *const c_void) {&null::<PFNGLISTEXTUREPROC>()} else {&self.istexture}})
+			.finish()
+		} else {
+			f.debug_struct("Version11")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLDRAWRANGEELEMENTSPROC = extern "system" fn(GLenum, GLuint, GLuint, GLsizei, GLenum, *const c_void);
 type PFNGLTEXIMAGE3DPROC = extern "system" fn(GLenum, GLint, GLint, GLsizei, GLsizei, GLsizei, GLint, GLenum, GLenum, *const c_void);
 type PFNGLTEXSUBIMAGE3DPROC = extern "system" fn(GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, *const c_void);
@@ -1171,7 +1264,7 @@ pub trait GL_1_2 {
 	fn glCopyTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version12 {
 	available: bool,
 	drawrangeelements: PFNGLDRAWRANGEELEMENTSPROC,
@@ -1231,7 +1324,23 @@ impl Default for Version12 {
 		}
 	}
 }
-
+impl Debug for Version12 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version12")
+			.field("available", &self.available)
+			.field("drawrangeelements", unsafe{if transmute::<_, *const c_void>(self.drawrangeelements) == (dummy_pfngldrawrangeelementsproc as *const c_void) {&null::<PFNGLDRAWRANGEELEMENTSPROC>()} else {&self.drawrangeelements}})
+			.field("teximage3d", unsafe{if transmute::<_, *const c_void>(self.teximage3d) == (dummy_pfnglteximage3dproc as *const c_void) {&null::<PFNGLTEXIMAGE3DPROC>()} else {&self.teximage3d}})
+			.field("texsubimage3d", unsafe{if transmute::<_, *const c_void>(self.texsubimage3d) == (dummy_pfngltexsubimage3dproc as *const c_void) {&null::<PFNGLTEXSUBIMAGE3DPROC>()} else {&self.texsubimage3d}})
+			.field("copytexsubimage3d", unsafe{if transmute::<_, *const c_void>(self.copytexsubimage3d) == (dummy_pfnglcopytexsubimage3dproc as *const c_void) {&null::<PFNGLCOPYTEXSUBIMAGE3DPROC>()} else {&self.copytexsubimage3d}})
+			.finish()
+		} else {
+			f.debug_struct("Version12")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLACTIVETEXTUREPROC = extern "system" fn(GLenum);
 type PFNGLSAMPLECOVERAGEPROC = extern "system" fn(GLfloat, GLboolean);
 type PFNGLCOMPRESSEDTEXIMAGE3DPROC = extern "system" fn(GLenum, GLint, GLenum, GLsizei, GLsizei, GLsizei, GLint, GLsizei, *const c_void);
@@ -1562,7 +1671,7 @@ pub trait GL_1_3 {
 	fn glMultTransposeMatrixd(&self, m: *const GLdouble);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version13 {
 	available: bool,
 	activetexture: PFNGLACTIVETEXTUREPROC,
@@ -1916,7 +2025,65 @@ impl Default for Version13 {
 		}
 	}
 }
-
+impl Debug for Version13 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version13")
+			.field("available", &self.available)
+			.field("activetexture", unsafe{if transmute::<_, *const c_void>(self.activetexture) == (dummy_pfnglactivetextureproc as *const c_void) {&null::<PFNGLACTIVETEXTUREPROC>()} else {&self.activetexture}})
+			.field("samplecoverage", unsafe{if transmute::<_, *const c_void>(self.samplecoverage) == (dummy_pfnglsamplecoverageproc as *const c_void) {&null::<PFNGLSAMPLECOVERAGEPROC>()} else {&self.samplecoverage}})
+			.field("compressedteximage3d", unsafe{if transmute::<_, *const c_void>(self.compressedteximage3d) == (dummy_pfnglcompressedteximage3dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXIMAGE3DPROC>()} else {&self.compressedteximage3d}})
+			.field("compressedteximage2d", unsafe{if transmute::<_, *const c_void>(self.compressedteximage2d) == (dummy_pfnglcompressedteximage2dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXIMAGE2DPROC>()} else {&self.compressedteximage2d}})
+			.field("compressedteximage1d", unsafe{if transmute::<_, *const c_void>(self.compressedteximage1d) == (dummy_pfnglcompressedteximage1dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXIMAGE1DPROC>()} else {&self.compressedteximage1d}})
+			.field("compressedtexsubimage3d", unsafe{if transmute::<_, *const c_void>(self.compressedtexsubimage3d) == (dummy_pfnglcompressedtexsubimage3dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC>()} else {&self.compressedtexsubimage3d}})
+			.field("compressedtexsubimage2d", unsafe{if transmute::<_, *const c_void>(self.compressedtexsubimage2d) == (dummy_pfnglcompressedtexsubimage2dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC>()} else {&self.compressedtexsubimage2d}})
+			.field("compressedtexsubimage1d", unsafe{if transmute::<_, *const c_void>(self.compressedtexsubimage1d) == (dummy_pfnglcompressedtexsubimage1dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXSUBIMAGE1DPROC>()} else {&self.compressedtexsubimage1d}})
+			.field("getcompressedteximage", unsafe{if transmute::<_, *const c_void>(self.getcompressedteximage) == (dummy_pfnglgetcompressedteximageproc as *const c_void) {&null::<PFNGLGETCOMPRESSEDTEXIMAGEPROC>()} else {&self.getcompressedteximage}})
+			.field("clientactivetexture", unsafe{if transmute::<_, *const c_void>(self.clientactivetexture) == (dummy_pfnglclientactivetextureproc as *const c_void) {&null::<PFNGLCLIENTACTIVETEXTUREPROC>()} else {&self.clientactivetexture}})
+			.field("multitexcoord1d", unsafe{if transmute::<_, *const c_void>(self.multitexcoord1d) == (dummy_pfnglmultitexcoord1dproc as *const c_void) {&null::<PFNGLMULTITEXCOORD1DPROC>()} else {&self.multitexcoord1d}})
+			.field("multitexcoord1dv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord1dv) == (dummy_pfnglmultitexcoord1dvproc as *const c_void) {&null::<PFNGLMULTITEXCOORD1DVPROC>()} else {&self.multitexcoord1dv}})
+			.field("multitexcoord1f", unsafe{if transmute::<_, *const c_void>(self.multitexcoord1f) == (dummy_pfnglmultitexcoord1fproc as *const c_void) {&null::<PFNGLMULTITEXCOORD1FPROC>()} else {&self.multitexcoord1f}})
+			.field("multitexcoord1fv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord1fv) == (dummy_pfnglmultitexcoord1fvproc as *const c_void) {&null::<PFNGLMULTITEXCOORD1FVPROC>()} else {&self.multitexcoord1fv}})
+			.field("multitexcoord1i", unsafe{if transmute::<_, *const c_void>(self.multitexcoord1i) == (dummy_pfnglmultitexcoord1iproc as *const c_void) {&null::<PFNGLMULTITEXCOORD1IPROC>()} else {&self.multitexcoord1i}})
+			.field("multitexcoord1iv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord1iv) == (dummy_pfnglmultitexcoord1ivproc as *const c_void) {&null::<PFNGLMULTITEXCOORD1IVPROC>()} else {&self.multitexcoord1iv}})
+			.field("multitexcoord1s", unsafe{if transmute::<_, *const c_void>(self.multitexcoord1s) == (dummy_pfnglmultitexcoord1sproc as *const c_void) {&null::<PFNGLMULTITEXCOORD1SPROC>()} else {&self.multitexcoord1s}})
+			.field("multitexcoord1sv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord1sv) == (dummy_pfnglmultitexcoord1svproc as *const c_void) {&null::<PFNGLMULTITEXCOORD1SVPROC>()} else {&self.multitexcoord1sv}})
+			.field("multitexcoord2d", unsafe{if transmute::<_, *const c_void>(self.multitexcoord2d) == (dummy_pfnglmultitexcoord2dproc as *const c_void) {&null::<PFNGLMULTITEXCOORD2DPROC>()} else {&self.multitexcoord2d}})
+			.field("multitexcoord2dv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord2dv) == (dummy_pfnglmultitexcoord2dvproc as *const c_void) {&null::<PFNGLMULTITEXCOORD2DVPROC>()} else {&self.multitexcoord2dv}})
+			.field("multitexcoord2f", unsafe{if transmute::<_, *const c_void>(self.multitexcoord2f) == (dummy_pfnglmultitexcoord2fproc as *const c_void) {&null::<PFNGLMULTITEXCOORD2FPROC>()} else {&self.multitexcoord2f}})
+			.field("multitexcoord2fv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord2fv) == (dummy_pfnglmultitexcoord2fvproc as *const c_void) {&null::<PFNGLMULTITEXCOORD2FVPROC>()} else {&self.multitexcoord2fv}})
+			.field("multitexcoord2i", unsafe{if transmute::<_, *const c_void>(self.multitexcoord2i) == (dummy_pfnglmultitexcoord2iproc as *const c_void) {&null::<PFNGLMULTITEXCOORD2IPROC>()} else {&self.multitexcoord2i}})
+			.field("multitexcoord2iv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord2iv) == (dummy_pfnglmultitexcoord2ivproc as *const c_void) {&null::<PFNGLMULTITEXCOORD2IVPROC>()} else {&self.multitexcoord2iv}})
+			.field("multitexcoord2s", unsafe{if transmute::<_, *const c_void>(self.multitexcoord2s) == (dummy_pfnglmultitexcoord2sproc as *const c_void) {&null::<PFNGLMULTITEXCOORD2SPROC>()} else {&self.multitexcoord2s}})
+			.field("multitexcoord2sv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord2sv) == (dummy_pfnglmultitexcoord2svproc as *const c_void) {&null::<PFNGLMULTITEXCOORD2SVPROC>()} else {&self.multitexcoord2sv}})
+			.field("multitexcoord3d", unsafe{if transmute::<_, *const c_void>(self.multitexcoord3d) == (dummy_pfnglmultitexcoord3dproc as *const c_void) {&null::<PFNGLMULTITEXCOORD3DPROC>()} else {&self.multitexcoord3d}})
+			.field("multitexcoord3dv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord3dv) == (dummy_pfnglmultitexcoord3dvproc as *const c_void) {&null::<PFNGLMULTITEXCOORD3DVPROC>()} else {&self.multitexcoord3dv}})
+			.field("multitexcoord3f", unsafe{if transmute::<_, *const c_void>(self.multitexcoord3f) == (dummy_pfnglmultitexcoord3fproc as *const c_void) {&null::<PFNGLMULTITEXCOORD3FPROC>()} else {&self.multitexcoord3f}})
+			.field("multitexcoord3fv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord3fv) == (dummy_pfnglmultitexcoord3fvproc as *const c_void) {&null::<PFNGLMULTITEXCOORD3FVPROC>()} else {&self.multitexcoord3fv}})
+			.field("multitexcoord3i", unsafe{if transmute::<_, *const c_void>(self.multitexcoord3i) == (dummy_pfnglmultitexcoord3iproc as *const c_void) {&null::<PFNGLMULTITEXCOORD3IPROC>()} else {&self.multitexcoord3i}})
+			.field("multitexcoord3iv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord3iv) == (dummy_pfnglmultitexcoord3ivproc as *const c_void) {&null::<PFNGLMULTITEXCOORD3IVPROC>()} else {&self.multitexcoord3iv}})
+			.field("multitexcoord3s", unsafe{if transmute::<_, *const c_void>(self.multitexcoord3s) == (dummy_pfnglmultitexcoord3sproc as *const c_void) {&null::<PFNGLMULTITEXCOORD3SPROC>()} else {&self.multitexcoord3s}})
+			.field("multitexcoord3sv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord3sv) == (dummy_pfnglmultitexcoord3svproc as *const c_void) {&null::<PFNGLMULTITEXCOORD3SVPROC>()} else {&self.multitexcoord3sv}})
+			.field("multitexcoord4d", unsafe{if transmute::<_, *const c_void>(self.multitexcoord4d) == (dummy_pfnglmultitexcoord4dproc as *const c_void) {&null::<PFNGLMULTITEXCOORD4DPROC>()} else {&self.multitexcoord4d}})
+			.field("multitexcoord4dv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord4dv) == (dummy_pfnglmultitexcoord4dvproc as *const c_void) {&null::<PFNGLMULTITEXCOORD4DVPROC>()} else {&self.multitexcoord4dv}})
+			.field("multitexcoord4f", unsafe{if transmute::<_, *const c_void>(self.multitexcoord4f) == (dummy_pfnglmultitexcoord4fproc as *const c_void) {&null::<PFNGLMULTITEXCOORD4FPROC>()} else {&self.multitexcoord4f}})
+			.field("multitexcoord4fv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord4fv) == (dummy_pfnglmultitexcoord4fvproc as *const c_void) {&null::<PFNGLMULTITEXCOORD4FVPROC>()} else {&self.multitexcoord4fv}})
+			.field("multitexcoord4i", unsafe{if transmute::<_, *const c_void>(self.multitexcoord4i) == (dummy_pfnglmultitexcoord4iproc as *const c_void) {&null::<PFNGLMULTITEXCOORD4IPROC>()} else {&self.multitexcoord4i}})
+			.field("multitexcoord4iv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord4iv) == (dummy_pfnglmultitexcoord4ivproc as *const c_void) {&null::<PFNGLMULTITEXCOORD4IVPROC>()} else {&self.multitexcoord4iv}})
+			.field("multitexcoord4s", unsafe{if transmute::<_, *const c_void>(self.multitexcoord4s) == (dummy_pfnglmultitexcoord4sproc as *const c_void) {&null::<PFNGLMULTITEXCOORD4SPROC>()} else {&self.multitexcoord4s}})
+			.field("multitexcoord4sv", unsafe{if transmute::<_, *const c_void>(self.multitexcoord4sv) == (dummy_pfnglmultitexcoord4svproc as *const c_void) {&null::<PFNGLMULTITEXCOORD4SVPROC>()} else {&self.multitexcoord4sv}})
+			.field("loadtransposematrixf", unsafe{if transmute::<_, *const c_void>(self.loadtransposematrixf) == (dummy_pfnglloadtransposematrixfproc as *const c_void) {&null::<PFNGLLOADTRANSPOSEMATRIXFPROC>()} else {&self.loadtransposematrixf}})
+			.field("loadtransposematrixd", unsafe{if transmute::<_, *const c_void>(self.loadtransposematrixd) == (dummy_pfnglloadtransposematrixdproc as *const c_void) {&null::<PFNGLLOADTRANSPOSEMATRIXDPROC>()} else {&self.loadtransposematrixd}})
+			.field("multtransposematrixf", unsafe{if transmute::<_, *const c_void>(self.multtransposematrixf) == (dummy_pfnglmulttransposematrixfproc as *const c_void) {&null::<PFNGLMULTTRANSPOSEMATRIXFPROC>()} else {&self.multtransposematrixf}})
+			.field("multtransposematrixd", unsafe{if transmute::<_, *const c_void>(self.multtransposematrixd) == (dummy_pfnglmulttransposematrixdproc as *const c_void) {&null::<PFNGLMULTTRANSPOSEMATRIXDPROC>()} else {&self.multtransposematrixd}})
+			.finish()
+		} else {
+			f.debug_struct("Version13")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLBLENDFUNCSEPARATEPROC = extern "system" fn(GLenum, GLenum, GLenum, GLenum);
 type PFNGLMULTIDRAWARRAYSPROC = extern "system" fn(GLenum, *const GLint, *const GLsizei, GLsizei);
 type PFNGLMULTIDRAWELEMENTSPROC = extern "system" fn(GLenum, *const GLsizei, GLenum, *const *const c_void, GLsizei);
@@ -2206,7 +2373,7 @@ pub trait GL_1_4 {
 	fn glBlendEquation(&self, mode: GLenum);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version14 {
 	available: bool,
 	blendfuncseparate: PFNGLBLENDFUNCSEPARATEPROC,
@@ -2567,7 +2734,66 @@ impl Default for Version14 {
 		}
 	}
 }
-
+impl Debug for Version14 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version14")
+			.field("available", &self.available)
+			.field("blendfuncseparate", unsafe{if transmute::<_, *const c_void>(self.blendfuncseparate) == (dummy_pfnglblendfuncseparateproc as *const c_void) {&null::<PFNGLBLENDFUNCSEPARATEPROC>()} else {&self.blendfuncseparate}})
+			.field("multidrawarrays", unsafe{if transmute::<_, *const c_void>(self.multidrawarrays) == (dummy_pfnglmultidrawarraysproc as *const c_void) {&null::<PFNGLMULTIDRAWARRAYSPROC>()} else {&self.multidrawarrays}})
+			.field("multidrawelements", unsafe{if transmute::<_, *const c_void>(self.multidrawelements) == (dummy_pfnglmultidrawelementsproc as *const c_void) {&null::<PFNGLMULTIDRAWELEMENTSPROC>()} else {&self.multidrawelements}})
+			.field("pointparameterf", unsafe{if transmute::<_, *const c_void>(self.pointparameterf) == (dummy_pfnglpointparameterfproc as *const c_void) {&null::<PFNGLPOINTPARAMETERFPROC>()} else {&self.pointparameterf}})
+			.field("pointparameterfv", unsafe{if transmute::<_, *const c_void>(self.pointparameterfv) == (dummy_pfnglpointparameterfvproc as *const c_void) {&null::<PFNGLPOINTPARAMETERFVPROC>()} else {&self.pointparameterfv}})
+			.field("pointparameteri", unsafe{if transmute::<_, *const c_void>(self.pointparameteri) == (dummy_pfnglpointparameteriproc as *const c_void) {&null::<PFNGLPOINTPARAMETERIPROC>()} else {&self.pointparameteri}})
+			.field("pointparameteriv", unsafe{if transmute::<_, *const c_void>(self.pointparameteriv) == (dummy_pfnglpointparameterivproc as *const c_void) {&null::<PFNGLPOINTPARAMETERIVPROC>()} else {&self.pointparameteriv}})
+			.field("fogcoordf", unsafe{if transmute::<_, *const c_void>(self.fogcoordf) == (dummy_pfnglfogcoordfproc as *const c_void) {&null::<PFNGLFOGCOORDFPROC>()} else {&self.fogcoordf}})
+			.field("fogcoordfv", unsafe{if transmute::<_, *const c_void>(self.fogcoordfv) == (dummy_pfnglfogcoordfvproc as *const c_void) {&null::<PFNGLFOGCOORDFVPROC>()} else {&self.fogcoordfv}})
+			.field("fogcoordd", unsafe{if transmute::<_, *const c_void>(self.fogcoordd) == (dummy_pfnglfogcoorddproc as *const c_void) {&null::<PFNGLFOGCOORDDPROC>()} else {&self.fogcoordd}})
+			.field("fogcoorddv", unsafe{if transmute::<_, *const c_void>(self.fogcoorddv) == (dummy_pfnglfogcoorddvproc as *const c_void) {&null::<PFNGLFOGCOORDDVPROC>()} else {&self.fogcoorddv}})
+			.field("fogcoordpointer", unsafe{if transmute::<_, *const c_void>(self.fogcoordpointer) == (dummy_pfnglfogcoordpointerproc as *const c_void) {&null::<PFNGLFOGCOORDPOINTERPROC>()} else {&self.fogcoordpointer}})
+			.field("secondarycolor3b", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3b) == (dummy_pfnglsecondarycolor3bproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3BPROC>()} else {&self.secondarycolor3b}})
+			.field("secondarycolor3bv", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3bv) == (dummy_pfnglsecondarycolor3bvproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3BVPROC>()} else {&self.secondarycolor3bv}})
+			.field("secondarycolor3d", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3d) == (dummy_pfnglsecondarycolor3dproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3DPROC>()} else {&self.secondarycolor3d}})
+			.field("secondarycolor3dv", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3dv) == (dummy_pfnglsecondarycolor3dvproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3DVPROC>()} else {&self.secondarycolor3dv}})
+			.field("secondarycolor3f", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3f) == (dummy_pfnglsecondarycolor3fproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3FPROC>()} else {&self.secondarycolor3f}})
+			.field("secondarycolor3fv", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3fv) == (dummy_pfnglsecondarycolor3fvproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3FVPROC>()} else {&self.secondarycolor3fv}})
+			.field("secondarycolor3i", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3i) == (dummy_pfnglsecondarycolor3iproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3IPROC>()} else {&self.secondarycolor3i}})
+			.field("secondarycolor3iv", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3iv) == (dummy_pfnglsecondarycolor3ivproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3IVPROC>()} else {&self.secondarycolor3iv}})
+			.field("secondarycolor3s", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3s) == (dummy_pfnglsecondarycolor3sproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3SPROC>()} else {&self.secondarycolor3s}})
+			.field("secondarycolor3sv", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3sv) == (dummy_pfnglsecondarycolor3svproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3SVPROC>()} else {&self.secondarycolor3sv}})
+			.field("secondarycolor3ub", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3ub) == (dummy_pfnglsecondarycolor3ubproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3UBPROC>()} else {&self.secondarycolor3ub}})
+			.field("secondarycolor3ubv", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3ubv) == (dummy_pfnglsecondarycolor3ubvproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3UBVPROC>()} else {&self.secondarycolor3ubv}})
+			.field("secondarycolor3ui", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3ui) == (dummy_pfnglsecondarycolor3uiproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3UIPROC>()} else {&self.secondarycolor3ui}})
+			.field("secondarycolor3uiv", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3uiv) == (dummy_pfnglsecondarycolor3uivproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3UIVPROC>()} else {&self.secondarycolor3uiv}})
+			.field("secondarycolor3us", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3us) == (dummy_pfnglsecondarycolor3usproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3USPROC>()} else {&self.secondarycolor3us}})
+			.field("secondarycolor3usv", unsafe{if transmute::<_, *const c_void>(self.secondarycolor3usv) == (dummy_pfnglsecondarycolor3usvproc as *const c_void) {&null::<PFNGLSECONDARYCOLOR3USVPROC>()} else {&self.secondarycolor3usv}})
+			.field("secondarycolorpointer", unsafe{if transmute::<_, *const c_void>(self.secondarycolorpointer) == (dummy_pfnglsecondarycolorpointerproc as *const c_void) {&null::<PFNGLSECONDARYCOLORPOINTERPROC>()} else {&self.secondarycolorpointer}})
+			.field("windowpos2d", unsafe{if transmute::<_, *const c_void>(self.windowpos2d) == (dummy_pfnglwindowpos2dproc as *const c_void) {&null::<PFNGLWINDOWPOS2DPROC>()} else {&self.windowpos2d}})
+			.field("windowpos2dv", unsafe{if transmute::<_, *const c_void>(self.windowpos2dv) == (dummy_pfnglwindowpos2dvproc as *const c_void) {&null::<PFNGLWINDOWPOS2DVPROC>()} else {&self.windowpos2dv}})
+			.field("windowpos2f", unsafe{if transmute::<_, *const c_void>(self.windowpos2f) == (dummy_pfnglwindowpos2fproc as *const c_void) {&null::<PFNGLWINDOWPOS2FPROC>()} else {&self.windowpos2f}})
+			.field("windowpos2fv", unsafe{if transmute::<_, *const c_void>(self.windowpos2fv) == (dummy_pfnglwindowpos2fvproc as *const c_void) {&null::<PFNGLWINDOWPOS2FVPROC>()} else {&self.windowpos2fv}})
+			.field("windowpos2i", unsafe{if transmute::<_, *const c_void>(self.windowpos2i) == (dummy_pfnglwindowpos2iproc as *const c_void) {&null::<PFNGLWINDOWPOS2IPROC>()} else {&self.windowpos2i}})
+			.field("windowpos2iv", unsafe{if transmute::<_, *const c_void>(self.windowpos2iv) == (dummy_pfnglwindowpos2ivproc as *const c_void) {&null::<PFNGLWINDOWPOS2IVPROC>()} else {&self.windowpos2iv}})
+			.field("windowpos2s", unsafe{if transmute::<_, *const c_void>(self.windowpos2s) == (dummy_pfnglwindowpos2sproc as *const c_void) {&null::<PFNGLWINDOWPOS2SPROC>()} else {&self.windowpos2s}})
+			.field("windowpos2sv", unsafe{if transmute::<_, *const c_void>(self.windowpos2sv) == (dummy_pfnglwindowpos2svproc as *const c_void) {&null::<PFNGLWINDOWPOS2SVPROC>()} else {&self.windowpos2sv}})
+			.field("windowpos3d", unsafe{if transmute::<_, *const c_void>(self.windowpos3d) == (dummy_pfnglwindowpos3dproc as *const c_void) {&null::<PFNGLWINDOWPOS3DPROC>()} else {&self.windowpos3d}})
+			.field("windowpos3dv", unsafe{if transmute::<_, *const c_void>(self.windowpos3dv) == (dummy_pfnglwindowpos3dvproc as *const c_void) {&null::<PFNGLWINDOWPOS3DVPROC>()} else {&self.windowpos3dv}})
+			.field("windowpos3f", unsafe{if transmute::<_, *const c_void>(self.windowpos3f) == (dummy_pfnglwindowpos3fproc as *const c_void) {&null::<PFNGLWINDOWPOS3FPROC>()} else {&self.windowpos3f}})
+			.field("windowpos3fv", unsafe{if transmute::<_, *const c_void>(self.windowpos3fv) == (dummy_pfnglwindowpos3fvproc as *const c_void) {&null::<PFNGLWINDOWPOS3FVPROC>()} else {&self.windowpos3fv}})
+			.field("windowpos3i", unsafe{if transmute::<_, *const c_void>(self.windowpos3i) == (dummy_pfnglwindowpos3iproc as *const c_void) {&null::<PFNGLWINDOWPOS3IPROC>()} else {&self.windowpos3i}})
+			.field("windowpos3iv", unsafe{if transmute::<_, *const c_void>(self.windowpos3iv) == (dummy_pfnglwindowpos3ivproc as *const c_void) {&null::<PFNGLWINDOWPOS3IVPROC>()} else {&self.windowpos3iv}})
+			.field("windowpos3s", unsafe{if transmute::<_, *const c_void>(self.windowpos3s) == (dummy_pfnglwindowpos3sproc as *const c_void) {&null::<PFNGLWINDOWPOS3SPROC>()} else {&self.windowpos3s}})
+			.field("windowpos3sv", unsafe{if transmute::<_, *const c_void>(self.windowpos3sv) == (dummy_pfnglwindowpos3svproc as *const c_void) {&null::<PFNGLWINDOWPOS3SVPROC>()} else {&self.windowpos3sv}})
+			.field("blendcolor", unsafe{if transmute::<_, *const c_void>(self.blendcolor) == (dummy_pfnglblendcolorproc as *const c_void) {&null::<PFNGLBLENDCOLORPROC>()} else {&self.blendcolor}})
+			.field("blendequation", unsafe{if transmute::<_, *const c_void>(self.blendequation) == (dummy_pfnglblendequationproc as *const c_void) {&null::<PFNGLBLENDEQUATIONPROC>()} else {&self.blendequation}})
+			.finish()
+		} else {
+			f.debug_struct("Version14")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type GLsizeiptr = khronos_ssize_t;
 type GLintptr = khronos_intptr_t;
 type PFNGLGENQUERIESPROC = extern "system" fn(GLsizei, *mut GLuint);
@@ -2719,7 +2945,7 @@ pub trait GL_1_5 {
 	fn glGetBufferPointerv(&self, target: GLenum, pname: GLenum, params: *mut *mut c_void);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version15 {
 	available: bool,
 	genqueries: PFNGLGENQUERIESPROC,
@@ -2884,7 +3110,38 @@ impl Default for Version15 {
 		}
 	}
 }
-
+impl Debug for Version15 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version15")
+			.field("available", &self.available)
+			.field("genqueries", unsafe{if transmute::<_, *const c_void>(self.genqueries) == (dummy_pfnglgenqueriesproc as *const c_void) {&null::<PFNGLGENQUERIESPROC>()} else {&self.genqueries}})
+			.field("deletequeries", unsafe{if transmute::<_, *const c_void>(self.deletequeries) == (dummy_pfngldeletequeriesproc as *const c_void) {&null::<PFNGLDELETEQUERIESPROC>()} else {&self.deletequeries}})
+			.field("isquery", unsafe{if transmute::<_, *const c_void>(self.isquery) == (dummy_pfnglisqueryproc as *const c_void) {&null::<PFNGLISQUERYPROC>()} else {&self.isquery}})
+			.field("beginquery", unsafe{if transmute::<_, *const c_void>(self.beginquery) == (dummy_pfnglbeginqueryproc as *const c_void) {&null::<PFNGLBEGINQUERYPROC>()} else {&self.beginquery}})
+			.field("endquery", unsafe{if transmute::<_, *const c_void>(self.endquery) == (dummy_pfnglendqueryproc as *const c_void) {&null::<PFNGLENDQUERYPROC>()} else {&self.endquery}})
+			.field("getqueryiv", unsafe{if transmute::<_, *const c_void>(self.getqueryiv) == (dummy_pfnglgetqueryivproc as *const c_void) {&null::<PFNGLGETQUERYIVPROC>()} else {&self.getqueryiv}})
+			.field("getqueryobjectiv", unsafe{if transmute::<_, *const c_void>(self.getqueryobjectiv) == (dummy_pfnglgetqueryobjectivproc as *const c_void) {&null::<PFNGLGETQUERYOBJECTIVPROC>()} else {&self.getqueryobjectiv}})
+			.field("getqueryobjectuiv", unsafe{if transmute::<_, *const c_void>(self.getqueryobjectuiv) == (dummy_pfnglgetqueryobjectuivproc as *const c_void) {&null::<PFNGLGETQUERYOBJECTUIVPROC>()} else {&self.getqueryobjectuiv}})
+			.field("bindbuffer", unsafe{if transmute::<_, *const c_void>(self.bindbuffer) == (dummy_pfnglbindbufferproc as *const c_void) {&null::<PFNGLBINDBUFFERPROC>()} else {&self.bindbuffer}})
+			.field("deletebuffers", unsafe{if transmute::<_, *const c_void>(self.deletebuffers) == (dummy_pfngldeletebuffersproc as *const c_void) {&null::<PFNGLDELETEBUFFERSPROC>()} else {&self.deletebuffers}})
+			.field("genbuffers", unsafe{if transmute::<_, *const c_void>(self.genbuffers) == (dummy_pfnglgenbuffersproc as *const c_void) {&null::<PFNGLGENBUFFERSPROC>()} else {&self.genbuffers}})
+			.field("isbuffer", unsafe{if transmute::<_, *const c_void>(self.isbuffer) == (dummy_pfnglisbufferproc as *const c_void) {&null::<PFNGLISBUFFERPROC>()} else {&self.isbuffer}})
+			.field("bufferdata", unsafe{if transmute::<_, *const c_void>(self.bufferdata) == (dummy_pfnglbufferdataproc as *const c_void) {&null::<PFNGLBUFFERDATAPROC>()} else {&self.bufferdata}})
+			.field("buffersubdata", unsafe{if transmute::<_, *const c_void>(self.buffersubdata) == (dummy_pfnglbuffersubdataproc as *const c_void) {&null::<PFNGLBUFFERSUBDATAPROC>()} else {&self.buffersubdata}})
+			.field("getbuffersubdata", unsafe{if transmute::<_, *const c_void>(self.getbuffersubdata) == (dummy_pfnglgetbuffersubdataproc as *const c_void) {&null::<PFNGLGETBUFFERSUBDATAPROC>()} else {&self.getbuffersubdata}})
+			.field("mapbuffer", unsafe{if transmute::<_, *const c_void>(self.mapbuffer) == (dummy_pfnglmapbufferproc as *const c_void) {&null::<PFNGLMAPBUFFERPROC>()} else {&self.mapbuffer}})
+			.field("unmapbuffer", unsafe{if transmute::<_, *const c_void>(self.unmapbuffer) == (dummy_pfnglunmapbufferproc as *const c_void) {&null::<PFNGLUNMAPBUFFERPROC>()} else {&self.unmapbuffer}})
+			.field("getbufferparameteriv", unsafe{if transmute::<_, *const c_void>(self.getbufferparameteriv) == (dummy_pfnglgetbufferparameterivproc as *const c_void) {&null::<PFNGLGETBUFFERPARAMETERIVPROC>()} else {&self.getbufferparameteriv}})
+			.field("getbufferpointerv", unsafe{if transmute::<_, *const c_void>(self.getbufferpointerv) == (dummy_pfnglgetbufferpointervproc as *const c_void) {&null::<PFNGLGETBUFFERPOINTERVPROC>()} else {&self.getbufferpointerv}})
+			.finish()
+		} else {
+			f.debug_struct("Version15")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type GLchar = i8;
 type PFNGLBLENDEQUATIONSEPARATEPROC = extern "system" fn(GLenum, GLenum);
 type PFNGLDRAWBUFFERSPROC = extern "system" fn(GLsizei, *const GLenum);
@@ -3440,7 +3697,7 @@ pub trait GL_2_0 {
 	fn get_shading_language_version(&self) -> &'static str;
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version20 {
 	shading_language_version: &'static str,
 	available: bool,
@@ -4130,7 +4387,113 @@ impl Default for Version20 {
 		}
 	}
 }
-
+impl Debug for Version20 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version20")
+			.field("available", &self.available)
+			.field("shading_language_version", &self.shading_language_version)
+			.field("blendequationseparate", unsafe{if transmute::<_, *const c_void>(self.blendequationseparate) == (dummy_pfnglblendequationseparateproc as *const c_void) {&null::<PFNGLBLENDEQUATIONSEPARATEPROC>()} else {&self.blendequationseparate}})
+			.field("drawbuffers", unsafe{if transmute::<_, *const c_void>(self.drawbuffers) == (dummy_pfngldrawbuffersproc as *const c_void) {&null::<PFNGLDRAWBUFFERSPROC>()} else {&self.drawbuffers}})
+			.field("stencilopseparate", unsafe{if transmute::<_, *const c_void>(self.stencilopseparate) == (dummy_pfnglstencilopseparateproc as *const c_void) {&null::<PFNGLSTENCILOPSEPARATEPROC>()} else {&self.stencilopseparate}})
+			.field("stencilfuncseparate", unsafe{if transmute::<_, *const c_void>(self.stencilfuncseparate) == (dummy_pfnglstencilfuncseparateproc as *const c_void) {&null::<PFNGLSTENCILFUNCSEPARATEPROC>()} else {&self.stencilfuncseparate}})
+			.field("stencilmaskseparate", unsafe{if transmute::<_, *const c_void>(self.stencilmaskseparate) == (dummy_pfnglstencilmaskseparateproc as *const c_void) {&null::<PFNGLSTENCILMASKSEPARATEPROC>()} else {&self.stencilmaskseparate}})
+			.field("attachshader", unsafe{if transmute::<_, *const c_void>(self.attachshader) == (dummy_pfnglattachshaderproc as *const c_void) {&null::<PFNGLATTACHSHADERPROC>()} else {&self.attachshader}})
+			.field("bindattriblocation", unsafe{if transmute::<_, *const c_void>(self.bindattriblocation) == (dummy_pfnglbindattriblocationproc as *const c_void) {&null::<PFNGLBINDATTRIBLOCATIONPROC>()} else {&self.bindattriblocation}})
+			.field("compileshader", unsafe{if transmute::<_, *const c_void>(self.compileshader) == (dummy_pfnglcompileshaderproc as *const c_void) {&null::<PFNGLCOMPILESHADERPROC>()} else {&self.compileshader}})
+			.field("createprogram", unsafe{if transmute::<_, *const c_void>(self.createprogram) == (dummy_pfnglcreateprogramproc as *const c_void) {&null::<PFNGLCREATEPROGRAMPROC>()} else {&self.createprogram}})
+			.field("createshader", unsafe{if transmute::<_, *const c_void>(self.createshader) == (dummy_pfnglcreateshaderproc as *const c_void) {&null::<PFNGLCREATESHADERPROC>()} else {&self.createshader}})
+			.field("deleteprogram", unsafe{if transmute::<_, *const c_void>(self.deleteprogram) == (dummy_pfngldeleteprogramproc as *const c_void) {&null::<PFNGLDELETEPROGRAMPROC>()} else {&self.deleteprogram}})
+			.field("deleteshader", unsafe{if transmute::<_, *const c_void>(self.deleteshader) == (dummy_pfngldeleteshaderproc as *const c_void) {&null::<PFNGLDELETESHADERPROC>()} else {&self.deleteshader}})
+			.field("detachshader", unsafe{if transmute::<_, *const c_void>(self.detachshader) == (dummy_pfngldetachshaderproc as *const c_void) {&null::<PFNGLDETACHSHADERPROC>()} else {&self.detachshader}})
+			.field("disablevertexattribarray", unsafe{if transmute::<_, *const c_void>(self.disablevertexattribarray) == (dummy_pfngldisablevertexattribarrayproc as *const c_void) {&null::<PFNGLDISABLEVERTEXATTRIBARRAYPROC>()} else {&self.disablevertexattribarray}})
+			.field("enablevertexattribarray", unsafe{if transmute::<_, *const c_void>(self.enablevertexattribarray) == (dummy_pfnglenablevertexattribarrayproc as *const c_void) {&null::<PFNGLENABLEVERTEXATTRIBARRAYPROC>()} else {&self.enablevertexattribarray}})
+			.field("getactiveattrib", unsafe{if transmute::<_, *const c_void>(self.getactiveattrib) == (dummy_pfnglgetactiveattribproc as *const c_void) {&null::<PFNGLGETACTIVEATTRIBPROC>()} else {&self.getactiveattrib}})
+			.field("getactiveuniform", unsafe{if transmute::<_, *const c_void>(self.getactiveuniform) == (dummy_pfnglgetactiveuniformproc as *const c_void) {&null::<PFNGLGETACTIVEUNIFORMPROC>()} else {&self.getactiveuniform}})
+			.field("getattachedshaders", unsafe{if transmute::<_, *const c_void>(self.getattachedshaders) == (dummy_pfnglgetattachedshadersproc as *const c_void) {&null::<PFNGLGETATTACHEDSHADERSPROC>()} else {&self.getattachedshaders}})
+			.field("getattriblocation", unsafe{if transmute::<_, *const c_void>(self.getattriblocation) == (dummy_pfnglgetattriblocationproc as *const c_void) {&null::<PFNGLGETATTRIBLOCATIONPROC>()} else {&self.getattriblocation}})
+			.field("getprogramiv", unsafe{if transmute::<_, *const c_void>(self.getprogramiv) == (dummy_pfnglgetprogramivproc as *const c_void) {&null::<PFNGLGETPROGRAMIVPROC>()} else {&self.getprogramiv}})
+			.field("getprograminfolog", unsafe{if transmute::<_, *const c_void>(self.getprograminfolog) == (dummy_pfnglgetprograminfologproc as *const c_void) {&null::<PFNGLGETPROGRAMINFOLOGPROC>()} else {&self.getprograminfolog}})
+			.field("getshaderiv", unsafe{if transmute::<_, *const c_void>(self.getshaderiv) == (dummy_pfnglgetshaderivproc as *const c_void) {&null::<PFNGLGETSHADERIVPROC>()} else {&self.getshaderiv}})
+			.field("getshaderinfolog", unsafe{if transmute::<_, *const c_void>(self.getshaderinfolog) == (dummy_pfnglgetshaderinfologproc as *const c_void) {&null::<PFNGLGETSHADERINFOLOGPROC>()} else {&self.getshaderinfolog}})
+			.field("getshadersource", unsafe{if transmute::<_, *const c_void>(self.getshadersource) == (dummy_pfnglgetshadersourceproc as *const c_void) {&null::<PFNGLGETSHADERSOURCEPROC>()} else {&self.getshadersource}})
+			.field("getuniformlocation", unsafe{if transmute::<_, *const c_void>(self.getuniformlocation) == (dummy_pfnglgetuniformlocationproc as *const c_void) {&null::<PFNGLGETUNIFORMLOCATIONPROC>()} else {&self.getuniformlocation}})
+			.field("getuniformfv", unsafe{if transmute::<_, *const c_void>(self.getuniformfv) == (dummy_pfnglgetuniformfvproc as *const c_void) {&null::<PFNGLGETUNIFORMFVPROC>()} else {&self.getuniformfv}})
+			.field("getuniformiv", unsafe{if transmute::<_, *const c_void>(self.getuniformiv) == (dummy_pfnglgetuniformivproc as *const c_void) {&null::<PFNGLGETUNIFORMIVPROC>()} else {&self.getuniformiv}})
+			.field("getvertexattribdv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribdv) == (dummy_pfnglgetvertexattribdvproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBDVPROC>()} else {&self.getvertexattribdv}})
+			.field("getvertexattribfv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribfv) == (dummy_pfnglgetvertexattribfvproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBFVPROC>()} else {&self.getvertexattribfv}})
+			.field("getvertexattribiv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribiv) == (dummy_pfnglgetvertexattribivproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBIVPROC>()} else {&self.getvertexattribiv}})
+			.field("getvertexattribpointerv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribpointerv) == (dummy_pfnglgetvertexattribpointervproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBPOINTERVPROC>()} else {&self.getvertexattribpointerv}})
+			.field("isprogram", unsafe{if transmute::<_, *const c_void>(self.isprogram) == (dummy_pfnglisprogramproc as *const c_void) {&null::<PFNGLISPROGRAMPROC>()} else {&self.isprogram}})
+			.field("isshader", unsafe{if transmute::<_, *const c_void>(self.isshader) == (dummy_pfnglisshaderproc as *const c_void) {&null::<PFNGLISSHADERPROC>()} else {&self.isshader}})
+			.field("linkprogram", unsafe{if transmute::<_, *const c_void>(self.linkprogram) == (dummy_pfngllinkprogramproc as *const c_void) {&null::<PFNGLLINKPROGRAMPROC>()} else {&self.linkprogram}})
+			.field("shadersource", unsafe{if transmute::<_, *const c_void>(self.shadersource) == (dummy_pfnglshadersourceproc as *const c_void) {&null::<PFNGLSHADERSOURCEPROC>()} else {&self.shadersource}})
+			.field("useprogram", unsafe{if transmute::<_, *const c_void>(self.useprogram) == (dummy_pfngluseprogramproc as *const c_void) {&null::<PFNGLUSEPROGRAMPROC>()} else {&self.useprogram}})
+			.field("uniform1f", unsafe{if transmute::<_, *const c_void>(self.uniform1f) == (dummy_pfngluniform1fproc as *const c_void) {&null::<PFNGLUNIFORM1FPROC>()} else {&self.uniform1f}})
+			.field("uniform2f", unsafe{if transmute::<_, *const c_void>(self.uniform2f) == (dummy_pfngluniform2fproc as *const c_void) {&null::<PFNGLUNIFORM2FPROC>()} else {&self.uniform2f}})
+			.field("uniform3f", unsafe{if transmute::<_, *const c_void>(self.uniform3f) == (dummy_pfngluniform3fproc as *const c_void) {&null::<PFNGLUNIFORM3FPROC>()} else {&self.uniform3f}})
+			.field("uniform4f", unsafe{if transmute::<_, *const c_void>(self.uniform4f) == (dummy_pfngluniform4fproc as *const c_void) {&null::<PFNGLUNIFORM4FPROC>()} else {&self.uniform4f}})
+			.field("uniform1i", unsafe{if transmute::<_, *const c_void>(self.uniform1i) == (dummy_pfngluniform1iproc as *const c_void) {&null::<PFNGLUNIFORM1IPROC>()} else {&self.uniform1i}})
+			.field("uniform2i", unsafe{if transmute::<_, *const c_void>(self.uniform2i) == (dummy_pfngluniform2iproc as *const c_void) {&null::<PFNGLUNIFORM2IPROC>()} else {&self.uniform2i}})
+			.field("uniform3i", unsafe{if transmute::<_, *const c_void>(self.uniform3i) == (dummy_pfngluniform3iproc as *const c_void) {&null::<PFNGLUNIFORM3IPROC>()} else {&self.uniform3i}})
+			.field("uniform4i", unsafe{if transmute::<_, *const c_void>(self.uniform4i) == (dummy_pfngluniform4iproc as *const c_void) {&null::<PFNGLUNIFORM4IPROC>()} else {&self.uniform4i}})
+			.field("uniform1fv", unsafe{if transmute::<_, *const c_void>(self.uniform1fv) == (dummy_pfngluniform1fvproc as *const c_void) {&null::<PFNGLUNIFORM1FVPROC>()} else {&self.uniform1fv}})
+			.field("uniform2fv", unsafe{if transmute::<_, *const c_void>(self.uniform2fv) == (dummy_pfngluniform2fvproc as *const c_void) {&null::<PFNGLUNIFORM2FVPROC>()} else {&self.uniform2fv}})
+			.field("uniform3fv", unsafe{if transmute::<_, *const c_void>(self.uniform3fv) == (dummy_pfngluniform3fvproc as *const c_void) {&null::<PFNGLUNIFORM3FVPROC>()} else {&self.uniform3fv}})
+			.field("uniform4fv", unsafe{if transmute::<_, *const c_void>(self.uniform4fv) == (dummy_pfngluniform4fvproc as *const c_void) {&null::<PFNGLUNIFORM4FVPROC>()} else {&self.uniform4fv}})
+			.field("uniform1iv", unsafe{if transmute::<_, *const c_void>(self.uniform1iv) == (dummy_pfngluniform1ivproc as *const c_void) {&null::<PFNGLUNIFORM1IVPROC>()} else {&self.uniform1iv}})
+			.field("uniform2iv", unsafe{if transmute::<_, *const c_void>(self.uniform2iv) == (dummy_pfngluniform2ivproc as *const c_void) {&null::<PFNGLUNIFORM2IVPROC>()} else {&self.uniform2iv}})
+			.field("uniform3iv", unsafe{if transmute::<_, *const c_void>(self.uniform3iv) == (dummy_pfngluniform3ivproc as *const c_void) {&null::<PFNGLUNIFORM3IVPROC>()} else {&self.uniform3iv}})
+			.field("uniform4iv", unsafe{if transmute::<_, *const c_void>(self.uniform4iv) == (dummy_pfngluniform4ivproc as *const c_void) {&null::<PFNGLUNIFORM4IVPROC>()} else {&self.uniform4iv}})
+			.field("uniformmatrix2fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix2fv) == (dummy_pfngluniformmatrix2fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX2FVPROC>()} else {&self.uniformmatrix2fv}})
+			.field("uniformmatrix3fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix3fv) == (dummy_pfngluniformmatrix3fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX3FVPROC>()} else {&self.uniformmatrix3fv}})
+			.field("uniformmatrix4fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix4fv) == (dummy_pfngluniformmatrix4fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX4FVPROC>()} else {&self.uniformmatrix4fv}})
+			.field("validateprogram", unsafe{if transmute::<_, *const c_void>(self.validateprogram) == (dummy_pfnglvalidateprogramproc as *const c_void) {&null::<PFNGLVALIDATEPROGRAMPROC>()} else {&self.validateprogram}})
+			.field("vertexattrib1d", unsafe{if transmute::<_, *const c_void>(self.vertexattrib1d) == (dummy_pfnglvertexattrib1dproc as *const c_void) {&null::<PFNGLVERTEXATTRIB1DPROC>()} else {&self.vertexattrib1d}})
+			.field("vertexattrib1dv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib1dv) == (dummy_pfnglvertexattrib1dvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB1DVPROC>()} else {&self.vertexattrib1dv}})
+			.field("vertexattrib1f", unsafe{if transmute::<_, *const c_void>(self.vertexattrib1f) == (dummy_pfnglvertexattrib1fproc as *const c_void) {&null::<PFNGLVERTEXATTRIB1FPROC>()} else {&self.vertexattrib1f}})
+			.field("vertexattrib1fv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib1fv) == (dummy_pfnglvertexattrib1fvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB1FVPROC>()} else {&self.vertexattrib1fv}})
+			.field("vertexattrib1s", unsafe{if transmute::<_, *const c_void>(self.vertexattrib1s) == (dummy_pfnglvertexattrib1sproc as *const c_void) {&null::<PFNGLVERTEXATTRIB1SPROC>()} else {&self.vertexattrib1s}})
+			.field("vertexattrib1sv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib1sv) == (dummy_pfnglvertexattrib1svproc as *const c_void) {&null::<PFNGLVERTEXATTRIB1SVPROC>()} else {&self.vertexattrib1sv}})
+			.field("vertexattrib2d", unsafe{if transmute::<_, *const c_void>(self.vertexattrib2d) == (dummy_pfnglvertexattrib2dproc as *const c_void) {&null::<PFNGLVERTEXATTRIB2DPROC>()} else {&self.vertexattrib2d}})
+			.field("vertexattrib2dv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib2dv) == (dummy_pfnglvertexattrib2dvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB2DVPROC>()} else {&self.vertexattrib2dv}})
+			.field("vertexattrib2f", unsafe{if transmute::<_, *const c_void>(self.vertexattrib2f) == (dummy_pfnglvertexattrib2fproc as *const c_void) {&null::<PFNGLVERTEXATTRIB2FPROC>()} else {&self.vertexattrib2f}})
+			.field("vertexattrib2fv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib2fv) == (dummy_pfnglvertexattrib2fvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB2FVPROC>()} else {&self.vertexattrib2fv}})
+			.field("vertexattrib2s", unsafe{if transmute::<_, *const c_void>(self.vertexattrib2s) == (dummy_pfnglvertexattrib2sproc as *const c_void) {&null::<PFNGLVERTEXATTRIB2SPROC>()} else {&self.vertexattrib2s}})
+			.field("vertexattrib2sv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib2sv) == (dummy_pfnglvertexattrib2svproc as *const c_void) {&null::<PFNGLVERTEXATTRIB2SVPROC>()} else {&self.vertexattrib2sv}})
+			.field("vertexattrib3d", unsafe{if transmute::<_, *const c_void>(self.vertexattrib3d) == (dummy_pfnglvertexattrib3dproc as *const c_void) {&null::<PFNGLVERTEXATTRIB3DPROC>()} else {&self.vertexattrib3d}})
+			.field("vertexattrib3dv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib3dv) == (dummy_pfnglvertexattrib3dvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB3DVPROC>()} else {&self.vertexattrib3dv}})
+			.field("vertexattrib3f", unsafe{if transmute::<_, *const c_void>(self.vertexattrib3f) == (dummy_pfnglvertexattrib3fproc as *const c_void) {&null::<PFNGLVERTEXATTRIB3FPROC>()} else {&self.vertexattrib3f}})
+			.field("vertexattrib3fv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib3fv) == (dummy_pfnglvertexattrib3fvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB3FVPROC>()} else {&self.vertexattrib3fv}})
+			.field("vertexattrib3s", unsafe{if transmute::<_, *const c_void>(self.vertexattrib3s) == (dummy_pfnglvertexattrib3sproc as *const c_void) {&null::<PFNGLVERTEXATTRIB3SPROC>()} else {&self.vertexattrib3s}})
+			.field("vertexattrib3sv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib3sv) == (dummy_pfnglvertexattrib3svproc as *const c_void) {&null::<PFNGLVERTEXATTRIB3SVPROC>()} else {&self.vertexattrib3sv}})
+			.field("vertexattrib4nbv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4nbv) == (dummy_pfnglvertexattrib4nbvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4NBVPROC>()} else {&self.vertexattrib4nbv}})
+			.field("vertexattrib4niv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4niv) == (dummy_pfnglvertexattrib4nivproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4NIVPROC>()} else {&self.vertexattrib4niv}})
+			.field("vertexattrib4nsv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4nsv) == (dummy_pfnglvertexattrib4nsvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4NSVPROC>()} else {&self.vertexattrib4nsv}})
+			.field("vertexattrib4nub", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4nub) == (dummy_pfnglvertexattrib4nubproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4NUBPROC>()} else {&self.vertexattrib4nub}})
+			.field("vertexattrib4nubv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4nubv) == (dummy_pfnglvertexattrib4nubvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4NUBVPROC>()} else {&self.vertexattrib4nubv}})
+			.field("vertexattrib4nuiv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4nuiv) == (dummy_pfnglvertexattrib4nuivproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4NUIVPROC>()} else {&self.vertexattrib4nuiv}})
+			.field("vertexattrib4nusv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4nusv) == (dummy_pfnglvertexattrib4nusvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4NUSVPROC>()} else {&self.vertexattrib4nusv}})
+			.field("vertexattrib4bv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4bv) == (dummy_pfnglvertexattrib4bvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4BVPROC>()} else {&self.vertexattrib4bv}})
+			.field("vertexattrib4d", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4d) == (dummy_pfnglvertexattrib4dproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4DPROC>()} else {&self.vertexattrib4d}})
+			.field("vertexattrib4dv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4dv) == (dummy_pfnglvertexattrib4dvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4DVPROC>()} else {&self.vertexattrib4dv}})
+			.field("vertexattrib4f", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4f) == (dummy_pfnglvertexattrib4fproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4FPROC>()} else {&self.vertexattrib4f}})
+			.field("vertexattrib4fv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4fv) == (dummy_pfnglvertexattrib4fvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4FVPROC>()} else {&self.vertexattrib4fv}})
+			.field("vertexattrib4iv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4iv) == (dummy_pfnglvertexattrib4ivproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4IVPROC>()} else {&self.vertexattrib4iv}})
+			.field("vertexattrib4s", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4s) == (dummy_pfnglvertexattrib4sproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4SPROC>()} else {&self.vertexattrib4s}})
+			.field("vertexattrib4sv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4sv) == (dummy_pfnglvertexattrib4svproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4SVPROC>()} else {&self.vertexattrib4sv}})
+			.field("vertexattrib4ubv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4ubv) == (dummy_pfnglvertexattrib4ubvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4UBVPROC>()} else {&self.vertexattrib4ubv}})
+			.field("vertexattrib4uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4uiv) == (dummy_pfnglvertexattrib4uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4UIVPROC>()} else {&self.vertexattrib4uiv}})
+			.field("vertexattrib4usv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4usv) == (dummy_pfnglvertexattrib4usvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4USVPROC>()} else {&self.vertexattrib4usv}})
+			.field("vertexattribpointer", unsafe{if transmute::<_, *const c_void>(self.vertexattribpointer) == (dummy_pfnglvertexattribpointerproc as *const c_void) {&null::<PFNGLVERTEXATTRIBPOINTERPROC>()} else {&self.vertexattribpointer}})
+			.finish()
+		} else {
+			f.debug_struct("Version20")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLUNIFORMMATRIX2X3FVPROC = extern "system" fn(GLint, GLsizei, GLboolean, *const GLfloat);
 type PFNGLUNIFORMMATRIX3X2FVPROC = extern "system" fn(GLint, GLsizei, GLboolean, *const GLfloat);
 type PFNGLUNIFORMMATRIX2X4FVPROC = extern "system" fn(GLint, GLsizei, GLboolean, *const GLfloat);
@@ -4188,7 +4551,7 @@ pub trait GL_2_1 {
 	fn glUniformMatrix4x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version21 {
 	available: bool,
 	uniformmatrix2x3fv: PFNGLUNIFORMMATRIX2X3FVPROC,
@@ -4262,7 +4625,25 @@ impl Default for Version21 {
 		}
 	}
 }
-
+impl Debug for Version21 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version21")
+			.field("available", &self.available)
+			.field("uniformmatrix2x3fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix2x3fv) == (dummy_pfngluniformmatrix2x3fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX2X3FVPROC>()} else {&self.uniformmatrix2x3fv}})
+			.field("uniformmatrix3x2fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix3x2fv) == (dummy_pfngluniformmatrix3x2fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX3X2FVPROC>()} else {&self.uniformmatrix3x2fv}})
+			.field("uniformmatrix2x4fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix2x4fv) == (dummy_pfngluniformmatrix2x4fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX2X4FVPROC>()} else {&self.uniformmatrix2x4fv}})
+			.field("uniformmatrix4x2fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix4x2fv) == (dummy_pfngluniformmatrix4x2fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX4X2FVPROC>()} else {&self.uniformmatrix4x2fv}})
+			.field("uniformmatrix3x4fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix3x4fv) == (dummy_pfngluniformmatrix3x4fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX3X4FVPROC>()} else {&self.uniformmatrix3x4fv}})
+			.field("uniformmatrix4x3fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix4x3fv) == (dummy_pfngluniformmatrix4x3fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX4X3FVPROC>()} else {&self.uniformmatrix4x3fv}})
+			.finish()
+		} else {
+			f.debug_struct("Version21")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type GLhalf = khronos_uint16_t;
 type PFNGLCOLORMASKIPROC = extern "system" fn(GLuint, GLboolean, GLboolean, GLboolean, GLboolean);
 type PFNGLGETBOOLEANI_VPROC = extern "system" fn(GLenum, GLuint, *mut GLboolean);
@@ -4925,7 +5306,7 @@ pub trait GL_3_0 {
 	fn glIsVertexArray(&self, array: GLuint) -> GLboolean;
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version30 {
 	available: bool,
 	colormaski: PFNGLCOLORMASKIPROC,
@@ -5545,7 +5926,103 @@ impl Default for Version30 {
 		}
 	}
 }
-
+impl Debug for Version30 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version30")
+			.field("available", &self.available)
+			.field("colormaski", unsafe{if transmute::<_, *const c_void>(self.colormaski) == (dummy_pfnglcolormaskiproc as *const c_void) {&null::<PFNGLCOLORMASKIPROC>()} else {&self.colormaski}})
+			.field("getbooleani_v", unsafe{if transmute::<_, *const c_void>(self.getbooleani_v) == (dummy_pfnglgetbooleani_vproc as *const c_void) {&null::<PFNGLGETBOOLEANI_VPROC>()} else {&self.getbooleani_v}})
+			.field("getintegeri_v", unsafe{if transmute::<_, *const c_void>(self.getintegeri_v) == (dummy_pfnglgetintegeri_vproc as *const c_void) {&null::<PFNGLGETINTEGERI_VPROC>()} else {&self.getintegeri_v}})
+			.field("enablei", unsafe{if transmute::<_, *const c_void>(self.enablei) == (dummy_pfnglenableiproc as *const c_void) {&null::<PFNGLENABLEIPROC>()} else {&self.enablei}})
+			.field("disablei", unsafe{if transmute::<_, *const c_void>(self.disablei) == (dummy_pfngldisableiproc as *const c_void) {&null::<PFNGLDISABLEIPROC>()} else {&self.disablei}})
+			.field("isenabledi", unsafe{if transmute::<_, *const c_void>(self.isenabledi) == (dummy_pfnglisenablediproc as *const c_void) {&null::<PFNGLISENABLEDIPROC>()} else {&self.isenabledi}})
+			.field("begintransformfeedback", unsafe{if transmute::<_, *const c_void>(self.begintransformfeedback) == (dummy_pfnglbegintransformfeedbackproc as *const c_void) {&null::<PFNGLBEGINTRANSFORMFEEDBACKPROC>()} else {&self.begintransformfeedback}})
+			.field("endtransformfeedback", unsafe{if transmute::<_, *const c_void>(self.endtransformfeedback) == (dummy_pfnglendtransformfeedbackproc as *const c_void) {&null::<PFNGLENDTRANSFORMFEEDBACKPROC>()} else {&self.endtransformfeedback}})
+			.field("bindbufferrange", unsafe{if transmute::<_, *const c_void>(self.bindbufferrange) == (dummy_pfnglbindbufferrangeproc as *const c_void) {&null::<PFNGLBINDBUFFERRANGEPROC>()} else {&self.bindbufferrange}})
+			.field("bindbufferbase", unsafe{if transmute::<_, *const c_void>(self.bindbufferbase) == (dummy_pfnglbindbufferbaseproc as *const c_void) {&null::<PFNGLBINDBUFFERBASEPROC>()} else {&self.bindbufferbase}})
+			.field("transformfeedbackvaryings", unsafe{if transmute::<_, *const c_void>(self.transformfeedbackvaryings) == (dummy_pfngltransformfeedbackvaryingsproc as *const c_void) {&null::<PFNGLTRANSFORMFEEDBACKVARYINGSPROC>()} else {&self.transformfeedbackvaryings}})
+			.field("gettransformfeedbackvarying", unsafe{if transmute::<_, *const c_void>(self.gettransformfeedbackvarying) == (dummy_pfnglgettransformfeedbackvaryingproc as *const c_void) {&null::<PFNGLGETTRANSFORMFEEDBACKVARYINGPROC>()} else {&self.gettransformfeedbackvarying}})
+			.field("clampcolor", unsafe{if transmute::<_, *const c_void>(self.clampcolor) == (dummy_pfnglclampcolorproc as *const c_void) {&null::<PFNGLCLAMPCOLORPROC>()} else {&self.clampcolor}})
+			.field("beginconditionalrender", unsafe{if transmute::<_, *const c_void>(self.beginconditionalrender) == (dummy_pfnglbeginconditionalrenderproc as *const c_void) {&null::<PFNGLBEGINCONDITIONALRENDERPROC>()} else {&self.beginconditionalrender}})
+			.field("endconditionalrender", unsafe{if transmute::<_, *const c_void>(self.endconditionalrender) == (dummy_pfnglendconditionalrenderproc as *const c_void) {&null::<PFNGLENDCONDITIONALRENDERPROC>()} else {&self.endconditionalrender}})
+			.field("vertexattribipointer", unsafe{if transmute::<_, *const c_void>(self.vertexattribipointer) == (dummy_pfnglvertexattribipointerproc as *const c_void) {&null::<PFNGLVERTEXATTRIBIPOINTERPROC>()} else {&self.vertexattribipointer}})
+			.field("getvertexattribiiv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribiiv) == (dummy_pfnglgetvertexattribiivproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBIIVPROC>()} else {&self.getvertexattribiiv}})
+			.field("getvertexattribiuiv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribiuiv) == (dummy_pfnglgetvertexattribiuivproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBIUIVPROC>()} else {&self.getvertexattribiuiv}})
+			.field("vertexattribi1i", unsafe{if transmute::<_, *const c_void>(self.vertexattribi1i) == (dummy_pfnglvertexattribi1iproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI1IPROC>()} else {&self.vertexattribi1i}})
+			.field("vertexattribi2i", unsafe{if transmute::<_, *const c_void>(self.vertexattribi2i) == (dummy_pfnglvertexattribi2iproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI2IPROC>()} else {&self.vertexattribi2i}})
+			.field("vertexattribi3i", unsafe{if transmute::<_, *const c_void>(self.vertexattribi3i) == (dummy_pfnglvertexattribi3iproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI3IPROC>()} else {&self.vertexattribi3i}})
+			.field("vertexattribi4i", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4i) == (dummy_pfnglvertexattribi4iproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4IPROC>()} else {&self.vertexattribi4i}})
+			.field("vertexattribi1ui", unsafe{if transmute::<_, *const c_void>(self.vertexattribi1ui) == (dummy_pfnglvertexattribi1uiproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI1UIPROC>()} else {&self.vertexattribi1ui}})
+			.field("vertexattribi2ui", unsafe{if transmute::<_, *const c_void>(self.vertexattribi2ui) == (dummy_pfnglvertexattribi2uiproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI2UIPROC>()} else {&self.vertexattribi2ui}})
+			.field("vertexattribi3ui", unsafe{if transmute::<_, *const c_void>(self.vertexattribi3ui) == (dummy_pfnglvertexattribi3uiproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI3UIPROC>()} else {&self.vertexattribi3ui}})
+			.field("vertexattribi4ui", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4ui) == (dummy_pfnglvertexattribi4uiproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4UIPROC>()} else {&self.vertexattribi4ui}})
+			.field("vertexattribi1iv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi1iv) == (dummy_pfnglvertexattribi1ivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI1IVPROC>()} else {&self.vertexattribi1iv}})
+			.field("vertexattribi2iv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi2iv) == (dummy_pfnglvertexattribi2ivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI2IVPROC>()} else {&self.vertexattribi2iv}})
+			.field("vertexattribi3iv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi3iv) == (dummy_pfnglvertexattribi3ivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI3IVPROC>()} else {&self.vertexattribi3iv}})
+			.field("vertexattribi4iv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4iv) == (dummy_pfnglvertexattribi4ivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4IVPROC>()} else {&self.vertexattribi4iv}})
+			.field("vertexattribi1uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi1uiv) == (dummy_pfnglvertexattribi1uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI1UIVPROC>()} else {&self.vertexattribi1uiv}})
+			.field("vertexattribi2uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi2uiv) == (dummy_pfnglvertexattribi2uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI2UIVPROC>()} else {&self.vertexattribi2uiv}})
+			.field("vertexattribi3uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi3uiv) == (dummy_pfnglvertexattribi3uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI3UIVPROC>()} else {&self.vertexattribi3uiv}})
+			.field("vertexattribi4uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4uiv) == (dummy_pfnglvertexattribi4uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4UIVPROC>()} else {&self.vertexattribi4uiv}})
+			.field("vertexattribi4bv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4bv) == (dummy_pfnglvertexattribi4bvproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4BVPROC>()} else {&self.vertexattribi4bv}})
+			.field("vertexattribi4sv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4sv) == (dummy_pfnglvertexattribi4svproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4SVPROC>()} else {&self.vertexattribi4sv}})
+			.field("vertexattribi4ubv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4ubv) == (dummy_pfnglvertexattribi4ubvproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4UBVPROC>()} else {&self.vertexattribi4ubv}})
+			.field("vertexattribi4usv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4usv) == (dummy_pfnglvertexattribi4usvproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4USVPROC>()} else {&self.vertexattribi4usv}})
+			.field("getuniformuiv", unsafe{if transmute::<_, *const c_void>(self.getuniformuiv) == (dummy_pfnglgetuniformuivproc as *const c_void) {&null::<PFNGLGETUNIFORMUIVPROC>()} else {&self.getuniformuiv}})
+			.field("bindfragdatalocation", unsafe{if transmute::<_, *const c_void>(self.bindfragdatalocation) == (dummy_pfnglbindfragdatalocationproc as *const c_void) {&null::<PFNGLBINDFRAGDATALOCATIONPROC>()} else {&self.bindfragdatalocation}})
+			.field("getfragdatalocation", unsafe{if transmute::<_, *const c_void>(self.getfragdatalocation) == (dummy_pfnglgetfragdatalocationproc as *const c_void) {&null::<PFNGLGETFRAGDATALOCATIONPROC>()} else {&self.getfragdatalocation}})
+			.field("uniform1ui", unsafe{if transmute::<_, *const c_void>(self.uniform1ui) == (dummy_pfngluniform1uiproc as *const c_void) {&null::<PFNGLUNIFORM1UIPROC>()} else {&self.uniform1ui}})
+			.field("uniform2ui", unsafe{if transmute::<_, *const c_void>(self.uniform2ui) == (dummy_pfngluniform2uiproc as *const c_void) {&null::<PFNGLUNIFORM2UIPROC>()} else {&self.uniform2ui}})
+			.field("uniform3ui", unsafe{if transmute::<_, *const c_void>(self.uniform3ui) == (dummy_pfngluniform3uiproc as *const c_void) {&null::<PFNGLUNIFORM3UIPROC>()} else {&self.uniform3ui}})
+			.field("uniform4ui", unsafe{if transmute::<_, *const c_void>(self.uniform4ui) == (dummy_pfngluniform4uiproc as *const c_void) {&null::<PFNGLUNIFORM4UIPROC>()} else {&self.uniform4ui}})
+			.field("uniform1uiv", unsafe{if transmute::<_, *const c_void>(self.uniform1uiv) == (dummy_pfngluniform1uivproc as *const c_void) {&null::<PFNGLUNIFORM1UIVPROC>()} else {&self.uniform1uiv}})
+			.field("uniform2uiv", unsafe{if transmute::<_, *const c_void>(self.uniform2uiv) == (dummy_pfngluniform2uivproc as *const c_void) {&null::<PFNGLUNIFORM2UIVPROC>()} else {&self.uniform2uiv}})
+			.field("uniform3uiv", unsafe{if transmute::<_, *const c_void>(self.uniform3uiv) == (dummy_pfngluniform3uivproc as *const c_void) {&null::<PFNGLUNIFORM3UIVPROC>()} else {&self.uniform3uiv}})
+			.field("uniform4uiv", unsafe{if transmute::<_, *const c_void>(self.uniform4uiv) == (dummy_pfngluniform4uivproc as *const c_void) {&null::<PFNGLUNIFORM4UIVPROC>()} else {&self.uniform4uiv}})
+			.field("texparameteriiv", unsafe{if transmute::<_, *const c_void>(self.texparameteriiv) == (dummy_pfngltexparameteriivproc as *const c_void) {&null::<PFNGLTEXPARAMETERIIVPROC>()} else {&self.texparameteriiv}})
+			.field("texparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.texparameteriuiv) == (dummy_pfngltexparameteriuivproc as *const c_void) {&null::<PFNGLTEXPARAMETERIUIVPROC>()} else {&self.texparameteriuiv}})
+			.field("gettexparameteriiv", unsafe{if transmute::<_, *const c_void>(self.gettexparameteriiv) == (dummy_pfnglgettexparameteriivproc as *const c_void) {&null::<PFNGLGETTEXPARAMETERIIVPROC>()} else {&self.gettexparameteriiv}})
+			.field("gettexparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.gettexparameteriuiv) == (dummy_pfnglgettexparameteriuivproc as *const c_void) {&null::<PFNGLGETTEXPARAMETERIUIVPROC>()} else {&self.gettexparameteriuiv}})
+			.field("clearbufferiv", unsafe{if transmute::<_, *const c_void>(self.clearbufferiv) == (dummy_pfnglclearbufferivproc as *const c_void) {&null::<PFNGLCLEARBUFFERIVPROC>()} else {&self.clearbufferiv}})
+			.field("clearbufferuiv", unsafe{if transmute::<_, *const c_void>(self.clearbufferuiv) == (dummy_pfnglclearbufferuivproc as *const c_void) {&null::<PFNGLCLEARBUFFERUIVPROC>()} else {&self.clearbufferuiv}})
+			.field("clearbufferfv", unsafe{if transmute::<_, *const c_void>(self.clearbufferfv) == (dummy_pfnglclearbufferfvproc as *const c_void) {&null::<PFNGLCLEARBUFFERFVPROC>()} else {&self.clearbufferfv}})
+			.field("clearbufferfi", unsafe{if transmute::<_, *const c_void>(self.clearbufferfi) == (dummy_pfnglclearbufferfiproc as *const c_void) {&null::<PFNGLCLEARBUFFERFIPROC>()} else {&self.clearbufferfi}})
+			.field("getstringi", unsafe{if transmute::<_, *const c_void>(self.getstringi) == (dummy_pfnglgetstringiproc as *const c_void) {&null::<PFNGLGETSTRINGIPROC>()} else {&self.getstringi}})
+			.field("isrenderbuffer", unsafe{if transmute::<_, *const c_void>(self.isrenderbuffer) == (dummy_pfnglisrenderbufferproc as *const c_void) {&null::<PFNGLISRENDERBUFFERPROC>()} else {&self.isrenderbuffer}})
+			.field("bindrenderbuffer", unsafe{if transmute::<_, *const c_void>(self.bindrenderbuffer) == (dummy_pfnglbindrenderbufferproc as *const c_void) {&null::<PFNGLBINDRENDERBUFFERPROC>()} else {&self.bindrenderbuffer}})
+			.field("deleterenderbuffers", unsafe{if transmute::<_, *const c_void>(self.deleterenderbuffers) == (dummy_pfngldeleterenderbuffersproc as *const c_void) {&null::<PFNGLDELETERENDERBUFFERSPROC>()} else {&self.deleterenderbuffers}})
+			.field("genrenderbuffers", unsafe{if transmute::<_, *const c_void>(self.genrenderbuffers) == (dummy_pfnglgenrenderbuffersproc as *const c_void) {&null::<PFNGLGENRENDERBUFFERSPROC>()} else {&self.genrenderbuffers}})
+			.field("renderbufferstorage", unsafe{if transmute::<_, *const c_void>(self.renderbufferstorage) == (dummy_pfnglrenderbufferstorageproc as *const c_void) {&null::<PFNGLRENDERBUFFERSTORAGEPROC>()} else {&self.renderbufferstorage}})
+			.field("getrenderbufferparameteriv", unsafe{if transmute::<_, *const c_void>(self.getrenderbufferparameteriv) == (dummy_pfnglgetrenderbufferparameterivproc as *const c_void) {&null::<PFNGLGETRENDERBUFFERPARAMETERIVPROC>()} else {&self.getrenderbufferparameteriv}})
+			.field("isframebuffer", unsafe{if transmute::<_, *const c_void>(self.isframebuffer) == (dummy_pfnglisframebufferproc as *const c_void) {&null::<PFNGLISFRAMEBUFFERPROC>()} else {&self.isframebuffer}})
+			.field("bindframebuffer", unsafe{if transmute::<_, *const c_void>(self.bindframebuffer) == (dummy_pfnglbindframebufferproc as *const c_void) {&null::<PFNGLBINDFRAMEBUFFERPROC>()} else {&self.bindframebuffer}})
+			.field("deleteframebuffers", unsafe{if transmute::<_, *const c_void>(self.deleteframebuffers) == (dummy_pfngldeleteframebuffersproc as *const c_void) {&null::<PFNGLDELETEFRAMEBUFFERSPROC>()} else {&self.deleteframebuffers}})
+			.field("genframebuffers", unsafe{if transmute::<_, *const c_void>(self.genframebuffers) == (dummy_pfnglgenframebuffersproc as *const c_void) {&null::<PFNGLGENFRAMEBUFFERSPROC>()} else {&self.genframebuffers}})
+			.field("checkframebufferstatus", unsafe{if transmute::<_, *const c_void>(self.checkframebufferstatus) == (dummy_pfnglcheckframebufferstatusproc as *const c_void) {&null::<PFNGLCHECKFRAMEBUFFERSTATUSPROC>()} else {&self.checkframebufferstatus}})
+			.field("framebuffertexture1d", unsafe{if transmute::<_, *const c_void>(self.framebuffertexture1d) == (dummy_pfnglframebuffertexture1dproc as *const c_void) {&null::<PFNGLFRAMEBUFFERTEXTURE1DPROC>()} else {&self.framebuffertexture1d}})
+			.field("framebuffertexture2d", unsafe{if transmute::<_, *const c_void>(self.framebuffertexture2d) == (dummy_pfnglframebuffertexture2dproc as *const c_void) {&null::<PFNGLFRAMEBUFFERTEXTURE2DPROC>()} else {&self.framebuffertexture2d}})
+			.field("framebuffertexture3d", unsafe{if transmute::<_, *const c_void>(self.framebuffertexture3d) == (dummy_pfnglframebuffertexture3dproc as *const c_void) {&null::<PFNGLFRAMEBUFFERTEXTURE3DPROC>()} else {&self.framebuffertexture3d}})
+			.field("framebufferrenderbuffer", unsafe{if transmute::<_, *const c_void>(self.framebufferrenderbuffer) == (dummy_pfnglframebufferrenderbufferproc as *const c_void) {&null::<PFNGLFRAMEBUFFERRENDERBUFFERPROC>()} else {&self.framebufferrenderbuffer}})
+			.field("getframebufferattachmentparameteriv", unsafe{if transmute::<_, *const c_void>(self.getframebufferattachmentparameteriv) == (dummy_pfnglgetframebufferattachmentparameterivproc as *const c_void) {&null::<PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVPROC>()} else {&self.getframebufferattachmentparameteriv}})
+			.field("generatemipmap", unsafe{if transmute::<_, *const c_void>(self.generatemipmap) == (dummy_pfnglgeneratemipmapproc as *const c_void) {&null::<PFNGLGENERATEMIPMAPPROC>()} else {&self.generatemipmap}})
+			.field("blitframebuffer", unsafe{if transmute::<_, *const c_void>(self.blitframebuffer) == (dummy_pfnglblitframebufferproc as *const c_void) {&null::<PFNGLBLITFRAMEBUFFERPROC>()} else {&self.blitframebuffer}})
+			.field("renderbufferstoragemultisample", unsafe{if transmute::<_, *const c_void>(self.renderbufferstoragemultisample) == (dummy_pfnglrenderbufferstoragemultisampleproc as *const c_void) {&null::<PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC>()} else {&self.renderbufferstoragemultisample}})
+			.field("framebuffertexturelayer", unsafe{if transmute::<_, *const c_void>(self.framebuffertexturelayer) == (dummy_pfnglframebuffertexturelayerproc as *const c_void) {&null::<PFNGLFRAMEBUFFERTEXTURELAYERPROC>()} else {&self.framebuffertexturelayer}})
+			.field("mapbufferrange", unsafe{if transmute::<_, *const c_void>(self.mapbufferrange) == (dummy_pfnglmapbufferrangeproc as *const c_void) {&null::<PFNGLMAPBUFFERRANGEPROC>()} else {&self.mapbufferrange}})
+			.field("flushmappedbufferrange", unsafe{if transmute::<_, *const c_void>(self.flushmappedbufferrange) == (dummy_pfnglflushmappedbufferrangeproc as *const c_void) {&null::<PFNGLFLUSHMAPPEDBUFFERRANGEPROC>()} else {&self.flushmappedbufferrange}})
+			.field("bindvertexarray", unsafe{if transmute::<_, *const c_void>(self.bindvertexarray) == (dummy_pfnglbindvertexarrayproc as *const c_void) {&null::<PFNGLBINDVERTEXARRAYPROC>()} else {&self.bindvertexarray}})
+			.field("deletevertexarrays", unsafe{if transmute::<_, *const c_void>(self.deletevertexarrays) == (dummy_pfngldeletevertexarraysproc as *const c_void) {&null::<PFNGLDELETEVERTEXARRAYSPROC>()} else {&self.deletevertexarrays}})
+			.field("genvertexarrays", unsafe{if transmute::<_, *const c_void>(self.genvertexarrays) == (dummy_pfnglgenvertexarraysproc as *const c_void) {&null::<PFNGLGENVERTEXARRAYSPROC>()} else {&self.genvertexarrays}})
+			.field("isvertexarray", unsafe{if transmute::<_, *const c_void>(self.isvertexarray) == (dummy_pfnglisvertexarrayproc as *const c_void) {&null::<PFNGLISVERTEXARRAYPROC>()} else {&self.isvertexarray}})
+			.finish()
+		} else {
+			f.debug_struct("Version30")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLDRAWARRAYSINSTANCEDPROC = extern "system" fn(GLenum, GLint, GLsizei, GLsizei);
 type PFNGLDRAWELEMENTSINSTANCEDPROC = extern "system" fn(GLenum, GLsizei, GLenum, *const c_void, GLsizei);
 type PFNGLTEXBUFFERPROC = extern "system" fn(GLenum, GLenum, GLuint);
@@ -5671,7 +6148,7 @@ pub trait GL_3_1 {
 	fn glUniformBlockBinding(&self, program: GLuint, uniformBlockIndex: GLuint, uniformBlockBinding: GLuint);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version31 {
 	available: bool,
 	drawarraysinstanced: PFNGLDRAWARRAYSINSTANCEDPROC,
@@ -5787,7 +6264,31 @@ impl Default for Version31 {
 		}
 	}
 }
-
+impl Debug for Version31 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version31")
+			.field("available", &self.available)
+			.field("drawarraysinstanced", unsafe{if transmute::<_, *const c_void>(self.drawarraysinstanced) == (dummy_pfngldrawarraysinstancedproc as *const c_void) {&null::<PFNGLDRAWARRAYSINSTANCEDPROC>()} else {&self.drawarraysinstanced}})
+			.field("drawelementsinstanced", unsafe{if transmute::<_, *const c_void>(self.drawelementsinstanced) == (dummy_pfngldrawelementsinstancedproc as *const c_void) {&null::<PFNGLDRAWELEMENTSINSTANCEDPROC>()} else {&self.drawelementsinstanced}})
+			.field("texbuffer", unsafe{if transmute::<_, *const c_void>(self.texbuffer) == (dummy_pfngltexbufferproc as *const c_void) {&null::<PFNGLTEXBUFFERPROC>()} else {&self.texbuffer}})
+			.field("primitiverestartindex", unsafe{if transmute::<_, *const c_void>(self.primitiverestartindex) == (dummy_pfnglprimitiverestartindexproc as *const c_void) {&null::<PFNGLPRIMITIVERESTARTINDEXPROC>()} else {&self.primitiverestartindex}})
+			.field("copybuffersubdata", unsafe{if transmute::<_, *const c_void>(self.copybuffersubdata) == (dummy_pfnglcopybuffersubdataproc as *const c_void) {&null::<PFNGLCOPYBUFFERSUBDATAPROC>()} else {&self.copybuffersubdata}})
+			.field("getuniformindices", unsafe{if transmute::<_, *const c_void>(self.getuniformindices) == (dummy_pfnglgetuniformindicesproc as *const c_void) {&null::<PFNGLGETUNIFORMINDICESPROC>()} else {&self.getuniformindices}})
+			.field("getactiveuniformsiv", unsafe{if transmute::<_, *const c_void>(self.getactiveuniformsiv) == (dummy_pfnglgetactiveuniformsivproc as *const c_void) {&null::<PFNGLGETACTIVEUNIFORMSIVPROC>()} else {&self.getactiveuniformsiv}})
+			.field("getactiveuniformname", unsafe{if transmute::<_, *const c_void>(self.getactiveuniformname) == (dummy_pfnglgetactiveuniformnameproc as *const c_void) {&null::<PFNGLGETACTIVEUNIFORMNAMEPROC>()} else {&self.getactiveuniformname}})
+			.field("getuniformblockindex", unsafe{if transmute::<_, *const c_void>(self.getuniformblockindex) == (dummy_pfnglgetuniformblockindexproc as *const c_void) {&null::<PFNGLGETUNIFORMBLOCKINDEXPROC>()} else {&self.getuniformblockindex}})
+			.field("getactiveuniformblockiv", unsafe{if transmute::<_, *const c_void>(self.getactiveuniformblockiv) == (dummy_pfnglgetactiveuniformblockivproc as *const c_void) {&null::<PFNGLGETACTIVEUNIFORMBLOCKIVPROC>()} else {&self.getactiveuniformblockiv}})
+			.field("getactiveuniformblockname", unsafe{if transmute::<_, *const c_void>(self.getactiveuniformblockname) == (dummy_pfnglgetactiveuniformblocknameproc as *const c_void) {&null::<PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC>()} else {&self.getactiveuniformblockname}})
+			.field("uniformblockbinding", unsafe{if transmute::<_, *const c_void>(self.uniformblockbinding) == (dummy_pfngluniformblockbindingproc as *const c_void) {&null::<PFNGLUNIFORMBLOCKBINDINGPROC>()} else {&self.uniformblockbinding}})
+			.finish()
+		} else {
+			f.debug_struct("Version31")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type GLsync = *mut c_void;
 type GLuint64 = khronos_uint64_t;
 type GLint64 = khronos_int64_t;
@@ -5954,7 +6455,7 @@ pub trait GL_3_2 {
 	fn glSampleMaski(&self, maskNumber: GLuint, mask: GLbitfield);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version32 {
 	available: bool,
 	drawelementsbasevertex: PFNGLDRAWELEMENTSBASEVERTEXPROC,
@@ -6119,7 +6620,38 @@ impl Default for Version32 {
 		}
 	}
 }
-
+impl Debug for Version32 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version32")
+			.field("available", &self.available)
+			.field("drawelementsbasevertex", unsafe{if transmute::<_, *const c_void>(self.drawelementsbasevertex) == (dummy_pfngldrawelementsbasevertexproc as *const c_void) {&null::<PFNGLDRAWELEMENTSBASEVERTEXPROC>()} else {&self.drawelementsbasevertex}})
+			.field("drawrangeelementsbasevertex", unsafe{if transmute::<_, *const c_void>(self.drawrangeelementsbasevertex) == (dummy_pfngldrawrangeelementsbasevertexproc as *const c_void) {&null::<PFNGLDRAWRANGEELEMENTSBASEVERTEXPROC>()} else {&self.drawrangeelementsbasevertex}})
+			.field("drawelementsinstancedbasevertex", unsafe{if transmute::<_, *const c_void>(self.drawelementsinstancedbasevertex) == (dummy_pfngldrawelementsinstancedbasevertexproc as *const c_void) {&null::<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXPROC>()} else {&self.drawelementsinstancedbasevertex}})
+			.field("multidrawelementsbasevertex", unsafe{if transmute::<_, *const c_void>(self.multidrawelementsbasevertex) == (dummy_pfnglmultidrawelementsbasevertexproc as *const c_void) {&null::<PFNGLMULTIDRAWELEMENTSBASEVERTEXPROC>()} else {&self.multidrawelementsbasevertex}})
+			.field("provokingvertex", unsafe{if transmute::<_, *const c_void>(self.provokingvertex) == (dummy_pfnglprovokingvertexproc as *const c_void) {&null::<PFNGLPROVOKINGVERTEXPROC>()} else {&self.provokingvertex}})
+			.field("fencesync", unsafe{if transmute::<_, *const c_void>(self.fencesync) == (dummy_pfnglfencesyncproc as *const c_void) {&null::<PFNGLFENCESYNCPROC>()} else {&self.fencesync}})
+			.field("issync", unsafe{if transmute::<_, *const c_void>(self.issync) == (dummy_pfnglissyncproc as *const c_void) {&null::<PFNGLISSYNCPROC>()} else {&self.issync}})
+			.field("deletesync", unsafe{if transmute::<_, *const c_void>(self.deletesync) == (dummy_pfngldeletesyncproc as *const c_void) {&null::<PFNGLDELETESYNCPROC>()} else {&self.deletesync}})
+			.field("clientwaitsync", unsafe{if transmute::<_, *const c_void>(self.clientwaitsync) == (dummy_pfnglclientwaitsyncproc as *const c_void) {&null::<PFNGLCLIENTWAITSYNCPROC>()} else {&self.clientwaitsync}})
+			.field("waitsync", unsafe{if transmute::<_, *const c_void>(self.waitsync) == (dummy_pfnglwaitsyncproc as *const c_void) {&null::<PFNGLWAITSYNCPROC>()} else {&self.waitsync}})
+			.field("getinteger64v", unsafe{if transmute::<_, *const c_void>(self.getinteger64v) == (dummy_pfnglgetinteger64vproc as *const c_void) {&null::<PFNGLGETINTEGER64VPROC>()} else {&self.getinteger64v}})
+			.field("getsynciv", unsafe{if transmute::<_, *const c_void>(self.getsynciv) == (dummy_pfnglgetsyncivproc as *const c_void) {&null::<PFNGLGETSYNCIVPROC>()} else {&self.getsynciv}})
+			.field("getinteger64i_v", unsafe{if transmute::<_, *const c_void>(self.getinteger64i_v) == (dummy_pfnglgetinteger64i_vproc as *const c_void) {&null::<PFNGLGETINTEGER64I_VPROC>()} else {&self.getinteger64i_v}})
+			.field("getbufferparameteri64v", unsafe{if transmute::<_, *const c_void>(self.getbufferparameteri64v) == (dummy_pfnglgetbufferparameteri64vproc as *const c_void) {&null::<PFNGLGETBUFFERPARAMETERI64VPROC>()} else {&self.getbufferparameteri64v}})
+			.field("framebuffertexture", unsafe{if transmute::<_, *const c_void>(self.framebuffertexture) == (dummy_pfnglframebuffertextureproc as *const c_void) {&null::<PFNGLFRAMEBUFFERTEXTUREPROC>()} else {&self.framebuffertexture}})
+			.field("teximage2dmultisample", unsafe{if transmute::<_, *const c_void>(self.teximage2dmultisample) == (dummy_pfnglteximage2dmultisampleproc as *const c_void) {&null::<PFNGLTEXIMAGE2DMULTISAMPLEPROC>()} else {&self.teximage2dmultisample}})
+			.field("teximage3dmultisample", unsafe{if transmute::<_, *const c_void>(self.teximage3dmultisample) == (dummy_pfnglteximage3dmultisampleproc as *const c_void) {&null::<PFNGLTEXIMAGE3DMULTISAMPLEPROC>()} else {&self.teximage3dmultisample}})
+			.field("getmultisamplefv", unsafe{if transmute::<_, *const c_void>(self.getmultisamplefv) == (dummy_pfnglgetmultisamplefvproc as *const c_void) {&null::<PFNGLGETMULTISAMPLEFVPROC>()} else {&self.getmultisamplefv}})
+			.field("samplemaski", unsafe{if transmute::<_, *const c_void>(self.samplemaski) == (dummy_pfnglsamplemaskiproc as *const c_void) {&null::<PFNGLSAMPLEMASKIPROC>()} else {&self.samplemaski}})
+			.finish()
+		} else {
+			f.debug_struct("Version32")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLBINDFRAGDATALOCATIONINDEXEDPROC = extern "system" fn(GLuint, GLuint, GLuint, *const GLchar);
 type PFNGLGETFRAGDATAINDEXPROC = extern "system" fn(GLuint, *const GLchar) -> GLint;
 type PFNGLGENSAMPLERSPROC = extern "system" fn(GLsizei, *mut GLuint);
@@ -6430,7 +6962,7 @@ pub trait GL_3_3 {
 	fn glSecondaryColorP3uiv(&self, type_: GLenum, color: *const GLuint);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version33 {
 	available: bool,
 	bindfragdatalocationindexed: PFNGLBINDFRAGDATALOCATIONINDEXEDPROC,
@@ -6868,7 +7400,77 @@ impl Default for Version33 {
 		}
 	}
 }
-
+impl Debug for Version33 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version33")
+			.field("available", &self.available)
+			.field("bindfragdatalocationindexed", unsafe{if transmute::<_, *const c_void>(self.bindfragdatalocationindexed) == (dummy_pfnglbindfragdatalocationindexedproc as *const c_void) {&null::<PFNGLBINDFRAGDATALOCATIONINDEXEDPROC>()} else {&self.bindfragdatalocationindexed}})
+			.field("getfragdataindex", unsafe{if transmute::<_, *const c_void>(self.getfragdataindex) == (dummy_pfnglgetfragdataindexproc as *const c_void) {&null::<PFNGLGETFRAGDATAINDEXPROC>()} else {&self.getfragdataindex}})
+			.field("gensamplers", unsafe{if transmute::<_, *const c_void>(self.gensamplers) == (dummy_pfnglgensamplersproc as *const c_void) {&null::<PFNGLGENSAMPLERSPROC>()} else {&self.gensamplers}})
+			.field("deletesamplers", unsafe{if transmute::<_, *const c_void>(self.deletesamplers) == (dummy_pfngldeletesamplersproc as *const c_void) {&null::<PFNGLDELETESAMPLERSPROC>()} else {&self.deletesamplers}})
+			.field("issampler", unsafe{if transmute::<_, *const c_void>(self.issampler) == (dummy_pfnglissamplerproc as *const c_void) {&null::<PFNGLISSAMPLERPROC>()} else {&self.issampler}})
+			.field("bindsampler", unsafe{if transmute::<_, *const c_void>(self.bindsampler) == (dummy_pfnglbindsamplerproc as *const c_void) {&null::<PFNGLBINDSAMPLERPROC>()} else {&self.bindsampler}})
+			.field("samplerparameteri", unsafe{if transmute::<_, *const c_void>(self.samplerparameteri) == (dummy_pfnglsamplerparameteriproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERIPROC>()} else {&self.samplerparameteri}})
+			.field("samplerparameteriv", unsafe{if transmute::<_, *const c_void>(self.samplerparameteriv) == (dummy_pfnglsamplerparameterivproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERIVPROC>()} else {&self.samplerparameteriv}})
+			.field("samplerparameterf", unsafe{if transmute::<_, *const c_void>(self.samplerparameterf) == (dummy_pfnglsamplerparameterfproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERFPROC>()} else {&self.samplerparameterf}})
+			.field("samplerparameterfv", unsafe{if transmute::<_, *const c_void>(self.samplerparameterfv) == (dummy_pfnglsamplerparameterfvproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERFVPROC>()} else {&self.samplerparameterfv}})
+			.field("samplerparameteriiv", unsafe{if transmute::<_, *const c_void>(self.samplerparameteriiv) == (dummy_pfnglsamplerparameteriivproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERIIVPROC>()} else {&self.samplerparameteriiv}})
+			.field("samplerparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.samplerparameteriuiv) == (dummy_pfnglsamplerparameteriuivproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERIUIVPROC>()} else {&self.samplerparameteriuiv}})
+			.field("getsamplerparameteriv", unsafe{if transmute::<_, *const c_void>(self.getsamplerparameteriv) == (dummy_pfnglgetsamplerparameterivproc as *const c_void) {&null::<PFNGLGETSAMPLERPARAMETERIVPROC>()} else {&self.getsamplerparameteriv}})
+			.field("getsamplerparameteriiv", unsafe{if transmute::<_, *const c_void>(self.getsamplerparameteriiv) == (dummy_pfnglgetsamplerparameteriivproc as *const c_void) {&null::<PFNGLGETSAMPLERPARAMETERIIVPROC>()} else {&self.getsamplerparameteriiv}})
+			.field("getsamplerparameterfv", unsafe{if transmute::<_, *const c_void>(self.getsamplerparameterfv) == (dummy_pfnglgetsamplerparameterfvproc as *const c_void) {&null::<PFNGLGETSAMPLERPARAMETERFVPROC>()} else {&self.getsamplerparameterfv}})
+			.field("getsamplerparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.getsamplerparameteriuiv) == (dummy_pfnglgetsamplerparameteriuivproc as *const c_void) {&null::<PFNGLGETSAMPLERPARAMETERIUIVPROC>()} else {&self.getsamplerparameteriuiv}})
+			.field("querycounter", unsafe{if transmute::<_, *const c_void>(self.querycounter) == (dummy_pfnglquerycounterproc as *const c_void) {&null::<PFNGLQUERYCOUNTERPROC>()} else {&self.querycounter}})
+			.field("getqueryobjecti64v", unsafe{if transmute::<_, *const c_void>(self.getqueryobjecti64v) == (dummy_pfnglgetqueryobjecti64vproc as *const c_void) {&null::<PFNGLGETQUERYOBJECTI64VPROC>()} else {&self.getqueryobjecti64v}})
+			.field("getqueryobjectui64v", unsafe{if transmute::<_, *const c_void>(self.getqueryobjectui64v) == (dummy_pfnglgetqueryobjectui64vproc as *const c_void) {&null::<PFNGLGETQUERYOBJECTUI64VPROC>()} else {&self.getqueryobjectui64v}})
+			.field("vertexattribdivisor", unsafe{if transmute::<_, *const c_void>(self.vertexattribdivisor) == (dummy_pfnglvertexattribdivisorproc as *const c_void) {&null::<PFNGLVERTEXATTRIBDIVISORPROC>()} else {&self.vertexattribdivisor}})
+			.field("vertexattribp1ui", unsafe{if transmute::<_, *const c_void>(self.vertexattribp1ui) == (dummy_pfnglvertexattribp1uiproc as *const c_void) {&null::<PFNGLVERTEXATTRIBP1UIPROC>()} else {&self.vertexattribp1ui}})
+			.field("vertexattribp1uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattribp1uiv) == (dummy_pfnglvertexattribp1uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBP1UIVPROC>()} else {&self.vertexattribp1uiv}})
+			.field("vertexattribp2ui", unsafe{if transmute::<_, *const c_void>(self.vertexattribp2ui) == (dummy_pfnglvertexattribp2uiproc as *const c_void) {&null::<PFNGLVERTEXATTRIBP2UIPROC>()} else {&self.vertexattribp2ui}})
+			.field("vertexattribp2uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattribp2uiv) == (dummy_pfnglvertexattribp2uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBP2UIVPROC>()} else {&self.vertexattribp2uiv}})
+			.field("vertexattribp3ui", unsafe{if transmute::<_, *const c_void>(self.vertexattribp3ui) == (dummy_pfnglvertexattribp3uiproc as *const c_void) {&null::<PFNGLVERTEXATTRIBP3UIPROC>()} else {&self.vertexattribp3ui}})
+			.field("vertexattribp3uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattribp3uiv) == (dummy_pfnglvertexattribp3uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBP3UIVPROC>()} else {&self.vertexattribp3uiv}})
+			.field("vertexattribp4ui", unsafe{if transmute::<_, *const c_void>(self.vertexattribp4ui) == (dummy_pfnglvertexattribp4uiproc as *const c_void) {&null::<PFNGLVERTEXATTRIBP4UIPROC>()} else {&self.vertexattribp4ui}})
+			.field("vertexattribp4uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattribp4uiv) == (dummy_pfnglvertexattribp4uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBP4UIVPROC>()} else {&self.vertexattribp4uiv}})
+			.field("vertexp2ui", unsafe{if transmute::<_, *const c_void>(self.vertexp2ui) == (dummy_pfnglvertexp2uiproc as *const c_void) {&null::<PFNGLVERTEXP2UIPROC>()} else {&self.vertexp2ui}})
+			.field("vertexp2uiv", unsafe{if transmute::<_, *const c_void>(self.vertexp2uiv) == (dummy_pfnglvertexp2uivproc as *const c_void) {&null::<PFNGLVERTEXP2UIVPROC>()} else {&self.vertexp2uiv}})
+			.field("vertexp3ui", unsafe{if transmute::<_, *const c_void>(self.vertexp3ui) == (dummy_pfnglvertexp3uiproc as *const c_void) {&null::<PFNGLVERTEXP3UIPROC>()} else {&self.vertexp3ui}})
+			.field("vertexp3uiv", unsafe{if transmute::<_, *const c_void>(self.vertexp3uiv) == (dummy_pfnglvertexp3uivproc as *const c_void) {&null::<PFNGLVERTEXP3UIVPROC>()} else {&self.vertexp3uiv}})
+			.field("vertexp4ui", unsafe{if transmute::<_, *const c_void>(self.vertexp4ui) == (dummy_pfnglvertexp4uiproc as *const c_void) {&null::<PFNGLVERTEXP4UIPROC>()} else {&self.vertexp4ui}})
+			.field("vertexp4uiv", unsafe{if transmute::<_, *const c_void>(self.vertexp4uiv) == (dummy_pfnglvertexp4uivproc as *const c_void) {&null::<PFNGLVERTEXP4UIVPROC>()} else {&self.vertexp4uiv}})
+			.field("texcoordp1ui", unsafe{if transmute::<_, *const c_void>(self.texcoordp1ui) == (dummy_pfngltexcoordp1uiproc as *const c_void) {&null::<PFNGLTEXCOORDP1UIPROC>()} else {&self.texcoordp1ui}})
+			.field("texcoordp1uiv", unsafe{if transmute::<_, *const c_void>(self.texcoordp1uiv) == (dummy_pfngltexcoordp1uivproc as *const c_void) {&null::<PFNGLTEXCOORDP1UIVPROC>()} else {&self.texcoordp1uiv}})
+			.field("texcoordp2ui", unsafe{if transmute::<_, *const c_void>(self.texcoordp2ui) == (dummy_pfngltexcoordp2uiproc as *const c_void) {&null::<PFNGLTEXCOORDP2UIPROC>()} else {&self.texcoordp2ui}})
+			.field("texcoordp2uiv", unsafe{if transmute::<_, *const c_void>(self.texcoordp2uiv) == (dummy_pfngltexcoordp2uivproc as *const c_void) {&null::<PFNGLTEXCOORDP2UIVPROC>()} else {&self.texcoordp2uiv}})
+			.field("texcoordp3ui", unsafe{if transmute::<_, *const c_void>(self.texcoordp3ui) == (dummy_pfngltexcoordp3uiproc as *const c_void) {&null::<PFNGLTEXCOORDP3UIPROC>()} else {&self.texcoordp3ui}})
+			.field("texcoordp3uiv", unsafe{if transmute::<_, *const c_void>(self.texcoordp3uiv) == (dummy_pfngltexcoordp3uivproc as *const c_void) {&null::<PFNGLTEXCOORDP3UIVPROC>()} else {&self.texcoordp3uiv}})
+			.field("texcoordp4ui", unsafe{if transmute::<_, *const c_void>(self.texcoordp4ui) == (dummy_pfngltexcoordp4uiproc as *const c_void) {&null::<PFNGLTEXCOORDP4UIPROC>()} else {&self.texcoordp4ui}})
+			.field("texcoordp4uiv", unsafe{if transmute::<_, *const c_void>(self.texcoordp4uiv) == (dummy_pfngltexcoordp4uivproc as *const c_void) {&null::<PFNGLTEXCOORDP4UIVPROC>()} else {&self.texcoordp4uiv}})
+			.field("multitexcoordp1ui", unsafe{if transmute::<_, *const c_void>(self.multitexcoordp1ui) == (dummy_pfnglmultitexcoordp1uiproc as *const c_void) {&null::<PFNGLMULTITEXCOORDP1UIPROC>()} else {&self.multitexcoordp1ui}})
+			.field("multitexcoordp1uiv", unsafe{if transmute::<_, *const c_void>(self.multitexcoordp1uiv) == (dummy_pfnglmultitexcoordp1uivproc as *const c_void) {&null::<PFNGLMULTITEXCOORDP1UIVPROC>()} else {&self.multitexcoordp1uiv}})
+			.field("multitexcoordp2ui", unsafe{if transmute::<_, *const c_void>(self.multitexcoordp2ui) == (dummy_pfnglmultitexcoordp2uiproc as *const c_void) {&null::<PFNGLMULTITEXCOORDP2UIPROC>()} else {&self.multitexcoordp2ui}})
+			.field("multitexcoordp2uiv", unsafe{if transmute::<_, *const c_void>(self.multitexcoordp2uiv) == (dummy_pfnglmultitexcoordp2uivproc as *const c_void) {&null::<PFNGLMULTITEXCOORDP2UIVPROC>()} else {&self.multitexcoordp2uiv}})
+			.field("multitexcoordp3ui", unsafe{if transmute::<_, *const c_void>(self.multitexcoordp3ui) == (dummy_pfnglmultitexcoordp3uiproc as *const c_void) {&null::<PFNGLMULTITEXCOORDP3UIPROC>()} else {&self.multitexcoordp3ui}})
+			.field("multitexcoordp3uiv", unsafe{if transmute::<_, *const c_void>(self.multitexcoordp3uiv) == (dummy_pfnglmultitexcoordp3uivproc as *const c_void) {&null::<PFNGLMULTITEXCOORDP3UIVPROC>()} else {&self.multitexcoordp3uiv}})
+			.field("multitexcoordp4ui", unsafe{if transmute::<_, *const c_void>(self.multitexcoordp4ui) == (dummy_pfnglmultitexcoordp4uiproc as *const c_void) {&null::<PFNGLMULTITEXCOORDP4UIPROC>()} else {&self.multitexcoordp4ui}})
+			.field("multitexcoordp4uiv", unsafe{if transmute::<_, *const c_void>(self.multitexcoordp4uiv) == (dummy_pfnglmultitexcoordp4uivproc as *const c_void) {&null::<PFNGLMULTITEXCOORDP4UIVPROC>()} else {&self.multitexcoordp4uiv}})
+			.field("normalp3ui", unsafe{if transmute::<_, *const c_void>(self.normalp3ui) == (dummy_pfnglnormalp3uiproc as *const c_void) {&null::<PFNGLNORMALP3UIPROC>()} else {&self.normalp3ui}})
+			.field("normalp3uiv", unsafe{if transmute::<_, *const c_void>(self.normalp3uiv) == (dummy_pfnglnormalp3uivproc as *const c_void) {&null::<PFNGLNORMALP3UIVPROC>()} else {&self.normalp3uiv}})
+			.field("colorp3ui", unsafe{if transmute::<_, *const c_void>(self.colorp3ui) == (dummy_pfnglcolorp3uiproc as *const c_void) {&null::<PFNGLCOLORP3UIPROC>()} else {&self.colorp3ui}})
+			.field("colorp3uiv", unsafe{if transmute::<_, *const c_void>(self.colorp3uiv) == (dummy_pfnglcolorp3uivproc as *const c_void) {&null::<PFNGLCOLORP3UIVPROC>()} else {&self.colorp3uiv}})
+			.field("colorp4ui", unsafe{if transmute::<_, *const c_void>(self.colorp4ui) == (dummy_pfnglcolorp4uiproc as *const c_void) {&null::<PFNGLCOLORP4UIPROC>()} else {&self.colorp4ui}})
+			.field("colorp4uiv", unsafe{if transmute::<_, *const c_void>(self.colorp4uiv) == (dummy_pfnglcolorp4uivproc as *const c_void) {&null::<PFNGLCOLORP4UIVPROC>()} else {&self.colorp4uiv}})
+			.field("secondarycolorp3ui", unsafe{if transmute::<_, *const c_void>(self.secondarycolorp3ui) == (dummy_pfnglsecondarycolorp3uiproc as *const c_void) {&null::<PFNGLSECONDARYCOLORP3UIPROC>()} else {&self.secondarycolorp3ui}})
+			.field("secondarycolorp3uiv", unsafe{if transmute::<_, *const c_void>(self.secondarycolorp3uiv) == (dummy_pfnglsecondarycolorp3uivproc as *const c_void) {&null::<PFNGLSECONDARYCOLORP3UIVPROC>()} else {&self.secondarycolorp3uiv}})
+			.finish()
+		} else {
+			f.debug_struct("Version33")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLMINSAMPLESHADINGPROC = extern "system" fn(GLfloat);
 type PFNGLBLENDEQUATIONIPROC = extern "system" fn(GLuint, GLenum);
 type PFNGLBLENDEQUATIONSEPARATEIPROC = extern "system" fn(GLuint, GLenum, GLenum);
@@ -7180,7 +7782,7 @@ pub trait GL_4_0 {
 	fn glGetQueryIndexediv(&self, target: GLenum, index: GLuint, pname: GLenum, params: *mut GLint);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version40 {
 	available: bool,
 	minsampleshading: PFNGLMINSAMPLESHADINGPROC,
@@ -7534,7 +8136,65 @@ impl Default for Version40 {
 		}
 	}
 }
-
+impl Debug for Version40 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version40")
+			.field("available", &self.available)
+			.field("minsampleshading", unsafe{if transmute::<_, *const c_void>(self.minsampleshading) == (dummy_pfnglminsampleshadingproc as *const c_void) {&null::<PFNGLMINSAMPLESHADINGPROC>()} else {&self.minsampleshading}})
+			.field("blendequationi", unsafe{if transmute::<_, *const c_void>(self.blendequationi) == (dummy_pfnglblendequationiproc as *const c_void) {&null::<PFNGLBLENDEQUATIONIPROC>()} else {&self.blendequationi}})
+			.field("blendequationseparatei", unsafe{if transmute::<_, *const c_void>(self.blendequationseparatei) == (dummy_pfnglblendequationseparateiproc as *const c_void) {&null::<PFNGLBLENDEQUATIONSEPARATEIPROC>()} else {&self.blendequationseparatei}})
+			.field("blendfunci", unsafe{if transmute::<_, *const c_void>(self.blendfunci) == (dummy_pfnglblendfunciproc as *const c_void) {&null::<PFNGLBLENDFUNCIPROC>()} else {&self.blendfunci}})
+			.field("blendfuncseparatei", unsafe{if transmute::<_, *const c_void>(self.blendfuncseparatei) == (dummy_pfnglblendfuncseparateiproc as *const c_void) {&null::<PFNGLBLENDFUNCSEPARATEIPROC>()} else {&self.blendfuncseparatei}})
+			.field("drawarraysindirect", unsafe{if transmute::<_, *const c_void>(self.drawarraysindirect) == (dummy_pfngldrawarraysindirectproc as *const c_void) {&null::<PFNGLDRAWARRAYSINDIRECTPROC>()} else {&self.drawarraysindirect}})
+			.field("drawelementsindirect", unsafe{if transmute::<_, *const c_void>(self.drawelementsindirect) == (dummy_pfngldrawelementsindirectproc as *const c_void) {&null::<PFNGLDRAWELEMENTSINDIRECTPROC>()} else {&self.drawelementsindirect}})
+			.field("uniform1d", unsafe{if transmute::<_, *const c_void>(self.uniform1d) == (dummy_pfngluniform1dproc as *const c_void) {&null::<PFNGLUNIFORM1DPROC>()} else {&self.uniform1d}})
+			.field("uniform2d", unsafe{if transmute::<_, *const c_void>(self.uniform2d) == (dummy_pfngluniform2dproc as *const c_void) {&null::<PFNGLUNIFORM2DPROC>()} else {&self.uniform2d}})
+			.field("uniform3d", unsafe{if transmute::<_, *const c_void>(self.uniform3d) == (dummy_pfngluniform3dproc as *const c_void) {&null::<PFNGLUNIFORM3DPROC>()} else {&self.uniform3d}})
+			.field("uniform4d", unsafe{if transmute::<_, *const c_void>(self.uniform4d) == (dummy_pfngluniform4dproc as *const c_void) {&null::<PFNGLUNIFORM4DPROC>()} else {&self.uniform4d}})
+			.field("uniform1dv", unsafe{if transmute::<_, *const c_void>(self.uniform1dv) == (dummy_pfngluniform1dvproc as *const c_void) {&null::<PFNGLUNIFORM1DVPROC>()} else {&self.uniform1dv}})
+			.field("uniform2dv", unsafe{if transmute::<_, *const c_void>(self.uniform2dv) == (dummy_pfngluniform2dvproc as *const c_void) {&null::<PFNGLUNIFORM2DVPROC>()} else {&self.uniform2dv}})
+			.field("uniform3dv", unsafe{if transmute::<_, *const c_void>(self.uniform3dv) == (dummy_pfngluniform3dvproc as *const c_void) {&null::<PFNGLUNIFORM3DVPROC>()} else {&self.uniform3dv}})
+			.field("uniform4dv", unsafe{if transmute::<_, *const c_void>(self.uniform4dv) == (dummy_pfngluniform4dvproc as *const c_void) {&null::<PFNGLUNIFORM4DVPROC>()} else {&self.uniform4dv}})
+			.field("uniformmatrix2dv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix2dv) == (dummy_pfngluniformmatrix2dvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX2DVPROC>()} else {&self.uniformmatrix2dv}})
+			.field("uniformmatrix3dv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix3dv) == (dummy_pfngluniformmatrix3dvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX3DVPROC>()} else {&self.uniformmatrix3dv}})
+			.field("uniformmatrix4dv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix4dv) == (dummy_pfngluniformmatrix4dvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX4DVPROC>()} else {&self.uniformmatrix4dv}})
+			.field("uniformmatrix2x3dv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix2x3dv) == (dummy_pfngluniformmatrix2x3dvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX2X3DVPROC>()} else {&self.uniformmatrix2x3dv}})
+			.field("uniformmatrix2x4dv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix2x4dv) == (dummy_pfngluniformmatrix2x4dvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX2X4DVPROC>()} else {&self.uniformmatrix2x4dv}})
+			.field("uniformmatrix3x2dv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix3x2dv) == (dummy_pfngluniformmatrix3x2dvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX3X2DVPROC>()} else {&self.uniformmatrix3x2dv}})
+			.field("uniformmatrix3x4dv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix3x4dv) == (dummy_pfngluniformmatrix3x4dvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX3X4DVPROC>()} else {&self.uniformmatrix3x4dv}})
+			.field("uniformmatrix4x2dv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix4x2dv) == (dummy_pfngluniformmatrix4x2dvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX4X2DVPROC>()} else {&self.uniformmatrix4x2dv}})
+			.field("uniformmatrix4x3dv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix4x3dv) == (dummy_pfngluniformmatrix4x3dvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX4X3DVPROC>()} else {&self.uniformmatrix4x3dv}})
+			.field("getuniformdv", unsafe{if transmute::<_, *const c_void>(self.getuniformdv) == (dummy_pfnglgetuniformdvproc as *const c_void) {&null::<PFNGLGETUNIFORMDVPROC>()} else {&self.getuniformdv}})
+			.field("getsubroutineuniformlocation", unsafe{if transmute::<_, *const c_void>(self.getsubroutineuniformlocation) == (dummy_pfnglgetsubroutineuniformlocationproc as *const c_void) {&null::<PFNGLGETSUBROUTINEUNIFORMLOCATIONPROC>()} else {&self.getsubroutineuniformlocation}})
+			.field("getsubroutineindex", unsafe{if transmute::<_, *const c_void>(self.getsubroutineindex) == (dummy_pfnglgetsubroutineindexproc as *const c_void) {&null::<PFNGLGETSUBROUTINEINDEXPROC>()} else {&self.getsubroutineindex}})
+			.field("getactivesubroutineuniformiv", unsafe{if transmute::<_, *const c_void>(self.getactivesubroutineuniformiv) == (dummy_pfnglgetactivesubroutineuniformivproc as *const c_void) {&null::<PFNGLGETACTIVESUBROUTINEUNIFORMIVPROC>()} else {&self.getactivesubroutineuniformiv}})
+			.field("getactivesubroutineuniformname", unsafe{if transmute::<_, *const c_void>(self.getactivesubroutineuniformname) == (dummy_pfnglgetactivesubroutineuniformnameproc as *const c_void) {&null::<PFNGLGETACTIVESUBROUTINEUNIFORMNAMEPROC>()} else {&self.getactivesubroutineuniformname}})
+			.field("getactivesubroutinename", unsafe{if transmute::<_, *const c_void>(self.getactivesubroutinename) == (dummy_pfnglgetactivesubroutinenameproc as *const c_void) {&null::<PFNGLGETACTIVESUBROUTINENAMEPROC>()} else {&self.getactivesubroutinename}})
+			.field("uniformsubroutinesuiv", unsafe{if transmute::<_, *const c_void>(self.uniformsubroutinesuiv) == (dummy_pfngluniformsubroutinesuivproc as *const c_void) {&null::<PFNGLUNIFORMSUBROUTINESUIVPROC>()} else {&self.uniformsubroutinesuiv}})
+			.field("getuniformsubroutineuiv", unsafe{if transmute::<_, *const c_void>(self.getuniformsubroutineuiv) == (dummy_pfnglgetuniformsubroutineuivproc as *const c_void) {&null::<PFNGLGETUNIFORMSUBROUTINEUIVPROC>()} else {&self.getuniformsubroutineuiv}})
+			.field("getprogramstageiv", unsafe{if transmute::<_, *const c_void>(self.getprogramstageiv) == (dummy_pfnglgetprogramstageivproc as *const c_void) {&null::<PFNGLGETPROGRAMSTAGEIVPROC>()} else {&self.getprogramstageiv}})
+			.field("patchparameteri", unsafe{if transmute::<_, *const c_void>(self.patchparameteri) == (dummy_pfnglpatchparameteriproc as *const c_void) {&null::<PFNGLPATCHPARAMETERIPROC>()} else {&self.patchparameteri}})
+			.field("patchparameterfv", unsafe{if transmute::<_, *const c_void>(self.patchparameterfv) == (dummy_pfnglpatchparameterfvproc as *const c_void) {&null::<PFNGLPATCHPARAMETERFVPROC>()} else {&self.patchparameterfv}})
+			.field("bindtransformfeedback", unsafe{if transmute::<_, *const c_void>(self.bindtransformfeedback) == (dummy_pfnglbindtransformfeedbackproc as *const c_void) {&null::<PFNGLBINDTRANSFORMFEEDBACKPROC>()} else {&self.bindtransformfeedback}})
+			.field("deletetransformfeedbacks", unsafe{if transmute::<_, *const c_void>(self.deletetransformfeedbacks) == (dummy_pfngldeletetransformfeedbacksproc as *const c_void) {&null::<PFNGLDELETETRANSFORMFEEDBACKSPROC>()} else {&self.deletetransformfeedbacks}})
+			.field("gentransformfeedbacks", unsafe{if transmute::<_, *const c_void>(self.gentransformfeedbacks) == (dummy_pfnglgentransformfeedbacksproc as *const c_void) {&null::<PFNGLGENTRANSFORMFEEDBACKSPROC>()} else {&self.gentransformfeedbacks}})
+			.field("istransformfeedback", unsafe{if transmute::<_, *const c_void>(self.istransformfeedback) == (dummy_pfnglistransformfeedbackproc as *const c_void) {&null::<PFNGLISTRANSFORMFEEDBACKPROC>()} else {&self.istransformfeedback}})
+			.field("pausetransformfeedback", unsafe{if transmute::<_, *const c_void>(self.pausetransformfeedback) == (dummy_pfnglpausetransformfeedbackproc as *const c_void) {&null::<PFNGLPAUSETRANSFORMFEEDBACKPROC>()} else {&self.pausetransformfeedback}})
+			.field("resumetransformfeedback", unsafe{if transmute::<_, *const c_void>(self.resumetransformfeedback) == (dummy_pfnglresumetransformfeedbackproc as *const c_void) {&null::<PFNGLRESUMETRANSFORMFEEDBACKPROC>()} else {&self.resumetransformfeedback}})
+			.field("drawtransformfeedback", unsafe{if transmute::<_, *const c_void>(self.drawtransformfeedback) == (dummy_pfngldrawtransformfeedbackproc as *const c_void) {&null::<PFNGLDRAWTRANSFORMFEEDBACKPROC>()} else {&self.drawtransformfeedback}})
+			.field("drawtransformfeedbackstream", unsafe{if transmute::<_, *const c_void>(self.drawtransformfeedbackstream) == (dummy_pfngldrawtransformfeedbackstreamproc as *const c_void) {&null::<PFNGLDRAWTRANSFORMFEEDBACKSTREAMPROC>()} else {&self.drawtransformfeedbackstream}})
+			.field("beginqueryindexed", unsafe{if transmute::<_, *const c_void>(self.beginqueryindexed) == (dummy_pfnglbeginqueryindexedproc as *const c_void) {&null::<PFNGLBEGINQUERYINDEXEDPROC>()} else {&self.beginqueryindexed}})
+			.field("endqueryindexed", unsafe{if transmute::<_, *const c_void>(self.endqueryindexed) == (dummy_pfnglendqueryindexedproc as *const c_void) {&null::<PFNGLENDQUERYINDEXEDPROC>()} else {&self.endqueryindexed}})
+			.field("getqueryindexediv", unsafe{if transmute::<_, *const c_void>(self.getqueryindexediv) == (dummy_pfnglgetqueryindexedivproc as *const c_void) {&null::<PFNGLGETQUERYINDEXEDIVPROC>()} else {&self.getqueryindexediv}})
+			.finish()
+		} else {
+			f.debug_struct("Version40")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLRELEASESHADERCOMPILERPROC = extern "system" fn();
 type PFNGLSHADERBINARYPROC = extern "system" fn(GLsizei, *const GLuint, GLenum, *const c_void, GLsizei);
 type PFNGLGETSHADERPRECISIONFORMATPROC = extern "system" fn(GLenum, GLenum, *mut GLint, *mut GLint);
@@ -8014,7 +8674,7 @@ pub trait GL_4_1 {
 	fn glGetDoublei_v(&self, target: GLenum, index: GLuint, data: *mut GLdouble);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version41 {
 	available: bool,
 	releaseshadercompiler: PFNGLRELEASESHADERCOMPILERPROC,
@@ -8662,7 +9322,107 @@ impl Default for Version41 {
 		}
 	}
 }
-
+impl Debug for Version41 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version41")
+			.field("available", &self.available)
+			.field("releaseshadercompiler", unsafe{if transmute::<_, *const c_void>(self.releaseshadercompiler) == (dummy_pfnglreleaseshadercompilerproc as *const c_void) {&null::<PFNGLRELEASESHADERCOMPILERPROC>()} else {&self.releaseshadercompiler}})
+			.field("shaderbinary", unsafe{if transmute::<_, *const c_void>(self.shaderbinary) == (dummy_pfnglshaderbinaryproc as *const c_void) {&null::<PFNGLSHADERBINARYPROC>()} else {&self.shaderbinary}})
+			.field("getshaderprecisionformat", unsafe{if transmute::<_, *const c_void>(self.getshaderprecisionformat) == (dummy_pfnglgetshaderprecisionformatproc as *const c_void) {&null::<PFNGLGETSHADERPRECISIONFORMATPROC>()} else {&self.getshaderprecisionformat}})
+			.field("depthrangef", unsafe{if transmute::<_, *const c_void>(self.depthrangef) == (dummy_pfngldepthrangefproc as *const c_void) {&null::<PFNGLDEPTHRANGEFPROC>()} else {&self.depthrangef}})
+			.field("cleardepthf", unsafe{if transmute::<_, *const c_void>(self.cleardepthf) == (dummy_pfnglcleardepthfproc as *const c_void) {&null::<PFNGLCLEARDEPTHFPROC>()} else {&self.cleardepthf}})
+			.field("getprogrambinary", unsafe{if transmute::<_, *const c_void>(self.getprogrambinary) == (dummy_pfnglgetprogrambinaryproc as *const c_void) {&null::<PFNGLGETPROGRAMBINARYPROC>()} else {&self.getprogrambinary}})
+			.field("programbinary", unsafe{if transmute::<_, *const c_void>(self.programbinary) == (dummy_pfnglprogrambinaryproc as *const c_void) {&null::<PFNGLPROGRAMBINARYPROC>()} else {&self.programbinary}})
+			.field("programparameteri", unsafe{if transmute::<_, *const c_void>(self.programparameteri) == (dummy_pfnglprogramparameteriproc as *const c_void) {&null::<PFNGLPROGRAMPARAMETERIPROC>()} else {&self.programparameteri}})
+			.field("useprogramstages", unsafe{if transmute::<_, *const c_void>(self.useprogramstages) == (dummy_pfngluseprogramstagesproc as *const c_void) {&null::<PFNGLUSEPROGRAMSTAGESPROC>()} else {&self.useprogramstages}})
+			.field("activeshaderprogram", unsafe{if transmute::<_, *const c_void>(self.activeshaderprogram) == (dummy_pfnglactiveshaderprogramproc as *const c_void) {&null::<PFNGLACTIVESHADERPROGRAMPROC>()} else {&self.activeshaderprogram}})
+			.field("createshaderprogramv", unsafe{if transmute::<_, *const c_void>(self.createshaderprogramv) == (dummy_pfnglcreateshaderprogramvproc as *const c_void) {&null::<PFNGLCREATESHADERPROGRAMVPROC>()} else {&self.createshaderprogramv}})
+			.field("bindprogrampipeline", unsafe{if transmute::<_, *const c_void>(self.bindprogrampipeline) == (dummy_pfnglbindprogrampipelineproc as *const c_void) {&null::<PFNGLBINDPROGRAMPIPELINEPROC>()} else {&self.bindprogrampipeline}})
+			.field("deleteprogrampipelines", unsafe{if transmute::<_, *const c_void>(self.deleteprogrampipelines) == (dummy_pfngldeleteprogrampipelinesproc as *const c_void) {&null::<PFNGLDELETEPROGRAMPIPELINESPROC>()} else {&self.deleteprogrampipelines}})
+			.field("genprogrampipelines", unsafe{if transmute::<_, *const c_void>(self.genprogrampipelines) == (dummy_pfnglgenprogrampipelinesproc as *const c_void) {&null::<PFNGLGENPROGRAMPIPELINESPROC>()} else {&self.genprogrampipelines}})
+			.field("isprogrampipeline", unsafe{if transmute::<_, *const c_void>(self.isprogrampipeline) == (dummy_pfnglisprogrampipelineproc as *const c_void) {&null::<PFNGLISPROGRAMPIPELINEPROC>()} else {&self.isprogrampipeline}})
+			.field("getprogrampipelineiv", unsafe{if transmute::<_, *const c_void>(self.getprogrampipelineiv) == (dummy_pfnglgetprogrampipelineivproc as *const c_void) {&null::<PFNGLGETPROGRAMPIPELINEIVPROC>()} else {&self.getprogrampipelineiv}})
+			.field("programuniform1i", unsafe{if transmute::<_, *const c_void>(self.programuniform1i) == (dummy_pfnglprogramuniform1iproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1IPROC>()} else {&self.programuniform1i}})
+			.field("programuniform1iv", unsafe{if transmute::<_, *const c_void>(self.programuniform1iv) == (dummy_pfnglprogramuniform1ivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1IVPROC>()} else {&self.programuniform1iv}})
+			.field("programuniform1f", unsafe{if transmute::<_, *const c_void>(self.programuniform1f) == (dummy_pfnglprogramuniform1fproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1FPROC>()} else {&self.programuniform1f}})
+			.field("programuniform1fv", unsafe{if transmute::<_, *const c_void>(self.programuniform1fv) == (dummy_pfnglprogramuniform1fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1FVPROC>()} else {&self.programuniform1fv}})
+			.field("programuniform1d", unsafe{if transmute::<_, *const c_void>(self.programuniform1d) == (dummy_pfnglprogramuniform1dproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1DPROC>()} else {&self.programuniform1d}})
+			.field("programuniform1dv", unsafe{if transmute::<_, *const c_void>(self.programuniform1dv) == (dummy_pfnglprogramuniform1dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1DVPROC>()} else {&self.programuniform1dv}})
+			.field("programuniform1ui", unsafe{if transmute::<_, *const c_void>(self.programuniform1ui) == (dummy_pfnglprogramuniform1uiproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1UIPROC>()} else {&self.programuniform1ui}})
+			.field("programuniform1uiv", unsafe{if transmute::<_, *const c_void>(self.programuniform1uiv) == (dummy_pfnglprogramuniform1uivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1UIVPROC>()} else {&self.programuniform1uiv}})
+			.field("programuniform2i", unsafe{if transmute::<_, *const c_void>(self.programuniform2i) == (dummy_pfnglprogramuniform2iproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2IPROC>()} else {&self.programuniform2i}})
+			.field("programuniform2iv", unsafe{if transmute::<_, *const c_void>(self.programuniform2iv) == (dummy_pfnglprogramuniform2ivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2IVPROC>()} else {&self.programuniform2iv}})
+			.field("programuniform2f", unsafe{if transmute::<_, *const c_void>(self.programuniform2f) == (dummy_pfnglprogramuniform2fproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2FPROC>()} else {&self.programuniform2f}})
+			.field("programuniform2fv", unsafe{if transmute::<_, *const c_void>(self.programuniform2fv) == (dummy_pfnglprogramuniform2fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2FVPROC>()} else {&self.programuniform2fv}})
+			.field("programuniform2d", unsafe{if transmute::<_, *const c_void>(self.programuniform2d) == (dummy_pfnglprogramuniform2dproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2DPROC>()} else {&self.programuniform2d}})
+			.field("programuniform2dv", unsafe{if transmute::<_, *const c_void>(self.programuniform2dv) == (dummy_pfnglprogramuniform2dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2DVPROC>()} else {&self.programuniform2dv}})
+			.field("programuniform2ui", unsafe{if transmute::<_, *const c_void>(self.programuniform2ui) == (dummy_pfnglprogramuniform2uiproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2UIPROC>()} else {&self.programuniform2ui}})
+			.field("programuniform2uiv", unsafe{if transmute::<_, *const c_void>(self.programuniform2uiv) == (dummy_pfnglprogramuniform2uivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2UIVPROC>()} else {&self.programuniform2uiv}})
+			.field("programuniform3i", unsafe{if transmute::<_, *const c_void>(self.programuniform3i) == (dummy_pfnglprogramuniform3iproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3IPROC>()} else {&self.programuniform3i}})
+			.field("programuniform3iv", unsafe{if transmute::<_, *const c_void>(self.programuniform3iv) == (dummy_pfnglprogramuniform3ivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3IVPROC>()} else {&self.programuniform3iv}})
+			.field("programuniform3f", unsafe{if transmute::<_, *const c_void>(self.programuniform3f) == (dummy_pfnglprogramuniform3fproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3FPROC>()} else {&self.programuniform3f}})
+			.field("programuniform3fv", unsafe{if transmute::<_, *const c_void>(self.programuniform3fv) == (dummy_pfnglprogramuniform3fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3FVPROC>()} else {&self.programuniform3fv}})
+			.field("programuniform3d", unsafe{if transmute::<_, *const c_void>(self.programuniform3d) == (dummy_pfnglprogramuniform3dproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3DPROC>()} else {&self.programuniform3d}})
+			.field("programuniform3dv", unsafe{if transmute::<_, *const c_void>(self.programuniform3dv) == (dummy_pfnglprogramuniform3dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3DVPROC>()} else {&self.programuniform3dv}})
+			.field("programuniform3ui", unsafe{if transmute::<_, *const c_void>(self.programuniform3ui) == (dummy_pfnglprogramuniform3uiproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3UIPROC>()} else {&self.programuniform3ui}})
+			.field("programuniform3uiv", unsafe{if transmute::<_, *const c_void>(self.programuniform3uiv) == (dummy_pfnglprogramuniform3uivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3UIVPROC>()} else {&self.programuniform3uiv}})
+			.field("programuniform4i", unsafe{if transmute::<_, *const c_void>(self.programuniform4i) == (dummy_pfnglprogramuniform4iproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4IPROC>()} else {&self.programuniform4i}})
+			.field("programuniform4iv", unsafe{if transmute::<_, *const c_void>(self.programuniform4iv) == (dummy_pfnglprogramuniform4ivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4IVPROC>()} else {&self.programuniform4iv}})
+			.field("programuniform4f", unsafe{if transmute::<_, *const c_void>(self.programuniform4f) == (dummy_pfnglprogramuniform4fproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4FPROC>()} else {&self.programuniform4f}})
+			.field("programuniform4fv", unsafe{if transmute::<_, *const c_void>(self.programuniform4fv) == (dummy_pfnglprogramuniform4fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4FVPROC>()} else {&self.programuniform4fv}})
+			.field("programuniform4d", unsafe{if transmute::<_, *const c_void>(self.programuniform4d) == (dummy_pfnglprogramuniform4dproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4DPROC>()} else {&self.programuniform4d}})
+			.field("programuniform4dv", unsafe{if transmute::<_, *const c_void>(self.programuniform4dv) == (dummy_pfnglprogramuniform4dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4DVPROC>()} else {&self.programuniform4dv}})
+			.field("programuniform4ui", unsafe{if transmute::<_, *const c_void>(self.programuniform4ui) == (dummy_pfnglprogramuniform4uiproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4UIPROC>()} else {&self.programuniform4ui}})
+			.field("programuniform4uiv", unsafe{if transmute::<_, *const c_void>(self.programuniform4uiv) == (dummy_pfnglprogramuniform4uivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4UIVPROC>()} else {&self.programuniform4uiv}})
+			.field("programuniformmatrix2fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix2fv) == (dummy_pfnglprogramuniformmatrix2fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX2FVPROC>()} else {&self.programuniformmatrix2fv}})
+			.field("programuniformmatrix3fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix3fv) == (dummy_pfnglprogramuniformmatrix3fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX3FVPROC>()} else {&self.programuniformmatrix3fv}})
+			.field("programuniformmatrix4fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix4fv) == (dummy_pfnglprogramuniformmatrix4fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX4FVPROC>()} else {&self.programuniformmatrix4fv}})
+			.field("programuniformmatrix2dv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix2dv) == (dummy_pfnglprogramuniformmatrix2dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX2DVPROC>()} else {&self.programuniformmatrix2dv}})
+			.field("programuniformmatrix3dv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix3dv) == (dummy_pfnglprogramuniformmatrix3dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX3DVPROC>()} else {&self.programuniformmatrix3dv}})
+			.field("programuniformmatrix4dv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix4dv) == (dummy_pfnglprogramuniformmatrix4dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX4DVPROC>()} else {&self.programuniformmatrix4dv}})
+			.field("programuniformmatrix2x3fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix2x3fv) == (dummy_pfnglprogramuniformmatrix2x3fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX2X3FVPROC>()} else {&self.programuniformmatrix2x3fv}})
+			.field("programuniformmatrix3x2fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix3x2fv) == (dummy_pfnglprogramuniformmatrix3x2fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX3X2FVPROC>()} else {&self.programuniformmatrix3x2fv}})
+			.field("programuniformmatrix2x4fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix2x4fv) == (dummy_pfnglprogramuniformmatrix2x4fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX2X4FVPROC>()} else {&self.programuniformmatrix2x4fv}})
+			.field("programuniformmatrix4x2fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix4x2fv) == (dummy_pfnglprogramuniformmatrix4x2fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX4X2FVPROC>()} else {&self.programuniformmatrix4x2fv}})
+			.field("programuniformmatrix3x4fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix3x4fv) == (dummy_pfnglprogramuniformmatrix3x4fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX3X4FVPROC>()} else {&self.programuniformmatrix3x4fv}})
+			.field("programuniformmatrix4x3fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix4x3fv) == (dummy_pfnglprogramuniformmatrix4x3fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX4X3FVPROC>()} else {&self.programuniformmatrix4x3fv}})
+			.field("programuniformmatrix2x3dv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix2x3dv) == (dummy_pfnglprogramuniformmatrix2x3dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX2X3DVPROC>()} else {&self.programuniformmatrix2x3dv}})
+			.field("programuniformmatrix3x2dv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix3x2dv) == (dummy_pfnglprogramuniformmatrix3x2dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX3X2DVPROC>()} else {&self.programuniformmatrix3x2dv}})
+			.field("programuniformmatrix2x4dv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix2x4dv) == (dummy_pfnglprogramuniformmatrix2x4dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX2X4DVPROC>()} else {&self.programuniformmatrix2x4dv}})
+			.field("programuniformmatrix4x2dv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix4x2dv) == (dummy_pfnglprogramuniformmatrix4x2dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX4X2DVPROC>()} else {&self.programuniformmatrix4x2dv}})
+			.field("programuniformmatrix3x4dv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix3x4dv) == (dummy_pfnglprogramuniformmatrix3x4dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX3X4DVPROC>()} else {&self.programuniformmatrix3x4dv}})
+			.field("programuniformmatrix4x3dv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix4x3dv) == (dummy_pfnglprogramuniformmatrix4x3dvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX4X3DVPROC>()} else {&self.programuniformmatrix4x3dv}})
+			.field("validateprogrampipeline", unsafe{if transmute::<_, *const c_void>(self.validateprogrampipeline) == (dummy_pfnglvalidateprogrampipelineproc as *const c_void) {&null::<PFNGLVALIDATEPROGRAMPIPELINEPROC>()} else {&self.validateprogrampipeline}})
+			.field("getprogrampipelineinfolog", unsafe{if transmute::<_, *const c_void>(self.getprogrampipelineinfolog) == (dummy_pfnglgetprogrampipelineinfologproc as *const c_void) {&null::<PFNGLGETPROGRAMPIPELINEINFOLOGPROC>()} else {&self.getprogrampipelineinfolog}})
+			.field("vertexattribl1d", unsafe{if transmute::<_, *const c_void>(self.vertexattribl1d) == (dummy_pfnglvertexattribl1dproc as *const c_void) {&null::<PFNGLVERTEXATTRIBL1DPROC>()} else {&self.vertexattribl1d}})
+			.field("vertexattribl2d", unsafe{if transmute::<_, *const c_void>(self.vertexattribl2d) == (dummy_pfnglvertexattribl2dproc as *const c_void) {&null::<PFNGLVERTEXATTRIBL2DPROC>()} else {&self.vertexattribl2d}})
+			.field("vertexattribl3d", unsafe{if transmute::<_, *const c_void>(self.vertexattribl3d) == (dummy_pfnglvertexattribl3dproc as *const c_void) {&null::<PFNGLVERTEXATTRIBL3DPROC>()} else {&self.vertexattribl3d}})
+			.field("vertexattribl4d", unsafe{if transmute::<_, *const c_void>(self.vertexattribl4d) == (dummy_pfnglvertexattribl4dproc as *const c_void) {&null::<PFNGLVERTEXATTRIBL4DPROC>()} else {&self.vertexattribl4d}})
+			.field("vertexattribl1dv", unsafe{if transmute::<_, *const c_void>(self.vertexattribl1dv) == (dummy_pfnglvertexattribl1dvproc as *const c_void) {&null::<PFNGLVERTEXATTRIBL1DVPROC>()} else {&self.vertexattribl1dv}})
+			.field("vertexattribl2dv", unsafe{if transmute::<_, *const c_void>(self.vertexattribl2dv) == (dummy_pfnglvertexattribl2dvproc as *const c_void) {&null::<PFNGLVERTEXATTRIBL2DVPROC>()} else {&self.vertexattribl2dv}})
+			.field("vertexattribl3dv", unsafe{if transmute::<_, *const c_void>(self.vertexattribl3dv) == (dummy_pfnglvertexattribl3dvproc as *const c_void) {&null::<PFNGLVERTEXATTRIBL3DVPROC>()} else {&self.vertexattribl3dv}})
+			.field("vertexattribl4dv", unsafe{if transmute::<_, *const c_void>(self.vertexattribl4dv) == (dummy_pfnglvertexattribl4dvproc as *const c_void) {&null::<PFNGLVERTEXATTRIBL4DVPROC>()} else {&self.vertexattribl4dv}})
+			.field("vertexattriblpointer", unsafe{if transmute::<_, *const c_void>(self.vertexattriblpointer) == (dummy_pfnglvertexattriblpointerproc as *const c_void) {&null::<PFNGLVERTEXATTRIBLPOINTERPROC>()} else {&self.vertexattriblpointer}})
+			.field("getvertexattribldv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribldv) == (dummy_pfnglgetvertexattribldvproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBLDVPROC>()} else {&self.getvertexattribldv}})
+			.field("viewportarrayv", unsafe{if transmute::<_, *const c_void>(self.viewportarrayv) == (dummy_pfnglviewportarrayvproc as *const c_void) {&null::<PFNGLVIEWPORTARRAYVPROC>()} else {&self.viewportarrayv}})
+			.field("viewportindexedf", unsafe{if transmute::<_, *const c_void>(self.viewportindexedf) == (dummy_pfnglviewportindexedfproc as *const c_void) {&null::<PFNGLVIEWPORTINDEXEDFPROC>()} else {&self.viewportindexedf}})
+			.field("viewportindexedfv", unsafe{if transmute::<_, *const c_void>(self.viewportindexedfv) == (dummy_pfnglviewportindexedfvproc as *const c_void) {&null::<PFNGLVIEWPORTINDEXEDFVPROC>()} else {&self.viewportindexedfv}})
+			.field("scissorarrayv", unsafe{if transmute::<_, *const c_void>(self.scissorarrayv) == (dummy_pfnglscissorarrayvproc as *const c_void) {&null::<PFNGLSCISSORARRAYVPROC>()} else {&self.scissorarrayv}})
+			.field("scissorindexed", unsafe{if transmute::<_, *const c_void>(self.scissorindexed) == (dummy_pfnglscissorindexedproc as *const c_void) {&null::<PFNGLSCISSORINDEXEDPROC>()} else {&self.scissorindexed}})
+			.field("scissorindexedv", unsafe{if transmute::<_, *const c_void>(self.scissorindexedv) == (dummy_pfnglscissorindexedvproc as *const c_void) {&null::<PFNGLSCISSORINDEXEDVPROC>()} else {&self.scissorindexedv}})
+			.field("depthrangearrayv", unsafe{if transmute::<_, *const c_void>(self.depthrangearrayv) == (dummy_pfngldepthrangearrayvproc as *const c_void) {&null::<PFNGLDEPTHRANGEARRAYVPROC>()} else {&self.depthrangearrayv}})
+			.field("depthrangeindexed", unsafe{if transmute::<_, *const c_void>(self.depthrangeindexed) == (dummy_pfngldepthrangeindexedproc as *const c_void) {&null::<PFNGLDEPTHRANGEINDEXEDPROC>()} else {&self.depthrangeindexed}})
+			.field("getfloati_v", unsafe{if transmute::<_, *const c_void>(self.getfloati_v) == (dummy_pfnglgetfloati_vproc as *const c_void) {&null::<PFNGLGETFLOATI_VPROC>()} else {&self.getfloati_v}})
+			.field("getdoublei_v", unsafe{if transmute::<_, *const c_void>(self.getdoublei_v) == (dummy_pfnglgetdoublei_vproc as *const c_void) {&null::<PFNGLGETDOUBLEI_VPROC>()} else {&self.getdoublei_v}})
+			.finish()
+		} else {
+			f.debug_struct("Version41")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC = extern "system" fn(GLenum, GLint, GLsizei, GLsizei, GLuint);
 type PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEPROC = extern "system" fn(GLenum, GLsizei, GLenum, *const c_void, GLsizei, GLuint);
 type PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEPROC = extern "system" fn(GLenum, GLsizei, GLenum, *const c_void, GLsizei, GLint, GLuint);
@@ -8839,7 +9599,7 @@ pub trait GL_4_2 {
 	fn glDrawTransformFeedbackStreamInstanced(&self, mode: GLenum, id: GLuint, stream: GLuint, instancecount: GLsizei);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version42 {
 	available: bool,
 	drawarraysinstancedbaseinstance: PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC,
@@ -8955,7 +9715,31 @@ impl Default for Version42 {
 		}
 	}
 }
-
+impl Debug for Version42 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version42")
+			.field("available", &self.available)
+			.field("drawarraysinstancedbaseinstance", unsafe{if transmute::<_, *const c_void>(self.drawarraysinstancedbaseinstance) == (dummy_pfngldrawarraysinstancedbaseinstanceproc as *const c_void) {&null::<PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC>()} else {&self.drawarraysinstancedbaseinstance}})
+			.field("drawelementsinstancedbaseinstance", unsafe{if transmute::<_, *const c_void>(self.drawelementsinstancedbaseinstance) == (dummy_pfngldrawelementsinstancedbaseinstanceproc as *const c_void) {&null::<PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEPROC>()} else {&self.drawelementsinstancedbaseinstance}})
+			.field("drawelementsinstancedbasevertexbaseinstance", unsafe{if transmute::<_, *const c_void>(self.drawelementsinstancedbasevertexbaseinstance) == (dummy_pfngldrawelementsinstancedbasevertexbaseinstanceproc as *const c_void) {&null::<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEPROC>()} else {&self.drawelementsinstancedbasevertexbaseinstance}})
+			.field("getinternalformativ", unsafe{if transmute::<_, *const c_void>(self.getinternalformativ) == (dummy_pfnglgetinternalformativproc as *const c_void) {&null::<PFNGLGETINTERNALFORMATIVPROC>()} else {&self.getinternalformativ}})
+			.field("getactiveatomiccounterbufferiv", unsafe{if transmute::<_, *const c_void>(self.getactiveatomiccounterbufferiv) == (dummy_pfnglgetactiveatomiccounterbufferivproc as *const c_void) {&null::<PFNGLGETACTIVEATOMICCOUNTERBUFFERIVPROC>()} else {&self.getactiveatomiccounterbufferiv}})
+			.field("bindimagetexture", unsafe{if transmute::<_, *const c_void>(self.bindimagetexture) == (dummy_pfnglbindimagetextureproc as *const c_void) {&null::<PFNGLBINDIMAGETEXTUREPROC>()} else {&self.bindimagetexture}})
+			.field("memorybarrier", unsafe{if transmute::<_, *const c_void>(self.memorybarrier) == (dummy_pfnglmemorybarrierproc as *const c_void) {&null::<PFNGLMEMORYBARRIERPROC>()} else {&self.memorybarrier}})
+			.field("texstorage1d", unsafe{if transmute::<_, *const c_void>(self.texstorage1d) == (dummy_pfngltexstorage1dproc as *const c_void) {&null::<PFNGLTEXSTORAGE1DPROC>()} else {&self.texstorage1d}})
+			.field("texstorage2d", unsafe{if transmute::<_, *const c_void>(self.texstorage2d) == (dummy_pfngltexstorage2dproc as *const c_void) {&null::<PFNGLTEXSTORAGE2DPROC>()} else {&self.texstorage2d}})
+			.field("texstorage3d", unsafe{if transmute::<_, *const c_void>(self.texstorage3d) == (dummy_pfngltexstorage3dproc as *const c_void) {&null::<PFNGLTEXSTORAGE3DPROC>()} else {&self.texstorage3d}})
+			.field("drawtransformfeedbackinstanced", unsafe{if transmute::<_, *const c_void>(self.drawtransformfeedbackinstanced) == (dummy_pfngldrawtransformfeedbackinstancedproc as *const c_void) {&null::<PFNGLDRAWTRANSFORMFEEDBACKINSTANCEDPROC>()} else {&self.drawtransformfeedbackinstanced}})
+			.field("drawtransformfeedbackstreaminstanced", unsafe{if transmute::<_, *const c_void>(self.drawtransformfeedbackstreaminstanced) == (dummy_pfngldrawtransformfeedbackstreaminstancedproc as *const c_void) {&null::<PFNGLDRAWTRANSFORMFEEDBACKSTREAMINSTANCEDPROC>()} else {&self.drawtransformfeedbackstreaminstanced}})
+			.finish()
+		} else {
+			f.debug_struct("Version42")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLCLEARBUFFERDATAPROC = extern "system" fn(GLenum, GLenum, GLenum, GLenum, *const c_void);
 type PFNGLCLEARBUFFERSUBDATAPROC = extern "system" fn(GLenum, GLenum, GLintptr, GLsizeiptr, GLenum, GLenum, *const c_void);
 type PFNGLDISPATCHCOMPUTEPROC = extern "system" fn(GLuint, GLuint, GLuint);
@@ -9434,7 +10218,7 @@ pub trait GL_4_3 {
 	fn glGetObjectPtrLabel(&self, ptr: *const c_void, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version43 {
 	available: bool,
 	clearbufferdata: PFNGLCLEARBUFFERDATAPROC,
@@ -9767,7 +10551,62 @@ impl Default for Version43 {
 		}
 	}
 }
-
+impl Debug for Version43 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version43")
+			.field("available", &self.available)
+			.field("clearbufferdata", unsafe{if transmute::<_, *const c_void>(self.clearbufferdata) == (dummy_pfnglclearbufferdataproc as *const c_void) {&null::<PFNGLCLEARBUFFERDATAPROC>()} else {&self.clearbufferdata}})
+			.field("clearbuffersubdata", unsafe{if transmute::<_, *const c_void>(self.clearbuffersubdata) == (dummy_pfnglclearbuffersubdataproc as *const c_void) {&null::<PFNGLCLEARBUFFERSUBDATAPROC>()} else {&self.clearbuffersubdata}})
+			.field("dispatchcompute", unsafe{if transmute::<_, *const c_void>(self.dispatchcompute) == (dummy_pfngldispatchcomputeproc as *const c_void) {&null::<PFNGLDISPATCHCOMPUTEPROC>()} else {&self.dispatchcompute}})
+			.field("dispatchcomputeindirect", unsafe{if transmute::<_, *const c_void>(self.dispatchcomputeindirect) == (dummy_pfngldispatchcomputeindirectproc as *const c_void) {&null::<PFNGLDISPATCHCOMPUTEINDIRECTPROC>()} else {&self.dispatchcomputeindirect}})
+			.field("copyimagesubdata", unsafe{if transmute::<_, *const c_void>(self.copyimagesubdata) == (dummy_pfnglcopyimagesubdataproc as *const c_void) {&null::<PFNGLCOPYIMAGESUBDATAPROC>()} else {&self.copyimagesubdata}})
+			.field("framebufferparameteri", unsafe{if transmute::<_, *const c_void>(self.framebufferparameteri) == (dummy_pfnglframebufferparameteriproc as *const c_void) {&null::<PFNGLFRAMEBUFFERPARAMETERIPROC>()} else {&self.framebufferparameteri}})
+			.field("getframebufferparameteriv", unsafe{if transmute::<_, *const c_void>(self.getframebufferparameteriv) == (dummy_pfnglgetframebufferparameterivproc as *const c_void) {&null::<PFNGLGETFRAMEBUFFERPARAMETERIVPROC>()} else {&self.getframebufferparameteriv}})
+			.field("getinternalformati64v", unsafe{if transmute::<_, *const c_void>(self.getinternalformati64v) == (dummy_pfnglgetinternalformati64vproc as *const c_void) {&null::<PFNGLGETINTERNALFORMATI64VPROC>()} else {&self.getinternalformati64v}})
+			.field("invalidatetexsubimage", unsafe{if transmute::<_, *const c_void>(self.invalidatetexsubimage) == (dummy_pfnglinvalidatetexsubimageproc as *const c_void) {&null::<PFNGLINVALIDATETEXSUBIMAGEPROC>()} else {&self.invalidatetexsubimage}})
+			.field("invalidateteximage", unsafe{if transmute::<_, *const c_void>(self.invalidateteximage) == (dummy_pfnglinvalidateteximageproc as *const c_void) {&null::<PFNGLINVALIDATETEXIMAGEPROC>()} else {&self.invalidateteximage}})
+			.field("invalidatebuffersubdata", unsafe{if transmute::<_, *const c_void>(self.invalidatebuffersubdata) == (dummy_pfnglinvalidatebuffersubdataproc as *const c_void) {&null::<PFNGLINVALIDATEBUFFERSUBDATAPROC>()} else {&self.invalidatebuffersubdata}})
+			.field("invalidatebufferdata", unsafe{if transmute::<_, *const c_void>(self.invalidatebufferdata) == (dummy_pfnglinvalidatebufferdataproc as *const c_void) {&null::<PFNGLINVALIDATEBUFFERDATAPROC>()} else {&self.invalidatebufferdata}})
+			.field("invalidateframebuffer", unsafe{if transmute::<_, *const c_void>(self.invalidateframebuffer) == (dummy_pfnglinvalidateframebufferproc as *const c_void) {&null::<PFNGLINVALIDATEFRAMEBUFFERPROC>()} else {&self.invalidateframebuffer}})
+			.field("invalidatesubframebuffer", unsafe{if transmute::<_, *const c_void>(self.invalidatesubframebuffer) == (dummy_pfnglinvalidatesubframebufferproc as *const c_void) {&null::<PFNGLINVALIDATESUBFRAMEBUFFERPROC>()} else {&self.invalidatesubframebuffer}})
+			.field("multidrawarraysindirect", unsafe{if transmute::<_, *const c_void>(self.multidrawarraysindirect) == (dummy_pfnglmultidrawarraysindirectproc as *const c_void) {&null::<PFNGLMULTIDRAWARRAYSINDIRECTPROC>()} else {&self.multidrawarraysindirect}})
+			.field("multidrawelementsindirect", unsafe{if transmute::<_, *const c_void>(self.multidrawelementsindirect) == (dummy_pfnglmultidrawelementsindirectproc as *const c_void) {&null::<PFNGLMULTIDRAWELEMENTSINDIRECTPROC>()} else {&self.multidrawelementsindirect}})
+			.field("getprograminterfaceiv", unsafe{if transmute::<_, *const c_void>(self.getprograminterfaceiv) == (dummy_pfnglgetprograminterfaceivproc as *const c_void) {&null::<PFNGLGETPROGRAMINTERFACEIVPROC>()} else {&self.getprograminterfaceiv}})
+			.field("getprogramresourceindex", unsafe{if transmute::<_, *const c_void>(self.getprogramresourceindex) == (dummy_pfnglgetprogramresourceindexproc as *const c_void) {&null::<PFNGLGETPROGRAMRESOURCEINDEXPROC>()} else {&self.getprogramresourceindex}})
+			.field("getprogramresourcename", unsafe{if transmute::<_, *const c_void>(self.getprogramresourcename) == (dummy_pfnglgetprogramresourcenameproc as *const c_void) {&null::<PFNGLGETPROGRAMRESOURCENAMEPROC>()} else {&self.getprogramresourcename}})
+			.field("getprogramresourceiv", unsafe{if transmute::<_, *const c_void>(self.getprogramresourceiv) == (dummy_pfnglgetprogramresourceivproc as *const c_void) {&null::<PFNGLGETPROGRAMRESOURCEIVPROC>()} else {&self.getprogramresourceiv}})
+			.field("getprogramresourcelocation", unsafe{if transmute::<_, *const c_void>(self.getprogramresourcelocation) == (dummy_pfnglgetprogramresourcelocationproc as *const c_void) {&null::<PFNGLGETPROGRAMRESOURCELOCATIONPROC>()} else {&self.getprogramresourcelocation}})
+			.field("getprogramresourcelocationindex", unsafe{if transmute::<_, *const c_void>(self.getprogramresourcelocationindex) == (dummy_pfnglgetprogramresourcelocationindexproc as *const c_void) {&null::<PFNGLGETPROGRAMRESOURCELOCATIONINDEXPROC>()} else {&self.getprogramresourcelocationindex}})
+			.field("shaderstorageblockbinding", unsafe{if transmute::<_, *const c_void>(self.shaderstorageblockbinding) == (dummy_pfnglshaderstorageblockbindingproc as *const c_void) {&null::<PFNGLSHADERSTORAGEBLOCKBINDINGPROC>()} else {&self.shaderstorageblockbinding}})
+			.field("texbufferrange", unsafe{if transmute::<_, *const c_void>(self.texbufferrange) == (dummy_pfngltexbufferrangeproc as *const c_void) {&null::<PFNGLTEXBUFFERRANGEPROC>()} else {&self.texbufferrange}})
+			.field("texstorage2dmultisample", unsafe{if transmute::<_, *const c_void>(self.texstorage2dmultisample) == (dummy_pfngltexstorage2dmultisampleproc as *const c_void) {&null::<PFNGLTEXSTORAGE2DMULTISAMPLEPROC>()} else {&self.texstorage2dmultisample}})
+			.field("texstorage3dmultisample", unsafe{if transmute::<_, *const c_void>(self.texstorage3dmultisample) == (dummy_pfngltexstorage3dmultisampleproc as *const c_void) {&null::<PFNGLTEXSTORAGE3DMULTISAMPLEPROC>()} else {&self.texstorage3dmultisample}})
+			.field("textureview", unsafe{if transmute::<_, *const c_void>(self.textureview) == (dummy_pfngltextureviewproc as *const c_void) {&null::<PFNGLTEXTUREVIEWPROC>()} else {&self.textureview}})
+			.field("bindvertexbuffer", unsafe{if transmute::<_, *const c_void>(self.bindvertexbuffer) == (dummy_pfnglbindvertexbufferproc as *const c_void) {&null::<PFNGLBINDVERTEXBUFFERPROC>()} else {&self.bindvertexbuffer}})
+			.field("vertexattribformat", unsafe{if transmute::<_, *const c_void>(self.vertexattribformat) == (dummy_pfnglvertexattribformatproc as *const c_void) {&null::<PFNGLVERTEXATTRIBFORMATPROC>()} else {&self.vertexattribformat}})
+			.field("vertexattribiformat", unsafe{if transmute::<_, *const c_void>(self.vertexattribiformat) == (dummy_pfnglvertexattribiformatproc as *const c_void) {&null::<PFNGLVERTEXATTRIBIFORMATPROC>()} else {&self.vertexattribiformat}})
+			.field("vertexattriblformat", unsafe{if transmute::<_, *const c_void>(self.vertexattriblformat) == (dummy_pfnglvertexattriblformatproc as *const c_void) {&null::<PFNGLVERTEXATTRIBLFORMATPROC>()} else {&self.vertexattriblformat}})
+			.field("vertexattribbinding", unsafe{if transmute::<_, *const c_void>(self.vertexattribbinding) == (dummy_pfnglvertexattribbindingproc as *const c_void) {&null::<PFNGLVERTEXATTRIBBINDINGPROC>()} else {&self.vertexattribbinding}})
+			.field("vertexbindingdivisor", unsafe{if transmute::<_, *const c_void>(self.vertexbindingdivisor) == (dummy_pfnglvertexbindingdivisorproc as *const c_void) {&null::<PFNGLVERTEXBINDINGDIVISORPROC>()} else {&self.vertexbindingdivisor}})
+			.field("debugmessagecontrol", unsafe{if transmute::<_, *const c_void>(self.debugmessagecontrol) == (dummy_pfngldebugmessagecontrolproc as *const c_void) {&null::<PFNGLDEBUGMESSAGECONTROLPROC>()} else {&self.debugmessagecontrol}})
+			.field("debugmessageinsert", unsafe{if transmute::<_, *const c_void>(self.debugmessageinsert) == (dummy_pfngldebugmessageinsertproc as *const c_void) {&null::<PFNGLDEBUGMESSAGEINSERTPROC>()} else {&self.debugmessageinsert}})
+			.field("debugmessagecallback", unsafe{if transmute::<_, *const c_void>(self.debugmessagecallback) == (dummy_pfngldebugmessagecallbackproc as *const c_void) {&null::<PFNGLDEBUGMESSAGECALLBACKPROC>()} else {&self.debugmessagecallback}})
+			.field("getdebugmessagelog", unsafe{if transmute::<_, *const c_void>(self.getdebugmessagelog) == (dummy_pfnglgetdebugmessagelogproc as *const c_void) {&null::<PFNGLGETDEBUGMESSAGELOGPROC>()} else {&self.getdebugmessagelog}})
+			.field("pushdebuggroup", unsafe{if transmute::<_, *const c_void>(self.pushdebuggroup) == (dummy_pfnglpushdebuggroupproc as *const c_void) {&null::<PFNGLPUSHDEBUGGROUPPROC>()} else {&self.pushdebuggroup}})
+			.field("popdebuggroup", unsafe{if transmute::<_, *const c_void>(self.popdebuggroup) == (dummy_pfnglpopdebuggroupproc as *const c_void) {&null::<PFNGLPOPDEBUGGROUPPROC>()} else {&self.popdebuggroup}})
+			.field("objectlabel", unsafe{if transmute::<_, *const c_void>(self.objectlabel) == (dummy_pfnglobjectlabelproc as *const c_void) {&null::<PFNGLOBJECTLABELPROC>()} else {&self.objectlabel}})
+			.field("getobjectlabel", unsafe{if transmute::<_, *const c_void>(self.getobjectlabel) == (dummy_pfnglgetobjectlabelproc as *const c_void) {&null::<PFNGLGETOBJECTLABELPROC>()} else {&self.getobjectlabel}})
+			.field("objectptrlabel", unsafe{if transmute::<_, *const c_void>(self.objectptrlabel) == (dummy_pfnglobjectptrlabelproc as *const c_void) {&null::<PFNGLOBJECTPTRLABELPROC>()} else {&self.objectptrlabel}})
+			.field("getobjectptrlabel", unsafe{if transmute::<_, *const c_void>(self.getobjectptrlabel) == (dummy_pfnglgetobjectptrlabelproc as *const c_void) {&null::<PFNGLGETOBJECTPTRLABELPROC>()} else {&self.getobjectptrlabel}})
+			.finish()
+		} else {
+			f.debug_struct("Version43")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLBUFFERSTORAGEPROC = extern "system" fn(GLenum, GLsizeiptr, *const c_void, GLbitfield);
 type PFNGLCLEARTEXIMAGEPROC = extern "system" fn(GLuint, GLint, GLenum, GLenum, *const c_void);
 type PFNGLCLEARTEXSUBIMAGEPROC = extern "system" fn(GLuint, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, *const c_void);
@@ -9836,7 +10675,7 @@ pub trait GL_4_4 {
 	fn glBindVertexBuffers(&self, first: GLuint, count: GLsizei, buffers: *const GLuint, offsets: *const GLintptr, strides: *const GLsizei);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version44 {
 	available: bool,
 	bufferstorage: PFNGLBUFFERSTORAGEPROC,
@@ -9931,7 +10770,28 @@ impl Default for Version44 {
 		}
 	}
 }
-
+impl Debug for Version44 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version44")
+			.field("available", &self.available)
+			.field("bufferstorage", unsafe{if transmute::<_, *const c_void>(self.bufferstorage) == (dummy_pfnglbufferstorageproc as *const c_void) {&null::<PFNGLBUFFERSTORAGEPROC>()} else {&self.bufferstorage}})
+			.field("clearteximage", unsafe{if transmute::<_, *const c_void>(self.clearteximage) == (dummy_pfnglclearteximageproc as *const c_void) {&null::<PFNGLCLEARTEXIMAGEPROC>()} else {&self.clearteximage}})
+			.field("cleartexsubimage", unsafe{if transmute::<_, *const c_void>(self.cleartexsubimage) == (dummy_pfnglcleartexsubimageproc as *const c_void) {&null::<PFNGLCLEARTEXSUBIMAGEPROC>()} else {&self.cleartexsubimage}})
+			.field("bindbuffersbase", unsafe{if transmute::<_, *const c_void>(self.bindbuffersbase) == (dummy_pfnglbindbuffersbaseproc as *const c_void) {&null::<PFNGLBINDBUFFERSBASEPROC>()} else {&self.bindbuffersbase}})
+			.field("bindbuffersrange", unsafe{if transmute::<_, *const c_void>(self.bindbuffersrange) == (dummy_pfnglbindbuffersrangeproc as *const c_void) {&null::<PFNGLBINDBUFFERSRANGEPROC>()} else {&self.bindbuffersrange}})
+			.field("bindtextures", unsafe{if transmute::<_, *const c_void>(self.bindtextures) == (dummy_pfnglbindtexturesproc as *const c_void) {&null::<PFNGLBINDTEXTURESPROC>()} else {&self.bindtextures}})
+			.field("bindsamplers", unsafe{if transmute::<_, *const c_void>(self.bindsamplers) == (dummy_pfnglbindsamplersproc as *const c_void) {&null::<PFNGLBINDSAMPLERSPROC>()} else {&self.bindsamplers}})
+			.field("bindimagetextures", unsafe{if transmute::<_, *const c_void>(self.bindimagetextures) == (dummy_pfnglbindimagetexturesproc as *const c_void) {&null::<PFNGLBINDIMAGETEXTURESPROC>()} else {&self.bindimagetextures}})
+			.field("bindvertexbuffers", unsafe{if transmute::<_, *const c_void>(self.bindvertexbuffers) == (dummy_pfnglbindvertexbuffersproc as *const c_void) {&null::<PFNGLBINDVERTEXBUFFERSPROC>()} else {&self.bindvertexbuffers}})
+			.finish()
+		} else {
+			f.debug_struct("Version44")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLCLIPCONTROLPROC = extern "system" fn(GLenum, GLenum);
 type PFNGLCREATETRANSFORMFEEDBACKSPROC = extern "system" fn(GLsizei, *mut GLuint);
 type PFNGLTRANSFORMFEEDBACKBUFFERBASEPROC = extern "system" fn(GLuint, GLuint, GLuint);
@@ -10580,7 +11440,7 @@ pub trait GL_4_5 {
 	fn glTextureBarrier(&self);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version45 {
 	available: bool,
 	clipcontrol: PFNGLCLIPCONTROLPROC,
@@ -11466,7 +12326,141 @@ impl Default for Version45 {
 		}
 	}
 }
-
+impl Debug for Version45 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version45")
+			.field("available", &self.available)
+			.field("clipcontrol", unsafe{if transmute::<_, *const c_void>(self.clipcontrol) == (dummy_pfnglclipcontrolproc as *const c_void) {&null::<PFNGLCLIPCONTROLPROC>()} else {&self.clipcontrol}})
+			.field("createtransformfeedbacks", unsafe{if transmute::<_, *const c_void>(self.createtransformfeedbacks) == (dummy_pfnglcreatetransformfeedbacksproc as *const c_void) {&null::<PFNGLCREATETRANSFORMFEEDBACKSPROC>()} else {&self.createtransformfeedbacks}})
+			.field("transformfeedbackbufferbase", unsafe{if transmute::<_, *const c_void>(self.transformfeedbackbufferbase) == (dummy_pfngltransformfeedbackbufferbaseproc as *const c_void) {&null::<PFNGLTRANSFORMFEEDBACKBUFFERBASEPROC>()} else {&self.transformfeedbackbufferbase}})
+			.field("transformfeedbackbufferrange", unsafe{if transmute::<_, *const c_void>(self.transformfeedbackbufferrange) == (dummy_pfngltransformfeedbackbufferrangeproc as *const c_void) {&null::<PFNGLTRANSFORMFEEDBACKBUFFERRANGEPROC>()} else {&self.transformfeedbackbufferrange}})
+			.field("gettransformfeedbackiv", unsafe{if transmute::<_, *const c_void>(self.gettransformfeedbackiv) == (dummy_pfnglgettransformfeedbackivproc as *const c_void) {&null::<PFNGLGETTRANSFORMFEEDBACKIVPROC>()} else {&self.gettransformfeedbackiv}})
+			.field("gettransformfeedbacki_v", unsafe{if transmute::<_, *const c_void>(self.gettransformfeedbacki_v) == (dummy_pfnglgettransformfeedbacki_vproc as *const c_void) {&null::<PFNGLGETTRANSFORMFEEDBACKI_VPROC>()} else {&self.gettransformfeedbacki_v}})
+			.field("gettransformfeedbacki64_v", unsafe{if transmute::<_, *const c_void>(self.gettransformfeedbacki64_v) == (dummy_pfnglgettransformfeedbacki64_vproc as *const c_void) {&null::<PFNGLGETTRANSFORMFEEDBACKI64_VPROC>()} else {&self.gettransformfeedbacki64_v}})
+			.field("createbuffers", unsafe{if transmute::<_, *const c_void>(self.createbuffers) == (dummy_pfnglcreatebuffersproc as *const c_void) {&null::<PFNGLCREATEBUFFERSPROC>()} else {&self.createbuffers}})
+			.field("namedbufferstorage", unsafe{if transmute::<_, *const c_void>(self.namedbufferstorage) == (dummy_pfnglnamedbufferstorageproc as *const c_void) {&null::<PFNGLNAMEDBUFFERSTORAGEPROC>()} else {&self.namedbufferstorage}})
+			.field("namedbufferdata", unsafe{if transmute::<_, *const c_void>(self.namedbufferdata) == (dummy_pfnglnamedbufferdataproc as *const c_void) {&null::<PFNGLNAMEDBUFFERDATAPROC>()} else {&self.namedbufferdata}})
+			.field("namedbuffersubdata", unsafe{if transmute::<_, *const c_void>(self.namedbuffersubdata) == (dummy_pfnglnamedbuffersubdataproc as *const c_void) {&null::<PFNGLNAMEDBUFFERSUBDATAPROC>()} else {&self.namedbuffersubdata}})
+			.field("copynamedbuffersubdata", unsafe{if transmute::<_, *const c_void>(self.copynamedbuffersubdata) == (dummy_pfnglcopynamedbuffersubdataproc as *const c_void) {&null::<PFNGLCOPYNAMEDBUFFERSUBDATAPROC>()} else {&self.copynamedbuffersubdata}})
+			.field("clearnamedbufferdata", unsafe{if transmute::<_, *const c_void>(self.clearnamedbufferdata) == (dummy_pfnglclearnamedbufferdataproc as *const c_void) {&null::<PFNGLCLEARNAMEDBUFFERDATAPROC>()} else {&self.clearnamedbufferdata}})
+			.field("clearnamedbuffersubdata", unsafe{if transmute::<_, *const c_void>(self.clearnamedbuffersubdata) == (dummy_pfnglclearnamedbuffersubdataproc as *const c_void) {&null::<PFNGLCLEARNAMEDBUFFERSUBDATAPROC>()} else {&self.clearnamedbuffersubdata}})
+			.field("mapnamedbuffer", unsafe{if transmute::<_, *const c_void>(self.mapnamedbuffer) == (dummy_pfnglmapnamedbufferproc as *const c_void) {&null::<PFNGLMAPNAMEDBUFFERPROC>()} else {&self.mapnamedbuffer}})
+			.field("mapnamedbufferrange", unsafe{if transmute::<_, *const c_void>(self.mapnamedbufferrange) == (dummy_pfnglmapnamedbufferrangeproc as *const c_void) {&null::<PFNGLMAPNAMEDBUFFERRANGEPROC>()} else {&self.mapnamedbufferrange}})
+			.field("unmapnamedbuffer", unsafe{if transmute::<_, *const c_void>(self.unmapnamedbuffer) == (dummy_pfnglunmapnamedbufferproc as *const c_void) {&null::<PFNGLUNMAPNAMEDBUFFERPROC>()} else {&self.unmapnamedbuffer}})
+			.field("flushmappednamedbufferrange", unsafe{if transmute::<_, *const c_void>(self.flushmappednamedbufferrange) == (dummy_pfnglflushmappednamedbufferrangeproc as *const c_void) {&null::<PFNGLFLUSHMAPPEDNAMEDBUFFERRANGEPROC>()} else {&self.flushmappednamedbufferrange}})
+			.field("getnamedbufferparameteriv", unsafe{if transmute::<_, *const c_void>(self.getnamedbufferparameteriv) == (dummy_pfnglgetnamedbufferparameterivproc as *const c_void) {&null::<PFNGLGETNAMEDBUFFERPARAMETERIVPROC>()} else {&self.getnamedbufferparameteriv}})
+			.field("getnamedbufferparameteri64v", unsafe{if transmute::<_, *const c_void>(self.getnamedbufferparameteri64v) == (dummy_pfnglgetnamedbufferparameteri64vproc as *const c_void) {&null::<PFNGLGETNAMEDBUFFERPARAMETERI64VPROC>()} else {&self.getnamedbufferparameteri64v}})
+			.field("getnamedbufferpointerv", unsafe{if transmute::<_, *const c_void>(self.getnamedbufferpointerv) == (dummy_pfnglgetnamedbufferpointervproc as *const c_void) {&null::<PFNGLGETNAMEDBUFFERPOINTERVPROC>()} else {&self.getnamedbufferpointerv}})
+			.field("getnamedbuffersubdata", unsafe{if transmute::<_, *const c_void>(self.getnamedbuffersubdata) == (dummy_pfnglgetnamedbuffersubdataproc as *const c_void) {&null::<PFNGLGETNAMEDBUFFERSUBDATAPROC>()} else {&self.getnamedbuffersubdata}})
+			.field("createframebuffers", unsafe{if transmute::<_, *const c_void>(self.createframebuffers) == (dummy_pfnglcreateframebuffersproc as *const c_void) {&null::<PFNGLCREATEFRAMEBUFFERSPROC>()} else {&self.createframebuffers}})
+			.field("namedframebufferrenderbuffer", unsafe{if transmute::<_, *const c_void>(self.namedframebufferrenderbuffer) == (dummy_pfnglnamedframebufferrenderbufferproc as *const c_void) {&null::<PFNGLNAMEDFRAMEBUFFERRENDERBUFFERPROC>()} else {&self.namedframebufferrenderbuffer}})
+			.field("namedframebufferparameteri", unsafe{if transmute::<_, *const c_void>(self.namedframebufferparameteri) == (dummy_pfnglnamedframebufferparameteriproc as *const c_void) {&null::<PFNGLNAMEDFRAMEBUFFERPARAMETERIPROC>()} else {&self.namedframebufferparameteri}})
+			.field("namedframebuffertexture", unsafe{if transmute::<_, *const c_void>(self.namedframebuffertexture) == (dummy_pfnglnamedframebuffertextureproc as *const c_void) {&null::<PFNGLNAMEDFRAMEBUFFERTEXTUREPROC>()} else {&self.namedframebuffertexture}})
+			.field("namedframebuffertexturelayer", unsafe{if transmute::<_, *const c_void>(self.namedframebuffertexturelayer) == (dummy_pfnglnamedframebuffertexturelayerproc as *const c_void) {&null::<PFNGLNAMEDFRAMEBUFFERTEXTURELAYERPROC>()} else {&self.namedframebuffertexturelayer}})
+			.field("namedframebufferdrawbuffer", unsafe{if transmute::<_, *const c_void>(self.namedframebufferdrawbuffer) == (dummy_pfnglnamedframebufferdrawbufferproc as *const c_void) {&null::<PFNGLNAMEDFRAMEBUFFERDRAWBUFFERPROC>()} else {&self.namedframebufferdrawbuffer}})
+			.field("namedframebufferdrawbuffers", unsafe{if transmute::<_, *const c_void>(self.namedframebufferdrawbuffers) == (dummy_pfnglnamedframebufferdrawbuffersproc as *const c_void) {&null::<PFNGLNAMEDFRAMEBUFFERDRAWBUFFERSPROC>()} else {&self.namedframebufferdrawbuffers}})
+			.field("namedframebufferreadbuffer", unsafe{if transmute::<_, *const c_void>(self.namedframebufferreadbuffer) == (dummy_pfnglnamedframebufferreadbufferproc as *const c_void) {&null::<PFNGLNAMEDFRAMEBUFFERREADBUFFERPROC>()} else {&self.namedframebufferreadbuffer}})
+			.field("invalidatenamedframebufferdata", unsafe{if transmute::<_, *const c_void>(self.invalidatenamedframebufferdata) == (dummy_pfnglinvalidatenamedframebufferdataproc as *const c_void) {&null::<PFNGLINVALIDATENAMEDFRAMEBUFFERDATAPROC>()} else {&self.invalidatenamedframebufferdata}})
+			.field("invalidatenamedframebuffersubdata", unsafe{if transmute::<_, *const c_void>(self.invalidatenamedframebuffersubdata) == (dummy_pfnglinvalidatenamedframebuffersubdataproc as *const c_void) {&null::<PFNGLINVALIDATENAMEDFRAMEBUFFERSUBDATAPROC>()} else {&self.invalidatenamedframebuffersubdata}})
+			.field("clearnamedframebufferiv", unsafe{if transmute::<_, *const c_void>(self.clearnamedframebufferiv) == (dummy_pfnglclearnamedframebufferivproc as *const c_void) {&null::<PFNGLCLEARNAMEDFRAMEBUFFERIVPROC>()} else {&self.clearnamedframebufferiv}})
+			.field("clearnamedframebufferuiv", unsafe{if transmute::<_, *const c_void>(self.clearnamedframebufferuiv) == (dummy_pfnglclearnamedframebufferuivproc as *const c_void) {&null::<PFNGLCLEARNAMEDFRAMEBUFFERUIVPROC>()} else {&self.clearnamedframebufferuiv}})
+			.field("clearnamedframebufferfv", unsafe{if transmute::<_, *const c_void>(self.clearnamedframebufferfv) == (dummy_pfnglclearnamedframebufferfvproc as *const c_void) {&null::<PFNGLCLEARNAMEDFRAMEBUFFERFVPROC>()} else {&self.clearnamedframebufferfv}})
+			.field("clearnamedframebufferfi", unsafe{if transmute::<_, *const c_void>(self.clearnamedframebufferfi) == (dummy_pfnglclearnamedframebufferfiproc as *const c_void) {&null::<PFNGLCLEARNAMEDFRAMEBUFFERFIPROC>()} else {&self.clearnamedframebufferfi}})
+			.field("blitnamedframebuffer", unsafe{if transmute::<_, *const c_void>(self.blitnamedframebuffer) == (dummy_pfnglblitnamedframebufferproc as *const c_void) {&null::<PFNGLBLITNAMEDFRAMEBUFFERPROC>()} else {&self.blitnamedframebuffer}})
+			.field("checknamedframebufferstatus", unsafe{if transmute::<_, *const c_void>(self.checknamedframebufferstatus) == (dummy_pfnglchecknamedframebufferstatusproc as *const c_void) {&null::<PFNGLCHECKNAMEDFRAMEBUFFERSTATUSPROC>()} else {&self.checknamedframebufferstatus}})
+			.field("getnamedframebufferparameteriv", unsafe{if transmute::<_, *const c_void>(self.getnamedframebufferparameteriv) == (dummy_pfnglgetnamedframebufferparameterivproc as *const c_void) {&null::<PFNGLGETNAMEDFRAMEBUFFERPARAMETERIVPROC>()} else {&self.getnamedframebufferparameteriv}})
+			.field("getnamedframebufferattachmentparameteriv", unsafe{if transmute::<_, *const c_void>(self.getnamedframebufferattachmentparameteriv) == (dummy_pfnglgetnamedframebufferattachmentparameterivproc as *const c_void) {&null::<PFNGLGETNAMEDFRAMEBUFFERATTACHMENTPARAMETERIVPROC>()} else {&self.getnamedframebufferattachmentparameteriv}})
+			.field("createrenderbuffers", unsafe{if transmute::<_, *const c_void>(self.createrenderbuffers) == (dummy_pfnglcreaterenderbuffersproc as *const c_void) {&null::<PFNGLCREATERENDERBUFFERSPROC>()} else {&self.createrenderbuffers}})
+			.field("namedrenderbufferstorage", unsafe{if transmute::<_, *const c_void>(self.namedrenderbufferstorage) == (dummy_pfnglnamedrenderbufferstorageproc as *const c_void) {&null::<PFNGLNAMEDRENDERBUFFERSTORAGEPROC>()} else {&self.namedrenderbufferstorage}})
+			.field("namedrenderbufferstoragemultisample", unsafe{if transmute::<_, *const c_void>(self.namedrenderbufferstoragemultisample) == (dummy_pfnglnamedrenderbufferstoragemultisampleproc as *const c_void) {&null::<PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEPROC>()} else {&self.namedrenderbufferstoragemultisample}})
+			.field("getnamedrenderbufferparameteriv", unsafe{if transmute::<_, *const c_void>(self.getnamedrenderbufferparameteriv) == (dummy_pfnglgetnamedrenderbufferparameterivproc as *const c_void) {&null::<PFNGLGETNAMEDRENDERBUFFERPARAMETERIVPROC>()} else {&self.getnamedrenderbufferparameteriv}})
+			.field("createtextures", unsafe{if transmute::<_, *const c_void>(self.createtextures) == (dummy_pfnglcreatetexturesproc as *const c_void) {&null::<PFNGLCREATETEXTURESPROC>()} else {&self.createtextures}})
+			.field("texturebuffer", unsafe{if transmute::<_, *const c_void>(self.texturebuffer) == (dummy_pfngltexturebufferproc as *const c_void) {&null::<PFNGLTEXTUREBUFFERPROC>()} else {&self.texturebuffer}})
+			.field("texturebufferrange", unsafe{if transmute::<_, *const c_void>(self.texturebufferrange) == (dummy_pfngltexturebufferrangeproc as *const c_void) {&null::<PFNGLTEXTUREBUFFERRANGEPROC>()} else {&self.texturebufferrange}})
+			.field("texturestorage1d", unsafe{if transmute::<_, *const c_void>(self.texturestorage1d) == (dummy_pfngltexturestorage1dproc as *const c_void) {&null::<PFNGLTEXTURESTORAGE1DPROC>()} else {&self.texturestorage1d}})
+			.field("texturestorage2d", unsafe{if transmute::<_, *const c_void>(self.texturestorage2d) == (dummy_pfngltexturestorage2dproc as *const c_void) {&null::<PFNGLTEXTURESTORAGE2DPROC>()} else {&self.texturestorage2d}})
+			.field("texturestorage3d", unsafe{if transmute::<_, *const c_void>(self.texturestorage3d) == (dummy_pfngltexturestorage3dproc as *const c_void) {&null::<PFNGLTEXTURESTORAGE3DPROC>()} else {&self.texturestorage3d}})
+			.field("texturestorage2dmultisample", unsafe{if transmute::<_, *const c_void>(self.texturestorage2dmultisample) == (dummy_pfngltexturestorage2dmultisampleproc as *const c_void) {&null::<PFNGLTEXTURESTORAGE2DMULTISAMPLEPROC>()} else {&self.texturestorage2dmultisample}})
+			.field("texturestorage3dmultisample", unsafe{if transmute::<_, *const c_void>(self.texturestorage3dmultisample) == (dummy_pfngltexturestorage3dmultisampleproc as *const c_void) {&null::<PFNGLTEXTURESTORAGE3DMULTISAMPLEPROC>()} else {&self.texturestorage3dmultisample}})
+			.field("texturesubimage1d", unsafe{if transmute::<_, *const c_void>(self.texturesubimage1d) == (dummy_pfngltexturesubimage1dproc as *const c_void) {&null::<PFNGLTEXTURESUBIMAGE1DPROC>()} else {&self.texturesubimage1d}})
+			.field("texturesubimage2d", unsafe{if transmute::<_, *const c_void>(self.texturesubimage2d) == (dummy_pfngltexturesubimage2dproc as *const c_void) {&null::<PFNGLTEXTURESUBIMAGE2DPROC>()} else {&self.texturesubimage2d}})
+			.field("texturesubimage3d", unsafe{if transmute::<_, *const c_void>(self.texturesubimage3d) == (dummy_pfngltexturesubimage3dproc as *const c_void) {&null::<PFNGLTEXTURESUBIMAGE3DPROC>()} else {&self.texturesubimage3d}})
+			.field("compressedtexturesubimage1d", unsafe{if transmute::<_, *const c_void>(self.compressedtexturesubimage1d) == (dummy_pfnglcompressedtexturesubimage1dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXTURESUBIMAGE1DPROC>()} else {&self.compressedtexturesubimage1d}})
+			.field("compressedtexturesubimage2d", unsafe{if transmute::<_, *const c_void>(self.compressedtexturesubimage2d) == (dummy_pfnglcompressedtexturesubimage2dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXTURESUBIMAGE2DPROC>()} else {&self.compressedtexturesubimage2d}})
+			.field("compressedtexturesubimage3d", unsafe{if transmute::<_, *const c_void>(self.compressedtexturesubimage3d) == (dummy_pfnglcompressedtexturesubimage3dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXTURESUBIMAGE3DPROC>()} else {&self.compressedtexturesubimage3d}})
+			.field("copytexturesubimage1d", unsafe{if transmute::<_, *const c_void>(self.copytexturesubimage1d) == (dummy_pfnglcopytexturesubimage1dproc as *const c_void) {&null::<PFNGLCOPYTEXTURESUBIMAGE1DPROC>()} else {&self.copytexturesubimage1d}})
+			.field("copytexturesubimage2d", unsafe{if transmute::<_, *const c_void>(self.copytexturesubimage2d) == (dummy_pfnglcopytexturesubimage2dproc as *const c_void) {&null::<PFNGLCOPYTEXTURESUBIMAGE2DPROC>()} else {&self.copytexturesubimage2d}})
+			.field("copytexturesubimage3d", unsafe{if transmute::<_, *const c_void>(self.copytexturesubimage3d) == (dummy_pfnglcopytexturesubimage3dproc as *const c_void) {&null::<PFNGLCOPYTEXTURESUBIMAGE3DPROC>()} else {&self.copytexturesubimage3d}})
+			.field("textureparameterf", unsafe{if transmute::<_, *const c_void>(self.textureparameterf) == (dummy_pfngltextureparameterfproc as *const c_void) {&null::<PFNGLTEXTUREPARAMETERFPROC>()} else {&self.textureparameterf}})
+			.field("textureparameterfv", unsafe{if transmute::<_, *const c_void>(self.textureparameterfv) == (dummy_pfngltextureparameterfvproc as *const c_void) {&null::<PFNGLTEXTUREPARAMETERFVPROC>()} else {&self.textureparameterfv}})
+			.field("textureparameteri", unsafe{if transmute::<_, *const c_void>(self.textureparameteri) == (dummy_pfngltextureparameteriproc as *const c_void) {&null::<PFNGLTEXTUREPARAMETERIPROC>()} else {&self.textureparameteri}})
+			.field("textureparameteriiv", unsafe{if transmute::<_, *const c_void>(self.textureparameteriiv) == (dummy_pfngltextureparameteriivproc as *const c_void) {&null::<PFNGLTEXTUREPARAMETERIIVPROC>()} else {&self.textureparameteriiv}})
+			.field("textureparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.textureparameteriuiv) == (dummy_pfngltextureparameteriuivproc as *const c_void) {&null::<PFNGLTEXTUREPARAMETERIUIVPROC>()} else {&self.textureparameteriuiv}})
+			.field("textureparameteriv", unsafe{if transmute::<_, *const c_void>(self.textureparameteriv) == (dummy_pfngltextureparameterivproc as *const c_void) {&null::<PFNGLTEXTUREPARAMETERIVPROC>()} else {&self.textureparameteriv}})
+			.field("generatetexturemipmap", unsafe{if transmute::<_, *const c_void>(self.generatetexturemipmap) == (dummy_pfnglgeneratetexturemipmapproc as *const c_void) {&null::<PFNGLGENERATETEXTUREMIPMAPPROC>()} else {&self.generatetexturemipmap}})
+			.field("bindtextureunit", unsafe{if transmute::<_, *const c_void>(self.bindtextureunit) == (dummy_pfnglbindtextureunitproc as *const c_void) {&null::<PFNGLBINDTEXTUREUNITPROC>()} else {&self.bindtextureunit}})
+			.field("gettextureimage", unsafe{if transmute::<_, *const c_void>(self.gettextureimage) == (dummy_pfnglgettextureimageproc as *const c_void) {&null::<PFNGLGETTEXTUREIMAGEPROC>()} else {&self.gettextureimage}})
+			.field("getcompressedtextureimage", unsafe{if transmute::<_, *const c_void>(self.getcompressedtextureimage) == (dummy_pfnglgetcompressedtextureimageproc as *const c_void) {&null::<PFNGLGETCOMPRESSEDTEXTUREIMAGEPROC>()} else {&self.getcompressedtextureimage}})
+			.field("gettexturelevelparameterfv", unsafe{if transmute::<_, *const c_void>(self.gettexturelevelparameterfv) == (dummy_pfnglgettexturelevelparameterfvproc as *const c_void) {&null::<PFNGLGETTEXTURELEVELPARAMETERFVPROC>()} else {&self.gettexturelevelparameterfv}})
+			.field("gettexturelevelparameteriv", unsafe{if transmute::<_, *const c_void>(self.gettexturelevelparameteriv) == (dummy_pfnglgettexturelevelparameterivproc as *const c_void) {&null::<PFNGLGETTEXTURELEVELPARAMETERIVPROC>()} else {&self.gettexturelevelparameteriv}})
+			.field("gettextureparameterfv", unsafe{if transmute::<_, *const c_void>(self.gettextureparameterfv) == (dummy_pfnglgettextureparameterfvproc as *const c_void) {&null::<PFNGLGETTEXTUREPARAMETERFVPROC>()} else {&self.gettextureparameterfv}})
+			.field("gettextureparameteriiv", unsafe{if transmute::<_, *const c_void>(self.gettextureparameteriiv) == (dummy_pfnglgettextureparameteriivproc as *const c_void) {&null::<PFNGLGETTEXTUREPARAMETERIIVPROC>()} else {&self.gettextureparameteriiv}})
+			.field("gettextureparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.gettextureparameteriuiv) == (dummy_pfnglgettextureparameteriuivproc as *const c_void) {&null::<PFNGLGETTEXTUREPARAMETERIUIVPROC>()} else {&self.gettextureparameteriuiv}})
+			.field("gettextureparameteriv", unsafe{if transmute::<_, *const c_void>(self.gettextureparameteriv) == (dummy_pfnglgettextureparameterivproc as *const c_void) {&null::<PFNGLGETTEXTUREPARAMETERIVPROC>()} else {&self.gettextureparameteriv}})
+			.field("createvertexarrays", unsafe{if transmute::<_, *const c_void>(self.createvertexarrays) == (dummy_pfnglcreatevertexarraysproc as *const c_void) {&null::<PFNGLCREATEVERTEXARRAYSPROC>()} else {&self.createvertexarrays}})
+			.field("disablevertexarrayattrib", unsafe{if transmute::<_, *const c_void>(self.disablevertexarrayattrib) == (dummy_pfngldisablevertexarrayattribproc as *const c_void) {&null::<PFNGLDISABLEVERTEXARRAYATTRIBPROC>()} else {&self.disablevertexarrayattrib}})
+			.field("enablevertexarrayattrib", unsafe{if transmute::<_, *const c_void>(self.enablevertexarrayattrib) == (dummy_pfnglenablevertexarrayattribproc as *const c_void) {&null::<PFNGLENABLEVERTEXARRAYATTRIBPROC>()} else {&self.enablevertexarrayattrib}})
+			.field("vertexarrayelementbuffer", unsafe{if transmute::<_, *const c_void>(self.vertexarrayelementbuffer) == (dummy_pfnglvertexarrayelementbufferproc as *const c_void) {&null::<PFNGLVERTEXARRAYELEMENTBUFFERPROC>()} else {&self.vertexarrayelementbuffer}})
+			.field("vertexarrayvertexbuffer", unsafe{if transmute::<_, *const c_void>(self.vertexarrayvertexbuffer) == (dummy_pfnglvertexarrayvertexbufferproc as *const c_void) {&null::<PFNGLVERTEXARRAYVERTEXBUFFERPROC>()} else {&self.vertexarrayvertexbuffer}})
+			.field("vertexarrayvertexbuffers", unsafe{if transmute::<_, *const c_void>(self.vertexarrayvertexbuffers) == (dummy_pfnglvertexarrayvertexbuffersproc as *const c_void) {&null::<PFNGLVERTEXARRAYVERTEXBUFFERSPROC>()} else {&self.vertexarrayvertexbuffers}})
+			.field("vertexarrayattribbinding", unsafe{if transmute::<_, *const c_void>(self.vertexarrayattribbinding) == (dummy_pfnglvertexarrayattribbindingproc as *const c_void) {&null::<PFNGLVERTEXARRAYATTRIBBINDINGPROC>()} else {&self.vertexarrayattribbinding}})
+			.field("vertexarrayattribformat", unsafe{if transmute::<_, *const c_void>(self.vertexarrayattribformat) == (dummy_pfnglvertexarrayattribformatproc as *const c_void) {&null::<PFNGLVERTEXARRAYATTRIBFORMATPROC>()} else {&self.vertexarrayattribformat}})
+			.field("vertexarrayattribiformat", unsafe{if transmute::<_, *const c_void>(self.vertexarrayattribiformat) == (dummy_pfnglvertexarrayattribiformatproc as *const c_void) {&null::<PFNGLVERTEXARRAYATTRIBIFORMATPROC>()} else {&self.vertexarrayattribiformat}})
+			.field("vertexarrayattriblformat", unsafe{if transmute::<_, *const c_void>(self.vertexarrayattriblformat) == (dummy_pfnglvertexarrayattriblformatproc as *const c_void) {&null::<PFNGLVERTEXARRAYATTRIBLFORMATPROC>()} else {&self.vertexarrayattriblformat}})
+			.field("vertexarraybindingdivisor", unsafe{if transmute::<_, *const c_void>(self.vertexarraybindingdivisor) == (dummy_pfnglvertexarraybindingdivisorproc as *const c_void) {&null::<PFNGLVERTEXARRAYBINDINGDIVISORPROC>()} else {&self.vertexarraybindingdivisor}})
+			.field("getvertexarrayiv", unsafe{if transmute::<_, *const c_void>(self.getvertexarrayiv) == (dummy_pfnglgetvertexarrayivproc as *const c_void) {&null::<PFNGLGETVERTEXARRAYIVPROC>()} else {&self.getvertexarrayiv}})
+			.field("getvertexarrayindexediv", unsafe{if transmute::<_, *const c_void>(self.getvertexarrayindexediv) == (dummy_pfnglgetvertexarrayindexedivproc as *const c_void) {&null::<PFNGLGETVERTEXARRAYINDEXEDIVPROC>()} else {&self.getvertexarrayindexediv}})
+			.field("getvertexarrayindexed64iv", unsafe{if transmute::<_, *const c_void>(self.getvertexarrayindexed64iv) == (dummy_pfnglgetvertexarrayindexed64ivproc as *const c_void) {&null::<PFNGLGETVERTEXARRAYINDEXED64IVPROC>()} else {&self.getvertexarrayindexed64iv}})
+			.field("createsamplers", unsafe{if transmute::<_, *const c_void>(self.createsamplers) == (dummy_pfnglcreatesamplersproc as *const c_void) {&null::<PFNGLCREATESAMPLERSPROC>()} else {&self.createsamplers}})
+			.field("createprogrampipelines", unsafe{if transmute::<_, *const c_void>(self.createprogrampipelines) == (dummy_pfnglcreateprogrampipelinesproc as *const c_void) {&null::<PFNGLCREATEPROGRAMPIPELINESPROC>()} else {&self.createprogrampipelines}})
+			.field("createqueries", unsafe{if transmute::<_, *const c_void>(self.createqueries) == (dummy_pfnglcreatequeriesproc as *const c_void) {&null::<PFNGLCREATEQUERIESPROC>()} else {&self.createqueries}})
+			.field("getquerybufferobjecti64v", unsafe{if transmute::<_, *const c_void>(self.getquerybufferobjecti64v) == (dummy_pfnglgetquerybufferobjecti64vproc as *const c_void) {&null::<PFNGLGETQUERYBUFFEROBJECTI64VPROC>()} else {&self.getquerybufferobjecti64v}})
+			.field("getquerybufferobjectiv", unsafe{if transmute::<_, *const c_void>(self.getquerybufferobjectiv) == (dummy_pfnglgetquerybufferobjectivproc as *const c_void) {&null::<PFNGLGETQUERYBUFFEROBJECTIVPROC>()} else {&self.getquerybufferobjectiv}})
+			.field("getquerybufferobjectui64v", unsafe{if transmute::<_, *const c_void>(self.getquerybufferobjectui64v) == (dummy_pfnglgetquerybufferobjectui64vproc as *const c_void) {&null::<PFNGLGETQUERYBUFFEROBJECTUI64VPROC>()} else {&self.getquerybufferobjectui64v}})
+			.field("getquerybufferobjectuiv", unsafe{if transmute::<_, *const c_void>(self.getquerybufferobjectuiv) == (dummy_pfnglgetquerybufferobjectuivproc as *const c_void) {&null::<PFNGLGETQUERYBUFFEROBJECTUIVPROC>()} else {&self.getquerybufferobjectuiv}})
+			.field("memorybarrierbyregion", unsafe{if transmute::<_, *const c_void>(self.memorybarrierbyregion) == (dummy_pfnglmemorybarrierbyregionproc as *const c_void) {&null::<PFNGLMEMORYBARRIERBYREGIONPROC>()} else {&self.memorybarrierbyregion}})
+			.field("gettexturesubimage", unsafe{if transmute::<_, *const c_void>(self.gettexturesubimage) == (dummy_pfnglgettexturesubimageproc as *const c_void) {&null::<PFNGLGETTEXTURESUBIMAGEPROC>()} else {&self.gettexturesubimage}})
+			.field("getcompressedtexturesubimage", unsafe{if transmute::<_, *const c_void>(self.getcompressedtexturesubimage) == (dummy_pfnglgetcompressedtexturesubimageproc as *const c_void) {&null::<PFNGLGETCOMPRESSEDTEXTURESUBIMAGEPROC>()} else {&self.getcompressedtexturesubimage}})
+			.field("getgraphicsresetstatus", unsafe{if transmute::<_, *const c_void>(self.getgraphicsresetstatus) == (dummy_pfnglgetgraphicsresetstatusproc as *const c_void) {&null::<PFNGLGETGRAPHICSRESETSTATUSPROC>()} else {&self.getgraphicsresetstatus}})
+			.field("getncompressedteximage", unsafe{if transmute::<_, *const c_void>(self.getncompressedteximage) == (dummy_pfnglgetncompressedteximageproc as *const c_void) {&null::<PFNGLGETNCOMPRESSEDTEXIMAGEPROC>()} else {&self.getncompressedteximage}})
+			.field("getnteximage", unsafe{if transmute::<_, *const c_void>(self.getnteximage) == (dummy_pfnglgetnteximageproc as *const c_void) {&null::<PFNGLGETNTEXIMAGEPROC>()} else {&self.getnteximage}})
+			.field("getnuniformdv", unsafe{if transmute::<_, *const c_void>(self.getnuniformdv) == (dummy_pfnglgetnuniformdvproc as *const c_void) {&null::<PFNGLGETNUNIFORMDVPROC>()} else {&self.getnuniformdv}})
+			.field("getnuniformfv", unsafe{if transmute::<_, *const c_void>(self.getnuniformfv) == (dummy_pfnglgetnuniformfvproc as *const c_void) {&null::<PFNGLGETNUNIFORMFVPROC>()} else {&self.getnuniformfv}})
+			.field("getnuniformiv", unsafe{if transmute::<_, *const c_void>(self.getnuniformiv) == (dummy_pfnglgetnuniformivproc as *const c_void) {&null::<PFNGLGETNUNIFORMIVPROC>()} else {&self.getnuniformiv}})
+			.field("getnuniformuiv", unsafe{if transmute::<_, *const c_void>(self.getnuniformuiv) == (dummy_pfnglgetnuniformuivproc as *const c_void) {&null::<PFNGLGETNUNIFORMUIVPROC>()} else {&self.getnuniformuiv}})
+			.field("readnpixels", unsafe{if transmute::<_, *const c_void>(self.readnpixels) == (dummy_pfnglreadnpixelsproc as *const c_void) {&null::<PFNGLREADNPIXELSPROC>()} else {&self.readnpixels}})
+			.field("getnmapdv", unsafe{if transmute::<_, *const c_void>(self.getnmapdv) == (dummy_pfnglgetnmapdvproc as *const c_void) {&null::<PFNGLGETNMAPDVPROC>()} else {&self.getnmapdv}})
+			.field("getnmapfv", unsafe{if transmute::<_, *const c_void>(self.getnmapfv) == (dummy_pfnglgetnmapfvproc as *const c_void) {&null::<PFNGLGETNMAPFVPROC>()} else {&self.getnmapfv}})
+			.field("getnmapiv", unsafe{if transmute::<_, *const c_void>(self.getnmapiv) == (dummy_pfnglgetnmapivproc as *const c_void) {&null::<PFNGLGETNMAPIVPROC>()} else {&self.getnmapiv}})
+			.field("getnpixelmapfv", unsafe{if transmute::<_, *const c_void>(self.getnpixelmapfv) == (dummy_pfnglgetnpixelmapfvproc as *const c_void) {&null::<PFNGLGETNPIXELMAPFVPROC>()} else {&self.getnpixelmapfv}})
+			.field("getnpixelmapuiv", unsafe{if transmute::<_, *const c_void>(self.getnpixelmapuiv) == (dummy_pfnglgetnpixelmapuivproc as *const c_void) {&null::<PFNGLGETNPIXELMAPUIVPROC>()} else {&self.getnpixelmapuiv}})
+			.field("getnpixelmapusv", unsafe{if transmute::<_, *const c_void>(self.getnpixelmapusv) == (dummy_pfnglgetnpixelmapusvproc as *const c_void) {&null::<PFNGLGETNPIXELMAPUSVPROC>()} else {&self.getnpixelmapusv}})
+			.field("getnpolygonstipple", unsafe{if transmute::<_, *const c_void>(self.getnpolygonstipple) == (dummy_pfnglgetnpolygonstippleproc as *const c_void) {&null::<PFNGLGETNPOLYGONSTIPPLEPROC>()} else {&self.getnpolygonstipple}})
+			.field("getncolortable", unsafe{if transmute::<_, *const c_void>(self.getncolortable) == (dummy_pfnglgetncolortableproc as *const c_void) {&null::<PFNGLGETNCOLORTABLEPROC>()} else {&self.getncolortable}})
+			.field("getnconvolutionfilter", unsafe{if transmute::<_, *const c_void>(self.getnconvolutionfilter) == (dummy_pfnglgetnconvolutionfilterproc as *const c_void) {&null::<PFNGLGETNCONVOLUTIONFILTERPROC>()} else {&self.getnconvolutionfilter}})
+			.field("getnseparablefilter", unsafe{if transmute::<_, *const c_void>(self.getnseparablefilter) == (dummy_pfnglgetnseparablefilterproc as *const c_void) {&null::<PFNGLGETNSEPARABLEFILTERPROC>()} else {&self.getnseparablefilter}})
+			.field("getnhistogram", unsafe{if transmute::<_, *const c_void>(self.getnhistogram) == (dummy_pfnglgetnhistogramproc as *const c_void) {&null::<PFNGLGETNHISTOGRAMPROC>()} else {&self.getnhistogram}})
+			.field("getnminmax", unsafe{if transmute::<_, *const c_void>(self.getnminmax) == (dummy_pfnglgetnminmaxproc as *const c_void) {&null::<PFNGLGETNMINMAXPROC>()} else {&self.getnminmax}})
+			.field("texturebarrier", unsafe{if transmute::<_, *const c_void>(self.texturebarrier) == (dummy_pfngltexturebarrierproc as *const c_void) {&null::<PFNGLTEXTUREBARRIERPROC>()} else {&self.texturebarrier}})
+			.finish()
+		} else {
+			f.debug_struct("Version45")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
 type PFNGLSPECIALIZESHADERPROC = extern "system" fn(GLuint, *const GLchar, GLuint, *const GLuint, *const GLuint);
 type PFNGLMULTIDRAWARRAYSINDIRECTCOUNTPROC = extern "system" fn(GLenum, *const c_void, GLintptr, GLsizei, GLsizei);
 type PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC = extern "system" fn(GLenum, GLenum, *const c_void, GLintptr, GLsizei, GLsizei);
@@ -11513,7 +12507,7 @@ pub trait GL_4_6 {
 	fn glPolygonOffsetClamp(&self, factor: GLfloat, units: GLfloat, clamp: GLfloat);
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct Version46 {
 	available: bool,
 	specializeshader: PFNGLSPECIALIZESHADERPROC,
@@ -11573,6 +12567,24 @@ impl Default for Version46 {
 		}
 	}
 }
+impl Debug for Version46 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("Version46")
+			.field("available", &self.available)
+			.field("specializeshader", unsafe{if transmute::<_, *const c_void>(self.specializeshader) == (dummy_pfnglspecializeshaderproc as *const c_void) {&null::<PFNGLSPECIALIZESHADERPROC>()} else {&self.specializeshader}})
+			.field("multidrawarraysindirectcount", unsafe{if transmute::<_, *const c_void>(self.multidrawarraysindirectcount) == (dummy_pfnglmultidrawarraysindirectcountproc as *const c_void) {&null::<PFNGLMULTIDRAWARRAYSINDIRECTCOUNTPROC>()} else {&self.multidrawarraysindirectcount}})
+			.field("multidrawelementsindirectcount", unsafe{if transmute::<_, *const c_void>(self.multidrawelementsindirectcount) == (dummy_pfnglmultidrawelementsindirectcountproc as *const c_void) {&null::<PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC>()} else {&self.multidrawelementsindirectcount}})
+			.field("polygonoffsetclamp", unsafe{if transmute::<_, *const c_void>(self.polygonoffsetclamp) == (dummy_pfnglpolygonoffsetclampproc as *const c_void) {&null::<PFNGLPOLYGONOFFSETCLAMPPROC>()} else {&self.polygonoffsetclamp}})
+			.finish()
+		} else {
+			f.debug_struct("Version46")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct GLCore {
 	pub version_1_0: Version10,
