@@ -1123,8 +1123,7 @@ impl GL_1_1 for Version11 {
 impl Version11 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 10100 {
+		if (major, minor, release) < (1, 1, 0) {
 			return Self::default();
 		}
 		Self {
@@ -1295,8 +1294,7 @@ impl GL_1_2 for Version12 {
 impl Version12 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 10200 {
+		if (major, minor, release) < (1, 2, 0) {
 			return Self::default();
 		}
 		Self {
@@ -1912,8 +1910,7 @@ impl GL_1_3 for Version13 {
 impl Version13 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 10300 {
+		if (major, minor, release) < (1, 3, 0) {
 			return Self::default();
 		}
 		Self {
@@ -2619,8 +2616,7 @@ impl GL_1_4 for Version14 {
 impl Version14 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 10400 {
+		if (major, minor, release) < (1, 4, 0) {
 			return Self::default();
 		}
 		Self {
@@ -3051,8 +3047,7 @@ impl GL_1_5 for Version15 {
 impl Version15 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 10500 {
+		if (major, minor, release) < (1, 5, 0) {
 			return Self::default();
 		}
 		Self {
@@ -4178,8 +4173,7 @@ impl GL_2_0 for Version20 {
 impl Version20 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 20000 {
+		if (major, minor, release) < (2, 0, 0) {
 			return Self::default();
 		}
 		Self {
@@ -4592,8 +4586,7 @@ impl GL_2_1 for Version21 {
 impl Version21 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 20100 {
+		if (major, minor, release) < (2, 1, 0) {
 			return Self::default();
 		}
 		Self {
@@ -5737,8 +5730,7 @@ impl GL_3_0 for Version30 {
 impl Version30 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 30000 {
+		if (major, minor, release) < (3, 0, 0) {
 			return Self::default();
 		}
 		Self {
@@ -6219,8 +6211,7 @@ impl GL_3_1 for Version31 {
 impl Version31 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 30100 {
+		if (major, minor, release) < (3, 1, 0) {
 			return Self::default();
 		}
 		Self {
@@ -6561,8 +6552,7 @@ impl GL_3_2 for Version32 {
 impl Version32 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 30200 {
+		if (major, minor, release) < (3, 2, 0) {
 			return Self::default();
 		}
 		Self {
@@ -7263,8 +7253,7 @@ impl GL_3_3 for Version33 {
 impl Version33 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 30300 {
+		if (major, minor, release) < (3, 3, 0) {
 			return Self::default();
 		}
 		Self {
@@ -8023,8 +8012,7 @@ impl GL_4_0 for Version40 {
 impl Version40 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 40000 {
+		if (major, minor, release) < (4, 0, 0) {
 			return Self::default();
 		}
 		Self {
@@ -9125,8 +9113,7 @@ impl GL_4_1 for Version41 {
 impl Version41 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 40100 {
+		if (major, minor, release) < (4, 1, 0) {
 			return Self::default();
 		}
 		Self {
@@ -9670,8 +9657,7 @@ impl GL_4_2 for Version42 {
 impl Version42 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 40200 {
+		if (major, minor, release) < (4, 2, 0) {
 			return Self::default();
 		}
 		Self {
@@ -10444,8 +10430,7 @@ impl GL_4_3 for Version43 {
 impl Version43 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 40300 {
+		if (major, minor, release) < (4, 3, 0) {
 			return Self::default();
 		}
 		Self {
@@ -10731,8 +10716,7 @@ impl GL_4_4 for Version44 {
 impl Version44 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 40400 {
+		if (major, minor, release) < (4, 4, 0) {
 			return Self::default();
 		}
 		Self {
@@ -12061,8 +12045,7 @@ impl GL_4_5 for Version45 {
 impl Version45 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 40500 {
+		if (major, minor, release) < (4, 5, 0) {
 			return Self::default();
 		}
 		Self {
@@ -12538,8 +12521,7 @@ impl GL_4_6 for Version46 {
 impl Version46 {
 	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
 		let (_spec, major, minor, release) = base.get_version();
-		let bigver = major.clamp(0, 100) * 10000 + minor.clamp(0, 99) * 100 + release.clamp(0, 99);
-		if bigver < 40600 {
+		if (major, minor, release) < (4, 6, 0) {
 			return Self::default();
 		}
 		Self {
