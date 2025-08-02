@@ -1,11 +1,11 @@
 [package]
 name = "glcore-rs"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2024"
 authors = ["0xAA55 <838816058@qq.com>"]
 readme = "Readme.md"
 license-file = "LICENSE"
-description = "The OpenGL core functions for Rust"
+description = "The OpenGL core functions for Rust, also supports OpenGL ES"
 repository = "https://github.com/0xAA55-rs/glcore-rs"
 keywords = ["OpenGL", "GLFW", "GameEngine", "Render", "GPU"]
 

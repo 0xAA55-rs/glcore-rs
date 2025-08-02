@@ -788,7 +788,10 @@ impl Version10 {
 		self.version = self.glGetString(GL_VERSION);
 		self.spec = "OpenGL";
 		let mut verstr = self.version;
-		if let Some((left, right)) = verstr.split_once(' ') {
+		if verstr.starts_with("OpenGL ES ") {
+			verstr = &verstr["OpenGL ES ".len()..];
+			self.spec = "OpenGL ES ";
+		} else if let Some((left, right)) = verstr.split_once(' ') {
 			verstr = left;
 			self.spec = right;
 		}
