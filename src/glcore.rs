@@ -27,7 +27,7 @@ pub enum GLCoreError {
 }
 
 /// The result returns from this crate. It's the alias of `Result<T, GLCoreError>`
-pub type Result<T> = std::result::Result<T, GLCoreError>;
+type Result<T> = std::result::Result<T, GLCoreError>;
 
 /// Convert the constants returns from `glGetError()` to `Result<T>`
 pub fn to_result<T>(funcname: &'static str, ret: T, gl_error: GLenum) -> Result<T> {
