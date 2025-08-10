@@ -55,7 +55,7 @@ fn main() {
     glfw.set_swap_interval(SwapInterval::Adaptive);
 
     // Look at here, this is the OpenGL core function lib creation
-    let glcore = GLCore::new(|proc_name|window.get_proc_address(proc_name));
+    let glcore = GLCore::new(|proc_name|window.get_proc_address(proc_name)).unwrap();
 
     dbg!(glcore);
 
@@ -67,8 +67,8 @@ fn main() {
         let cur_frame_time = glfw.get_time();
 
         // Call the OpenGL functions here.
-        glcore.glClearColor(cur_frame_time.sin() as f32, cur_frame_time.cos() as f32, (cur_frame_time * 1.5).sin() as f32, 1.0);
-        glcore.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glcore.glClearColor(cur_frame_time.sin() as f32, cur_frame_time.cos() as f32, (cur_frame_time * 1.5).sin() as f32, 1.0).unwrap();
+        glcore.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT).unwrap();
 
         // Because the `GLCore` is the almost naked OpenGL functions provider, I don't want to write some complicated scene rendering codes here.
         // Just changes the background color that indicates the OpenGL functions were working.
