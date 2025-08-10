@@ -1,0 +1,3 @@
+[submodule "glcorecpph"]
+	path = glcorecpph
+	url = https://github.com/0xAA55/glcorecpph.git
