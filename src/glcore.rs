@@ -69,6 +69,12 @@ pub type khronos_int16_t = i16;
 /// Alias to `i8`
 pub type khronos_int8_t = i8;
 
+/// Alias to `u8`
+pub type khronos_uint8_t = u8;
+
+/// Alias to `i32`
+pub type khronos_int32_t = i32;
+
 /// Alias to `u16`
 pub type khronos_uint16_t = u16;
 
@@ -29034,6 +29040,8293 @@ impl Debug for Version46 {
 	}
 }
 
+/// Alias to `khronos_int32_t`
+pub type GLfixed = khronos_int32_t;
+/// Constant value defined from OpenGL ES 2.0
+pub const GL_RED_BITS: GLenum = 0x0D52;
+
+/// Constant value defined from OpenGL ES 2.0
+pub const GL_GREEN_BITS: GLenum = 0x0D53;
+
+/// Constant value defined from OpenGL ES 2.0
+pub const GL_BLUE_BITS: GLenum = 0x0D54;
+
+/// Constant value defined from OpenGL ES 2.0
+pub const GL_ALPHA_BITS: GLenum = 0x0D55;
+
+/// Constant value defined from OpenGL ES 2.0
+pub const GL_DEPTH_BITS: GLenum = 0x0D56;
+
+/// Constant value defined from OpenGL ES 2.0
+pub const GL_STENCIL_BITS: GLenum = 0x0D57;
+
+/// Constant value defined from OpenGL ES 2.0
+pub const GL_LUMINANCE: GLenum = 0x1909;
+
+/// Constant value defined from OpenGL ES 2.0
+pub const GL_LUMINANCE_ALPHA: GLenum = 0x190A;
+
+/// Constant value defined from OpenGL ES 2.0
+pub const GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS: GLenum = 0x8CD9;
+
+/// Functions from OpenGL ES version 2.0
+pub trait ES_GL_2_0 {
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glActiveTexture.xhtml>
+	fn glActiveTexture(&self, texture: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glAttachShader.xhtml>
+	fn glAttachShader(&self, program: GLuint, shader: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindAttribLocation.xhtml>
+	fn glBindAttribLocation(&self, program: GLuint, index: GLuint, name: *const GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBuffer.xhtml>
+	fn glBindBuffer(&self, target: GLenum, buffer: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindFramebuffer.xhtml>
+	fn glBindFramebuffer(&self, target: GLenum, framebuffer: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindRenderbuffer.xhtml>
+	fn glBindRenderbuffer(&self, target: GLenum, renderbuffer: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindTexture.xhtml>
+	fn glBindTexture(&self, target: GLenum, texture: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendColor.xhtml>
+	fn glBlendColor(&self, red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquation.xhtml>
+	fn glBlendEquation(&self, mode: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquationSeparate.xhtml>
+	fn glBlendEquationSeparate(&self, modeRGB: GLenum, modeAlpha: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFunc.xhtml>
+	fn glBlendFunc(&self, sfactor: GLenum, dfactor: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFuncSeparate.xhtml>
+	fn glBlendFuncSeparate(&self, sfactorRGB: GLenum, dfactorRGB: GLenum, sfactorAlpha: GLenum, dfactorAlpha: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBufferData.xhtml>
+	fn glBufferData(&self, target: GLenum, size: GLsizeiptr, data: *const c_void, usage: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBufferSubData.xhtml>
+	fn glBufferSubData(&self, target: GLenum, offset: GLintptr, size: GLsizeiptr, data: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCheckFramebufferStatus.xhtml>
+	fn glCheckFramebufferStatus(&self, target: GLenum) -> Result<GLenum>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClear.xhtml>
+	fn glClear(&self, mask: GLbitfield) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearColor.xhtml>
+	fn glClearColor(&self, red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearDepthf.xhtml>
+	fn glClearDepthf(&self, d: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearStencil.xhtml>
+	fn glClearStencil(&self, s: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glColorMask.xhtml>
+	fn glColorMask(&self, red: GLboolean, green: GLboolean, blue: GLboolean, alpha: GLboolean) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompileShader.xhtml>
+	fn glCompileShader(&self, shader: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexImage2D.xhtml>
+	fn glCompressedTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLenum, width: GLsizei, height: GLsizei, border: GLint, imageSize: GLsizei, data: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexSubImage2D.xhtml>
+	fn glCompressedTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyTexImage2D.xhtml>
+	fn glCopyTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLenum, x: GLint, y: GLint, width: GLsizei, height: GLsizei, border: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyTexSubImage2D.xhtml>
+	fn glCopyTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCreateProgram.xhtml>
+	fn glCreateProgram(&self) -> Result<GLuint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCreateShader.xhtml>
+	fn glCreateShader(&self, type_: GLenum) -> Result<GLuint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCullFace.xhtml>
+	fn glCullFace(&self, mode: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteBuffers.xhtml>
+	fn glDeleteBuffers(&self, n: GLsizei, buffers: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteFramebuffers.xhtml>
+	fn glDeleteFramebuffers(&self, n: GLsizei, framebuffers: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteProgram.xhtml>
+	fn glDeleteProgram(&self, program: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteRenderbuffers.xhtml>
+	fn glDeleteRenderbuffers(&self, n: GLsizei, renderbuffers: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteShader.xhtml>
+	fn glDeleteShader(&self, shader: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteTextures.xhtml>
+	fn glDeleteTextures(&self, n: GLsizei, textures: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDepthFunc.xhtml>
+	fn glDepthFunc(&self, func: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDepthMask.xhtml>
+	fn glDepthMask(&self, flag: GLboolean) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDepthRangef.xhtml>
+	fn glDepthRangef(&self, n: GLfloat, f: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDetachShader.xhtml>
+	fn glDetachShader(&self, program: GLuint, shader: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDisable.xhtml>
+	fn glDisable(&self, cap: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDisableVertexAttribArray.xhtml>
+	fn glDisableVertexAttribArray(&self, index: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawArrays.xhtml>
+	fn glDrawArrays(&self, mode: GLenum, first: GLint, count: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElements.xhtml>
+	fn glDrawElements(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEnable.xhtml>
+	fn glEnable(&self, cap: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEnableVertexAttribArray.xhtml>
+	fn glEnableVertexAttribArray(&self, index: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFinish.xhtml>
+	fn glFinish(&self) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFlush.xhtml>
+	fn glFlush(&self) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferRenderbuffer.xhtml>
+	fn glFramebufferRenderbuffer(&self, target: GLenum, attachment: GLenum, renderbuffertarget: GLenum, renderbuffer: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferTexture2D.xhtml>
+	fn glFramebufferTexture2D(&self, target: GLenum, attachment: GLenum, textarget: GLenum, texture: GLuint, level: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFrontFace.xhtml>
+	fn glFrontFace(&self, mode: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenBuffers.xhtml>
+	fn glGenBuffers(&self, n: GLsizei, buffers: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenerateMipmap.xhtml>
+	fn glGenerateMipmap(&self, target: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenFramebuffers.xhtml>
+	fn glGenFramebuffers(&self, n: GLsizei, framebuffers: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenRenderbuffers.xhtml>
+	fn glGenRenderbuffers(&self, n: GLsizei, renderbuffers: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenTextures.xhtml>
+	fn glGenTextures(&self, n: GLsizei, textures: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveAttrib.xhtml>
+	fn glGetActiveAttrib(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLint, type_: *mut GLenum, name: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniform.xhtml>
+	fn glGetActiveUniform(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLint, type_: *mut GLenum, name: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetAttachedShaders.xhtml>
+	fn glGetAttachedShaders(&self, program: GLuint, maxCount: GLsizei, count: *mut GLsizei, shaders: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetAttribLocation.xhtml>
+	fn glGetAttribLocation(&self, program: GLuint, name: *const GLchar) -> Result<GLint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBooleanv.xhtml>
+	fn glGetBooleanv(&self, pname: GLenum, data: *mut GLboolean) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBufferParameteriv.xhtml>
+	fn glGetBufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	fn glGetError(&self) -> GLenum;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFloatv.xhtml>
+	fn glGetFloatv(&self, pname: GLenum, data: *mut GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFramebufferAttachmentParameteriv.xhtml>
+	fn glGetFramebufferAttachmentParameteriv(&self, target: GLenum, attachment: GLenum, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetIntegerv.xhtml>
+	fn glGetIntegerv(&self, pname: GLenum, data: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramiv.xhtml>
+	fn glGetProgramiv(&self, program: GLuint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramInfoLog.xhtml>
+	fn glGetProgramInfoLog(&self, program: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetRenderbufferParameteriv.xhtml>
+	fn glGetRenderbufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderiv.xhtml>
+	fn glGetShaderiv(&self, shader: GLuint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderInfoLog.xhtml>
+	fn glGetShaderInfoLog(&self, shader: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderPrecisionFormat.xhtml>
+	fn glGetShaderPrecisionFormat(&self, shadertype: GLenum, precisiontype: GLenum, range: *mut GLint, precision: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderSource.xhtml>
+	fn glGetShaderSource(&self, shader: GLuint, bufSize: GLsizei, length: *mut GLsizei, source: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetString.xhtml>
+	fn glGetString(&self, name: GLenum) -> Result<&'static str>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameterfv.xhtml>
+	fn glGetTexParameterfv(&self, target: GLenum, pname: GLenum, params: *mut GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameteriv.xhtml>
+	fn glGetTexParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformfv.xhtml>
+	fn glGetUniformfv(&self, program: GLuint, location: GLint, params: *mut GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformiv.xhtml>
+	fn glGetUniformiv(&self, program: GLuint, location: GLint, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformLocation.xhtml>
+	fn glGetUniformLocation(&self, program: GLuint, name: *const GLchar) -> Result<GLint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribfv.xhtml>
+	fn glGetVertexAttribfv(&self, index: GLuint, pname: GLenum, params: *mut GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribiv.xhtml>
+	fn glGetVertexAttribiv(&self, index: GLuint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribPointerv.xhtml>
+	fn glGetVertexAttribPointerv(&self, index: GLuint, pname: GLenum, pointer: *mut *mut c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glHint.xhtml>
+	fn glHint(&self, target: GLenum, mode: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsBuffer.xhtml>
+	fn glIsBuffer(&self, buffer: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsEnabled.xhtml>
+	fn glIsEnabled(&self, cap: GLenum) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsFramebuffer.xhtml>
+	fn glIsFramebuffer(&self, framebuffer: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsProgram.xhtml>
+	fn glIsProgram(&self, program: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsRenderbuffer.xhtml>
+	fn glIsRenderbuffer(&self, renderbuffer: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsShader.xhtml>
+	fn glIsShader(&self, shader: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsTexture.xhtml>
+	fn glIsTexture(&self, texture: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glLineWidth.xhtml>
+	fn glLineWidth(&self, width: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glLinkProgram.xhtml>
+	fn glLinkProgram(&self, program: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPixelStorei.xhtml>
+	fn glPixelStorei(&self, pname: GLenum, param: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPolygonOffset.xhtml>
+	fn glPolygonOffset(&self, factor: GLfloat, units: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml>
+	fn glReadPixels(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, pixels: *mut c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReleaseShaderCompiler.xhtml>
+	fn glReleaseShaderCompiler(&self) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glRenderbufferStorage.xhtml>
+	fn glRenderbufferStorage(&self, target: GLenum, internalformat: GLenum, width: GLsizei, height: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSampleCoverage.xhtml>
+	fn glSampleCoverage(&self, value: GLfloat, invert: GLboolean) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glScissor.xhtml>
+	fn glScissor(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glShaderBinary.xhtml>
+	fn glShaderBinary(&self, count: GLsizei, shaders: *const GLuint, binaryformat: GLenum, binary: *const c_void, length: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glShaderSource.xhtml>
+	fn glShaderSource(&self, shader: GLuint, count: GLsizei, string_: *const *const GLchar, length: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilFunc.xhtml>
+	fn glStencilFunc(&self, func: GLenum, ref_: GLint, mask: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilFuncSeparate.xhtml>
+	fn glStencilFuncSeparate(&self, face: GLenum, func: GLenum, ref_: GLint, mask: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilMask.xhtml>
+	fn glStencilMask(&self, mask: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilMaskSeparate.xhtml>
+	fn glStencilMaskSeparate(&self, face: GLenum, mask: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilOp.xhtml>
+	fn glStencilOp(&self, fail: GLenum, zfail: GLenum, zpass: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilOpSeparate.xhtml>
+	fn glStencilOpSeparate(&self, face: GLenum, sfail: GLenum, dpfail: GLenum, dppass: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexImage2D.xhtml>
+	fn glTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, height: GLsizei, border: GLint, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterf.xhtml>
+	fn glTexParameterf(&self, target: GLenum, pname: GLenum, param: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterfv.xhtml>
+	fn glTexParameterfv(&self, target: GLenum, pname: GLenum, params: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameteri.xhtml>
+	fn glTexParameteri(&self, target: GLenum, pname: GLenum, param: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameteriv.xhtml>
+	fn glTexParameteriv(&self, target: GLenum, pname: GLenum, params: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexSubImage2D.xhtml>
+	fn glTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1f.xhtml>
+	fn glUniform1f(&self, location: GLint, v0: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1fv.xhtml>
+	fn glUniform1fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1i.xhtml>
+	fn glUniform1i(&self, location: GLint, v0: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1iv.xhtml>
+	fn glUniform1iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2f.xhtml>
+	fn glUniform2f(&self, location: GLint, v0: GLfloat, v1: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2fv.xhtml>
+	fn glUniform2fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2i.xhtml>
+	fn glUniform2i(&self, location: GLint, v0: GLint, v1: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2iv.xhtml>
+	fn glUniform2iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3f.xhtml>
+	fn glUniform3f(&self, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3fv.xhtml>
+	fn glUniform3fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3i.xhtml>
+	fn glUniform3i(&self, location: GLint, v0: GLint, v1: GLint, v2: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3iv.xhtml>
+	fn glUniform3iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4f.xhtml>
+	fn glUniform4f(&self, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4fv.xhtml>
+	fn glUniform4fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4i.xhtml>
+	fn glUniform4i(&self, location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4iv.xhtml>
+	fn glUniform4iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix2fv.xhtml>
+	fn glUniformMatrix2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix3fv.xhtml>
+	fn glUniformMatrix3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix4fv.xhtml>
+	fn glUniformMatrix4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUseProgram.xhtml>
+	fn glUseProgram(&self, program: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glValidateProgram.xhtml>
+	fn glValidateProgram(&self, program: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib1f.xhtml>
+	fn glVertexAttrib1f(&self, index: GLuint, x: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib1fv.xhtml>
+	fn glVertexAttrib1fv(&self, index: GLuint, v: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib2f.xhtml>
+	fn glVertexAttrib2f(&self, index: GLuint, x: GLfloat, y: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib2fv.xhtml>
+	fn glVertexAttrib2fv(&self, index: GLuint, v: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib3f.xhtml>
+	fn glVertexAttrib3f(&self, index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib3fv.xhtml>
+	fn glVertexAttrib3fv(&self, index: GLuint, v: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib4f.xhtml>
+	fn glVertexAttrib4f(&self, index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib4fv.xhtml>
+	fn glVertexAttrib4fv(&self, index: GLuint, v: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribPointer.xhtml>
+	fn glVertexAttribPointer(&self, index: GLuint, size: GLint, type_: GLenum, normalized: GLboolean, stride: GLsizei, pointer: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glViewport.xhtml>
+	fn glViewport(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()>;
+}
+/// Functions from OpenGL ES version 2.0
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
+pub struct EsVersion20 {
+	/// Is OpenGL ES version 2.0 available
+	available: bool,
+	/// The function pointer to `glActiveTexture()`
+	pub activetexture: PFNGLACTIVETEXTUREPROC,
+
+	/// The function pointer to `glAttachShader()`
+	pub attachshader: PFNGLATTACHSHADERPROC,
+
+	/// The function pointer to `glBindAttribLocation()`
+	pub bindattriblocation: PFNGLBINDATTRIBLOCATIONPROC,
+
+	/// The function pointer to `glBindBuffer()`
+	pub bindbuffer: PFNGLBINDBUFFERPROC,
+
+	/// The function pointer to `glBindFramebuffer()`
+	pub bindframebuffer: PFNGLBINDFRAMEBUFFERPROC,
+
+	/// The function pointer to `glBindRenderbuffer()`
+	pub bindrenderbuffer: PFNGLBINDRENDERBUFFERPROC,
+
+	/// The function pointer to `glBindTexture()`
+	pub bindtexture: PFNGLBINDTEXTUREPROC,
+
+	/// The function pointer to `glBlendColor()`
+	pub blendcolor: PFNGLBLENDCOLORPROC,
+
+	/// The function pointer to `glBlendEquation()`
+	pub blendequation: PFNGLBLENDEQUATIONPROC,
+
+	/// The function pointer to `glBlendEquationSeparate()`
+	pub blendequationseparate: PFNGLBLENDEQUATIONSEPARATEPROC,
+
+	/// The function pointer to `glBlendFunc()`
+	pub blendfunc: PFNGLBLENDFUNCPROC,
+
+	/// The function pointer to `glBlendFuncSeparate()`
+	pub blendfuncseparate: PFNGLBLENDFUNCSEPARATEPROC,
+
+	/// The function pointer to `glBufferData()`
+	pub bufferdata: PFNGLBUFFERDATAPROC,
+
+	/// The function pointer to `glBufferSubData()`
+	pub buffersubdata: PFNGLBUFFERSUBDATAPROC,
+
+	/// The function pointer to `glCheckFramebufferStatus()`
+	pub checkframebufferstatus: PFNGLCHECKFRAMEBUFFERSTATUSPROC,
+
+	/// The function pointer to `glClear()`
+	pub clear: PFNGLCLEARPROC,
+
+	/// The function pointer to `glClearColor()`
+	pub clearcolor: PFNGLCLEARCOLORPROC,
+
+	/// The function pointer to `glClearDepthf()`
+	pub cleardepthf: PFNGLCLEARDEPTHFPROC,
+
+	/// The function pointer to `glClearStencil()`
+	pub clearstencil: PFNGLCLEARSTENCILPROC,
+
+	/// The function pointer to `glColorMask()`
+	pub colormask: PFNGLCOLORMASKPROC,
+
+	/// The function pointer to `glCompileShader()`
+	pub compileshader: PFNGLCOMPILESHADERPROC,
+
+	/// The function pointer to `glCompressedTexImage2D()`
+	pub compressedteximage2d: PFNGLCOMPRESSEDTEXIMAGE2DPROC,
+
+	/// The function pointer to `glCompressedTexSubImage2D()`
+	pub compressedtexsubimage2d: PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC,
+
+	/// The function pointer to `glCopyTexImage2D()`
+	pub copyteximage2d: PFNGLCOPYTEXIMAGE2DPROC,
+
+	/// The function pointer to `glCopyTexSubImage2D()`
+	pub copytexsubimage2d: PFNGLCOPYTEXSUBIMAGE2DPROC,
+
+	/// The function pointer to `glCreateProgram()`
+	pub createprogram: PFNGLCREATEPROGRAMPROC,
+
+	/// The function pointer to `glCreateShader()`
+	pub createshader: PFNGLCREATESHADERPROC,
+
+	/// The function pointer to `glCullFace()`
+	pub cullface: PFNGLCULLFACEPROC,
+
+	/// The function pointer to `glDeleteBuffers()`
+	pub deletebuffers: PFNGLDELETEBUFFERSPROC,
+
+	/// The function pointer to `glDeleteFramebuffers()`
+	pub deleteframebuffers: PFNGLDELETEFRAMEBUFFERSPROC,
+
+	/// The function pointer to `glDeleteProgram()`
+	pub deleteprogram: PFNGLDELETEPROGRAMPROC,
+
+	/// The function pointer to `glDeleteRenderbuffers()`
+	pub deleterenderbuffers: PFNGLDELETERENDERBUFFERSPROC,
+
+	/// The function pointer to `glDeleteShader()`
+	pub deleteshader: PFNGLDELETESHADERPROC,
+
+	/// The function pointer to `glDeleteTextures()`
+	pub deletetextures: PFNGLDELETETEXTURESPROC,
+
+	/// The function pointer to `glDepthFunc()`
+	pub depthfunc: PFNGLDEPTHFUNCPROC,
+
+	/// The function pointer to `glDepthMask()`
+	pub depthmask: PFNGLDEPTHMASKPROC,
+
+	/// The function pointer to `glDepthRangef()`
+	pub depthrangef: PFNGLDEPTHRANGEFPROC,
+
+	/// The function pointer to `glDetachShader()`
+	pub detachshader: PFNGLDETACHSHADERPROC,
+
+	/// The function pointer to `glDisable()`
+	pub disable: PFNGLDISABLEPROC,
+
+	/// The function pointer to `glDisableVertexAttribArray()`
+	pub disablevertexattribarray: PFNGLDISABLEVERTEXATTRIBARRAYPROC,
+
+	/// The function pointer to `glDrawArrays()`
+	pub drawarrays: PFNGLDRAWARRAYSPROC,
+
+	/// The function pointer to `glDrawElements()`
+	pub drawelements: PFNGLDRAWELEMENTSPROC,
+
+	/// The function pointer to `glEnable()`
+	pub enable: PFNGLENABLEPROC,
+
+	/// The function pointer to `glEnableVertexAttribArray()`
+	pub enablevertexattribarray: PFNGLENABLEVERTEXATTRIBARRAYPROC,
+
+	/// The function pointer to `glFinish()`
+	pub finish: PFNGLFINISHPROC,
+
+	/// The function pointer to `glFlush()`
+	pub flush: PFNGLFLUSHPROC,
+
+	/// The function pointer to `glFramebufferRenderbuffer()`
+	pub framebufferrenderbuffer: PFNGLFRAMEBUFFERRENDERBUFFERPROC,
+
+	/// The function pointer to `glFramebufferTexture2D()`
+	pub framebuffertexture2d: PFNGLFRAMEBUFFERTEXTURE2DPROC,
+
+	/// The function pointer to `glFrontFace()`
+	pub frontface: PFNGLFRONTFACEPROC,
+
+	/// The function pointer to `glGenBuffers()`
+	pub genbuffers: PFNGLGENBUFFERSPROC,
+
+	/// The function pointer to `glGenerateMipmap()`
+	pub generatemipmap: PFNGLGENERATEMIPMAPPROC,
+
+	/// The function pointer to `glGenFramebuffers()`
+	pub genframebuffers: PFNGLGENFRAMEBUFFERSPROC,
+
+	/// The function pointer to `glGenRenderbuffers()`
+	pub genrenderbuffers: PFNGLGENRENDERBUFFERSPROC,
+
+	/// The function pointer to `glGenTextures()`
+	pub gentextures: PFNGLGENTEXTURESPROC,
+
+	/// The function pointer to `glGetActiveAttrib()`
+	pub getactiveattrib: PFNGLGETACTIVEATTRIBPROC,
+
+	/// The function pointer to `glGetActiveUniform()`
+	pub getactiveuniform: PFNGLGETACTIVEUNIFORMPROC,
+
+	/// The function pointer to `glGetAttachedShaders()`
+	pub getattachedshaders: PFNGLGETATTACHEDSHADERSPROC,
+
+	/// The function pointer to `glGetAttribLocation()`
+	pub getattriblocation: PFNGLGETATTRIBLOCATIONPROC,
+
+	/// The function pointer to `glGetBooleanv()`
+	pub getbooleanv: PFNGLGETBOOLEANVPROC,
+
+	/// The function pointer to `glGetBufferParameteriv()`
+	pub getbufferparameteriv: PFNGLGETBUFFERPARAMETERIVPROC,
+
+	/// The function pointer to `glGetError()`
+	pub geterror: PFNGLGETERRORPROC,
+
+	/// The function pointer to `glGetFloatv()`
+	pub getfloatv: PFNGLGETFLOATVPROC,
+
+	/// The function pointer to `glGetFramebufferAttachmentParameteriv()`
+	pub getframebufferattachmentparameteriv: PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVPROC,
+
+	/// The function pointer to `glGetIntegerv()`
+	pub getintegerv: PFNGLGETINTEGERVPROC,
+
+	/// The function pointer to `glGetProgramiv()`
+	pub getprogramiv: PFNGLGETPROGRAMIVPROC,
+
+	/// The function pointer to `glGetProgramInfoLog()`
+	pub getprograminfolog: PFNGLGETPROGRAMINFOLOGPROC,
+
+	/// The function pointer to `glGetRenderbufferParameteriv()`
+	pub getrenderbufferparameteriv: PFNGLGETRENDERBUFFERPARAMETERIVPROC,
+
+	/// The function pointer to `glGetShaderiv()`
+	pub getshaderiv: PFNGLGETSHADERIVPROC,
+
+	/// The function pointer to `glGetShaderInfoLog()`
+	pub getshaderinfolog: PFNGLGETSHADERINFOLOGPROC,
+
+	/// The function pointer to `glGetShaderPrecisionFormat()`
+	pub getshaderprecisionformat: PFNGLGETSHADERPRECISIONFORMATPROC,
+
+	/// The function pointer to `glGetShaderSource()`
+	pub getshadersource: PFNGLGETSHADERSOURCEPROC,
+
+	/// The function pointer to `glGetString()`
+	pub getstring: PFNGLGETSTRINGPROC,
+
+	/// The function pointer to `glGetTexParameterfv()`
+	pub gettexparameterfv: PFNGLGETTEXPARAMETERFVPROC,
+
+	/// The function pointer to `glGetTexParameteriv()`
+	pub gettexparameteriv: PFNGLGETTEXPARAMETERIVPROC,
+
+	/// The function pointer to `glGetUniformfv()`
+	pub getuniformfv: PFNGLGETUNIFORMFVPROC,
+
+	/// The function pointer to `glGetUniformiv()`
+	pub getuniformiv: PFNGLGETUNIFORMIVPROC,
+
+	/// The function pointer to `glGetUniformLocation()`
+	pub getuniformlocation: PFNGLGETUNIFORMLOCATIONPROC,
+
+	/// The function pointer to `glGetVertexAttribfv()`
+	pub getvertexattribfv: PFNGLGETVERTEXATTRIBFVPROC,
+
+	/// The function pointer to `glGetVertexAttribiv()`
+	pub getvertexattribiv: PFNGLGETVERTEXATTRIBIVPROC,
+
+	/// The function pointer to `glGetVertexAttribPointerv()`
+	pub getvertexattribpointerv: PFNGLGETVERTEXATTRIBPOINTERVPROC,
+
+	/// The function pointer to `glHint()`
+	pub hint: PFNGLHINTPROC,
+
+	/// The function pointer to `glIsBuffer()`
+	pub isbuffer: PFNGLISBUFFERPROC,
+
+	/// The function pointer to `glIsEnabled()`
+	pub isenabled: PFNGLISENABLEDPROC,
+
+	/// The function pointer to `glIsFramebuffer()`
+	pub isframebuffer: PFNGLISFRAMEBUFFERPROC,
+
+	/// The function pointer to `glIsProgram()`
+	pub isprogram: PFNGLISPROGRAMPROC,
+
+	/// The function pointer to `glIsRenderbuffer()`
+	pub isrenderbuffer: PFNGLISRENDERBUFFERPROC,
+
+	/// The function pointer to `glIsShader()`
+	pub isshader: PFNGLISSHADERPROC,
+
+	/// The function pointer to `glIsTexture()`
+	pub istexture: PFNGLISTEXTUREPROC,
+
+	/// The function pointer to `glLineWidth()`
+	pub linewidth: PFNGLLINEWIDTHPROC,
+
+	/// The function pointer to `glLinkProgram()`
+	pub linkprogram: PFNGLLINKPROGRAMPROC,
+
+	/// The function pointer to `glPixelStorei()`
+	pub pixelstorei: PFNGLPIXELSTOREIPROC,
+
+	/// The function pointer to `glPolygonOffset()`
+	pub polygonoffset: PFNGLPOLYGONOFFSETPROC,
+
+	/// The function pointer to `glReadPixels()`
+	pub readpixels: PFNGLREADPIXELSPROC,
+
+	/// The function pointer to `glReleaseShaderCompiler()`
+	pub releaseshadercompiler: PFNGLRELEASESHADERCOMPILERPROC,
+
+	/// The function pointer to `glRenderbufferStorage()`
+	pub renderbufferstorage: PFNGLRENDERBUFFERSTORAGEPROC,
+
+	/// The function pointer to `glSampleCoverage()`
+	pub samplecoverage: PFNGLSAMPLECOVERAGEPROC,
+
+	/// The function pointer to `glScissor()`
+	pub scissor: PFNGLSCISSORPROC,
+
+	/// The function pointer to `glShaderBinary()`
+	pub shaderbinary: PFNGLSHADERBINARYPROC,
+
+	/// The function pointer to `glShaderSource()`
+	pub shadersource: PFNGLSHADERSOURCEPROC,
+
+	/// The function pointer to `glStencilFunc()`
+	pub stencilfunc: PFNGLSTENCILFUNCPROC,
+
+	/// The function pointer to `glStencilFuncSeparate()`
+	pub stencilfuncseparate: PFNGLSTENCILFUNCSEPARATEPROC,
+
+	/// The function pointer to `glStencilMask()`
+	pub stencilmask: PFNGLSTENCILMASKPROC,
+
+	/// The function pointer to `glStencilMaskSeparate()`
+	pub stencilmaskseparate: PFNGLSTENCILMASKSEPARATEPROC,
+
+	/// The function pointer to `glStencilOp()`
+	pub stencilop: PFNGLSTENCILOPPROC,
+
+	/// The function pointer to `glStencilOpSeparate()`
+	pub stencilopseparate: PFNGLSTENCILOPSEPARATEPROC,
+
+	/// The function pointer to `glTexImage2D()`
+	pub teximage2d: PFNGLTEXIMAGE2DPROC,
+
+	/// The function pointer to `glTexParameterf()`
+	pub texparameterf: PFNGLTEXPARAMETERFPROC,
+
+	/// The function pointer to `glTexParameterfv()`
+	pub texparameterfv: PFNGLTEXPARAMETERFVPROC,
+
+	/// The function pointer to `glTexParameteri()`
+	pub texparameteri: PFNGLTEXPARAMETERIPROC,
+
+	/// The function pointer to `glTexParameteriv()`
+	pub texparameteriv: PFNGLTEXPARAMETERIVPROC,
+
+	/// The function pointer to `glTexSubImage2D()`
+	pub texsubimage2d: PFNGLTEXSUBIMAGE2DPROC,
+
+	/// The function pointer to `glUniform1f()`
+	pub uniform1f: PFNGLUNIFORM1FPROC,
+
+	/// The function pointer to `glUniform1fv()`
+	pub uniform1fv: PFNGLUNIFORM1FVPROC,
+
+	/// The function pointer to `glUniform1i()`
+	pub uniform1i: PFNGLUNIFORM1IPROC,
+
+	/// The function pointer to `glUniform1iv()`
+	pub uniform1iv: PFNGLUNIFORM1IVPROC,
+
+	/// The function pointer to `glUniform2f()`
+	pub uniform2f: PFNGLUNIFORM2FPROC,
+
+	/// The function pointer to `glUniform2fv()`
+	pub uniform2fv: PFNGLUNIFORM2FVPROC,
+
+	/// The function pointer to `glUniform2i()`
+	pub uniform2i: PFNGLUNIFORM2IPROC,
+
+	/// The function pointer to `glUniform2iv()`
+	pub uniform2iv: PFNGLUNIFORM2IVPROC,
+
+	/// The function pointer to `glUniform3f()`
+	pub uniform3f: PFNGLUNIFORM3FPROC,
+
+	/// The function pointer to `glUniform3fv()`
+	pub uniform3fv: PFNGLUNIFORM3FVPROC,
+
+	/// The function pointer to `glUniform3i()`
+	pub uniform3i: PFNGLUNIFORM3IPROC,
+
+	/// The function pointer to `glUniform3iv()`
+	pub uniform3iv: PFNGLUNIFORM3IVPROC,
+
+	/// The function pointer to `glUniform4f()`
+	pub uniform4f: PFNGLUNIFORM4FPROC,
+
+	/// The function pointer to `glUniform4fv()`
+	pub uniform4fv: PFNGLUNIFORM4FVPROC,
+
+	/// The function pointer to `glUniform4i()`
+	pub uniform4i: PFNGLUNIFORM4IPROC,
+
+	/// The function pointer to `glUniform4iv()`
+	pub uniform4iv: PFNGLUNIFORM4IVPROC,
+
+	/// The function pointer to `glUniformMatrix2fv()`
+	pub uniformmatrix2fv: PFNGLUNIFORMMATRIX2FVPROC,
+
+	/// The function pointer to `glUniformMatrix3fv()`
+	pub uniformmatrix3fv: PFNGLUNIFORMMATRIX3FVPROC,
+
+	/// The function pointer to `glUniformMatrix4fv()`
+	pub uniformmatrix4fv: PFNGLUNIFORMMATRIX4FVPROC,
+
+	/// The function pointer to `glUseProgram()`
+	pub useprogram: PFNGLUSEPROGRAMPROC,
+
+	/// The function pointer to `glValidateProgram()`
+	pub validateprogram: PFNGLVALIDATEPROGRAMPROC,
+
+	/// The function pointer to `glVertexAttrib1f()`
+	pub vertexattrib1f: PFNGLVERTEXATTRIB1FPROC,
+
+	/// The function pointer to `glVertexAttrib1fv()`
+	pub vertexattrib1fv: PFNGLVERTEXATTRIB1FVPROC,
+
+	/// The function pointer to `glVertexAttrib2f()`
+	pub vertexattrib2f: PFNGLVERTEXATTRIB2FPROC,
+
+	/// The function pointer to `glVertexAttrib2fv()`
+	pub vertexattrib2fv: PFNGLVERTEXATTRIB2FVPROC,
+
+	/// The function pointer to `glVertexAttrib3f()`
+	pub vertexattrib3f: PFNGLVERTEXATTRIB3FPROC,
+
+	/// The function pointer to `glVertexAttrib3fv()`
+	pub vertexattrib3fv: PFNGLVERTEXATTRIB3FVPROC,
+
+	/// The function pointer to `glVertexAttrib4f()`
+	pub vertexattrib4f: PFNGLVERTEXATTRIB4FPROC,
+
+	/// The function pointer to `glVertexAttrib4fv()`
+	pub vertexattrib4fv: PFNGLVERTEXATTRIB4FVPROC,
+
+	/// The function pointer to `glVertexAttribPointer()`
+	pub vertexattribpointer: PFNGLVERTEXATTRIBPOINTERPROC,
+
+	/// The function pointer to `glViewport()`
+	pub viewport: PFNGLVIEWPORTPROC,
+}
+
+impl ES_GL_2_0 for EsVersion20 {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glActiveTexture.xhtml>
+	#[inline(always)]
+	fn glActiveTexture(&self, texture: GLenum) -> Result<()> {
+		let ret = process_catch("glActiveTexture", catch_unwind(||(self.activetexture)(texture)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glActiveTexture", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glAttachShader.xhtml>
+	#[inline(always)]
+	fn glAttachShader(&self, program: GLuint, shader: GLuint) -> Result<()> {
+		let ret = process_catch("glAttachShader", catch_unwind(||(self.attachshader)(program, shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glAttachShader", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindAttribLocation.xhtml>
+	#[inline(always)]
+	fn glBindAttribLocation(&self, program: GLuint, index: GLuint, name: *const GLchar) -> Result<()> {
+		let ret = process_catch("glBindAttribLocation", catch_unwind(||(self.bindattriblocation)(program, index, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindAttribLocation", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBuffer.xhtml>
+	#[inline(always)]
+	fn glBindBuffer(&self, target: GLenum, buffer: GLuint) -> Result<()> {
+		let ret = process_catch("glBindBuffer", catch_unwind(||(self.bindbuffer)(target, buffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindBuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindFramebuffer.xhtml>
+	#[inline(always)]
+	fn glBindFramebuffer(&self, target: GLenum, framebuffer: GLuint) -> Result<()> {
+		let ret = process_catch("glBindFramebuffer", catch_unwind(||(self.bindframebuffer)(target, framebuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindFramebuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindRenderbuffer.xhtml>
+	#[inline(always)]
+	fn glBindRenderbuffer(&self, target: GLenum, renderbuffer: GLuint) -> Result<()> {
+		let ret = process_catch("glBindRenderbuffer", catch_unwind(||(self.bindrenderbuffer)(target, renderbuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindRenderbuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindTexture.xhtml>
+	#[inline(always)]
+	fn glBindTexture(&self, target: GLenum, texture: GLuint) -> Result<()> {
+		let ret = process_catch("glBindTexture", catch_unwind(||(self.bindtexture)(target, texture)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindTexture", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendColor.xhtml>
+	#[inline(always)]
+	fn glBlendColor(&self, red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat) -> Result<()> {
+		let ret = process_catch("glBlendColor", catch_unwind(||(self.blendcolor)(red, green, blue, alpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendColor", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquation.xhtml>
+	#[inline(always)]
+	fn glBlendEquation(&self, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendEquation", catch_unwind(||(self.blendequation)(mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendEquation", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquationSeparate.xhtml>
+	#[inline(always)]
+	fn glBlendEquationSeparate(&self, modeRGB: GLenum, modeAlpha: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendEquationSeparate", catch_unwind(||(self.blendequationseparate)(modeRGB, modeAlpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendEquationSeparate", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFunc.xhtml>
+	#[inline(always)]
+	fn glBlendFunc(&self, sfactor: GLenum, dfactor: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendFunc", catch_unwind(||(self.blendfunc)(sfactor, dfactor)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendFunc", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFuncSeparate.xhtml>
+	#[inline(always)]
+	fn glBlendFuncSeparate(&self, sfactorRGB: GLenum, dfactorRGB: GLenum, sfactorAlpha: GLenum, dfactorAlpha: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendFuncSeparate", catch_unwind(||(self.blendfuncseparate)(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendFuncSeparate", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBufferData.xhtml>
+	#[inline(always)]
+	fn glBufferData(&self, target: GLenum, size: GLsizeiptr, data: *const c_void, usage: GLenum) -> Result<()> {
+		let ret = process_catch("glBufferData", catch_unwind(||(self.bufferdata)(target, size, data, usage)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBufferData", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBufferSubData.xhtml>
+	#[inline(always)]
+	fn glBufferSubData(&self, target: GLenum, offset: GLintptr, size: GLsizeiptr, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glBufferSubData", catch_unwind(||(self.buffersubdata)(target, offset, size, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBufferSubData", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCheckFramebufferStatus.xhtml>
+	#[inline(always)]
+	fn glCheckFramebufferStatus(&self, target: GLenum) -> Result<GLenum> {
+		let ret = process_catch("glCheckFramebufferStatus", catch_unwind(||(self.checkframebufferstatus)(target)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCheckFramebufferStatus", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClear.xhtml>
+	#[inline(always)]
+	fn glClear(&self, mask: GLbitfield) -> Result<()> {
+		let ret = process_catch("glClear", catch_unwind(||(self.clear)(mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClear", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearColor.xhtml>
+	#[inline(always)]
+	fn glClearColor(&self, red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat) -> Result<()> {
+		let ret = process_catch("glClearColor", catch_unwind(||(self.clearcolor)(red, green, blue, alpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearColor", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearDepthf.xhtml>
+	#[inline(always)]
+	fn glClearDepthf(&self, d: GLfloat) -> Result<()> {
+		let ret = process_catch("glClearDepthf", catch_unwind(||(self.cleardepthf)(d)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearDepthf", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearStencil.xhtml>
+	#[inline(always)]
+	fn glClearStencil(&self, s: GLint) -> Result<()> {
+		let ret = process_catch("glClearStencil", catch_unwind(||(self.clearstencil)(s)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearStencil", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glColorMask.xhtml>
+	#[inline(always)]
+	fn glColorMask(&self, red: GLboolean, green: GLboolean, blue: GLboolean, alpha: GLboolean) -> Result<()> {
+		let ret = process_catch("glColorMask", catch_unwind(||(self.colormask)(red, green, blue, alpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glColorMask", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompileShader.xhtml>
+	#[inline(always)]
+	fn glCompileShader(&self, shader: GLuint) -> Result<()> {
+		let ret = process_catch("glCompileShader", catch_unwind(||(self.compileshader)(shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompileShader", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexImage2D.xhtml>
+	#[inline(always)]
+	fn glCompressedTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLenum, width: GLsizei, height: GLsizei, border: GLint, imageSize: GLsizei, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glCompressedTexImage2D", catch_unwind(||(self.compressedteximage2d)(target, level, internalformat, width, height, border, imageSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompressedTexImage2D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexSubImage2D.xhtml>
+	#[inline(always)]
+	fn glCompressedTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glCompressedTexSubImage2D", catch_unwind(||(self.compressedtexsubimage2d)(target, level, xoffset, yoffset, width, height, format, imageSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompressedTexSubImage2D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyTexImage2D.xhtml>
+	#[inline(always)]
+	fn glCopyTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLenum, x: GLint, y: GLint, width: GLsizei, height: GLsizei, border: GLint) -> Result<()> {
+		let ret = process_catch("glCopyTexImage2D", catch_unwind(||(self.copyteximage2d)(target, level, internalformat, x, y, width, height, border)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyTexImage2D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyTexSubImage2D.xhtml>
+	#[inline(always)]
+	fn glCopyTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glCopyTexSubImage2D", catch_unwind(||(self.copytexsubimage2d)(target, level, xoffset, yoffset, x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyTexSubImage2D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCreateProgram.xhtml>
+	#[inline(always)]
+	fn glCreateProgram(&self) -> Result<GLuint> {
+		let ret = process_catch("glCreateProgram", catch_unwind(||(self.createprogram)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCreateProgram", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCreateShader.xhtml>
+	#[inline(always)]
+	fn glCreateShader(&self, type_: GLenum) -> Result<GLuint> {
+		let ret = process_catch("glCreateShader", catch_unwind(||(self.createshader)(type_)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCreateShader", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCullFace.xhtml>
+	#[inline(always)]
+	fn glCullFace(&self, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glCullFace", catch_unwind(||(self.cullface)(mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCullFace", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteBuffers.xhtml>
+	#[inline(always)]
+	fn glDeleteBuffers(&self, n: GLsizei, buffers: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteBuffers", catch_unwind(||(self.deletebuffers)(n, buffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteBuffers", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteFramebuffers.xhtml>
+	#[inline(always)]
+	fn glDeleteFramebuffers(&self, n: GLsizei, framebuffers: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteFramebuffers", catch_unwind(||(self.deleteframebuffers)(n, framebuffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteFramebuffers", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteProgram.xhtml>
+	#[inline(always)]
+	fn glDeleteProgram(&self, program: GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteProgram", catch_unwind(||(self.deleteprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteProgram", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteRenderbuffers.xhtml>
+	#[inline(always)]
+	fn glDeleteRenderbuffers(&self, n: GLsizei, renderbuffers: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteRenderbuffers", catch_unwind(||(self.deleterenderbuffers)(n, renderbuffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteRenderbuffers", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteShader.xhtml>
+	#[inline(always)]
+	fn glDeleteShader(&self, shader: GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteShader", catch_unwind(||(self.deleteshader)(shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteShader", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteTextures.xhtml>
+	#[inline(always)]
+	fn glDeleteTextures(&self, n: GLsizei, textures: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteTextures", catch_unwind(||(self.deletetextures)(n, textures)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteTextures", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDepthFunc.xhtml>
+	#[inline(always)]
+	fn glDepthFunc(&self, func: GLenum) -> Result<()> {
+		let ret = process_catch("glDepthFunc", catch_unwind(||(self.depthfunc)(func)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDepthFunc", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDepthMask.xhtml>
+	#[inline(always)]
+	fn glDepthMask(&self, flag: GLboolean) -> Result<()> {
+		let ret = process_catch("glDepthMask", catch_unwind(||(self.depthmask)(flag)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDepthMask", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDepthRangef.xhtml>
+	#[inline(always)]
+	fn glDepthRangef(&self, n: GLfloat, f: GLfloat) -> Result<()> {
+		let ret = process_catch("glDepthRangef", catch_unwind(||(self.depthrangef)(n, f)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDepthRangef", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDetachShader.xhtml>
+	#[inline(always)]
+	fn glDetachShader(&self, program: GLuint, shader: GLuint) -> Result<()> {
+		let ret = process_catch("glDetachShader", catch_unwind(||(self.detachshader)(program, shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDetachShader", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDisable.xhtml>
+	#[inline(always)]
+	fn glDisable(&self, cap: GLenum) -> Result<()> {
+		let ret = process_catch("glDisable", catch_unwind(||(self.disable)(cap)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDisable", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDisableVertexAttribArray.xhtml>
+	#[inline(always)]
+	fn glDisableVertexAttribArray(&self, index: GLuint) -> Result<()> {
+		let ret = process_catch("glDisableVertexAttribArray", catch_unwind(||(self.disablevertexattribarray)(index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDisableVertexAttribArray", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawArrays.xhtml>
+	#[inline(always)]
+	fn glDrawArrays(&self, mode: GLenum, first: GLint, count: GLsizei) -> Result<()> {
+		let ret = process_catch("glDrawArrays", catch_unwind(||(self.drawarrays)(mode, first, count)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawArrays", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElements.xhtml>
+	#[inline(always)]
+	fn glDrawElements(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void) -> Result<()> {
+		let ret = process_catch("glDrawElements", catch_unwind(||(self.drawelements)(mode, count, type_, indices)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElements", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEnable.xhtml>
+	#[inline(always)]
+	fn glEnable(&self, cap: GLenum) -> Result<()> {
+		let ret = process_catch("glEnable", catch_unwind(||(self.enable)(cap)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEnable", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEnableVertexAttribArray.xhtml>
+	#[inline(always)]
+	fn glEnableVertexAttribArray(&self, index: GLuint) -> Result<()> {
+		let ret = process_catch("glEnableVertexAttribArray", catch_unwind(||(self.enablevertexattribarray)(index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEnableVertexAttribArray", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFinish.xhtml>
+	#[inline(always)]
+	fn glFinish(&self) -> Result<()> {
+		let ret = process_catch("glFinish", catch_unwind(||(self.finish)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFinish", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFlush.xhtml>
+	#[inline(always)]
+	fn glFlush(&self) -> Result<()> {
+		let ret = process_catch("glFlush", catch_unwind(||(self.flush)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFlush", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferRenderbuffer.xhtml>
+	#[inline(always)]
+	fn glFramebufferRenderbuffer(&self, target: GLenum, attachment: GLenum, renderbuffertarget: GLenum, renderbuffer: GLuint) -> Result<()> {
+		let ret = process_catch("glFramebufferRenderbuffer", catch_unwind(||(self.framebufferrenderbuffer)(target, attachment, renderbuffertarget, renderbuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferRenderbuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferTexture2D.xhtml>
+	#[inline(always)]
+	fn glFramebufferTexture2D(&self, target: GLenum, attachment: GLenum, textarget: GLenum, texture: GLuint, level: GLint) -> Result<()> {
+		let ret = process_catch("glFramebufferTexture2D", catch_unwind(||(self.framebuffertexture2d)(target, attachment, textarget, texture, level)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferTexture2D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFrontFace.xhtml>
+	#[inline(always)]
+	fn glFrontFace(&self, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glFrontFace", catch_unwind(||(self.frontface)(mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFrontFace", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenBuffers.xhtml>
+	#[inline(always)]
+	fn glGenBuffers(&self, n: GLsizei, buffers: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenBuffers", catch_unwind(||(self.genbuffers)(n, buffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenBuffers", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenerateMipmap.xhtml>
+	#[inline(always)]
+	fn glGenerateMipmap(&self, target: GLenum) -> Result<()> {
+		let ret = process_catch("glGenerateMipmap", catch_unwind(||(self.generatemipmap)(target)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenerateMipmap", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenFramebuffers.xhtml>
+	#[inline(always)]
+	fn glGenFramebuffers(&self, n: GLsizei, framebuffers: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenFramebuffers", catch_unwind(||(self.genframebuffers)(n, framebuffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenFramebuffers", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenRenderbuffers.xhtml>
+	#[inline(always)]
+	fn glGenRenderbuffers(&self, n: GLsizei, renderbuffers: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenRenderbuffers", catch_unwind(||(self.genrenderbuffers)(n, renderbuffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenRenderbuffers", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenTextures.xhtml>
+	#[inline(always)]
+	fn glGenTextures(&self, n: GLsizei, textures: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenTextures", catch_unwind(||(self.gentextures)(n, textures)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenTextures", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveAttrib.xhtml>
+	#[inline(always)]
+	fn glGetActiveAttrib(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLint, type_: *mut GLenum, name: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetActiveAttrib", catch_unwind(||(self.getactiveattrib)(program, index, bufSize, length, size, type_, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveAttrib", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniform.xhtml>
+	#[inline(always)]
+	fn glGetActiveUniform(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLint, type_: *mut GLenum, name: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetActiveUniform", catch_unwind(||(self.getactiveuniform)(program, index, bufSize, length, size, type_, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveUniform", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetAttachedShaders.xhtml>
+	#[inline(always)]
+	fn glGetAttachedShaders(&self, program: GLuint, maxCount: GLsizei, count: *mut GLsizei, shaders: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetAttachedShaders", catch_unwind(||(self.getattachedshaders)(program, maxCount, count, shaders)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetAttachedShaders", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetAttribLocation.xhtml>
+	#[inline(always)]
+	fn glGetAttribLocation(&self, program: GLuint, name: *const GLchar) -> Result<GLint> {
+		let ret = process_catch("glGetAttribLocation", catch_unwind(||(self.getattriblocation)(program, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetAttribLocation", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBooleanv.xhtml>
+	#[inline(always)]
+	fn glGetBooleanv(&self, pname: GLenum, data: *mut GLboolean) -> Result<()> {
+		let ret = process_catch("glGetBooleanv", catch_unwind(||(self.getbooleanv)(pname, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBooleanv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBufferParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetBufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetBufferParameteriv", catch_unwind(||(self.getbufferparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBufferParameteriv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	#[inline(always)]
+	fn glGetError(&self) -> GLenum {
+		(self.geterror)()
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFloatv.xhtml>
+	#[inline(always)]
+	fn glGetFloatv(&self, pname: GLenum, data: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetFloatv", catch_unwind(||(self.getfloatv)(pname, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetFloatv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFramebufferAttachmentParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetFramebufferAttachmentParameteriv(&self, target: GLenum, attachment: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetFramebufferAttachmentParameteriv", catch_unwind(||(self.getframebufferattachmentparameteriv)(target, attachment, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetFramebufferAttachmentParameteriv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetIntegerv.xhtml>
+	#[inline(always)]
+	fn glGetIntegerv(&self, pname: GLenum, data: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetIntegerv", catch_unwind(||(self.getintegerv)(pname, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetIntegerv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramiv.xhtml>
+	#[inline(always)]
+	fn glGetProgramiv(&self, program: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetProgramiv", catch_unwind(||(self.getprogramiv)(program, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramInfoLog.xhtml>
+	#[inline(always)]
+	fn glGetProgramInfoLog(&self, program: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetProgramInfoLog", catch_unwind(||(self.getprograminfolog)(program, bufSize, length, infoLog)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramInfoLog", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetRenderbufferParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetRenderbufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetRenderbufferParameteriv", catch_unwind(||(self.getrenderbufferparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetRenderbufferParameteriv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderiv.xhtml>
+	#[inline(always)]
+	fn glGetShaderiv(&self, shader: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetShaderiv", catch_unwind(||(self.getshaderiv)(shader, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetShaderiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderInfoLog.xhtml>
+	#[inline(always)]
+	fn glGetShaderInfoLog(&self, shader: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetShaderInfoLog", catch_unwind(||(self.getshaderinfolog)(shader, bufSize, length, infoLog)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetShaderInfoLog", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderPrecisionFormat.xhtml>
+	#[inline(always)]
+	fn glGetShaderPrecisionFormat(&self, shadertype: GLenum, precisiontype: GLenum, range: *mut GLint, precision: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetShaderPrecisionFormat", catch_unwind(||(self.getshaderprecisionformat)(shadertype, precisiontype, range, precision)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetShaderPrecisionFormat", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderSource.xhtml>
+	#[inline(always)]
+	fn glGetShaderSource(&self, shader: GLuint, bufSize: GLsizei, length: *mut GLsizei, source: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetShaderSource", catch_unwind(||(self.getshadersource)(shader, bufSize, length, source)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetShaderSource", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetString.xhtml>
+	#[inline(always)]
+	fn glGetString(&self, name: GLenum) -> Result<&'static str> {
+		let ret = process_catch("glGetString", catch_unwind(||unsafe{CStr::from_ptr((self.getstring)(name) as *const i8)}.to_str().unwrap()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetString", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameterfv.xhtml>
+	#[inline(always)]
+	fn glGetTexParameterfv(&self, target: GLenum, pname: GLenum, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetTexParameterfv", catch_unwind(||(self.gettexparameterfv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexParameterfv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetTexParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetTexParameteriv", catch_unwind(||(self.gettexparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexParameteriv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformfv.xhtml>
+	#[inline(always)]
+	fn glGetUniformfv(&self, program: GLuint, location: GLint, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetUniformfv", catch_unwind(||(self.getuniformfv)(program, location, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformfv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformiv.xhtml>
+	#[inline(always)]
+	fn glGetUniformiv(&self, program: GLuint, location: GLint, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetUniformiv", catch_unwind(||(self.getuniformiv)(program, location, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformLocation.xhtml>
+	#[inline(always)]
+	fn glGetUniformLocation(&self, program: GLuint, name: *const GLchar) -> Result<GLint> {
+		let ret = process_catch("glGetUniformLocation", catch_unwind(||(self.getuniformlocation)(program, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformLocation", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribfv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribfv(&self, index: GLuint, pname: GLenum, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribfv", catch_unwind(||(self.getvertexattribfv)(index, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribfv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribiv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribiv(&self, index: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribiv", catch_unwind(||(self.getvertexattribiv)(index, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribPointerv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribPointerv(&self, index: GLuint, pname: GLenum, pointer: *mut *mut c_void) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribPointerv", catch_unwind(||(self.getvertexattribpointerv)(index, pname, pointer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribPointerv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glHint.xhtml>
+	#[inline(always)]
+	fn glHint(&self, target: GLenum, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glHint", catch_unwind(||(self.hint)(target, mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glHint", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsBuffer.xhtml>
+	#[inline(always)]
+	fn glIsBuffer(&self, buffer: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsBuffer", catch_unwind(||(self.isbuffer)(buffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsBuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsEnabled.xhtml>
+	#[inline(always)]
+	fn glIsEnabled(&self, cap: GLenum) -> Result<GLboolean> {
+		let ret = process_catch("glIsEnabled", catch_unwind(||(self.isenabled)(cap)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsEnabled", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsFramebuffer.xhtml>
+	#[inline(always)]
+	fn glIsFramebuffer(&self, framebuffer: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsFramebuffer", catch_unwind(||(self.isframebuffer)(framebuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsFramebuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsProgram.xhtml>
+	#[inline(always)]
+	fn glIsProgram(&self, program: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsProgram", catch_unwind(||(self.isprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsProgram", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsRenderbuffer.xhtml>
+	#[inline(always)]
+	fn glIsRenderbuffer(&self, renderbuffer: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsRenderbuffer", catch_unwind(||(self.isrenderbuffer)(renderbuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsRenderbuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsShader.xhtml>
+	#[inline(always)]
+	fn glIsShader(&self, shader: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsShader", catch_unwind(||(self.isshader)(shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsShader", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsTexture.xhtml>
+	#[inline(always)]
+	fn glIsTexture(&self, texture: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsTexture", catch_unwind(||(self.istexture)(texture)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsTexture", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glLineWidth.xhtml>
+	#[inline(always)]
+	fn glLineWidth(&self, width: GLfloat) -> Result<()> {
+		let ret = process_catch("glLineWidth", catch_unwind(||(self.linewidth)(width)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glLineWidth", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glLinkProgram.xhtml>
+	#[inline(always)]
+	fn glLinkProgram(&self, program: GLuint) -> Result<()> {
+		let ret = process_catch("glLinkProgram", catch_unwind(||(self.linkprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glLinkProgram", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPixelStorei.xhtml>
+	#[inline(always)]
+	fn glPixelStorei(&self, pname: GLenum, param: GLint) -> Result<()> {
+		let ret = process_catch("glPixelStorei", catch_unwind(||(self.pixelstorei)(pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPixelStorei", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPolygonOffset.xhtml>
+	#[inline(always)]
+	fn glPolygonOffset(&self, factor: GLfloat, units: GLfloat) -> Result<()> {
+		let ret = process_catch("glPolygonOffset", catch_unwind(||(self.polygonoffset)(factor, units)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPolygonOffset", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml>
+	#[inline(always)]
+	fn glReadPixels(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, pixels: *mut c_void) -> Result<()> {
+		let ret = process_catch("glReadPixels", catch_unwind(||(self.readpixels)(x, y, width, height, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glReadPixels", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReleaseShaderCompiler.xhtml>
+	#[inline(always)]
+	fn glReleaseShaderCompiler(&self) -> Result<()> {
+		let ret = process_catch("glReleaseShaderCompiler", catch_unwind(||(self.releaseshadercompiler)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glReleaseShaderCompiler", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glRenderbufferStorage.xhtml>
+	#[inline(always)]
+	fn glRenderbufferStorage(&self, target: GLenum, internalformat: GLenum, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glRenderbufferStorage", catch_unwind(||(self.renderbufferstorage)(target, internalformat, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glRenderbufferStorage", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSampleCoverage.xhtml>
+	#[inline(always)]
+	fn glSampleCoverage(&self, value: GLfloat, invert: GLboolean) -> Result<()> {
+		let ret = process_catch("glSampleCoverage", catch_unwind(||(self.samplecoverage)(value, invert)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSampleCoverage", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glScissor.xhtml>
+	#[inline(always)]
+	fn glScissor(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glScissor", catch_unwind(||(self.scissor)(x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glScissor", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glShaderBinary.xhtml>
+	#[inline(always)]
+	fn glShaderBinary(&self, count: GLsizei, shaders: *const GLuint, binaryformat: GLenum, binary: *const c_void, length: GLsizei) -> Result<()> {
+		let ret = process_catch("glShaderBinary", catch_unwind(||(self.shaderbinary)(count, shaders, binaryformat, binary, length)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glShaderBinary", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glShaderSource.xhtml>
+	#[inline(always)]
+	fn glShaderSource(&self, shader: GLuint, count: GLsizei, string_: *const *const GLchar, length: *const GLint) -> Result<()> {
+		let ret = process_catch("glShaderSource", catch_unwind(||(self.shadersource)(shader, count, string_, length)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glShaderSource", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilFunc.xhtml>
+	#[inline(always)]
+	fn glStencilFunc(&self, func: GLenum, ref_: GLint, mask: GLuint) -> Result<()> {
+		let ret = process_catch("glStencilFunc", catch_unwind(||(self.stencilfunc)(func, ref_, mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilFunc", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilFuncSeparate.xhtml>
+	#[inline(always)]
+	fn glStencilFuncSeparate(&self, face: GLenum, func: GLenum, ref_: GLint, mask: GLuint) -> Result<()> {
+		let ret = process_catch("glStencilFuncSeparate", catch_unwind(||(self.stencilfuncseparate)(face, func, ref_, mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilFuncSeparate", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilMask.xhtml>
+	#[inline(always)]
+	fn glStencilMask(&self, mask: GLuint) -> Result<()> {
+		let ret = process_catch("glStencilMask", catch_unwind(||(self.stencilmask)(mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilMask", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilMaskSeparate.xhtml>
+	#[inline(always)]
+	fn glStencilMaskSeparate(&self, face: GLenum, mask: GLuint) -> Result<()> {
+		let ret = process_catch("glStencilMaskSeparate", catch_unwind(||(self.stencilmaskseparate)(face, mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilMaskSeparate", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilOp.xhtml>
+	#[inline(always)]
+	fn glStencilOp(&self, fail: GLenum, zfail: GLenum, zpass: GLenum) -> Result<()> {
+		let ret = process_catch("glStencilOp", catch_unwind(||(self.stencilop)(fail, zfail, zpass)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilOp", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilOpSeparate.xhtml>
+	#[inline(always)]
+	fn glStencilOpSeparate(&self, face: GLenum, sfail: GLenum, dpfail: GLenum, dppass: GLenum) -> Result<()> {
+		let ret = process_catch("glStencilOpSeparate", catch_unwind(||(self.stencilopseparate)(face, sfail, dpfail, dppass)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilOpSeparate", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexImage2D.xhtml>
+	#[inline(always)]
+	fn glTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, height: GLsizei, border: GLint, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()> {
+		let ret = process_catch("glTexImage2D", catch_unwind(||(self.teximage2d)(target, level, internalformat, width, height, border, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexImage2D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterf.xhtml>
+	#[inline(always)]
+	fn glTexParameterf(&self, target: GLenum, pname: GLenum, param: GLfloat) -> Result<()> {
+		let ret = process_catch("glTexParameterf", catch_unwind(||(self.texparameterf)(target, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameterf", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterfv.xhtml>
+	#[inline(always)]
+	fn glTexParameterfv(&self, target: GLenum, pname: GLenum, params: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glTexParameterfv", catch_unwind(||(self.texparameterfv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameterfv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameteri.xhtml>
+	#[inline(always)]
+	fn glTexParameteri(&self, target: GLenum, pname: GLenum, param: GLint) -> Result<()> {
+		let ret = process_catch("glTexParameteri", catch_unwind(||(self.texparameteri)(target, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameteri", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameteriv.xhtml>
+	#[inline(always)]
+	fn glTexParameteriv(&self, target: GLenum, pname: GLenum, params: *const GLint) -> Result<()> {
+		let ret = process_catch("glTexParameteriv", catch_unwind(||(self.texparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameteriv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexSubImage2D.xhtml>
+	#[inline(always)]
+	fn glTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()> {
+		let ret = process_catch("glTexSubImage2D", catch_unwind(||(self.texsubimage2d)(target, level, xoffset, yoffset, width, height, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexSubImage2D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1f.xhtml>
+	#[inline(always)]
+	fn glUniform1f(&self, location: GLint, v0: GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform1f", catch_unwind(||(self.uniform1f)(location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1fv.xhtml>
+	#[inline(always)]
+	fn glUniform1fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform1fv", catch_unwind(||(self.uniform1fv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1i.xhtml>
+	#[inline(always)]
+	fn glUniform1i(&self, location: GLint, v0: GLint) -> Result<()> {
+		let ret = process_catch("glUniform1i", catch_unwind(||(self.uniform1i)(location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1i", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1iv.xhtml>
+	#[inline(always)]
+	fn glUniform1iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glUniform1iv", catch_unwind(||(self.uniform1iv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1iv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2f.xhtml>
+	#[inline(always)]
+	fn glUniform2f(&self, location: GLint, v0: GLfloat, v1: GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform2f", catch_unwind(||(self.uniform2f)(location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2fv.xhtml>
+	#[inline(always)]
+	fn glUniform2fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform2fv", catch_unwind(||(self.uniform2fv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2i.xhtml>
+	#[inline(always)]
+	fn glUniform2i(&self, location: GLint, v0: GLint, v1: GLint) -> Result<()> {
+		let ret = process_catch("glUniform2i", catch_unwind(||(self.uniform2i)(location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2i", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2iv.xhtml>
+	#[inline(always)]
+	fn glUniform2iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glUniform2iv", catch_unwind(||(self.uniform2iv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2iv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3f.xhtml>
+	#[inline(always)]
+	fn glUniform3f(&self, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform3f", catch_unwind(||(self.uniform3f)(location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3fv.xhtml>
+	#[inline(always)]
+	fn glUniform3fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform3fv", catch_unwind(||(self.uniform3fv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3i.xhtml>
+	#[inline(always)]
+	fn glUniform3i(&self, location: GLint, v0: GLint, v1: GLint, v2: GLint) -> Result<()> {
+		let ret = process_catch("glUniform3i", catch_unwind(||(self.uniform3i)(location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3i", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3iv.xhtml>
+	#[inline(always)]
+	fn glUniform3iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glUniform3iv", catch_unwind(||(self.uniform3iv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3iv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4f.xhtml>
+	#[inline(always)]
+	fn glUniform4f(&self, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform4f", catch_unwind(||(self.uniform4f)(location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4fv.xhtml>
+	#[inline(always)]
+	fn glUniform4fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform4fv", catch_unwind(||(self.uniform4fv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4i.xhtml>
+	#[inline(always)]
+	fn glUniform4i(&self, location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint) -> Result<()> {
+		let ret = process_catch("glUniform4i", catch_unwind(||(self.uniform4i)(location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4i", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4iv.xhtml>
+	#[inline(always)]
+	fn glUniform4iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glUniform4iv", catch_unwind(||(self.uniform4iv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4iv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix2fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix2fv", catch_unwind(||(self.uniformmatrix2fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix2fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix3fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix3fv", catch_unwind(||(self.uniformmatrix3fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix3fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix4fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix4fv", catch_unwind(||(self.uniformmatrix4fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix4fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUseProgram.xhtml>
+	#[inline(always)]
+	fn glUseProgram(&self, program: GLuint) -> Result<()> {
+		let ret = process_catch("glUseProgram", catch_unwind(||(self.useprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUseProgram", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glValidateProgram.xhtml>
+	#[inline(always)]
+	fn glValidateProgram(&self, program: GLuint) -> Result<()> {
+		let ret = process_catch("glValidateProgram", catch_unwind(||(self.validateprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glValidateProgram", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib1f.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib1f(&self, index: GLuint, x: GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib1f", catch_unwind(||(self.vertexattrib1f)(index, x)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib1f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib1fv.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib1fv(&self, index: GLuint, v: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib1fv", catch_unwind(||(self.vertexattrib1fv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib1fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib2f.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib2f(&self, index: GLuint, x: GLfloat, y: GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib2f", catch_unwind(||(self.vertexattrib2f)(index, x, y)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib2f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib2fv.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib2fv(&self, index: GLuint, v: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib2fv", catch_unwind(||(self.vertexattrib2fv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib2fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib3f.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib3f(&self, index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib3f", catch_unwind(||(self.vertexattrib3f)(index, x, y, z)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib3f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib3fv.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib3fv(&self, index: GLuint, v: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib3fv", catch_unwind(||(self.vertexattrib3fv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib3fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib4f.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib4f(&self, index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib4f", catch_unwind(||(self.vertexattrib4f)(index, x, y, z, w)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib4f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib4fv.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib4fv(&self, index: GLuint, v: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib4fv", catch_unwind(||(self.vertexattrib4fv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib4fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribPointer.xhtml>
+	#[inline(always)]
+	fn glVertexAttribPointer(&self, index: GLuint, size: GLint, type_: GLenum, normalized: GLboolean, stride: GLsizei, pointer: *const c_void) -> Result<()> {
+		let ret = process_catch("glVertexAttribPointer", catch_unwind(||(self.vertexattribpointer)(index, size, type_, normalized, stride, pointer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribPointer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glViewport.xhtml>
+	#[inline(always)]
+	fn glViewport(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glViewport", catch_unwind(||(self.viewport)(x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glViewport", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+}
+
+impl EsVersion20 {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
+		let (_spec, major, minor, release) = base.get_version();
+		if (major, minor, release) < (2, 0, 0) {
+			return Self::default();
+		}
+		Self {
+			available: true,
+			activetexture: {let proc = get_proc_address("glActiveTexture"); if proc == null() {dummy_pfnglactivetextureproc} else {unsafe{transmute(proc)}}},
+			attachshader: {let proc = get_proc_address("glAttachShader"); if proc == null() {dummy_pfnglattachshaderproc} else {unsafe{transmute(proc)}}},
+			bindattriblocation: {let proc = get_proc_address("glBindAttribLocation"); if proc == null() {dummy_pfnglbindattriblocationproc} else {unsafe{transmute(proc)}}},
+			bindbuffer: {let proc = get_proc_address("glBindBuffer"); if proc == null() {dummy_pfnglbindbufferproc} else {unsafe{transmute(proc)}}},
+			bindframebuffer: {let proc = get_proc_address("glBindFramebuffer"); if proc == null() {dummy_pfnglbindframebufferproc} else {unsafe{transmute(proc)}}},
+			bindrenderbuffer: {let proc = get_proc_address("glBindRenderbuffer"); if proc == null() {dummy_pfnglbindrenderbufferproc} else {unsafe{transmute(proc)}}},
+			bindtexture: {let proc = get_proc_address("glBindTexture"); if proc == null() {dummy_pfnglbindtextureproc} else {unsafe{transmute(proc)}}},
+			blendcolor: {let proc = get_proc_address("glBlendColor"); if proc == null() {dummy_pfnglblendcolorproc} else {unsafe{transmute(proc)}}},
+			blendequation: {let proc = get_proc_address("glBlendEquation"); if proc == null() {dummy_pfnglblendequationproc} else {unsafe{transmute(proc)}}},
+			blendequationseparate: {let proc = get_proc_address("glBlendEquationSeparate"); if proc == null() {dummy_pfnglblendequationseparateproc} else {unsafe{transmute(proc)}}},
+			blendfunc: {let proc = get_proc_address("glBlendFunc"); if proc == null() {dummy_pfnglblendfuncproc} else {unsafe{transmute(proc)}}},
+			blendfuncseparate: {let proc = get_proc_address("glBlendFuncSeparate"); if proc == null() {dummy_pfnglblendfuncseparateproc} else {unsafe{transmute(proc)}}},
+			bufferdata: {let proc = get_proc_address("glBufferData"); if proc == null() {dummy_pfnglbufferdataproc} else {unsafe{transmute(proc)}}},
+			buffersubdata: {let proc = get_proc_address("glBufferSubData"); if proc == null() {dummy_pfnglbuffersubdataproc} else {unsafe{transmute(proc)}}},
+			checkframebufferstatus: {let proc = get_proc_address("glCheckFramebufferStatus"); if proc == null() {dummy_pfnglcheckframebufferstatusproc} else {unsafe{transmute(proc)}}},
+			clear: {let proc = get_proc_address("glClear"); if proc == null() {dummy_pfnglclearproc} else {unsafe{transmute(proc)}}},
+			clearcolor: {let proc = get_proc_address("glClearColor"); if proc == null() {dummy_pfnglclearcolorproc} else {unsafe{transmute(proc)}}},
+			cleardepthf: {let proc = get_proc_address("glClearDepthf"); if proc == null() {dummy_pfnglcleardepthfproc} else {unsafe{transmute(proc)}}},
+			clearstencil: {let proc = get_proc_address("glClearStencil"); if proc == null() {dummy_pfnglclearstencilproc} else {unsafe{transmute(proc)}}},
+			colormask: {let proc = get_proc_address("glColorMask"); if proc == null() {dummy_pfnglcolormaskproc} else {unsafe{transmute(proc)}}},
+			compileshader: {let proc = get_proc_address("glCompileShader"); if proc == null() {dummy_pfnglcompileshaderproc} else {unsafe{transmute(proc)}}},
+			compressedteximage2d: {let proc = get_proc_address("glCompressedTexImage2D"); if proc == null() {dummy_pfnglcompressedteximage2dproc} else {unsafe{transmute(proc)}}},
+			compressedtexsubimage2d: {let proc = get_proc_address("glCompressedTexSubImage2D"); if proc == null() {dummy_pfnglcompressedtexsubimage2dproc} else {unsafe{transmute(proc)}}},
+			copyteximage2d: {let proc = get_proc_address("glCopyTexImage2D"); if proc == null() {dummy_pfnglcopyteximage2dproc} else {unsafe{transmute(proc)}}},
+			copytexsubimage2d: {let proc = get_proc_address("glCopyTexSubImage2D"); if proc == null() {dummy_pfnglcopytexsubimage2dproc} else {unsafe{transmute(proc)}}},
+			createprogram: {let proc = get_proc_address("glCreateProgram"); if proc == null() {dummy_pfnglcreateprogramproc} else {unsafe{transmute(proc)}}},
+			createshader: {let proc = get_proc_address("glCreateShader"); if proc == null() {dummy_pfnglcreateshaderproc} else {unsafe{transmute(proc)}}},
+			cullface: {let proc = get_proc_address("glCullFace"); if proc == null() {dummy_pfnglcullfaceproc} else {unsafe{transmute(proc)}}},
+			deletebuffers: {let proc = get_proc_address("glDeleteBuffers"); if proc == null() {dummy_pfngldeletebuffersproc} else {unsafe{transmute(proc)}}},
+			deleteframebuffers: {let proc = get_proc_address("glDeleteFramebuffers"); if proc == null() {dummy_pfngldeleteframebuffersproc} else {unsafe{transmute(proc)}}},
+			deleteprogram: {let proc = get_proc_address("glDeleteProgram"); if proc == null() {dummy_pfngldeleteprogramproc} else {unsafe{transmute(proc)}}},
+			deleterenderbuffers: {let proc = get_proc_address("glDeleteRenderbuffers"); if proc == null() {dummy_pfngldeleterenderbuffersproc} else {unsafe{transmute(proc)}}},
+			deleteshader: {let proc = get_proc_address("glDeleteShader"); if proc == null() {dummy_pfngldeleteshaderproc} else {unsafe{transmute(proc)}}},
+			deletetextures: {let proc = get_proc_address("glDeleteTextures"); if proc == null() {dummy_pfngldeletetexturesproc} else {unsafe{transmute(proc)}}},
+			depthfunc: {let proc = get_proc_address("glDepthFunc"); if proc == null() {dummy_pfngldepthfuncproc} else {unsafe{transmute(proc)}}},
+			depthmask: {let proc = get_proc_address("glDepthMask"); if proc == null() {dummy_pfngldepthmaskproc} else {unsafe{transmute(proc)}}},
+			depthrangef: {let proc = get_proc_address("glDepthRangef"); if proc == null() {dummy_pfngldepthrangefproc} else {unsafe{transmute(proc)}}},
+			detachshader: {let proc = get_proc_address("glDetachShader"); if proc == null() {dummy_pfngldetachshaderproc} else {unsafe{transmute(proc)}}},
+			disable: {let proc = get_proc_address("glDisable"); if proc == null() {dummy_pfngldisableproc} else {unsafe{transmute(proc)}}},
+			disablevertexattribarray: {let proc = get_proc_address("glDisableVertexAttribArray"); if proc == null() {dummy_pfngldisablevertexattribarrayproc} else {unsafe{transmute(proc)}}},
+			drawarrays: {let proc = get_proc_address("glDrawArrays"); if proc == null() {dummy_pfngldrawarraysproc} else {unsafe{transmute(proc)}}},
+			drawelements: {let proc = get_proc_address("glDrawElements"); if proc == null() {dummy_pfngldrawelementsproc} else {unsafe{transmute(proc)}}},
+			enable: {let proc = get_proc_address("glEnable"); if proc == null() {dummy_pfnglenableproc} else {unsafe{transmute(proc)}}},
+			enablevertexattribarray: {let proc = get_proc_address("glEnableVertexAttribArray"); if proc == null() {dummy_pfnglenablevertexattribarrayproc} else {unsafe{transmute(proc)}}},
+			finish: {let proc = get_proc_address("glFinish"); if proc == null() {dummy_pfnglfinishproc} else {unsafe{transmute(proc)}}},
+			flush: {let proc = get_proc_address("glFlush"); if proc == null() {dummy_pfnglflushproc} else {unsafe{transmute(proc)}}},
+			framebufferrenderbuffer: {let proc = get_proc_address("glFramebufferRenderbuffer"); if proc == null() {dummy_pfnglframebufferrenderbufferproc} else {unsafe{transmute(proc)}}},
+			framebuffertexture2d: {let proc = get_proc_address("glFramebufferTexture2D"); if proc == null() {dummy_pfnglframebuffertexture2dproc} else {unsafe{transmute(proc)}}},
+			frontface: {let proc = get_proc_address("glFrontFace"); if proc == null() {dummy_pfnglfrontfaceproc} else {unsafe{transmute(proc)}}},
+			genbuffers: {let proc = get_proc_address("glGenBuffers"); if proc == null() {dummy_pfnglgenbuffersproc} else {unsafe{transmute(proc)}}},
+			generatemipmap: {let proc = get_proc_address("glGenerateMipmap"); if proc == null() {dummy_pfnglgeneratemipmapproc} else {unsafe{transmute(proc)}}},
+			genframebuffers: {let proc = get_proc_address("glGenFramebuffers"); if proc == null() {dummy_pfnglgenframebuffersproc} else {unsafe{transmute(proc)}}},
+			genrenderbuffers: {let proc = get_proc_address("glGenRenderbuffers"); if proc == null() {dummy_pfnglgenrenderbuffersproc} else {unsafe{transmute(proc)}}},
+			gentextures: {let proc = get_proc_address("glGenTextures"); if proc == null() {dummy_pfnglgentexturesproc} else {unsafe{transmute(proc)}}},
+			getactiveattrib: {let proc = get_proc_address("glGetActiveAttrib"); if proc == null() {dummy_pfnglgetactiveattribproc} else {unsafe{transmute(proc)}}},
+			getactiveuniform: {let proc = get_proc_address("glGetActiveUniform"); if proc == null() {dummy_pfnglgetactiveuniformproc} else {unsafe{transmute(proc)}}},
+			getattachedshaders: {let proc = get_proc_address("glGetAttachedShaders"); if proc == null() {dummy_pfnglgetattachedshadersproc} else {unsafe{transmute(proc)}}},
+			getattriblocation: {let proc = get_proc_address("glGetAttribLocation"); if proc == null() {dummy_pfnglgetattriblocationproc} else {unsafe{transmute(proc)}}},
+			getbooleanv: {let proc = get_proc_address("glGetBooleanv"); if proc == null() {dummy_pfnglgetbooleanvproc} else {unsafe{transmute(proc)}}},
+			getbufferparameteriv: {let proc = get_proc_address("glGetBufferParameteriv"); if proc == null() {dummy_pfnglgetbufferparameterivproc} else {unsafe{transmute(proc)}}},
+			geterror: {let proc = get_proc_address("glGetError"); if proc == null() {dummy_pfnglgeterrorproc} else {unsafe{transmute(proc)}}},
+			getfloatv: {let proc = get_proc_address("glGetFloatv"); if proc == null() {dummy_pfnglgetfloatvproc} else {unsafe{transmute(proc)}}},
+			getframebufferattachmentparameteriv: {let proc = get_proc_address("glGetFramebufferAttachmentParameteriv"); if proc == null() {dummy_pfnglgetframebufferattachmentparameterivproc} else {unsafe{transmute(proc)}}},
+			getintegerv: {let proc = get_proc_address("glGetIntegerv"); if proc == null() {dummy_pfnglgetintegervproc} else {unsafe{transmute(proc)}}},
+			getprogramiv: {let proc = get_proc_address("glGetProgramiv"); if proc == null() {dummy_pfnglgetprogramivproc} else {unsafe{transmute(proc)}}},
+			getprograminfolog: {let proc = get_proc_address("glGetProgramInfoLog"); if proc == null() {dummy_pfnglgetprograminfologproc} else {unsafe{transmute(proc)}}},
+			getrenderbufferparameteriv: {let proc = get_proc_address("glGetRenderbufferParameteriv"); if proc == null() {dummy_pfnglgetrenderbufferparameterivproc} else {unsafe{transmute(proc)}}},
+			getshaderiv: {let proc = get_proc_address("glGetShaderiv"); if proc == null() {dummy_pfnglgetshaderivproc} else {unsafe{transmute(proc)}}},
+			getshaderinfolog: {let proc = get_proc_address("glGetShaderInfoLog"); if proc == null() {dummy_pfnglgetshaderinfologproc} else {unsafe{transmute(proc)}}},
+			getshaderprecisionformat: {let proc = get_proc_address("glGetShaderPrecisionFormat"); if proc == null() {dummy_pfnglgetshaderprecisionformatproc} else {unsafe{transmute(proc)}}},
+			getshadersource: {let proc = get_proc_address("glGetShaderSource"); if proc == null() {dummy_pfnglgetshadersourceproc} else {unsafe{transmute(proc)}}},
+			getstring: {let proc = get_proc_address("glGetString"); if proc == null() {dummy_pfnglgetstringproc} else {unsafe{transmute(proc)}}},
+			gettexparameterfv: {let proc = get_proc_address("glGetTexParameterfv"); if proc == null() {dummy_pfnglgettexparameterfvproc} else {unsafe{transmute(proc)}}},
+			gettexparameteriv: {let proc = get_proc_address("glGetTexParameteriv"); if proc == null() {dummy_pfnglgettexparameterivproc} else {unsafe{transmute(proc)}}},
+			getuniformfv: {let proc = get_proc_address("glGetUniformfv"); if proc == null() {dummy_pfnglgetuniformfvproc} else {unsafe{transmute(proc)}}},
+			getuniformiv: {let proc = get_proc_address("glGetUniformiv"); if proc == null() {dummy_pfnglgetuniformivproc} else {unsafe{transmute(proc)}}},
+			getuniformlocation: {let proc = get_proc_address("glGetUniformLocation"); if proc == null() {dummy_pfnglgetuniformlocationproc} else {unsafe{transmute(proc)}}},
+			getvertexattribfv: {let proc = get_proc_address("glGetVertexAttribfv"); if proc == null() {dummy_pfnglgetvertexattribfvproc} else {unsafe{transmute(proc)}}},
+			getvertexattribiv: {let proc = get_proc_address("glGetVertexAttribiv"); if proc == null() {dummy_pfnglgetvertexattribivproc} else {unsafe{transmute(proc)}}},
+			getvertexattribpointerv: {let proc = get_proc_address("glGetVertexAttribPointerv"); if proc == null() {dummy_pfnglgetvertexattribpointervproc} else {unsafe{transmute(proc)}}},
+			hint: {let proc = get_proc_address("glHint"); if proc == null() {dummy_pfnglhintproc} else {unsafe{transmute(proc)}}},
+			isbuffer: {let proc = get_proc_address("glIsBuffer"); if proc == null() {dummy_pfnglisbufferproc} else {unsafe{transmute(proc)}}},
+			isenabled: {let proc = get_proc_address("glIsEnabled"); if proc == null() {dummy_pfnglisenabledproc} else {unsafe{transmute(proc)}}},
+			isframebuffer: {let proc = get_proc_address("glIsFramebuffer"); if proc == null() {dummy_pfnglisframebufferproc} else {unsafe{transmute(proc)}}},
+			isprogram: {let proc = get_proc_address("glIsProgram"); if proc == null() {dummy_pfnglisprogramproc} else {unsafe{transmute(proc)}}},
+			isrenderbuffer: {let proc = get_proc_address("glIsRenderbuffer"); if proc == null() {dummy_pfnglisrenderbufferproc} else {unsafe{transmute(proc)}}},
+			isshader: {let proc = get_proc_address("glIsShader"); if proc == null() {dummy_pfnglisshaderproc} else {unsafe{transmute(proc)}}},
+			istexture: {let proc = get_proc_address("glIsTexture"); if proc == null() {dummy_pfnglistextureproc} else {unsafe{transmute(proc)}}},
+			linewidth: {let proc = get_proc_address("glLineWidth"); if proc == null() {dummy_pfngllinewidthproc} else {unsafe{transmute(proc)}}},
+			linkprogram: {let proc = get_proc_address("glLinkProgram"); if proc == null() {dummy_pfngllinkprogramproc} else {unsafe{transmute(proc)}}},
+			pixelstorei: {let proc = get_proc_address("glPixelStorei"); if proc == null() {dummy_pfnglpixelstoreiproc} else {unsafe{transmute(proc)}}},
+			polygonoffset: {let proc = get_proc_address("glPolygonOffset"); if proc == null() {dummy_pfnglpolygonoffsetproc} else {unsafe{transmute(proc)}}},
+			readpixels: {let proc = get_proc_address("glReadPixels"); if proc == null() {dummy_pfnglreadpixelsproc} else {unsafe{transmute(proc)}}},
+			releaseshadercompiler: {let proc = get_proc_address("glReleaseShaderCompiler"); if proc == null() {dummy_pfnglreleaseshadercompilerproc} else {unsafe{transmute(proc)}}},
+			renderbufferstorage: {let proc = get_proc_address("glRenderbufferStorage"); if proc == null() {dummy_pfnglrenderbufferstorageproc} else {unsafe{transmute(proc)}}},
+			samplecoverage: {let proc = get_proc_address("glSampleCoverage"); if proc == null() {dummy_pfnglsamplecoverageproc} else {unsafe{transmute(proc)}}},
+			scissor: {let proc = get_proc_address("glScissor"); if proc == null() {dummy_pfnglscissorproc} else {unsafe{transmute(proc)}}},
+			shaderbinary: {let proc = get_proc_address("glShaderBinary"); if proc == null() {dummy_pfnglshaderbinaryproc} else {unsafe{transmute(proc)}}},
+			shadersource: {let proc = get_proc_address("glShaderSource"); if proc == null() {dummy_pfnglshadersourceproc} else {unsafe{transmute(proc)}}},
+			stencilfunc: {let proc = get_proc_address("glStencilFunc"); if proc == null() {dummy_pfnglstencilfuncproc} else {unsafe{transmute(proc)}}},
+			stencilfuncseparate: {let proc = get_proc_address("glStencilFuncSeparate"); if proc == null() {dummy_pfnglstencilfuncseparateproc} else {unsafe{transmute(proc)}}},
+			stencilmask: {let proc = get_proc_address("glStencilMask"); if proc == null() {dummy_pfnglstencilmaskproc} else {unsafe{transmute(proc)}}},
+			stencilmaskseparate: {let proc = get_proc_address("glStencilMaskSeparate"); if proc == null() {dummy_pfnglstencilmaskseparateproc} else {unsafe{transmute(proc)}}},
+			stencilop: {let proc = get_proc_address("glStencilOp"); if proc == null() {dummy_pfnglstencilopproc} else {unsafe{transmute(proc)}}},
+			stencilopseparate: {let proc = get_proc_address("glStencilOpSeparate"); if proc == null() {dummy_pfnglstencilopseparateproc} else {unsafe{transmute(proc)}}},
+			teximage2d: {let proc = get_proc_address("glTexImage2D"); if proc == null() {dummy_pfnglteximage2dproc} else {unsafe{transmute(proc)}}},
+			texparameterf: {let proc = get_proc_address("glTexParameterf"); if proc == null() {dummy_pfngltexparameterfproc} else {unsafe{transmute(proc)}}},
+			texparameterfv: {let proc = get_proc_address("glTexParameterfv"); if proc == null() {dummy_pfngltexparameterfvproc} else {unsafe{transmute(proc)}}},
+			texparameteri: {let proc = get_proc_address("glTexParameteri"); if proc == null() {dummy_pfngltexparameteriproc} else {unsafe{transmute(proc)}}},
+			texparameteriv: {let proc = get_proc_address("glTexParameteriv"); if proc == null() {dummy_pfngltexparameterivproc} else {unsafe{transmute(proc)}}},
+			texsubimage2d: {let proc = get_proc_address("glTexSubImage2D"); if proc == null() {dummy_pfngltexsubimage2dproc} else {unsafe{transmute(proc)}}},
+			uniform1f: {let proc = get_proc_address("glUniform1f"); if proc == null() {dummy_pfngluniform1fproc} else {unsafe{transmute(proc)}}},
+			uniform1fv: {let proc = get_proc_address("glUniform1fv"); if proc == null() {dummy_pfngluniform1fvproc} else {unsafe{transmute(proc)}}},
+			uniform1i: {let proc = get_proc_address("glUniform1i"); if proc == null() {dummy_pfngluniform1iproc} else {unsafe{transmute(proc)}}},
+			uniform1iv: {let proc = get_proc_address("glUniform1iv"); if proc == null() {dummy_pfngluniform1ivproc} else {unsafe{transmute(proc)}}},
+			uniform2f: {let proc = get_proc_address("glUniform2f"); if proc == null() {dummy_pfngluniform2fproc} else {unsafe{transmute(proc)}}},
+			uniform2fv: {let proc = get_proc_address("glUniform2fv"); if proc == null() {dummy_pfngluniform2fvproc} else {unsafe{transmute(proc)}}},
+			uniform2i: {let proc = get_proc_address("glUniform2i"); if proc == null() {dummy_pfngluniform2iproc} else {unsafe{transmute(proc)}}},
+			uniform2iv: {let proc = get_proc_address("glUniform2iv"); if proc == null() {dummy_pfngluniform2ivproc} else {unsafe{transmute(proc)}}},
+			uniform3f: {let proc = get_proc_address("glUniform3f"); if proc == null() {dummy_pfngluniform3fproc} else {unsafe{transmute(proc)}}},
+			uniform3fv: {let proc = get_proc_address("glUniform3fv"); if proc == null() {dummy_pfngluniform3fvproc} else {unsafe{transmute(proc)}}},
+			uniform3i: {let proc = get_proc_address("glUniform3i"); if proc == null() {dummy_pfngluniform3iproc} else {unsafe{transmute(proc)}}},
+			uniform3iv: {let proc = get_proc_address("glUniform3iv"); if proc == null() {dummy_pfngluniform3ivproc} else {unsafe{transmute(proc)}}},
+			uniform4f: {let proc = get_proc_address("glUniform4f"); if proc == null() {dummy_pfngluniform4fproc} else {unsafe{transmute(proc)}}},
+			uniform4fv: {let proc = get_proc_address("glUniform4fv"); if proc == null() {dummy_pfngluniform4fvproc} else {unsafe{transmute(proc)}}},
+			uniform4i: {let proc = get_proc_address("glUniform4i"); if proc == null() {dummy_pfngluniform4iproc} else {unsafe{transmute(proc)}}},
+			uniform4iv: {let proc = get_proc_address("glUniform4iv"); if proc == null() {dummy_pfngluniform4ivproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix2fv: {let proc = get_proc_address("glUniformMatrix2fv"); if proc == null() {dummy_pfngluniformmatrix2fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix3fv: {let proc = get_proc_address("glUniformMatrix3fv"); if proc == null() {dummy_pfngluniformmatrix3fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix4fv: {let proc = get_proc_address("glUniformMatrix4fv"); if proc == null() {dummy_pfngluniformmatrix4fvproc} else {unsafe{transmute(proc)}}},
+			useprogram: {let proc = get_proc_address("glUseProgram"); if proc == null() {dummy_pfngluseprogramproc} else {unsafe{transmute(proc)}}},
+			validateprogram: {let proc = get_proc_address("glValidateProgram"); if proc == null() {dummy_pfnglvalidateprogramproc} else {unsafe{transmute(proc)}}},
+			vertexattrib1f: {let proc = get_proc_address("glVertexAttrib1f"); if proc == null() {dummy_pfnglvertexattrib1fproc} else {unsafe{transmute(proc)}}},
+			vertexattrib1fv: {let proc = get_proc_address("glVertexAttrib1fv"); if proc == null() {dummy_pfnglvertexattrib1fvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib2f: {let proc = get_proc_address("glVertexAttrib2f"); if proc == null() {dummy_pfnglvertexattrib2fproc} else {unsafe{transmute(proc)}}},
+			vertexattrib2fv: {let proc = get_proc_address("glVertexAttrib2fv"); if proc == null() {dummy_pfnglvertexattrib2fvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib3f: {let proc = get_proc_address("glVertexAttrib3f"); if proc == null() {dummy_pfnglvertexattrib3fproc} else {unsafe{transmute(proc)}}},
+			vertexattrib3fv: {let proc = get_proc_address("glVertexAttrib3fv"); if proc == null() {dummy_pfnglvertexattrib3fvproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4f: {let proc = get_proc_address("glVertexAttrib4f"); if proc == null() {dummy_pfnglvertexattrib4fproc} else {unsafe{transmute(proc)}}},
+			vertexattrib4fv: {let proc = get_proc_address("glVertexAttrib4fv"); if proc == null() {dummy_pfnglvertexattrib4fvproc} else {unsafe{transmute(proc)}}},
+			vertexattribpointer: {let proc = get_proc_address("glVertexAttribPointer"); if proc == null() {dummy_pfnglvertexattribpointerproc} else {unsafe{transmute(proc)}}},
+			viewport: {let proc = get_proc_address("glViewport"); if proc == null() {dummy_pfnglviewportproc} else {unsafe{transmute(proc)}}},
+		}
+	}
+	#[inline(always)]
+	pub fn get_available(&self) -> bool {
+		self.available
+	}
+}
+
+impl Default for EsVersion20 {
+	fn default() -> Self {
+		Self {
+			available: false,
+			activetexture: dummy_pfnglactivetextureproc,
+			attachshader: dummy_pfnglattachshaderproc,
+			bindattriblocation: dummy_pfnglbindattriblocationproc,
+			bindbuffer: dummy_pfnglbindbufferproc,
+			bindframebuffer: dummy_pfnglbindframebufferproc,
+			bindrenderbuffer: dummy_pfnglbindrenderbufferproc,
+			bindtexture: dummy_pfnglbindtextureproc,
+			blendcolor: dummy_pfnglblendcolorproc,
+			blendequation: dummy_pfnglblendequationproc,
+			blendequationseparate: dummy_pfnglblendequationseparateproc,
+			blendfunc: dummy_pfnglblendfuncproc,
+			blendfuncseparate: dummy_pfnglblendfuncseparateproc,
+			bufferdata: dummy_pfnglbufferdataproc,
+			buffersubdata: dummy_pfnglbuffersubdataproc,
+			checkframebufferstatus: dummy_pfnglcheckframebufferstatusproc,
+			clear: dummy_pfnglclearproc,
+			clearcolor: dummy_pfnglclearcolorproc,
+			cleardepthf: dummy_pfnglcleardepthfproc,
+			clearstencil: dummy_pfnglclearstencilproc,
+			colormask: dummy_pfnglcolormaskproc,
+			compileshader: dummy_pfnglcompileshaderproc,
+			compressedteximage2d: dummy_pfnglcompressedteximage2dproc,
+			compressedtexsubimage2d: dummy_pfnglcompressedtexsubimage2dproc,
+			copyteximage2d: dummy_pfnglcopyteximage2dproc,
+			copytexsubimage2d: dummy_pfnglcopytexsubimage2dproc,
+			createprogram: dummy_pfnglcreateprogramproc,
+			createshader: dummy_pfnglcreateshaderproc,
+			cullface: dummy_pfnglcullfaceproc,
+			deletebuffers: dummy_pfngldeletebuffersproc,
+			deleteframebuffers: dummy_pfngldeleteframebuffersproc,
+			deleteprogram: dummy_pfngldeleteprogramproc,
+			deleterenderbuffers: dummy_pfngldeleterenderbuffersproc,
+			deleteshader: dummy_pfngldeleteshaderproc,
+			deletetextures: dummy_pfngldeletetexturesproc,
+			depthfunc: dummy_pfngldepthfuncproc,
+			depthmask: dummy_pfngldepthmaskproc,
+			depthrangef: dummy_pfngldepthrangefproc,
+			detachshader: dummy_pfngldetachshaderproc,
+			disable: dummy_pfngldisableproc,
+			disablevertexattribarray: dummy_pfngldisablevertexattribarrayproc,
+			drawarrays: dummy_pfngldrawarraysproc,
+			drawelements: dummy_pfngldrawelementsproc,
+			enable: dummy_pfnglenableproc,
+			enablevertexattribarray: dummy_pfnglenablevertexattribarrayproc,
+			finish: dummy_pfnglfinishproc,
+			flush: dummy_pfnglflushproc,
+			framebufferrenderbuffer: dummy_pfnglframebufferrenderbufferproc,
+			framebuffertexture2d: dummy_pfnglframebuffertexture2dproc,
+			frontface: dummy_pfnglfrontfaceproc,
+			genbuffers: dummy_pfnglgenbuffersproc,
+			generatemipmap: dummy_pfnglgeneratemipmapproc,
+			genframebuffers: dummy_pfnglgenframebuffersproc,
+			genrenderbuffers: dummy_pfnglgenrenderbuffersproc,
+			gentextures: dummy_pfnglgentexturesproc,
+			getactiveattrib: dummy_pfnglgetactiveattribproc,
+			getactiveuniform: dummy_pfnglgetactiveuniformproc,
+			getattachedshaders: dummy_pfnglgetattachedshadersproc,
+			getattriblocation: dummy_pfnglgetattriblocationproc,
+			getbooleanv: dummy_pfnglgetbooleanvproc,
+			getbufferparameteriv: dummy_pfnglgetbufferparameterivproc,
+			geterror: dummy_pfnglgeterrorproc,
+			getfloatv: dummy_pfnglgetfloatvproc,
+			getframebufferattachmentparameteriv: dummy_pfnglgetframebufferattachmentparameterivproc,
+			getintegerv: dummy_pfnglgetintegervproc,
+			getprogramiv: dummy_pfnglgetprogramivproc,
+			getprograminfolog: dummy_pfnglgetprograminfologproc,
+			getrenderbufferparameteriv: dummy_pfnglgetrenderbufferparameterivproc,
+			getshaderiv: dummy_pfnglgetshaderivproc,
+			getshaderinfolog: dummy_pfnglgetshaderinfologproc,
+			getshaderprecisionformat: dummy_pfnglgetshaderprecisionformatproc,
+			getshadersource: dummy_pfnglgetshadersourceproc,
+			getstring: dummy_pfnglgetstringproc,
+			gettexparameterfv: dummy_pfnglgettexparameterfvproc,
+			gettexparameteriv: dummy_pfnglgettexparameterivproc,
+			getuniformfv: dummy_pfnglgetuniformfvproc,
+			getuniformiv: dummy_pfnglgetuniformivproc,
+			getuniformlocation: dummy_pfnglgetuniformlocationproc,
+			getvertexattribfv: dummy_pfnglgetvertexattribfvproc,
+			getvertexattribiv: dummy_pfnglgetvertexattribivproc,
+			getvertexattribpointerv: dummy_pfnglgetvertexattribpointervproc,
+			hint: dummy_pfnglhintproc,
+			isbuffer: dummy_pfnglisbufferproc,
+			isenabled: dummy_pfnglisenabledproc,
+			isframebuffer: dummy_pfnglisframebufferproc,
+			isprogram: dummy_pfnglisprogramproc,
+			isrenderbuffer: dummy_pfnglisrenderbufferproc,
+			isshader: dummy_pfnglisshaderproc,
+			istexture: dummy_pfnglistextureproc,
+			linewidth: dummy_pfngllinewidthproc,
+			linkprogram: dummy_pfngllinkprogramproc,
+			pixelstorei: dummy_pfnglpixelstoreiproc,
+			polygonoffset: dummy_pfnglpolygonoffsetproc,
+			readpixels: dummy_pfnglreadpixelsproc,
+			releaseshadercompiler: dummy_pfnglreleaseshadercompilerproc,
+			renderbufferstorage: dummy_pfnglrenderbufferstorageproc,
+			samplecoverage: dummy_pfnglsamplecoverageproc,
+			scissor: dummy_pfnglscissorproc,
+			shaderbinary: dummy_pfnglshaderbinaryproc,
+			shadersource: dummy_pfnglshadersourceproc,
+			stencilfunc: dummy_pfnglstencilfuncproc,
+			stencilfuncseparate: dummy_pfnglstencilfuncseparateproc,
+			stencilmask: dummy_pfnglstencilmaskproc,
+			stencilmaskseparate: dummy_pfnglstencilmaskseparateproc,
+			stencilop: dummy_pfnglstencilopproc,
+			stencilopseparate: dummy_pfnglstencilopseparateproc,
+			teximage2d: dummy_pfnglteximage2dproc,
+			texparameterf: dummy_pfngltexparameterfproc,
+			texparameterfv: dummy_pfngltexparameterfvproc,
+			texparameteri: dummy_pfngltexparameteriproc,
+			texparameteriv: dummy_pfngltexparameterivproc,
+			texsubimage2d: dummy_pfngltexsubimage2dproc,
+			uniform1f: dummy_pfngluniform1fproc,
+			uniform1fv: dummy_pfngluniform1fvproc,
+			uniform1i: dummy_pfngluniform1iproc,
+			uniform1iv: dummy_pfngluniform1ivproc,
+			uniform2f: dummy_pfngluniform2fproc,
+			uniform2fv: dummy_pfngluniform2fvproc,
+			uniform2i: dummy_pfngluniform2iproc,
+			uniform2iv: dummy_pfngluniform2ivproc,
+			uniform3f: dummy_pfngluniform3fproc,
+			uniform3fv: dummy_pfngluniform3fvproc,
+			uniform3i: dummy_pfngluniform3iproc,
+			uniform3iv: dummy_pfngluniform3ivproc,
+			uniform4f: dummy_pfngluniform4fproc,
+			uniform4fv: dummy_pfngluniform4fvproc,
+			uniform4i: dummy_pfngluniform4iproc,
+			uniform4iv: dummy_pfngluniform4ivproc,
+			uniformmatrix2fv: dummy_pfngluniformmatrix2fvproc,
+			uniformmatrix3fv: dummy_pfngluniformmatrix3fvproc,
+			uniformmatrix4fv: dummy_pfngluniformmatrix4fvproc,
+			useprogram: dummy_pfngluseprogramproc,
+			validateprogram: dummy_pfnglvalidateprogramproc,
+			vertexattrib1f: dummy_pfnglvertexattrib1fproc,
+			vertexattrib1fv: dummy_pfnglvertexattrib1fvproc,
+			vertexattrib2f: dummy_pfnglvertexattrib2fproc,
+			vertexattrib2fv: dummy_pfnglvertexattrib2fvproc,
+			vertexattrib3f: dummy_pfnglvertexattrib3fproc,
+			vertexattrib3fv: dummy_pfnglvertexattrib3fvproc,
+			vertexattrib4f: dummy_pfnglvertexattrib4fproc,
+			vertexattrib4fv: dummy_pfnglvertexattrib4fvproc,
+			vertexattribpointer: dummy_pfnglvertexattribpointerproc,
+			viewport: dummy_pfnglviewportproc,
+		}
+	}
+}
+impl Debug for EsVersion20 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("EsVersion20")
+			.field("available", &self.available)
+			.field("activetexture", unsafe{if transmute::<_, *const c_void>(self.activetexture) == (dummy_pfnglactivetextureproc as *const c_void) {&null::<PFNGLACTIVETEXTUREPROC>()} else {&self.activetexture}})
+			.field("attachshader", unsafe{if transmute::<_, *const c_void>(self.attachshader) == (dummy_pfnglattachshaderproc as *const c_void) {&null::<PFNGLATTACHSHADERPROC>()} else {&self.attachshader}})
+			.field("bindattriblocation", unsafe{if transmute::<_, *const c_void>(self.bindattriblocation) == (dummy_pfnglbindattriblocationproc as *const c_void) {&null::<PFNGLBINDATTRIBLOCATIONPROC>()} else {&self.bindattriblocation}})
+			.field("bindbuffer", unsafe{if transmute::<_, *const c_void>(self.bindbuffer) == (dummy_pfnglbindbufferproc as *const c_void) {&null::<PFNGLBINDBUFFERPROC>()} else {&self.bindbuffer}})
+			.field("bindframebuffer", unsafe{if transmute::<_, *const c_void>(self.bindframebuffer) == (dummy_pfnglbindframebufferproc as *const c_void) {&null::<PFNGLBINDFRAMEBUFFERPROC>()} else {&self.bindframebuffer}})
+			.field("bindrenderbuffer", unsafe{if transmute::<_, *const c_void>(self.bindrenderbuffer) == (dummy_pfnglbindrenderbufferproc as *const c_void) {&null::<PFNGLBINDRENDERBUFFERPROC>()} else {&self.bindrenderbuffer}})
+			.field("bindtexture", unsafe{if transmute::<_, *const c_void>(self.bindtexture) == (dummy_pfnglbindtextureproc as *const c_void) {&null::<PFNGLBINDTEXTUREPROC>()} else {&self.bindtexture}})
+			.field("blendcolor", unsafe{if transmute::<_, *const c_void>(self.blendcolor) == (dummy_pfnglblendcolorproc as *const c_void) {&null::<PFNGLBLENDCOLORPROC>()} else {&self.blendcolor}})
+			.field("blendequation", unsafe{if transmute::<_, *const c_void>(self.blendequation) == (dummy_pfnglblendequationproc as *const c_void) {&null::<PFNGLBLENDEQUATIONPROC>()} else {&self.blendequation}})
+			.field("blendequationseparate", unsafe{if transmute::<_, *const c_void>(self.blendequationseparate) == (dummy_pfnglblendequationseparateproc as *const c_void) {&null::<PFNGLBLENDEQUATIONSEPARATEPROC>()} else {&self.blendequationseparate}})
+			.field("blendfunc", unsafe{if transmute::<_, *const c_void>(self.blendfunc) == (dummy_pfnglblendfuncproc as *const c_void) {&null::<PFNGLBLENDFUNCPROC>()} else {&self.blendfunc}})
+			.field("blendfuncseparate", unsafe{if transmute::<_, *const c_void>(self.blendfuncseparate) == (dummy_pfnglblendfuncseparateproc as *const c_void) {&null::<PFNGLBLENDFUNCSEPARATEPROC>()} else {&self.blendfuncseparate}})
+			.field("bufferdata", unsafe{if transmute::<_, *const c_void>(self.bufferdata) == (dummy_pfnglbufferdataproc as *const c_void) {&null::<PFNGLBUFFERDATAPROC>()} else {&self.bufferdata}})
+			.field("buffersubdata", unsafe{if transmute::<_, *const c_void>(self.buffersubdata) == (dummy_pfnglbuffersubdataproc as *const c_void) {&null::<PFNGLBUFFERSUBDATAPROC>()} else {&self.buffersubdata}})
+			.field("checkframebufferstatus", unsafe{if transmute::<_, *const c_void>(self.checkframebufferstatus) == (dummy_pfnglcheckframebufferstatusproc as *const c_void) {&null::<PFNGLCHECKFRAMEBUFFERSTATUSPROC>()} else {&self.checkframebufferstatus}})
+			.field("clear", unsafe{if transmute::<_, *const c_void>(self.clear) == (dummy_pfnglclearproc as *const c_void) {&null::<PFNGLCLEARPROC>()} else {&self.clear}})
+			.field("clearcolor", unsafe{if transmute::<_, *const c_void>(self.clearcolor) == (dummy_pfnglclearcolorproc as *const c_void) {&null::<PFNGLCLEARCOLORPROC>()} else {&self.clearcolor}})
+			.field("cleardepthf", unsafe{if transmute::<_, *const c_void>(self.cleardepthf) == (dummy_pfnglcleardepthfproc as *const c_void) {&null::<PFNGLCLEARDEPTHFPROC>()} else {&self.cleardepthf}})
+			.field("clearstencil", unsafe{if transmute::<_, *const c_void>(self.clearstencil) == (dummy_pfnglclearstencilproc as *const c_void) {&null::<PFNGLCLEARSTENCILPROC>()} else {&self.clearstencil}})
+			.field("colormask", unsafe{if transmute::<_, *const c_void>(self.colormask) == (dummy_pfnglcolormaskproc as *const c_void) {&null::<PFNGLCOLORMASKPROC>()} else {&self.colormask}})
+			.field("compileshader", unsafe{if transmute::<_, *const c_void>(self.compileshader) == (dummy_pfnglcompileshaderproc as *const c_void) {&null::<PFNGLCOMPILESHADERPROC>()} else {&self.compileshader}})
+			.field("compressedteximage2d", unsafe{if transmute::<_, *const c_void>(self.compressedteximage2d) == (dummy_pfnglcompressedteximage2dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXIMAGE2DPROC>()} else {&self.compressedteximage2d}})
+			.field("compressedtexsubimage2d", unsafe{if transmute::<_, *const c_void>(self.compressedtexsubimage2d) == (dummy_pfnglcompressedtexsubimage2dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC>()} else {&self.compressedtexsubimage2d}})
+			.field("copyteximage2d", unsafe{if transmute::<_, *const c_void>(self.copyteximage2d) == (dummy_pfnglcopyteximage2dproc as *const c_void) {&null::<PFNGLCOPYTEXIMAGE2DPROC>()} else {&self.copyteximage2d}})
+			.field("copytexsubimage2d", unsafe{if transmute::<_, *const c_void>(self.copytexsubimage2d) == (dummy_pfnglcopytexsubimage2dproc as *const c_void) {&null::<PFNGLCOPYTEXSUBIMAGE2DPROC>()} else {&self.copytexsubimage2d}})
+			.field("createprogram", unsafe{if transmute::<_, *const c_void>(self.createprogram) == (dummy_pfnglcreateprogramproc as *const c_void) {&null::<PFNGLCREATEPROGRAMPROC>()} else {&self.createprogram}})
+			.field("createshader", unsafe{if transmute::<_, *const c_void>(self.createshader) == (dummy_pfnglcreateshaderproc as *const c_void) {&null::<PFNGLCREATESHADERPROC>()} else {&self.createshader}})
+			.field("cullface", unsafe{if transmute::<_, *const c_void>(self.cullface) == (dummy_pfnglcullfaceproc as *const c_void) {&null::<PFNGLCULLFACEPROC>()} else {&self.cullface}})
+			.field("deletebuffers", unsafe{if transmute::<_, *const c_void>(self.deletebuffers) == (dummy_pfngldeletebuffersproc as *const c_void) {&null::<PFNGLDELETEBUFFERSPROC>()} else {&self.deletebuffers}})
+			.field("deleteframebuffers", unsafe{if transmute::<_, *const c_void>(self.deleteframebuffers) == (dummy_pfngldeleteframebuffersproc as *const c_void) {&null::<PFNGLDELETEFRAMEBUFFERSPROC>()} else {&self.deleteframebuffers}})
+			.field("deleteprogram", unsafe{if transmute::<_, *const c_void>(self.deleteprogram) == (dummy_pfngldeleteprogramproc as *const c_void) {&null::<PFNGLDELETEPROGRAMPROC>()} else {&self.deleteprogram}})
+			.field("deleterenderbuffers", unsafe{if transmute::<_, *const c_void>(self.deleterenderbuffers) == (dummy_pfngldeleterenderbuffersproc as *const c_void) {&null::<PFNGLDELETERENDERBUFFERSPROC>()} else {&self.deleterenderbuffers}})
+			.field("deleteshader", unsafe{if transmute::<_, *const c_void>(self.deleteshader) == (dummy_pfngldeleteshaderproc as *const c_void) {&null::<PFNGLDELETESHADERPROC>()} else {&self.deleteshader}})
+			.field("deletetextures", unsafe{if transmute::<_, *const c_void>(self.deletetextures) == (dummy_pfngldeletetexturesproc as *const c_void) {&null::<PFNGLDELETETEXTURESPROC>()} else {&self.deletetextures}})
+			.field("depthfunc", unsafe{if transmute::<_, *const c_void>(self.depthfunc) == (dummy_pfngldepthfuncproc as *const c_void) {&null::<PFNGLDEPTHFUNCPROC>()} else {&self.depthfunc}})
+			.field("depthmask", unsafe{if transmute::<_, *const c_void>(self.depthmask) == (dummy_pfngldepthmaskproc as *const c_void) {&null::<PFNGLDEPTHMASKPROC>()} else {&self.depthmask}})
+			.field("depthrangef", unsafe{if transmute::<_, *const c_void>(self.depthrangef) == (dummy_pfngldepthrangefproc as *const c_void) {&null::<PFNGLDEPTHRANGEFPROC>()} else {&self.depthrangef}})
+			.field("detachshader", unsafe{if transmute::<_, *const c_void>(self.detachshader) == (dummy_pfngldetachshaderproc as *const c_void) {&null::<PFNGLDETACHSHADERPROC>()} else {&self.detachshader}})
+			.field("disable", unsafe{if transmute::<_, *const c_void>(self.disable) == (dummy_pfngldisableproc as *const c_void) {&null::<PFNGLDISABLEPROC>()} else {&self.disable}})
+			.field("disablevertexattribarray", unsafe{if transmute::<_, *const c_void>(self.disablevertexattribarray) == (dummy_pfngldisablevertexattribarrayproc as *const c_void) {&null::<PFNGLDISABLEVERTEXATTRIBARRAYPROC>()} else {&self.disablevertexattribarray}})
+			.field("drawarrays", unsafe{if transmute::<_, *const c_void>(self.drawarrays) == (dummy_pfngldrawarraysproc as *const c_void) {&null::<PFNGLDRAWARRAYSPROC>()} else {&self.drawarrays}})
+			.field("drawelements", unsafe{if transmute::<_, *const c_void>(self.drawelements) == (dummy_pfngldrawelementsproc as *const c_void) {&null::<PFNGLDRAWELEMENTSPROC>()} else {&self.drawelements}})
+			.field("enable", unsafe{if transmute::<_, *const c_void>(self.enable) == (dummy_pfnglenableproc as *const c_void) {&null::<PFNGLENABLEPROC>()} else {&self.enable}})
+			.field("enablevertexattribarray", unsafe{if transmute::<_, *const c_void>(self.enablevertexattribarray) == (dummy_pfnglenablevertexattribarrayproc as *const c_void) {&null::<PFNGLENABLEVERTEXATTRIBARRAYPROC>()} else {&self.enablevertexattribarray}})
+			.field("finish", unsafe{if transmute::<_, *const c_void>(self.finish) == (dummy_pfnglfinishproc as *const c_void) {&null::<PFNGLFINISHPROC>()} else {&self.finish}})
+			.field("flush", unsafe{if transmute::<_, *const c_void>(self.flush) == (dummy_pfnglflushproc as *const c_void) {&null::<PFNGLFLUSHPROC>()} else {&self.flush}})
+			.field("framebufferrenderbuffer", unsafe{if transmute::<_, *const c_void>(self.framebufferrenderbuffer) == (dummy_pfnglframebufferrenderbufferproc as *const c_void) {&null::<PFNGLFRAMEBUFFERRENDERBUFFERPROC>()} else {&self.framebufferrenderbuffer}})
+			.field("framebuffertexture2d", unsafe{if transmute::<_, *const c_void>(self.framebuffertexture2d) == (dummy_pfnglframebuffertexture2dproc as *const c_void) {&null::<PFNGLFRAMEBUFFERTEXTURE2DPROC>()} else {&self.framebuffertexture2d}})
+			.field("frontface", unsafe{if transmute::<_, *const c_void>(self.frontface) == (dummy_pfnglfrontfaceproc as *const c_void) {&null::<PFNGLFRONTFACEPROC>()} else {&self.frontface}})
+			.field("genbuffers", unsafe{if transmute::<_, *const c_void>(self.genbuffers) == (dummy_pfnglgenbuffersproc as *const c_void) {&null::<PFNGLGENBUFFERSPROC>()} else {&self.genbuffers}})
+			.field("generatemipmap", unsafe{if transmute::<_, *const c_void>(self.generatemipmap) == (dummy_pfnglgeneratemipmapproc as *const c_void) {&null::<PFNGLGENERATEMIPMAPPROC>()} else {&self.generatemipmap}})
+			.field("genframebuffers", unsafe{if transmute::<_, *const c_void>(self.genframebuffers) == (dummy_pfnglgenframebuffersproc as *const c_void) {&null::<PFNGLGENFRAMEBUFFERSPROC>()} else {&self.genframebuffers}})
+			.field("genrenderbuffers", unsafe{if transmute::<_, *const c_void>(self.genrenderbuffers) == (dummy_pfnglgenrenderbuffersproc as *const c_void) {&null::<PFNGLGENRENDERBUFFERSPROC>()} else {&self.genrenderbuffers}})
+			.field("gentextures", unsafe{if transmute::<_, *const c_void>(self.gentextures) == (dummy_pfnglgentexturesproc as *const c_void) {&null::<PFNGLGENTEXTURESPROC>()} else {&self.gentextures}})
+			.field("getactiveattrib", unsafe{if transmute::<_, *const c_void>(self.getactiveattrib) == (dummy_pfnglgetactiveattribproc as *const c_void) {&null::<PFNGLGETACTIVEATTRIBPROC>()} else {&self.getactiveattrib}})
+			.field("getactiveuniform", unsafe{if transmute::<_, *const c_void>(self.getactiveuniform) == (dummy_pfnglgetactiveuniformproc as *const c_void) {&null::<PFNGLGETACTIVEUNIFORMPROC>()} else {&self.getactiveuniform}})
+			.field("getattachedshaders", unsafe{if transmute::<_, *const c_void>(self.getattachedshaders) == (dummy_pfnglgetattachedshadersproc as *const c_void) {&null::<PFNGLGETATTACHEDSHADERSPROC>()} else {&self.getattachedshaders}})
+			.field("getattriblocation", unsafe{if transmute::<_, *const c_void>(self.getattriblocation) == (dummy_pfnglgetattriblocationproc as *const c_void) {&null::<PFNGLGETATTRIBLOCATIONPROC>()} else {&self.getattriblocation}})
+			.field("getbooleanv", unsafe{if transmute::<_, *const c_void>(self.getbooleanv) == (dummy_pfnglgetbooleanvproc as *const c_void) {&null::<PFNGLGETBOOLEANVPROC>()} else {&self.getbooleanv}})
+			.field("getbufferparameteriv", unsafe{if transmute::<_, *const c_void>(self.getbufferparameteriv) == (dummy_pfnglgetbufferparameterivproc as *const c_void) {&null::<PFNGLGETBUFFERPARAMETERIVPROC>()} else {&self.getbufferparameteriv}})
+			.field("geterror", unsafe{if transmute::<_, *const c_void>(self.geterror) == (dummy_pfnglgeterrorproc as *const c_void) {&null::<PFNGLGETERRORPROC>()} else {&self.geterror}})
+			.field("getfloatv", unsafe{if transmute::<_, *const c_void>(self.getfloatv) == (dummy_pfnglgetfloatvproc as *const c_void) {&null::<PFNGLGETFLOATVPROC>()} else {&self.getfloatv}})
+			.field("getframebufferattachmentparameteriv", unsafe{if transmute::<_, *const c_void>(self.getframebufferattachmentparameteriv) == (dummy_pfnglgetframebufferattachmentparameterivproc as *const c_void) {&null::<PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVPROC>()} else {&self.getframebufferattachmentparameteriv}})
+			.field("getintegerv", unsafe{if transmute::<_, *const c_void>(self.getintegerv) == (dummy_pfnglgetintegervproc as *const c_void) {&null::<PFNGLGETINTEGERVPROC>()} else {&self.getintegerv}})
+			.field("getprogramiv", unsafe{if transmute::<_, *const c_void>(self.getprogramiv) == (dummy_pfnglgetprogramivproc as *const c_void) {&null::<PFNGLGETPROGRAMIVPROC>()} else {&self.getprogramiv}})
+			.field("getprograminfolog", unsafe{if transmute::<_, *const c_void>(self.getprograminfolog) == (dummy_pfnglgetprograminfologproc as *const c_void) {&null::<PFNGLGETPROGRAMINFOLOGPROC>()} else {&self.getprograminfolog}})
+			.field("getrenderbufferparameteriv", unsafe{if transmute::<_, *const c_void>(self.getrenderbufferparameteriv) == (dummy_pfnglgetrenderbufferparameterivproc as *const c_void) {&null::<PFNGLGETRENDERBUFFERPARAMETERIVPROC>()} else {&self.getrenderbufferparameteriv}})
+			.field("getshaderiv", unsafe{if transmute::<_, *const c_void>(self.getshaderiv) == (dummy_pfnglgetshaderivproc as *const c_void) {&null::<PFNGLGETSHADERIVPROC>()} else {&self.getshaderiv}})
+			.field("getshaderinfolog", unsafe{if transmute::<_, *const c_void>(self.getshaderinfolog) == (dummy_pfnglgetshaderinfologproc as *const c_void) {&null::<PFNGLGETSHADERINFOLOGPROC>()} else {&self.getshaderinfolog}})
+			.field("getshaderprecisionformat", unsafe{if transmute::<_, *const c_void>(self.getshaderprecisionformat) == (dummy_pfnglgetshaderprecisionformatproc as *const c_void) {&null::<PFNGLGETSHADERPRECISIONFORMATPROC>()} else {&self.getshaderprecisionformat}})
+			.field("getshadersource", unsafe{if transmute::<_, *const c_void>(self.getshadersource) == (dummy_pfnglgetshadersourceproc as *const c_void) {&null::<PFNGLGETSHADERSOURCEPROC>()} else {&self.getshadersource}})
+			.field("getstring", unsafe{if transmute::<_, *const c_void>(self.getstring) == (dummy_pfnglgetstringproc as *const c_void) {&null::<PFNGLGETSTRINGPROC>()} else {&self.getstring}})
+			.field("gettexparameterfv", unsafe{if transmute::<_, *const c_void>(self.gettexparameterfv) == (dummy_pfnglgettexparameterfvproc as *const c_void) {&null::<PFNGLGETTEXPARAMETERFVPROC>()} else {&self.gettexparameterfv}})
+			.field("gettexparameteriv", unsafe{if transmute::<_, *const c_void>(self.gettexparameteriv) == (dummy_pfnglgettexparameterivproc as *const c_void) {&null::<PFNGLGETTEXPARAMETERIVPROC>()} else {&self.gettexparameteriv}})
+			.field("getuniformfv", unsafe{if transmute::<_, *const c_void>(self.getuniformfv) == (dummy_pfnglgetuniformfvproc as *const c_void) {&null::<PFNGLGETUNIFORMFVPROC>()} else {&self.getuniformfv}})
+			.field("getuniformiv", unsafe{if transmute::<_, *const c_void>(self.getuniformiv) == (dummy_pfnglgetuniformivproc as *const c_void) {&null::<PFNGLGETUNIFORMIVPROC>()} else {&self.getuniformiv}})
+			.field("getuniformlocation", unsafe{if transmute::<_, *const c_void>(self.getuniformlocation) == (dummy_pfnglgetuniformlocationproc as *const c_void) {&null::<PFNGLGETUNIFORMLOCATIONPROC>()} else {&self.getuniformlocation}})
+			.field("getvertexattribfv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribfv) == (dummy_pfnglgetvertexattribfvproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBFVPROC>()} else {&self.getvertexattribfv}})
+			.field("getvertexattribiv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribiv) == (dummy_pfnglgetvertexattribivproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBIVPROC>()} else {&self.getvertexattribiv}})
+			.field("getvertexattribpointerv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribpointerv) == (dummy_pfnglgetvertexattribpointervproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBPOINTERVPROC>()} else {&self.getvertexattribpointerv}})
+			.field("hint", unsafe{if transmute::<_, *const c_void>(self.hint) == (dummy_pfnglhintproc as *const c_void) {&null::<PFNGLHINTPROC>()} else {&self.hint}})
+			.field("isbuffer", unsafe{if transmute::<_, *const c_void>(self.isbuffer) == (dummy_pfnglisbufferproc as *const c_void) {&null::<PFNGLISBUFFERPROC>()} else {&self.isbuffer}})
+			.field("isenabled", unsafe{if transmute::<_, *const c_void>(self.isenabled) == (dummy_pfnglisenabledproc as *const c_void) {&null::<PFNGLISENABLEDPROC>()} else {&self.isenabled}})
+			.field("isframebuffer", unsafe{if transmute::<_, *const c_void>(self.isframebuffer) == (dummy_pfnglisframebufferproc as *const c_void) {&null::<PFNGLISFRAMEBUFFERPROC>()} else {&self.isframebuffer}})
+			.field("isprogram", unsafe{if transmute::<_, *const c_void>(self.isprogram) == (dummy_pfnglisprogramproc as *const c_void) {&null::<PFNGLISPROGRAMPROC>()} else {&self.isprogram}})
+			.field("isrenderbuffer", unsafe{if transmute::<_, *const c_void>(self.isrenderbuffer) == (dummy_pfnglisrenderbufferproc as *const c_void) {&null::<PFNGLISRENDERBUFFERPROC>()} else {&self.isrenderbuffer}})
+			.field("isshader", unsafe{if transmute::<_, *const c_void>(self.isshader) == (dummy_pfnglisshaderproc as *const c_void) {&null::<PFNGLISSHADERPROC>()} else {&self.isshader}})
+			.field("istexture", unsafe{if transmute::<_, *const c_void>(self.istexture) == (dummy_pfnglistextureproc as *const c_void) {&null::<PFNGLISTEXTUREPROC>()} else {&self.istexture}})
+			.field("linewidth", unsafe{if transmute::<_, *const c_void>(self.linewidth) == (dummy_pfngllinewidthproc as *const c_void) {&null::<PFNGLLINEWIDTHPROC>()} else {&self.linewidth}})
+			.field("linkprogram", unsafe{if transmute::<_, *const c_void>(self.linkprogram) == (dummy_pfngllinkprogramproc as *const c_void) {&null::<PFNGLLINKPROGRAMPROC>()} else {&self.linkprogram}})
+			.field("pixelstorei", unsafe{if transmute::<_, *const c_void>(self.pixelstorei) == (dummy_pfnglpixelstoreiproc as *const c_void) {&null::<PFNGLPIXELSTOREIPROC>()} else {&self.pixelstorei}})
+			.field("polygonoffset", unsafe{if transmute::<_, *const c_void>(self.polygonoffset) == (dummy_pfnglpolygonoffsetproc as *const c_void) {&null::<PFNGLPOLYGONOFFSETPROC>()} else {&self.polygonoffset}})
+			.field("readpixels", unsafe{if transmute::<_, *const c_void>(self.readpixels) == (dummy_pfnglreadpixelsproc as *const c_void) {&null::<PFNGLREADPIXELSPROC>()} else {&self.readpixels}})
+			.field("releaseshadercompiler", unsafe{if transmute::<_, *const c_void>(self.releaseshadercompiler) == (dummy_pfnglreleaseshadercompilerproc as *const c_void) {&null::<PFNGLRELEASESHADERCOMPILERPROC>()} else {&self.releaseshadercompiler}})
+			.field("renderbufferstorage", unsafe{if transmute::<_, *const c_void>(self.renderbufferstorage) == (dummy_pfnglrenderbufferstorageproc as *const c_void) {&null::<PFNGLRENDERBUFFERSTORAGEPROC>()} else {&self.renderbufferstorage}})
+			.field("samplecoverage", unsafe{if transmute::<_, *const c_void>(self.samplecoverage) == (dummy_pfnglsamplecoverageproc as *const c_void) {&null::<PFNGLSAMPLECOVERAGEPROC>()} else {&self.samplecoverage}})
+			.field("scissor", unsafe{if transmute::<_, *const c_void>(self.scissor) == (dummy_pfnglscissorproc as *const c_void) {&null::<PFNGLSCISSORPROC>()} else {&self.scissor}})
+			.field("shaderbinary", unsafe{if transmute::<_, *const c_void>(self.shaderbinary) == (dummy_pfnglshaderbinaryproc as *const c_void) {&null::<PFNGLSHADERBINARYPROC>()} else {&self.shaderbinary}})
+			.field("shadersource", unsafe{if transmute::<_, *const c_void>(self.shadersource) == (dummy_pfnglshadersourceproc as *const c_void) {&null::<PFNGLSHADERSOURCEPROC>()} else {&self.shadersource}})
+			.field("stencilfunc", unsafe{if transmute::<_, *const c_void>(self.stencilfunc) == (dummy_pfnglstencilfuncproc as *const c_void) {&null::<PFNGLSTENCILFUNCPROC>()} else {&self.stencilfunc}})
+			.field("stencilfuncseparate", unsafe{if transmute::<_, *const c_void>(self.stencilfuncseparate) == (dummy_pfnglstencilfuncseparateproc as *const c_void) {&null::<PFNGLSTENCILFUNCSEPARATEPROC>()} else {&self.stencilfuncseparate}})
+			.field("stencilmask", unsafe{if transmute::<_, *const c_void>(self.stencilmask) == (dummy_pfnglstencilmaskproc as *const c_void) {&null::<PFNGLSTENCILMASKPROC>()} else {&self.stencilmask}})
+			.field("stencilmaskseparate", unsafe{if transmute::<_, *const c_void>(self.stencilmaskseparate) == (dummy_pfnglstencilmaskseparateproc as *const c_void) {&null::<PFNGLSTENCILMASKSEPARATEPROC>()} else {&self.stencilmaskseparate}})
+			.field("stencilop", unsafe{if transmute::<_, *const c_void>(self.stencilop) == (dummy_pfnglstencilopproc as *const c_void) {&null::<PFNGLSTENCILOPPROC>()} else {&self.stencilop}})
+			.field("stencilopseparate", unsafe{if transmute::<_, *const c_void>(self.stencilopseparate) == (dummy_pfnglstencilopseparateproc as *const c_void) {&null::<PFNGLSTENCILOPSEPARATEPROC>()} else {&self.stencilopseparate}})
+			.field("teximage2d", unsafe{if transmute::<_, *const c_void>(self.teximage2d) == (dummy_pfnglteximage2dproc as *const c_void) {&null::<PFNGLTEXIMAGE2DPROC>()} else {&self.teximage2d}})
+			.field("texparameterf", unsafe{if transmute::<_, *const c_void>(self.texparameterf) == (dummy_pfngltexparameterfproc as *const c_void) {&null::<PFNGLTEXPARAMETERFPROC>()} else {&self.texparameterf}})
+			.field("texparameterfv", unsafe{if transmute::<_, *const c_void>(self.texparameterfv) == (dummy_pfngltexparameterfvproc as *const c_void) {&null::<PFNGLTEXPARAMETERFVPROC>()} else {&self.texparameterfv}})
+			.field("texparameteri", unsafe{if transmute::<_, *const c_void>(self.texparameteri) == (dummy_pfngltexparameteriproc as *const c_void) {&null::<PFNGLTEXPARAMETERIPROC>()} else {&self.texparameteri}})
+			.field("texparameteriv", unsafe{if transmute::<_, *const c_void>(self.texparameteriv) == (dummy_pfngltexparameterivproc as *const c_void) {&null::<PFNGLTEXPARAMETERIVPROC>()} else {&self.texparameteriv}})
+			.field("texsubimage2d", unsafe{if transmute::<_, *const c_void>(self.texsubimage2d) == (dummy_pfngltexsubimage2dproc as *const c_void) {&null::<PFNGLTEXSUBIMAGE2DPROC>()} else {&self.texsubimage2d}})
+			.field("uniform1f", unsafe{if transmute::<_, *const c_void>(self.uniform1f) == (dummy_pfngluniform1fproc as *const c_void) {&null::<PFNGLUNIFORM1FPROC>()} else {&self.uniform1f}})
+			.field("uniform1fv", unsafe{if transmute::<_, *const c_void>(self.uniform1fv) == (dummy_pfngluniform1fvproc as *const c_void) {&null::<PFNGLUNIFORM1FVPROC>()} else {&self.uniform1fv}})
+			.field("uniform1i", unsafe{if transmute::<_, *const c_void>(self.uniform1i) == (dummy_pfngluniform1iproc as *const c_void) {&null::<PFNGLUNIFORM1IPROC>()} else {&self.uniform1i}})
+			.field("uniform1iv", unsafe{if transmute::<_, *const c_void>(self.uniform1iv) == (dummy_pfngluniform1ivproc as *const c_void) {&null::<PFNGLUNIFORM1IVPROC>()} else {&self.uniform1iv}})
+			.field("uniform2f", unsafe{if transmute::<_, *const c_void>(self.uniform2f) == (dummy_pfngluniform2fproc as *const c_void) {&null::<PFNGLUNIFORM2FPROC>()} else {&self.uniform2f}})
+			.field("uniform2fv", unsafe{if transmute::<_, *const c_void>(self.uniform2fv) == (dummy_pfngluniform2fvproc as *const c_void) {&null::<PFNGLUNIFORM2FVPROC>()} else {&self.uniform2fv}})
+			.field("uniform2i", unsafe{if transmute::<_, *const c_void>(self.uniform2i) == (dummy_pfngluniform2iproc as *const c_void) {&null::<PFNGLUNIFORM2IPROC>()} else {&self.uniform2i}})
+			.field("uniform2iv", unsafe{if transmute::<_, *const c_void>(self.uniform2iv) == (dummy_pfngluniform2ivproc as *const c_void) {&null::<PFNGLUNIFORM2IVPROC>()} else {&self.uniform2iv}})
+			.field("uniform3f", unsafe{if transmute::<_, *const c_void>(self.uniform3f) == (dummy_pfngluniform3fproc as *const c_void) {&null::<PFNGLUNIFORM3FPROC>()} else {&self.uniform3f}})
+			.field("uniform3fv", unsafe{if transmute::<_, *const c_void>(self.uniform3fv) == (dummy_pfngluniform3fvproc as *const c_void) {&null::<PFNGLUNIFORM3FVPROC>()} else {&self.uniform3fv}})
+			.field("uniform3i", unsafe{if transmute::<_, *const c_void>(self.uniform3i) == (dummy_pfngluniform3iproc as *const c_void) {&null::<PFNGLUNIFORM3IPROC>()} else {&self.uniform3i}})
+			.field("uniform3iv", unsafe{if transmute::<_, *const c_void>(self.uniform3iv) == (dummy_pfngluniform3ivproc as *const c_void) {&null::<PFNGLUNIFORM3IVPROC>()} else {&self.uniform3iv}})
+			.field("uniform4f", unsafe{if transmute::<_, *const c_void>(self.uniform4f) == (dummy_pfngluniform4fproc as *const c_void) {&null::<PFNGLUNIFORM4FPROC>()} else {&self.uniform4f}})
+			.field("uniform4fv", unsafe{if transmute::<_, *const c_void>(self.uniform4fv) == (dummy_pfngluniform4fvproc as *const c_void) {&null::<PFNGLUNIFORM4FVPROC>()} else {&self.uniform4fv}})
+			.field("uniform4i", unsafe{if transmute::<_, *const c_void>(self.uniform4i) == (dummy_pfngluniform4iproc as *const c_void) {&null::<PFNGLUNIFORM4IPROC>()} else {&self.uniform4i}})
+			.field("uniform4iv", unsafe{if transmute::<_, *const c_void>(self.uniform4iv) == (dummy_pfngluniform4ivproc as *const c_void) {&null::<PFNGLUNIFORM4IVPROC>()} else {&self.uniform4iv}})
+			.field("uniformmatrix2fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix2fv) == (dummy_pfngluniformmatrix2fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX2FVPROC>()} else {&self.uniformmatrix2fv}})
+			.field("uniformmatrix3fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix3fv) == (dummy_pfngluniformmatrix3fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX3FVPROC>()} else {&self.uniformmatrix3fv}})
+			.field("uniformmatrix4fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix4fv) == (dummy_pfngluniformmatrix4fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX4FVPROC>()} else {&self.uniformmatrix4fv}})
+			.field("useprogram", unsafe{if transmute::<_, *const c_void>(self.useprogram) == (dummy_pfngluseprogramproc as *const c_void) {&null::<PFNGLUSEPROGRAMPROC>()} else {&self.useprogram}})
+			.field("validateprogram", unsafe{if transmute::<_, *const c_void>(self.validateprogram) == (dummy_pfnglvalidateprogramproc as *const c_void) {&null::<PFNGLVALIDATEPROGRAMPROC>()} else {&self.validateprogram}})
+			.field("vertexattrib1f", unsafe{if transmute::<_, *const c_void>(self.vertexattrib1f) == (dummy_pfnglvertexattrib1fproc as *const c_void) {&null::<PFNGLVERTEXATTRIB1FPROC>()} else {&self.vertexattrib1f}})
+			.field("vertexattrib1fv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib1fv) == (dummy_pfnglvertexattrib1fvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB1FVPROC>()} else {&self.vertexattrib1fv}})
+			.field("vertexattrib2f", unsafe{if transmute::<_, *const c_void>(self.vertexattrib2f) == (dummy_pfnglvertexattrib2fproc as *const c_void) {&null::<PFNGLVERTEXATTRIB2FPROC>()} else {&self.vertexattrib2f}})
+			.field("vertexattrib2fv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib2fv) == (dummy_pfnglvertexattrib2fvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB2FVPROC>()} else {&self.vertexattrib2fv}})
+			.field("vertexattrib3f", unsafe{if transmute::<_, *const c_void>(self.vertexattrib3f) == (dummy_pfnglvertexattrib3fproc as *const c_void) {&null::<PFNGLVERTEXATTRIB3FPROC>()} else {&self.vertexattrib3f}})
+			.field("vertexattrib3fv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib3fv) == (dummy_pfnglvertexattrib3fvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB3FVPROC>()} else {&self.vertexattrib3fv}})
+			.field("vertexattrib4f", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4f) == (dummy_pfnglvertexattrib4fproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4FPROC>()} else {&self.vertexattrib4f}})
+			.field("vertexattrib4fv", unsafe{if transmute::<_, *const c_void>(self.vertexattrib4fv) == (dummy_pfnglvertexattrib4fvproc as *const c_void) {&null::<PFNGLVERTEXATTRIB4FVPROC>()} else {&self.vertexattrib4fv}})
+			.field("vertexattribpointer", unsafe{if transmute::<_, *const c_void>(self.vertexattribpointer) == (dummy_pfnglvertexattribpointerproc as *const c_void) {&null::<PFNGLVERTEXATTRIBPOINTERPROC>()} else {&self.vertexattribpointer}})
+			.field("viewport", unsafe{if transmute::<_, *const c_void>(self.viewport) == (dummy_pfnglviewportproc as *const c_void) {&null::<PFNGLVIEWPORTPROC>()} else {&self.viewport}})
+			.finish()
+		} else {
+			f.debug_struct("EsVersion20")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
+
+
+/// Functions from OpenGL ES version 3.0
+pub trait ES_GL_3_0 {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	fn glGetError(&self) -> GLenum;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadBuffer.xhtml>
+	fn glReadBuffer(&self, src: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawRangeElements.xhtml>
+	fn glDrawRangeElements(&self, mode: GLenum, start: GLuint, end: GLuint, count: GLsizei, type_: GLenum, indices: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexImage3D.xhtml>
+	fn glTexImage3D(&self, target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, border: GLint, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexSubImage3D.xhtml>
+	fn glTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyTexSubImage3D.xhtml>
+	fn glCopyTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexImage3D.xhtml>
+	fn glCompressedTexImage3D(&self, target: GLenum, level: GLint, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, border: GLint, imageSize: GLsizei, data: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexSubImage3D.xhtml>
+	fn glCompressedTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenQueries.xhtml>
+	fn glGenQueries(&self, n: GLsizei, ids: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteQueries.xhtml>
+	fn glDeleteQueries(&self, n: GLsizei, ids: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsQuery.xhtml>
+	fn glIsQuery(&self, id: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBeginQuery.xhtml>
+	fn glBeginQuery(&self, target: GLenum, id: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEndQuery.xhtml>
+	fn glEndQuery(&self, target: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetQueryiv.xhtml>
+	fn glGetQueryiv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetQueryObjectuiv.xhtml>
+	fn glGetQueryObjectuiv(&self, id: GLuint, pname: GLenum, params: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUnmapBuffer.xhtml>
+	fn glUnmapBuffer(&self, target: GLenum) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBufferPointerv.xhtml>
+	fn glGetBufferPointerv(&self, target: GLenum, pname: GLenum, params: *mut *mut c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawBuffers.xhtml>
+	fn glDrawBuffers(&self, n: GLsizei, bufs: *const GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix2x3fv.xhtml>
+	fn glUniformMatrix2x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix3x2fv.xhtml>
+	fn glUniformMatrix3x2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix2x4fv.xhtml>
+	fn glUniformMatrix2x4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix4x2fv.xhtml>
+	fn glUniformMatrix4x2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix3x4fv.xhtml>
+	fn glUniformMatrix3x4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix4x3fv.xhtml>
+	fn glUniformMatrix4x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlitFramebuffer.xhtml>
+	fn glBlitFramebuffer(&self, srcX0: GLint, srcY0: GLint, srcX1: GLint, srcY1: GLint, dstX0: GLint, dstY0: GLint, dstX1: GLint, dstY1: GLint, mask: GLbitfield, filter: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glRenderbufferStorageMultisample.xhtml>
+	fn glRenderbufferStorageMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferTextureLayer.xhtml>
+	fn glFramebufferTextureLayer(&self, target: GLenum, attachment: GLenum, texture: GLuint, level: GLint, layer: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMapBufferRange.xhtml>
+	fn glMapBufferRange(&self, target: GLenum, offset: GLintptr, length: GLsizeiptr, access: GLbitfield) -> Result<*mut c_void>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFlushMappedBufferRange.xhtml>
+	fn glFlushMappedBufferRange(&self, target: GLenum, offset: GLintptr, length: GLsizeiptr) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindVertexArray.xhtml>
+	fn glBindVertexArray(&self, array: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteVertexArrays.xhtml>
+	fn glDeleteVertexArrays(&self, n: GLsizei, arrays: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenVertexArrays.xhtml>
+	fn glGenVertexArrays(&self, n: GLsizei, arrays: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsVertexArray.xhtml>
+	fn glIsVertexArray(&self, array: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetIntegeri_v.xhtml>
+	fn glGetIntegeri_v(&self, target: GLenum, index: GLuint, data: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBeginTransformFeedback.xhtml>
+	fn glBeginTransformFeedback(&self, primitiveMode: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEndTransformFeedback.xhtml>
+	fn glEndTransformFeedback(&self) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBufferRange.xhtml>
+	fn glBindBufferRange(&self, target: GLenum, index: GLuint, buffer: GLuint, offset: GLintptr, size: GLsizeiptr) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBufferBase.xhtml>
+	fn glBindBufferBase(&self, target: GLenum, index: GLuint, buffer: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTransformFeedbackVaryings.xhtml>
+	fn glTransformFeedbackVaryings(&self, program: GLuint, count: GLsizei, varyings: *const *const GLchar, bufferMode: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTransformFeedbackVarying.xhtml>
+	fn glGetTransformFeedbackVarying(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLsizei, type_: *mut GLenum, name: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribIPointer.xhtml>
+	fn glVertexAttribIPointer(&self, index: GLuint, size: GLint, type_: GLenum, stride: GLsizei, pointer: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribIiv.xhtml>
+	fn glGetVertexAttribIiv(&self, index: GLuint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribIuiv.xhtml>
+	fn glGetVertexAttribIuiv(&self, index: GLuint, pname: GLenum, params: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4i.xhtml>
+	fn glVertexAttribI4i(&self, index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4ui.xhtml>
+	fn glVertexAttribI4ui(&self, index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4iv.xhtml>
+	fn glVertexAttribI4iv(&self, index: GLuint, v: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4uiv.xhtml>
+	fn glVertexAttribI4uiv(&self, index: GLuint, v: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformuiv.xhtml>
+	fn glGetUniformuiv(&self, program: GLuint, location: GLint, params: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFragDataLocation.xhtml>
+	fn glGetFragDataLocation(&self, program: GLuint, name: *const GLchar) -> Result<GLint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1ui.xhtml>
+	fn glUniform1ui(&self, location: GLint, v0: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2ui.xhtml>
+	fn glUniform2ui(&self, location: GLint, v0: GLuint, v1: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3ui.xhtml>
+	fn glUniform3ui(&self, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4ui.xhtml>
+	fn glUniform4ui(&self, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1uiv.xhtml>
+	fn glUniform1uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2uiv.xhtml>
+	fn glUniform2uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3uiv.xhtml>
+	fn glUniform3uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4uiv.xhtml>
+	fn glUniform4uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferiv.xhtml>
+	fn glClearBufferiv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferuiv.xhtml>
+	fn glClearBufferuiv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferfv.xhtml>
+	fn glClearBufferfv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferfi.xhtml>
+	fn glClearBufferfi(&self, buffer: GLenum, drawbuffer: GLint, depth: GLfloat, stencil: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetStringi.xhtml>
+	fn glGetStringi(&self, name: GLenum, index: GLuint) -> Result<&'static str>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyBufferSubData.xhtml>
+	fn glCopyBufferSubData(&self, readTarget: GLenum, writeTarget: GLenum, readOffset: GLintptr, writeOffset: GLintptr, size: GLsizeiptr) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformIndices.xhtml>
+	fn glGetUniformIndices(&self, program: GLuint, uniformCount: GLsizei, uniformNames: *const *const GLchar, uniformIndices: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniformsiv.xhtml>
+	fn glGetActiveUniformsiv(&self, program: GLuint, uniformCount: GLsizei, uniformIndices: *const GLuint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformBlockIndex.xhtml>
+	fn glGetUniformBlockIndex(&self, program: GLuint, uniformBlockName: *const GLchar) -> Result<GLuint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniformBlockiv.xhtml>
+	fn glGetActiveUniformBlockiv(&self, program: GLuint, uniformBlockIndex: GLuint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniformBlockName.xhtml>
+	fn glGetActiveUniformBlockName(&self, program: GLuint, uniformBlockIndex: GLuint, bufSize: GLsizei, length: *mut GLsizei, uniformBlockName: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformBlockBinding.xhtml>
+	fn glUniformBlockBinding(&self, program: GLuint, uniformBlockIndex: GLuint, uniformBlockBinding: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawArraysInstanced.xhtml>
+	fn glDrawArraysInstanced(&self, mode: GLenum, first: GLint, count: GLsizei, instancecount: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsInstanced.xhtml>
+	fn glDrawElementsInstanced(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFenceSync.xhtml>
+	fn glFenceSync(&self, condition: GLenum, flags: GLbitfield) -> Result<GLsync>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsSync.xhtml>
+	fn glIsSync(&self, sync: GLsync) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteSync.xhtml>
+	fn glDeleteSync(&self, sync: GLsync) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClientWaitSync.xhtml>
+	fn glClientWaitSync(&self, sync: GLsync, flags: GLbitfield, timeout: GLuint64) -> Result<GLenum>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glWaitSync.xhtml>
+	fn glWaitSync(&self, sync: GLsync, flags: GLbitfield, timeout: GLuint64) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetInteger64v.xhtml>
+	fn glGetInteger64v(&self, pname: GLenum, data: *mut GLint64) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSynciv.xhtml>
+	fn glGetSynciv(&self, sync: GLsync, pname: GLenum, bufSize: GLsizei, length: *mut GLsizei, values: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetInteger64i_v.xhtml>
+	fn glGetInteger64i_v(&self, target: GLenum, index: GLuint, data: *mut GLint64) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBufferParameteri64v.xhtml>
+	fn glGetBufferParameteri64v(&self, target: GLenum, pname: GLenum, params: *mut GLint64) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenSamplers.xhtml>
+	fn glGenSamplers(&self, count: GLsizei, samplers: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteSamplers.xhtml>
+	fn glDeleteSamplers(&self, count: GLsizei, samplers: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsSampler.xhtml>
+	fn glIsSampler(&self, sampler: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindSampler.xhtml>
+	fn glBindSampler(&self, unit: GLuint, sampler: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameteri.xhtml>
+	fn glSamplerParameteri(&self, sampler: GLuint, pname: GLenum, param: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameteriv.xhtml>
+	fn glSamplerParameteriv(&self, sampler: GLuint, pname: GLenum, param: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterf.xhtml>
+	fn glSamplerParameterf(&self, sampler: GLuint, pname: GLenum, param: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterfv.xhtml>
+	fn glSamplerParameterfv(&self, sampler: GLuint, pname: GLenum, param: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameteriv.xhtml>
+	fn glGetSamplerParameteriv(&self, sampler: GLuint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameterfv.xhtml>
+	fn glGetSamplerParameterfv(&self, sampler: GLuint, pname: GLenum, params: *mut GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribDivisor.xhtml>
+	fn glVertexAttribDivisor(&self, index: GLuint, divisor: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindTransformFeedback.xhtml>
+	fn glBindTransformFeedback(&self, target: GLenum, id: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteTransformFeedbacks.xhtml>
+	fn glDeleteTransformFeedbacks(&self, n: GLsizei, ids: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenTransformFeedbacks.xhtml>
+	fn glGenTransformFeedbacks(&self, n: GLsizei, ids: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsTransformFeedback.xhtml>
+	fn glIsTransformFeedback(&self, id: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPauseTransformFeedback.xhtml>
+	fn glPauseTransformFeedback(&self) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glResumeTransformFeedback.xhtml>
+	fn glResumeTransformFeedback(&self) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramBinary.xhtml>
+	fn glGetProgramBinary(&self, program: GLuint, bufSize: GLsizei, length: *mut GLsizei, binaryFormat: *mut GLenum, binary: *mut c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramBinary.xhtml>
+	fn glProgramBinary(&self, program: GLuint, binaryFormat: GLenum, binary: *const c_void, length: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramParameteri.xhtml>
+	fn glProgramParameteri(&self, program: GLuint, pname: GLenum, value: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glInvalidateFramebuffer.xhtml>
+	fn glInvalidateFramebuffer(&self, target: GLenum, numAttachments: GLsizei, attachments: *const GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glInvalidateSubFramebuffer.xhtml>
+	fn glInvalidateSubFramebuffer(&self, target: GLenum, numAttachments: GLsizei, attachments: *const GLenum, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage2D.xhtml>
+	fn glTexStorage2D(&self, target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage3D.xhtml>
+	fn glTexStorage3D(&self, target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetInternalformativ.xhtml>
+	fn glGetInternalformativ(&self, target: GLenum, internalformat: GLenum, pname: GLenum, bufSize: GLsizei, params: *mut GLint) -> Result<()>;
+}
+/// Functions from OpenGL ES version 3.0
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
+pub struct EsVersion30 {
+	/// Is OpenGL ES version 3.0 available
+	available: bool,
+
+	/// The function pointer to `glGetError()`
+	pub geterror: PFNGLGETERRORPROC,
+
+	/// The function pointer to `glReadBuffer()`
+	pub readbuffer: PFNGLREADBUFFERPROC,
+
+	/// The function pointer to `glDrawRangeElements()`
+	pub drawrangeelements: PFNGLDRAWRANGEELEMENTSPROC,
+
+	/// The function pointer to `glTexImage3D()`
+	pub teximage3d: PFNGLTEXIMAGE3DPROC,
+
+	/// The function pointer to `glTexSubImage3D()`
+	pub texsubimage3d: PFNGLTEXSUBIMAGE3DPROC,
+
+	/// The function pointer to `glCopyTexSubImage3D()`
+	pub copytexsubimage3d: PFNGLCOPYTEXSUBIMAGE3DPROC,
+
+	/// The function pointer to `glCompressedTexImage3D()`
+	pub compressedteximage3d: PFNGLCOMPRESSEDTEXIMAGE3DPROC,
+
+	/// The function pointer to `glCompressedTexSubImage3D()`
+	pub compressedtexsubimage3d: PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC,
+
+	/// The function pointer to `glGenQueries()`
+	pub genqueries: PFNGLGENQUERIESPROC,
+
+	/// The function pointer to `glDeleteQueries()`
+	pub deletequeries: PFNGLDELETEQUERIESPROC,
+
+	/// The function pointer to `glIsQuery()`
+	pub isquery: PFNGLISQUERYPROC,
+
+	/// The function pointer to `glBeginQuery()`
+	pub beginquery: PFNGLBEGINQUERYPROC,
+
+	/// The function pointer to `glEndQuery()`
+	pub endquery: PFNGLENDQUERYPROC,
+
+	/// The function pointer to `glGetQueryiv()`
+	pub getqueryiv: PFNGLGETQUERYIVPROC,
+
+	/// The function pointer to `glGetQueryObjectuiv()`
+	pub getqueryobjectuiv: PFNGLGETQUERYOBJECTUIVPROC,
+
+	/// The function pointer to `glUnmapBuffer()`
+	pub unmapbuffer: PFNGLUNMAPBUFFERPROC,
+
+	/// The function pointer to `glGetBufferPointerv()`
+	pub getbufferpointerv: PFNGLGETBUFFERPOINTERVPROC,
+
+	/// The function pointer to `glDrawBuffers()`
+	pub drawbuffers: PFNGLDRAWBUFFERSPROC,
+
+	/// The function pointer to `glUniformMatrix2x3fv()`
+	pub uniformmatrix2x3fv: PFNGLUNIFORMMATRIX2X3FVPROC,
+
+	/// The function pointer to `glUniformMatrix3x2fv()`
+	pub uniformmatrix3x2fv: PFNGLUNIFORMMATRIX3X2FVPROC,
+
+	/// The function pointer to `glUniformMatrix2x4fv()`
+	pub uniformmatrix2x4fv: PFNGLUNIFORMMATRIX2X4FVPROC,
+
+	/// The function pointer to `glUniformMatrix4x2fv()`
+	pub uniformmatrix4x2fv: PFNGLUNIFORMMATRIX4X2FVPROC,
+
+	/// The function pointer to `glUniformMatrix3x4fv()`
+	pub uniformmatrix3x4fv: PFNGLUNIFORMMATRIX3X4FVPROC,
+
+	/// The function pointer to `glUniformMatrix4x3fv()`
+	pub uniformmatrix4x3fv: PFNGLUNIFORMMATRIX4X3FVPROC,
+
+	/// The function pointer to `glBlitFramebuffer()`
+	pub blitframebuffer: PFNGLBLITFRAMEBUFFERPROC,
+
+	/// The function pointer to `glRenderbufferStorageMultisample()`
+	pub renderbufferstoragemultisample: PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC,
+
+	/// The function pointer to `glFramebufferTextureLayer()`
+	pub framebuffertexturelayer: PFNGLFRAMEBUFFERTEXTURELAYERPROC,
+
+	/// The function pointer to `glMapBufferRange()`
+	pub mapbufferrange: PFNGLMAPBUFFERRANGEPROC,
+
+	/// The function pointer to `glFlushMappedBufferRange()`
+	pub flushmappedbufferrange: PFNGLFLUSHMAPPEDBUFFERRANGEPROC,
+
+	/// The function pointer to `glBindVertexArray()`
+	pub bindvertexarray: PFNGLBINDVERTEXARRAYPROC,
+
+	/// The function pointer to `glDeleteVertexArrays()`
+	pub deletevertexarrays: PFNGLDELETEVERTEXARRAYSPROC,
+
+	/// The function pointer to `glGenVertexArrays()`
+	pub genvertexarrays: PFNGLGENVERTEXARRAYSPROC,
+
+	/// The function pointer to `glIsVertexArray()`
+	pub isvertexarray: PFNGLISVERTEXARRAYPROC,
+
+	/// The function pointer to `glGetIntegeri_v()`
+	pub getintegeri_v: PFNGLGETINTEGERI_VPROC,
+
+	/// The function pointer to `glBeginTransformFeedback()`
+	pub begintransformfeedback: PFNGLBEGINTRANSFORMFEEDBACKPROC,
+
+	/// The function pointer to `glEndTransformFeedback()`
+	pub endtransformfeedback: PFNGLENDTRANSFORMFEEDBACKPROC,
+
+	/// The function pointer to `glBindBufferRange()`
+	pub bindbufferrange: PFNGLBINDBUFFERRANGEPROC,
+
+	/// The function pointer to `glBindBufferBase()`
+	pub bindbufferbase: PFNGLBINDBUFFERBASEPROC,
+
+	/// The function pointer to `glTransformFeedbackVaryings()`
+	pub transformfeedbackvaryings: PFNGLTRANSFORMFEEDBACKVARYINGSPROC,
+
+	/// The function pointer to `glGetTransformFeedbackVarying()`
+	pub gettransformfeedbackvarying: PFNGLGETTRANSFORMFEEDBACKVARYINGPROC,
+
+	/// The function pointer to `glVertexAttribIPointer()`
+	pub vertexattribipointer: PFNGLVERTEXATTRIBIPOINTERPROC,
+
+	/// The function pointer to `glGetVertexAttribIiv()`
+	pub getvertexattribiiv: PFNGLGETVERTEXATTRIBIIVPROC,
+
+	/// The function pointer to `glGetVertexAttribIuiv()`
+	pub getvertexattribiuiv: PFNGLGETVERTEXATTRIBIUIVPROC,
+
+	/// The function pointer to `glVertexAttribI4i()`
+	pub vertexattribi4i: PFNGLVERTEXATTRIBI4IPROC,
+
+	/// The function pointer to `glVertexAttribI4ui()`
+	pub vertexattribi4ui: PFNGLVERTEXATTRIBI4UIPROC,
+
+	/// The function pointer to `glVertexAttribI4iv()`
+	pub vertexattribi4iv: PFNGLVERTEXATTRIBI4IVPROC,
+
+	/// The function pointer to `glVertexAttribI4uiv()`
+	pub vertexattribi4uiv: PFNGLVERTEXATTRIBI4UIVPROC,
+
+	/// The function pointer to `glGetUniformuiv()`
+	pub getuniformuiv: PFNGLGETUNIFORMUIVPROC,
+
+	/// The function pointer to `glGetFragDataLocation()`
+	pub getfragdatalocation: PFNGLGETFRAGDATALOCATIONPROC,
+
+	/// The function pointer to `glUniform1ui()`
+	pub uniform1ui: PFNGLUNIFORM1UIPROC,
+
+	/// The function pointer to `glUniform2ui()`
+	pub uniform2ui: PFNGLUNIFORM2UIPROC,
+
+	/// The function pointer to `glUniform3ui()`
+	pub uniform3ui: PFNGLUNIFORM3UIPROC,
+
+	/// The function pointer to `glUniform4ui()`
+	pub uniform4ui: PFNGLUNIFORM4UIPROC,
+
+	/// The function pointer to `glUniform1uiv()`
+	pub uniform1uiv: PFNGLUNIFORM1UIVPROC,
+
+	/// The function pointer to `glUniform2uiv()`
+	pub uniform2uiv: PFNGLUNIFORM2UIVPROC,
+
+	/// The function pointer to `glUniform3uiv()`
+	pub uniform3uiv: PFNGLUNIFORM3UIVPROC,
+
+	/// The function pointer to `glUniform4uiv()`
+	pub uniform4uiv: PFNGLUNIFORM4UIVPROC,
+
+	/// The function pointer to `glClearBufferiv()`
+	pub clearbufferiv: PFNGLCLEARBUFFERIVPROC,
+
+	/// The function pointer to `glClearBufferuiv()`
+	pub clearbufferuiv: PFNGLCLEARBUFFERUIVPROC,
+
+	/// The function pointer to `glClearBufferfv()`
+	pub clearbufferfv: PFNGLCLEARBUFFERFVPROC,
+
+	/// The function pointer to `glClearBufferfi()`
+	pub clearbufferfi: PFNGLCLEARBUFFERFIPROC,
+
+	/// The function pointer to `glGetStringi()`
+	pub getstringi: PFNGLGETSTRINGIPROC,
+
+	/// The function pointer to `glCopyBufferSubData()`
+	pub copybuffersubdata: PFNGLCOPYBUFFERSUBDATAPROC,
+
+	/// The function pointer to `glGetUniformIndices()`
+	pub getuniformindices: PFNGLGETUNIFORMINDICESPROC,
+
+	/// The function pointer to `glGetActiveUniformsiv()`
+	pub getactiveuniformsiv: PFNGLGETACTIVEUNIFORMSIVPROC,
+
+	/// The function pointer to `glGetUniformBlockIndex()`
+	pub getuniformblockindex: PFNGLGETUNIFORMBLOCKINDEXPROC,
+
+	/// The function pointer to `glGetActiveUniformBlockiv()`
+	pub getactiveuniformblockiv: PFNGLGETACTIVEUNIFORMBLOCKIVPROC,
+
+	/// The function pointer to `glGetActiveUniformBlockName()`
+	pub getactiveuniformblockname: PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC,
+
+	/// The function pointer to `glUniformBlockBinding()`
+	pub uniformblockbinding: PFNGLUNIFORMBLOCKBINDINGPROC,
+
+	/// The function pointer to `glDrawArraysInstanced()`
+	pub drawarraysinstanced: PFNGLDRAWARRAYSINSTANCEDPROC,
+
+	/// The function pointer to `glDrawElementsInstanced()`
+	pub drawelementsinstanced: PFNGLDRAWELEMENTSINSTANCEDPROC,
+
+	/// The function pointer to `glFenceSync()`
+	pub fencesync: PFNGLFENCESYNCPROC,
+
+	/// The function pointer to `glIsSync()`
+	pub issync: PFNGLISSYNCPROC,
+
+	/// The function pointer to `glDeleteSync()`
+	pub deletesync: PFNGLDELETESYNCPROC,
+
+	/// The function pointer to `glClientWaitSync()`
+	pub clientwaitsync: PFNGLCLIENTWAITSYNCPROC,
+
+	/// The function pointer to `glWaitSync()`
+	pub waitsync: PFNGLWAITSYNCPROC,
+
+	/// The function pointer to `glGetInteger64v()`
+	pub getinteger64v: PFNGLGETINTEGER64VPROC,
+
+	/// The function pointer to `glGetSynciv()`
+	pub getsynciv: PFNGLGETSYNCIVPROC,
+
+	/// The function pointer to `glGetInteger64i_v()`
+	pub getinteger64i_v: PFNGLGETINTEGER64I_VPROC,
+
+	/// The function pointer to `glGetBufferParameteri64v()`
+	pub getbufferparameteri64v: PFNGLGETBUFFERPARAMETERI64VPROC,
+
+	/// The function pointer to `glGenSamplers()`
+	pub gensamplers: PFNGLGENSAMPLERSPROC,
+
+	/// The function pointer to `glDeleteSamplers()`
+	pub deletesamplers: PFNGLDELETESAMPLERSPROC,
+
+	/// The function pointer to `glIsSampler()`
+	pub issampler: PFNGLISSAMPLERPROC,
+
+	/// The function pointer to `glBindSampler()`
+	pub bindsampler: PFNGLBINDSAMPLERPROC,
+
+	/// The function pointer to `glSamplerParameteri()`
+	pub samplerparameteri: PFNGLSAMPLERPARAMETERIPROC,
+
+	/// The function pointer to `glSamplerParameteriv()`
+	pub samplerparameteriv: PFNGLSAMPLERPARAMETERIVPROC,
+
+	/// The function pointer to `glSamplerParameterf()`
+	pub samplerparameterf: PFNGLSAMPLERPARAMETERFPROC,
+
+	/// The function pointer to `glSamplerParameterfv()`
+	pub samplerparameterfv: PFNGLSAMPLERPARAMETERFVPROC,
+
+	/// The function pointer to `glGetSamplerParameteriv()`
+	pub getsamplerparameteriv: PFNGLGETSAMPLERPARAMETERIVPROC,
+
+	/// The function pointer to `glGetSamplerParameterfv()`
+	pub getsamplerparameterfv: PFNGLGETSAMPLERPARAMETERFVPROC,
+
+	/// The function pointer to `glVertexAttribDivisor()`
+	pub vertexattribdivisor: PFNGLVERTEXATTRIBDIVISORPROC,
+
+	/// The function pointer to `glBindTransformFeedback()`
+	pub bindtransformfeedback: PFNGLBINDTRANSFORMFEEDBACKPROC,
+
+	/// The function pointer to `glDeleteTransformFeedbacks()`
+	pub deletetransformfeedbacks: PFNGLDELETETRANSFORMFEEDBACKSPROC,
+
+	/// The function pointer to `glGenTransformFeedbacks()`
+	pub gentransformfeedbacks: PFNGLGENTRANSFORMFEEDBACKSPROC,
+
+	/// The function pointer to `glIsTransformFeedback()`
+	pub istransformfeedback: PFNGLISTRANSFORMFEEDBACKPROC,
+
+	/// The function pointer to `glPauseTransformFeedback()`
+	pub pausetransformfeedback: PFNGLPAUSETRANSFORMFEEDBACKPROC,
+
+	/// The function pointer to `glResumeTransformFeedback()`
+	pub resumetransformfeedback: PFNGLRESUMETRANSFORMFEEDBACKPROC,
+
+	/// The function pointer to `glGetProgramBinary()`
+	pub getprogrambinary: PFNGLGETPROGRAMBINARYPROC,
+
+	/// The function pointer to `glProgramBinary()`
+	pub programbinary: PFNGLPROGRAMBINARYPROC,
+
+	/// The function pointer to `glProgramParameteri()`
+	pub programparameteri: PFNGLPROGRAMPARAMETERIPROC,
+
+	/// The function pointer to `glInvalidateFramebuffer()`
+	pub invalidateframebuffer: PFNGLINVALIDATEFRAMEBUFFERPROC,
+
+	/// The function pointer to `glInvalidateSubFramebuffer()`
+	pub invalidatesubframebuffer: PFNGLINVALIDATESUBFRAMEBUFFERPROC,
+
+	/// The function pointer to `glTexStorage2D()`
+	pub texstorage2d: PFNGLTEXSTORAGE2DPROC,
+
+	/// The function pointer to `glTexStorage3D()`
+	pub texstorage3d: PFNGLTEXSTORAGE3DPROC,
+
+	/// The function pointer to `glGetInternalformativ()`
+	pub getinternalformativ: PFNGLGETINTERNALFORMATIVPROC,
+}
+
+impl ES_GL_3_0 for EsVersion30 {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	#[inline(always)]
+	fn glGetError(&self) -> GLenum {
+		(self.geterror)()
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadBuffer.xhtml>
+	#[inline(always)]
+	fn glReadBuffer(&self, src: GLenum) -> Result<()> {
+		let ret = process_catch("glReadBuffer", catch_unwind(||(self.readbuffer)(src)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glReadBuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawRangeElements.xhtml>
+	#[inline(always)]
+	fn glDrawRangeElements(&self, mode: GLenum, start: GLuint, end: GLuint, count: GLsizei, type_: GLenum, indices: *const c_void) -> Result<()> {
+		let ret = process_catch("glDrawRangeElements", catch_unwind(||(self.drawrangeelements)(mode, start, end, count, type_, indices)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawRangeElements", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexImage3D.xhtml>
+	#[inline(always)]
+	fn glTexImage3D(&self, target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, border: GLint, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()> {
+		let ret = process_catch("glTexImage3D", catch_unwind(||(self.teximage3d)(target, level, internalformat, width, height, depth, border, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexImage3D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexSubImage3D.xhtml>
+	#[inline(always)]
+	fn glTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()> {
+		let ret = process_catch("glTexSubImage3D", catch_unwind(||(self.texsubimage3d)(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexSubImage3D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyTexSubImage3D.xhtml>
+	#[inline(always)]
+	fn glCopyTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glCopyTexSubImage3D", catch_unwind(||(self.copytexsubimage3d)(target, level, xoffset, yoffset, zoffset, x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyTexSubImage3D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexImage3D.xhtml>
+	#[inline(always)]
+	fn glCompressedTexImage3D(&self, target: GLenum, level: GLint, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, border: GLint, imageSize: GLsizei, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glCompressedTexImage3D", catch_unwind(||(self.compressedteximage3d)(target, level, internalformat, width, height, depth, border, imageSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompressedTexImage3D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexSubImage3D.xhtml>
+	#[inline(always)]
+	fn glCompressedTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glCompressedTexSubImage3D", catch_unwind(||(self.compressedtexsubimage3d)(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompressedTexSubImage3D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenQueries.xhtml>
+	#[inline(always)]
+	fn glGenQueries(&self, n: GLsizei, ids: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenQueries", catch_unwind(||(self.genqueries)(n, ids)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenQueries", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteQueries.xhtml>
+	#[inline(always)]
+	fn glDeleteQueries(&self, n: GLsizei, ids: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteQueries", catch_unwind(||(self.deletequeries)(n, ids)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteQueries", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsQuery.xhtml>
+	#[inline(always)]
+	fn glIsQuery(&self, id: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsQuery", catch_unwind(||(self.isquery)(id)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsQuery", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBeginQuery.xhtml>
+	#[inline(always)]
+	fn glBeginQuery(&self, target: GLenum, id: GLuint) -> Result<()> {
+		let ret = process_catch("glBeginQuery", catch_unwind(||(self.beginquery)(target, id)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBeginQuery", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEndQuery.xhtml>
+	#[inline(always)]
+	fn glEndQuery(&self, target: GLenum) -> Result<()> {
+		let ret = process_catch("glEndQuery", catch_unwind(||(self.endquery)(target)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEndQuery", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetQueryiv.xhtml>
+	#[inline(always)]
+	fn glGetQueryiv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetQueryiv", catch_unwind(||(self.getqueryiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetQueryiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetQueryObjectuiv.xhtml>
+	#[inline(always)]
+	fn glGetQueryObjectuiv(&self, id: GLuint, pname: GLenum, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetQueryObjectuiv", catch_unwind(||(self.getqueryobjectuiv)(id, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetQueryObjectuiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUnmapBuffer.xhtml>
+	#[inline(always)]
+	fn glUnmapBuffer(&self, target: GLenum) -> Result<GLboolean> {
+		let ret = process_catch("glUnmapBuffer", catch_unwind(||(self.unmapbuffer)(target)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUnmapBuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBufferPointerv.xhtml>
+	#[inline(always)]
+	fn glGetBufferPointerv(&self, target: GLenum, pname: GLenum, params: *mut *mut c_void) -> Result<()> {
+		let ret = process_catch("glGetBufferPointerv", catch_unwind(||(self.getbufferpointerv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBufferPointerv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawBuffers.xhtml>
+	#[inline(always)]
+	fn glDrawBuffers(&self, n: GLsizei, bufs: *const GLenum) -> Result<()> {
+		let ret = process_catch("glDrawBuffers", catch_unwind(||(self.drawbuffers)(n, bufs)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawBuffers", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix2x3fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix2x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix2x3fv", catch_unwind(||(self.uniformmatrix2x3fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix2x3fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix3x2fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix3x2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix3x2fv", catch_unwind(||(self.uniformmatrix3x2fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix3x2fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix2x4fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix2x4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix2x4fv", catch_unwind(||(self.uniformmatrix2x4fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix2x4fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix4x2fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix4x2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix4x2fv", catch_unwind(||(self.uniformmatrix4x2fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix4x2fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix3x4fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix3x4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix3x4fv", catch_unwind(||(self.uniformmatrix3x4fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix3x4fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix4x3fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix4x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix4x3fv", catch_unwind(||(self.uniformmatrix4x3fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix4x3fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlitFramebuffer.xhtml>
+	#[inline(always)]
+	fn glBlitFramebuffer(&self, srcX0: GLint, srcY0: GLint, srcX1: GLint, srcY1: GLint, dstX0: GLint, dstY0: GLint, dstX1: GLint, dstY1: GLint, mask: GLbitfield, filter: GLenum) -> Result<()> {
+		let ret = process_catch("glBlitFramebuffer", catch_unwind(||(self.blitframebuffer)(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlitFramebuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glRenderbufferStorageMultisample.xhtml>
+	#[inline(always)]
+	fn glRenderbufferStorageMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glRenderbufferStorageMultisample", catch_unwind(||(self.renderbufferstoragemultisample)(target, samples, internalformat, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glRenderbufferStorageMultisample", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferTextureLayer.xhtml>
+	#[inline(always)]
+	fn glFramebufferTextureLayer(&self, target: GLenum, attachment: GLenum, texture: GLuint, level: GLint, layer: GLint) -> Result<()> {
+		let ret = process_catch("glFramebufferTextureLayer", catch_unwind(||(self.framebuffertexturelayer)(target, attachment, texture, level, layer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferTextureLayer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMapBufferRange.xhtml>
+	#[inline(always)]
+	fn glMapBufferRange(&self, target: GLenum, offset: GLintptr, length: GLsizeiptr, access: GLbitfield) -> Result<*mut c_void> {
+		let ret = process_catch("glMapBufferRange", catch_unwind(||(self.mapbufferrange)(target, offset, length, access)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glMapBufferRange", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFlushMappedBufferRange.xhtml>
+	#[inline(always)]
+	fn glFlushMappedBufferRange(&self, target: GLenum, offset: GLintptr, length: GLsizeiptr) -> Result<()> {
+		let ret = process_catch("glFlushMappedBufferRange", catch_unwind(||(self.flushmappedbufferrange)(target, offset, length)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFlushMappedBufferRange", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindVertexArray.xhtml>
+	#[inline(always)]
+	fn glBindVertexArray(&self, array: GLuint) -> Result<()> {
+		let ret = process_catch("glBindVertexArray", catch_unwind(||(self.bindvertexarray)(array)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindVertexArray", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteVertexArrays.xhtml>
+	#[inline(always)]
+	fn glDeleteVertexArrays(&self, n: GLsizei, arrays: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteVertexArrays", catch_unwind(||(self.deletevertexarrays)(n, arrays)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteVertexArrays", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenVertexArrays.xhtml>
+	#[inline(always)]
+	fn glGenVertexArrays(&self, n: GLsizei, arrays: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenVertexArrays", catch_unwind(||(self.genvertexarrays)(n, arrays)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenVertexArrays", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsVertexArray.xhtml>
+	#[inline(always)]
+	fn glIsVertexArray(&self, array: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsVertexArray", catch_unwind(||(self.isvertexarray)(array)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsVertexArray", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetIntegeri_v.xhtml>
+	#[inline(always)]
+	fn glGetIntegeri_v(&self, target: GLenum, index: GLuint, data: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetIntegeri_v", catch_unwind(||(self.getintegeri_v)(target, index, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetIntegeri_v", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBeginTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glBeginTransformFeedback(&self, primitiveMode: GLenum) -> Result<()> {
+		let ret = process_catch("glBeginTransformFeedback", catch_unwind(||(self.begintransformfeedback)(primitiveMode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBeginTransformFeedback", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEndTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glEndTransformFeedback(&self) -> Result<()> {
+		let ret = process_catch("glEndTransformFeedback", catch_unwind(||(self.endtransformfeedback)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEndTransformFeedback", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBufferRange.xhtml>
+	#[inline(always)]
+	fn glBindBufferRange(&self, target: GLenum, index: GLuint, buffer: GLuint, offset: GLintptr, size: GLsizeiptr) -> Result<()> {
+		let ret = process_catch("glBindBufferRange", catch_unwind(||(self.bindbufferrange)(target, index, buffer, offset, size)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindBufferRange", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBufferBase.xhtml>
+	#[inline(always)]
+	fn glBindBufferBase(&self, target: GLenum, index: GLuint, buffer: GLuint) -> Result<()> {
+		let ret = process_catch("glBindBufferBase", catch_unwind(||(self.bindbufferbase)(target, index, buffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindBufferBase", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTransformFeedbackVaryings.xhtml>
+	#[inline(always)]
+	fn glTransformFeedbackVaryings(&self, program: GLuint, count: GLsizei, varyings: *const *const GLchar, bufferMode: GLenum) -> Result<()> {
+		let ret = process_catch("glTransformFeedbackVaryings", catch_unwind(||(self.transformfeedbackvaryings)(program, count, varyings, bufferMode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTransformFeedbackVaryings", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTransformFeedbackVarying.xhtml>
+	#[inline(always)]
+	fn glGetTransformFeedbackVarying(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLsizei, type_: *mut GLenum, name: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetTransformFeedbackVarying", catch_unwind(||(self.gettransformfeedbackvarying)(program, index, bufSize, length, size, type_, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTransformFeedbackVarying", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribIPointer.xhtml>
+	#[inline(always)]
+	fn glVertexAttribIPointer(&self, index: GLuint, size: GLint, type_: GLenum, stride: GLsizei, pointer: *const c_void) -> Result<()> {
+		let ret = process_catch("glVertexAttribIPointer", catch_unwind(||(self.vertexattribipointer)(index, size, type_, stride, pointer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribIPointer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribIiv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribIiv(&self, index: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribIiv", catch_unwind(||(self.getvertexattribiiv)(index, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribIiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribIuiv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribIuiv(&self, index: GLuint, pname: GLenum, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribIuiv", catch_unwind(||(self.getvertexattribiuiv)(index, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribIuiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4i.xhtml>
+	#[inline(always)]
+	fn glVertexAttribI4i(&self, index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint) -> Result<()> {
+		let ret = process_catch("glVertexAttribI4i", catch_unwind(||(self.vertexattribi4i)(index, x, y, z, w)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribI4i", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4ui.xhtml>
+	#[inline(always)]
+	fn glVertexAttribI4ui(&self, index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribI4ui", catch_unwind(||(self.vertexattribi4ui)(index, x, y, z, w)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribI4ui", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4iv.xhtml>
+	#[inline(always)]
+	fn glVertexAttribI4iv(&self, index: GLuint, v: *const GLint) -> Result<()> {
+		let ret = process_catch("glVertexAttribI4iv", catch_unwind(||(self.vertexattribi4iv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribI4iv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4uiv.xhtml>
+	#[inline(always)]
+	fn glVertexAttribI4uiv(&self, index: GLuint, v: *const GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribI4uiv", catch_unwind(||(self.vertexattribi4uiv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribI4uiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformuiv.xhtml>
+	#[inline(always)]
+	fn glGetUniformuiv(&self, program: GLuint, location: GLint, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetUniformuiv", catch_unwind(||(self.getuniformuiv)(program, location, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformuiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFragDataLocation.xhtml>
+	#[inline(always)]
+	fn glGetFragDataLocation(&self, program: GLuint, name: *const GLchar) -> Result<GLint> {
+		let ret = process_catch("glGetFragDataLocation", catch_unwind(||(self.getfragdatalocation)(program, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetFragDataLocation", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1ui.xhtml>
+	#[inline(always)]
+	fn glUniform1ui(&self, location: GLint, v0: GLuint) -> Result<()> {
+		let ret = process_catch("glUniform1ui", catch_unwind(||(self.uniform1ui)(location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1ui", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2ui.xhtml>
+	#[inline(always)]
+	fn glUniform2ui(&self, location: GLint, v0: GLuint, v1: GLuint) -> Result<()> {
+		let ret = process_catch("glUniform2ui", catch_unwind(||(self.uniform2ui)(location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2ui", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3ui.xhtml>
+	#[inline(always)]
+	fn glUniform3ui(&self, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint) -> Result<()> {
+		let ret = process_catch("glUniform3ui", catch_unwind(||(self.uniform3ui)(location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3ui", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4ui.xhtml>
+	#[inline(always)]
+	fn glUniform4ui(&self, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint) -> Result<()> {
+		let ret = process_catch("glUniform4ui", catch_unwind(||(self.uniform4ui)(location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4ui", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1uiv.xhtml>
+	#[inline(always)]
+	fn glUniform1uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glUniform1uiv", catch_unwind(||(self.uniform1uiv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1uiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2uiv.xhtml>
+	#[inline(always)]
+	fn glUniform2uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glUniform2uiv", catch_unwind(||(self.uniform2uiv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2uiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3uiv.xhtml>
+	#[inline(always)]
+	fn glUniform3uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glUniform3uiv", catch_unwind(||(self.uniform3uiv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3uiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4uiv.xhtml>
+	#[inline(always)]
+	fn glUniform4uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glUniform4uiv", catch_unwind(||(self.uniform4uiv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4uiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferiv.xhtml>
+	#[inline(always)]
+	fn glClearBufferiv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glClearBufferiv", catch_unwind(||(self.clearbufferiv)(buffer, drawbuffer, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearBufferiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferuiv.xhtml>
+	#[inline(always)]
+	fn glClearBufferuiv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glClearBufferuiv", catch_unwind(||(self.clearbufferuiv)(buffer, drawbuffer, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearBufferuiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferfv.xhtml>
+	#[inline(always)]
+	fn glClearBufferfv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glClearBufferfv", catch_unwind(||(self.clearbufferfv)(buffer, drawbuffer, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearBufferfv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferfi.xhtml>
+	#[inline(always)]
+	fn glClearBufferfi(&self, buffer: GLenum, drawbuffer: GLint, depth: GLfloat, stencil: GLint) -> Result<()> {
+		let ret = process_catch("glClearBufferfi", catch_unwind(||(self.clearbufferfi)(buffer, drawbuffer, depth, stencil)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearBufferfi", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetStringi.xhtml>
+	#[inline(always)]
+	fn glGetStringi(&self, name: GLenum, index: GLuint) -> Result<&'static str> {
+		let ret = process_catch("glGetStringi", catch_unwind(||unsafe{CStr::from_ptr((self.getstringi)(name, index) as *const i8)}.to_str().unwrap()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetStringi", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyBufferSubData.xhtml>
+	#[inline(always)]
+	fn glCopyBufferSubData(&self, readTarget: GLenum, writeTarget: GLenum, readOffset: GLintptr, writeOffset: GLintptr, size: GLsizeiptr) -> Result<()> {
+		let ret = process_catch("glCopyBufferSubData", catch_unwind(||(self.copybuffersubdata)(readTarget, writeTarget, readOffset, writeOffset, size)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyBufferSubData", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformIndices.xhtml>
+	#[inline(always)]
+	fn glGetUniformIndices(&self, program: GLuint, uniformCount: GLsizei, uniformNames: *const *const GLchar, uniformIndices: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetUniformIndices", catch_unwind(||(self.getuniformindices)(program, uniformCount, uniformNames, uniformIndices)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformIndices", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniformsiv.xhtml>
+	#[inline(always)]
+	fn glGetActiveUniformsiv(&self, program: GLuint, uniformCount: GLsizei, uniformIndices: *const GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetActiveUniformsiv", catch_unwind(||(self.getactiveuniformsiv)(program, uniformCount, uniformIndices, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveUniformsiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformBlockIndex.xhtml>
+	#[inline(always)]
+	fn glGetUniformBlockIndex(&self, program: GLuint, uniformBlockName: *const GLchar) -> Result<GLuint> {
+		let ret = process_catch("glGetUniformBlockIndex", catch_unwind(||(self.getuniformblockindex)(program, uniformBlockName)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformBlockIndex", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniformBlockiv.xhtml>
+	#[inline(always)]
+	fn glGetActiveUniformBlockiv(&self, program: GLuint, uniformBlockIndex: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetActiveUniformBlockiv", catch_unwind(||(self.getactiveuniformblockiv)(program, uniformBlockIndex, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveUniformBlockiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniformBlockName.xhtml>
+	#[inline(always)]
+	fn glGetActiveUniformBlockName(&self, program: GLuint, uniformBlockIndex: GLuint, bufSize: GLsizei, length: *mut GLsizei, uniformBlockName: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetActiveUniformBlockName", catch_unwind(||(self.getactiveuniformblockname)(program, uniformBlockIndex, bufSize, length, uniformBlockName)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveUniformBlockName", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformBlockBinding.xhtml>
+	#[inline(always)]
+	fn glUniformBlockBinding(&self, program: GLuint, uniformBlockIndex: GLuint, uniformBlockBinding: GLuint) -> Result<()> {
+		let ret = process_catch("glUniformBlockBinding", catch_unwind(||(self.uniformblockbinding)(program, uniformBlockIndex, uniformBlockBinding)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformBlockBinding", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawArraysInstanced.xhtml>
+	#[inline(always)]
+	fn glDrawArraysInstanced(&self, mode: GLenum, first: GLint, count: GLsizei, instancecount: GLsizei) -> Result<()> {
+		let ret = process_catch("glDrawArraysInstanced", catch_unwind(||(self.drawarraysinstanced)(mode, first, count, instancecount)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawArraysInstanced", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsInstanced.xhtml>
+	#[inline(always)]
+	fn glDrawElementsInstanced(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei) -> Result<()> {
+		let ret = process_catch("glDrawElementsInstanced", catch_unwind(||(self.drawelementsinstanced)(mode, count, type_, indices, instancecount)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElementsInstanced", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFenceSync.xhtml>
+	#[inline(always)]
+	fn glFenceSync(&self, condition: GLenum, flags: GLbitfield) -> Result<GLsync> {
+		let ret = process_catch("glFenceSync", catch_unwind(||(self.fencesync)(condition, flags)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFenceSync", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsSync.xhtml>
+	#[inline(always)]
+	fn glIsSync(&self, sync: GLsync) -> Result<GLboolean> {
+		let ret = process_catch("glIsSync", catch_unwind(||(self.issync)(sync)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsSync", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteSync.xhtml>
+	#[inline(always)]
+	fn glDeleteSync(&self, sync: GLsync) -> Result<()> {
+		let ret = process_catch("glDeleteSync", catch_unwind(||(self.deletesync)(sync)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteSync", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClientWaitSync.xhtml>
+	#[inline(always)]
+	fn glClientWaitSync(&self, sync: GLsync, flags: GLbitfield, timeout: GLuint64) -> Result<GLenum> {
+		let ret = process_catch("glClientWaitSync", catch_unwind(||(self.clientwaitsync)(sync, flags, timeout)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClientWaitSync", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glWaitSync.xhtml>
+	#[inline(always)]
+	fn glWaitSync(&self, sync: GLsync, flags: GLbitfield, timeout: GLuint64) -> Result<()> {
+		let ret = process_catch("glWaitSync", catch_unwind(||(self.waitsync)(sync, flags, timeout)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glWaitSync", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetInteger64v.xhtml>
+	#[inline(always)]
+	fn glGetInteger64v(&self, pname: GLenum, data: *mut GLint64) -> Result<()> {
+		let ret = process_catch("glGetInteger64v", catch_unwind(||(self.getinteger64v)(pname, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetInteger64v", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSynciv.xhtml>
+	#[inline(always)]
+	fn glGetSynciv(&self, sync: GLsync, pname: GLenum, bufSize: GLsizei, length: *mut GLsizei, values: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetSynciv", catch_unwind(||(self.getsynciv)(sync, pname, bufSize, length, values)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSynciv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetInteger64i_v.xhtml>
+	#[inline(always)]
+	fn glGetInteger64i_v(&self, target: GLenum, index: GLuint, data: *mut GLint64) -> Result<()> {
+		let ret = process_catch("glGetInteger64i_v", catch_unwind(||(self.getinteger64i_v)(target, index, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetInteger64i_v", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBufferParameteri64v.xhtml>
+	#[inline(always)]
+	fn glGetBufferParameteri64v(&self, target: GLenum, pname: GLenum, params: *mut GLint64) -> Result<()> {
+		let ret = process_catch("glGetBufferParameteri64v", catch_unwind(||(self.getbufferparameteri64v)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBufferParameteri64v", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenSamplers.xhtml>
+	#[inline(always)]
+	fn glGenSamplers(&self, count: GLsizei, samplers: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenSamplers", catch_unwind(||(self.gensamplers)(count, samplers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenSamplers", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteSamplers.xhtml>
+	#[inline(always)]
+	fn glDeleteSamplers(&self, count: GLsizei, samplers: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteSamplers", catch_unwind(||(self.deletesamplers)(count, samplers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteSamplers", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsSampler.xhtml>
+	#[inline(always)]
+	fn glIsSampler(&self, sampler: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsSampler", catch_unwind(||(self.issampler)(sampler)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsSampler", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindSampler.xhtml>
+	#[inline(always)]
+	fn glBindSampler(&self, unit: GLuint, sampler: GLuint) -> Result<()> {
+		let ret = process_catch("glBindSampler", catch_unwind(||(self.bindsampler)(unit, sampler)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindSampler", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameteri.xhtml>
+	#[inline(always)]
+	fn glSamplerParameteri(&self, sampler: GLuint, pname: GLenum, param: GLint) -> Result<()> {
+		let ret = process_catch("glSamplerParameteri", catch_unwind(||(self.samplerparameteri)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameteri", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameteriv.xhtml>
+	#[inline(always)]
+	fn glSamplerParameteriv(&self, sampler: GLuint, pname: GLenum, param: *const GLint) -> Result<()> {
+		let ret = process_catch("glSamplerParameteriv", catch_unwind(||(self.samplerparameteriv)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameteriv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterf.xhtml>
+	#[inline(always)]
+	fn glSamplerParameterf(&self, sampler: GLuint, pname: GLenum, param: GLfloat) -> Result<()> {
+		let ret = process_catch("glSamplerParameterf", catch_unwind(||(self.samplerparameterf)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameterf", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterfv.xhtml>
+	#[inline(always)]
+	fn glSamplerParameterfv(&self, sampler: GLuint, pname: GLenum, param: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glSamplerParameterfv", catch_unwind(||(self.samplerparameterfv)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameterfv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetSamplerParameteriv(&self, sampler: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetSamplerParameteriv", catch_unwind(||(self.getsamplerparameteriv)(sampler, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSamplerParameteriv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameterfv.xhtml>
+	#[inline(always)]
+	fn glGetSamplerParameterfv(&self, sampler: GLuint, pname: GLenum, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetSamplerParameterfv", catch_unwind(||(self.getsamplerparameterfv)(sampler, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSamplerParameterfv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribDivisor.xhtml>
+	#[inline(always)]
+	fn glVertexAttribDivisor(&self, index: GLuint, divisor: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribDivisor", catch_unwind(||(self.vertexattribdivisor)(index, divisor)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribDivisor", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glBindTransformFeedback(&self, target: GLenum, id: GLuint) -> Result<()> {
+		let ret = process_catch("glBindTransformFeedback", catch_unwind(||(self.bindtransformfeedback)(target, id)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindTransformFeedback", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteTransformFeedbacks.xhtml>
+	#[inline(always)]
+	fn glDeleteTransformFeedbacks(&self, n: GLsizei, ids: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteTransformFeedbacks", catch_unwind(||(self.deletetransformfeedbacks)(n, ids)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteTransformFeedbacks", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenTransformFeedbacks.xhtml>
+	#[inline(always)]
+	fn glGenTransformFeedbacks(&self, n: GLsizei, ids: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenTransformFeedbacks", catch_unwind(||(self.gentransformfeedbacks)(n, ids)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenTransformFeedbacks", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glIsTransformFeedback(&self, id: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsTransformFeedback", catch_unwind(||(self.istransformfeedback)(id)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsTransformFeedback", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPauseTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glPauseTransformFeedback(&self) -> Result<()> {
+		let ret = process_catch("glPauseTransformFeedback", catch_unwind(||(self.pausetransformfeedback)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPauseTransformFeedback", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glResumeTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glResumeTransformFeedback(&self) -> Result<()> {
+		let ret = process_catch("glResumeTransformFeedback", catch_unwind(||(self.resumetransformfeedback)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glResumeTransformFeedback", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramBinary.xhtml>
+	#[inline(always)]
+	fn glGetProgramBinary(&self, program: GLuint, bufSize: GLsizei, length: *mut GLsizei, binaryFormat: *mut GLenum, binary: *mut c_void) -> Result<()> {
+		let ret = process_catch("glGetProgramBinary", catch_unwind(||(self.getprogrambinary)(program, bufSize, length, binaryFormat, binary)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramBinary", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramBinary.xhtml>
+	#[inline(always)]
+	fn glProgramBinary(&self, program: GLuint, binaryFormat: GLenum, binary: *const c_void, length: GLsizei) -> Result<()> {
+		let ret = process_catch("glProgramBinary", catch_unwind(||(self.programbinary)(program, binaryFormat, binary, length)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramBinary", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramParameteri.xhtml>
+	#[inline(always)]
+	fn glProgramParameteri(&self, program: GLuint, pname: GLenum, value: GLint) -> Result<()> {
+		let ret = process_catch("glProgramParameteri", catch_unwind(||(self.programparameteri)(program, pname, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramParameteri", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glInvalidateFramebuffer.xhtml>
+	#[inline(always)]
+	fn glInvalidateFramebuffer(&self, target: GLenum, numAttachments: GLsizei, attachments: *const GLenum) -> Result<()> {
+		let ret = process_catch("glInvalidateFramebuffer", catch_unwind(||(self.invalidateframebuffer)(target, numAttachments, attachments)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glInvalidateFramebuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glInvalidateSubFramebuffer.xhtml>
+	#[inline(always)]
+	fn glInvalidateSubFramebuffer(&self, target: GLenum, numAttachments: GLsizei, attachments: *const GLenum, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glInvalidateSubFramebuffer", catch_unwind(||(self.invalidatesubframebuffer)(target, numAttachments, attachments, x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glInvalidateSubFramebuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage2D.xhtml>
+	#[inline(always)]
+	fn glTexStorage2D(&self, target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glTexStorage2D", catch_unwind(||(self.texstorage2d)(target, levels, internalformat, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexStorage2D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage3D.xhtml>
+	#[inline(always)]
+	fn glTexStorage3D(&self, target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei) -> Result<()> {
+		let ret = process_catch("glTexStorage3D", catch_unwind(||(self.texstorage3d)(target, levels, internalformat, width, height, depth)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexStorage3D", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetInternalformativ.xhtml>
+	#[inline(always)]
+	fn glGetInternalformativ(&self, target: GLenum, internalformat: GLenum, pname: GLenum, bufSize: GLsizei, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetInternalformativ", catch_unwind(||(self.getinternalformativ)(target, internalformat, pname, bufSize, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetInternalformativ", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+}
+
+impl EsVersion30 {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
+		let (_spec, major, minor, release) = base.get_version();
+		if (major, minor, release) < (3, 0, 0) {
+			return Self::default();
+		}
+		Self {
+			available: true,
+			geterror: {let proc = get_proc_address("glGetError"); if proc == null() {dummy_pfnglgeterrorproc} else {unsafe{transmute(proc)}}},
+			readbuffer: {let proc = get_proc_address("glReadBuffer"); if proc == null() {dummy_pfnglreadbufferproc} else {unsafe{transmute(proc)}}},
+			drawrangeelements: {let proc = get_proc_address("glDrawRangeElements"); if proc == null() {dummy_pfngldrawrangeelementsproc} else {unsafe{transmute(proc)}}},
+			teximage3d: {let proc = get_proc_address("glTexImage3D"); if proc == null() {dummy_pfnglteximage3dproc} else {unsafe{transmute(proc)}}},
+			texsubimage3d: {let proc = get_proc_address("glTexSubImage3D"); if proc == null() {dummy_pfngltexsubimage3dproc} else {unsafe{transmute(proc)}}},
+			copytexsubimage3d: {let proc = get_proc_address("glCopyTexSubImage3D"); if proc == null() {dummy_pfnglcopytexsubimage3dproc} else {unsafe{transmute(proc)}}},
+			compressedteximage3d: {let proc = get_proc_address("glCompressedTexImage3D"); if proc == null() {dummy_pfnglcompressedteximage3dproc} else {unsafe{transmute(proc)}}},
+			compressedtexsubimage3d: {let proc = get_proc_address("glCompressedTexSubImage3D"); if proc == null() {dummy_pfnglcompressedtexsubimage3dproc} else {unsafe{transmute(proc)}}},
+			genqueries: {let proc = get_proc_address("glGenQueries"); if proc == null() {dummy_pfnglgenqueriesproc} else {unsafe{transmute(proc)}}},
+			deletequeries: {let proc = get_proc_address("glDeleteQueries"); if proc == null() {dummy_pfngldeletequeriesproc} else {unsafe{transmute(proc)}}},
+			isquery: {let proc = get_proc_address("glIsQuery"); if proc == null() {dummy_pfnglisqueryproc} else {unsafe{transmute(proc)}}},
+			beginquery: {let proc = get_proc_address("glBeginQuery"); if proc == null() {dummy_pfnglbeginqueryproc} else {unsafe{transmute(proc)}}},
+			endquery: {let proc = get_proc_address("glEndQuery"); if proc == null() {dummy_pfnglendqueryproc} else {unsafe{transmute(proc)}}},
+			getqueryiv: {let proc = get_proc_address("glGetQueryiv"); if proc == null() {dummy_pfnglgetqueryivproc} else {unsafe{transmute(proc)}}},
+			getqueryobjectuiv: {let proc = get_proc_address("glGetQueryObjectuiv"); if proc == null() {dummy_pfnglgetqueryobjectuivproc} else {unsafe{transmute(proc)}}},
+			unmapbuffer: {let proc = get_proc_address("glUnmapBuffer"); if proc == null() {dummy_pfnglunmapbufferproc} else {unsafe{transmute(proc)}}},
+			getbufferpointerv: {let proc = get_proc_address("glGetBufferPointerv"); if proc == null() {dummy_pfnglgetbufferpointervproc} else {unsafe{transmute(proc)}}},
+			drawbuffers: {let proc = get_proc_address("glDrawBuffers"); if proc == null() {dummy_pfngldrawbuffersproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix2x3fv: {let proc = get_proc_address("glUniformMatrix2x3fv"); if proc == null() {dummy_pfngluniformmatrix2x3fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix3x2fv: {let proc = get_proc_address("glUniformMatrix3x2fv"); if proc == null() {dummy_pfngluniformmatrix3x2fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix2x4fv: {let proc = get_proc_address("glUniformMatrix2x4fv"); if proc == null() {dummy_pfngluniformmatrix2x4fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix4x2fv: {let proc = get_proc_address("glUniformMatrix4x2fv"); if proc == null() {dummy_pfngluniformmatrix4x2fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix3x4fv: {let proc = get_proc_address("glUniformMatrix3x4fv"); if proc == null() {dummy_pfngluniformmatrix3x4fvproc} else {unsafe{transmute(proc)}}},
+			uniformmatrix4x3fv: {let proc = get_proc_address("glUniformMatrix4x3fv"); if proc == null() {dummy_pfngluniformmatrix4x3fvproc} else {unsafe{transmute(proc)}}},
+			blitframebuffer: {let proc = get_proc_address("glBlitFramebuffer"); if proc == null() {dummy_pfnglblitframebufferproc} else {unsafe{transmute(proc)}}},
+			renderbufferstoragemultisample: {let proc = get_proc_address("glRenderbufferStorageMultisample"); if proc == null() {dummy_pfnglrenderbufferstoragemultisampleproc} else {unsafe{transmute(proc)}}},
+			framebuffertexturelayer: {let proc = get_proc_address("glFramebufferTextureLayer"); if proc == null() {dummy_pfnglframebuffertexturelayerproc} else {unsafe{transmute(proc)}}},
+			mapbufferrange: {let proc = get_proc_address("glMapBufferRange"); if proc == null() {dummy_pfnglmapbufferrangeproc} else {unsafe{transmute(proc)}}},
+			flushmappedbufferrange: {let proc = get_proc_address("glFlushMappedBufferRange"); if proc == null() {dummy_pfnglflushmappedbufferrangeproc} else {unsafe{transmute(proc)}}},
+			bindvertexarray: {let proc = get_proc_address("glBindVertexArray"); if proc == null() {dummy_pfnglbindvertexarrayproc} else {unsafe{transmute(proc)}}},
+			deletevertexarrays: {let proc = get_proc_address("glDeleteVertexArrays"); if proc == null() {dummy_pfngldeletevertexarraysproc} else {unsafe{transmute(proc)}}},
+			genvertexarrays: {let proc = get_proc_address("glGenVertexArrays"); if proc == null() {dummy_pfnglgenvertexarraysproc} else {unsafe{transmute(proc)}}},
+			isvertexarray: {let proc = get_proc_address("glIsVertexArray"); if proc == null() {dummy_pfnglisvertexarrayproc} else {unsafe{transmute(proc)}}},
+			getintegeri_v: {let proc = get_proc_address("glGetIntegeri_v"); if proc == null() {dummy_pfnglgetintegeri_vproc} else {unsafe{transmute(proc)}}},
+			begintransformfeedback: {let proc = get_proc_address("glBeginTransformFeedback"); if proc == null() {dummy_pfnglbegintransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			endtransformfeedback: {let proc = get_proc_address("glEndTransformFeedback"); if proc == null() {dummy_pfnglendtransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			bindbufferrange: {let proc = get_proc_address("glBindBufferRange"); if proc == null() {dummy_pfnglbindbufferrangeproc} else {unsafe{transmute(proc)}}},
+			bindbufferbase: {let proc = get_proc_address("glBindBufferBase"); if proc == null() {dummy_pfnglbindbufferbaseproc} else {unsafe{transmute(proc)}}},
+			transformfeedbackvaryings: {let proc = get_proc_address("glTransformFeedbackVaryings"); if proc == null() {dummy_pfngltransformfeedbackvaryingsproc} else {unsafe{transmute(proc)}}},
+			gettransformfeedbackvarying: {let proc = get_proc_address("glGetTransformFeedbackVarying"); if proc == null() {dummy_pfnglgettransformfeedbackvaryingproc} else {unsafe{transmute(proc)}}},
+			vertexattribipointer: {let proc = get_proc_address("glVertexAttribIPointer"); if proc == null() {dummy_pfnglvertexattribipointerproc} else {unsafe{transmute(proc)}}},
+			getvertexattribiiv: {let proc = get_proc_address("glGetVertexAttribIiv"); if proc == null() {dummy_pfnglgetvertexattribiivproc} else {unsafe{transmute(proc)}}},
+			getvertexattribiuiv: {let proc = get_proc_address("glGetVertexAttribIuiv"); if proc == null() {dummy_pfnglgetvertexattribiuivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4i: {let proc = get_proc_address("glVertexAttribI4i"); if proc == null() {dummy_pfnglvertexattribi4iproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4ui: {let proc = get_proc_address("glVertexAttribI4ui"); if proc == null() {dummy_pfnglvertexattribi4uiproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4iv: {let proc = get_proc_address("glVertexAttribI4iv"); if proc == null() {dummy_pfnglvertexattribi4ivproc} else {unsafe{transmute(proc)}}},
+			vertexattribi4uiv: {let proc = get_proc_address("glVertexAttribI4uiv"); if proc == null() {dummy_pfnglvertexattribi4uivproc} else {unsafe{transmute(proc)}}},
+			getuniformuiv: {let proc = get_proc_address("glGetUniformuiv"); if proc == null() {dummy_pfnglgetuniformuivproc} else {unsafe{transmute(proc)}}},
+			getfragdatalocation: {let proc = get_proc_address("glGetFragDataLocation"); if proc == null() {dummy_pfnglgetfragdatalocationproc} else {unsafe{transmute(proc)}}},
+			uniform1ui: {let proc = get_proc_address("glUniform1ui"); if proc == null() {dummy_pfngluniform1uiproc} else {unsafe{transmute(proc)}}},
+			uniform2ui: {let proc = get_proc_address("glUniform2ui"); if proc == null() {dummy_pfngluniform2uiproc} else {unsafe{transmute(proc)}}},
+			uniform3ui: {let proc = get_proc_address("glUniform3ui"); if proc == null() {dummy_pfngluniform3uiproc} else {unsafe{transmute(proc)}}},
+			uniform4ui: {let proc = get_proc_address("glUniform4ui"); if proc == null() {dummy_pfngluniform4uiproc} else {unsafe{transmute(proc)}}},
+			uniform1uiv: {let proc = get_proc_address("glUniform1uiv"); if proc == null() {dummy_pfngluniform1uivproc} else {unsafe{transmute(proc)}}},
+			uniform2uiv: {let proc = get_proc_address("glUniform2uiv"); if proc == null() {dummy_pfngluniform2uivproc} else {unsafe{transmute(proc)}}},
+			uniform3uiv: {let proc = get_proc_address("glUniform3uiv"); if proc == null() {dummy_pfngluniform3uivproc} else {unsafe{transmute(proc)}}},
+			uniform4uiv: {let proc = get_proc_address("glUniform4uiv"); if proc == null() {dummy_pfngluniform4uivproc} else {unsafe{transmute(proc)}}},
+			clearbufferiv: {let proc = get_proc_address("glClearBufferiv"); if proc == null() {dummy_pfnglclearbufferivproc} else {unsafe{transmute(proc)}}},
+			clearbufferuiv: {let proc = get_proc_address("glClearBufferuiv"); if proc == null() {dummy_pfnglclearbufferuivproc} else {unsafe{transmute(proc)}}},
+			clearbufferfv: {let proc = get_proc_address("glClearBufferfv"); if proc == null() {dummy_pfnglclearbufferfvproc} else {unsafe{transmute(proc)}}},
+			clearbufferfi: {let proc = get_proc_address("glClearBufferfi"); if proc == null() {dummy_pfnglclearbufferfiproc} else {unsafe{transmute(proc)}}},
+			getstringi: {let proc = get_proc_address("glGetStringi"); if proc == null() {dummy_pfnglgetstringiproc} else {unsafe{transmute(proc)}}},
+			copybuffersubdata: {let proc = get_proc_address("glCopyBufferSubData"); if proc == null() {dummy_pfnglcopybuffersubdataproc} else {unsafe{transmute(proc)}}},
+			getuniformindices: {let proc = get_proc_address("glGetUniformIndices"); if proc == null() {dummy_pfnglgetuniformindicesproc} else {unsafe{transmute(proc)}}},
+			getactiveuniformsiv: {let proc = get_proc_address("glGetActiveUniformsiv"); if proc == null() {dummy_pfnglgetactiveuniformsivproc} else {unsafe{transmute(proc)}}},
+			getuniformblockindex: {let proc = get_proc_address("glGetUniformBlockIndex"); if proc == null() {dummy_pfnglgetuniformblockindexproc} else {unsafe{transmute(proc)}}},
+			getactiveuniformblockiv: {let proc = get_proc_address("glGetActiveUniformBlockiv"); if proc == null() {dummy_pfnglgetactiveuniformblockivproc} else {unsafe{transmute(proc)}}},
+			getactiveuniformblockname: {let proc = get_proc_address("glGetActiveUniformBlockName"); if proc == null() {dummy_pfnglgetactiveuniformblocknameproc} else {unsafe{transmute(proc)}}},
+			uniformblockbinding: {let proc = get_proc_address("glUniformBlockBinding"); if proc == null() {dummy_pfngluniformblockbindingproc} else {unsafe{transmute(proc)}}},
+			drawarraysinstanced: {let proc = get_proc_address("glDrawArraysInstanced"); if proc == null() {dummy_pfngldrawarraysinstancedproc} else {unsafe{transmute(proc)}}},
+			drawelementsinstanced: {let proc = get_proc_address("glDrawElementsInstanced"); if proc == null() {dummy_pfngldrawelementsinstancedproc} else {unsafe{transmute(proc)}}},
+			fencesync: {let proc = get_proc_address("glFenceSync"); if proc == null() {dummy_pfnglfencesyncproc} else {unsafe{transmute(proc)}}},
+			issync: {let proc = get_proc_address("glIsSync"); if proc == null() {dummy_pfnglissyncproc} else {unsafe{transmute(proc)}}},
+			deletesync: {let proc = get_proc_address("glDeleteSync"); if proc == null() {dummy_pfngldeletesyncproc} else {unsafe{transmute(proc)}}},
+			clientwaitsync: {let proc = get_proc_address("glClientWaitSync"); if proc == null() {dummy_pfnglclientwaitsyncproc} else {unsafe{transmute(proc)}}},
+			waitsync: {let proc = get_proc_address("glWaitSync"); if proc == null() {dummy_pfnglwaitsyncproc} else {unsafe{transmute(proc)}}},
+			getinteger64v: {let proc = get_proc_address("glGetInteger64v"); if proc == null() {dummy_pfnglgetinteger64vproc} else {unsafe{transmute(proc)}}},
+			getsynciv: {let proc = get_proc_address("glGetSynciv"); if proc == null() {dummy_pfnglgetsyncivproc} else {unsafe{transmute(proc)}}},
+			getinteger64i_v: {let proc = get_proc_address("glGetInteger64i_v"); if proc == null() {dummy_pfnglgetinteger64i_vproc} else {unsafe{transmute(proc)}}},
+			getbufferparameteri64v: {let proc = get_proc_address("glGetBufferParameteri64v"); if proc == null() {dummy_pfnglgetbufferparameteri64vproc} else {unsafe{transmute(proc)}}},
+			gensamplers: {let proc = get_proc_address("glGenSamplers"); if proc == null() {dummy_pfnglgensamplersproc} else {unsafe{transmute(proc)}}},
+			deletesamplers: {let proc = get_proc_address("glDeleteSamplers"); if proc == null() {dummy_pfngldeletesamplersproc} else {unsafe{transmute(proc)}}},
+			issampler: {let proc = get_proc_address("glIsSampler"); if proc == null() {dummy_pfnglissamplerproc} else {unsafe{transmute(proc)}}},
+			bindsampler: {let proc = get_proc_address("glBindSampler"); if proc == null() {dummy_pfnglbindsamplerproc} else {unsafe{transmute(proc)}}},
+			samplerparameteri: {let proc = get_proc_address("glSamplerParameteri"); if proc == null() {dummy_pfnglsamplerparameteriproc} else {unsafe{transmute(proc)}}},
+			samplerparameteriv: {let proc = get_proc_address("glSamplerParameteriv"); if proc == null() {dummy_pfnglsamplerparameterivproc} else {unsafe{transmute(proc)}}},
+			samplerparameterf: {let proc = get_proc_address("glSamplerParameterf"); if proc == null() {dummy_pfnglsamplerparameterfproc} else {unsafe{transmute(proc)}}},
+			samplerparameterfv: {let proc = get_proc_address("glSamplerParameterfv"); if proc == null() {dummy_pfnglsamplerparameterfvproc} else {unsafe{transmute(proc)}}},
+			getsamplerparameteriv: {let proc = get_proc_address("glGetSamplerParameteriv"); if proc == null() {dummy_pfnglgetsamplerparameterivproc} else {unsafe{transmute(proc)}}},
+			getsamplerparameterfv: {let proc = get_proc_address("glGetSamplerParameterfv"); if proc == null() {dummy_pfnglgetsamplerparameterfvproc} else {unsafe{transmute(proc)}}},
+			vertexattribdivisor: {let proc = get_proc_address("glVertexAttribDivisor"); if proc == null() {dummy_pfnglvertexattribdivisorproc} else {unsafe{transmute(proc)}}},
+			bindtransformfeedback: {let proc = get_proc_address("glBindTransformFeedback"); if proc == null() {dummy_pfnglbindtransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			deletetransformfeedbacks: {let proc = get_proc_address("glDeleteTransformFeedbacks"); if proc == null() {dummy_pfngldeletetransformfeedbacksproc} else {unsafe{transmute(proc)}}},
+			gentransformfeedbacks: {let proc = get_proc_address("glGenTransformFeedbacks"); if proc == null() {dummy_pfnglgentransformfeedbacksproc} else {unsafe{transmute(proc)}}},
+			istransformfeedback: {let proc = get_proc_address("glIsTransformFeedback"); if proc == null() {dummy_pfnglistransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			pausetransformfeedback: {let proc = get_proc_address("glPauseTransformFeedback"); if proc == null() {dummy_pfnglpausetransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			resumetransformfeedback: {let proc = get_proc_address("glResumeTransformFeedback"); if proc == null() {dummy_pfnglresumetransformfeedbackproc} else {unsafe{transmute(proc)}}},
+			getprogrambinary: {let proc = get_proc_address("glGetProgramBinary"); if proc == null() {dummy_pfnglgetprogrambinaryproc} else {unsafe{transmute(proc)}}},
+			programbinary: {let proc = get_proc_address("glProgramBinary"); if proc == null() {dummy_pfnglprogrambinaryproc} else {unsafe{transmute(proc)}}},
+			programparameteri: {let proc = get_proc_address("glProgramParameteri"); if proc == null() {dummy_pfnglprogramparameteriproc} else {unsafe{transmute(proc)}}},
+			invalidateframebuffer: {let proc = get_proc_address("glInvalidateFramebuffer"); if proc == null() {dummy_pfnglinvalidateframebufferproc} else {unsafe{transmute(proc)}}},
+			invalidatesubframebuffer: {let proc = get_proc_address("glInvalidateSubFramebuffer"); if proc == null() {dummy_pfnglinvalidatesubframebufferproc} else {unsafe{transmute(proc)}}},
+			texstorage2d: {let proc = get_proc_address("glTexStorage2D"); if proc == null() {dummy_pfngltexstorage2dproc} else {unsafe{transmute(proc)}}},
+			texstorage3d: {let proc = get_proc_address("glTexStorage3D"); if proc == null() {dummy_pfngltexstorage3dproc} else {unsafe{transmute(proc)}}},
+			getinternalformativ: {let proc = get_proc_address("glGetInternalformativ"); if proc == null() {dummy_pfnglgetinternalformativproc} else {unsafe{transmute(proc)}}},
+		}
+	}
+	#[inline(always)]
+	pub fn get_available(&self) -> bool {
+		self.available
+	}
+}
+
+impl Default for EsVersion30 {
+	fn default() -> Self {
+		Self {
+			available: false,
+			geterror: dummy_pfnglgeterrorproc,
+			readbuffer: dummy_pfnglreadbufferproc,
+			drawrangeelements: dummy_pfngldrawrangeelementsproc,
+			teximage3d: dummy_pfnglteximage3dproc,
+			texsubimage3d: dummy_pfngltexsubimage3dproc,
+			copytexsubimage3d: dummy_pfnglcopytexsubimage3dproc,
+			compressedteximage3d: dummy_pfnglcompressedteximage3dproc,
+			compressedtexsubimage3d: dummy_pfnglcompressedtexsubimage3dproc,
+			genqueries: dummy_pfnglgenqueriesproc,
+			deletequeries: dummy_pfngldeletequeriesproc,
+			isquery: dummy_pfnglisqueryproc,
+			beginquery: dummy_pfnglbeginqueryproc,
+			endquery: dummy_pfnglendqueryproc,
+			getqueryiv: dummy_pfnglgetqueryivproc,
+			getqueryobjectuiv: dummy_pfnglgetqueryobjectuivproc,
+			unmapbuffer: dummy_pfnglunmapbufferproc,
+			getbufferpointerv: dummy_pfnglgetbufferpointervproc,
+			drawbuffers: dummy_pfngldrawbuffersproc,
+			uniformmatrix2x3fv: dummy_pfngluniformmatrix2x3fvproc,
+			uniformmatrix3x2fv: dummy_pfngluniformmatrix3x2fvproc,
+			uniformmatrix2x4fv: dummy_pfngluniformmatrix2x4fvproc,
+			uniformmatrix4x2fv: dummy_pfngluniformmatrix4x2fvproc,
+			uniformmatrix3x4fv: dummy_pfngluniformmatrix3x4fvproc,
+			uniformmatrix4x3fv: dummy_pfngluniformmatrix4x3fvproc,
+			blitframebuffer: dummy_pfnglblitframebufferproc,
+			renderbufferstoragemultisample: dummy_pfnglrenderbufferstoragemultisampleproc,
+			framebuffertexturelayer: dummy_pfnglframebuffertexturelayerproc,
+			mapbufferrange: dummy_pfnglmapbufferrangeproc,
+			flushmappedbufferrange: dummy_pfnglflushmappedbufferrangeproc,
+			bindvertexarray: dummy_pfnglbindvertexarrayproc,
+			deletevertexarrays: dummy_pfngldeletevertexarraysproc,
+			genvertexarrays: dummy_pfnglgenvertexarraysproc,
+			isvertexarray: dummy_pfnglisvertexarrayproc,
+			getintegeri_v: dummy_pfnglgetintegeri_vproc,
+			begintransformfeedback: dummy_pfnglbegintransformfeedbackproc,
+			endtransformfeedback: dummy_pfnglendtransformfeedbackproc,
+			bindbufferrange: dummy_pfnglbindbufferrangeproc,
+			bindbufferbase: dummy_pfnglbindbufferbaseproc,
+			transformfeedbackvaryings: dummy_pfngltransformfeedbackvaryingsproc,
+			gettransformfeedbackvarying: dummy_pfnglgettransformfeedbackvaryingproc,
+			vertexattribipointer: dummy_pfnglvertexattribipointerproc,
+			getvertexattribiiv: dummy_pfnglgetvertexattribiivproc,
+			getvertexattribiuiv: dummy_pfnglgetvertexattribiuivproc,
+			vertexattribi4i: dummy_pfnglvertexattribi4iproc,
+			vertexattribi4ui: dummy_pfnglvertexattribi4uiproc,
+			vertexattribi4iv: dummy_pfnglvertexattribi4ivproc,
+			vertexattribi4uiv: dummy_pfnglvertexattribi4uivproc,
+			getuniformuiv: dummy_pfnglgetuniformuivproc,
+			getfragdatalocation: dummy_pfnglgetfragdatalocationproc,
+			uniform1ui: dummy_pfngluniform1uiproc,
+			uniform2ui: dummy_pfngluniform2uiproc,
+			uniform3ui: dummy_pfngluniform3uiproc,
+			uniform4ui: dummy_pfngluniform4uiproc,
+			uniform1uiv: dummy_pfngluniform1uivproc,
+			uniform2uiv: dummy_pfngluniform2uivproc,
+			uniform3uiv: dummy_pfngluniform3uivproc,
+			uniform4uiv: dummy_pfngluniform4uivproc,
+			clearbufferiv: dummy_pfnglclearbufferivproc,
+			clearbufferuiv: dummy_pfnglclearbufferuivproc,
+			clearbufferfv: dummy_pfnglclearbufferfvproc,
+			clearbufferfi: dummy_pfnglclearbufferfiproc,
+			getstringi: dummy_pfnglgetstringiproc,
+			copybuffersubdata: dummy_pfnglcopybuffersubdataproc,
+			getuniformindices: dummy_pfnglgetuniformindicesproc,
+			getactiveuniformsiv: dummy_pfnglgetactiveuniformsivproc,
+			getuniformblockindex: dummy_pfnglgetuniformblockindexproc,
+			getactiveuniformblockiv: dummy_pfnglgetactiveuniformblockivproc,
+			getactiveuniformblockname: dummy_pfnglgetactiveuniformblocknameproc,
+			uniformblockbinding: dummy_pfngluniformblockbindingproc,
+			drawarraysinstanced: dummy_pfngldrawarraysinstancedproc,
+			drawelementsinstanced: dummy_pfngldrawelementsinstancedproc,
+			fencesync: dummy_pfnglfencesyncproc,
+			issync: dummy_pfnglissyncproc,
+			deletesync: dummy_pfngldeletesyncproc,
+			clientwaitsync: dummy_pfnglclientwaitsyncproc,
+			waitsync: dummy_pfnglwaitsyncproc,
+			getinteger64v: dummy_pfnglgetinteger64vproc,
+			getsynciv: dummy_pfnglgetsyncivproc,
+			getinteger64i_v: dummy_pfnglgetinteger64i_vproc,
+			getbufferparameteri64v: dummy_pfnglgetbufferparameteri64vproc,
+			gensamplers: dummy_pfnglgensamplersproc,
+			deletesamplers: dummy_pfngldeletesamplersproc,
+			issampler: dummy_pfnglissamplerproc,
+			bindsampler: dummy_pfnglbindsamplerproc,
+			samplerparameteri: dummy_pfnglsamplerparameteriproc,
+			samplerparameteriv: dummy_pfnglsamplerparameterivproc,
+			samplerparameterf: dummy_pfnglsamplerparameterfproc,
+			samplerparameterfv: dummy_pfnglsamplerparameterfvproc,
+			getsamplerparameteriv: dummy_pfnglgetsamplerparameterivproc,
+			getsamplerparameterfv: dummy_pfnglgetsamplerparameterfvproc,
+			vertexattribdivisor: dummy_pfnglvertexattribdivisorproc,
+			bindtransformfeedback: dummy_pfnglbindtransformfeedbackproc,
+			deletetransformfeedbacks: dummy_pfngldeletetransformfeedbacksproc,
+			gentransformfeedbacks: dummy_pfnglgentransformfeedbacksproc,
+			istransformfeedback: dummy_pfnglistransformfeedbackproc,
+			pausetransformfeedback: dummy_pfnglpausetransformfeedbackproc,
+			resumetransformfeedback: dummy_pfnglresumetransformfeedbackproc,
+			getprogrambinary: dummy_pfnglgetprogrambinaryproc,
+			programbinary: dummy_pfnglprogrambinaryproc,
+			programparameteri: dummy_pfnglprogramparameteriproc,
+			invalidateframebuffer: dummy_pfnglinvalidateframebufferproc,
+			invalidatesubframebuffer: dummy_pfnglinvalidatesubframebufferproc,
+			texstorage2d: dummy_pfngltexstorage2dproc,
+			texstorage3d: dummy_pfngltexstorage3dproc,
+			getinternalformativ: dummy_pfnglgetinternalformativproc,
+		}
+	}
+}
+impl Debug for EsVersion30 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("EsVersion30")
+			.field("available", &self.available)
+			.field("readbuffer", unsafe{if transmute::<_, *const c_void>(self.readbuffer) == (dummy_pfnglreadbufferproc as *const c_void) {&null::<PFNGLREADBUFFERPROC>()} else {&self.readbuffer}})
+			.field("drawrangeelements", unsafe{if transmute::<_, *const c_void>(self.drawrangeelements) == (dummy_pfngldrawrangeelementsproc as *const c_void) {&null::<PFNGLDRAWRANGEELEMENTSPROC>()} else {&self.drawrangeelements}})
+			.field("teximage3d", unsafe{if transmute::<_, *const c_void>(self.teximage3d) == (dummy_pfnglteximage3dproc as *const c_void) {&null::<PFNGLTEXIMAGE3DPROC>()} else {&self.teximage3d}})
+			.field("texsubimage3d", unsafe{if transmute::<_, *const c_void>(self.texsubimage3d) == (dummy_pfngltexsubimage3dproc as *const c_void) {&null::<PFNGLTEXSUBIMAGE3DPROC>()} else {&self.texsubimage3d}})
+			.field("copytexsubimage3d", unsafe{if transmute::<_, *const c_void>(self.copytexsubimage3d) == (dummy_pfnglcopytexsubimage3dproc as *const c_void) {&null::<PFNGLCOPYTEXSUBIMAGE3DPROC>()} else {&self.copytexsubimage3d}})
+			.field("compressedteximage3d", unsafe{if transmute::<_, *const c_void>(self.compressedteximage3d) == (dummy_pfnglcompressedteximage3dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXIMAGE3DPROC>()} else {&self.compressedteximage3d}})
+			.field("compressedtexsubimage3d", unsafe{if transmute::<_, *const c_void>(self.compressedtexsubimage3d) == (dummy_pfnglcompressedtexsubimage3dproc as *const c_void) {&null::<PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC>()} else {&self.compressedtexsubimage3d}})
+			.field("genqueries", unsafe{if transmute::<_, *const c_void>(self.genqueries) == (dummy_pfnglgenqueriesproc as *const c_void) {&null::<PFNGLGENQUERIESPROC>()} else {&self.genqueries}})
+			.field("deletequeries", unsafe{if transmute::<_, *const c_void>(self.deletequeries) == (dummy_pfngldeletequeriesproc as *const c_void) {&null::<PFNGLDELETEQUERIESPROC>()} else {&self.deletequeries}})
+			.field("isquery", unsafe{if transmute::<_, *const c_void>(self.isquery) == (dummy_pfnglisqueryproc as *const c_void) {&null::<PFNGLISQUERYPROC>()} else {&self.isquery}})
+			.field("beginquery", unsafe{if transmute::<_, *const c_void>(self.beginquery) == (dummy_pfnglbeginqueryproc as *const c_void) {&null::<PFNGLBEGINQUERYPROC>()} else {&self.beginquery}})
+			.field("endquery", unsafe{if transmute::<_, *const c_void>(self.endquery) == (dummy_pfnglendqueryproc as *const c_void) {&null::<PFNGLENDQUERYPROC>()} else {&self.endquery}})
+			.field("getqueryiv", unsafe{if transmute::<_, *const c_void>(self.getqueryiv) == (dummy_pfnglgetqueryivproc as *const c_void) {&null::<PFNGLGETQUERYIVPROC>()} else {&self.getqueryiv}})
+			.field("getqueryobjectuiv", unsafe{if transmute::<_, *const c_void>(self.getqueryobjectuiv) == (dummy_pfnglgetqueryobjectuivproc as *const c_void) {&null::<PFNGLGETQUERYOBJECTUIVPROC>()} else {&self.getqueryobjectuiv}})
+			.field("unmapbuffer", unsafe{if transmute::<_, *const c_void>(self.unmapbuffer) == (dummy_pfnglunmapbufferproc as *const c_void) {&null::<PFNGLUNMAPBUFFERPROC>()} else {&self.unmapbuffer}})
+			.field("getbufferpointerv", unsafe{if transmute::<_, *const c_void>(self.getbufferpointerv) == (dummy_pfnglgetbufferpointervproc as *const c_void) {&null::<PFNGLGETBUFFERPOINTERVPROC>()} else {&self.getbufferpointerv}})
+			.field("drawbuffers", unsafe{if transmute::<_, *const c_void>(self.drawbuffers) == (dummy_pfngldrawbuffersproc as *const c_void) {&null::<PFNGLDRAWBUFFERSPROC>()} else {&self.drawbuffers}})
+			.field("uniformmatrix2x3fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix2x3fv) == (dummy_pfngluniformmatrix2x3fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX2X3FVPROC>()} else {&self.uniformmatrix2x3fv}})
+			.field("uniformmatrix3x2fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix3x2fv) == (dummy_pfngluniformmatrix3x2fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX3X2FVPROC>()} else {&self.uniformmatrix3x2fv}})
+			.field("uniformmatrix2x4fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix2x4fv) == (dummy_pfngluniformmatrix2x4fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX2X4FVPROC>()} else {&self.uniformmatrix2x4fv}})
+			.field("uniformmatrix4x2fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix4x2fv) == (dummy_pfngluniformmatrix4x2fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX4X2FVPROC>()} else {&self.uniformmatrix4x2fv}})
+			.field("uniformmatrix3x4fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix3x4fv) == (dummy_pfngluniformmatrix3x4fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX3X4FVPROC>()} else {&self.uniformmatrix3x4fv}})
+			.field("uniformmatrix4x3fv", unsafe{if transmute::<_, *const c_void>(self.uniformmatrix4x3fv) == (dummy_pfngluniformmatrix4x3fvproc as *const c_void) {&null::<PFNGLUNIFORMMATRIX4X3FVPROC>()} else {&self.uniformmatrix4x3fv}})
+			.field("blitframebuffer", unsafe{if transmute::<_, *const c_void>(self.blitframebuffer) == (dummy_pfnglblitframebufferproc as *const c_void) {&null::<PFNGLBLITFRAMEBUFFERPROC>()} else {&self.blitframebuffer}})
+			.field("renderbufferstoragemultisample", unsafe{if transmute::<_, *const c_void>(self.renderbufferstoragemultisample) == (dummy_pfnglrenderbufferstoragemultisampleproc as *const c_void) {&null::<PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC>()} else {&self.renderbufferstoragemultisample}})
+			.field("framebuffertexturelayer", unsafe{if transmute::<_, *const c_void>(self.framebuffertexturelayer) == (dummy_pfnglframebuffertexturelayerproc as *const c_void) {&null::<PFNGLFRAMEBUFFERTEXTURELAYERPROC>()} else {&self.framebuffertexturelayer}})
+			.field("mapbufferrange", unsafe{if transmute::<_, *const c_void>(self.mapbufferrange) == (dummy_pfnglmapbufferrangeproc as *const c_void) {&null::<PFNGLMAPBUFFERRANGEPROC>()} else {&self.mapbufferrange}})
+			.field("flushmappedbufferrange", unsafe{if transmute::<_, *const c_void>(self.flushmappedbufferrange) == (dummy_pfnglflushmappedbufferrangeproc as *const c_void) {&null::<PFNGLFLUSHMAPPEDBUFFERRANGEPROC>()} else {&self.flushmappedbufferrange}})
+			.field("bindvertexarray", unsafe{if transmute::<_, *const c_void>(self.bindvertexarray) == (dummy_pfnglbindvertexarrayproc as *const c_void) {&null::<PFNGLBINDVERTEXARRAYPROC>()} else {&self.bindvertexarray}})
+			.field("deletevertexarrays", unsafe{if transmute::<_, *const c_void>(self.deletevertexarrays) == (dummy_pfngldeletevertexarraysproc as *const c_void) {&null::<PFNGLDELETEVERTEXARRAYSPROC>()} else {&self.deletevertexarrays}})
+			.field("genvertexarrays", unsafe{if transmute::<_, *const c_void>(self.genvertexarrays) == (dummy_pfnglgenvertexarraysproc as *const c_void) {&null::<PFNGLGENVERTEXARRAYSPROC>()} else {&self.genvertexarrays}})
+			.field("isvertexarray", unsafe{if transmute::<_, *const c_void>(self.isvertexarray) == (dummy_pfnglisvertexarrayproc as *const c_void) {&null::<PFNGLISVERTEXARRAYPROC>()} else {&self.isvertexarray}})
+			.field("getintegeri_v", unsafe{if transmute::<_, *const c_void>(self.getintegeri_v) == (dummy_pfnglgetintegeri_vproc as *const c_void) {&null::<PFNGLGETINTEGERI_VPROC>()} else {&self.getintegeri_v}})
+			.field("begintransformfeedback", unsafe{if transmute::<_, *const c_void>(self.begintransformfeedback) == (dummy_pfnglbegintransformfeedbackproc as *const c_void) {&null::<PFNGLBEGINTRANSFORMFEEDBACKPROC>()} else {&self.begintransformfeedback}})
+			.field("endtransformfeedback", unsafe{if transmute::<_, *const c_void>(self.endtransformfeedback) == (dummy_pfnglendtransformfeedbackproc as *const c_void) {&null::<PFNGLENDTRANSFORMFEEDBACKPROC>()} else {&self.endtransformfeedback}})
+			.field("bindbufferrange", unsafe{if transmute::<_, *const c_void>(self.bindbufferrange) == (dummy_pfnglbindbufferrangeproc as *const c_void) {&null::<PFNGLBINDBUFFERRANGEPROC>()} else {&self.bindbufferrange}})
+			.field("bindbufferbase", unsafe{if transmute::<_, *const c_void>(self.bindbufferbase) == (dummy_pfnglbindbufferbaseproc as *const c_void) {&null::<PFNGLBINDBUFFERBASEPROC>()} else {&self.bindbufferbase}})
+			.field("transformfeedbackvaryings", unsafe{if transmute::<_, *const c_void>(self.transformfeedbackvaryings) == (dummy_pfngltransformfeedbackvaryingsproc as *const c_void) {&null::<PFNGLTRANSFORMFEEDBACKVARYINGSPROC>()} else {&self.transformfeedbackvaryings}})
+			.field("gettransformfeedbackvarying", unsafe{if transmute::<_, *const c_void>(self.gettransformfeedbackvarying) == (dummy_pfnglgettransformfeedbackvaryingproc as *const c_void) {&null::<PFNGLGETTRANSFORMFEEDBACKVARYINGPROC>()} else {&self.gettransformfeedbackvarying}})
+			.field("vertexattribipointer", unsafe{if transmute::<_, *const c_void>(self.vertexattribipointer) == (dummy_pfnglvertexattribipointerproc as *const c_void) {&null::<PFNGLVERTEXATTRIBIPOINTERPROC>()} else {&self.vertexattribipointer}})
+			.field("getvertexattribiiv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribiiv) == (dummy_pfnglgetvertexattribiivproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBIIVPROC>()} else {&self.getvertexattribiiv}})
+			.field("getvertexattribiuiv", unsafe{if transmute::<_, *const c_void>(self.getvertexattribiuiv) == (dummy_pfnglgetvertexattribiuivproc as *const c_void) {&null::<PFNGLGETVERTEXATTRIBIUIVPROC>()} else {&self.getvertexattribiuiv}})
+			.field("vertexattribi4i", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4i) == (dummy_pfnglvertexattribi4iproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4IPROC>()} else {&self.vertexattribi4i}})
+			.field("vertexattribi4ui", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4ui) == (dummy_pfnglvertexattribi4uiproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4UIPROC>()} else {&self.vertexattribi4ui}})
+			.field("vertexattribi4iv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4iv) == (dummy_pfnglvertexattribi4ivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4IVPROC>()} else {&self.vertexattribi4iv}})
+			.field("vertexattribi4uiv", unsafe{if transmute::<_, *const c_void>(self.vertexattribi4uiv) == (dummy_pfnglvertexattribi4uivproc as *const c_void) {&null::<PFNGLVERTEXATTRIBI4UIVPROC>()} else {&self.vertexattribi4uiv}})
+			.field("getuniformuiv", unsafe{if transmute::<_, *const c_void>(self.getuniformuiv) == (dummy_pfnglgetuniformuivproc as *const c_void) {&null::<PFNGLGETUNIFORMUIVPROC>()} else {&self.getuniformuiv}})
+			.field("getfragdatalocation", unsafe{if transmute::<_, *const c_void>(self.getfragdatalocation) == (dummy_pfnglgetfragdatalocationproc as *const c_void) {&null::<PFNGLGETFRAGDATALOCATIONPROC>()} else {&self.getfragdatalocation}})
+			.field("uniform1ui", unsafe{if transmute::<_, *const c_void>(self.uniform1ui) == (dummy_pfngluniform1uiproc as *const c_void) {&null::<PFNGLUNIFORM1UIPROC>()} else {&self.uniform1ui}})
+			.field("uniform2ui", unsafe{if transmute::<_, *const c_void>(self.uniform2ui) == (dummy_pfngluniform2uiproc as *const c_void) {&null::<PFNGLUNIFORM2UIPROC>()} else {&self.uniform2ui}})
+			.field("uniform3ui", unsafe{if transmute::<_, *const c_void>(self.uniform3ui) == (dummy_pfngluniform3uiproc as *const c_void) {&null::<PFNGLUNIFORM3UIPROC>()} else {&self.uniform3ui}})
+			.field("uniform4ui", unsafe{if transmute::<_, *const c_void>(self.uniform4ui) == (dummy_pfngluniform4uiproc as *const c_void) {&null::<PFNGLUNIFORM4UIPROC>()} else {&self.uniform4ui}})
+			.field("uniform1uiv", unsafe{if transmute::<_, *const c_void>(self.uniform1uiv) == (dummy_pfngluniform1uivproc as *const c_void) {&null::<PFNGLUNIFORM1UIVPROC>()} else {&self.uniform1uiv}})
+			.field("uniform2uiv", unsafe{if transmute::<_, *const c_void>(self.uniform2uiv) == (dummy_pfngluniform2uivproc as *const c_void) {&null::<PFNGLUNIFORM2UIVPROC>()} else {&self.uniform2uiv}})
+			.field("uniform3uiv", unsafe{if transmute::<_, *const c_void>(self.uniform3uiv) == (dummy_pfngluniform3uivproc as *const c_void) {&null::<PFNGLUNIFORM3UIVPROC>()} else {&self.uniform3uiv}})
+			.field("uniform4uiv", unsafe{if transmute::<_, *const c_void>(self.uniform4uiv) == (dummy_pfngluniform4uivproc as *const c_void) {&null::<PFNGLUNIFORM4UIVPROC>()} else {&self.uniform4uiv}})
+			.field("clearbufferiv", unsafe{if transmute::<_, *const c_void>(self.clearbufferiv) == (dummy_pfnglclearbufferivproc as *const c_void) {&null::<PFNGLCLEARBUFFERIVPROC>()} else {&self.clearbufferiv}})
+			.field("clearbufferuiv", unsafe{if transmute::<_, *const c_void>(self.clearbufferuiv) == (dummy_pfnglclearbufferuivproc as *const c_void) {&null::<PFNGLCLEARBUFFERUIVPROC>()} else {&self.clearbufferuiv}})
+			.field("clearbufferfv", unsafe{if transmute::<_, *const c_void>(self.clearbufferfv) == (dummy_pfnglclearbufferfvproc as *const c_void) {&null::<PFNGLCLEARBUFFERFVPROC>()} else {&self.clearbufferfv}})
+			.field("clearbufferfi", unsafe{if transmute::<_, *const c_void>(self.clearbufferfi) == (dummy_pfnglclearbufferfiproc as *const c_void) {&null::<PFNGLCLEARBUFFERFIPROC>()} else {&self.clearbufferfi}})
+			.field("getstringi", unsafe{if transmute::<_, *const c_void>(self.getstringi) == (dummy_pfnglgetstringiproc as *const c_void) {&null::<PFNGLGETSTRINGIPROC>()} else {&self.getstringi}})
+			.field("copybuffersubdata", unsafe{if transmute::<_, *const c_void>(self.copybuffersubdata) == (dummy_pfnglcopybuffersubdataproc as *const c_void) {&null::<PFNGLCOPYBUFFERSUBDATAPROC>()} else {&self.copybuffersubdata}})
+			.field("getuniformindices", unsafe{if transmute::<_, *const c_void>(self.getuniformindices) == (dummy_pfnglgetuniformindicesproc as *const c_void) {&null::<PFNGLGETUNIFORMINDICESPROC>()} else {&self.getuniformindices}})
+			.field("getactiveuniformsiv", unsafe{if transmute::<_, *const c_void>(self.getactiveuniformsiv) == (dummy_pfnglgetactiveuniformsivproc as *const c_void) {&null::<PFNGLGETACTIVEUNIFORMSIVPROC>()} else {&self.getactiveuniformsiv}})
+			.field("getuniformblockindex", unsafe{if transmute::<_, *const c_void>(self.getuniformblockindex) == (dummy_pfnglgetuniformblockindexproc as *const c_void) {&null::<PFNGLGETUNIFORMBLOCKINDEXPROC>()} else {&self.getuniformblockindex}})
+			.field("getactiveuniformblockiv", unsafe{if transmute::<_, *const c_void>(self.getactiveuniformblockiv) == (dummy_pfnglgetactiveuniformblockivproc as *const c_void) {&null::<PFNGLGETACTIVEUNIFORMBLOCKIVPROC>()} else {&self.getactiveuniformblockiv}})
+			.field("getactiveuniformblockname", unsafe{if transmute::<_, *const c_void>(self.getactiveuniformblockname) == (dummy_pfnglgetactiveuniformblocknameproc as *const c_void) {&null::<PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC>()} else {&self.getactiveuniformblockname}})
+			.field("uniformblockbinding", unsafe{if transmute::<_, *const c_void>(self.uniformblockbinding) == (dummy_pfngluniformblockbindingproc as *const c_void) {&null::<PFNGLUNIFORMBLOCKBINDINGPROC>()} else {&self.uniformblockbinding}})
+			.field("drawarraysinstanced", unsafe{if transmute::<_, *const c_void>(self.drawarraysinstanced) == (dummy_pfngldrawarraysinstancedproc as *const c_void) {&null::<PFNGLDRAWARRAYSINSTANCEDPROC>()} else {&self.drawarraysinstanced}})
+			.field("drawelementsinstanced", unsafe{if transmute::<_, *const c_void>(self.drawelementsinstanced) == (dummy_pfngldrawelementsinstancedproc as *const c_void) {&null::<PFNGLDRAWELEMENTSINSTANCEDPROC>()} else {&self.drawelementsinstanced}})
+			.field("fencesync", unsafe{if transmute::<_, *const c_void>(self.fencesync) == (dummy_pfnglfencesyncproc as *const c_void) {&null::<PFNGLFENCESYNCPROC>()} else {&self.fencesync}})
+			.field("issync", unsafe{if transmute::<_, *const c_void>(self.issync) == (dummy_pfnglissyncproc as *const c_void) {&null::<PFNGLISSYNCPROC>()} else {&self.issync}})
+			.field("deletesync", unsafe{if transmute::<_, *const c_void>(self.deletesync) == (dummy_pfngldeletesyncproc as *const c_void) {&null::<PFNGLDELETESYNCPROC>()} else {&self.deletesync}})
+			.field("clientwaitsync", unsafe{if transmute::<_, *const c_void>(self.clientwaitsync) == (dummy_pfnglclientwaitsyncproc as *const c_void) {&null::<PFNGLCLIENTWAITSYNCPROC>()} else {&self.clientwaitsync}})
+			.field("waitsync", unsafe{if transmute::<_, *const c_void>(self.waitsync) == (dummy_pfnglwaitsyncproc as *const c_void) {&null::<PFNGLWAITSYNCPROC>()} else {&self.waitsync}})
+			.field("getinteger64v", unsafe{if transmute::<_, *const c_void>(self.getinteger64v) == (dummy_pfnglgetinteger64vproc as *const c_void) {&null::<PFNGLGETINTEGER64VPROC>()} else {&self.getinteger64v}})
+			.field("getsynciv", unsafe{if transmute::<_, *const c_void>(self.getsynciv) == (dummy_pfnglgetsyncivproc as *const c_void) {&null::<PFNGLGETSYNCIVPROC>()} else {&self.getsynciv}})
+			.field("getinteger64i_v", unsafe{if transmute::<_, *const c_void>(self.getinteger64i_v) == (dummy_pfnglgetinteger64i_vproc as *const c_void) {&null::<PFNGLGETINTEGER64I_VPROC>()} else {&self.getinteger64i_v}})
+			.field("getbufferparameteri64v", unsafe{if transmute::<_, *const c_void>(self.getbufferparameteri64v) == (dummy_pfnglgetbufferparameteri64vproc as *const c_void) {&null::<PFNGLGETBUFFERPARAMETERI64VPROC>()} else {&self.getbufferparameteri64v}})
+			.field("gensamplers", unsafe{if transmute::<_, *const c_void>(self.gensamplers) == (dummy_pfnglgensamplersproc as *const c_void) {&null::<PFNGLGENSAMPLERSPROC>()} else {&self.gensamplers}})
+			.field("deletesamplers", unsafe{if transmute::<_, *const c_void>(self.deletesamplers) == (dummy_pfngldeletesamplersproc as *const c_void) {&null::<PFNGLDELETESAMPLERSPROC>()} else {&self.deletesamplers}})
+			.field("issampler", unsafe{if transmute::<_, *const c_void>(self.issampler) == (dummy_pfnglissamplerproc as *const c_void) {&null::<PFNGLISSAMPLERPROC>()} else {&self.issampler}})
+			.field("bindsampler", unsafe{if transmute::<_, *const c_void>(self.bindsampler) == (dummy_pfnglbindsamplerproc as *const c_void) {&null::<PFNGLBINDSAMPLERPROC>()} else {&self.bindsampler}})
+			.field("samplerparameteri", unsafe{if transmute::<_, *const c_void>(self.samplerparameteri) == (dummy_pfnglsamplerparameteriproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERIPROC>()} else {&self.samplerparameteri}})
+			.field("samplerparameteriv", unsafe{if transmute::<_, *const c_void>(self.samplerparameteriv) == (dummy_pfnglsamplerparameterivproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERIVPROC>()} else {&self.samplerparameteriv}})
+			.field("samplerparameterf", unsafe{if transmute::<_, *const c_void>(self.samplerparameterf) == (dummy_pfnglsamplerparameterfproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERFPROC>()} else {&self.samplerparameterf}})
+			.field("samplerparameterfv", unsafe{if transmute::<_, *const c_void>(self.samplerparameterfv) == (dummy_pfnglsamplerparameterfvproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERFVPROC>()} else {&self.samplerparameterfv}})
+			.field("getsamplerparameteriv", unsafe{if transmute::<_, *const c_void>(self.getsamplerparameteriv) == (dummy_pfnglgetsamplerparameterivproc as *const c_void) {&null::<PFNGLGETSAMPLERPARAMETERIVPROC>()} else {&self.getsamplerparameteriv}})
+			.field("getsamplerparameterfv", unsafe{if transmute::<_, *const c_void>(self.getsamplerparameterfv) == (dummy_pfnglgetsamplerparameterfvproc as *const c_void) {&null::<PFNGLGETSAMPLERPARAMETERFVPROC>()} else {&self.getsamplerparameterfv}})
+			.field("vertexattribdivisor", unsafe{if transmute::<_, *const c_void>(self.vertexattribdivisor) == (dummy_pfnglvertexattribdivisorproc as *const c_void) {&null::<PFNGLVERTEXATTRIBDIVISORPROC>()} else {&self.vertexattribdivisor}})
+			.field("bindtransformfeedback", unsafe{if transmute::<_, *const c_void>(self.bindtransformfeedback) == (dummy_pfnglbindtransformfeedbackproc as *const c_void) {&null::<PFNGLBINDTRANSFORMFEEDBACKPROC>()} else {&self.bindtransformfeedback}})
+			.field("deletetransformfeedbacks", unsafe{if transmute::<_, *const c_void>(self.deletetransformfeedbacks) == (dummy_pfngldeletetransformfeedbacksproc as *const c_void) {&null::<PFNGLDELETETRANSFORMFEEDBACKSPROC>()} else {&self.deletetransformfeedbacks}})
+			.field("gentransformfeedbacks", unsafe{if transmute::<_, *const c_void>(self.gentransformfeedbacks) == (dummy_pfnglgentransformfeedbacksproc as *const c_void) {&null::<PFNGLGENTRANSFORMFEEDBACKSPROC>()} else {&self.gentransformfeedbacks}})
+			.field("istransformfeedback", unsafe{if transmute::<_, *const c_void>(self.istransformfeedback) == (dummy_pfnglistransformfeedbackproc as *const c_void) {&null::<PFNGLISTRANSFORMFEEDBACKPROC>()} else {&self.istransformfeedback}})
+			.field("pausetransformfeedback", unsafe{if transmute::<_, *const c_void>(self.pausetransformfeedback) == (dummy_pfnglpausetransformfeedbackproc as *const c_void) {&null::<PFNGLPAUSETRANSFORMFEEDBACKPROC>()} else {&self.pausetransformfeedback}})
+			.field("resumetransformfeedback", unsafe{if transmute::<_, *const c_void>(self.resumetransformfeedback) == (dummy_pfnglresumetransformfeedbackproc as *const c_void) {&null::<PFNGLRESUMETRANSFORMFEEDBACKPROC>()} else {&self.resumetransformfeedback}})
+			.field("getprogrambinary", unsafe{if transmute::<_, *const c_void>(self.getprogrambinary) == (dummy_pfnglgetprogrambinaryproc as *const c_void) {&null::<PFNGLGETPROGRAMBINARYPROC>()} else {&self.getprogrambinary}})
+			.field("programbinary", unsafe{if transmute::<_, *const c_void>(self.programbinary) == (dummy_pfnglprogrambinaryproc as *const c_void) {&null::<PFNGLPROGRAMBINARYPROC>()} else {&self.programbinary}})
+			.field("programparameteri", unsafe{if transmute::<_, *const c_void>(self.programparameteri) == (dummy_pfnglprogramparameteriproc as *const c_void) {&null::<PFNGLPROGRAMPARAMETERIPROC>()} else {&self.programparameteri}})
+			.field("invalidateframebuffer", unsafe{if transmute::<_, *const c_void>(self.invalidateframebuffer) == (dummy_pfnglinvalidateframebufferproc as *const c_void) {&null::<PFNGLINVALIDATEFRAMEBUFFERPROC>()} else {&self.invalidateframebuffer}})
+			.field("invalidatesubframebuffer", unsafe{if transmute::<_, *const c_void>(self.invalidatesubframebuffer) == (dummy_pfnglinvalidatesubframebufferproc as *const c_void) {&null::<PFNGLINVALIDATESUBFRAMEBUFFERPROC>()} else {&self.invalidatesubframebuffer}})
+			.field("texstorage2d", unsafe{if transmute::<_, *const c_void>(self.texstorage2d) == (dummy_pfngltexstorage2dproc as *const c_void) {&null::<PFNGLTEXSTORAGE2DPROC>()} else {&self.texstorage2d}})
+			.field("texstorage3d", unsafe{if transmute::<_, *const c_void>(self.texstorage3d) == (dummy_pfngltexstorage3dproc as *const c_void) {&null::<PFNGLTEXSTORAGE3DPROC>()} else {&self.texstorage3d}})
+			.field("getinternalformativ", unsafe{if transmute::<_, *const c_void>(self.getinternalformativ) == (dummy_pfnglgetinternalformativproc as *const c_void) {&null::<PFNGLGETINTERNALFORMATIVPROC>()} else {&self.getinternalformativ}})
+			.finish()
+		} else {
+			f.debug_struct("EsVersion30")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
+
+
+/// Functions from OpenGL ES version 3.1
+pub trait ES_GL_3_1 {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	fn glGetError(&self) -> GLenum;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDispatchCompute.xhtml>
+	fn glDispatchCompute(&self, num_groups_x: GLuint, num_groups_y: GLuint, num_groups_z: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDispatchComputeIndirect.xhtml>
+	fn glDispatchComputeIndirect(&self, indirect: GLintptr) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawArraysIndirect.xhtml>
+	fn glDrawArraysIndirect(&self, mode: GLenum, indirect: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsIndirect.xhtml>
+	fn glDrawElementsIndirect(&self, mode: GLenum, type_: GLenum, indirect: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferParameteri.xhtml>
+	fn glFramebufferParameteri(&self, target: GLenum, pname: GLenum, param: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFramebufferParameteriv.xhtml>
+	fn glGetFramebufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramInterfaceiv.xhtml>
+	fn glGetProgramInterfaceiv(&self, program: GLuint, programInterface: GLenum, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceIndex.xhtml>
+	fn glGetProgramResourceIndex(&self, program: GLuint, programInterface: GLenum, name: *const GLchar) -> Result<GLuint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceName.xhtml>
+	fn glGetProgramResourceName(&self, program: GLuint, programInterface: GLenum, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, name: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceiv.xhtml>
+	fn glGetProgramResourceiv(&self, program: GLuint, programInterface: GLenum, index: GLuint, propCount: GLsizei, props: *const GLenum, bufSize: GLsizei, length: *mut GLsizei, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceLocation.xhtml>
+	fn glGetProgramResourceLocation(&self, program: GLuint, programInterface: GLenum, name: *const GLchar) -> Result<GLint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUseProgramStages.xhtml>
+	fn glUseProgramStages(&self, pipeline: GLuint, stages: GLbitfield, program: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glActiveShaderProgram.xhtml>
+	fn glActiveShaderProgram(&self, pipeline: GLuint, program: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCreateShaderProgramv.xhtml>
+	fn glCreateShaderProgramv(&self, type_: GLenum, count: GLsizei, strings: *const *const GLchar) -> Result<GLuint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindProgramPipeline.xhtml>
+	fn glBindProgramPipeline(&self, pipeline: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteProgramPipelines.xhtml>
+	fn glDeleteProgramPipelines(&self, n: GLsizei, pipelines: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenProgramPipelines.xhtml>
+	fn glGenProgramPipelines(&self, n: GLsizei, pipelines: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsProgramPipeline.xhtml>
+	fn glIsProgramPipeline(&self, pipeline: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramPipelineiv.xhtml>
+	fn glGetProgramPipelineiv(&self, pipeline: GLuint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1i.xhtml>
+	fn glProgramUniform1i(&self, program: GLuint, location: GLint, v0: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2i.xhtml>
+	fn glProgramUniform2i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3i.xhtml>
+	fn glProgramUniform3i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4i.xhtml>
+	fn glProgramUniform4i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1ui.xhtml>
+	fn glProgramUniform1ui(&self, program: GLuint, location: GLint, v0: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2ui.xhtml>
+	fn glProgramUniform2ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3ui.xhtml>
+	fn glProgramUniform3ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4ui.xhtml>
+	fn glProgramUniform4ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1f.xhtml>
+	fn glProgramUniform1f(&self, program: GLuint, location: GLint, v0: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2f.xhtml>
+	fn glProgramUniform2f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3f.xhtml>
+	fn glProgramUniform3f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4f.xhtml>
+	fn glProgramUniform4f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1iv.xhtml>
+	fn glProgramUniform1iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2iv.xhtml>
+	fn glProgramUniform2iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3iv.xhtml>
+	fn glProgramUniform3iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4iv.xhtml>
+	fn glProgramUniform4iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1uiv.xhtml>
+	fn glProgramUniform1uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2uiv.xhtml>
+	fn glProgramUniform2uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3uiv.xhtml>
+	fn glProgramUniform3uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4uiv.xhtml>
+	fn glProgramUniform4uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1fv.xhtml>
+	fn glProgramUniform1fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2fv.xhtml>
+	fn glProgramUniform2fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3fv.xhtml>
+	fn glProgramUniform3fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4fv.xhtml>
+	fn glProgramUniform4fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix2fv.xhtml>
+	fn glProgramUniformMatrix2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix3fv.xhtml>
+	fn glProgramUniformMatrix3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix4fv.xhtml>
+	fn glProgramUniformMatrix4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix2x3fv.xhtml>
+	fn glProgramUniformMatrix2x3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix3x2fv.xhtml>
+	fn glProgramUniformMatrix3x2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix2x4fv.xhtml>
+	fn glProgramUniformMatrix2x4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix4x2fv.xhtml>
+	fn glProgramUniformMatrix4x2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix3x4fv.xhtml>
+	fn glProgramUniformMatrix3x4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix4x3fv.xhtml>
+	fn glProgramUniformMatrix4x3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glValidateProgramPipeline.xhtml>
+	fn glValidateProgramPipeline(&self, pipeline: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramPipelineInfoLog.xhtml>
+	fn glGetProgramPipelineInfoLog(&self, pipeline: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindImageTexture.xhtml>
+	fn glBindImageTexture(&self, unit: GLuint, texture: GLuint, level: GLint, layered: GLboolean, layer: GLint, access: GLenum, format: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBooleani_v.xhtml>
+	fn glGetBooleani_v(&self, target: GLenum, index: GLuint, data: *mut GLboolean) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMemoryBarrier.xhtml>
+	fn glMemoryBarrier(&self, barriers: GLbitfield) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMemoryBarrierByRegion.xhtml>
+	fn glMemoryBarrierByRegion(&self, barriers: GLbitfield) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage2DMultisample.xhtml>
+	fn glTexStorage2DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, fixedsamplelocations: GLboolean) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetMultisamplefv.xhtml>
+	fn glGetMultisamplefv(&self, pname: GLenum, index: GLuint, val: *mut GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSampleMaski.xhtml>
+	fn glSampleMaski(&self, maskNumber: GLuint, mask: GLbitfield) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexLevelParameteriv.xhtml>
+	fn glGetTexLevelParameteriv(&self, target: GLenum, level: GLint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexLevelParameterfv.xhtml>
+	fn glGetTexLevelParameterfv(&self, target: GLenum, level: GLint, pname: GLenum, params: *mut GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindVertexBuffer.xhtml>
+	fn glBindVertexBuffer(&self, bindingindex: GLuint, buffer: GLuint, offset: GLintptr, stride: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribFormat.xhtml>
+	fn glVertexAttribFormat(&self, attribindex: GLuint, size: GLint, type_: GLenum, normalized: GLboolean, relativeoffset: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribIFormat.xhtml>
+	fn glVertexAttribIFormat(&self, attribindex: GLuint, size: GLint, type_: GLenum, relativeoffset: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribBinding.xhtml>
+	fn glVertexAttribBinding(&self, attribindex: GLuint, bindingindex: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexBindingDivisor.xhtml>
+	fn glVertexBindingDivisor(&self, bindingindex: GLuint, divisor: GLuint) -> Result<()>;
+}
+/// Functions from OpenGL ES version 3.1
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
+pub struct EsVersion31 {
+	/// Is OpenGL ES version 3.1 available
+	available: bool,
+
+	/// The function pointer to `glGetError()`
+	pub geterror: PFNGLGETERRORPROC,
+
+	/// The function pointer to `glDispatchCompute()`
+	pub dispatchcompute: PFNGLDISPATCHCOMPUTEPROC,
+
+	/// The function pointer to `glDispatchComputeIndirect()`
+	pub dispatchcomputeindirect: PFNGLDISPATCHCOMPUTEINDIRECTPROC,
+
+	/// The function pointer to `glDrawArraysIndirect()`
+	pub drawarraysindirect: PFNGLDRAWARRAYSINDIRECTPROC,
+
+	/// The function pointer to `glDrawElementsIndirect()`
+	pub drawelementsindirect: PFNGLDRAWELEMENTSINDIRECTPROC,
+
+	/// The function pointer to `glFramebufferParameteri()`
+	pub framebufferparameteri: PFNGLFRAMEBUFFERPARAMETERIPROC,
+
+	/// The function pointer to `glGetFramebufferParameteriv()`
+	pub getframebufferparameteriv: PFNGLGETFRAMEBUFFERPARAMETERIVPROC,
+
+	/// The function pointer to `glGetProgramInterfaceiv()`
+	pub getprograminterfaceiv: PFNGLGETPROGRAMINTERFACEIVPROC,
+
+	/// The function pointer to `glGetProgramResourceIndex()`
+	pub getprogramresourceindex: PFNGLGETPROGRAMRESOURCEINDEXPROC,
+
+	/// The function pointer to `glGetProgramResourceName()`
+	pub getprogramresourcename: PFNGLGETPROGRAMRESOURCENAMEPROC,
+
+	/// The function pointer to `glGetProgramResourceiv()`
+	pub getprogramresourceiv: PFNGLGETPROGRAMRESOURCEIVPROC,
+
+	/// The function pointer to `glGetProgramResourceLocation()`
+	pub getprogramresourcelocation: PFNGLGETPROGRAMRESOURCELOCATIONPROC,
+
+	/// The function pointer to `glUseProgramStages()`
+	pub useprogramstages: PFNGLUSEPROGRAMSTAGESPROC,
+
+	/// The function pointer to `glActiveShaderProgram()`
+	pub activeshaderprogram: PFNGLACTIVESHADERPROGRAMPROC,
+
+	/// The function pointer to `glCreateShaderProgramv()`
+	pub createshaderprogramv: PFNGLCREATESHADERPROGRAMVPROC,
+
+	/// The function pointer to `glBindProgramPipeline()`
+	pub bindprogrampipeline: PFNGLBINDPROGRAMPIPELINEPROC,
+
+	/// The function pointer to `glDeleteProgramPipelines()`
+	pub deleteprogrampipelines: PFNGLDELETEPROGRAMPIPELINESPROC,
+
+	/// The function pointer to `glGenProgramPipelines()`
+	pub genprogrampipelines: PFNGLGENPROGRAMPIPELINESPROC,
+
+	/// The function pointer to `glIsProgramPipeline()`
+	pub isprogrampipeline: PFNGLISPROGRAMPIPELINEPROC,
+
+	/// The function pointer to `glGetProgramPipelineiv()`
+	pub getprogrampipelineiv: PFNGLGETPROGRAMPIPELINEIVPROC,
+
+	/// The function pointer to `glProgramUniform1i()`
+	pub programuniform1i: PFNGLPROGRAMUNIFORM1IPROC,
+
+	/// The function pointer to `glProgramUniform2i()`
+	pub programuniform2i: PFNGLPROGRAMUNIFORM2IPROC,
+
+	/// The function pointer to `glProgramUniform3i()`
+	pub programuniform3i: PFNGLPROGRAMUNIFORM3IPROC,
+
+	/// The function pointer to `glProgramUniform4i()`
+	pub programuniform4i: PFNGLPROGRAMUNIFORM4IPROC,
+
+	/// The function pointer to `glProgramUniform1ui()`
+	pub programuniform1ui: PFNGLPROGRAMUNIFORM1UIPROC,
+
+	/// The function pointer to `glProgramUniform2ui()`
+	pub programuniform2ui: PFNGLPROGRAMUNIFORM2UIPROC,
+
+	/// The function pointer to `glProgramUniform3ui()`
+	pub programuniform3ui: PFNGLPROGRAMUNIFORM3UIPROC,
+
+	/// The function pointer to `glProgramUniform4ui()`
+	pub programuniform4ui: PFNGLPROGRAMUNIFORM4UIPROC,
+
+	/// The function pointer to `glProgramUniform1f()`
+	pub programuniform1f: PFNGLPROGRAMUNIFORM1FPROC,
+
+	/// The function pointer to `glProgramUniform2f()`
+	pub programuniform2f: PFNGLPROGRAMUNIFORM2FPROC,
+
+	/// The function pointer to `glProgramUniform3f()`
+	pub programuniform3f: PFNGLPROGRAMUNIFORM3FPROC,
+
+	/// The function pointer to `glProgramUniform4f()`
+	pub programuniform4f: PFNGLPROGRAMUNIFORM4FPROC,
+
+	/// The function pointer to `glProgramUniform1iv()`
+	pub programuniform1iv: PFNGLPROGRAMUNIFORM1IVPROC,
+
+	/// The function pointer to `glProgramUniform2iv()`
+	pub programuniform2iv: PFNGLPROGRAMUNIFORM2IVPROC,
+
+	/// The function pointer to `glProgramUniform3iv()`
+	pub programuniform3iv: PFNGLPROGRAMUNIFORM3IVPROC,
+
+	/// The function pointer to `glProgramUniform4iv()`
+	pub programuniform4iv: PFNGLPROGRAMUNIFORM4IVPROC,
+
+	/// The function pointer to `glProgramUniform1uiv()`
+	pub programuniform1uiv: PFNGLPROGRAMUNIFORM1UIVPROC,
+
+	/// The function pointer to `glProgramUniform2uiv()`
+	pub programuniform2uiv: PFNGLPROGRAMUNIFORM2UIVPROC,
+
+	/// The function pointer to `glProgramUniform3uiv()`
+	pub programuniform3uiv: PFNGLPROGRAMUNIFORM3UIVPROC,
+
+	/// The function pointer to `glProgramUniform4uiv()`
+	pub programuniform4uiv: PFNGLPROGRAMUNIFORM4UIVPROC,
+
+	/// The function pointer to `glProgramUniform1fv()`
+	pub programuniform1fv: PFNGLPROGRAMUNIFORM1FVPROC,
+
+	/// The function pointer to `glProgramUniform2fv()`
+	pub programuniform2fv: PFNGLPROGRAMUNIFORM2FVPROC,
+
+	/// The function pointer to `glProgramUniform3fv()`
+	pub programuniform3fv: PFNGLPROGRAMUNIFORM3FVPROC,
+
+	/// The function pointer to `glProgramUniform4fv()`
+	pub programuniform4fv: PFNGLPROGRAMUNIFORM4FVPROC,
+
+	/// The function pointer to `glProgramUniformMatrix2fv()`
+	pub programuniformmatrix2fv: PFNGLPROGRAMUNIFORMMATRIX2FVPROC,
+
+	/// The function pointer to `glProgramUniformMatrix3fv()`
+	pub programuniformmatrix3fv: PFNGLPROGRAMUNIFORMMATRIX3FVPROC,
+
+	/// The function pointer to `glProgramUniformMatrix4fv()`
+	pub programuniformmatrix4fv: PFNGLPROGRAMUNIFORMMATRIX4FVPROC,
+
+	/// The function pointer to `glProgramUniformMatrix2x3fv()`
+	pub programuniformmatrix2x3fv: PFNGLPROGRAMUNIFORMMATRIX2X3FVPROC,
+
+	/// The function pointer to `glProgramUniformMatrix3x2fv()`
+	pub programuniformmatrix3x2fv: PFNGLPROGRAMUNIFORMMATRIX3X2FVPROC,
+
+	/// The function pointer to `glProgramUniformMatrix2x4fv()`
+	pub programuniformmatrix2x4fv: PFNGLPROGRAMUNIFORMMATRIX2X4FVPROC,
+
+	/// The function pointer to `glProgramUniformMatrix4x2fv()`
+	pub programuniformmatrix4x2fv: PFNGLPROGRAMUNIFORMMATRIX4X2FVPROC,
+
+	/// The function pointer to `glProgramUniformMatrix3x4fv()`
+	pub programuniformmatrix3x4fv: PFNGLPROGRAMUNIFORMMATRIX3X4FVPROC,
+
+	/// The function pointer to `glProgramUniformMatrix4x3fv()`
+	pub programuniformmatrix4x3fv: PFNGLPROGRAMUNIFORMMATRIX4X3FVPROC,
+
+	/// The function pointer to `glValidateProgramPipeline()`
+	pub validateprogrampipeline: PFNGLVALIDATEPROGRAMPIPELINEPROC,
+
+	/// The function pointer to `glGetProgramPipelineInfoLog()`
+	pub getprogrampipelineinfolog: PFNGLGETPROGRAMPIPELINEINFOLOGPROC,
+
+	/// The function pointer to `glBindImageTexture()`
+	pub bindimagetexture: PFNGLBINDIMAGETEXTUREPROC,
+
+	/// The function pointer to `glGetBooleani_v()`
+	pub getbooleani_v: PFNGLGETBOOLEANI_VPROC,
+
+	/// The function pointer to `glMemoryBarrier()`
+	pub memorybarrier: PFNGLMEMORYBARRIERPROC,
+
+	/// The function pointer to `glMemoryBarrierByRegion()`
+	pub memorybarrierbyregion: PFNGLMEMORYBARRIERBYREGIONPROC,
+
+	/// The function pointer to `glTexStorage2DMultisample()`
+	pub texstorage2dmultisample: PFNGLTEXSTORAGE2DMULTISAMPLEPROC,
+
+	/// The function pointer to `glGetMultisamplefv()`
+	pub getmultisamplefv: PFNGLGETMULTISAMPLEFVPROC,
+
+	/// The function pointer to `glSampleMaski()`
+	pub samplemaski: PFNGLSAMPLEMASKIPROC,
+
+	/// The function pointer to `glGetTexLevelParameteriv()`
+	pub gettexlevelparameteriv: PFNGLGETTEXLEVELPARAMETERIVPROC,
+
+	/// The function pointer to `glGetTexLevelParameterfv()`
+	pub gettexlevelparameterfv: PFNGLGETTEXLEVELPARAMETERFVPROC,
+
+	/// The function pointer to `glBindVertexBuffer()`
+	pub bindvertexbuffer: PFNGLBINDVERTEXBUFFERPROC,
+
+	/// The function pointer to `glVertexAttribFormat()`
+	pub vertexattribformat: PFNGLVERTEXATTRIBFORMATPROC,
+
+	/// The function pointer to `glVertexAttribIFormat()`
+	pub vertexattribiformat: PFNGLVERTEXATTRIBIFORMATPROC,
+
+	/// The function pointer to `glVertexAttribBinding()`
+	pub vertexattribbinding: PFNGLVERTEXATTRIBBINDINGPROC,
+
+	/// The function pointer to `glVertexBindingDivisor()`
+	pub vertexbindingdivisor: PFNGLVERTEXBINDINGDIVISORPROC,
+}
+
+impl ES_GL_3_1 for EsVersion31 {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	#[inline(always)]
+	fn glGetError(&self) -> GLenum {
+		(self.geterror)()
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDispatchCompute.xhtml>
+	#[inline(always)]
+	fn glDispatchCompute(&self, num_groups_x: GLuint, num_groups_y: GLuint, num_groups_z: GLuint) -> Result<()> {
+		let ret = process_catch("glDispatchCompute", catch_unwind(||(self.dispatchcompute)(num_groups_x, num_groups_y, num_groups_z)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDispatchCompute", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDispatchComputeIndirect.xhtml>
+	#[inline(always)]
+	fn glDispatchComputeIndirect(&self, indirect: GLintptr) -> Result<()> {
+		let ret = process_catch("glDispatchComputeIndirect", catch_unwind(||(self.dispatchcomputeindirect)(indirect)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDispatchComputeIndirect", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawArraysIndirect.xhtml>
+	#[inline(always)]
+	fn glDrawArraysIndirect(&self, mode: GLenum, indirect: *const c_void) -> Result<()> {
+		let ret = process_catch("glDrawArraysIndirect", catch_unwind(||(self.drawarraysindirect)(mode, indirect)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawArraysIndirect", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsIndirect.xhtml>
+	#[inline(always)]
+	fn glDrawElementsIndirect(&self, mode: GLenum, type_: GLenum, indirect: *const c_void) -> Result<()> {
+		let ret = process_catch("glDrawElementsIndirect", catch_unwind(||(self.drawelementsindirect)(mode, type_, indirect)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElementsIndirect", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferParameteri.xhtml>
+	#[inline(always)]
+	fn glFramebufferParameteri(&self, target: GLenum, pname: GLenum, param: GLint) -> Result<()> {
+		let ret = process_catch("glFramebufferParameteri", catch_unwind(||(self.framebufferparameteri)(target, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferParameteri", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFramebufferParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetFramebufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetFramebufferParameteriv", catch_unwind(||(self.getframebufferparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetFramebufferParameteriv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramInterfaceiv.xhtml>
+	#[inline(always)]
+	fn glGetProgramInterfaceiv(&self, program: GLuint, programInterface: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetProgramInterfaceiv", catch_unwind(||(self.getprograminterfaceiv)(program, programInterface, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramInterfaceiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceIndex.xhtml>
+	#[inline(always)]
+	fn glGetProgramResourceIndex(&self, program: GLuint, programInterface: GLenum, name: *const GLchar) -> Result<GLuint> {
+		let ret = process_catch("glGetProgramResourceIndex", catch_unwind(||(self.getprogramresourceindex)(program, programInterface, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramResourceIndex", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceName.xhtml>
+	#[inline(always)]
+	fn glGetProgramResourceName(&self, program: GLuint, programInterface: GLenum, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, name: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetProgramResourceName", catch_unwind(||(self.getprogramresourcename)(program, programInterface, index, bufSize, length, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramResourceName", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceiv.xhtml>
+	#[inline(always)]
+	fn glGetProgramResourceiv(&self, program: GLuint, programInterface: GLenum, index: GLuint, propCount: GLsizei, props: *const GLenum, bufSize: GLsizei, length: *mut GLsizei, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetProgramResourceiv", catch_unwind(||(self.getprogramresourceiv)(program, programInterface, index, propCount, props, bufSize, length, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramResourceiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceLocation.xhtml>
+	#[inline(always)]
+	fn glGetProgramResourceLocation(&self, program: GLuint, programInterface: GLenum, name: *const GLchar) -> Result<GLint> {
+		let ret = process_catch("glGetProgramResourceLocation", catch_unwind(||(self.getprogramresourcelocation)(program, programInterface, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramResourceLocation", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUseProgramStages.xhtml>
+	#[inline(always)]
+	fn glUseProgramStages(&self, pipeline: GLuint, stages: GLbitfield, program: GLuint) -> Result<()> {
+		let ret = process_catch("glUseProgramStages", catch_unwind(||(self.useprogramstages)(pipeline, stages, program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUseProgramStages", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glActiveShaderProgram.xhtml>
+	#[inline(always)]
+	fn glActiveShaderProgram(&self, pipeline: GLuint, program: GLuint) -> Result<()> {
+		let ret = process_catch("glActiveShaderProgram", catch_unwind(||(self.activeshaderprogram)(pipeline, program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glActiveShaderProgram", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCreateShaderProgramv.xhtml>
+	#[inline(always)]
+	fn glCreateShaderProgramv(&self, type_: GLenum, count: GLsizei, strings: *const *const GLchar) -> Result<GLuint> {
+		let ret = process_catch("glCreateShaderProgramv", catch_unwind(||(self.createshaderprogramv)(type_, count, strings)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCreateShaderProgramv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindProgramPipeline.xhtml>
+	#[inline(always)]
+	fn glBindProgramPipeline(&self, pipeline: GLuint) -> Result<()> {
+		let ret = process_catch("glBindProgramPipeline", catch_unwind(||(self.bindprogrampipeline)(pipeline)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindProgramPipeline", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteProgramPipelines.xhtml>
+	#[inline(always)]
+	fn glDeleteProgramPipelines(&self, n: GLsizei, pipelines: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteProgramPipelines", catch_unwind(||(self.deleteprogrampipelines)(n, pipelines)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteProgramPipelines", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenProgramPipelines.xhtml>
+	#[inline(always)]
+	fn glGenProgramPipelines(&self, n: GLsizei, pipelines: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenProgramPipelines", catch_unwind(||(self.genprogrampipelines)(n, pipelines)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenProgramPipelines", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsProgramPipeline.xhtml>
+	#[inline(always)]
+	fn glIsProgramPipeline(&self, pipeline: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsProgramPipeline", catch_unwind(||(self.isprogrampipeline)(pipeline)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsProgramPipeline", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramPipelineiv.xhtml>
+	#[inline(always)]
+	fn glGetProgramPipelineiv(&self, pipeline: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetProgramPipelineiv", catch_unwind(||(self.getprogrampipelineiv)(pipeline, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramPipelineiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1i.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1i(&self, program: GLuint, location: GLint, v0: GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform1i", catch_unwind(||(self.programuniform1i)(program, location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1i", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2i.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform2i", catch_unwind(||(self.programuniform2i)(program, location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2i", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3i.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform3i", catch_unwind(||(self.programuniform3i)(program, location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3i", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4i.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform4i", catch_unwind(||(self.programuniform4i)(program, location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4i", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1ui.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1ui(&self, program: GLuint, location: GLint, v0: GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform1ui", catch_unwind(||(self.programuniform1ui)(program, location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1ui", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2ui.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform2ui", catch_unwind(||(self.programuniform2ui)(program, location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2ui", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3ui.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform3ui", catch_unwind(||(self.programuniform3ui)(program, location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3ui", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4ui.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform4ui", catch_unwind(||(self.programuniform4ui)(program, location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4ui", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1f.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1f(&self, program: GLuint, location: GLint, v0: GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform1f", catch_unwind(||(self.programuniform1f)(program, location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2f.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform2f", catch_unwind(||(self.programuniform2f)(program, location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3f.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform3f", catch_unwind(||(self.programuniform3f)(program, location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4f.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform4f", catch_unwind(||(self.programuniform4f)(program, location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4f", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1iv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform1iv", catch_unwind(||(self.programuniform1iv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1iv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2iv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform2iv", catch_unwind(||(self.programuniform2iv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2iv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3iv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform3iv", catch_unwind(||(self.programuniform3iv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3iv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4iv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform4iv", catch_unwind(||(self.programuniform4iv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4iv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1uiv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform1uiv", catch_unwind(||(self.programuniform1uiv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1uiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2uiv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform2uiv", catch_unwind(||(self.programuniform2uiv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2uiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3uiv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform3uiv", catch_unwind(||(self.programuniform3uiv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3uiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4uiv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform4uiv", catch_unwind(||(self.programuniform4uiv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4uiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform1fv", catch_unwind(||(self.programuniform1fv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform2fv", catch_unwind(||(self.programuniform2fv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform3fv", catch_unwind(||(self.programuniform3fv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform4fv", catch_unwind(||(self.programuniform4fv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix2fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix2fv", catch_unwind(||(self.programuniformmatrix2fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix2fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix3fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix3fv", catch_unwind(||(self.programuniformmatrix3fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix3fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix4fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix4fv", catch_unwind(||(self.programuniformmatrix4fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix4fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix2x3fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix2x3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix2x3fv", catch_unwind(||(self.programuniformmatrix2x3fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix2x3fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix3x2fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix3x2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix3x2fv", catch_unwind(||(self.programuniformmatrix3x2fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix3x2fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix2x4fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix2x4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix2x4fv", catch_unwind(||(self.programuniformmatrix2x4fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix2x4fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix4x2fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix4x2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix4x2fv", catch_unwind(||(self.programuniformmatrix4x2fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix4x2fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix3x4fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix3x4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix3x4fv", catch_unwind(||(self.programuniformmatrix3x4fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix3x4fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix4x3fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix4x3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix4x3fv", catch_unwind(||(self.programuniformmatrix4x3fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix4x3fv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glValidateProgramPipeline.xhtml>
+	#[inline(always)]
+	fn glValidateProgramPipeline(&self, pipeline: GLuint) -> Result<()> {
+		let ret = process_catch("glValidateProgramPipeline", catch_unwind(||(self.validateprogrampipeline)(pipeline)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glValidateProgramPipeline", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramPipelineInfoLog.xhtml>
+	#[inline(always)]
+	fn glGetProgramPipelineInfoLog(&self, pipeline: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetProgramPipelineInfoLog", catch_unwind(||(self.getprogrampipelineinfolog)(pipeline, bufSize, length, infoLog)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramPipelineInfoLog", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindImageTexture.xhtml>
+	#[inline(always)]
+	fn glBindImageTexture(&self, unit: GLuint, texture: GLuint, level: GLint, layered: GLboolean, layer: GLint, access: GLenum, format: GLenum) -> Result<()> {
+		let ret = process_catch("glBindImageTexture", catch_unwind(||(self.bindimagetexture)(unit, texture, level, layered, layer, access, format)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindImageTexture", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBooleani_v.xhtml>
+	#[inline(always)]
+	fn glGetBooleani_v(&self, target: GLenum, index: GLuint, data: *mut GLboolean) -> Result<()> {
+		let ret = process_catch("glGetBooleani_v", catch_unwind(||(self.getbooleani_v)(target, index, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBooleani_v", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMemoryBarrier.xhtml>
+	#[inline(always)]
+	fn glMemoryBarrier(&self, barriers: GLbitfield) -> Result<()> {
+		let ret = process_catch("glMemoryBarrier", catch_unwind(||(self.memorybarrier)(barriers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glMemoryBarrier", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMemoryBarrierByRegion.xhtml>
+	#[inline(always)]
+	fn glMemoryBarrierByRegion(&self, barriers: GLbitfield) -> Result<()> {
+		let ret = process_catch("glMemoryBarrierByRegion", catch_unwind(||(self.memorybarrierbyregion)(barriers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glMemoryBarrierByRegion", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage2DMultisample.xhtml>
+	#[inline(always)]
+	fn glTexStorage2DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, fixedsamplelocations: GLboolean) -> Result<()> {
+		let ret = process_catch("glTexStorage2DMultisample", catch_unwind(||(self.texstorage2dmultisample)(target, samples, internalformat, width, height, fixedsamplelocations)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexStorage2DMultisample", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetMultisamplefv.xhtml>
+	#[inline(always)]
+	fn glGetMultisamplefv(&self, pname: GLenum, index: GLuint, val: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetMultisamplefv", catch_unwind(||(self.getmultisamplefv)(pname, index, val)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetMultisamplefv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSampleMaski.xhtml>
+	#[inline(always)]
+	fn glSampleMaski(&self, maskNumber: GLuint, mask: GLbitfield) -> Result<()> {
+		let ret = process_catch("glSampleMaski", catch_unwind(||(self.samplemaski)(maskNumber, mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSampleMaski", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexLevelParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetTexLevelParameteriv(&self, target: GLenum, level: GLint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetTexLevelParameteriv", catch_unwind(||(self.gettexlevelparameteriv)(target, level, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexLevelParameteriv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexLevelParameterfv.xhtml>
+	#[inline(always)]
+	fn glGetTexLevelParameterfv(&self, target: GLenum, level: GLint, pname: GLenum, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetTexLevelParameterfv", catch_unwind(||(self.gettexlevelparameterfv)(target, level, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexLevelParameterfv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindVertexBuffer.xhtml>
+	#[inline(always)]
+	fn glBindVertexBuffer(&self, bindingindex: GLuint, buffer: GLuint, offset: GLintptr, stride: GLsizei) -> Result<()> {
+		let ret = process_catch("glBindVertexBuffer", catch_unwind(||(self.bindvertexbuffer)(bindingindex, buffer, offset, stride)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindVertexBuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribFormat.xhtml>
+	#[inline(always)]
+	fn glVertexAttribFormat(&self, attribindex: GLuint, size: GLint, type_: GLenum, normalized: GLboolean, relativeoffset: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribFormat", catch_unwind(||(self.vertexattribformat)(attribindex, size, type_, normalized, relativeoffset)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribFormat", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribIFormat.xhtml>
+	#[inline(always)]
+	fn glVertexAttribIFormat(&self, attribindex: GLuint, size: GLint, type_: GLenum, relativeoffset: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribIFormat", catch_unwind(||(self.vertexattribiformat)(attribindex, size, type_, relativeoffset)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribIFormat", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribBinding.xhtml>
+	#[inline(always)]
+	fn glVertexAttribBinding(&self, attribindex: GLuint, bindingindex: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribBinding", catch_unwind(||(self.vertexattribbinding)(attribindex, bindingindex)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribBinding", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexBindingDivisor.xhtml>
+	#[inline(always)]
+	fn glVertexBindingDivisor(&self, bindingindex: GLuint, divisor: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexBindingDivisor", catch_unwind(||(self.vertexbindingdivisor)(bindingindex, divisor)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexBindingDivisor", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+}
+
+impl EsVersion31 {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
+		let (_spec, major, minor, release) = base.get_version();
+		if (major, minor, release) < (3, 1, 0) {
+			return Self::default();
+		}
+		Self {
+			available: true,
+			geterror: {let proc = get_proc_address("glGetError"); if proc == null() {dummy_pfnglgeterrorproc} else {unsafe{transmute(proc)}}},
+			dispatchcompute: {let proc = get_proc_address("glDispatchCompute"); if proc == null() {dummy_pfngldispatchcomputeproc} else {unsafe{transmute(proc)}}},
+			dispatchcomputeindirect: {let proc = get_proc_address("glDispatchComputeIndirect"); if proc == null() {dummy_pfngldispatchcomputeindirectproc} else {unsafe{transmute(proc)}}},
+			drawarraysindirect: {let proc = get_proc_address("glDrawArraysIndirect"); if proc == null() {dummy_pfngldrawarraysindirectproc} else {unsafe{transmute(proc)}}},
+			drawelementsindirect: {let proc = get_proc_address("glDrawElementsIndirect"); if proc == null() {dummy_pfngldrawelementsindirectproc} else {unsafe{transmute(proc)}}},
+			framebufferparameteri: {let proc = get_proc_address("glFramebufferParameteri"); if proc == null() {dummy_pfnglframebufferparameteriproc} else {unsafe{transmute(proc)}}},
+			getframebufferparameteriv: {let proc = get_proc_address("glGetFramebufferParameteriv"); if proc == null() {dummy_pfnglgetframebufferparameterivproc} else {unsafe{transmute(proc)}}},
+			getprograminterfaceiv: {let proc = get_proc_address("glGetProgramInterfaceiv"); if proc == null() {dummy_pfnglgetprograminterfaceivproc} else {unsafe{transmute(proc)}}},
+			getprogramresourceindex: {let proc = get_proc_address("glGetProgramResourceIndex"); if proc == null() {dummy_pfnglgetprogramresourceindexproc} else {unsafe{transmute(proc)}}},
+			getprogramresourcename: {let proc = get_proc_address("glGetProgramResourceName"); if proc == null() {dummy_pfnglgetprogramresourcenameproc} else {unsafe{transmute(proc)}}},
+			getprogramresourceiv: {let proc = get_proc_address("glGetProgramResourceiv"); if proc == null() {dummy_pfnglgetprogramresourceivproc} else {unsafe{transmute(proc)}}},
+			getprogramresourcelocation: {let proc = get_proc_address("glGetProgramResourceLocation"); if proc == null() {dummy_pfnglgetprogramresourcelocationproc} else {unsafe{transmute(proc)}}},
+			useprogramstages: {let proc = get_proc_address("glUseProgramStages"); if proc == null() {dummy_pfngluseprogramstagesproc} else {unsafe{transmute(proc)}}},
+			activeshaderprogram: {let proc = get_proc_address("glActiveShaderProgram"); if proc == null() {dummy_pfnglactiveshaderprogramproc} else {unsafe{transmute(proc)}}},
+			createshaderprogramv: {let proc = get_proc_address("glCreateShaderProgramv"); if proc == null() {dummy_pfnglcreateshaderprogramvproc} else {unsafe{transmute(proc)}}},
+			bindprogrampipeline: {let proc = get_proc_address("glBindProgramPipeline"); if proc == null() {dummy_pfnglbindprogrampipelineproc} else {unsafe{transmute(proc)}}},
+			deleteprogrampipelines: {let proc = get_proc_address("glDeleteProgramPipelines"); if proc == null() {dummy_pfngldeleteprogrampipelinesproc} else {unsafe{transmute(proc)}}},
+			genprogrampipelines: {let proc = get_proc_address("glGenProgramPipelines"); if proc == null() {dummy_pfnglgenprogrampipelinesproc} else {unsafe{transmute(proc)}}},
+			isprogrampipeline: {let proc = get_proc_address("glIsProgramPipeline"); if proc == null() {dummy_pfnglisprogrampipelineproc} else {unsafe{transmute(proc)}}},
+			getprogrampipelineiv: {let proc = get_proc_address("glGetProgramPipelineiv"); if proc == null() {dummy_pfnglgetprogrampipelineivproc} else {unsafe{transmute(proc)}}},
+			programuniform1i: {let proc = get_proc_address("glProgramUniform1i"); if proc == null() {dummy_pfnglprogramuniform1iproc} else {unsafe{transmute(proc)}}},
+			programuniform2i: {let proc = get_proc_address("glProgramUniform2i"); if proc == null() {dummy_pfnglprogramuniform2iproc} else {unsafe{transmute(proc)}}},
+			programuniform3i: {let proc = get_proc_address("glProgramUniform3i"); if proc == null() {dummy_pfnglprogramuniform3iproc} else {unsafe{transmute(proc)}}},
+			programuniform4i: {let proc = get_proc_address("glProgramUniform4i"); if proc == null() {dummy_pfnglprogramuniform4iproc} else {unsafe{transmute(proc)}}},
+			programuniform1ui: {let proc = get_proc_address("glProgramUniform1ui"); if proc == null() {dummy_pfnglprogramuniform1uiproc} else {unsafe{transmute(proc)}}},
+			programuniform2ui: {let proc = get_proc_address("glProgramUniform2ui"); if proc == null() {dummy_pfnglprogramuniform2uiproc} else {unsafe{transmute(proc)}}},
+			programuniform3ui: {let proc = get_proc_address("glProgramUniform3ui"); if proc == null() {dummy_pfnglprogramuniform3uiproc} else {unsafe{transmute(proc)}}},
+			programuniform4ui: {let proc = get_proc_address("glProgramUniform4ui"); if proc == null() {dummy_pfnglprogramuniform4uiproc} else {unsafe{transmute(proc)}}},
+			programuniform1f: {let proc = get_proc_address("glProgramUniform1f"); if proc == null() {dummy_pfnglprogramuniform1fproc} else {unsafe{transmute(proc)}}},
+			programuniform2f: {let proc = get_proc_address("glProgramUniform2f"); if proc == null() {dummy_pfnglprogramuniform2fproc} else {unsafe{transmute(proc)}}},
+			programuniform3f: {let proc = get_proc_address("glProgramUniform3f"); if proc == null() {dummy_pfnglprogramuniform3fproc} else {unsafe{transmute(proc)}}},
+			programuniform4f: {let proc = get_proc_address("glProgramUniform4f"); if proc == null() {dummy_pfnglprogramuniform4fproc} else {unsafe{transmute(proc)}}},
+			programuniform1iv: {let proc = get_proc_address("glProgramUniform1iv"); if proc == null() {dummy_pfnglprogramuniform1ivproc} else {unsafe{transmute(proc)}}},
+			programuniform2iv: {let proc = get_proc_address("glProgramUniform2iv"); if proc == null() {dummy_pfnglprogramuniform2ivproc} else {unsafe{transmute(proc)}}},
+			programuniform3iv: {let proc = get_proc_address("glProgramUniform3iv"); if proc == null() {dummy_pfnglprogramuniform3ivproc} else {unsafe{transmute(proc)}}},
+			programuniform4iv: {let proc = get_proc_address("glProgramUniform4iv"); if proc == null() {dummy_pfnglprogramuniform4ivproc} else {unsafe{transmute(proc)}}},
+			programuniform1uiv: {let proc = get_proc_address("glProgramUniform1uiv"); if proc == null() {dummy_pfnglprogramuniform1uivproc} else {unsafe{transmute(proc)}}},
+			programuniform2uiv: {let proc = get_proc_address("glProgramUniform2uiv"); if proc == null() {dummy_pfnglprogramuniform2uivproc} else {unsafe{transmute(proc)}}},
+			programuniform3uiv: {let proc = get_proc_address("glProgramUniform3uiv"); if proc == null() {dummy_pfnglprogramuniform3uivproc} else {unsafe{transmute(proc)}}},
+			programuniform4uiv: {let proc = get_proc_address("glProgramUniform4uiv"); if proc == null() {dummy_pfnglprogramuniform4uivproc} else {unsafe{transmute(proc)}}},
+			programuniform1fv: {let proc = get_proc_address("glProgramUniform1fv"); if proc == null() {dummy_pfnglprogramuniform1fvproc} else {unsafe{transmute(proc)}}},
+			programuniform2fv: {let proc = get_proc_address("glProgramUniform2fv"); if proc == null() {dummy_pfnglprogramuniform2fvproc} else {unsafe{transmute(proc)}}},
+			programuniform3fv: {let proc = get_proc_address("glProgramUniform3fv"); if proc == null() {dummy_pfnglprogramuniform3fvproc} else {unsafe{transmute(proc)}}},
+			programuniform4fv: {let proc = get_proc_address("glProgramUniform4fv"); if proc == null() {dummy_pfnglprogramuniform4fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix2fv: {let proc = get_proc_address("glProgramUniformMatrix2fv"); if proc == null() {dummy_pfnglprogramuniformmatrix2fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix3fv: {let proc = get_proc_address("glProgramUniformMatrix3fv"); if proc == null() {dummy_pfnglprogramuniformmatrix3fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix4fv: {let proc = get_proc_address("glProgramUniformMatrix4fv"); if proc == null() {dummy_pfnglprogramuniformmatrix4fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix2x3fv: {let proc = get_proc_address("glProgramUniformMatrix2x3fv"); if proc == null() {dummy_pfnglprogramuniformmatrix2x3fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix3x2fv: {let proc = get_proc_address("glProgramUniformMatrix3x2fv"); if proc == null() {dummy_pfnglprogramuniformmatrix3x2fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix2x4fv: {let proc = get_proc_address("glProgramUniformMatrix2x4fv"); if proc == null() {dummy_pfnglprogramuniformmatrix2x4fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix4x2fv: {let proc = get_proc_address("glProgramUniformMatrix4x2fv"); if proc == null() {dummy_pfnglprogramuniformmatrix4x2fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix3x4fv: {let proc = get_proc_address("glProgramUniformMatrix3x4fv"); if proc == null() {dummy_pfnglprogramuniformmatrix3x4fvproc} else {unsafe{transmute(proc)}}},
+			programuniformmatrix4x3fv: {let proc = get_proc_address("glProgramUniformMatrix4x3fv"); if proc == null() {dummy_pfnglprogramuniformmatrix4x3fvproc} else {unsafe{transmute(proc)}}},
+			validateprogrampipeline: {let proc = get_proc_address("glValidateProgramPipeline"); if proc == null() {dummy_pfnglvalidateprogrampipelineproc} else {unsafe{transmute(proc)}}},
+			getprogrampipelineinfolog: {let proc = get_proc_address("glGetProgramPipelineInfoLog"); if proc == null() {dummy_pfnglgetprogrampipelineinfologproc} else {unsafe{transmute(proc)}}},
+			bindimagetexture: {let proc = get_proc_address("glBindImageTexture"); if proc == null() {dummy_pfnglbindimagetextureproc} else {unsafe{transmute(proc)}}},
+			getbooleani_v: {let proc = get_proc_address("glGetBooleani_v"); if proc == null() {dummy_pfnglgetbooleani_vproc} else {unsafe{transmute(proc)}}},
+			memorybarrier: {let proc = get_proc_address("glMemoryBarrier"); if proc == null() {dummy_pfnglmemorybarrierproc} else {unsafe{transmute(proc)}}},
+			memorybarrierbyregion: {let proc = get_proc_address("glMemoryBarrierByRegion"); if proc == null() {dummy_pfnglmemorybarrierbyregionproc} else {unsafe{transmute(proc)}}},
+			texstorage2dmultisample: {let proc = get_proc_address("glTexStorage2DMultisample"); if proc == null() {dummy_pfngltexstorage2dmultisampleproc} else {unsafe{transmute(proc)}}},
+			getmultisamplefv: {let proc = get_proc_address("glGetMultisamplefv"); if proc == null() {dummy_pfnglgetmultisamplefvproc} else {unsafe{transmute(proc)}}},
+			samplemaski: {let proc = get_proc_address("glSampleMaski"); if proc == null() {dummy_pfnglsamplemaskiproc} else {unsafe{transmute(proc)}}},
+			gettexlevelparameteriv: {let proc = get_proc_address("glGetTexLevelParameteriv"); if proc == null() {dummy_pfnglgettexlevelparameterivproc} else {unsafe{transmute(proc)}}},
+			gettexlevelparameterfv: {let proc = get_proc_address("glGetTexLevelParameterfv"); if proc == null() {dummy_pfnglgettexlevelparameterfvproc} else {unsafe{transmute(proc)}}},
+			bindvertexbuffer: {let proc = get_proc_address("glBindVertexBuffer"); if proc == null() {dummy_pfnglbindvertexbufferproc} else {unsafe{transmute(proc)}}},
+			vertexattribformat: {let proc = get_proc_address("glVertexAttribFormat"); if proc == null() {dummy_pfnglvertexattribformatproc} else {unsafe{transmute(proc)}}},
+			vertexattribiformat: {let proc = get_proc_address("glVertexAttribIFormat"); if proc == null() {dummy_pfnglvertexattribiformatproc} else {unsafe{transmute(proc)}}},
+			vertexattribbinding: {let proc = get_proc_address("glVertexAttribBinding"); if proc == null() {dummy_pfnglvertexattribbindingproc} else {unsafe{transmute(proc)}}},
+			vertexbindingdivisor: {let proc = get_proc_address("glVertexBindingDivisor"); if proc == null() {dummy_pfnglvertexbindingdivisorproc} else {unsafe{transmute(proc)}}},
+		}
+	}
+	#[inline(always)]
+	pub fn get_available(&self) -> bool {
+		self.available
+	}
+}
+
+impl Default for EsVersion31 {
+	fn default() -> Self {
+		Self {
+			available: false,
+			geterror: dummy_pfnglgeterrorproc,
+			dispatchcompute: dummy_pfngldispatchcomputeproc,
+			dispatchcomputeindirect: dummy_pfngldispatchcomputeindirectproc,
+			drawarraysindirect: dummy_pfngldrawarraysindirectproc,
+			drawelementsindirect: dummy_pfngldrawelementsindirectproc,
+			framebufferparameteri: dummy_pfnglframebufferparameteriproc,
+			getframebufferparameteriv: dummy_pfnglgetframebufferparameterivproc,
+			getprograminterfaceiv: dummy_pfnglgetprograminterfaceivproc,
+			getprogramresourceindex: dummy_pfnglgetprogramresourceindexproc,
+			getprogramresourcename: dummy_pfnglgetprogramresourcenameproc,
+			getprogramresourceiv: dummy_pfnglgetprogramresourceivproc,
+			getprogramresourcelocation: dummy_pfnglgetprogramresourcelocationproc,
+			useprogramstages: dummy_pfngluseprogramstagesproc,
+			activeshaderprogram: dummy_pfnglactiveshaderprogramproc,
+			createshaderprogramv: dummy_pfnglcreateshaderprogramvproc,
+			bindprogrampipeline: dummy_pfnglbindprogrampipelineproc,
+			deleteprogrampipelines: dummy_pfngldeleteprogrampipelinesproc,
+			genprogrampipelines: dummy_pfnglgenprogrampipelinesproc,
+			isprogrampipeline: dummy_pfnglisprogrampipelineproc,
+			getprogrampipelineiv: dummy_pfnglgetprogrampipelineivproc,
+			programuniform1i: dummy_pfnglprogramuniform1iproc,
+			programuniform2i: dummy_pfnglprogramuniform2iproc,
+			programuniform3i: dummy_pfnglprogramuniform3iproc,
+			programuniform4i: dummy_pfnglprogramuniform4iproc,
+			programuniform1ui: dummy_pfnglprogramuniform1uiproc,
+			programuniform2ui: dummy_pfnglprogramuniform2uiproc,
+			programuniform3ui: dummy_pfnglprogramuniform3uiproc,
+			programuniform4ui: dummy_pfnglprogramuniform4uiproc,
+			programuniform1f: dummy_pfnglprogramuniform1fproc,
+			programuniform2f: dummy_pfnglprogramuniform2fproc,
+			programuniform3f: dummy_pfnglprogramuniform3fproc,
+			programuniform4f: dummy_pfnglprogramuniform4fproc,
+			programuniform1iv: dummy_pfnglprogramuniform1ivproc,
+			programuniform2iv: dummy_pfnglprogramuniform2ivproc,
+			programuniform3iv: dummy_pfnglprogramuniform3ivproc,
+			programuniform4iv: dummy_pfnglprogramuniform4ivproc,
+			programuniform1uiv: dummy_pfnglprogramuniform1uivproc,
+			programuniform2uiv: dummy_pfnglprogramuniform2uivproc,
+			programuniform3uiv: dummy_pfnglprogramuniform3uivproc,
+			programuniform4uiv: dummy_pfnglprogramuniform4uivproc,
+			programuniform1fv: dummy_pfnglprogramuniform1fvproc,
+			programuniform2fv: dummy_pfnglprogramuniform2fvproc,
+			programuniform3fv: dummy_pfnglprogramuniform3fvproc,
+			programuniform4fv: dummy_pfnglprogramuniform4fvproc,
+			programuniformmatrix2fv: dummy_pfnglprogramuniformmatrix2fvproc,
+			programuniformmatrix3fv: dummy_pfnglprogramuniformmatrix3fvproc,
+			programuniformmatrix4fv: dummy_pfnglprogramuniformmatrix4fvproc,
+			programuniformmatrix2x3fv: dummy_pfnglprogramuniformmatrix2x3fvproc,
+			programuniformmatrix3x2fv: dummy_pfnglprogramuniformmatrix3x2fvproc,
+			programuniformmatrix2x4fv: dummy_pfnglprogramuniformmatrix2x4fvproc,
+			programuniformmatrix4x2fv: dummy_pfnglprogramuniformmatrix4x2fvproc,
+			programuniformmatrix3x4fv: dummy_pfnglprogramuniformmatrix3x4fvproc,
+			programuniformmatrix4x3fv: dummy_pfnglprogramuniformmatrix4x3fvproc,
+			validateprogrampipeline: dummy_pfnglvalidateprogrampipelineproc,
+			getprogrampipelineinfolog: dummy_pfnglgetprogrampipelineinfologproc,
+			bindimagetexture: dummy_pfnglbindimagetextureproc,
+			getbooleani_v: dummy_pfnglgetbooleani_vproc,
+			memorybarrier: dummy_pfnglmemorybarrierproc,
+			memorybarrierbyregion: dummy_pfnglmemorybarrierbyregionproc,
+			texstorage2dmultisample: dummy_pfngltexstorage2dmultisampleproc,
+			getmultisamplefv: dummy_pfnglgetmultisamplefvproc,
+			samplemaski: dummy_pfnglsamplemaskiproc,
+			gettexlevelparameteriv: dummy_pfnglgettexlevelparameterivproc,
+			gettexlevelparameterfv: dummy_pfnglgettexlevelparameterfvproc,
+			bindvertexbuffer: dummy_pfnglbindvertexbufferproc,
+			vertexattribformat: dummy_pfnglvertexattribformatproc,
+			vertexattribiformat: dummy_pfnglvertexattribiformatproc,
+			vertexattribbinding: dummy_pfnglvertexattribbindingproc,
+			vertexbindingdivisor: dummy_pfnglvertexbindingdivisorproc,
+		}
+	}
+}
+impl Debug for EsVersion31 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("EsVersion31")
+			.field("available", &self.available)
+			.field("dispatchcompute", unsafe{if transmute::<_, *const c_void>(self.dispatchcompute) == (dummy_pfngldispatchcomputeproc as *const c_void) {&null::<PFNGLDISPATCHCOMPUTEPROC>()} else {&self.dispatchcompute}})
+			.field("dispatchcomputeindirect", unsafe{if transmute::<_, *const c_void>(self.dispatchcomputeindirect) == (dummy_pfngldispatchcomputeindirectproc as *const c_void) {&null::<PFNGLDISPATCHCOMPUTEINDIRECTPROC>()} else {&self.dispatchcomputeindirect}})
+			.field("drawarraysindirect", unsafe{if transmute::<_, *const c_void>(self.drawarraysindirect) == (dummy_pfngldrawarraysindirectproc as *const c_void) {&null::<PFNGLDRAWARRAYSINDIRECTPROC>()} else {&self.drawarraysindirect}})
+			.field("drawelementsindirect", unsafe{if transmute::<_, *const c_void>(self.drawelementsindirect) == (dummy_pfngldrawelementsindirectproc as *const c_void) {&null::<PFNGLDRAWELEMENTSINDIRECTPROC>()} else {&self.drawelementsindirect}})
+			.field("framebufferparameteri", unsafe{if transmute::<_, *const c_void>(self.framebufferparameteri) == (dummy_pfnglframebufferparameteriproc as *const c_void) {&null::<PFNGLFRAMEBUFFERPARAMETERIPROC>()} else {&self.framebufferparameteri}})
+			.field("getframebufferparameteriv", unsafe{if transmute::<_, *const c_void>(self.getframebufferparameteriv) == (dummy_pfnglgetframebufferparameterivproc as *const c_void) {&null::<PFNGLGETFRAMEBUFFERPARAMETERIVPROC>()} else {&self.getframebufferparameteriv}})
+			.field("getprograminterfaceiv", unsafe{if transmute::<_, *const c_void>(self.getprograminterfaceiv) == (dummy_pfnglgetprograminterfaceivproc as *const c_void) {&null::<PFNGLGETPROGRAMINTERFACEIVPROC>()} else {&self.getprograminterfaceiv}})
+			.field("getprogramresourceindex", unsafe{if transmute::<_, *const c_void>(self.getprogramresourceindex) == (dummy_pfnglgetprogramresourceindexproc as *const c_void) {&null::<PFNGLGETPROGRAMRESOURCEINDEXPROC>()} else {&self.getprogramresourceindex}})
+			.field("getprogramresourcename", unsafe{if transmute::<_, *const c_void>(self.getprogramresourcename) == (dummy_pfnglgetprogramresourcenameproc as *const c_void) {&null::<PFNGLGETPROGRAMRESOURCENAMEPROC>()} else {&self.getprogramresourcename}})
+			.field("getprogramresourceiv", unsafe{if transmute::<_, *const c_void>(self.getprogramresourceiv) == (dummy_pfnglgetprogramresourceivproc as *const c_void) {&null::<PFNGLGETPROGRAMRESOURCEIVPROC>()} else {&self.getprogramresourceiv}})
+			.field("getprogramresourcelocation", unsafe{if transmute::<_, *const c_void>(self.getprogramresourcelocation) == (dummy_pfnglgetprogramresourcelocationproc as *const c_void) {&null::<PFNGLGETPROGRAMRESOURCELOCATIONPROC>()} else {&self.getprogramresourcelocation}})
+			.field("useprogramstages", unsafe{if transmute::<_, *const c_void>(self.useprogramstages) == (dummy_pfngluseprogramstagesproc as *const c_void) {&null::<PFNGLUSEPROGRAMSTAGESPROC>()} else {&self.useprogramstages}})
+			.field("activeshaderprogram", unsafe{if transmute::<_, *const c_void>(self.activeshaderprogram) == (dummy_pfnglactiveshaderprogramproc as *const c_void) {&null::<PFNGLACTIVESHADERPROGRAMPROC>()} else {&self.activeshaderprogram}})
+			.field("createshaderprogramv", unsafe{if transmute::<_, *const c_void>(self.createshaderprogramv) == (dummy_pfnglcreateshaderprogramvproc as *const c_void) {&null::<PFNGLCREATESHADERPROGRAMVPROC>()} else {&self.createshaderprogramv}})
+			.field("bindprogrampipeline", unsafe{if transmute::<_, *const c_void>(self.bindprogrampipeline) == (dummy_pfnglbindprogrampipelineproc as *const c_void) {&null::<PFNGLBINDPROGRAMPIPELINEPROC>()} else {&self.bindprogrampipeline}})
+			.field("deleteprogrampipelines", unsafe{if transmute::<_, *const c_void>(self.deleteprogrampipelines) == (dummy_pfngldeleteprogrampipelinesproc as *const c_void) {&null::<PFNGLDELETEPROGRAMPIPELINESPROC>()} else {&self.deleteprogrampipelines}})
+			.field("genprogrampipelines", unsafe{if transmute::<_, *const c_void>(self.genprogrampipelines) == (dummy_pfnglgenprogrampipelinesproc as *const c_void) {&null::<PFNGLGENPROGRAMPIPELINESPROC>()} else {&self.genprogrampipelines}})
+			.field("isprogrampipeline", unsafe{if transmute::<_, *const c_void>(self.isprogrampipeline) == (dummy_pfnglisprogrampipelineproc as *const c_void) {&null::<PFNGLISPROGRAMPIPELINEPROC>()} else {&self.isprogrampipeline}})
+			.field("getprogrampipelineiv", unsafe{if transmute::<_, *const c_void>(self.getprogrampipelineiv) == (dummy_pfnglgetprogrampipelineivproc as *const c_void) {&null::<PFNGLGETPROGRAMPIPELINEIVPROC>()} else {&self.getprogrampipelineiv}})
+			.field("programuniform1i", unsafe{if transmute::<_, *const c_void>(self.programuniform1i) == (dummy_pfnglprogramuniform1iproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1IPROC>()} else {&self.programuniform1i}})
+			.field("programuniform2i", unsafe{if transmute::<_, *const c_void>(self.programuniform2i) == (dummy_pfnglprogramuniform2iproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2IPROC>()} else {&self.programuniform2i}})
+			.field("programuniform3i", unsafe{if transmute::<_, *const c_void>(self.programuniform3i) == (dummy_pfnglprogramuniform3iproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3IPROC>()} else {&self.programuniform3i}})
+			.field("programuniform4i", unsafe{if transmute::<_, *const c_void>(self.programuniform4i) == (dummy_pfnglprogramuniform4iproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4IPROC>()} else {&self.programuniform4i}})
+			.field("programuniform1ui", unsafe{if transmute::<_, *const c_void>(self.programuniform1ui) == (dummy_pfnglprogramuniform1uiproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1UIPROC>()} else {&self.programuniform1ui}})
+			.field("programuniform2ui", unsafe{if transmute::<_, *const c_void>(self.programuniform2ui) == (dummy_pfnglprogramuniform2uiproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2UIPROC>()} else {&self.programuniform2ui}})
+			.field("programuniform3ui", unsafe{if transmute::<_, *const c_void>(self.programuniform3ui) == (dummy_pfnglprogramuniform3uiproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3UIPROC>()} else {&self.programuniform3ui}})
+			.field("programuniform4ui", unsafe{if transmute::<_, *const c_void>(self.programuniform4ui) == (dummy_pfnglprogramuniform4uiproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4UIPROC>()} else {&self.programuniform4ui}})
+			.field("programuniform1f", unsafe{if transmute::<_, *const c_void>(self.programuniform1f) == (dummy_pfnglprogramuniform1fproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1FPROC>()} else {&self.programuniform1f}})
+			.field("programuniform2f", unsafe{if transmute::<_, *const c_void>(self.programuniform2f) == (dummy_pfnglprogramuniform2fproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2FPROC>()} else {&self.programuniform2f}})
+			.field("programuniform3f", unsafe{if transmute::<_, *const c_void>(self.programuniform3f) == (dummy_pfnglprogramuniform3fproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3FPROC>()} else {&self.programuniform3f}})
+			.field("programuniform4f", unsafe{if transmute::<_, *const c_void>(self.programuniform4f) == (dummy_pfnglprogramuniform4fproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4FPROC>()} else {&self.programuniform4f}})
+			.field("programuniform1iv", unsafe{if transmute::<_, *const c_void>(self.programuniform1iv) == (dummy_pfnglprogramuniform1ivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1IVPROC>()} else {&self.programuniform1iv}})
+			.field("programuniform2iv", unsafe{if transmute::<_, *const c_void>(self.programuniform2iv) == (dummy_pfnglprogramuniform2ivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2IVPROC>()} else {&self.programuniform2iv}})
+			.field("programuniform3iv", unsafe{if transmute::<_, *const c_void>(self.programuniform3iv) == (dummy_pfnglprogramuniform3ivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3IVPROC>()} else {&self.programuniform3iv}})
+			.field("programuniform4iv", unsafe{if transmute::<_, *const c_void>(self.programuniform4iv) == (dummy_pfnglprogramuniform4ivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4IVPROC>()} else {&self.programuniform4iv}})
+			.field("programuniform1uiv", unsafe{if transmute::<_, *const c_void>(self.programuniform1uiv) == (dummy_pfnglprogramuniform1uivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1UIVPROC>()} else {&self.programuniform1uiv}})
+			.field("programuniform2uiv", unsafe{if transmute::<_, *const c_void>(self.programuniform2uiv) == (dummy_pfnglprogramuniform2uivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2UIVPROC>()} else {&self.programuniform2uiv}})
+			.field("programuniform3uiv", unsafe{if transmute::<_, *const c_void>(self.programuniform3uiv) == (dummy_pfnglprogramuniform3uivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3UIVPROC>()} else {&self.programuniform3uiv}})
+			.field("programuniform4uiv", unsafe{if transmute::<_, *const c_void>(self.programuniform4uiv) == (dummy_pfnglprogramuniform4uivproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4UIVPROC>()} else {&self.programuniform4uiv}})
+			.field("programuniform1fv", unsafe{if transmute::<_, *const c_void>(self.programuniform1fv) == (dummy_pfnglprogramuniform1fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM1FVPROC>()} else {&self.programuniform1fv}})
+			.field("programuniform2fv", unsafe{if transmute::<_, *const c_void>(self.programuniform2fv) == (dummy_pfnglprogramuniform2fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM2FVPROC>()} else {&self.programuniform2fv}})
+			.field("programuniform3fv", unsafe{if transmute::<_, *const c_void>(self.programuniform3fv) == (dummy_pfnglprogramuniform3fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM3FVPROC>()} else {&self.programuniform3fv}})
+			.field("programuniform4fv", unsafe{if transmute::<_, *const c_void>(self.programuniform4fv) == (dummy_pfnglprogramuniform4fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORM4FVPROC>()} else {&self.programuniform4fv}})
+			.field("programuniformmatrix2fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix2fv) == (dummy_pfnglprogramuniformmatrix2fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX2FVPROC>()} else {&self.programuniformmatrix2fv}})
+			.field("programuniformmatrix3fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix3fv) == (dummy_pfnglprogramuniformmatrix3fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX3FVPROC>()} else {&self.programuniformmatrix3fv}})
+			.field("programuniformmatrix4fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix4fv) == (dummy_pfnglprogramuniformmatrix4fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX4FVPROC>()} else {&self.programuniformmatrix4fv}})
+			.field("programuniformmatrix2x3fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix2x3fv) == (dummy_pfnglprogramuniformmatrix2x3fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX2X3FVPROC>()} else {&self.programuniformmatrix2x3fv}})
+			.field("programuniformmatrix3x2fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix3x2fv) == (dummy_pfnglprogramuniformmatrix3x2fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX3X2FVPROC>()} else {&self.programuniformmatrix3x2fv}})
+			.field("programuniformmatrix2x4fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix2x4fv) == (dummy_pfnglprogramuniformmatrix2x4fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX2X4FVPROC>()} else {&self.programuniformmatrix2x4fv}})
+			.field("programuniformmatrix4x2fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix4x2fv) == (dummy_pfnglprogramuniformmatrix4x2fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX4X2FVPROC>()} else {&self.programuniformmatrix4x2fv}})
+			.field("programuniformmatrix3x4fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix3x4fv) == (dummy_pfnglprogramuniformmatrix3x4fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX3X4FVPROC>()} else {&self.programuniformmatrix3x4fv}})
+			.field("programuniformmatrix4x3fv", unsafe{if transmute::<_, *const c_void>(self.programuniformmatrix4x3fv) == (dummy_pfnglprogramuniformmatrix4x3fvproc as *const c_void) {&null::<PFNGLPROGRAMUNIFORMMATRIX4X3FVPROC>()} else {&self.programuniformmatrix4x3fv}})
+			.field("validateprogrampipeline", unsafe{if transmute::<_, *const c_void>(self.validateprogrampipeline) == (dummy_pfnglvalidateprogrampipelineproc as *const c_void) {&null::<PFNGLVALIDATEPROGRAMPIPELINEPROC>()} else {&self.validateprogrampipeline}})
+			.field("getprogrampipelineinfolog", unsafe{if transmute::<_, *const c_void>(self.getprogrampipelineinfolog) == (dummy_pfnglgetprogrampipelineinfologproc as *const c_void) {&null::<PFNGLGETPROGRAMPIPELINEINFOLOGPROC>()} else {&self.getprogrampipelineinfolog}})
+			.field("bindimagetexture", unsafe{if transmute::<_, *const c_void>(self.bindimagetexture) == (dummy_pfnglbindimagetextureproc as *const c_void) {&null::<PFNGLBINDIMAGETEXTUREPROC>()} else {&self.bindimagetexture}})
+			.field("getbooleani_v", unsafe{if transmute::<_, *const c_void>(self.getbooleani_v) == (dummy_pfnglgetbooleani_vproc as *const c_void) {&null::<PFNGLGETBOOLEANI_VPROC>()} else {&self.getbooleani_v}})
+			.field("memorybarrier", unsafe{if transmute::<_, *const c_void>(self.memorybarrier) == (dummy_pfnglmemorybarrierproc as *const c_void) {&null::<PFNGLMEMORYBARRIERPROC>()} else {&self.memorybarrier}})
+			.field("memorybarrierbyregion", unsafe{if transmute::<_, *const c_void>(self.memorybarrierbyregion) == (dummy_pfnglmemorybarrierbyregionproc as *const c_void) {&null::<PFNGLMEMORYBARRIERBYREGIONPROC>()} else {&self.memorybarrierbyregion}})
+			.field("texstorage2dmultisample", unsafe{if transmute::<_, *const c_void>(self.texstorage2dmultisample) == (dummy_pfngltexstorage2dmultisampleproc as *const c_void) {&null::<PFNGLTEXSTORAGE2DMULTISAMPLEPROC>()} else {&self.texstorage2dmultisample}})
+			.field("getmultisamplefv", unsafe{if transmute::<_, *const c_void>(self.getmultisamplefv) == (dummy_pfnglgetmultisamplefvproc as *const c_void) {&null::<PFNGLGETMULTISAMPLEFVPROC>()} else {&self.getmultisamplefv}})
+			.field("samplemaski", unsafe{if transmute::<_, *const c_void>(self.samplemaski) == (dummy_pfnglsamplemaskiproc as *const c_void) {&null::<PFNGLSAMPLEMASKIPROC>()} else {&self.samplemaski}})
+			.field("gettexlevelparameteriv", unsafe{if transmute::<_, *const c_void>(self.gettexlevelparameteriv) == (dummy_pfnglgettexlevelparameterivproc as *const c_void) {&null::<PFNGLGETTEXLEVELPARAMETERIVPROC>()} else {&self.gettexlevelparameteriv}})
+			.field("gettexlevelparameterfv", unsafe{if transmute::<_, *const c_void>(self.gettexlevelparameterfv) == (dummy_pfnglgettexlevelparameterfvproc as *const c_void) {&null::<PFNGLGETTEXLEVELPARAMETERFVPROC>()} else {&self.gettexlevelparameterfv}})
+			.field("bindvertexbuffer", unsafe{if transmute::<_, *const c_void>(self.bindvertexbuffer) == (dummy_pfnglbindvertexbufferproc as *const c_void) {&null::<PFNGLBINDVERTEXBUFFERPROC>()} else {&self.bindvertexbuffer}})
+			.field("vertexattribformat", unsafe{if transmute::<_, *const c_void>(self.vertexattribformat) == (dummy_pfnglvertexattribformatproc as *const c_void) {&null::<PFNGLVERTEXATTRIBFORMATPROC>()} else {&self.vertexattribformat}})
+			.field("vertexattribiformat", unsafe{if transmute::<_, *const c_void>(self.vertexattribiformat) == (dummy_pfnglvertexattribiformatproc as *const c_void) {&null::<PFNGLVERTEXATTRIBIFORMATPROC>()} else {&self.vertexattribiformat}})
+			.field("vertexattribbinding", unsafe{if transmute::<_, *const c_void>(self.vertexattribbinding) == (dummy_pfnglvertexattribbindingproc as *const c_void) {&null::<PFNGLVERTEXATTRIBBINDINGPROC>()} else {&self.vertexattribbinding}})
+			.field("vertexbindingdivisor", unsafe{if transmute::<_, *const c_void>(self.vertexbindingdivisor) == (dummy_pfnglvertexbindingdivisorproc as *const c_void) {&null::<PFNGLVERTEXBINDINGDIVISORPROC>()} else {&self.vertexbindingdivisor}})
+			.finish()
+		} else {
+			f.debug_struct("EsVersion31")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
+
+/// The prototype to the OpenGL function `BlendBarrier`
+type PFNGLBLENDBARRIERPROC = extern "system" fn();
+
+/// The prototype to the OpenGL function `PrimitiveBoundingBox`
+type PFNGLPRIMITIVEBOUNDINGBOXPROC = extern "system" fn(GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat);
+
+/// The dummy function of `BlendBarrier()`
+extern "system" fn dummy_pfnglblendbarrierproc () {
+	panic!("OpenGL ES function pointer `glBlendBarrier()` is null.")
+}
+
+/// The dummy function of `PrimitiveBoundingBox()`
+extern "system" fn dummy_pfnglprimitiveboundingboxproc (_: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat, _: GLfloat) {
+	panic!("OpenGL ES function pointer `glPrimitiveBoundingBox()` is null.")
+}
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_MULTISAMPLE_LINE_WIDTH_RANGE: GLenum = 0x9381;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_MULTISAMPLE_LINE_WIDTH_GRANULARITY: GLenum = 0x9382;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_MULTIPLY: GLenum = 0x9294;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_SCREEN: GLenum = 0x9295;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_OVERLAY: GLenum = 0x9296;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_DARKEN: GLenum = 0x9297;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_LIGHTEN: GLenum = 0x9298;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COLORDODGE: GLenum = 0x9299;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COLORBURN: GLenum = 0x929A;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_HARDLIGHT: GLenum = 0x929B;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_SOFTLIGHT: GLenum = 0x929C;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_DIFFERENCE: GLenum = 0x929E;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_EXCLUSION: GLenum = 0x92A0;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_HSL_HUE: GLenum = 0x92AD;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_HSL_SATURATION: GLenum = 0x92AE;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_HSL_COLOR: GLenum = 0x92AF;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_HSL_LUMINOSITY: GLenum = 0x92B0;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_PRIMITIVE_BOUNDING_BOX: GLenum = 0x92BE;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_4x4: GLenum = 0x93B0;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_5x4: GLenum = 0x93B1;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_5x5: GLenum = 0x93B2;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_6x5: GLenum = 0x93B3;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_6x6: GLenum = 0x93B4;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_8x5: GLenum = 0x93B5;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_8x6: GLenum = 0x93B6;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_8x8: GLenum = 0x93B7;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_10x5: GLenum = 0x93B8;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_10x6: GLenum = 0x93B9;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_10x8: GLenum = 0x93BA;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_10x10: GLenum = 0x93BB;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_12x10: GLenum = 0x93BC;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_RGBA_ASTC_12x12: GLenum = 0x93BD;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4: GLenum = 0x93D0;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4: GLenum = 0x93D1;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5: GLenum = 0x93D2;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5: GLenum = 0x93D3;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6: GLenum = 0x93D4;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5: GLenum = 0x93D5;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6: GLenum = 0x93D6;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8: GLenum = 0x93D7;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5: GLenum = 0x93D8;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6: GLenum = 0x93D9;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8: GLenum = 0x93DA;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10: GLenum = 0x93DB;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10: GLenum = 0x93DC;
+
+/// Constant value defined from OpenGL ES 3.2
+pub const GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12: GLenum = 0x93DD;
+
+/// Functions from OpenGL ES version 3.2
+pub trait ES_GL_3_2 {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	fn glGetError(&self) -> GLenum;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendBarrier.xhtml>
+	fn glBlendBarrier(&self) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyImageSubData.xhtml>
+	fn glCopyImageSubData(&self, srcName: GLuint, srcTarget: GLenum, srcLevel: GLint, srcX: GLint, srcY: GLint, srcZ: GLint, dstName: GLuint, dstTarget: GLenum, dstLevel: GLint, dstX: GLint, dstY: GLint, dstZ: GLint, srcWidth: GLsizei, srcHeight: GLsizei, srcDepth: GLsizei) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml>
+	fn glDebugMessageControl(&self, source: GLenum, type_: GLenum, severity: GLenum, count: GLsizei, ids: *const GLuint, enabled: GLboolean) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml>
+	fn glDebugMessageInsert(&self, source: GLenum, type_: GLenum, id: GLuint, severity: GLenum, length: GLsizei, buf: *const GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml>
+	fn glDebugMessageCallback(&self, callback: GLDEBUGPROC, userParam: *const c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml>
+	fn glGetDebugMessageLog(&self, count: GLuint, bufSize: GLsizei, sources: *mut GLenum, types: *mut GLenum, ids: *mut GLuint, severities: *mut GLenum, lengths: *mut GLsizei, messageLog: *mut GLchar) -> Result<GLuint>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml>
+	fn glPushDebugGroup(&self, source: GLenum, id: GLuint, length: GLsizei, message: *const GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml>
+	fn glPopDebugGroup(&self) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml>
+	fn glObjectLabel(&self, identifier: GLenum, name: GLuint, length: GLsizei, label: *const GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml>
+	fn glGetObjectLabel(&self, identifier: GLenum, name: GLuint, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml>
+	fn glObjectPtrLabel(&self, ptr: *const c_void, length: GLsizei, label: *const GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml>
+	fn glGetObjectPtrLabel(&self, ptr: *const c_void, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml>
+	fn glGetPointerv(&self, pname: GLenum, params: *mut *mut c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEnablei.xhtml>
+	fn glEnablei(&self, target: GLenum, index: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDisablei.xhtml>
+	fn glDisablei(&self, target: GLenum, index: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquationi.xhtml>
+	fn glBlendEquationi(&self, buf: GLuint, mode: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquationSeparatei.xhtml>
+	fn glBlendEquationSeparatei(&self, buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFunci.xhtml>
+	fn glBlendFunci(&self, buf: GLuint, src: GLenum, dst: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFuncSeparatei.xhtml>
+	fn glBlendFuncSeparatei(&self, buf: GLuint, srcRGB: GLenum, dstRGB: GLenum, srcAlpha: GLenum, dstAlpha: GLenum) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glColorMaski.xhtml>
+	fn glColorMaski(&self, index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsEnabledi.xhtml>
+	fn glIsEnabledi(&self, target: GLenum, index: GLuint) -> Result<GLboolean>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsBaseVertex.xhtml>
+	fn glDrawElementsBaseVertex(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, basevertex: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawRangeElementsBaseVertex.xhtml>
+	fn glDrawRangeElementsBaseVertex(&self, mode: GLenum, start: GLuint, end: GLuint, count: GLsizei, type_: GLenum, indices: *const c_void, basevertex: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsInstancedBaseVertex.xhtml>
+	fn glDrawElementsInstancedBaseVertex(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei, basevertex: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferTexture.xhtml>
+	fn glFramebufferTexture(&self, target: GLenum, attachment: GLenum, texture: GLuint, level: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPrimitiveBoundingBox.xhtml>
+	fn glPrimitiveBoundingBox(&self, minX: GLfloat, minY: GLfloat, minZ: GLfloat, minW: GLfloat, maxX: GLfloat, maxY: GLfloat, maxZ: GLfloat, maxW: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml>
+	fn glGetGraphicsResetStatus(&self) -> Result<GLenum>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadnPixels.xhtml>
+	fn glReadnPixels(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, bufSize: GLsizei, data: *mut c_void) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetnUniformfv.xhtml>
+	fn glGetnUniformfv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetnUniformiv.xhtml>
+	fn glGetnUniformiv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetnUniformuiv.xhtml>
+	fn glGetnUniformuiv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMinSampleShading.xhtml>
+	fn glMinSampleShading(&self, value: GLfloat) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPatchParameteri.xhtml>
+	fn glPatchParameteri(&self, pname: GLenum, value: GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterIiv.xhtml>
+	fn glTexParameterIiv(&self, target: GLenum, pname: GLenum, params: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterIuiv.xhtml>
+	fn glTexParameterIuiv(&self, target: GLenum, pname: GLenum, params: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameterIiv.xhtml>
+	fn glGetTexParameterIiv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameterIuiv.xhtml>
+	fn glGetTexParameterIuiv(&self, target: GLenum, pname: GLenum, params: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterIiv.xhtml>
+	fn glSamplerParameterIiv(&self, sampler: GLuint, pname: GLenum, param: *const GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterIuiv.xhtml>
+	fn glSamplerParameterIuiv(&self, sampler: GLuint, pname: GLenum, param: *const GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameterIiv.xhtml>
+	fn glGetSamplerParameterIiv(&self, sampler: GLuint, pname: GLenum, params: *mut GLint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameterIuiv.xhtml>
+	fn glGetSamplerParameterIuiv(&self, sampler: GLuint, pname: GLenum, params: *mut GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexBuffer.xhtml>
+	fn glTexBuffer(&self, target: GLenum, internalformat: GLenum, buffer: GLuint) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexBufferRange.xhtml>
+	fn glTexBufferRange(&self, target: GLenum, internalformat: GLenum, buffer: GLuint, offset: GLintptr, size: GLsizeiptr) -> Result<()>;
+
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage3DMultisample.xhtml>
+	fn glTexStorage3DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, fixedsamplelocations: GLboolean) -> Result<()>;
+}
+/// Functions from OpenGL ES version 3.2
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
+pub struct EsVersion32 {
+	/// Is OpenGL ES version 3.2 available
+	available: bool,
+
+	/// The function pointer to `glGetError()`
+	pub geterror: PFNGLGETERRORPROC,
+
+	/// The function pointer to `glBlendBarrier()`
+	pub blendbarrier: PFNGLBLENDBARRIERPROC,
+
+	/// The function pointer to `glCopyImageSubData()`
+	pub copyimagesubdata: PFNGLCOPYIMAGESUBDATAPROC,
+
+	/// The function pointer to `glDebugMessageControl()`
+	pub debugmessagecontrol: PFNGLDEBUGMESSAGECONTROLPROC,
+
+	/// The function pointer to `glDebugMessageInsert()`
+	pub debugmessageinsert: PFNGLDEBUGMESSAGEINSERTPROC,
+
+	/// The function pointer to `glDebugMessageCallback()`
+	pub debugmessagecallback: PFNGLDEBUGMESSAGECALLBACKPROC,
+
+	/// The function pointer to `glGetDebugMessageLog()`
+	pub getdebugmessagelog: PFNGLGETDEBUGMESSAGELOGPROC,
+
+	/// The function pointer to `glPushDebugGroup()`
+	pub pushdebuggroup: PFNGLPUSHDEBUGGROUPPROC,
+
+	/// The function pointer to `glPopDebugGroup()`
+	pub popdebuggroup: PFNGLPOPDEBUGGROUPPROC,
+
+	/// The function pointer to `glObjectLabel()`
+	pub objectlabel: PFNGLOBJECTLABELPROC,
+
+	/// The function pointer to `glGetObjectLabel()`
+	pub getobjectlabel: PFNGLGETOBJECTLABELPROC,
+
+	/// The function pointer to `glObjectPtrLabel()`
+	pub objectptrlabel: PFNGLOBJECTPTRLABELPROC,
+
+	/// The function pointer to `glGetObjectPtrLabel()`
+	pub getobjectptrlabel: PFNGLGETOBJECTPTRLABELPROC,
+
+	/// The function pointer to `glGetPointerv()`
+	pub getpointerv: PFNGLGETPOINTERVPROC,
+
+	/// The function pointer to `glEnablei()`
+	pub enablei: PFNGLENABLEIPROC,
+
+	/// The function pointer to `glDisablei()`
+	pub disablei: PFNGLDISABLEIPROC,
+
+	/// The function pointer to `glBlendEquationi()`
+	pub blendequationi: PFNGLBLENDEQUATIONIPROC,
+
+	/// The function pointer to `glBlendEquationSeparatei()`
+	pub blendequationseparatei: PFNGLBLENDEQUATIONSEPARATEIPROC,
+
+	/// The function pointer to `glBlendFunci()`
+	pub blendfunci: PFNGLBLENDFUNCIPROC,
+
+	/// The function pointer to `glBlendFuncSeparatei()`
+	pub blendfuncseparatei: PFNGLBLENDFUNCSEPARATEIPROC,
+
+	/// The function pointer to `glColorMaski()`
+	pub colormaski: PFNGLCOLORMASKIPROC,
+
+	/// The function pointer to `glIsEnabledi()`
+	pub isenabledi: PFNGLISENABLEDIPROC,
+
+	/// The function pointer to `glDrawElementsBaseVertex()`
+	pub drawelementsbasevertex: PFNGLDRAWELEMENTSBASEVERTEXPROC,
+
+	/// The function pointer to `glDrawRangeElementsBaseVertex()`
+	pub drawrangeelementsbasevertex: PFNGLDRAWRANGEELEMENTSBASEVERTEXPROC,
+
+	/// The function pointer to `glDrawElementsInstancedBaseVertex()`
+	pub drawelementsinstancedbasevertex: PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXPROC,
+
+	/// The function pointer to `glFramebufferTexture()`
+	pub framebuffertexture: PFNGLFRAMEBUFFERTEXTUREPROC,
+
+	/// The function pointer to `glPrimitiveBoundingBox()`
+	pub primitiveboundingbox: PFNGLPRIMITIVEBOUNDINGBOXPROC,
+
+	/// The function pointer to `glGetGraphicsResetStatus()`
+	pub getgraphicsresetstatus: PFNGLGETGRAPHICSRESETSTATUSPROC,
+
+	/// The function pointer to `glReadnPixels()`
+	pub readnpixels: PFNGLREADNPIXELSPROC,
+
+	/// The function pointer to `glGetnUniformfv()`
+	pub getnuniformfv: PFNGLGETNUNIFORMFVPROC,
+
+	/// The function pointer to `glGetnUniformiv()`
+	pub getnuniformiv: PFNGLGETNUNIFORMIVPROC,
+
+	/// The function pointer to `glGetnUniformuiv()`
+	pub getnuniformuiv: PFNGLGETNUNIFORMUIVPROC,
+
+	/// The function pointer to `glMinSampleShading()`
+	pub minsampleshading: PFNGLMINSAMPLESHADINGPROC,
+
+	/// The function pointer to `glPatchParameteri()`
+	pub patchparameteri: PFNGLPATCHPARAMETERIPROC,
+
+	/// The function pointer to `glTexParameterIiv()`
+	pub texparameteriiv: PFNGLTEXPARAMETERIIVPROC,
+
+	/// The function pointer to `glTexParameterIuiv()`
+	pub texparameteriuiv: PFNGLTEXPARAMETERIUIVPROC,
+
+	/// The function pointer to `glGetTexParameterIiv()`
+	pub gettexparameteriiv: PFNGLGETTEXPARAMETERIIVPROC,
+
+	/// The function pointer to `glGetTexParameterIuiv()`
+	pub gettexparameteriuiv: PFNGLGETTEXPARAMETERIUIVPROC,
+
+	/// The function pointer to `glSamplerParameterIiv()`
+	pub samplerparameteriiv: PFNGLSAMPLERPARAMETERIIVPROC,
+
+	/// The function pointer to `glSamplerParameterIuiv()`
+	pub samplerparameteriuiv: PFNGLSAMPLERPARAMETERIUIVPROC,
+
+	/// The function pointer to `glGetSamplerParameterIiv()`
+	pub getsamplerparameteriiv: PFNGLGETSAMPLERPARAMETERIIVPROC,
+
+	/// The function pointer to `glGetSamplerParameterIuiv()`
+	pub getsamplerparameteriuiv: PFNGLGETSAMPLERPARAMETERIUIVPROC,
+
+	/// The function pointer to `glTexBuffer()`
+	pub texbuffer: PFNGLTEXBUFFERPROC,
+
+	/// The function pointer to `glTexBufferRange()`
+	pub texbufferrange: PFNGLTEXBUFFERRANGEPROC,
+
+	/// The function pointer to `glTexStorage3DMultisample()`
+	pub texstorage3dmultisample: PFNGLTEXSTORAGE3DMULTISAMPLEPROC,
+}
+
+impl ES_GL_3_2 for EsVersion32 {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	#[inline(always)]
+	fn glGetError(&self) -> GLenum {
+		(self.geterror)()
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendBarrier.xhtml>
+	#[inline(always)]
+	fn glBlendBarrier(&self) -> Result<()> {
+		let ret = process_catch("glBlendBarrier", catch_unwind(||(self.blendbarrier)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendBarrier", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyImageSubData.xhtml>
+	#[inline(always)]
+	fn glCopyImageSubData(&self, srcName: GLuint, srcTarget: GLenum, srcLevel: GLint, srcX: GLint, srcY: GLint, srcZ: GLint, dstName: GLuint, dstTarget: GLenum, dstLevel: GLint, dstX: GLint, dstY: GLint, dstZ: GLint, srcWidth: GLsizei, srcHeight: GLsizei, srcDepth: GLsizei) -> Result<()> {
+		let ret = process_catch("glCopyImageSubData", catch_unwind(||(self.copyimagesubdata)(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyImageSubData", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml>
+	#[inline(always)]
+	fn glDebugMessageControl(&self, source: GLenum, type_: GLenum, severity: GLenum, count: GLsizei, ids: *const GLuint, enabled: GLboolean) -> Result<()> {
+		let ret = process_catch("glDebugMessageControl", catch_unwind(||(self.debugmessagecontrol)(source, type_, severity, count, ids, enabled)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDebugMessageControl", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml>
+	#[inline(always)]
+	fn glDebugMessageInsert(&self, source: GLenum, type_: GLenum, id: GLuint, severity: GLenum, length: GLsizei, buf: *const GLchar) -> Result<()> {
+		let ret = process_catch("glDebugMessageInsert", catch_unwind(||(self.debugmessageinsert)(source, type_, id, severity, length, buf)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDebugMessageInsert", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml>
+	#[inline(always)]
+	fn glDebugMessageCallback(&self, callback: GLDEBUGPROC, userParam: *const c_void) -> Result<()> {
+		let ret = process_catch("glDebugMessageCallback", catch_unwind(||(self.debugmessagecallback)(callback, userParam)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDebugMessageCallback", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml>
+	#[inline(always)]
+	fn glGetDebugMessageLog(&self, count: GLuint, bufSize: GLsizei, sources: *mut GLenum, types: *mut GLenum, ids: *mut GLuint, severities: *mut GLenum, lengths: *mut GLsizei, messageLog: *mut GLchar) -> Result<GLuint> {
+		let ret = process_catch("glGetDebugMessageLog", catch_unwind(||(self.getdebugmessagelog)(count, bufSize, sources, types, ids, severities, lengths, messageLog)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetDebugMessageLog", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml>
+	#[inline(always)]
+	fn glPushDebugGroup(&self, source: GLenum, id: GLuint, length: GLsizei, message: *const GLchar) -> Result<()> {
+		let ret = process_catch("glPushDebugGroup", catch_unwind(||(self.pushdebuggroup)(source, id, length, message)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPushDebugGroup", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml>
+	#[inline(always)]
+	fn glPopDebugGroup(&self) -> Result<()> {
+		let ret = process_catch("glPopDebugGroup", catch_unwind(||(self.popdebuggroup)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPopDebugGroup", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml>
+	#[inline(always)]
+	fn glObjectLabel(&self, identifier: GLenum, name: GLuint, length: GLsizei, label: *const GLchar) -> Result<()> {
+		let ret = process_catch("glObjectLabel", catch_unwind(||(self.objectlabel)(identifier, name, length, label)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glObjectLabel", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml>
+	#[inline(always)]
+	fn glGetObjectLabel(&self, identifier: GLenum, name: GLuint, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetObjectLabel", catch_unwind(||(self.getobjectlabel)(identifier, name, bufSize, length, label)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetObjectLabel", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml>
+	#[inline(always)]
+	fn glObjectPtrLabel(&self, ptr: *const c_void, length: GLsizei, label: *const GLchar) -> Result<()> {
+		let ret = process_catch("glObjectPtrLabel", catch_unwind(||(self.objectptrlabel)(ptr, length, label)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glObjectPtrLabel", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml>
+	#[inline(always)]
+	fn glGetObjectPtrLabel(&self, ptr: *const c_void, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetObjectPtrLabel", catch_unwind(||(self.getobjectptrlabel)(ptr, bufSize, length, label)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetObjectPtrLabel", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml>
+	#[inline(always)]
+	fn glGetPointerv(&self, pname: GLenum, params: *mut *mut c_void) -> Result<()> {
+		let ret = process_catch("glGetPointerv", catch_unwind(||(self.getpointerv)(pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetPointerv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEnablei.xhtml>
+	#[inline(always)]
+	fn glEnablei(&self, target: GLenum, index: GLuint) -> Result<()> {
+		let ret = process_catch("glEnablei", catch_unwind(||(self.enablei)(target, index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEnablei", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDisablei.xhtml>
+	#[inline(always)]
+	fn glDisablei(&self, target: GLenum, index: GLuint) -> Result<()> {
+		let ret = process_catch("glDisablei", catch_unwind(||(self.disablei)(target, index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDisablei", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquationi.xhtml>
+	#[inline(always)]
+	fn glBlendEquationi(&self, buf: GLuint, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendEquationi", catch_unwind(||(self.blendequationi)(buf, mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendEquationi", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquationSeparatei.xhtml>
+	#[inline(always)]
+	fn glBlendEquationSeparatei(&self, buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendEquationSeparatei", catch_unwind(||(self.blendequationseparatei)(buf, modeRGB, modeAlpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendEquationSeparatei", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFunci.xhtml>
+	#[inline(always)]
+	fn glBlendFunci(&self, buf: GLuint, src: GLenum, dst: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendFunci", catch_unwind(||(self.blendfunci)(buf, src, dst)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendFunci", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFuncSeparatei.xhtml>
+	#[inline(always)]
+	fn glBlendFuncSeparatei(&self, buf: GLuint, srcRGB: GLenum, dstRGB: GLenum, srcAlpha: GLenum, dstAlpha: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendFuncSeparatei", catch_unwind(||(self.blendfuncseparatei)(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendFuncSeparatei", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glColorMaski.xhtml>
+	#[inline(always)]
+	fn glColorMaski(&self, index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean) -> Result<()> {
+		let ret = process_catch("glColorMaski", catch_unwind(||(self.colormaski)(index, r, g, b, a)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glColorMaski", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsEnabledi.xhtml>
+	#[inline(always)]
+	fn glIsEnabledi(&self, target: GLenum, index: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsEnabledi", catch_unwind(||(self.isenabledi)(target, index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsEnabledi", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsBaseVertex.xhtml>
+	#[inline(always)]
+	fn glDrawElementsBaseVertex(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, basevertex: GLint) -> Result<()> {
+		let ret = process_catch("glDrawElementsBaseVertex", catch_unwind(||(self.drawelementsbasevertex)(mode, count, type_, indices, basevertex)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElementsBaseVertex", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawRangeElementsBaseVertex.xhtml>
+	#[inline(always)]
+	fn glDrawRangeElementsBaseVertex(&self, mode: GLenum, start: GLuint, end: GLuint, count: GLsizei, type_: GLenum, indices: *const c_void, basevertex: GLint) -> Result<()> {
+		let ret = process_catch("glDrawRangeElementsBaseVertex", catch_unwind(||(self.drawrangeelementsbasevertex)(mode, start, end, count, type_, indices, basevertex)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawRangeElementsBaseVertex", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsInstancedBaseVertex.xhtml>
+	#[inline(always)]
+	fn glDrawElementsInstancedBaseVertex(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei, basevertex: GLint) -> Result<()> {
+		let ret = process_catch("glDrawElementsInstancedBaseVertex", catch_unwind(||(self.drawelementsinstancedbasevertex)(mode, count, type_, indices, instancecount, basevertex)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElementsInstancedBaseVertex", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferTexture.xhtml>
+	#[inline(always)]
+	fn glFramebufferTexture(&self, target: GLenum, attachment: GLenum, texture: GLuint, level: GLint) -> Result<()> {
+		let ret = process_catch("glFramebufferTexture", catch_unwind(||(self.framebuffertexture)(target, attachment, texture, level)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferTexture", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPrimitiveBoundingBox.xhtml>
+	#[inline(always)]
+	fn glPrimitiveBoundingBox(&self, minX: GLfloat, minY: GLfloat, minZ: GLfloat, minW: GLfloat, maxX: GLfloat, maxY: GLfloat, maxZ: GLfloat, maxW: GLfloat) -> Result<()> {
+		let ret = process_catch("glPrimitiveBoundingBox", catch_unwind(||(self.primitiveboundingbox)(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPrimitiveBoundingBox", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml>
+	#[inline(always)]
+	fn glGetGraphicsResetStatus(&self) -> Result<GLenum> {
+		let ret = process_catch("glGetGraphicsResetStatus", catch_unwind(||(self.getgraphicsresetstatus)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetGraphicsResetStatus", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadnPixels.xhtml>
+	#[inline(always)]
+	fn glReadnPixels(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, bufSize: GLsizei, data: *mut c_void) -> Result<()> {
+		let ret = process_catch("glReadnPixels", catch_unwind(||(self.readnpixels)(x, y, width, height, format, type_, bufSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glReadnPixels", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetnUniformfv.xhtml>
+	#[inline(always)]
+	fn glGetnUniformfv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetnUniformfv", catch_unwind(||(self.getnuniformfv)(program, location, bufSize, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetnUniformfv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetnUniformiv.xhtml>
+	#[inline(always)]
+	fn glGetnUniformiv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetnUniformiv", catch_unwind(||(self.getnuniformiv)(program, location, bufSize, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetnUniformiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetnUniformuiv.xhtml>
+	#[inline(always)]
+	fn glGetnUniformuiv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetnUniformuiv", catch_unwind(||(self.getnuniformuiv)(program, location, bufSize, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetnUniformuiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMinSampleShading.xhtml>
+	#[inline(always)]
+	fn glMinSampleShading(&self, value: GLfloat) -> Result<()> {
+		let ret = process_catch("glMinSampleShading", catch_unwind(||(self.minsampleshading)(value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glMinSampleShading", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPatchParameteri.xhtml>
+	#[inline(always)]
+	fn glPatchParameteri(&self, pname: GLenum, value: GLint) -> Result<()> {
+		let ret = process_catch("glPatchParameteri", catch_unwind(||(self.patchparameteri)(pname, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPatchParameteri", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterIiv.xhtml>
+	#[inline(always)]
+	fn glTexParameterIiv(&self, target: GLenum, pname: GLenum, params: *const GLint) -> Result<()> {
+		let ret = process_catch("glTexParameterIiv", catch_unwind(||(self.texparameteriiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameterIiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterIuiv.xhtml>
+	#[inline(always)]
+	fn glTexParameterIuiv(&self, target: GLenum, pname: GLenum, params: *const GLuint) -> Result<()> {
+		let ret = process_catch("glTexParameterIuiv", catch_unwind(||(self.texparameteriuiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameterIuiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameterIiv.xhtml>
+	#[inline(always)]
+	fn glGetTexParameterIiv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetTexParameterIiv", catch_unwind(||(self.gettexparameteriiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexParameterIiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameterIuiv.xhtml>
+	#[inline(always)]
+	fn glGetTexParameterIuiv(&self, target: GLenum, pname: GLenum, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetTexParameterIuiv", catch_unwind(||(self.gettexparameteriuiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexParameterIuiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterIiv.xhtml>
+	#[inline(always)]
+	fn glSamplerParameterIiv(&self, sampler: GLuint, pname: GLenum, param: *const GLint) -> Result<()> {
+		let ret = process_catch("glSamplerParameterIiv", catch_unwind(||(self.samplerparameteriiv)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameterIiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterIuiv.xhtml>
+	#[inline(always)]
+	fn glSamplerParameterIuiv(&self, sampler: GLuint, pname: GLenum, param: *const GLuint) -> Result<()> {
+		let ret = process_catch("glSamplerParameterIuiv", catch_unwind(||(self.samplerparameteriuiv)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameterIuiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameterIiv.xhtml>
+	#[inline(always)]
+	fn glGetSamplerParameterIiv(&self, sampler: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetSamplerParameterIiv", catch_unwind(||(self.getsamplerparameteriiv)(sampler, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSamplerParameterIiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameterIuiv.xhtml>
+	#[inline(always)]
+	fn glGetSamplerParameterIuiv(&self, sampler: GLuint, pname: GLenum, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetSamplerParameterIuiv", catch_unwind(||(self.getsamplerparameteriuiv)(sampler, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSamplerParameterIuiv", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexBuffer.xhtml>
+	#[inline(always)]
+	fn glTexBuffer(&self, target: GLenum, internalformat: GLenum, buffer: GLuint) -> Result<()> {
+		let ret = process_catch("glTexBuffer", catch_unwind(||(self.texbuffer)(target, internalformat, buffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexBuffer", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexBufferRange.xhtml>
+	#[inline(always)]
+	fn glTexBufferRange(&self, target: GLenum, internalformat: GLenum, buffer: GLuint, offset: GLintptr, size: GLsizeiptr) -> Result<()> {
+		let ret = process_catch("glTexBufferRange", catch_unwind(||(self.texbufferrange)(target, internalformat, buffer, offset, size)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexBufferRange", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage3DMultisample.xhtml>
+	#[inline(always)]
+	fn glTexStorage3DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, fixedsamplelocations: GLboolean) -> Result<()> {
+		let ret = process_catch("glTexStorage3DMultisample", catch_unwind(||(self.texstorage3dmultisample)(target, samples, internalformat, width, height, depth, fixedsamplelocations)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexStorage3DMultisample", ret, self.glGetError());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+}
+
+impl EsVersion32 {
+	pub fn new(base: impl GL_1_0, mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Self {
+		let (_spec, major, minor, release) = base.get_version();
+		if (major, minor, release) < (3, 2, 0) {
+			return Self::default();
+		}
+		Self {
+			available: true,
+			geterror: {let proc = get_proc_address("glGetError"); if proc == null() {dummy_pfnglgeterrorproc} else {unsafe{transmute(proc)}}},
+			blendbarrier: {let proc = get_proc_address("glBlendBarrier"); if proc == null() {dummy_pfnglblendbarrierproc} else {unsafe{transmute(proc)}}},
+			copyimagesubdata: {let proc = get_proc_address("glCopyImageSubData"); if proc == null() {dummy_pfnglcopyimagesubdataproc} else {unsafe{transmute(proc)}}},
+			debugmessagecontrol: {let proc = get_proc_address("glDebugMessageControl"); if proc == null() {dummy_pfngldebugmessagecontrolproc} else {unsafe{transmute(proc)}}},
+			debugmessageinsert: {let proc = get_proc_address("glDebugMessageInsert"); if proc == null() {dummy_pfngldebugmessageinsertproc} else {unsafe{transmute(proc)}}},
+			debugmessagecallback: {let proc = get_proc_address("glDebugMessageCallback"); if proc == null() {dummy_pfngldebugmessagecallbackproc} else {unsafe{transmute(proc)}}},
+			getdebugmessagelog: {let proc = get_proc_address("glGetDebugMessageLog"); if proc == null() {dummy_pfnglgetdebugmessagelogproc} else {unsafe{transmute(proc)}}},
+			pushdebuggroup: {let proc = get_proc_address("glPushDebugGroup"); if proc == null() {dummy_pfnglpushdebuggroupproc} else {unsafe{transmute(proc)}}},
+			popdebuggroup: {let proc = get_proc_address("glPopDebugGroup"); if proc == null() {dummy_pfnglpopdebuggroupproc} else {unsafe{transmute(proc)}}},
+			objectlabel: {let proc = get_proc_address("glObjectLabel"); if proc == null() {dummy_pfnglobjectlabelproc} else {unsafe{transmute(proc)}}},
+			getobjectlabel: {let proc = get_proc_address("glGetObjectLabel"); if proc == null() {dummy_pfnglgetobjectlabelproc} else {unsafe{transmute(proc)}}},
+			objectptrlabel: {let proc = get_proc_address("glObjectPtrLabel"); if proc == null() {dummy_pfnglobjectptrlabelproc} else {unsafe{transmute(proc)}}},
+			getobjectptrlabel: {let proc = get_proc_address("glGetObjectPtrLabel"); if proc == null() {dummy_pfnglgetobjectptrlabelproc} else {unsafe{transmute(proc)}}},
+			getpointerv: {let proc = get_proc_address("glGetPointerv"); if proc == null() {dummy_pfnglgetpointervproc} else {unsafe{transmute(proc)}}},
+			enablei: {let proc = get_proc_address("glEnablei"); if proc == null() {dummy_pfnglenableiproc} else {unsafe{transmute(proc)}}},
+			disablei: {let proc = get_proc_address("glDisablei"); if proc == null() {dummy_pfngldisableiproc} else {unsafe{transmute(proc)}}},
+			blendequationi: {let proc = get_proc_address("glBlendEquationi"); if proc == null() {dummy_pfnglblendequationiproc} else {unsafe{transmute(proc)}}},
+			blendequationseparatei: {let proc = get_proc_address("glBlendEquationSeparatei"); if proc == null() {dummy_pfnglblendequationseparateiproc} else {unsafe{transmute(proc)}}},
+			blendfunci: {let proc = get_proc_address("glBlendFunci"); if proc == null() {dummy_pfnglblendfunciproc} else {unsafe{transmute(proc)}}},
+			blendfuncseparatei: {let proc = get_proc_address("glBlendFuncSeparatei"); if proc == null() {dummy_pfnglblendfuncseparateiproc} else {unsafe{transmute(proc)}}},
+			colormaski: {let proc = get_proc_address("glColorMaski"); if proc == null() {dummy_pfnglcolormaskiproc} else {unsafe{transmute(proc)}}},
+			isenabledi: {let proc = get_proc_address("glIsEnabledi"); if proc == null() {dummy_pfnglisenablediproc} else {unsafe{transmute(proc)}}},
+			drawelementsbasevertex: {let proc = get_proc_address("glDrawElementsBaseVertex"); if proc == null() {dummy_pfngldrawelementsbasevertexproc} else {unsafe{transmute(proc)}}},
+			drawrangeelementsbasevertex: {let proc = get_proc_address("glDrawRangeElementsBaseVertex"); if proc == null() {dummy_pfngldrawrangeelementsbasevertexproc} else {unsafe{transmute(proc)}}},
+			drawelementsinstancedbasevertex: {let proc = get_proc_address("glDrawElementsInstancedBaseVertex"); if proc == null() {dummy_pfngldrawelementsinstancedbasevertexproc} else {unsafe{transmute(proc)}}},
+			framebuffertexture: {let proc = get_proc_address("glFramebufferTexture"); if proc == null() {dummy_pfnglframebuffertextureproc} else {unsafe{transmute(proc)}}},
+			primitiveboundingbox: {let proc = get_proc_address("glPrimitiveBoundingBox"); if proc == null() {dummy_pfnglprimitiveboundingboxproc} else {unsafe{transmute(proc)}}},
+			getgraphicsresetstatus: {let proc = get_proc_address("glGetGraphicsResetStatus"); if proc == null() {dummy_pfnglgetgraphicsresetstatusproc} else {unsafe{transmute(proc)}}},
+			readnpixels: {let proc = get_proc_address("glReadnPixels"); if proc == null() {dummy_pfnglreadnpixelsproc} else {unsafe{transmute(proc)}}},
+			getnuniformfv: {let proc = get_proc_address("glGetnUniformfv"); if proc == null() {dummy_pfnglgetnuniformfvproc} else {unsafe{transmute(proc)}}},
+			getnuniformiv: {let proc = get_proc_address("glGetnUniformiv"); if proc == null() {dummy_pfnglgetnuniformivproc} else {unsafe{transmute(proc)}}},
+			getnuniformuiv: {let proc = get_proc_address("glGetnUniformuiv"); if proc == null() {dummy_pfnglgetnuniformuivproc} else {unsafe{transmute(proc)}}},
+			minsampleshading: {let proc = get_proc_address("glMinSampleShading"); if proc == null() {dummy_pfnglminsampleshadingproc} else {unsafe{transmute(proc)}}},
+			patchparameteri: {let proc = get_proc_address("glPatchParameteri"); if proc == null() {dummy_pfnglpatchparameteriproc} else {unsafe{transmute(proc)}}},
+			texparameteriiv: {let proc = get_proc_address("glTexParameterIiv"); if proc == null() {dummy_pfngltexparameteriivproc} else {unsafe{transmute(proc)}}},
+			texparameteriuiv: {let proc = get_proc_address("glTexParameterIuiv"); if proc == null() {dummy_pfngltexparameteriuivproc} else {unsafe{transmute(proc)}}},
+			gettexparameteriiv: {let proc = get_proc_address("glGetTexParameterIiv"); if proc == null() {dummy_pfnglgettexparameteriivproc} else {unsafe{transmute(proc)}}},
+			gettexparameteriuiv: {let proc = get_proc_address("glGetTexParameterIuiv"); if proc == null() {dummy_pfnglgettexparameteriuivproc} else {unsafe{transmute(proc)}}},
+			samplerparameteriiv: {let proc = get_proc_address("glSamplerParameterIiv"); if proc == null() {dummy_pfnglsamplerparameteriivproc} else {unsafe{transmute(proc)}}},
+			samplerparameteriuiv: {let proc = get_proc_address("glSamplerParameterIuiv"); if proc == null() {dummy_pfnglsamplerparameteriuivproc} else {unsafe{transmute(proc)}}},
+			getsamplerparameteriiv: {let proc = get_proc_address("glGetSamplerParameterIiv"); if proc == null() {dummy_pfnglgetsamplerparameteriivproc} else {unsafe{transmute(proc)}}},
+			getsamplerparameteriuiv: {let proc = get_proc_address("glGetSamplerParameterIuiv"); if proc == null() {dummy_pfnglgetsamplerparameteriuivproc} else {unsafe{transmute(proc)}}},
+			texbuffer: {let proc = get_proc_address("glTexBuffer"); if proc == null() {dummy_pfngltexbufferproc} else {unsafe{transmute(proc)}}},
+			texbufferrange: {let proc = get_proc_address("glTexBufferRange"); if proc == null() {dummy_pfngltexbufferrangeproc} else {unsafe{transmute(proc)}}},
+			texstorage3dmultisample: {let proc = get_proc_address("glTexStorage3DMultisample"); if proc == null() {dummy_pfngltexstorage3dmultisampleproc} else {unsafe{transmute(proc)}}},
+		}
+	}
+	#[inline(always)]
+	pub fn get_available(&self) -> bool {
+		self.available
+	}
+}
+
+impl Default for EsVersion32 {
+	fn default() -> Self {
+		Self {
+			available: false,
+			geterror: dummy_pfnglgeterrorproc,
+			blendbarrier: dummy_pfnglblendbarrierproc,
+			copyimagesubdata: dummy_pfnglcopyimagesubdataproc,
+			debugmessagecontrol: dummy_pfngldebugmessagecontrolproc,
+			debugmessageinsert: dummy_pfngldebugmessageinsertproc,
+			debugmessagecallback: dummy_pfngldebugmessagecallbackproc,
+			getdebugmessagelog: dummy_pfnglgetdebugmessagelogproc,
+			pushdebuggroup: dummy_pfnglpushdebuggroupproc,
+			popdebuggroup: dummy_pfnglpopdebuggroupproc,
+			objectlabel: dummy_pfnglobjectlabelproc,
+			getobjectlabel: dummy_pfnglgetobjectlabelproc,
+			objectptrlabel: dummy_pfnglobjectptrlabelproc,
+			getobjectptrlabel: dummy_pfnglgetobjectptrlabelproc,
+			getpointerv: dummy_pfnglgetpointervproc,
+			enablei: dummy_pfnglenableiproc,
+			disablei: dummy_pfngldisableiproc,
+			blendequationi: dummy_pfnglblendequationiproc,
+			blendequationseparatei: dummy_pfnglblendequationseparateiproc,
+			blendfunci: dummy_pfnglblendfunciproc,
+			blendfuncseparatei: dummy_pfnglblendfuncseparateiproc,
+			colormaski: dummy_pfnglcolormaskiproc,
+			isenabledi: dummy_pfnglisenablediproc,
+			drawelementsbasevertex: dummy_pfngldrawelementsbasevertexproc,
+			drawrangeelementsbasevertex: dummy_pfngldrawrangeelementsbasevertexproc,
+			drawelementsinstancedbasevertex: dummy_pfngldrawelementsinstancedbasevertexproc,
+			framebuffertexture: dummy_pfnglframebuffertextureproc,
+			primitiveboundingbox: dummy_pfnglprimitiveboundingboxproc,
+			getgraphicsresetstatus: dummy_pfnglgetgraphicsresetstatusproc,
+			readnpixels: dummy_pfnglreadnpixelsproc,
+			getnuniformfv: dummy_pfnglgetnuniformfvproc,
+			getnuniformiv: dummy_pfnglgetnuniformivproc,
+			getnuniformuiv: dummy_pfnglgetnuniformuivproc,
+			minsampleshading: dummy_pfnglminsampleshadingproc,
+			patchparameteri: dummy_pfnglpatchparameteriproc,
+			texparameteriiv: dummy_pfngltexparameteriivproc,
+			texparameteriuiv: dummy_pfngltexparameteriuivproc,
+			gettexparameteriiv: dummy_pfnglgettexparameteriivproc,
+			gettexparameteriuiv: dummy_pfnglgettexparameteriuivproc,
+			samplerparameteriiv: dummy_pfnglsamplerparameteriivproc,
+			samplerparameteriuiv: dummy_pfnglsamplerparameteriuivproc,
+			getsamplerparameteriiv: dummy_pfnglgetsamplerparameteriivproc,
+			getsamplerparameteriuiv: dummy_pfnglgetsamplerparameteriuivproc,
+			texbuffer: dummy_pfngltexbufferproc,
+			texbufferrange: dummy_pfngltexbufferrangeproc,
+			texstorage3dmultisample: dummy_pfngltexstorage3dmultisampleproc,
+		}
+	}
+}
+impl Debug for EsVersion32 {
+	fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+		if self.available {
+			f.debug_struct("EsVersion32")
+			.field("available", &self.available)
+			.field("blendbarrier", unsafe{if transmute::<_, *const c_void>(self.blendbarrier) == (dummy_pfnglblendbarrierproc as *const c_void) {&null::<PFNGLBLENDBARRIERPROC>()} else {&self.blendbarrier}})
+			.field("copyimagesubdata", unsafe{if transmute::<_, *const c_void>(self.copyimagesubdata) == (dummy_pfnglcopyimagesubdataproc as *const c_void) {&null::<PFNGLCOPYIMAGESUBDATAPROC>()} else {&self.copyimagesubdata}})
+			.field("debugmessagecontrol", unsafe{if transmute::<_, *const c_void>(self.debugmessagecontrol) == (dummy_pfngldebugmessagecontrolproc as *const c_void) {&null::<PFNGLDEBUGMESSAGECONTROLPROC>()} else {&self.debugmessagecontrol}})
+			.field("debugmessageinsert", unsafe{if transmute::<_, *const c_void>(self.debugmessageinsert) == (dummy_pfngldebugmessageinsertproc as *const c_void) {&null::<PFNGLDEBUGMESSAGEINSERTPROC>()} else {&self.debugmessageinsert}})
+			.field("debugmessagecallback", unsafe{if transmute::<_, *const c_void>(self.debugmessagecallback) == (dummy_pfngldebugmessagecallbackproc as *const c_void) {&null::<PFNGLDEBUGMESSAGECALLBACKPROC>()} else {&self.debugmessagecallback}})
+			.field("getdebugmessagelog", unsafe{if transmute::<_, *const c_void>(self.getdebugmessagelog) == (dummy_pfnglgetdebugmessagelogproc as *const c_void) {&null::<PFNGLGETDEBUGMESSAGELOGPROC>()} else {&self.getdebugmessagelog}})
+			.field("pushdebuggroup", unsafe{if transmute::<_, *const c_void>(self.pushdebuggroup) == (dummy_pfnglpushdebuggroupproc as *const c_void) {&null::<PFNGLPUSHDEBUGGROUPPROC>()} else {&self.pushdebuggroup}})
+			.field("popdebuggroup", unsafe{if transmute::<_, *const c_void>(self.popdebuggroup) == (dummy_pfnglpopdebuggroupproc as *const c_void) {&null::<PFNGLPOPDEBUGGROUPPROC>()} else {&self.popdebuggroup}})
+			.field("objectlabel", unsafe{if transmute::<_, *const c_void>(self.objectlabel) == (dummy_pfnglobjectlabelproc as *const c_void) {&null::<PFNGLOBJECTLABELPROC>()} else {&self.objectlabel}})
+			.field("getobjectlabel", unsafe{if transmute::<_, *const c_void>(self.getobjectlabel) == (dummy_pfnglgetobjectlabelproc as *const c_void) {&null::<PFNGLGETOBJECTLABELPROC>()} else {&self.getobjectlabel}})
+			.field("objectptrlabel", unsafe{if transmute::<_, *const c_void>(self.objectptrlabel) == (dummy_pfnglobjectptrlabelproc as *const c_void) {&null::<PFNGLOBJECTPTRLABELPROC>()} else {&self.objectptrlabel}})
+			.field("getobjectptrlabel", unsafe{if transmute::<_, *const c_void>(self.getobjectptrlabel) == (dummy_pfnglgetobjectptrlabelproc as *const c_void) {&null::<PFNGLGETOBJECTPTRLABELPROC>()} else {&self.getobjectptrlabel}})
+			.field("getpointerv", unsafe{if transmute::<_, *const c_void>(self.getpointerv) == (dummy_pfnglgetpointervproc as *const c_void) {&null::<PFNGLGETPOINTERVPROC>()} else {&self.getpointerv}})
+			.field("enablei", unsafe{if transmute::<_, *const c_void>(self.enablei) == (dummy_pfnglenableiproc as *const c_void) {&null::<PFNGLENABLEIPROC>()} else {&self.enablei}})
+			.field("disablei", unsafe{if transmute::<_, *const c_void>(self.disablei) == (dummy_pfngldisableiproc as *const c_void) {&null::<PFNGLDISABLEIPROC>()} else {&self.disablei}})
+			.field("blendequationi", unsafe{if transmute::<_, *const c_void>(self.blendequationi) == (dummy_pfnglblendequationiproc as *const c_void) {&null::<PFNGLBLENDEQUATIONIPROC>()} else {&self.blendequationi}})
+			.field("blendequationseparatei", unsafe{if transmute::<_, *const c_void>(self.blendequationseparatei) == (dummy_pfnglblendequationseparateiproc as *const c_void) {&null::<PFNGLBLENDEQUATIONSEPARATEIPROC>()} else {&self.blendequationseparatei}})
+			.field("blendfunci", unsafe{if transmute::<_, *const c_void>(self.blendfunci) == (dummy_pfnglblendfunciproc as *const c_void) {&null::<PFNGLBLENDFUNCIPROC>()} else {&self.blendfunci}})
+			.field("blendfuncseparatei", unsafe{if transmute::<_, *const c_void>(self.blendfuncseparatei) == (dummy_pfnglblendfuncseparateiproc as *const c_void) {&null::<PFNGLBLENDFUNCSEPARATEIPROC>()} else {&self.blendfuncseparatei}})
+			.field("colormaski", unsafe{if transmute::<_, *const c_void>(self.colormaski) == (dummy_pfnglcolormaskiproc as *const c_void) {&null::<PFNGLCOLORMASKIPROC>()} else {&self.colormaski}})
+			.field("isenabledi", unsafe{if transmute::<_, *const c_void>(self.isenabledi) == (dummy_pfnglisenablediproc as *const c_void) {&null::<PFNGLISENABLEDIPROC>()} else {&self.isenabledi}})
+			.field("drawelementsbasevertex", unsafe{if transmute::<_, *const c_void>(self.drawelementsbasevertex) == (dummy_pfngldrawelementsbasevertexproc as *const c_void) {&null::<PFNGLDRAWELEMENTSBASEVERTEXPROC>()} else {&self.drawelementsbasevertex}})
+			.field("drawrangeelementsbasevertex", unsafe{if transmute::<_, *const c_void>(self.drawrangeelementsbasevertex) == (dummy_pfngldrawrangeelementsbasevertexproc as *const c_void) {&null::<PFNGLDRAWRANGEELEMENTSBASEVERTEXPROC>()} else {&self.drawrangeelementsbasevertex}})
+			.field("drawelementsinstancedbasevertex", unsafe{if transmute::<_, *const c_void>(self.drawelementsinstancedbasevertex) == (dummy_pfngldrawelementsinstancedbasevertexproc as *const c_void) {&null::<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXPROC>()} else {&self.drawelementsinstancedbasevertex}})
+			.field("framebuffertexture", unsafe{if transmute::<_, *const c_void>(self.framebuffertexture) == (dummy_pfnglframebuffertextureproc as *const c_void) {&null::<PFNGLFRAMEBUFFERTEXTUREPROC>()} else {&self.framebuffertexture}})
+			.field("primitiveboundingbox", unsafe{if transmute::<_, *const c_void>(self.primitiveboundingbox) == (dummy_pfnglprimitiveboundingboxproc as *const c_void) {&null::<PFNGLPRIMITIVEBOUNDINGBOXPROC>()} else {&self.primitiveboundingbox}})
+			.field("getgraphicsresetstatus", unsafe{if transmute::<_, *const c_void>(self.getgraphicsresetstatus) == (dummy_pfnglgetgraphicsresetstatusproc as *const c_void) {&null::<PFNGLGETGRAPHICSRESETSTATUSPROC>()} else {&self.getgraphicsresetstatus}})
+			.field("readnpixels", unsafe{if transmute::<_, *const c_void>(self.readnpixels) == (dummy_pfnglreadnpixelsproc as *const c_void) {&null::<PFNGLREADNPIXELSPROC>()} else {&self.readnpixels}})
+			.field("getnuniformfv", unsafe{if transmute::<_, *const c_void>(self.getnuniformfv) == (dummy_pfnglgetnuniformfvproc as *const c_void) {&null::<PFNGLGETNUNIFORMFVPROC>()} else {&self.getnuniformfv}})
+			.field("getnuniformiv", unsafe{if transmute::<_, *const c_void>(self.getnuniformiv) == (dummy_pfnglgetnuniformivproc as *const c_void) {&null::<PFNGLGETNUNIFORMIVPROC>()} else {&self.getnuniformiv}})
+			.field("getnuniformuiv", unsafe{if transmute::<_, *const c_void>(self.getnuniformuiv) == (dummy_pfnglgetnuniformuivproc as *const c_void) {&null::<PFNGLGETNUNIFORMUIVPROC>()} else {&self.getnuniformuiv}})
+			.field("minsampleshading", unsafe{if transmute::<_, *const c_void>(self.minsampleshading) == (dummy_pfnglminsampleshadingproc as *const c_void) {&null::<PFNGLMINSAMPLESHADINGPROC>()} else {&self.minsampleshading}})
+			.field("patchparameteri", unsafe{if transmute::<_, *const c_void>(self.patchparameteri) == (dummy_pfnglpatchparameteriproc as *const c_void) {&null::<PFNGLPATCHPARAMETERIPROC>()} else {&self.patchparameteri}})
+			.field("texparameteriiv", unsafe{if transmute::<_, *const c_void>(self.texparameteriiv) == (dummy_pfngltexparameteriivproc as *const c_void) {&null::<PFNGLTEXPARAMETERIIVPROC>()} else {&self.texparameteriiv}})
+			.field("texparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.texparameteriuiv) == (dummy_pfngltexparameteriuivproc as *const c_void) {&null::<PFNGLTEXPARAMETERIUIVPROC>()} else {&self.texparameteriuiv}})
+			.field("gettexparameteriiv", unsafe{if transmute::<_, *const c_void>(self.gettexparameteriiv) == (dummy_pfnglgettexparameteriivproc as *const c_void) {&null::<PFNGLGETTEXPARAMETERIIVPROC>()} else {&self.gettexparameteriiv}})
+			.field("gettexparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.gettexparameteriuiv) == (dummy_pfnglgettexparameteriuivproc as *const c_void) {&null::<PFNGLGETTEXPARAMETERIUIVPROC>()} else {&self.gettexparameteriuiv}})
+			.field("samplerparameteriiv", unsafe{if transmute::<_, *const c_void>(self.samplerparameteriiv) == (dummy_pfnglsamplerparameteriivproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERIIVPROC>()} else {&self.samplerparameteriiv}})
+			.field("samplerparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.samplerparameteriuiv) == (dummy_pfnglsamplerparameteriuivproc as *const c_void) {&null::<PFNGLSAMPLERPARAMETERIUIVPROC>()} else {&self.samplerparameteriuiv}})
+			.field("getsamplerparameteriiv", unsafe{if transmute::<_, *const c_void>(self.getsamplerparameteriiv) == (dummy_pfnglgetsamplerparameteriivproc as *const c_void) {&null::<PFNGLGETSAMPLERPARAMETERIIVPROC>()} else {&self.getsamplerparameteriiv}})
+			.field("getsamplerparameteriuiv", unsafe{if transmute::<_, *const c_void>(self.getsamplerparameteriuiv) == (dummy_pfnglgetsamplerparameteriuivproc as *const c_void) {&null::<PFNGLGETSAMPLERPARAMETERIUIVPROC>()} else {&self.getsamplerparameteriuiv}})
+			.field("texbuffer", unsafe{if transmute::<_, *const c_void>(self.texbuffer) == (dummy_pfngltexbufferproc as *const c_void) {&null::<PFNGLTEXBUFFERPROC>()} else {&self.texbuffer}})
+			.field("texbufferrange", unsafe{if transmute::<_, *const c_void>(self.texbufferrange) == (dummy_pfngltexbufferrangeproc as *const c_void) {&null::<PFNGLTEXBUFFERRANGEPROC>()} else {&self.texbufferrange}})
+			.field("texstorage3dmultisample", unsafe{if transmute::<_, *const c_void>(self.texstorage3dmultisample) == (dummy_pfngltexstorage3dmultisampleproc as *const c_void) {&null::<PFNGLTEXSTORAGE3DMULTISAMPLEPROC>()} else {&self.texstorage3dmultisample}})
+			.finish()
+		} else {
+			f.debug_struct("EsVersion32")
+			.field("available", &self.available)
+			.finish_non_exhaustive()
+		}
+	}
+}
+
 /// All of the OpenGL functions
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct GLCore {
@@ -29093,6 +37386,18 @@ pub struct GLCore {
 
 	/// Functions from OpenGL version 4.6
 	pub version_4_6: Version46,
+
+	/// Functions from OpenGL ES version 2.0
+	pub esversion_2_0: EsVersion20,
+
+	/// Functions from OpenGL ES version 3.0
+	pub esversion_3_0: EsVersion30,
+
+	/// Functions from OpenGL ES version 3.1
+	pub esversion_3_1: EsVersion31,
+
+	/// Functions from OpenGL ES version 3.2
+	pub esversion_3_2: EsVersion32,
 
 }
 
@@ -39317,6 +47622,4679 @@ impl GL_4_6 for GLCore {
 	}
 }
 
+impl ES_GL_2_0 for GLCore {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glActiveTexture.xhtml>
+	#[inline(always)]
+	fn glActiveTexture(&self, texture: GLenum) -> Result<()> {
+		let ret = process_catch("glActiveTexture", catch_unwind(||(self.esversion_2_0.activetexture)(texture)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glActiveTexture", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glAttachShader.xhtml>
+	#[inline(always)]
+	fn glAttachShader(&self, program: GLuint, shader: GLuint) -> Result<()> {
+		let ret = process_catch("glAttachShader", catch_unwind(||(self.esversion_2_0.attachshader)(program, shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glAttachShader", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindAttribLocation.xhtml>
+	#[inline(always)]
+	fn glBindAttribLocation(&self, program: GLuint, index: GLuint, name: *const GLchar) -> Result<()> {
+		let ret = process_catch("glBindAttribLocation", catch_unwind(||(self.esversion_2_0.bindattriblocation)(program, index, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindAttribLocation", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBuffer.xhtml>
+	#[inline(always)]
+	fn glBindBuffer(&self, target: GLenum, buffer: GLuint) -> Result<()> {
+		let ret = process_catch("glBindBuffer", catch_unwind(||(self.esversion_2_0.bindbuffer)(target, buffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindBuffer", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindFramebuffer.xhtml>
+	#[inline(always)]
+	fn glBindFramebuffer(&self, target: GLenum, framebuffer: GLuint) -> Result<()> {
+		let ret = process_catch("glBindFramebuffer", catch_unwind(||(self.esversion_2_0.bindframebuffer)(target, framebuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindFramebuffer", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindRenderbuffer.xhtml>
+	#[inline(always)]
+	fn glBindRenderbuffer(&self, target: GLenum, renderbuffer: GLuint) -> Result<()> {
+		let ret = process_catch("glBindRenderbuffer", catch_unwind(||(self.esversion_2_0.bindrenderbuffer)(target, renderbuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindRenderbuffer", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindTexture.xhtml>
+	#[inline(always)]
+	fn glBindTexture(&self, target: GLenum, texture: GLuint) -> Result<()> {
+		let ret = process_catch("glBindTexture", catch_unwind(||(self.esversion_2_0.bindtexture)(target, texture)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindTexture", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendColor.xhtml>
+	#[inline(always)]
+	fn glBlendColor(&self, red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat) -> Result<()> {
+		let ret = process_catch("glBlendColor", catch_unwind(||(self.esversion_2_0.blendcolor)(red, green, blue, alpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendColor", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquation.xhtml>
+	#[inline(always)]
+	fn glBlendEquation(&self, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendEquation", catch_unwind(||(self.esversion_2_0.blendequation)(mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendEquation", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquationSeparate.xhtml>
+	#[inline(always)]
+	fn glBlendEquationSeparate(&self, modeRGB: GLenum, modeAlpha: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendEquationSeparate", catch_unwind(||(self.esversion_2_0.blendequationseparate)(modeRGB, modeAlpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendEquationSeparate", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFunc.xhtml>
+	#[inline(always)]
+	fn glBlendFunc(&self, sfactor: GLenum, dfactor: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendFunc", catch_unwind(||(self.esversion_2_0.blendfunc)(sfactor, dfactor)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendFunc", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFuncSeparate.xhtml>
+	#[inline(always)]
+	fn glBlendFuncSeparate(&self, sfactorRGB: GLenum, dfactorRGB: GLenum, sfactorAlpha: GLenum, dfactorAlpha: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendFuncSeparate", catch_unwind(||(self.esversion_2_0.blendfuncseparate)(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendFuncSeparate", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBufferData.xhtml>
+	#[inline(always)]
+	fn glBufferData(&self, target: GLenum, size: GLsizeiptr, data: *const c_void, usage: GLenum) -> Result<()> {
+		let ret = process_catch("glBufferData", catch_unwind(||(self.esversion_2_0.bufferdata)(target, size, data, usage)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBufferData", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBufferSubData.xhtml>
+	#[inline(always)]
+	fn glBufferSubData(&self, target: GLenum, offset: GLintptr, size: GLsizeiptr, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glBufferSubData", catch_unwind(||(self.esversion_2_0.buffersubdata)(target, offset, size, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBufferSubData", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCheckFramebufferStatus.xhtml>
+	#[inline(always)]
+	fn glCheckFramebufferStatus(&self, target: GLenum) -> Result<GLenum> {
+		let ret = process_catch("glCheckFramebufferStatus", catch_unwind(||(self.esversion_2_0.checkframebufferstatus)(target)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCheckFramebufferStatus", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClear.xhtml>
+	#[inline(always)]
+	fn glClear(&self, mask: GLbitfield) -> Result<()> {
+		let ret = process_catch("glClear", catch_unwind(||(self.esversion_2_0.clear)(mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClear", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearColor.xhtml>
+	#[inline(always)]
+	fn glClearColor(&self, red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat) -> Result<()> {
+		let ret = process_catch("glClearColor", catch_unwind(||(self.esversion_2_0.clearcolor)(red, green, blue, alpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearColor", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearDepthf.xhtml>
+	#[inline(always)]
+	fn glClearDepthf(&self, d: GLfloat) -> Result<()> {
+		let ret = process_catch("glClearDepthf", catch_unwind(||(self.esversion_2_0.cleardepthf)(d)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearDepthf", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearStencil.xhtml>
+	#[inline(always)]
+	fn glClearStencil(&self, s: GLint) -> Result<()> {
+		let ret = process_catch("glClearStencil", catch_unwind(||(self.esversion_2_0.clearstencil)(s)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearStencil", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glColorMask.xhtml>
+	#[inline(always)]
+	fn glColorMask(&self, red: GLboolean, green: GLboolean, blue: GLboolean, alpha: GLboolean) -> Result<()> {
+		let ret = process_catch("glColorMask", catch_unwind(||(self.esversion_2_0.colormask)(red, green, blue, alpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glColorMask", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompileShader.xhtml>
+	#[inline(always)]
+	fn glCompileShader(&self, shader: GLuint) -> Result<()> {
+		let ret = process_catch("glCompileShader", catch_unwind(||(self.esversion_2_0.compileshader)(shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompileShader", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexImage2D.xhtml>
+	#[inline(always)]
+	fn glCompressedTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLenum, width: GLsizei, height: GLsizei, border: GLint, imageSize: GLsizei, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glCompressedTexImage2D", catch_unwind(||(self.esversion_2_0.compressedteximage2d)(target, level, internalformat, width, height, border, imageSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompressedTexImage2D", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexSubImage2D.xhtml>
+	#[inline(always)]
+	fn glCompressedTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glCompressedTexSubImage2D", catch_unwind(||(self.esversion_2_0.compressedtexsubimage2d)(target, level, xoffset, yoffset, width, height, format, imageSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompressedTexSubImage2D", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyTexImage2D.xhtml>
+	#[inline(always)]
+	fn glCopyTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLenum, x: GLint, y: GLint, width: GLsizei, height: GLsizei, border: GLint) -> Result<()> {
+		let ret = process_catch("glCopyTexImage2D", catch_unwind(||(self.esversion_2_0.copyteximage2d)(target, level, internalformat, x, y, width, height, border)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyTexImage2D", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyTexSubImage2D.xhtml>
+	#[inline(always)]
+	fn glCopyTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glCopyTexSubImage2D", catch_unwind(||(self.esversion_2_0.copytexsubimage2d)(target, level, xoffset, yoffset, x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyTexSubImage2D", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCreateProgram.xhtml>
+	#[inline(always)]
+	fn glCreateProgram(&self) -> Result<GLuint> {
+		let ret = process_catch("glCreateProgram", catch_unwind(||(self.esversion_2_0.createprogram)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCreateProgram", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCreateShader.xhtml>
+	#[inline(always)]
+	fn glCreateShader(&self, type_: GLenum) -> Result<GLuint> {
+		let ret = process_catch("glCreateShader", catch_unwind(||(self.esversion_2_0.createshader)(type_)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCreateShader", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCullFace.xhtml>
+	#[inline(always)]
+	fn glCullFace(&self, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glCullFace", catch_unwind(||(self.esversion_2_0.cullface)(mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCullFace", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteBuffers.xhtml>
+	#[inline(always)]
+	fn glDeleteBuffers(&self, n: GLsizei, buffers: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteBuffers", catch_unwind(||(self.esversion_2_0.deletebuffers)(n, buffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteBuffers", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteFramebuffers.xhtml>
+	#[inline(always)]
+	fn glDeleteFramebuffers(&self, n: GLsizei, framebuffers: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteFramebuffers", catch_unwind(||(self.esversion_2_0.deleteframebuffers)(n, framebuffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteFramebuffers", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteProgram.xhtml>
+	#[inline(always)]
+	fn glDeleteProgram(&self, program: GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteProgram", catch_unwind(||(self.esversion_2_0.deleteprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteProgram", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteRenderbuffers.xhtml>
+	#[inline(always)]
+	fn glDeleteRenderbuffers(&self, n: GLsizei, renderbuffers: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteRenderbuffers", catch_unwind(||(self.esversion_2_0.deleterenderbuffers)(n, renderbuffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteRenderbuffers", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteShader.xhtml>
+	#[inline(always)]
+	fn glDeleteShader(&self, shader: GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteShader", catch_unwind(||(self.esversion_2_0.deleteshader)(shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteShader", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteTextures.xhtml>
+	#[inline(always)]
+	fn glDeleteTextures(&self, n: GLsizei, textures: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteTextures", catch_unwind(||(self.esversion_2_0.deletetextures)(n, textures)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteTextures", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDepthFunc.xhtml>
+	#[inline(always)]
+	fn glDepthFunc(&self, func: GLenum) -> Result<()> {
+		let ret = process_catch("glDepthFunc", catch_unwind(||(self.esversion_2_0.depthfunc)(func)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDepthFunc", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDepthMask.xhtml>
+	#[inline(always)]
+	fn glDepthMask(&self, flag: GLboolean) -> Result<()> {
+		let ret = process_catch("glDepthMask", catch_unwind(||(self.esversion_2_0.depthmask)(flag)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDepthMask", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDepthRangef.xhtml>
+	#[inline(always)]
+	fn glDepthRangef(&self, n: GLfloat, f: GLfloat) -> Result<()> {
+		let ret = process_catch("glDepthRangef", catch_unwind(||(self.esversion_2_0.depthrangef)(n, f)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDepthRangef", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDetachShader.xhtml>
+	#[inline(always)]
+	fn glDetachShader(&self, program: GLuint, shader: GLuint) -> Result<()> {
+		let ret = process_catch("glDetachShader", catch_unwind(||(self.esversion_2_0.detachshader)(program, shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDetachShader", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDisable.xhtml>
+	#[inline(always)]
+	fn glDisable(&self, cap: GLenum) -> Result<()> {
+		let ret = process_catch("glDisable", catch_unwind(||(self.esversion_2_0.disable)(cap)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDisable", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDisableVertexAttribArray.xhtml>
+	#[inline(always)]
+	fn glDisableVertexAttribArray(&self, index: GLuint) -> Result<()> {
+		let ret = process_catch("glDisableVertexAttribArray", catch_unwind(||(self.esversion_2_0.disablevertexattribarray)(index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDisableVertexAttribArray", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawArrays.xhtml>
+	#[inline(always)]
+	fn glDrawArrays(&self, mode: GLenum, first: GLint, count: GLsizei) -> Result<()> {
+		let ret = process_catch("glDrawArrays", catch_unwind(||(self.esversion_2_0.drawarrays)(mode, first, count)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawArrays", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElements.xhtml>
+	#[inline(always)]
+	fn glDrawElements(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void) -> Result<()> {
+		let ret = process_catch("glDrawElements", catch_unwind(||(self.esversion_2_0.drawelements)(mode, count, type_, indices)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElements", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEnable.xhtml>
+	#[inline(always)]
+	fn glEnable(&self, cap: GLenum) -> Result<()> {
+		let ret = process_catch("glEnable", catch_unwind(||(self.esversion_2_0.enable)(cap)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEnable", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEnableVertexAttribArray.xhtml>
+	#[inline(always)]
+	fn glEnableVertexAttribArray(&self, index: GLuint) -> Result<()> {
+		let ret = process_catch("glEnableVertexAttribArray", catch_unwind(||(self.esversion_2_0.enablevertexattribarray)(index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEnableVertexAttribArray", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFinish.xhtml>
+	#[inline(always)]
+	fn glFinish(&self) -> Result<()> {
+		let ret = process_catch("glFinish", catch_unwind(||(self.esversion_2_0.finish)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFinish", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFlush.xhtml>
+	#[inline(always)]
+	fn glFlush(&self) -> Result<()> {
+		let ret = process_catch("glFlush", catch_unwind(||(self.esversion_2_0.flush)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFlush", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferRenderbuffer.xhtml>
+	#[inline(always)]
+	fn glFramebufferRenderbuffer(&self, target: GLenum, attachment: GLenum, renderbuffertarget: GLenum, renderbuffer: GLuint) -> Result<()> {
+		let ret = process_catch("glFramebufferRenderbuffer", catch_unwind(||(self.esversion_2_0.framebufferrenderbuffer)(target, attachment, renderbuffertarget, renderbuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferRenderbuffer", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferTexture2D.xhtml>
+	#[inline(always)]
+	fn glFramebufferTexture2D(&self, target: GLenum, attachment: GLenum, textarget: GLenum, texture: GLuint, level: GLint) -> Result<()> {
+		let ret = process_catch("glFramebufferTexture2D", catch_unwind(||(self.esversion_2_0.framebuffertexture2d)(target, attachment, textarget, texture, level)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferTexture2D", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFrontFace.xhtml>
+	#[inline(always)]
+	fn glFrontFace(&self, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glFrontFace", catch_unwind(||(self.esversion_2_0.frontface)(mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFrontFace", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenBuffers.xhtml>
+	#[inline(always)]
+	fn glGenBuffers(&self, n: GLsizei, buffers: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenBuffers", catch_unwind(||(self.esversion_2_0.genbuffers)(n, buffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenBuffers", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenerateMipmap.xhtml>
+	#[inline(always)]
+	fn glGenerateMipmap(&self, target: GLenum) -> Result<()> {
+		let ret = process_catch("glGenerateMipmap", catch_unwind(||(self.esversion_2_0.generatemipmap)(target)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenerateMipmap", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenFramebuffers.xhtml>
+	#[inline(always)]
+	fn glGenFramebuffers(&self, n: GLsizei, framebuffers: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenFramebuffers", catch_unwind(||(self.esversion_2_0.genframebuffers)(n, framebuffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenFramebuffers", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenRenderbuffers.xhtml>
+	#[inline(always)]
+	fn glGenRenderbuffers(&self, n: GLsizei, renderbuffers: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenRenderbuffers", catch_unwind(||(self.esversion_2_0.genrenderbuffers)(n, renderbuffers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenRenderbuffers", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenTextures.xhtml>
+	#[inline(always)]
+	fn glGenTextures(&self, n: GLsizei, textures: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenTextures", catch_unwind(||(self.esversion_2_0.gentextures)(n, textures)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenTextures", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveAttrib.xhtml>
+	#[inline(always)]
+	fn glGetActiveAttrib(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLint, type_: *mut GLenum, name: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetActiveAttrib", catch_unwind(||(self.esversion_2_0.getactiveattrib)(program, index, bufSize, length, size, type_, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveAttrib", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniform.xhtml>
+	#[inline(always)]
+	fn glGetActiveUniform(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLint, type_: *mut GLenum, name: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetActiveUniform", catch_unwind(||(self.esversion_2_0.getactiveuniform)(program, index, bufSize, length, size, type_, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveUniform", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetAttachedShaders.xhtml>
+	#[inline(always)]
+	fn glGetAttachedShaders(&self, program: GLuint, maxCount: GLsizei, count: *mut GLsizei, shaders: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetAttachedShaders", catch_unwind(||(self.esversion_2_0.getattachedshaders)(program, maxCount, count, shaders)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetAttachedShaders", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetAttribLocation.xhtml>
+	#[inline(always)]
+	fn glGetAttribLocation(&self, program: GLuint, name: *const GLchar) -> Result<GLint> {
+		let ret = process_catch("glGetAttribLocation", catch_unwind(||(self.esversion_2_0.getattriblocation)(program, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetAttribLocation", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBooleanv.xhtml>
+	#[inline(always)]
+	fn glGetBooleanv(&self, pname: GLenum, data: *mut GLboolean) -> Result<()> {
+		let ret = process_catch("glGetBooleanv", catch_unwind(||(self.esversion_2_0.getbooleanv)(pname, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBooleanv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBufferParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetBufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetBufferParameteriv", catch_unwind(||(self.esversion_2_0.getbufferparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBufferParameteriv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	#[inline(always)]
+	fn glGetError(&self) -> GLenum {
+		(self.esversion_2_0.geterror)()
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFloatv.xhtml>
+	#[inline(always)]
+	fn glGetFloatv(&self, pname: GLenum, data: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetFloatv", catch_unwind(||(self.esversion_2_0.getfloatv)(pname, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetFloatv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFramebufferAttachmentParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetFramebufferAttachmentParameteriv(&self, target: GLenum, attachment: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetFramebufferAttachmentParameteriv", catch_unwind(||(self.esversion_2_0.getframebufferattachmentparameteriv)(target, attachment, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetFramebufferAttachmentParameteriv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetIntegerv.xhtml>
+	#[inline(always)]
+	fn glGetIntegerv(&self, pname: GLenum, data: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetIntegerv", catch_unwind(||(self.esversion_2_0.getintegerv)(pname, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetIntegerv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramiv.xhtml>
+	#[inline(always)]
+	fn glGetProgramiv(&self, program: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetProgramiv", catch_unwind(||(self.esversion_2_0.getprogramiv)(program, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramiv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramInfoLog.xhtml>
+	#[inline(always)]
+	fn glGetProgramInfoLog(&self, program: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetProgramInfoLog", catch_unwind(||(self.esversion_2_0.getprograminfolog)(program, bufSize, length, infoLog)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramInfoLog", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetRenderbufferParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetRenderbufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetRenderbufferParameteriv", catch_unwind(||(self.esversion_2_0.getrenderbufferparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetRenderbufferParameteriv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderiv.xhtml>
+	#[inline(always)]
+	fn glGetShaderiv(&self, shader: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetShaderiv", catch_unwind(||(self.esversion_2_0.getshaderiv)(shader, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetShaderiv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderInfoLog.xhtml>
+	#[inline(always)]
+	fn glGetShaderInfoLog(&self, shader: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetShaderInfoLog", catch_unwind(||(self.esversion_2_0.getshaderinfolog)(shader, bufSize, length, infoLog)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetShaderInfoLog", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderPrecisionFormat.xhtml>
+	#[inline(always)]
+	fn glGetShaderPrecisionFormat(&self, shadertype: GLenum, precisiontype: GLenum, range: *mut GLint, precision: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetShaderPrecisionFormat", catch_unwind(||(self.esversion_2_0.getshaderprecisionformat)(shadertype, precisiontype, range, precision)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetShaderPrecisionFormat", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetShaderSource.xhtml>
+	#[inline(always)]
+	fn glGetShaderSource(&self, shader: GLuint, bufSize: GLsizei, length: *mut GLsizei, source: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetShaderSource", catch_unwind(||(self.esversion_2_0.getshadersource)(shader, bufSize, length, source)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetShaderSource", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetString.xhtml>
+	#[inline(always)]
+	fn glGetString(&self, name: GLenum) -> Result<&'static str> {
+		let ret = process_catch("glGetString", catch_unwind(||unsafe{CStr::from_ptr((self.esversion_2_0.getstring)(name) as *const i8)}.to_str().unwrap()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetString", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameterfv.xhtml>
+	#[inline(always)]
+	fn glGetTexParameterfv(&self, target: GLenum, pname: GLenum, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetTexParameterfv", catch_unwind(||(self.esversion_2_0.gettexparameterfv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexParameterfv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetTexParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetTexParameteriv", catch_unwind(||(self.esversion_2_0.gettexparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexParameteriv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformfv.xhtml>
+	#[inline(always)]
+	fn glGetUniformfv(&self, program: GLuint, location: GLint, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetUniformfv", catch_unwind(||(self.esversion_2_0.getuniformfv)(program, location, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformfv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformiv.xhtml>
+	#[inline(always)]
+	fn glGetUniformiv(&self, program: GLuint, location: GLint, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetUniformiv", catch_unwind(||(self.esversion_2_0.getuniformiv)(program, location, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformiv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformLocation.xhtml>
+	#[inline(always)]
+	fn glGetUniformLocation(&self, program: GLuint, name: *const GLchar) -> Result<GLint> {
+		let ret = process_catch("glGetUniformLocation", catch_unwind(||(self.esversion_2_0.getuniformlocation)(program, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformLocation", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribfv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribfv(&self, index: GLuint, pname: GLenum, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribfv", catch_unwind(||(self.esversion_2_0.getvertexattribfv)(index, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribfv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribiv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribiv(&self, index: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribiv", catch_unwind(||(self.esversion_2_0.getvertexattribiv)(index, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribiv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribPointerv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribPointerv(&self, index: GLuint, pname: GLenum, pointer: *mut *mut c_void) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribPointerv", catch_unwind(||(self.esversion_2_0.getvertexattribpointerv)(index, pname, pointer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribPointerv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glHint.xhtml>
+	#[inline(always)]
+	fn glHint(&self, target: GLenum, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glHint", catch_unwind(||(self.esversion_2_0.hint)(target, mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glHint", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsBuffer.xhtml>
+	#[inline(always)]
+	fn glIsBuffer(&self, buffer: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsBuffer", catch_unwind(||(self.esversion_2_0.isbuffer)(buffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsBuffer", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsEnabled.xhtml>
+	#[inline(always)]
+	fn glIsEnabled(&self, cap: GLenum) -> Result<GLboolean> {
+		let ret = process_catch("glIsEnabled", catch_unwind(||(self.esversion_2_0.isenabled)(cap)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsEnabled", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsFramebuffer.xhtml>
+	#[inline(always)]
+	fn glIsFramebuffer(&self, framebuffer: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsFramebuffer", catch_unwind(||(self.esversion_2_0.isframebuffer)(framebuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsFramebuffer", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsProgram.xhtml>
+	#[inline(always)]
+	fn glIsProgram(&self, program: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsProgram", catch_unwind(||(self.esversion_2_0.isprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsProgram", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsRenderbuffer.xhtml>
+	#[inline(always)]
+	fn glIsRenderbuffer(&self, renderbuffer: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsRenderbuffer", catch_unwind(||(self.esversion_2_0.isrenderbuffer)(renderbuffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsRenderbuffer", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsShader.xhtml>
+	#[inline(always)]
+	fn glIsShader(&self, shader: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsShader", catch_unwind(||(self.esversion_2_0.isshader)(shader)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsShader", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsTexture.xhtml>
+	#[inline(always)]
+	fn glIsTexture(&self, texture: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsTexture", catch_unwind(||(self.esversion_2_0.istexture)(texture)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsTexture", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glLineWidth.xhtml>
+	#[inline(always)]
+	fn glLineWidth(&self, width: GLfloat) -> Result<()> {
+		let ret = process_catch("glLineWidth", catch_unwind(||(self.esversion_2_0.linewidth)(width)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glLineWidth", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glLinkProgram.xhtml>
+	#[inline(always)]
+	fn glLinkProgram(&self, program: GLuint) -> Result<()> {
+		let ret = process_catch("glLinkProgram", catch_unwind(||(self.esversion_2_0.linkprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glLinkProgram", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPixelStorei.xhtml>
+	#[inline(always)]
+	fn glPixelStorei(&self, pname: GLenum, param: GLint) -> Result<()> {
+		let ret = process_catch("glPixelStorei", catch_unwind(||(self.esversion_2_0.pixelstorei)(pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPixelStorei", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPolygonOffset.xhtml>
+	#[inline(always)]
+	fn glPolygonOffset(&self, factor: GLfloat, units: GLfloat) -> Result<()> {
+		let ret = process_catch("glPolygonOffset", catch_unwind(||(self.esversion_2_0.polygonoffset)(factor, units)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPolygonOffset", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml>
+	#[inline(always)]
+	fn glReadPixels(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, pixels: *mut c_void) -> Result<()> {
+		let ret = process_catch("glReadPixels", catch_unwind(||(self.esversion_2_0.readpixels)(x, y, width, height, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glReadPixels", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReleaseShaderCompiler.xhtml>
+	#[inline(always)]
+	fn glReleaseShaderCompiler(&self) -> Result<()> {
+		let ret = process_catch("glReleaseShaderCompiler", catch_unwind(||(self.esversion_2_0.releaseshadercompiler)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glReleaseShaderCompiler", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glRenderbufferStorage.xhtml>
+	#[inline(always)]
+	fn glRenderbufferStorage(&self, target: GLenum, internalformat: GLenum, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glRenderbufferStorage", catch_unwind(||(self.esversion_2_0.renderbufferstorage)(target, internalformat, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glRenderbufferStorage", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSampleCoverage.xhtml>
+	#[inline(always)]
+	fn glSampleCoverage(&self, value: GLfloat, invert: GLboolean) -> Result<()> {
+		let ret = process_catch("glSampleCoverage", catch_unwind(||(self.esversion_2_0.samplecoverage)(value, invert)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSampleCoverage", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glScissor.xhtml>
+	#[inline(always)]
+	fn glScissor(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glScissor", catch_unwind(||(self.esversion_2_0.scissor)(x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glScissor", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glShaderBinary.xhtml>
+	#[inline(always)]
+	fn glShaderBinary(&self, count: GLsizei, shaders: *const GLuint, binaryformat: GLenum, binary: *const c_void, length: GLsizei) -> Result<()> {
+		let ret = process_catch("glShaderBinary", catch_unwind(||(self.esversion_2_0.shaderbinary)(count, shaders, binaryformat, binary, length)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glShaderBinary", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glShaderSource.xhtml>
+	#[inline(always)]
+	fn glShaderSource(&self, shader: GLuint, count: GLsizei, string_: *const *const GLchar, length: *const GLint) -> Result<()> {
+		let ret = process_catch("glShaderSource", catch_unwind(||(self.esversion_2_0.shadersource)(shader, count, string_, length)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glShaderSource", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilFunc.xhtml>
+	#[inline(always)]
+	fn glStencilFunc(&self, func: GLenum, ref_: GLint, mask: GLuint) -> Result<()> {
+		let ret = process_catch("glStencilFunc", catch_unwind(||(self.esversion_2_0.stencilfunc)(func, ref_, mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilFunc", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilFuncSeparate.xhtml>
+	#[inline(always)]
+	fn glStencilFuncSeparate(&self, face: GLenum, func: GLenum, ref_: GLint, mask: GLuint) -> Result<()> {
+		let ret = process_catch("glStencilFuncSeparate", catch_unwind(||(self.esversion_2_0.stencilfuncseparate)(face, func, ref_, mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilFuncSeparate", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilMask.xhtml>
+	#[inline(always)]
+	fn glStencilMask(&self, mask: GLuint) -> Result<()> {
+		let ret = process_catch("glStencilMask", catch_unwind(||(self.esversion_2_0.stencilmask)(mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilMask", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilMaskSeparate.xhtml>
+	#[inline(always)]
+	fn glStencilMaskSeparate(&self, face: GLenum, mask: GLuint) -> Result<()> {
+		let ret = process_catch("glStencilMaskSeparate", catch_unwind(||(self.esversion_2_0.stencilmaskseparate)(face, mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilMaskSeparate", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilOp.xhtml>
+	#[inline(always)]
+	fn glStencilOp(&self, fail: GLenum, zfail: GLenum, zpass: GLenum) -> Result<()> {
+		let ret = process_catch("glStencilOp", catch_unwind(||(self.esversion_2_0.stencilop)(fail, zfail, zpass)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilOp", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glStencilOpSeparate.xhtml>
+	#[inline(always)]
+	fn glStencilOpSeparate(&self, face: GLenum, sfail: GLenum, dpfail: GLenum, dppass: GLenum) -> Result<()> {
+		let ret = process_catch("glStencilOpSeparate", catch_unwind(||(self.esversion_2_0.stencilopseparate)(face, sfail, dpfail, dppass)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glStencilOpSeparate", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexImage2D.xhtml>
+	#[inline(always)]
+	fn glTexImage2D(&self, target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, height: GLsizei, border: GLint, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()> {
+		let ret = process_catch("glTexImage2D", catch_unwind(||(self.esversion_2_0.teximage2d)(target, level, internalformat, width, height, border, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexImage2D", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterf.xhtml>
+	#[inline(always)]
+	fn glTexParameterf(&self, target: GLenum, pname: GLenum, param: GLfloat) -> Result<()> {
+		let ret = process_catch("glTexParameterf", catch_unwind(||(self.esversion_2_0.texparameterf)(target, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameterf", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterfv.xhtml>
+	#[inline(always)]
+	fn glTexParameterfv(&self, target: GLenum, pname: GLenum, params: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glTexParameterfv", catch_unwind(||(self.esversion_2_0.texparameterfv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameterfv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameteri.xhtml>
+	#[inline(always)]
+	fn glTexParameteri(&self, target: GLenum, pname: GLenum, param: GLint) -> Result<()> {
+		let ret = process_catch("glTexParameteri", catch_unwind(||(self.esversion_2_0.texparameteri)(target, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameteri", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameteriv.xhtml>
+	#[inline(always)]
+	fn glTexParameteriv(&self, target: GLenum, pname: GLenum, params: *const GLint) -> Result<()> {
+		let ret = process_catch("glTexParameteriv", catch_unwind(||(self.esversion_2_0.texparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameteriv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexSubImage2D.xhtml>
+	#[inline(always)]
+	fn glTexSubImage2D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()> {
+		let ret = process_catch("glTexSubImage2D", catch_unwind(||(self.esversion_2_0.texsubimage2d)(target, level, xoffset, yoffset, width, height, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexSubImage2D", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1f.xhtml>
+	#[inline(always)]
+	fn glUniform1f(&self, location: GLint, v0: GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform1f", catch_unwind(||(self.esversion_2_0.uniform1f)(location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1f", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1fv.xhtml>
+	#[inline(always)]
+	fn glUniform1fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform1fv", catch_unwind(||(self.esversion_2_0.uniform1fv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1i.xhtml>
+	#[inline(always)]
+	fn glUniform1i(&self, location: GLint, v0: GLint) -> Result<()> {
+		let ret = process_catch("glUniform1i", catch_unwind(||(self.esversion_2_0.uniform1i)(location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1i", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1iv.xhtml>
+	#[inline(always)]
+	fn glUniform1iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glUniform1iv", catch_unwind(||(self.esversion_2_0.uniform1iv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1iv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2f.xhtml>
+	#[inline(always)]
+	fn glUniform2f(&self, location: GLint, v0: GLfloat, v1: GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform2f", catch_unwind(||(self.esversion_2_0.uniform2f)(location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2f", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2fv.xhtml>
+	#[inline(always)]
+	fn glUniform2fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform2fv", catch_unwind(||(self.esversion_2_0.uniform2fv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2i.xhtml>
+	#[inline(always)]
+	fn glUniform2i(&self, location: GLint, v0: GLint, v1: GLint) -> Result<()> {
+		let ret = process_catch("glUniform2i", catch_unwind(||(self.esversion_2_0.uniform2i)(location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2i", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2iv.xhtml>
+	#[inline(always)]
+	fn glUniform2iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glUniform2iv", catch_unwind(||(self.esversion_2_0.uniform2iv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2iv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3f.xhtml>
+	#[inline(always)]
+	fn glUniform3f(&self, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform3f", catch_unwind(||(self.esversion_2_0.uniform3f)(location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3f", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3fv.xhtml>
+	#[inline(always)]
+	fn glUniform3fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform3fv", catch_unwind(||(self.esversion_2_0.uniform3fv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3i.xhtml>
+	#[inline(always)]
+	fn glUniform3i(&self, location: GLint, v0: GLint, v1: GLint, v2: GLint) -> Result<()> {
+		let ret = process_catch("glUniform3i", catch_unwind(||(self.esversion_2_0.uniform3i)(location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3i", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3iv.xhtml>
+	#[inline(always)]
+	fn glUniform3iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glUniform3iv", catch_unwind(||(self.esversion_2_0.uniform3iv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3iv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4f.xhtml>
+	#[inline(always)]
+	fn glUniform4f(&self, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform4f", catch_unwind(||(self.esversion_2_0.uniform4f)(location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4f", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4fv.xhtml>
+	#[inline(always)]
+	fn glUniform4fv(&self, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniform4fv", catch_unwind(||(self.esversion_2_0.uniform4fv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4i.xhtml>
+	#[inline(always)]
+	fn glUniform4i(&self, location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint) -> Result<()> {
+		let ret = process_catch("glUniform4i", catch_unwind(||(self.esversion_2_0.uniform4i)(location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4i", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4iv.xhtml>
+	#[inline(always)]
+	fn glUniform4iv(&self, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glUniform4iv", catch_unwind(||(self.esversion_2_0.uniform4iv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4iv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix2fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix2fv", catch_unwind(||(self.esversion_2_0.uniformmatrix2fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix2fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix3fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix3fv", catch_unwind(||(self.esversion_2_0.uniformmatrix3fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix3fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix4fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix4fv", catch_unwind(||(self.esversion_2_0.uniformmatrix4fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix4fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUseProgram.xhtml>
+	#[inline(always)]
+	fn glUseProgram(&self, program: GLuint) -> Result<()> {
+		let ret = process_catch("glUseProgram", catch_unwind(||(self.esversion_2_0.useprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUseProgram", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glValidateProgram.xhtml>
+	#[inline(always)]
+	fn glValidateProgram(&self, program: GLuint) -> Result<()> {
+		let ret = process_catch("glValidateProgram", catch_unwind(||(self.esversion_2_0.validateprogram)(program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glValidateProgram", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib1f.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib1f(&self, index: GLuint, x: GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib1f", catch_unwind(||(self.esversion_2_0.vertexattrib1f)(index, x)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib1f", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib1fv.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib1fv(&self, index: GLuint, v: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib1fv", catch_unwind(||(self.esversion_2_0.vertexattrib1fv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib1fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib2f.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib2f(&self, index: GLuint, x: GLfloat, y: GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib2f", catch_unwind(||(self.esversion_2_0.vertexattrib2f)(index, x, y)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib2f", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib2fv.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib2fv(&self, index: GLuint, v: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib2fv", catch_unwind(||(self.esversion_2_0.vertexattrib2fv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib2fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib3f.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib3f(&self, index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib3f", catch_unwind(||(self.esversion_2_0.vertexattrib3f)(index, x, y, z)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib3f", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib3fv.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib3fv(&self, index: GLuint, v: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib3fv", catch_unwind(||(self.esversion_2_0.vertexattrib3fv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib3fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib4f.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib4f(&self, index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib4f", catch_unwind(||(self.esversion_2_0.vertexattrib4f)(index, x, y, z, w)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib4f", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttrib4fv.xhtml>
+	#[inline(always)]
+	fn glVertexAttrib4fv(&self, index: GLuint, v: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glVertexAttrib4fv", catch_unwind(||(self.esversion_2_0.vertexattrib4fv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttrib4fv", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribPointer.xhtml>
+	#[inline(always)]
+	fn glVertexAttribPointer(&self, index: GLuint, size: GLint, type_: GLenum, normalized: GLboolean, stride: GLsizei, pointer: *const c_void) -> Result<()> {
+		let ret = process_catch("glVertexAttribPointer", catch_unwind(||(self.esversion_2_0.vertexattribpointer)(index, size, type_, normalized, stride, pointer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribPointer", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glViewport.xhtml>
+	#[inline(always)]
+	fn glViewport(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glViewport", catch_unwind(||(self.esversion_2_0.viewport)(x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glViewport", ret, (self.esversion_2_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+}
+
+impl ES_GL_3_0 for GLCore {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	#[inline(always)]
+	fn glGetError(&self) -> GLenum {
+		(self.esversion_3_0.geterror)()
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadBuffer.xhtml>
+	#[inline(always)]
+	fn glReadBuffer(&self, src: GLenum) -> Result<()> {
+		let ret = process_catch("glReadBuffer", catch_unwind(||(self.esversion_3_0.readbuffer)(src)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glReadBuffer", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawRangeElements.xhtml>
+	#[inline(always)]
+	fn glDrawRangeElements(&self, mode: GLenum, start: GLuint, end: GLuint, count: GLsizei, type_: GLenum, indices: *const c_void) -> Result<()> {
+		let ret = process_catch("glDrawRangeElements", catch_unwind(||(self.esversion_3_0.drawrangeelements)(mode, start, end, count, type_, indices)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawRangeElements", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexImage3D.xhtml>
+	#[inline(always)]
+	fn glTexImage3D(&self, target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, border: GLint, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()> {
+		let ret = process_catch("glTexImage3D", catch_unwind(||(self.esversion_3_0.teximage3d)(target, level, internalformat, width, height, depth, border, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexImage3D", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexSubImage3D.xhtml>
+	#[inline(always)]
+	fn glTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, type_: GLenum, pixels: *const c_void) -> Result<()> {
+		let ret = process_catch("glTexSubImage3D", catch_unwind(||(self.esversion_3_0.texsubimage3d)(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type_, pixels)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexSubImage3D", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyTexSubImage3D.xhtml>
+	#[inline(always)]
+	fn glCopyTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glCopyTexSubImage3D", catch_unwind(||(self.esversion_3_0.copytexsubimage3d)(target, level, xoffset, yoffset, zoffset, x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyTexSubImage3D", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexImage3D.xhtml>
+	#[inline(always)]
+	fn glCompressedTexImage3D(&self, target: GLenum, level: GLint, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, border: GLint, imageSize: GLsizei, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glCompressedTexImage3D", catch_unwind(||(self.esversion_3_0.compressedteximage3d)(target, level, internalformat, width, height, depth, border, imageSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompressedTexImage3D", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCompressedTexSubImage3D.xhtml>
+	#[inline(always)]
+	fn glCompressedTexSubImage3D(&self, target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, zoffset: GLint, width: GLsizei, height: GLsizei, depth: GLsizei, format: GLenum, imageSize: GLsizei, data: *const c_void) -> Result<()> {
+		let ret = process_catch("glCompressedTexSubImage3D", catch_unwind(||(self.esversion_3_0.compressedtexsubimage3d)(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCompressedTexSubImage3D", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenQueries.xhtml>
+	#[inline(always)]
+	fn glGenQueries(&self, n: GLsizei, ids: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenQueries", catch_unwind(||(self.esversion_3_0.genqueries)(n, ids)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenQueries", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteQueries.xhtml>
+	#[inline(always)]
+	fn glDeleteQueries(&self, n: GLsizei, ids: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteQueries", catch_unwind(||(self.esversion_3_0.deletequeries)(n, ids)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteQueries", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsQuery.xhtml>
+	#[inline(always)]
+	fn glIsQuery(&self, id: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsQuery", catch_unwind(||(self.esversion_3_0.isquery)(id)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsQuery", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBeginQuery.xhtml>
+	#[inline(always)]
+	fn glBeginQuery(&self, target: GLenum, id: GLuint) -> Result<()> {
+		let ret = process_catch("glBeginQuery", catch_unwind(||(self.esversion_3_0.beginquery)(target, id)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBeginQuery", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEndQuery.xhtml>
+	#[inline(always)]
+	fn glEndQuery(&self, target: GLenum) -> Result<()> {
+		let ret = process_catch("glEndQuery", catch_unwind(||(self.esversion_3_0.endquery)(target)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEndQuery", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetQueryiv.xhtml>
+	#[inline(always)]
+	fn glGetQueryiv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetQueryiv", catch_unwind(||(self.esversion_3_0.getqueryiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetQueryiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetQueryObjectuiv.xhtml>
+	#[inline(always)]
+	fn glGetQueryObjectuiv(&self, id: GLuint, pname: GLenum, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetQueryObjectuiv", catch_unwind(||(self.esversion_3_0.getqueryobjectuiv)(id, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetQueryObjectuiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUnmapBuffer.xhtml>
+	#[inline(always)]
+	fn glUnmapBuffer(&self, target: GLenum) -> Result<GLboolean> {
+		let ret = process_catch("glUnmapBuffer", catch_unwind(||(self.esversion_3_0.unmapbuffer)(target)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUnmapBuffer", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBufferPointerv.xhtml>
+	#[inline(always)]
+	fn glGetBufferPointerv(&self, target: GLenum, pname: GLenum, params: *mut *mut c_void) -> Result<()> {
+		let ret = process_catch("glGetBufferPointerv", catch_unwind(||(self.esversion_3_0.getbufferpointerv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBufferPointerv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawBuffers.xhtml>
+	#[inline(always)]
+	fn glDrawBuffers(&self, n: GLsizei, bufs: *const GLenum) -> Result<()> {
+		let ret = process_catch("glDrawBuffers", catch_unwind(||(self.esversion_3_0.drawbuffers)(n, bufs)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawBuffers", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix2x3fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix2x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix2x3fv", catch_unwind(||(self.esversion_3_0.uniformmatrix2x3fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix2x3fv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix3x2fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix3x2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix3x2fv", catch_unwind(||(self.esversion_3_0.uniformmatrix3x2fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix3x2fv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix2x4fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix2x4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix2x4fv", catch_unwind(||(self.esversion_3_0.uniformmatrix2x4fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix2x4fv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix4x2fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix4x2fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix4x2fv", catch_unwind(||(self.esversion_3_0.uniformmatrix4x2fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix4x2fv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix3x4fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix3x4fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix3x4fv", catch_unwind(||(self.esversion_3_0.uniformmatrix3x4fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix3x4fv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformMatrix4x3fv.xhtml>
+	#[inline(always)]
+	fn glUniformMatrix4x3fv(&self, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glUniformMatrix4x3fv", catch_unwind(||(self.esversion_3_0.uniformmatrix4x3fv)(location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformMatrix4x3fv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlitFramebuffer.xhtml>
+	#[inline(always)]
+	fn glBlitFramebuffer(&self, srcX0: GLint, srcY0: GLint, srcX1: GLint, srcY1: GLint, dstX0: GLint, dstY0: GLint, dstX1: GLint, dstY1: GLint, mask: GLbitfield, filter: GLenum) -> Result<()> {
+		let ret = process_catch("glBlitFramebuffer", catch_unwind(||(self.esversion_3_0.blitframebuffer)(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlitFramebuffer", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glRenderbufferStorageMultisample.xhtml>
+	#[inline(always)]
+	fn glRenderbufferStorageMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glRenderbufferStorageMultisample", catch_unwind(||(self.esversion_3_0.renderbufferstoragemultisample)(target, samples, internalformat, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glRenderbufferStorageMultisample", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferTextureLayer.xhtml>
+	#[inline(always)]
+	fn glFramebufferTextureLayer(&self, target: GLenum, attachment: GLenum, texture: GLuint, level: GLint, layer: GLint) -> Result<()> {
+		let ret = process_catch("glFramebufferTextureLayer", catch_unwind(||(self.esversion_3_0.framebuffertexturelayer)(target, attachment, texture, level, layer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferTextureLayer", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMapBufferRange.xhtml>
+	#[inline(always)]
+	fn glMapBufferRange(&self, target: GLenum, offset: GLintptr, length: GLsizeiptr, access: GLbitfield) -> Result<*mut c_void> {
+		let ret = process_catch("glMapBufferRange", catch_unwind(||(self.esversion_3_0.mapbufferrange)(target, offset, length, access)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glMapBufferRange", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFlushMappedBufferRange.xhtml>
+	#[inline(always)]
+	fn glFlushMappedBufferRange(&self, target: GLenum, offset: GLintptr, length: GLsizeiptr) -> Result<()> {
+		let ret = process_catch("glFlushMappedBufferRange", catch_unwind(||(self.esversion_3_0.flushmappedbufferrange)(target, offset, length)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFlushMappedBufferRange", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindVertexArray.xhtml>
+	#[inline(always)]
+	fn glBindVertexArray(&self, array: GLuint) -> Result<()> {
+		let ret = process_catch("glBindVertexArray", catch_unwind(||(self.esversion_3_0.bindvertexarray)(array)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindVertexArray", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteVertexArrays.xhtml>
+	#[inline(always)]
+	fn glDeleteVertexArrays(&self, n: GLsizei, arrays: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteVertexArrays", catch_unwind(||(self.esversion_3_0.deletevertexarrays)(n, arrays)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteVertexArrays", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenVertexArrays.xhtml>
+	#[inline(always)]
+	fn glGenVertexArrays(&self, n: GLsizei, arrays: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenVertexArrays", catch_unwind(||(self.esversion_3_0.genvertexarrays)(n, arrays)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenVertexArrays", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsVertexArray.xhtml>
+	#[inline(always)]
+	fn glIsVertexArray(&self, array: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsVertexArray", catch_unwind(||(self.esversion_3_0.isvertexarray)(array)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsVertexArray", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetIntegeri_v.xhtml>
+	#[inline(always)]
+	fn glGetIntegeri_v(&self, target: GLenum, index: GLuint, data: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetIntegeri_v", catch_unwind(||(self.esversion_3_0.getintegeri_v)(target, index, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetIntegeri_v", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBeginTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glBeginTransformFeedback(&self, primitiveMode: GLenum) -> Result<()> {
+		let ret = process_catch("glBeginTransformFeedback", catch_unwind(||(self.esversion_3_0.begintransformfeedback)(primitiveMode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBeginTransformFeedback", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEndTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glEndTransformFeedback(&self) -> Result<()> {
+		let ret = process_catch("glEndTransformFeedback", catch_unwind(||(self.esversion_3_0.endtransformfeedback)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEndTransformFeedback", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBufferRange.xhtml>
+	#[inline(always)]
+	fn glBindBufferRange(&self, target: GLenum, index: GLuint, buffer: GLuint, offset: GLintptr, size: GLsizeiptr) -> Result<()> {
+		let ret = process_catch("glBindBufferRange", catch_unwind(||(self.esversion_3_0.bindbufferrange)(target, index, buffer, offset, size)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindBufferRange", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindBufferBase.xhtml>
+	#[inline(always)]
+	fn glBindBufferBase(&self, target: GLenum, index: GLuint, buffer: GLuint) -> Result<()> {
+		let ret = process_catch("glBindBufferBase", catch_unwind(||(self.esversion_3_0.bindbufferbase)(target, index, buffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindBufferBase", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTransformFeedbackVaryings.xhtml>
+	#[inline(always)]
+	fn glTransformFeedbackVaryings(&self, program: GLuint, count: GLsizei, varyings: *const *const GLchar, bufferMode: GLenum) -> Result<()> {
+		let ret = process_catch("glTransformFeedbackVaryings", catch_unwind(||(self.esversion_3_0.transformfeedbackvaryings)(program, count, varyings, bufferMode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTransformFeedbackVaryings", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTransformFeedbackVarying.xhtml>
+	#[inline(always)]
+	fn glGetTransformFeedbackVarying(&self, program: GLuint, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, size: *mut GLsizei, type_: *mut GLenum, name: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetTransformFeedbackVarying", catch_unwind(||(self.esversion_3_0.gettransformfeedbackvarying)(program, index, bufSize, length, size, type_, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTransformFeedbackVarying", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribIPointer.xhtml>
+	#[inline(always)]
+	fn glVertexAttribIPointer(&self, index: GLuint, size: GLint, type_: GLenum, stride: GLsizei, pointer: *const c_void) -> Result<()> {
+		let ret = process_catch("glVertexAttribIPointer", catch_unwind(||(self.esversion_3_0.vertexattribipointer)(index, size, type_, stride, pointer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribIPointer", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribIiv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribIiv(&self, index: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribIiv", catch_unwind(||(self.esversion_3_0.getvertexattribiiv)(index, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribIiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetVertexAttribIuiv.xhtml>
+	#[inline(always)]
+	fn glGetVertexAttribIuiv(&self, index: GLuint, pname: GLenum, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetVertexAttribIuiv", catch_unwind(||(self.esversion_3_0.getvertexattribiuiv)(index, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetVertexAttribIuiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4i.xhtml>
+	#[inline(always)]
+	fn glVertexAttribI4i(&self, index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint) -> Result<()> {
+		let ret = process_catch("glVertexAttribI4i", catch_unwind(||(self.esversion_3_0.vertexattribi4i)(index, x, y, z, w)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribI4i", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4ui.xhtml>
+	#[inline(always)]
+	fn glVertexAttribI4ui(&self, index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribI4ui", catch_unwind(||(self.esversion_3_0.vertexattribi4ui)(index, x, y, z, w)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribI4ui", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4iv.xhtml>
+	#[inline(always)]
+	fn glVertexAttribI4iv(&self, index: GLuint, v: *const GLint) -> Result<()> {
+		let ret = process_catch("glVertexAttribI4iv", catch_unwind(||(self.esversion_3_0.vertexattribi4iv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribI4iv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribI4uiv.xhtml>
+	#[inline(always)]
+	fn glVertexAttribI4uiv(&self, index: GLuint, v: *const GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribI4uiv", catch_unwind(||(self.esversion_3_0.vertexattribi4uiv)(index, v)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribI4uiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformuiv.xhtml>
+	#[inline(always)]
+	fn glGetUniformuiv(&self, program: GLuint, location: GLint, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetUniformuiv", catch_unwind(||(self.esversion_3_0.getuniformuiv)(program, location, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformuiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFragDataLocation.xhtml>
+	#[inline(always)]
+	fn glGetFragDataLocation(&self, program: GLuint, name: *const GLchar) -> Result<GLint> {
+		let ret = process_catch("glGetFragDataLocation", catch_unwind(||(self.esversion_3_0.getfragdatalocation)(program, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetFragDataLocation", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1ui.xhtml>
+	#[inline(always)]
+	fn glUniform1ui(&self, location: GLint, v0: GLuint) -> Result<()> {
+		let ret = process_catch("glUniform1ui", catch_unwind(||(self.esversion_3_0.uniform1ui)(location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1ui", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2ui.xhtml>
+	#[inline(always)]
+	fn glUniform2ui(&self, location: GLint, v0: GLuint, v1: GLuint) -> Result<()> {
+		let ret = process_catch("glUniform2ui", catch_unwind(||(self.esversion_3_0.uniform2ui)(location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2ui", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3ui.xhtml>
+	#[inline(always)]
+	fn glUniform3ui(&self, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint) -> Result<()> {
+		let ret = process_catch("glUniform3ui", catch_unwind(||(self.esversion_3_0.uniform3ui)(location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3ui", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4ui.xhtml>
+	#[inline(always)]
+	fn glUniform4ui(&self, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint) -> Result<()> {
+		let ret = process_catch("glUniform4ui", catch_unwind(||(self.esversion_3_0.uniform4ui)(location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4ui", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform1uiv.xhtml>
+	#[inline(always)]
+	fn glUniform1uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glUniform1uiv", catch_unwind(||(self.esversion_3_0.uniform1uiv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform1uiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform2uiv.xhtml>
+	#[inline(always)]
+	fn glUniform2uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glUniform2uiv", catch_unwind(||(self.esversion_3_0.uniform2uiv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform2uiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform3uiv.xhtml>
+	#[inline(always)]
+	fn glUniform3uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glUniform3uiv", catch_unwind(||(self.esversion_3_0.uniform3uiv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform3uiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniform4uiv.xhtml>
+	#[inline(always)]
+	fn glUniform4uiv(&self, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glUniform4uiv", catch_unwind(||(self.esversion_3_0.uniform4uiv)(location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniform4uiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferiv.xhtml>
+	#[inline(always)]
+	fn glClearBufferiv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glClearBufferiv", catch_unwind(||(self.esversion_3_0.clearbufferiv)(buffer, drawbuffer, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearBufferiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferuiv.xhtml>
+	#[inline(always)]
+	fn glClearBufferuiv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glClearBufferuiv", catch_unwind(||(self.esversion_3_0.clearbufferuiv)(buffer, drawbuffer, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearBufferuiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferfv.xhtml>
+	#[inline(always)]
+	fn glClearBufferfv(&self, buffer: GLenum, drawbuffer: GLint, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glClearBufferfv", catch_unwind(||(self.esversion_3_0.clearbufferfv)(buffer, drawbuffer, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearBufferfv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClearBufferfi.xhtml>
+	#[inline(always)]
+	fn glClearBufferfi(&self, buffer: GLenum, drawbuffer: GLint, depth: GLfloat, stencil: GLint) -> Result<()> {
+		let ret = process_catch("glClearBufferfi", catch_unwind(||(self.esversion_3_0.clearbufferfi)(buffer, drawbuffer, depth, stencil)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClearBufferfi", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetStringi.xhtml>
+	#[inline(always)]
+	fn glGetStringi(&self, name: GLenum, index: GLuint) -> Result<&'static str> {
+		let ret = process_catch("glGetStringi", catch_unwind(||unsafe{CStr::from_ptr((self.esversion_3_0.getstringi)(name, index) as *const i8)}.to_str().unwrap()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetStringi", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyBufferSubData.xhtml>
+	#[inline(always)]
+	fn glCopyBufferSubData(&self, readTarget: GLenum, writeTarget: GLenum, readOffset: GLintptr, writeOffset: GLintptr, size: GLsizeiptr) -> Result<()> {
+		let ret = process_catch("glCopyBufferSubData", catch_unwind(||(self.esversion_3_0.copybuffersubdata)(readTarget, writeTarget, readOffset, writeOffset, size)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyBufferSubData", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformIndices.xhtml>
+	#[inline(always)]
+	fn glGetUniformIndices(&self, program: GLuint, uniformCount: GLsizei, uniformNames: *const *const GLchar, uniformIndices: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetUniformIndices", catch_unwind(||(self.esversion_3_0.getuniformindices)(program, uniformCount, uniformNames, uniformIndices)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformIndices", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniformsiv.xhtml>
+	#[inline(always)]
+	fn glGetActiveUniformsiv(&self, program: GLuint, uniformCount: GLsizei, uniformIndices: *const GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetActiveUniformsiv", catch_unwind(||(self.esversion_3_0.getactiveuniformsiv)(program, uniformCount, uniformIndices, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveUniformsiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetUniformBlockIndex.xhtml>
+	#[inline(always)]
+	fn glGetUniformBlockIndex(&self, program: GLuint, uniformBlockName: *const GLchar) -> Result<GLuint> {
+		let ret = process_catch("glGetUniformBlockIndex", catch_unwind(||(self.esversion_3_0.getuniformblockindex)(program, uniformBlockName)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetUniformBlockIndex", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniformBlockiv.xhtml>
+	#[inline(always)]
+	fn glGetActiveUniformBlockiv(&self, program: GLuint, uniformBlockIndex: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetActiveUniformBlockiv", catch_unwind(||(self.esversion_3_0.getactiveuniformblockiv)(program, uniformBlockIndex, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveUniformBlockiv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetActiveUniformBlockName.xhtml>
+	#[inline(always)]
+	fn glGetActiveUniformBlockName(&self, program: GLuint, uniformBlockIndex: GLuint, bufSize: GLsizei, length: *mut GLsizei, uniformBlockName: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetActiveUniformBlockName", catch_unwind(||(self.esversion_3_0.getactiveuniformblockname)(program, uniformBlockIndex, bufSize, length, uniformBlockName)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetActiveUniformBlockName", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUniformBlockBinding.xhtml>
+	#[inline(always)]
+	fn glUniformBlockBinding(&self, program: GLuint, uniformBlockIndex: GLuint, uniformBlockBinding: GLuint) -> Result<()> {
+		let ret = process_catch("glUniformBlockBinding", catch_unwind(||(self.esversion_3_0.uniformblockbinding)(program, uniformBlockIndex, uniformBlockBinding)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUniformBlockBinding", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawArraysInstanced.xhtml>
+	#[inline(always)]
+	fn glDrawArraysInstanced(&self, mode: GLenum, first: GLint, count: GLsizei, instancecount: GLsizei) -> Result<()> {
+		let ret = process_catch("glDrawArraysInstanced", catch_unwind(||(self.esversion_3_0.drawarraysinstanced)(mode, first, count, instancecount)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawArraysInstanced", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsInstanced.xhtml>
+	#[inline(always)]
+	fn glDrawElementsInstanced(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei) -> Result<()> {
+		let ret = process_catch("glDrawElementsInstanced", catch_unwind(||(self.esversion_3_0.drawelementsinstanced)(mode, count, type_, indices, instancecount)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElementsInstanced", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFenceSync.xhtml>
+	#[inline(always)]
+	fn glFenceSync(&self, condition: GLenum, flags: GLbitfield) -> Result<GLsync> {
+		let ret = process_catch("glFenceSync", catch_unwind(||(self.esversion_3_0.fencesync)(condition, flags)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFenceSync", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsSync.xhtml>
+	#[inline(always)]
+	fn glIsSync(&self, sync: GLsync) -> Result<GLboolean> {
+		let ret = process_catch("glIsSync", catch_unwind(||(self.esversion_3_0.issync)(sync)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsSync", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteSync.xhtml>
+	#[inline(always)]
+	fn glDeleteSync(&self, sync: GLsync) -> Result<()> {
+		let ret = process_catch("glDeleteSync", catch_unwind(||(self.esversion_3_0.deletesync)(sync)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteSync", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glClientWaitSync.xhtml>
+	#[inline(always)]
+	fn glClientWaitSync(&self, sync: GLsync, flags: GLbitfield, timeout: GLuint64) -> Result<GLenum> {
+		let ret = process_catch("glClientWaitSync", catch_unwind(||(self.esversion_3_0.clientwaitsync)(sync, flags, timeout)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glClientWaitSync", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glWaitSync.xhtml>
+	#[inline(always)]
+	fn glWaitSync(&self, sync: GLsync, flags: GLbitfield, timeout: GLuint64) -> Result<()> {
+		let ret = process_catch("glWaitSync", catch_unwind(||(self.esversion_3_0.waitsync)(sync, flags, timeout)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glWaitSync", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetInteger64v.xhtml>
+	#[inline(always)]
+	fn glGetInteger64v(&self, pname: GLenum, data: *mut GLint64) -> Result<()> {
+		let ret = process_catch("glGetInteger64v", catch_unwind(||(self.esversion_3_0.getinteger64v)(pname, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetInteger64v", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSynciv.xhtml>
+	#[inline(always)]
+	fn glGetSynciv(&self, sync: GLsync, pname: GLenum, bufSize: GLsizei, length: *mut GLsizei, values: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetSynciv", catch_unwind(||(self.esversion_3_0.getsynciv)(sync, pname, bufSize, length, values)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSynciv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetInteger64i_v.xhtml>
+	#[inline(always)]
+	fn glGetInteger64i_v(&self, target: GLenum, index: GLuint, data: *mut GLint64) -> Result<()> {
+		let ret = process_catch("glGetInteger64i_v", catch_unwind(||(self.esversion_3_0.getinteger64i_v)(target, index, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetInteger64i_v", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBufferParameteri64v.xhtml>
+	#[inline(always)]
+	fn glGetBufferParameteri64v(&self, target: GLenum, pname: GLenum, params: *mut GLint64) -> Result<()> {
+		let ret = process_catch("glGetBufferParameteri64v", catch_unwind(||(self.esversion_3_0.getbufferparameteri64v)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBufferParameteri64v", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenSamplers.xhtml>
+	#[inline(always)]
+	fn glGenSamplers(&self, count: GLsizei, samplers: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenSamplers", catch_unwind(||(self.esversion_3_0.gensamplers)(count, samplers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenSamplers", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteSamplers.xhtml>
+	#[inline(always)]
+	fn glDeleteSamplers(&self, count: GLsizei, samplers: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteSamplers", catch_unwind(||(self.esversion_3_0.deletesamplers)(count, samplers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteSamplers", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsSampler.xhtml>
+	#[inline(always)]
+	fn glIsSampler(&self, sampler: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsSampler", catch_unwind(||(self.esversion_3_0.issampler)(sampler)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsSampler", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindSampler.xhtml>
+	#[inline(always)]
+	fn glBindSampler(&self, unit: GLuint, sampler: GLuint) -> Result<()> {
+		let ret = process_catch("glBindSampler", catch_unwind(||(self.esversion_3_0.bindsampler)(unit, sampler)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindSampler", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameteri.xhtml>
+	#[inline(always)]
+	fn glSamplerParameteri(&self, sampler: GLuint, pname: GLenum, param: GLint) -> Result<()> {
+		let ret = process_catch("glSamplerParameteri", catch_unwind(||(self.esversion_3_0.samplerparameteri)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameteri", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameteriv.xhtml>
+	#[inline(always)]
+	fn glSamplerParameteriv(&self, sampler: GLuint, pname: GLenum, param: *const GLint) -> Result<()> {
+		let ret = process_catch("glSamplerParameteriv", catch_unwind(||(self.esversion_3_0.samplerparameteriv)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameteriv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterf.xhtml>
+	#[inline(always)]
+	fn glSamplerParameterf(&self, sampler: GLuint, pname: GLenum, param: GLfloat) -> Result<()> {
+		let ret = process_catch("glSamplerParameterf", catch_unwind(||(self.esversion_3_0.samplerparameterf)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameterf", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterfv.xhtml>
+	#[inline(always)]
+	fn glSamplerParameterfv(&self, sampler: GLuint, pname: GLenum, param: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glSamplerParameterfv", catch_unwind(||(self.esversion_3_0.samplerparameterfv)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameterfv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetSamplerParameteriv(&self, sampler: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetSamplerParameteriv", catch_unwind(||(self.esversion_3_0.getsamplerparameteriv)(sampler, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSamplerParameteriv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameterfv.xhtml>
+	#[inline(always)]
+	fn glGetSamplerParameterfv(&self, sampler: GLuint, pname: GLenum, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetSamplerParameterfv", catch_unwind(||(self.esversion_3_0.getsamplerparameterfv)(sampler, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSamplerParameterfv", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribDivisor.xhtml>
+	#[inline(always)]
+	fn glVertexAttribDivisor(&self, index: GLuint, divisor: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribDivisor", catch_unwind(||(self.esversion_3_0.vertexattribdivisor)(index, divisor)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribDivisor", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glBindTransformFeedback(&self, target: GLenum, id: GLuint) -> Result<()> {
+		let ret = process_catch("glBindTransformFeedback", catch_unwind(||(self.esversion_3_0.bindtransformfeedback)(target, id)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindTransformFeedback", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteTransformFeedbacks.xhtml>
+	#[inline(always)]
+	fn glDeleteTransformFeedbacks(&self, n: GLsizei, ids: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteTransformFeedbacks", catch_unwind(||(self.esversion_3_0.deletetransformfeedbacks)(n, ids)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteTransformFeedbacks", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenTransformFeedbacks.xhtml>
+	#[inline(always)]
+	fn glGenTransformFeedbacks(&self, n: GLsizei, ids: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenTransformFeedbacks", catch_unwind(||(self.esversion_3_0.gentransformfeedbacks)(n, ids)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenTransformFeedbacks", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glIsTransformFeedback(&self, id: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsTransformFeedback", catch_unwind(||(self.esversion_3_0.istransformfeedback)(id)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsTransformFeedback", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPauseTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glPauseTransformFeedback(&self) -> Result<()> {
+		let ret = process_catch("glPauseTransformFeedback", catch_unwind(||(self.esversion_3_0.pausetransformfeedback)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPauseTransformFeedback", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glResumeTransformFeedback.xhtml>
+	#[inline(always)]
+	fn glResumeTransformFeedback(&self) -> Result<()> {
+		let ret = process_catch("glResumeTransformFeedback", catch_unwind(||(self.esversion_3_0.resumetransformfeedback)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glResumeTransformFeedback", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramBinary.xhtml>
+	#[inline(always)]
+	fn glGetProgramBinary(&self, program: GLuint, bufSize: GLsizei, length: *mut GLsizei, binaryFormat: *mut GLenum, binary: *mut c_void) -> Result<()> {
+		let ret = process_catch("glGetProgramBinary", catch_unwind(||(self.esversion_3_0.getprogrambinary)(program, bufSize, length, binaryFormat, binary)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramBinary", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramBinary.xhtml>
+	#[inline(always)]
+	fn glProgramBinary(&self, program: GLuint, binaryFormat: GLenum, binary: *const c_void, length: GLsizei) -> Result<()> {
+		let ret = process_catch("glProgramBinary", catch_unwind(||(self.esversion_3_0.programbinary)(program, binaryFormat, binary, length)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramBinary", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramParameteri.xhtml>
+	#[inline(always)]
+	fn glProgramParameteri(&self, program: GLuint, pname: GLenum, value: GLint) -> Result<()> {
+		let ret = process_catch("glProgramParameteri", catch_unwind(||(self.esversion_3_0.programparameteri)(program, pname, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramParameteri", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glInvalidateFramebuffer.xhtml>
+	#[inline(always)]
+	fn glInvalidateFramebuffer(&self, target: GLenum, numAttachments: GLsizei, attachments: *const GLenum) -> Result<()> {
+		let ret = process_catch("glInvalidateFramebuffer", catch_unwind(||(self.esversion_3_0.invalidateframebuffer)(target, numAttachments, attachments)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glInvalidateFramebuffer", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glInvalidateSubFramebuffer.xhtml>
+	#[inline(always)]
+	fn glInvalidateSubFramebuffer(&self, target: GLenum, numAttachments: GLsizei, attachments: *const GLenum, x: GLint, y: GLint, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glInvalidateSubFramebuffer", catch_unwind(||(self.esversion_3_0.invalidatesubframebuffer)(target, numAttachments, attachments, x, y, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glInvalidateSubFramebuffer", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage2D.xhtml>
+	#[inline(always)]
+	fn glTexStorage2D(&self, target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei) -> Result<()> {
+		let ret = process_catch("glTexStorage2D", catch_unwind(||(self.esversion_3_0.texstorage2d)(target, levels, internalformat, width, height)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexStorage2D", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage3D.xhtml>
+	#[inline(always)]
+	fn glTexStorage3D(&self, target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei) -> Result<()> {
+		let ret = process_catch("glTexStorage3D", catch_unwind(||(self.esversion_3_0.texstorage3d)(target, levels, internalformat, width, height, depth)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexStorage3D", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetInternalformativ.xhtml>
+	#[inline(always)]
+	fn glGetInternalformativ(&self, target: GLenum, internalformat: GLenum, pname: GLenum, bufSize: GLsizei, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetInternalformativ", catch_unwind(||(self.esversion_3_0.getinternalformativ)(target, internalformat, pname, bufSize, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetInternalformativ", ret, (self.esversion_3_0.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+}
+
+impl ES_GL_3_1 for GLCore {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	#[inline(always)]
+	fn glGetError(&self) -> GLenum {
+		(self.esversion_3_1.geterror)()
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDispatchCompute.xhtml>
+	#[inline(always)]
+	fn glDispatchCompute(&self, num_groups_x: GLuint, num_groups_y: GLuint, num_groups_z: GLuint) -> Result<()> {
+		let ret = process_catch("glDispatchCompute", catch_unwind(||(self.esversion_3_1.dispatchcompute)(num_groups_x, num_groups_y, num_groups_z)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDispatchCompute", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDispatchComputeIndirect.xhtml>
+	#[inline(always)]
+	fn glDispatchComputeIndirect(&self, indirect: GLintptr) -> Result<()> {
+		let ret = process_catch("glDispatchComputeIndirect", catch_unwind(||(self.esversion_3_1.dispatchcomputeindirect)(indirect)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDispatchComputeIndirect", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawArraysIndirect.xhtml>
+	#[inline(always)]
+	fn glDrawArraysIndirect(&self, mode: GLenum, indirect: *const c_void) -> Result<()> {
+		let ret = process_catch("glDrawArraysIndirect", catch_unwind(||(self.esversion_3_1.drawarraysindirect)(mode, indirect)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawArraysIndirect", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsIndirect.xhtml>
+	#[inline(always)]
+	fn glDrawElementsIndirect(&self, mode: GLenum, type_: GLenum, indirect: *const c_void) -> Result<()> {
+		let ret = process_catch("glDrawElementsIndirect", catch_unwind(||(self.esversion_3_1.drawelementsindirect)(mode, type_, indirect)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElementsIndirect", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferParameteri.xhtml>
+	#[inline(always)]
+	fn glFramebufferParameteri(&self, target: GLenum, pname: GLenum, param: GLint) -> Result<()> {
+		let ret = process_catch("glFramebufferParameteri", catch_unwind(||(self.esversion_3_1.framebufferparameteri)(target, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferParameteri", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetFramebufferParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetFramebufferParameteriv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetFramebufferParameteriv", catch_unwind(||(self.esversion_3_1.getframebufferparameteriv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetFramebufferParameteriv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramInterfaceiv.xhtml>
+	#[inline(always)]
+	fn glGetProgramInterfaceiv(&self, program: GLuint, programInterface: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetProgramInterfaceiv", catch_unwind(||(self.esversion_3_1.getprograminterfaceiv)(program, programInterface, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramInterfaceiv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceIndex.xhtml>
+	#[inline(always)]
+	fn glGetProgramResourceIndex(&self, program: GLuint, programInterface: GLenum, name: *const GLchar) -> Result<GLuint> {
+		let ret = process_catch("glGetProgramResourceIndex", catch_unwind(||(self.esversion_3_1.getprogramresourceindex)(program, programInterface, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramResourceIndex", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceName.xhtml>
+	#[inline(always)]
+	fn glGetProgramResourceName(&self, program: GLuint, programInterface: GLenum, index: GLuint, bufSize: GLsizei, length: *mut GLsizei, name: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetProgramResourceName", catch_unwind(||(self.esversion_3_1.getprogramresourcename)(program, programInterface, index, bufSize, length, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramResourceName", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceiv.xhtml>
+	#[inline(always)]
+	fn glGetProgramResourceiv(&self, program: GLuint, programInterface: GLenum, index: GLuint, propCount: GLsizei, props: *const GLenum, bufSize: GLsizei, length: *mut GLsizei, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetProgramResourceiv", catch_unwind(||(self.esversion_3_1.getprogramresourceiv)(program, programInterface, index, propCount, props, bufSize, length, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramResourceiv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramResourceLocation.xhtml>
+	#[inline(always)]
+	fn glGetProgramResourceLocation(&self, program: GLuint, programInterface: GLenum, name: *const GLchar) -> Result<GLint> {
+		let ret = process_catch("glGetProgramResourceLocation", catch_unwind(||(self.esversion_3_1.getprogramresourcelocation)(program, programInterface, name)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramResourceLocation", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glUseProgramStages.xhtml>
+	#[inline(always)]
+	fn glUseProgramStages(&self, pipeline: GLuint, stages: GLbitfield, program: GLuint) -> Result<()> {
+		let ret = process_catch("glUseProgramStages", catch_unwind(||(self.esversion_3_1.useprogramstages)(pipeline, stages, program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glUseProgramStages", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glActiveShaderProgram.xhtml>
+	#[inline(always)]
+	fn glActiveShaderProgram(&self, pipeline: GLuint, program: GLuint) -> Result<()> {
+		let ret = process_catch("glActiveShaderProgram", catch_unwind(||(self.esversion_3_1.activeshaderprogram)(pipeline, program)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glActiveShaderProgram", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCreateShaderProgramv.xhtml>
+	#[inline(always)]
+	fn glCreateShaderProgramv(&self, type_: GLenum, count: GLsizei, strings: *const *const GLchar) -> Result<GLuint> {
+		let ret = process_catch("glCreateShaderProgramv", catch_unwind(||(self.esversion_3_1.createshaderprogramv)(type_, count, strings)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCreateShaderProgramv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindProgramPipeline.xhtml>
+	#[inline(always)]
+	fn glBindProgramPipeline(&self, pipeline: GLuint) -> Result<()> {
+		let ret = process_catch("glBindProgramPipeline", catch_unwind(||(self.esversion_3_1.bindprogrampipeline)(pipeline)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindProgramPipeline", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDeleteProgramPipelines.xhtml>
+	#[inline(always)]
+	fn glDeleteProgramPipelines(&self, n: GLsizei, pipelines: *const GLuint) -> Result<()> {
+		let ret = process_catch("glDeleteProgramPipelines", catch_unwind(||(self.esversion_3_1.deleteprogrampipelines)(n, pipelines)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDeleteProgramPipelines", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGenProgramPipelines.xhtml>
+	#[inline(always)]
+	fn glGenProgramPipelines(&self, n: GLsizei, pipelines: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGenProgramPipelines", catch_unwind(||(self.esversion_3_1.genprogrampipelines)(n, pipelines)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGenProgramPipelines", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsProgramPipeline.xhtml>
+	#[inline(always)]
+	fn glIsProgramPipeline(&self, pipeline: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsProgramPipeline", catch_unwind(||(self.esversion_3_1.isprogrampipeline)(pipeline)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsProgramPipeline", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramPipelineiv.xhtml>
+	#[inline(always)]
+	fn glGetProgramPipelineiv(&self, pipeline: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetProgramPipelineiv", catch_unwind(||(self.esversion_3_1.getprogrampipelineiv)(pipeline, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramPipelineiv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1i.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1i(&self, program: GLuint, location: GLint, v0: GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform1i", catch_unwind(||(self.esversion_3_1.programuniform1i)(program, location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1i", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2i.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform2i", catch_unwind(||(self.esversion_3_1.programuniform2i)(program, location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2i", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3i.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform3i", catch_unwind(||(self.esversion_3_1.programuniform3i)(program, location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3i", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4i.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4i(&self, program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform4i", catch_unwind(||(self.esversion_3_1.programuniform4i)(program, location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4i", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1ui.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1ui(&self, program: GLuint, location: GLint, v0: GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform1ui", catch_unwind(||(self.esversion_3_1.programuniform1ui)(program, location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1ui", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2ui.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform2ui", catch_unwind(||(self.esversion_3_1.programuniform2ui)(program, location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2ui", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3ui.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform3ui", catch_unwind(||(self.esversion_3_1.programuniform3ui)(program, location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3ui", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4ui.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4ui(&self, program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform4ui", catch_unwind(||(self.esversion_3_1.programuniform4ui)(program, location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4ui", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1f.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1f(&self, program: GLuint, location: GLint, v0: GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform1f", catch_unwind(||(self.esversion_3_1.programuniform1f)(program, location, v0)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1f", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2f.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform2f", catch_unwind(||(self.esversion_3_1.programuniform2f)(program, location, v0, v1)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2f", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3f.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform3f", catch_unwind(||(self.esversion_3_1.programuniform3f)(program, location, v0, v1, v2)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3f", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4f.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4f(&self, program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform4f", catch_unwind(||(self.esversion_3_1.programuniform4f)(program, location, v0, v1, v2, v3)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4f", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1iv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform1iv", catch_unwind(||(self.esversion_3_1.programuniform1iv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1iv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2iv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform2iv", catch_unwind(||(self.esversion_3_1.programuniform2iv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2iv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3iv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform3iv", catch_unwind(||(self.esversion_3_1.programuniform3iv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3iv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4iv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4iv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLint) -> Result<()> {
+		let ret = process_catch("glProgramUniform4iv", catch_unwind(||(self.esversion_3_1.programuniform4iv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4iv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1uiv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform1uiv", catch_unwind(||(self.esversion_3_1.programuniform1uiv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1uiv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2uiv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform2uiv", catch_unwind(||(self.esversion_3_1.programuniform2uiv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2uiv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3uiv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform3uiv", catch_unwind(||(self.esversion_3_1.programuniform3uiv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3uiv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4uiv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4uiv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLuint) -> Result<()> {
+		let ret = process_catch("glProgramUniform4uiv", catch_unwind(||(self.esversion_3_1.programuniform4uiv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4uiv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform1fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform1fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform1fv", catch_unwind(||(self.esversion_3_1.programuniform1fv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform1fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform2fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform2fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform2fv", catch_unwind(||(self.esversion_3_1.programuniform2fv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform2fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform3fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform3fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform3fv", catch_unwind(||(self.esversion_3_1.programuniform3fv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform3fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniform4fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniform4fv(&self, program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniform4fv", catch_unwind(||(self.esversion_3_1.programuniform4fv)(program, location, count, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniform4fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix2fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix2fv", catch_unwind(||(self.esversion_3_1.programuniformmatrix2fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix2fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix3fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix3fv", catch_unwind(||(self.esversion_3_1.programuniformmatrix3fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix3fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix4fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix4fv", catch_unwind(||(self.esversion_3_1.programuniformmatrix4fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix4fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix2x3fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix2x3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix2x3fv", catch_unwind(||(self.esversion_3_1.programuniformmatrix2x3fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix2x3fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix3x2fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix3x2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix3x2fv", catch_unwind(||(self.esversion_3_1.programuniformmatrix3x2fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix3x2fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix2x4fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix2x4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix2x4fv", catch_unwind(||(self.esversion_3_1.programuniformmatrix2x4fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix2x4fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix4x2fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix4x2fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix4x2fv", catch_unwind(||(self.esversion_3_1.programuniformmatrix4x2fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix4x2fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix3x4fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix3x4fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix3x4fv", catch_unwind(||(self.esversion_3_1.programuniformmatrix3x4fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix3x4fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glProgramUniformMatrix4x3fv.xhtml>
+	#[inline(always)]
+	fn glProgramUniformMatrix4x3fv(&self, program: GLuint, location: GLint, count: GLsizei, transpose: GLboolean, value: *const GLfloat) -> Result<()> {
+		let ret = process_catch("glProgramUniformMatrix4x3fv", catch_unwind(||(self.esversion_3_1.programuniformmatrix4x3fv)(program, location, count, transpose, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glProgramUniformMatrix4x3fv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glValidateProgramPipeline.xhtml>
+	#[inline(always)]
+	fn glValidateProgramPipeline(&self, pipeline: GLuint) -> Result<()> {
+		let ret = process_catch("glValidateProgramPipeline", catch_unwind(||(self.esversion_3_1.validateprogrampipeline)(pipeline)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glValidateProgramPipeline", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetProgramPipelineInfoLog.xhtml>
+	#[inline(always)]
+	fn glGetProgramPipelineInfoLog(&self, pipeline: GLuint, bufSize: GLsizei, length: *mut GLsizei, infoLog: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetProgramPipelineInfoLog", catch_unwind(||(self.esversion_3_1.getprogrampipelineinfolog)(pipeline, bufSize, length, infoLog)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetProgramPipelineInfoLog", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindImageTexture.xhtml>
+	#[inline(always)]
+	fn glBindImageTexture(&self, unit: GLuint, texture: GLuint, level: GLint, layered: GLboolean, layer: GLint, access: GLenum, format: GLenum) -> Result<()> {
+		let ret = process_catch("glBindImageTexture", catch_unwind(||(self.esversion_3_1.bindimagetexture)(unit, texture, level, layered, layer, access, format)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindImageTexture", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetBooleani_v.xhtml>
+	#[inline(always)]
+	fn glGetBooleani_v(&self, target: GLenum, index: GLuint, data: *mut GLboolean) -> Result<()> {
+		let ret = process_catch("glGetBooleani_v", catch_unwind(||(self.esversion_3_1.getbooleani_v)(target, index, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetBooleani_v", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMemoryBarrier.xhtml>
+	#[inline(always)]
+	fn glMemoryBarrier(&self, barriers: GLbitfield) -> Result<()> {
+		let ret = process_catch("glMemoryBarrier", catch_unwind(||(self.esversion_3_1.memorybarrier)(barriers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glMemoryBarrier", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMemoryBarrierByRegion.xhtml>
+	#[inline(always)]
+	fn glMemoryBarrierByRegion(&self, barriers: GLbitfield) -> Result<()> {
+		let ret = process_catch("glMemoryBarrierByRegion", catch_unwind(||(self.esversion_3_1.memorybarrierbyregion)(barriers)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glMemoryBarrierByRegion", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage2DMultisample.xhtml>
+	#[inline(always)]
+	fn glTexStorage2DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, fixedsamplelocations: GLboolean) -> Result<()> {
+		let ret = process_catch("glTexStorage2DMultisample", catch_unwind(||(self.esversion_3_1.texstorage2dmultisample)(target, samples, internalformat, width, height, fixedsamplelocations)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexStorage2DMultisample", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetMultisamplefv.xhtml>
+	#[inline(always)]
+	fn glGetMultisamplefv(&self, pname: GLenum, index: GLuint, val: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetMultisamplefv", catch_unwind(||(self.esversion_3_1.getmultisamplefv)(pname, index, val)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetMultisamplefv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSampleMaski.xhtml>
+	#[inline(always)]
+	fn glSampleMaski(&self, maskNumber: GLuint, mask: GLbitfield) -> Result<()> {
+		let ret = process_catch("glSampleMaski", catch_unwind(||(self.esversion_3_1.samplemaski)(maskNumber, mask)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSampleMaski", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexLevelParameteriv.xhtml>
+	#[inline(always)]
+	fn glGetTexLevelParameteriv(&self, target: GLenum, level: GLint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetTexLevelParameteriv", catch_unwind(||(self.esversion_3_1.gettexlevelparameteriv)(target, level, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexLevelParameteriv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexLevelParameterfv.xhtml>
+	#[inline(always)]
+	fn glGetTexLevelParameterfv(&self, target: GLenum, level: GLint, pname: GLenum, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetTexLevelParameterfv", catch_unwind(||(self.esversion_3_1.gettexlevelparameterfv)(target, level, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexLevelParameterfv", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBindVertexBuffer.xhtml>
+	#[inline(always)]
+	fn glBindVertexBuffer(&self, bindingindex: GLuint, buffer: GLuint, offset: GLintptr, stride: GLsizei) -> Result<()> {
+		let ret = process_catch("glBindVertexBuffer", catch_unwind(||(self.esversion_3_1.bindvertexbuffer)(bindingindex, buffer, offset, stride)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBindVertexBuffer", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribFormat.xhtml>
+	#[inline(always)]
+	fn glVertexAttribFormat(&self, attribindex: GLuint, size: GLint, type_: GLenum, normalized: GLboolean, relativeoffset: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribFormat", catch_unwind(||(self.esversion_3_1.vertexattribformat)(attribindex, size, type_, normalized, relativeoffset)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribFormat", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribIFormat.xhtml>
+	#[inline(always)]
+	fn glVertexAttribIFormat(&self, attribindex: GLuint, size: GLint, type_: GLenum, relativeoffset: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribIFormat", catch_unwind(||(self.esversion_3_1.vertexattribiformat)(attribindex, size, type_, relativeoffset)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribIFormat", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexAttribBinding.xhtml>
+	#[inline(always)]
+	fn glVertexAttribBinding(&self, attribindex: GLuint, bindingindex: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexAttribBinding", catch_unwind(||(self.esversion_3_1.vertexattribbinding)(attribindex, bindingindex)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexAttribBinding", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glVertexBindingDivisor.xhtml>
+	#[inline(always)]
+	fn glVertexBindingDivisor(&self, bindingindex: GLuint, divisor: GLuint) -> Result<()> {
+		let ret = process_catch("glVertexBindingDivisor", catch_unwind(||(self.esversion_3_1.vertexbindingdivisor)(bindingindex, divisor)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glVertexBindingDivisor", ret, (self.esversion_3_1.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+}
+
+impl ES_GL_3_2 for GLCore {
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetError.xhtml>
+	#[inline(always)]
+	fn glGetError(&self) -> GLenum {
+		(self.esversion_3_2.geterror)()
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendBarrier.xhtml>
+	#[inline(always)]
+	fn glBlendBarrier(&self) -> Result<()> {
+		let ret = process_catch("glBlendBarrier", catch_unwind(||(self.esversion_3_2.blendbarrier)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendBarrier", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glCopyImageSubData.xhtml>
+	#[inline(always)]
+	fn glCopyImageSubData(&self, srcName: GLuint, srcTarget: GLenum, srcLevel: GLint, srcX: GLint, srcY: GLint, srcZ: GLint, dstName: GLuint, dstTarget: GLenum, dstLevel: GLint, dstX: GLint, dstY: GLint, dstZ: GLint, srcWidth: GLsizei, srcHeight: GLsizei, srcDepth: GLsizei) -> Result<()> {
+		let ret = process_catch("glCopyImageSubData", catch_unwind(||(self.esversion_3_2.copyimagesubdata)(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glCopyImageSubData", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml>
+	#[inline(always)]
+	fn glDebugMessageControl(&self, source: GLenum, type_: GLenum, severity: GLenum, count: GLsizei, ids: *const GLuint, enabled: GLboolean) -> Result<()> {
+		let ret = process_catch("glDebugMessageControl", catch_unwind(||(self.esversion_3_2.debugmessagecontrol)(source, type_, severity, count, ids, enabled)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDebugMessageControl", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml>
+	#[inline(always)]
+	fn glDebugMessageInsert(&self, source: GLenum, type_: GLenum, id: GLuint, severity: GLenum, length: GLsizei, buf: *const GLchar) -> Result<()> {
+		let ret = process_catch("glDebugMessageInsert", catch_unwind(||(self.esversion_3_2.debugmessageinsert)(source, type_, id, severity, length, buf)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDebugMessageInsert", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml>
+	#[inline(always)]
+	fn glDebugMessageCallback(&self, callback: GLDEBUGPROC, userParam: *const c_void) -> Result<()> {
+		let ret = process_catch("glDebugMessageCallback", catch_unwind(||(self.esversion_3_2.debugmessagecallback)(callback, userParam)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDebugMessageCallback", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml>
+	#[inline(always)]
+	fn glGetDebugMessageLog(&self, count: GLuint, bufSize: GLsizei, sources: *mut GLenum, types: *mut GLenum, ids: *mut GLuint, severities: *mut GLenum, lengths: *mut GLsizei, messageLog: *mut GLchar) -> Result<GLuint> {
+		let ret = process_catch("glGetDebugMessageLog", catch_unwind(||(self.esversion_3_2.getdebugmessagelog)(count, bufSize, sources, types, ids, severities, lengths, messageLog)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetDebugMessageLog", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml>
+	#[inline(always)]
+	fn glPushDebugGroup(&self, source: GLenum, id: GLuint, length: GLsizei, message: *const GLchar) -> Result<()> {
+		let ret = process_catch("glPushDebugGroup", catch_unwind(||(self.esversion_3_2.pushdebuggroup)(source, id, length, message)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPushDebugGroup", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml>
+	#[inline(always)]
+	fn glPopDebugGroup(&self) -> Result<()> {
+		let ret = process_catch("glPopDebugGroup", catch_unwind(||(self.esversion_3_2.popdebuggroup)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPopDebugGroup", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml>
+	#[inline(always)]
+	fn glObjectLabel(&self, identifier: GLenum, name: GLuint, length: GLsizei, label: *const GLchar) -> Result<()> {
+		let ret = process_catch("glObjectLabel", catch_unwind(||(self.esversion_3_2.objectlabel)(identifier, name, length, label)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glObjectLabel", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml>
+	#[inline(always)]
+	fn glGetObjectLabel(&self, identifier: GLenum, name: GLuint, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetObjectLabel", catch_unwind(||(self.esversion_3_2.getobjectlabel)(identifier, name, bufSize, length, label)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetObjectLabel", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml>
+	#[inline(always)]
+	fn glObjectPtrLabel(&self, ptr: *const c_void, length: GLsizei, label: *const GLchar) -> Result<()> {
+		let ret = process_catch("glObjectPtrLabel", catch_unwind(||(self.esversion_3_2.objectptrlabel)(ptr, length, label)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glObjectPtrLabel", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml>
+	#[inline(always)]
+	fn glGetObjectPtrLabel(&self, ptr: *const c_void, bufSize: GLsizei, length: *mut GLsizei, label: *mut GLchar) -> Result<()> {
+		let ret = process_catch("glGetObjectPtrLabel", catch_unwind(||(self.esversion_3_2.getobjectptrlabel)(ptr, bufSize, length, label)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetObjectPtrLabel", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml>
+	#[inline(always)]
+	fn glGetPointerv(&self, pname: GLenum, params: *mut *mut c_void) -> Result<()> {
+		let ret = process_catch("glGetPointerv", catch_unwind(||(self.esversion_3_2.getpointerv)(pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetPointerv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glEnablei.xhtml>
+	#[inline(always)]
+	fn glEnablei(&self, target: GLenum, index: GLuint) -> Result<()> {
+		let ret = process_catch("glEnablei", catch_unwind(||(self.esversion_3_2.enablei)(target, index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glEnablei", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDisablei.xhtml>
+	#[inline(always)]
+	fn glDisablei(&self, target: GLenum, index: GLuint) -> Result<()> {
+		let ret = process_catch("glDisablei", catch_unwind(||(self.esversion_3_2.disablei)(target, index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDisablei", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquationi.xhtml>
+	#[inline(always)]
+	fn glBlendEquationi(&self, buf: GLuint, mode: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendEquationi", catch_unwind(||(self.esversion_3_2.blendequationi)(buf, mode)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendEquationi", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendEquationSeparatei.xhtml>
+	#[inline(always)]
+	fn glBlendEquationSeparatei(&self, buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendEquationSeparatei", catch_unwind(||(self.esversion_3_2.blendequationseparatei)(buf, modeRGB, modeAlpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendEquationSeparatei", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFunci.xhtml>
+	#[inline(always)]
+	fn glBlendFunci(&self, buf: GLuint, src: GLenum, dst: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendFunci", catch_unwind(||(self.esversion_3_2.blendfunci)(buf, src, dst)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendFunci", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glBlendFuncSeparatei.xhtml>
+	#[inline(always)]
+	fn glBlendFuncSeparatei(&self, buf: GLuint, srcRGB: GLenum, dstRGB: GLenum, srcAlpha: GLenum, dstAlpha: GLenum) -> Result<()> {
+		let ret = process_catch("glBlendFuncSeparatei", catch_unwind(||(self.esversion_3_2.blendfuncseparatei)(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glBlendFuncSeparatei", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glColorMaski.xhtml>
+	#[inline(always)]
+	fn glColorMaski(&self, index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean) -> Result<()> {
+		let ret = process_catch("glColorMaski", catch_unwind(||(self.esversion_3_2.colormaski)(index, r, g, b, a)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glColorMaski", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glIsEnabledi.xhtml>
+	#[inline(always)]
+	fn glIsEnabledi(&self, target: GLenum, index: GLuint) -> Result<GLboolean> {
+		let ret = process_catch("glIsEnabledi", catch_unwind(||(self.esversion_3_2.isenabledi)(target, index)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glIsEnabledi", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsBaseVertex.xhtml>
+	#[inline(always)]
+	fn glDrawElementsBaseVertex(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, basevertex: GLint) -> Result<()> {
+		let ret = process_catch("glDrawElementsBaseVertex", catch_unwind(||(self.esversion_3_2.drawelementsbasevertex)(mode, count, type_, indices, basevertex)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElementsBaseVertex", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawRangeElementsBaseVertex.xhtml>
+	#[inline(always)]
+	fn glDrawRangeElementsBaseVertex(&self, mode: GLenum, start: GLuint, end: GLuint, count: GLsizei, type_: GLenum, indices: *const c_void, basevertex: GLint) -> Result<()> {
+		let ret = process_catch("glDrawRangeElementsBaseVertex", catch_unwind(||(self.esversion_3_2.drawrangeelementsbasevertex)(mode, start, end, count, type_, indices, basevertex)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawRangeElementsBaseVertex", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glDrawElementsInstancedBaseVertex.xhtml>
+	#[inline(always)]
+	fn glDrawElementsInstancedBaseVertex(&self, mode: GLenum, count: GLsizei, type_: GLenum, indices: *const c_void, instancecount: GLsizei, basevertex: GLint) -> Result<()> {
+		let ret = process_catch("glDrawElementsInstancedBaseVertex", catch_unwind(||(self.esversion_3_2.drawelementsinstancedbasevertex)(mode, count, type_, indices, instancecount, basevertex)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glDrawElementsInstancedBaseVertex", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glFramebufferTexture.xhtml>
+	#[inline(always)]
+	fn glFramebufferTexture(&self, target: GLenum, attachment: GLenum, texture: GLuint, level: GLint) -> Result<()> {
+		let ret = process_catch("glFramebufferTexture", catch_unwind(||(self.esversion_3_2.framebuffertexture)(target, attachment, texture, level)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glFramebufferTexture", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPrimitiveBoundingBox.xhtml>
+	#[inline(always)]
+	fn glPrimitiveBoundingBox(&self, minX: GLfloat, minY: GLfloat, minZ: GLfloat, minW: GLfloat, maxX: GLfloat, maxY: GLfloat, maxZ: GLfloat, maxW: GLfloat) -> Result<()> {
+		let ret = process_catch("glPrimitiveBoundingBox", catch_unwind(||(self.esversion_3_2.primitiveboundingbox)(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPrimitiveBoundingBox", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml>
+	#[inline(always)]
+	fn glGetGraphicsResetStatus(&self) -> Result<GLenum> {
+		let ret = process_catch("glGetGraphicsResetStatus", catch_unwind(||(self.esversion_3_2.getgraphicsresetstatus)()));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetGraphicsResetStatus", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glReadnPixels.xhtml>
+	#[inline(always)]
+	fn glReadnPixels(&self, x: GLint, y: GLint, width: GLsizei, height: GLsizei, format: GLenum, type_: GLenum, bufSize: GLsizei, data: *mut c_void) -> Result<()> {
+		let ret = process_catch("glReadnPixels", catch_unwind(||(self.esversion_3_2.readnpixels)(x, y, width, height, format, type_, bufSize, data)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glReadnPixels", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetnUniformfv.xhtml>
+	#[inline(always)]
+	fn glGetnUniformfv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLfloat) -> Result<()> {
+		let ret = process_catch("glGetnUniformfv", catch_unwind(||(self.esversion_3_2.getnuniformfv)(program, location, bufSize, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetnUniformfv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetnUniformiv.xhtml>
+	#[inline(always)]
+	fn glGetnUniformiv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetnUniformiv", catch_unwind(||(self.esversion_3_2.getnuniformiv)(program, location, bufSize, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetnUniformiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetnUniformuiv.xhtml>
+	#[inline(always)]
+	fn glGetnUniformuiv(&self, program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetnUniformuiv", catch_unwind(||(self.esversion_3_2.getnuniformuiv)(program, location, bufSize, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetnUniformuiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glMinSampleShading.xhtml>
+	#[inline(always)]
+	fn glMinSampleShading(&self, value: GLfloat) -> Result<()> {
+		let ret = process_catch("glMinSampleShading", catch_unwind(||(self.esversion_3_2.minsampleshading)(value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glMinSampleShading", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glPatchParameteri.xhtml>
+	#[inline(always)]
+	fn glPatchParameteri(&self, pname: GLenum, value: GLint) -> Result<()> {
+		let ret = process_catch("glPatchParameteri", catch_unwind(||(self.esversion_3_2.patchparameteri)(pname, value)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glPatchParameteri", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterIiv.xhtml>
+	#[inline(always)]
+	fn glTexParameterIiv(&self, target: GLenum, pname: GLenum, params: *const GLint) -> Result<()> {
+		let ret = process_catch("glTexParameterIiv", catch_unwind(||(self.esversion_3_2.texparameteriiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameterIiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexParameterIuiv.xhtml>
+	#[inline(always)]
+	fn glTexParameterIuiv(&self, target: GLenum, pname: GLenum, params: *const GLuint) -> Result<()> {
+		let ret = process_catch("glTexParameterIuiv", catch_unwind(||(self.esversion_3_2.texparameteriuiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexParameterIuiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameterIiv.xhtml>
+	#[inline(always)]
+	fn glGetTexParameterIiv(&self, target: GLenum, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetTexParameterIiv", catch_unwind(||(self.esversion_3_2.gettexparameteriiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexParameterIiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetTexParameterIuiv.xhtml>
+	#[inline(always)]
+	fn glGetTexParameterIuiv(&self, target: GLenum, pname: GLenum, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetTexParameterIuiv", catch_unwind(||(self.esversion_3_2.gettexparameteriuiv)(target, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetTexParameterIuiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterIiv.xhtml>
+	#[inline(always)]
+	fn glSamplerParameterIiv(&self, sampler: GLuint, pname: GLenum, param: *const GLint) -> Result<()> {
+		let ret = process_catch("glSamplerParameterIiv", catch_unwind(||(self.esversion_3_2.samplerparameteriiv)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameterIiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glSamplerParameterIuiv.xhtml>
+	#[inline(always)]
+	fn glSamplerParameterIuiv(&self, sampler: GLuint, pname: GLenum, param: *const GLuint) -> Result<()> {
+		let ret = process_catch("glSamplerParameterIuiv", catch_unwind(||(self.esversion_3_2.samplerparameteriuiv)(sampler, pname, param)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glSamplerParameterIuiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameterIiv.xhtml>
+	#[inline(always)]
+	fn glGetSamplerParameterIiv(&self, sampler: GLuint, pname: GLenum, params: *mut GLint) -> Result<()> {
+		let ret = process_catch("glGetSamplerParameterIiv", catch_unwind(||(self.esversion_3_2.getsamplerparameteriiv)(sampler, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSamplerParameterIiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glGetSamplerParameterIuiv.xhtml>
+	#[inline(always)]
+	fn glGetSamplerParameterIuiv(&self, sampler: GLuint, pname: GLenum, params: *mut GLuint) -> Result<()> {
+		let ret = process_catch("glGetSamplerParameterIuiv", catch_unwind(||(self.esversion_3_2.getsamplerparameteriuiv)(sampler, pname, params)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glGetSamplerParameterIuiv", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexBuffer.xhtml>
+	#[inline(always)]
+	fn glTexBuffer(&self, target: GLenum, internalformat: GLenum, buffer: GLuint) -> Result<()> {
+		let ret = process_catch("glTexBuffer", catch_unwind(||(self.esversion_3_2.texbuffer)(target, internalformat, buffer)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexBuffer", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexBufferRange.xhtml>
+	#[inline(always)]
+	fn glTexBufferRange(&self, target: GLenum, internalformat: GLenum, buffer: GLuint, offset: GLintptr, size: GLsizeiptr) -> Result<()> {
+		let ret = process_catch("glTexBufferRange", catch_unwind(||(self.esversion_3_2.texbufferrange)(target, internalformat, buffer, offset, size)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexBufferRange", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+	/// Reference: <https://registry.khronos.org/OpenGL-Refpages/es3.0/html/glTexStorage3DMultisample.xhtml>
+	#[inline(always)]
+	fn glTexStorage3DMultisample(&self, target: GLenum, samples: GLsizei, internalformat: GLenum, width: GLsizei, height: GLsizei, depth: GLsizei, fixedsamplelocations: GLboolean) -> Result<()> {
+		let ret = process_catch("glTexStorage3DMultisample", catch_unwind(||(self.esversion_3_2.texstorage3dmultisample)(target, samples, internalformat, width, height, depth, fixedsamplelocations)));
+		#[cfg(feature = "diagnose")]
+		if let Ok(ret) = ret {
+			return to_result("glTexStorage3DMultisample", ret, (self.esversion_3_2.geterror)());
+		} else {
+			return ret
+		}
+		#[cfg(not(feature = "diagnose"))]
+		return ret;
+	}
+}
+
 impl GLCore {
 	pub fn new(mut get_proc_address: impl FnMut(&'static str) -> *const c_void) -> Result<Self> {
 		let version_1_0 = Version10::new(&mut get_proc_address)?;
@@ -39343,6 +52321,10 @@ impl GLCore {
 			version_4_4: Version44::new(version_1_0, &mut get_proc_address),
 			version_4_5: Version45::new(version_1_0, &mut get_proc_address),
 			version_4_6: Version46::new(version_1_0, &mut get_proc_address),
+			esversion_2_0: EsVersion20::new(version_1_0, &mut get_proc_address),
+			esversion_3_0: EsVersion30::new(version_1_0, &mut get_proc_address),
+			esversion_3_1: EsVersion31::new(version_1_0, &mut get_proc_address),
+			esversion_3_2: EsVersion32::new(version_1_0, &mut get_proc_address),
 		})
 	}
 }
@@ -39369,6 +52351,10 @@ impl Default for GLCore {
 			version_4_4: Version44::default(),
 			version_4_5: Version45::default(),
 			version_4_6: Version46::default(),
+			esversion_2_0: EsVersion20::default(),
+			esversion_3_0: EsVersion30::default(),
+			esversion_3_1: EsVersion31::default(),
+			esversion_3_2: EsVersion32::default(),
 		}
 	}
 }
