@@ -21,3 +21,4 @@ path = "src/lib.rs"
 
 [features]
 diagnose = []
+catch_nullptr = []
